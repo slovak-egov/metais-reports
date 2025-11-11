@@ -13,7 +13,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  fetch-and-flatten:
+  fetch-and-convert:
     runs-on: ubuntu-24.04
 
     steps:
@@ -23,14 +23,29 @@ jobs:
       - name: Fetch JSON reports
         run: ./fetch-reports.sh
 
-      - name: Convert flattened JSON to CSV
+      - name: Convert JSON to CSV
         run: python3 convert.py
 
-      - name: Commit and push updated reports
-        run: |
-          git config user.name "github-actions[bot]" # a bot with rights to the repo that does the pushing
-          git config user.email "github-actions[bot]@users.noreply.github.com" # filled email so it doesn't bitch about missing email
-          timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
-          git add json csv
-          git commit -m "Update MetaIS reports ($timestamp)" || echo "No changes to commit"
-          git push # that token is used here
+#      - name: Commit and push updated reports
+#        run: |
+          #git config user.name "github" # a bot with rights to the repo that does the pushing
+          #git config user.email "github-actions[bot]@users.noreply.github.com" # filled email so it doesn't bitch about missing email
+#          timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
+          #git add json csv
+          #git commit -m "Update MetaIS reports ($timestamp)" || echo "No changes to commit"
+          #git push # that token is used here
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Setup pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'json csv'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
