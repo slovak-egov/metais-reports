@@ -31,6 +31,6 @@ jobs:
           git config user.name "github-actions[bot]" # a bot with rights to the repo that does the pushing
           git config user.email "github-actions[bot]@users.noreply.github.com" # filled email so it doesn't bitch about missing email
           timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
-          git add json flat
+          git add json csv
           git commit -m "Update MetaIS reports ($timestamp)" || echo "No changes to commit"
           git push # that token is used here
