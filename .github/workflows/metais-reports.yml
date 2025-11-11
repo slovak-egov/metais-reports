@@ -15,6 +15,9 @@ on:
 jobs:
   fetch-and-convert:
     runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Check out repository
@@ -29,13 +32,6 @@ jobs:
       - name: Output contents of the directory
         run: ./check.sh
 
-  deploy:
-    needs: fetch-and-convert
-    runs-on: ubuntu-24.04
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Setup pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
