@@ -1,0 +1,39 @@
+name: Fetch MetaIS reports
+
+on:
+  schedule:
+# cron:
+# minute (0-59)
+# hour (0-23)
+# day of the month (1-31)
+# month (1-12)
+# day of the week (0-7 here both 0 and 7 mean Sunday)
+# "0 2 * * 0" means 2am (0 min), I don't care what day it falls on, any month, Sundays
+    - cron: "0 2 * * 0"
+  workflow_dispatch: {}
+
+jobs:
+  fetch-and-flatten:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4 # this automatically injects an env var GITHUB_TOKEN=...
+
+      - name: Fetch JSON reports
+        run: ./fetch-reports.sh
+
+      - name: Flatten JSON reports
+        run: ./flatten.sh
+
+      - name: Convert flattened JSON to CSV
+        run: python3 convert.py
+
+      - name: Commit and push updated reports
+        run: |
+          git config user.name "github-actions[bot]" # a bot with rights to the repo that does the pushing
+          git config user.email "github-actions[bot]@users.noreply.github.com" # filled email so it doesn't bitch about missing email
+          timestamp=$(date -u +"%Y-%m-%d %H:%M UTC")
+          git add json flat
+          git commit -m "Update MetaIS reports ($timestamp)" || echo "No changes to commit"
+          git push # that token is used here
