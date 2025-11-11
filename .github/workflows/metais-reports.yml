@@ -26,6 +26,9 @@ jobs:
       - name: Convert JSON to CSV
         run: python3 convert.py
 
+      - name: Output contents of the directory
+        run: ./check.sh
+
   deploy:
     needs: fetch-and-convert
     runs-on: ubuntu-24.04
