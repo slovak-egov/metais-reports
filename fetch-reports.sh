@@ -11,7 +11,7 @@ mkdir -p data/json
 for i in "${!IDS[@]}"; do
   id="${IDS[$i]}"
   filename="${NAMES[$i]}"
-  out="json/${filename}.json"
+  out="data/json/${filename}.json"
   curl --location "${BASE_URL}/${id}/type/typ?lang=${LANG}" \
   --header 'Content-Type: application/json' \
   --data '{
