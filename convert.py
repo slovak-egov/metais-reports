@@ -1,7 +1,7 @@
 import json, csv, os, sys
 
-in_dir = "json"
-out_dir = "csv"
+in_dir = "data/json"
+out_dir = "data/csv"
 os.makedirs(out_dir, exist_ok=True)
 
 for filename in os.listdir(in_dir):

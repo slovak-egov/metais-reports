@@ -6,7 +6,7 @@ NAMES=(KS AS ISVS Projekt InfraSluzba KRIS)
 BASE_URL="https://metais.slovensko.sk/api/report/reports/execute"
 LANG="sk"
 
-mkdir -p json
+mkdir -p data/json
 
 for i in "${!IDS[@]}"; do
   id="${IDS[$i]}"
