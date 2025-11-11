@@ -23,9 +23,6 @@ jobs:
       - name: Fetch JSON reports
         run: ./fetch-reports.sh
 
-      - name: Flatten JSON reports
-        run: ./flatten.sh
-
       - name: Convert flattened JSON to CSV
         run: python3 convert.py
 
