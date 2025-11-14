@@ -167,7 +167,7 @@ function formatPercentSmart(pct, normalDecimals = 2, maxDecimals = 8) {
 function initControls() {
   const snapshotSelect = document.getElementById("snapshot-select");
   const nodeTypeSelect = document.getElementById("nodetype-select");
-  const reloadBtn = document.getElementById("reload-btn");
+  //const reloadBtn = document.getElementById("reload-btn");
   const viewAttrBtn = document.getElementById("view-nodes");
   const viewRelBtn = document.getElementById("view-relations");
   const viewHybBtn = document.getElementById("view-hybrid");
@@ -190,7 +190,7 @@ function initControls() {
     refreshView();
   });
 
-  reloadBtn.addEventListener("click", async () => {
+  /*reloadBtn.addEventListener("click", async () => {
     try {
       state.statsCache = {}; // clear cache
       await loadIndex();
@@ -201,7 +201,7 @@ function initControls() {
       console.error(e);
       alert("Failed to reload index.json – see console for details.");
     }
-  });
+  });*/
 
   viewAttrBtn.addEventListener("click", () => {
     state.currentView = "nodes";
