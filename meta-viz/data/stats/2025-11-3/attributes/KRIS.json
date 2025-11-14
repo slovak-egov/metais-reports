@@ -1,0 +1,195 @@
+{
+  "type": "KRIS",
+  "count": 282,
+  "attributes": [
+    {
+      "name": "Profil_KRIS_stav_kris",
+      "count": 282,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 1.4184397163120568
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 282,
+      "pct": 100.0,
+      "unique_count": 276,
+      "unique_pct": 97.87234042553192
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 282,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 1.0638297872340425
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 282,
+      "pct": 100.0,
+      "unique_count": 267,
+      "unique_pct": 94.68085106382979
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 282,
+      "pct": 100.0,
+      "unique_count": 277,
+      "unique_pct": 98.22695035460993
+    },
+    {
+      "name": "Profil_KRIS_Spracovatel_priezvisko",
+      "count": 278,
+      "pct": 98.58156028368793,
+      "unique_count": 162,
+      "unique_pct": 58.27338129496403
+    },
+    {
+      "name": "Profil_KRIS_Spracovatel_meno",
+      "count": 278,
+      "pct": 98.58156028368793,
+      "unique_count": 77,
+      "unique_pct": 27.697841726618705
+    },
+    {
+      "name": "Profil_KRIS_Spracovatel_email",
+      "count": 273,
+      "pct": 96.80851063829788,
+      "unique_count": 165,
+      "unique_pct": 60.43956043956044
+    },
+    {
+      "name": "Profil_KRIS_Spracovatel_funkcia",
+      "count": 272,
+      "pct": 96.45390070921985,
+      "unique_count": 140,
+      "unique_pct": 51.470588235294116
+    },
+    {
+      "name": "Profil_KRIS_Spracovatel_telefon",
+      "count": 272,
+      "pct": 96.45390070921985,
+      "unique_count": 172,
+      "unique_pct": 63.23529411764706
+    },
+    {
+      "name": "Profil_KRIS_Predkladatel_meno",
+      "count": 263,
+      "pct": 93.26241134751773,
+      "unique_count": 64,
+      "unique_pct": 24.334600760456272
+    },
+    {
+      "name": "Profil_KRIS_Predkladatel_priezvisko",
+      "count": 263,
+      "pct": 93.26241134751773,
+      "unique_count": 132,
+      "unique_pct": 50.19011406844106
+    },
+    {
+      "name": "Profil_KRIS_Predkladatel_titul_pred",
+      "count": 247,
+      "pct": 87.58865248226951,
+      "unique_count": 33,
+      "unique_pct": 13.360323886639677
+    },
+    {
+      "name": "Profil_KRIS_Predkladatel_funkcia",
+      "count": 238,
+      "pct": 84.39716312056737,
+      "unique_count": 114,
+      "unique_pct": 47.89915966386555
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 231,
+      "pct": 81.91489361702128,
+      "unique_count": 218,
+      "unique_pct": 94.37229437229438
+    },
+    {
+      "name": "Profil_KRIS_Predkladatel_email",
+      "count": 223,
+      "pct": 79.07801418439716,
+      "unique_count": 117,
+      "unique_pct": 52.46636771300448
+    },
+    {
+      "name": "Profil_KRIS_datum_vypracovania",
+      "count": 211,
+      "pct": 74.822695035461,
+      "unique_count": 139,
+      "unique_pct": 65.87677725118483
+    },
+    {
+      "name": "Profil_KRIS_Predkladatel_telefon",
+      "count": 196,
+      "pct": 69.50354609929079,
+      "unique_count": 139,
+      "unique_pct": 70.91836734693877
+    },
+    {
+      "name": "Profil_KRIS_Zavazok_ciele_principy_stav",
+      "count": 188,
+      "pct": 66.66666666666666,
+      "unique_count": 2,
+      "unique_pct": 1.0638297872340425
+    },
+    {
+      "name": "Profil_KRIS_Spracovatel_titul_pred",
+      "count": 186,
+      "pct": 65.95744680851064,
+      "unique_count": 10,
+      "unique_pct": 5.376344086021505
+    },
+    {
+      "name": "Profil_KRIS_datum_schvalenia",
+      "count": 148,
+      "pct": 52.4822695035461,
+      "unique_count": 93,
+      "unique_pct": 62.83783783783784
+    },
+    {
+      "name": "Profil_KRIS_cislo_spisu",
+      "count": 124,
+      "pct": 43.97163120567376,
+      "unique_count": 124,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_KRIS_Predkladatel_titul_za",
+      "count": 62,
+      "pct": 21.98581560283688,
+      "unique_count": 15,
+      "unique_pct": 24.193548387096776
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 33,
+      "pct": 11.702127659574469,
+      "unique_count": 30,
+      "unique_pct": 90.9090909090909
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 30,
+      "pct": 10.638297872340425,
+      "unique_count": 22,
+      "unique_pct": 73.33333333333333
+    },
+    {
+      "name": "Profil_KRIS_Spracovatel_titul_za",
+      "count": 11,
+      "pct": 3.900709219858156,
+      "unique_count": 5,
+      "unique_pct": 45.45454545454545
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 7,
+      "pct": 2.4822695035460995,
+      "unique_count": 6,
+      "unique_pct": 85.71428571428571
+    }
+  ]
+}

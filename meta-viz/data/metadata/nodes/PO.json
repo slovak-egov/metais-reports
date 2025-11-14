@@ -1,0 +1,1999 @@
+{
+  "id": 37,
+  "name": "Povinná osoba",
+  "technicalName": "PO",
+  "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+  "roleList": [
+    "EA_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#ffffaf",
+  "engName": "Public authority",
+  "category": "ROCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 96,
+      "name": "EA profil pre PO",
+      "description": "Špecifické informácie",
+      "technicalName": "EA_Profil_PO",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special information",
+      "attributes": [
+        {
+          "id": 844,
+          "name": "Doby odozvy v čase",
+          "description": "Doby odozvy v čase",
+          "type": "IMAGE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_EA_Profil_PO_Grafana_Graph",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "IMAGE",
+          "engName": "Response times",
+          "engDescription": "Response times",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 845,
+          "name": "Posledná doba odozvy",
+          "description": "Posledná doba odozvy",
+          "type": "IMAGE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_EA_Profil_PO_Grafana_BarGauge",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "IMAGE",
+          "engName": "Last response time",
+          "engDescription": "Last response time",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 601,
+          "name": "Webové sídlo",
+          "description": "Úplná URL adresa úvodnej stránky hlavného webového sídla povinnej osoby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_webove_sidlo",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Web site",
+          "engDescription": "Full URL address of application service web site for corresponding communication channel.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 114,
+          "name": "IČO",
+          "description": "Identifikačné číslo organizácie povinnej osoby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_ico",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "regex",
+              "id": null,
+              "regex": "[0-9]{6,8}[0-9a-zA-Z]{0,4}"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reg. ID No.",
+          "engDescription": "Public authority organization's identification number.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 383,
+          "name": "PSČ",
+          "description": "Poštové smerovacie číslo sídla povinnej osoby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_psc",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "regex",
+              "id": null,
+              "regex": "[0-9]{3} ?[0-9]{2}"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "ZIP",
+          "engDescription": "Public authority domicile ZIP.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 200,
+          "name": "Mesto / Obec",
+          "description": "Obec sídla povinnej osoby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_obec",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "City / Municipality",
+          "engDescription": "Municipality of mandatory person domicile.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 531,
+          "name": "Ulica",
+          "description": "Ulica sídla povinnej osoby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_ulica",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Street",
+          "engDescription": "Street of Public authority domicile.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 250,
+          "name": "Orientačné číslo",
+          "description": "Orientačné / súpisné číslo sídla povinnej osoby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_cislo",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Orientation number",
+          "engDescription": "Orientation / register number of mandatory person domicile.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 246,
+          "name": "Okres",
+          "description": "Okres sídla povinnej osoby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_okres",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "District",
+          "engDescription": "District of public authority domicile.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 149,
+          "name": "Kategória osoby",
+          "description": "Informácia či sa pri tejto inštitúcii jedná o PO.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_kategoria_osoby",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "KATEGORIA_OSOBA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Persons category",
+          "engDescription": "Information if the institution is PA.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 504,
+          "name": "Typ povinnej osoby",
+          "description": "Typ povinnej osoby podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_typ_osoby",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_OSOBY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Public authority type",
+          "engDescription": "Public authority type pursuant to Section 3 (3) of the Act no. 275/2006",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 145,
+          "name": "Je kapitola",
+          "description": "Príznak, či ide o rozpočtovú kapitolu podľa zákona o štátnom rozpočte na daný rok.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_je_kapitola",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "It is a chapter",
+          "engDescription": "Attribute if it is budget chapter pursuant to Budget Act for particular year.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1157,
+          "name": "Názov schránky UPVS",
+          "description": "Názov schránky UPVS",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_schranka_upvs_name",
+          "order": 11,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "UPVS electronic mailbox name",
+          "engDescription": "UPVS electronic mailbox name",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1156,
+          "name": "URI schránky UPVS",
+          "description": "URI schránky UPVS",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_PO_schranka_ovm_uri",
+          "order": 12,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "UPVS electronic mailbox URI",
+          "engDescription": "UPVS electronic mailbox URI",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Generický profil EA",
+      "description": "Informácie z architektonického modelu",
+      "technicalName": "Gen_Profil_EA",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Additional information",
+      "attributes": [
+        {
+          "id": 418,
+          "name": "Skratený názov",
+          "description": "Skratený názov položky prenášaný z názvu položky architektonického modelu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_skrateny_nazov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Abbreviated name",
+          "engDescription": "Abbreviated item name transfered from name of architecture model item.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 310,
+          "name": "Popis referencie",
+          "description": "Popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_popis_referencie",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference description",
+          "engDescription": "Description of document, picture, model describing reference detail.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 620,
+          "name": "Zoznam referencií",
+          "description": "Zoznam referencií. Odkaz a popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING_PAIR",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_zoznam_referencii",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING_PAIR",
+          "engName": "Reference list",
+          "engDescription": "Reference list. Link and description of document, picture, model where is detail of reference described.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 245,
+          "name": "Odkaz na referenciu",
+          "description": "Samotný odkaz (URL) na referenciu (napr. v DMS).",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_odkaz_na_referenciu",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Link to reference",
+          "engDescription": "Particular link (URL) to reference (e.g. in DMS).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 508,
+          "name": "Typ replikácie",
+          "description": "Hovorí o tom, či je daná položka v modeli replikovaná alebo nie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_typ_replikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_REPLIKACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Replication type",
+          "engDescription": "Determines if particular item in model is replicated or no.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 297,
+          "name": "Počet replikácií",
+          "description": "Hovorí o početnosti objektu, napr 500 PC s windows, optimalizuje repozitár (aby nemusel obsahovať 500 položiek). Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_pocet_replikacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "interval",
+              "id": null,
+              "minValue": 0.0,
+              "maxValue": 1000000000.0
+            }
+          ],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of replications",
+          "engDescription": "Deals with quantity of object. e.g. 500 PCs with Windows, optimized by repository (not to include 500 items). Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 115,
+      "name": "Špecifický profil pre štatutára",
+      "description": "Špecifický profil pre štatutára",
+      "technicalName": "Profil_PO_statutar",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special profile for statutory body",
+      "attributes": [
+        {
+          "id": 193,
+          "name": "Meno",
+          "description": "Meno štatutára",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "Profil_PO_statutar_meno",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Name",
+          "engDescription": "Name of statutory body",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 366,
+          "name": "Priezvisko",
+          "description": "Priezvisko štatutára",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "Profil_PO_statutar_priezvisko",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Surname",
+          "engDescription": "Surname of statutory body",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 477,
+          "name": "Titul pred menom",
+          "description": "Titul štatutára pred menom",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "Profil_PO_statutar_titul_pred_menom",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Title before name",
+          "engDescription": "Title of statutory body before name",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 482,
+          "name": "Titul za menom",
+          "description": "Titul štatutára za menom",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "Profil_PO_statutar_titul_za_menom",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Title following name",
+          "engDescription": "Title of statutory body following name",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/legal-subject",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 91,
+        "name": "PO je gestorom dátového prvku",
+        "engName": "PA is authority of data element",
+        "technicalName": "PO_je_gestor_DatovyPrvok",
+        "description": "PO je gestorom dátového prvku",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "REFID_URI_SZ",
+          "REFID_URI_DEF"
+        ],
+        "engDescription": "PA is authority of data element",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 93,
+        "name": "Povinná osoba je podriadenou povinnej osobe",
+        "engName": "Public authority is subordinate to public authority",
+        "technicalName": "PO_je_podriadenou_PO",
+        "description": "Povinná osoba je podriadenou povinnej osobe.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Public authority is subordinate to mandatory person.",
+        "category": "ROCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 94,
+        "name": "PO je gestorom KS",
+        "engName": "Public authority is authority of eGov service",
+        "technicalName": "PO_je_gestor_KS",
+        "description": "Povinná osoba je gestorom koncovej služby.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Public authority is authority of eGov service.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 95,
+        "name": "Povinná osoba je prevádzkovateľom aplikačnej služby",
+        "engName": "Public authority is operator of application service",
+        "technicalName": "PO_je_prevadzkovatel_AS",
+        "description": "Organizácia, ktorá je prevádzkovateľom služby. Prevádzkovateľ zodpovedá za realizáciu služby. Prevádzkovateľa ustanovuje správca.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Organization that is operator of service. Operator is responsible for service performance. Operator is appointed by manager.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 96,
+        "name": "Povinná osoba je prevádzkovateľom ISVS",
+        "engName": "Public authority is operator of ISVS",
+        "technicalName": "PO_je_prevadzkovatel_ISVS",
+        "description": "Inštitúcia, ktorú správca informačného systému verejnej správy poveril prevádzkovaním ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Institution that was appointed by public administration information system manager to operate ISVS.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 97,
+        "name": "Povinná osoba je správcom aplikačnej služby",
+        "engName": "Public authority is manager of application service",
+        "technicalName": "PO_je_spravca_AS",
+        "description": "Každá aplikačná služba má jedného správcu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Every application service has one manager.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 98,
+        "name": "Povinná osoba je zriadená povinnou osobou",
+        "engName": "Public authority is established by public authority.",
+        "technicalName": "PO_je_zriadena_PO",
+        "description": "Povinná osoba je zriadená povinnou osobou.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Public authority is established by public authority.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 99,
+        "name": "PO vlastni Licenciu",
+        "engName": "PA owns License",
+        "technicalName": "PO_License",
+        "description": "PO vlastni Licenciu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "PA owns License.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 100,
+        "name": "PO používa fragment licencie",
+        "engName": "PA uses license fragment",
+        "technicalName": "PO_pouziva_LicenseFragment",
+        "description": "PO používa fragment licencie.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "PA uses license fragment.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 101,
+        "name": "Povinna osoba predklada KRIT",
+        "engName": "Public authority submits KRIT",
+        "technicalName": "PO_predklada_KRIS",
+        "description": "Povinna osoba predklada KRIT.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KRIS_PODPIS",
+          "KRIS_TVORBA",
+          "KRIS_SCHVAL"
+        ],
+        "engDescription": "Public authority submits KRIT.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 102,
+        "name": "Povinna osoba predklada SU",
+        "engName": "Public authority submits FS",
+        "technicalName": "PO_predklada_SU",
+        "description": "Povinna osoba predklada SU.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SU_TVORBA",
+          "SU_SCHVAL"
+        ],
+        "engDescription": "Public authority submits FS.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 103,
+        "name": "Povinná osoba je správcom ISVS",
+        "engName": "Public authority is manager of ISVS",
+        "technicalName": "PO_je_spravca_ISVS",
+        "description": "Povinná osoba ktorá je správcom informačného systému verejnej správy.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Public authority that is public administration information system manager.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 104,
+        "name": "PO pouziva Licenciu",
+        "engName": "Public authority uses License",
+        "technicalName": "PO_using_License",
+        "description": "Povinná osoba, ktorá je koncovým používateľom licencie.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "Public authority that is end user of license.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 105,
+        "name": "PO vlastní fragment licencie",
+        "engName": "Public authority owns license fragment",
+        "technicalName": "PO_vlastni_LicenseFragment",
+        "description": "PO vlastní fragment licencie.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "PA owns license fragment.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 107,
+        "name": "Povinná osoba je asociovaná s projektom",
+        "engName": "Public authority handles Project",
+        "technicalName": "PO_asociuje_Projekt",
+        "description": "Povinná osoba rieši projekt. Napríklad: Ministerstvo financií Slovenskej republiky.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Public authority handles Project. E.g.: Ministry of Finance of the Slovak Republic",
+        "category": "ROCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 155,
+        "name": "Povinná osoba vykonáva agendu",
+        "engName": "Public authority performs agenda",
+        "technicalName": "PO_vykonava_Agenda",
+        "description": "Povinná osoba vykonáva agendu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "SZC_HLGES",
+          "R_EGOV"
+        ],
+        "engDescription": "Mandatory person performs agenda.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 158,
+        "name": "Povinná osoba má úseky verejnej správy",
+        "engName": "Public authority has section of public administration",
+        "technicalName": "PO_ma_UVS",
+        "description": "Povinná osoba má úseky verejnej správy.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "SZC_HLGES",
+          "R_EGOV"
+        ],
+        "engDescription": "Public authority has section of public administration.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 161,
+        "name": "PO je gestorom ontológie",
+        "engName": "PA is authority of ontology",
+        "technicalName": "PO_je_gestor_Ontologia",
+        "description": "Výber gestora zo zoznamu",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "REFID_URI_SZ",
+          "REFID_URI_DEF"
+        ],
+        "engDescription": "Selection of authority from the list",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 162,
+        "name": "PO je gestorom katalógu",
+        "engName": "PA is authority of catalogue",
+        "technicalName": "PO_je_gestor_URIKatalog",
+        "description": "Výber gestora pre URI",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "REFID_URI_SZ",
+          "REFID_URI_DEF"
+        ],
+        "engDescription": "Selection of authority for URI",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 167,
+        "name": "PO je gestorom distribúcie datasetu",
+        "engName": "MP is authority of dataset distribution",
+        "technicalName": "PO_je_gestor_DistribuciaDatasetu",
+        "description": "Výber gestora pre distribúciu datasetu",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "REFID_URI_SZ",
+          "REFID_URI_DEF"
+        ],
+        "engDescription": "Selection of authority for dataset distribution",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 189,
+        "name": "PO je poskytovateľom KS",
+        "engName": "PO is provider of eGov service",
+        "technicalName": "PO_poskytovatelom_KS",
+        "description": "PO je poskytovateľom KS",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "PO is provider of eGov service",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 192,
+        "name": "Priradene CI Group k PO",
+        "engName": "Assignment group CI to PO",
+        "technicalName": "PO_BELONGS_TO_CI_GROUP",
+        "description": "Priradene skupiny CI k PO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Assignment group CI to PO.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1210,
+        "name": "Orgán riadenia organizuje školenie",
+        "engName": "Management authority organizes training",
+        "technicalName": "Organ_riadenia_organizuje_skolenie",
+        "description": "Orgán riadenia organizuje školenie.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SKOLITEL"
+        ],
+        "engDescription": "Management authority organizes training.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1218,
+        "name": "PO je poskytovateľom OE",
+        "engName": "Public authority is the provider of Registry object",
+        "technicalName": "PO_je_poskytovatelom_OE",
+        "description": "Povinná osoba je poskytovateľom objektu evidencie",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Public authority is the provider of Registry object",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1228,
+        "name": "PO ma oprávnenie",
+        "engName": "Obliged person has an authorization",
+        "technicalName": "PO_ma_opravnenie",
+        "description": "PO ma oprávnenie",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Obliged person has an authorization",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1229,
+        "name": "PO je poskytovateľom AOE",
+        "engName": "Obliged person provides Registry object attribute",
+        "technicalName": "PO_je_poskytovatelom_AOE",
+        "description": "PO je poskytovateľom AOE",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Obliged person provides Registry object attribute",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1230,
+        "name": "Osoba je poskytovateľom koncovej služby",
+        "engName": "Person is a provider of the end service",
+        "technicalName": "PO_je_poskytovatelom_KS",
+        "description": "Osoba je poskytovateľom koncovej služby",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Person is a provider of the end service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 82,
+        "name": "Ovládaná PO predstavuje PO",
+        "engName": "Controlled PA represents PA",
+        "technicalName": "OvladanaPO_RelatesTo_PO",
+        "description": "Ovládaná PO predstavuje PO.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF"
+        ],
+        "engDescription": "Controlled PA represents PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 86,
+        "name": "Plán kontroly kontroluje povinnú osobu",
+        "engName": "Control plan controls mandatory person",
+        "technicalName": "PlanKontroly_kontroluje_PO",
+        "description": "Plán kontroly kontroluje jednu povinnú osobu",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KONT_VYKON",
+          "KONT_MANAZ",
+          "KONT_PLAN"
+        ],
+        "engDescription": "Control plan controls one mandatory person",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 93,
+        "name": "Povinná osoba je podriadenou povinnej osobe",
+        "engName": "Public authority is subordinate to public authority",
+        "technicalName": "PO_je_podriadenou_PO",
+        "description": "Povinná osoba je podriadenou povinnej osobe.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Public authority is subordinate to mandatory person.",
+        "category": "ROCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 98,
+        "name": "Povinná osoba je zriadená povinnou osobou",
+        "engName": "Public authority is established by public authority.",
+        "technicalName": "PO_je_zriadena_PO",
+        "description": "Povinná osoba je zriadená povinnou osobou.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Public authority is established by public authority.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 112,
+        "name": "Register spristupneny pre PO",
+        "engName": "Register available for PA",
+        "technicalName": "ReferenceRegister_accessedFor_PO",
+        "description": "Register spristupneny pre PO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register available for PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 113,
+        "name": "Register managuje PO",
+        "engName": "Register managed by PA",
+        "technicalName": "ReferenceRegister_managedBy_PO",
+        "description": "Register managuje PO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register managed by PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 115,
+        "name": "Základný číselník má gestora Povinnú osobu",
+        "engName": "Base counter has authority Public authority",
+        "technicalName": "ZC_ma_gestora_PO",
+        "description": "Základný číselník má práve jedného gestora - povinnú osobu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "SZC_HLGES",
+          "R_EGOV"
+        ],
+        "engDescription": "Codelist has one authority - public authority.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 116,
+        "name": "Register registrovala PO",
+        "engName": "Register registered by PA",
+        "technicalName": "ReferenceRegister_registratedBy_PO",
+        "description": "Register registrovala PO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register registered by PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 121,
+        "name": "RegisterItem ma registratora PO",
+        "engName": "RegisterItem has registrar PA",
+        "technicalName": "ReferenceRegisterItem_hasRegistrator_PO",
+        "description": "RegisterItem ma registratora PO.",
+        "type": "system",
+        "valid": false,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "RegisterItem has registrar PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 140,
+        "name": "Základný číselník má vedľajšieho gestora Povinnú osobu",
+        "engName": "Codelist has auxiliary authority Public authority",
+        "technicalName": "ZC_ma_vedlajsieho_gestora_PO",
+        "description": "Základný číselník  nemusí mať vedľajšieho gestora. Základný číselník môže mať viac vedľajších gestorov.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "SZC_HLGES",
+          "R_EGOV"
+        ],
+        "engDescription": "Codelist is not required to have auxiliary authority. Codelist may have more auxiliary authorities.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 147,
+        "name": "SCCM Licensie managuje PO",
+        "engName": "SCCM licenses are managed by PA",
+        "technicalName": "SccmLicense_managedBy_PO",
+        "description": "SCCM Licensie managuje PO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "LIC_ZLPO"
+        ],
+        "engDescription": "SCCM licenses are managed by PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 187,
+        "name": "Registrátor zdrojového registra",
+        "engName": "Source information has registrator PO",
+        "technicalName": "ReferenceRegisterItemSourceReferenceHolder_hasRegistrator_PO",
+        "description": "Uvedie sa povinná osoba, ktorá je registrátorom zvoleného zdrojového registra. Registrátor je orgán verejnej moci, ktorý je oprávnený zapisovať, meniť a vymazávať údaje do registra. V prípade, že registrátorom sú viaceré subjekty, napr. obce, VÚC, okresné súdy v sídle kraja, uvedie sa typ osoby.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Defines connection between reference item and PO as a source register registrar.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1224,
+        "name": "Osobitný postup má vzťah na Orgán riadenia",
+        "engName": "Special procedure has an relationship to XXX",
+        "technicalName": "osobitny_postup_vztah_PO",
+        "description": "Osobitný postup má vzťah na Orgán riadenia",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Special procedure has an relationship to XXX",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1226,
+        "name": "Formulár patrí osobe",
+        "engName": "Form belongs to Person",
+        "technicalName": "Formular_patri_PO",
+        "description": "Formulár patrí osobe",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Form belongs to Person",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1232,
+        "name": "Osobitný postup je spravovaný PO",
+        "engName": "Special procedure is administered by Obliged person",
+        "technicalName": "Osobitny_postup_je_spravovany_PO",
+        "description": "Osobitný postup je spravovaný PO",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Special procedure is administered by Obliged person",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

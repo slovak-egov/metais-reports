@@ -1,0 +1,133 @@
+{
+  "id": 44,
+  "name": "KRIT Rozvija Projekt",
+  "technicalName": "KRIS_rozvija_Projekt",
+  "description": "KRIT Rozvija Projekt.",
+  "roleList": [
+    "IKT_GARPO",
+    "KRIS_TVORBA",
+    "KRIS_SCHVAL",
+    "KRIS_PODPIS",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": false,
+  "color": null,
+  "engName": "KRIT develops Project",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 22,
+      "name": "Koncept rozvoja IT",
+      "technicalName": "KRIS",
+      "description": "Koncept rozvoja IT",
+      "roleList": [
+        "KRIS_PODPIS",
+        "KRIS_TVORBA",
+        "KRIS_SCHVAL"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "KRIT",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";KRIS_PODPIS;KRIS_TVORBA;KRIS_SCHVAL;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 56,
+      "name": "Projekt rozvoja IT",
+      "technicalName": "Projekt",
+      "description": "Projekt je jednorazový proces zameraný na dosiahnutie definovaného cieľa, pozostávajúci zo súboru zosúladených, riadených a časovo ohraničených činností, ktorý je pre danú organizáciu jedinečný, pričom to nie je pravidelná činnosť, má presne určený začiatok a koniec trvania, má definované najmenej finančné zdroje a ľudské zdroje, ak sú potrebné, vyžaduje analýzu súčasného stavu, špecifikáciu cieľového stavu a spôsobu jeho dosiahnutia. Projektom informačného systému verejnej správy sa rozumie produkt, ktorým sa vopred definuje informačný systém verejnej správy, jeho úprava alebo zmena.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Project of IT development",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_asociuje_Projekt",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "KRIT develops Project.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

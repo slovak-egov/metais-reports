@@ -1,0 +1,400 @@
+{
+  "id": 36,
+  "name": "Polozka referencneho registra",
+  "technicalName": "ReferenceRegisterItem",
+  "description": "Polozka referencneho registra.",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": "#ffe0af",
+  "engName": "Reference register item",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 655,
+      "name": "Identifikácia subjektu, ku ktorému sa RÚ viaže",
+      "description": "Uvedie sa subjekt, ku ktorému sa referenčný údaj viaže.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegisterItem_Profile_subjectIdentifications",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Subject identifications",
+      "engDescription": "Identification of the subject to which the reference data binding.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 151,
+      "name": "Kód",
+      "description": "Kód referenčného údaja.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegisterItem_Profile_code",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Code",
+      "engDescription": "Code of reference data.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 657,
+      "name": "Názov a kód dátového prvku",
+      "description": "Uvedie sa názov a v zátvorke historický kód dátového prvku z katalógu dátových prvkov podľa prílohy č. 2 výnosu MF SR č. 55/2014 Z. z.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegisterItem_Profile_dataElementRefID",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier of data element",
+      "engDescription": "Reference identifier of data element.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 222,
+      "name": "Názov referenčného údaja",
+      "description": "Názov spravidla nadväzuje na príslušnú legislatívu.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegisterItem_Profile_name",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference data name",
+      "engDescription": "Name of reference data.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 670,
+      "name": "Poradie",
+      "description": "Poradové číslo referenčného údaja. V prípade, že je referenčných údajov viac ako 9, čísla menšie ako 10 sa uvedú v tvare napr. \"01.\"",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegisterItem_Profile_order",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Order",
+      "engDescription": "Reference data order.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 340,
+      "name": "Poznámka",
+      "description": "Poznámka k referenčnému údaju.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegisterItem_Profile_note",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Reference register item note.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 656,
+      "name": "Referencovateľný identifikátor referenčného údaja",
+      "description": "Uvedie sa referencovateľný identifikátor referenčného údaja.  Napríklad URI pre IČ DPH: http://data.gov.sk/def/identifier-type/18",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegisterItem_Profile_refID",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier of reference data",
+      "engDescription": "Reference identifier of reference data.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "codePrefix": "reference_register_item",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/reference-register-item",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 118,
+        "name": "Polozka referencneho registra prislucha Referencnemu registru",
+        "engName": "Reference register item belongs to Reference register",
+        "technicalName": "ReferenceRegisterItem_belongsTo_ReferenceRegister",
+        "description": "Polozka referencneho registra prislucha Referencnemu registru.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register item belongs to Reference register.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 119,
+        "name": "Skupina referečných údajov",
+        "engName": "Reference register item belongs to Group",
+        "technicalName": "ReferenceRegisterItem_belongsTo_ReferenceRegisterItemGroup",
+        "description": "Použije sa v prípade, ak je potrebné zaradiť referenčný údaj do skupiny referenčných údajov. Napríklad k fyzickej osobe \"údaje o pobyte\".",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register item belongs to Group.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 120,
+        "name": "Podskupina referečných údajov",
+        "engName": "Reference register item belongs to subgroup",
+        "technicalName": "ReferenceRegisterItem_belongsTo_ReferenceRegisterItemSubGroup",
+        "description": "Použije sa v prípade, keď je potrebné referenčný údaj zaradiť do podskupiny referenčných údajov. Napríklad k fyzickej osobe k skupine \"údaje o pobyte\" patrí podskupina \"trvalý pobyt\".",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register item belongs to subgroup.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 121,
+        "name": "RegisterItem ma registratora PO",
+        "engName": "RegisterItem has registrar PA",
+        "technicalName": "ReferenceRegisterItem_hasRegistrator_PO",
+        "description": "RegisterItem ma registratora PO.",
+        "type": "system",
+        "valid": false,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "RegisterItem has registrar PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 122,
+        "name": "Register suvisi s datovym prvkom",
+        "engName": "Register relates to data element",
+        "technicalName": "ReferenceRegisterItem_incidentalTo_datovy_prvok",
+        "description": "Register suvisi s datovym prvkom.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register relates to data element.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 185,
+        "name": "Referenčný údaj má zdrojovú informáciu",
+        "engName": "Reference data has source information",
+        "technicalName": "ReferenceRegisterItem_has_ReferenceRegisterItemSourceReferenceHolder",
+        "description": "Definuje prepojenie referenčného údaja s ISVS a PO ako zdrojovým registrom a jeho registrátorom.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Defines connection between reference item and source register and its registrar.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 30,
+        "name": "ISVS je zdroj pre Polozku referencneho registra",
+        "engName": "ISVS is a source for Reference register unit",
+        "technicalName": "ISVS_isSourceReferenceFor_ReferenceRegisterItem",
+        "description": "ISVS je zdroj pre Polozku referencneho registra.",
+        "type": "system",
+        "valid": false,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "ISVS is a source for Reference register unit.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

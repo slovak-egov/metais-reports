@@ -1,0 +1,127 @@
+{
+  "id": 1225,
+  "name": "Formulár má typ prílohy",
+  "technicalName": "Formular_ma_prilohu",
+  "description": "Formulár má typ prílohy",
+  "roleList": [
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": false,
+  "color": null,
+  "engName": "Form has Attachment type",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 59,
+      "name": "Formulár",
+      "technicalName": "Formular",
+      "description": "Formulár.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Form",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 102,
+      "name": "Typ prílohy",
+      "technicalName": "Priloha_typ",
+      "description": "Stručný, výstižný a jednoznačný názov položky Typu prílohy. Zaevidované majú byť len také prílohy, ktoré sa nenachádzajú v číselníku dôkazov  OOTS CL000016. ",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Attachment type",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Form has Attachment type",
+  "codePrefix": null,
+  "uriPrefix": null
+}

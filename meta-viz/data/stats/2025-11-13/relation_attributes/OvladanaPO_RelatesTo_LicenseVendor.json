@@ -1,0 +1,57 @@
+{
+  "relation_name": "OvladanaPO_RelatesTo_LicenseVendor",
+  "name": "Ovladana PO pre vendora",
+  "description": "Ovladana PO pre vendora.",
+  "engDescription": "Controlled PA for vendor.",
+  "type": "application",
+  "source_type": "OvladanaPO",
+  "source_name": "Ovladana osoba",
+  "target_type": "LicenseVendor",
+  "target_name": "Vendor licencie",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 0,
+    "target_total": 5,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 5,
+      "total_islands": 5,
+      "singleton_islands": 5,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 0,
+        "total_islands": 0,
+        "singleton_islands": 0,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 5,
+        "total_islands": 5,
+        "singleton_islands": 5,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

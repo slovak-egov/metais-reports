@@ -1,0 +1,128 @@
+{
+  "id": 91,
+  "name": "Zdrojový register a registrátor",
+  "technicalName": "ReferenceRegisterItemSourceReferenceHolder",
+  "description": "Zdrojový register a registrátor.",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": "#ffe0af",
+  "engName": "Source register and registrar",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "codePrefix": "reference_register_item_source_reference_holder",
+  "ownerRelation": null,
+  "uriPrefix": "",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 186,
+        "name": "Zdrojový register",
+        "engName": "Source information reference ISVS",
+        "technicalName": "ReferenceRegisterItemSourceReferenceHolder_reference_ISVS",
+        "description": "Uvedie sa názov zdrojového registra, ktorý je zhodný s názvom informačného systému evidovanom v Metainformačnom systéme.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Defines connection between reference item and ISVS as a source register.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 187,
+        "name": "Registrátor zdrojového registra",
+        "engName": "Source information has registrator PO",
+        "technicalName": "ReferenceRegisterItemSourceReferenceHolder_hasRegistrator_PO",
+        "description": "Uvedie sa povinná osoba, ktorá je registrátorom zvoleného zdrojového registra. Registrátor je orgán verejnej moci, ktorý je oprávnený zapisovať, meniť a vymazávať údaje do registra. V prípade, že registrátorom sú viaceré subjekty, napr. obce, VÚC, okresné súdy v sídle kraja, uvedie sa typ osoby.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Defines connection between reference item and PO as a source register registrar.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 185,
+        "name": "Referenčný údaj má zdrojovú informáciu",
+        "engName": "Reference data has source information",
+        "technicalName": "ReferenceRegisterItem_has_ReferenceRegisterItemSourceReferenceHolder",
+        "description": "Definuje prepojenie referenčného údaja s ISVS a PO ako zdrojovým registrom a jeho registrátorom.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Defines connection between reference item and source register and its registrar.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

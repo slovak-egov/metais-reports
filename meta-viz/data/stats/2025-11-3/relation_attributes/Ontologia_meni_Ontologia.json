@@ -1,0 +1,124 @@
+{
+  "relation_name": "Ontologia_meni_Ontologia",
+  "name": "Ontológia mení Ontológiu",
+  "description": "Ontológia mení pôvodnú Ontológiu",
+  "engDescription": "Ontology modifies original Ontology",
+  "type": "application",
+  "source_type": "Ontologia",
+  "source_name": "Ontológia",
+  "target_type": "Ontologia",
+  "target_name": "Ontológia",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 2,
+    "unique_pairs": 2,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 16,
+    "target_total": 16,
+    "source_connected": 1,
+    "target_connected": 2,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 2,
+      "max": 2,
+      "avg": 2.0,
+      "median": 2,
+      "p90": 2,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "3a3d3dc6-7bb8-4bf7-877e-f828cdebf92a",
+        "degree": 2,
+        "name": "Ontológia legislatívy",
+        "code": "ontologia_1081"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "82f1625e-cd39-4c0a-8658-80aa4141e33f",
+        "degree": 1,
+        "name": "Ontológia legislatívy",
+        "code": "ontologia_1128"
+      },
+      {
+        "uuid": "de79a0c6-7983-4713-b3d5-18bf34330062",
+        "degree": 1,
+        "name": "Ontológia legislatívy",
+        "code": "ontologia_1132"
+      }
+    ],
+    "islands": {
+      "total_nodes": 32,
+      "total_islands": 30,
+      "singleton_islands": 29,
+      "multi_islands": [
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.09375,
+          "top_source_uuid": "3a3d3dc6-7bb8-4bf7-877e-f828cdebf92a",
+          "top_source_degree": 2,
+          "top_target_uuid": "82f1625e-cd39-4c0a-8658-80aa4141e33f",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 16,
+        "total_islands": 16,
+        "singleton_islands": 16,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 16,
+        "total_islands": 15,
+        "singleton_islands": 14,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.125,
+            "size_total": 3,
+            "top_uuid": "82f1625e-cd39-4c0a-8658-80aa4141e33f",
+            "top_degree": 1
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

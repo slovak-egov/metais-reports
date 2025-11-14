@@ -1,0 +1,1999 @@
+{
+  "relation_name": "LicenseVendorProduct_LicenseVendor",
+  "name": "Produkt patri vendorovi",
+  "description": "Produkt patri vendorovi.",
+  "engDescription": "Vendor owns product.",
+  "type": "application",
+  "source_type": "LicenseVendorProduct",
+  "source_name": "Produkt vendora",
+  "target_type": "LicenseVendor",
+  "target_name": "Vendor licencie",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 313,
+    "unique_pairs": 313,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 314,
+    "target_total": 5,
+    "source_connected": 313,
+    "target_connected": 2,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 5,
+      "max": 308,
+      "avg": 156.5,
+      "median": 156.5,
+      "p90": 308,
+      "p99": 308
+    },
+    "top_source": [
+      {
+        "uuid": "72fa2e62-7e6d-48e9-8f59-ad90927b04b4",
+        "degree": 1,
+        "name": "72fa2e62-7e6d-48e9-8f59-ad90927b04b4",
+        "code": "licencny_produkt_352"
+      },
+      {
+        "uuid": "54a775f9-6aa7-4960-abcb-aca8f60cdbe3",
+        "degree": 1,
+        "name": "54a775f9-6aa7-4960-abcb-aca8f60cdbe3",
+        "code": "licencny_produkt_369"
+      },
+      {
+        "uuid": "8becbf9f-e6a0-4d5f-947b-14182412a897",
+        "degree": 1,
+        "name": "8becbf9f-e6a0-4d5f-947b-14182412a897",
+        "code": "licencny_produkt_489"
+      },
+      {
+        "uuid": "4d193e67-05ce-40ad-8fa8-a42ffa5158e9",
+        "degree": 1,
+        "name": "4d193e67-05ce-40ad-8fa8-a42ffa5158e9",
+        "code": "licencny_produkt_517"
+      },
+      {
+        "uuid": "1b0e9b26-0387-44b2-ba9f-61852f1031de",
+        "degree": 1,
+        "name": "1b0e9b26-0387-44b2-ba9f-61852f1031de",
+        "code": "licencny_produkt_347"
+      },
+      {
+        "uuid": "f42cccba-f77b-4f1a-b873-e640298ae2f1",
+        "degree": 1,
+        "name": "f42cccba-f77b-4f1a-b873-e640298ae2f1",
+        "code": "licencny_produkt_463"
+      },
+      {
+        "uuid": "bbc5d9c2-8895-45ad-bf5c-d140dafd26ed",
+        "degree": 1,
+        "name": "bbc5d9c2-8895-45ad-bf5c-d140dafd26ed",
+        "code": "licencny_produkt_348"
+      },
+      {
+        "uuid": "e2a97d29-84e5-4ad6-bcf7-994d4d8d9b3a",
+        "degree": 1,
+        "name": "e2a97d29-84e5-4ad6-bcf7-994d4d8d9b3a",
+        "code": "licencny_produkt_550"
+      },
+      {
+        "uuid": "9e20ce62-1dcf-4025-a5d6-59ed93e71d2d",
+        "degree": 1,
+        "name": "9e20ce62-1dcf-4025-a5d6-59ed93e71d2d",
+        "code": "licencny_produkt_462"
+      },
+      {
+        "uuid": "f976f2ab-dc54-4c66-a843-63966fbe0dc0",
+        "degree": 1,
+        "name": "f976f2ab-dc54-4c66-a843-63966fbe0dc0",
+        "code": "licencny_produkt_390"
+      },
+      {
+        "uuid": "32080a06-fb04-4580-ac9d-150fe8a2be61",
+        "degree": 1,
+        "name": "32080a06-fb04-4580-ac9d-150fe8a2be61",
+        "code": "licencny_produkt_486"
+      },
+      {
+        "uuid": "ade32084-11f9-4393-aba3-d019d2ec3b5c",
+        "degree": 1,
+        "name": "ade32084-11f9-4393-aba3-d019d2ec3b5c",
+        "code": "licencny_produkt_376"
+      },
+      {
+        "uuid": "f025eb97-cc2d-4ca6-b93f-d7ec659a2ca4",
+        "degree": 1,
+        "name": "f025eb97-cc2d-4ca6-b93f-d7ec659a2ca4",
+        "code": "licencny_produkt_466"
+      },
+      {
+        "uuid": "a6e647fc-d6cf-4558-b38a-43664bb1f693",
+        "degree": 1,
+        "name": "a6e647fc-d6cf-4558-b38a-43664bb1f693",
+        "code": "licencny_produkt_451"
+      },
+      {
+        "uuid": "aaf9108d-1463-440b-b927-8b8d1055d84f",
+        "degree": 1,
+        "name": "aaf9108d-1463-440b-b927-8b8d1055d84f",
+        "code": "licencny_produkt_572"
+      },
+      {
+        "uuid": "f18e9dd7-7b37-4993-889d-12d0aec4f65c",
+        "degree": 1,
+        "name": "f18e9dd7-7b37-4993-889d-12d0aec4f65c",
+        "code": "licencny_produkt_533"
+      },
+      {
+        "uuid": "63fb9ee7-e420-4d46-8417-c93bf6fa9e91",
+        "degree": 1,
+        "name": "63fb9ee7-e420-4d46-8417-c93bf6fa9e91",
+        "code": "licencny_produkt_375"
+      },
+      {
+        "uuid": "d88243f6-7db1-428f-9bb3-284017b1af23",
+        "degree": 1,
+        "name": "d88243f6-7db1-428f-9bb3-284017b1af23",
+        "code": "licencny_produkt_295"
+      },
+      {
+        "uuid": "7296c7b9-5568-45fd-9440-a7db0b103830",
+        "degree": 1,
+        "name": "7296c7b9-5568-45fd-9440-a7db0b103830",
+        "code": "licencny_produkt_329"
+      },
+      {
+        "uuid": "dc84590b-31d8-4683-b11e-e1c89450eb16",
+        "degree": 1,
+        "name": "dc84590b-31d8-4683-b11e-e1c89450eb16",
+        "code": "licencny_produkt_423"
+      },
+      {
+        "uuid": "57a8e26e-0298-48b5-8b34-db0f6c699414",
+        "degree": 1,
+        "name": "57a8e26e-0298-48b5-8b34-db0f6c699414",
+        "code": "licencny_produkt_438"
+      },
+      {
+        "uuid": "9111da51-302d-4ec9-a2a3-13ed350eae15",
+        "degree": 1,
+        "name": "9111da51-302d-4ec9-a2a3-13ed350eae15",
+        "code": "licencny_produkt_411"
+      },
+      {
+        "uuid": "f483daa7-5765-4bfa-b222-dcff1b450d0d",
+        "degree": 1,
+        "name": "f483daa7-5765-4bfa-b222-dcff1b450d0d",
+        "code": "licencny_produkt_291"
+      },
+      {
+        "uuid": "0914e74d-c793-40da-b32e-424c7a452702",
+        "degree": 1,
+        "name": "0914e74d-c793-40da-b32e-424c7a452702",
+        "code": "licencny_produkt_555"
+      },
+      {
+        "uuid": "832532d0-c1e5-40ef-b82c-d7a4333e0e33",
+        "degree": 1,
+        "name": "832532d0-c1e5-40ef-b82c-d7a4333e0e33",
+        "code": "licencny_produkt_431"
+      },
+      {
+        "uuid": "aa64211b-573e-4caf-9660-62b39c8219c8",
+        "degree": 1,
+        "name": "aa64211b-573e-4caf-9660-62b39c8219c8",
+        "code": "licencny_produkt_441"
+      },
+      {
+        "uuid": "b1247ddb-217f-4f32-be5c-7222b0f81531",
+        "degree": 1,
+        "name": "b1247ddb-217f-4f32-be5c-7222b0f81531",
+        "code": "licencny_produkt_461"
+      },
+      {
+        "uuid": "7d7219b8-17ee-477e-a4d5-2bb0c6afe673",
+        "degree": 1,
+        "name": "7d7219b8-17ee-477e-a4d5-2bb0c6afe673",
+        "code": "licencny_produkt_368"
+      },
+      {
+        "uuid": "20e6a9a3-3002-426f-9bd1-aadde5794873",
+        "degree": 1,
+        "name": "20e6a9a3-3002-426f-9bd1-aadde5794873",
+        "code": "licencny_produkt_525"
+      },
+      {
+        "uuid": "83644224-4b16-4830-93e0-6d251b4ef5b3",
+        "degree": 1,
+        "name": "83644224-4b16-4830-93e0-6d251b4ef5b3",
+        "code": "licencny_produkt_440"
+      },
+      {
+        "uuid": "a91bf1bf-2f87-48d8-903c-a99461ca22bf",
+        "degree": 1,
+        "name": "a91bf1bf-2f87-48d8-903c-a99461ca22bf",
+        "code": "licencny_produkt_429"
+      },
+      {
+        "uuid": "3ffdc86f-c15c-46fc-8856-3c263f0299c6",
+        "degree": 1,
+        "name": "3ffdc86f-c15c-46fc-8856-3c263f0299c6",
+        "code": "licencny_produkt_505"
+      },
+      {
+        "uuid": "2ab11025-342c-4f85-a09c-c8677fa3287f",
+        "degree": 1,
+        "name": "2ab11025-342c-4f85-a09c-c8677fa3287f",
+        "code": "licencny_produkt_293"
+      },
+      {
+        "uuid": "3dd00bd1-e4c1-4b89-be12-16d61429b6c3",
+        "degree": 1,
+        "name": "3dd00bd1-e4c1-4b89-be12-16d61429b6c3",
+        "code": "licencny_produkt_317"
+      },
+      {
+        "uuid": "e30ead23-6afc-47db-9f64-df5d967ea668",
+        "degree": 1,
+        "name": "e30ead23-6afc-47db-9f64-df5d967ea668",
+        "code": "licencny_produkt_332"
+      },
+      {
+        "uuid": "109d6d18-d87e-4eaf-8863-901170e6b5b4",
+        "degree": 1,
+        "name": "109d6d18-d87e-4eaf-8863-901170e6b5b4",
+        "code": "licencny_produkt_543"
+      },
+      {
+        "uuid": "d80959f1-2a8f-4549-89bf-c42149243a09",
+        "degree": 1,
+        "name": "d80959f1-2a8f-4549-89bf-c42149243a09",
+        "code": "licencny_produkt_276"
+      },
+      {
+        "uuid": "27c1dffc-e413-4dad-bc3c-d42e2687a99a",
+        "degree": 1,
+        "name": "27c1dffc-e413-4dad-bc3c-d42e2687a99a",
+        "code": "licencny_produkt_556"
+      },
+      {
+        "uuid": "9bd449b5-b6fe-4135-9352-be211a67affe",
+        "degree": 1,
+        "name": "9bd449b5-b6fe-4135-9352-be211a67affe",
+        "code": "licencny_produkt_447"
+      },
+      {
+        "uuid": "19251455-9525-4d88-a6bf-de9346fb9085",
+        "degree": 1,
+        "name": "19251455-9525-4d88-a6bf-de9346fb9085",
+        "code": "licencny_produkt_277"
+      },
+      {
+        "uuid": "5cf833b6-a505-4646-a634-b4719b4241a8",
+        "degree": 1,
+        "name": "5cf833b6-a505-4646-a634-b4719b4241a8",
+        "code": "licencny_produkt_338"
+      },
+      {
+        "uuid": "4f02dded-e3be-4a7e-9489-8328030a52d6",
+        "degree": 1,
+        "name": "4f02dded-e3be-4a7e-9489-8328030a52d6",
+        "code": "licencny_produkt_477"
+      },
+      {
+        "uuid": "31a46adb-ac37-433d-a1ee-2fa0d3719841",
+        "degree": 1,
+        "name": "31a46adb-ac37-433d-a1ee-2fa0d3719841",
+        "code": "licencny_produkt_354"
+      },
+      {
+        "uuid": "bf322206-3ad1-499e-b72d-6c2e5af8b71e",
+        "degree": 1,
+        "name": "bf322206-3ad1-499e-b72d-6c2e5af8b71e",
+        "code": "licencny_produkt_430"
+      },
+      {
+        "uuid": "3d29466a-8d72-4eb5-a917-47d2db4d5014",
+        "degree": 1,
+        "name": "3d29466a-8d72-4eb5-a917-47d2db4d5014",
+        "code": "licencny_produkt_459"
+      },
+      {
+        "uuid": "86c20333-230a-4881-98b7-a8d21f7fb4f1",
+        "degree": 1,
+        "name": "86c20333-230a-4881-98b7-a8d21f7fb4f1",
+        "code": "licencny_produkt_503"
+      },
+      {
+        "uuid": "973cec98-ca2d-485c-8f25-2827ee363bc9",
+        "degree": 1,
+        "name": "973cec98-ca2d-485c-8f25-2827ee363bc9",
+        "code": "licencny_produkt_339"
+      },
+      {
+        "uuid": "277bd16b-bd16-49ea-a4cb-933f7dbffd2f",
+        "degree": 1,
+        "name": "277bd16b-bd16-49ea-a4cb-933f7dbffd2f",
+        "code": "licencny_produkt_383"
+      },
+      {
+        "uuid": "4652f1ec-cc11-4987-8683-657af0fbcfec",
+        "degree": 1,
+        "name": "4652f1ec-cc11-4987-8683-657af0fbcfec",
+        "code": "licencny_produkt_557"
+      },
+      {
+        "uuid": "d3cc2187-7a7c-49aa-a2d6-82d9573ed7e0",
+        "degree": 1,
+        "name": "d3cc2187-7a7c-49aa-a2d6-82d9573ed7e0",
+        "code": "licencny_produkt_532"
+      },
+      {
+        "uuid": "c52a4368-d69c-4d5d-8e1f-31784b7fdba4",
+        "degree": 1,
+        "name": "c52a4368-d69c-4d5d-8e1f-31784b7fdba4",
+        "code": "licencny_produkt_526"
+      },
+      {
+        "uuid": "e77b19a5-407b-4f89-8d3f-904fe07a6fd3",
+        "degree": 1,
+        "name": "e77b19a5-407b-4f89-8d3f-904fe07a6fd3",
+        "code": "licencny_produkt_310"
+      },
+      {
+        "uuid": "80ab6658-4fb2-4410-abe2-e8541f62315a",
+        "degree": 1,
+        "name": "80ab6658-4fb2-4410-abe2-e8541f62315a",
+        "code": "licencny_produkt_449"
+      },
+      {
+        "uuid": "e6f5bd8e-19f8-45e7-ae1f-c236345d4fa3",
+        "degree": 1,
+        "name": "e6f5bd8e-19f8-45e7-ae1f-c236345d4fa3",
+        "code": "licencny_produkt_374"
+      },
+      {
+        "uuid": "bdc4532e-0aae-4989-bb8f-1eb9cce467e8",
+        "degree": 1,
+        "name": "bdc4532e-0aae-4989-bb8f-1eb9cce467e8",
+        "code": "licencny_produkt_391"
+      },
+      {
+        "uuid": "a996299b-e7fe-45bd-add7-99e5b77ca843",
+        "degree": 1,
+        "name": "a996299b-e7fe-45bd-add7-99e5b77ca843",
+        "code": "licencny_produkt_419"
+      },
+      {
+        "uuid": "b12217c5-1b4f-4e81-a294-aa3ce7e1a895",
+        "degree": 1,
+        "name": "b12217c5-1b4f-4e81-a294-aa3ce7e1a895",
+        "code": "licencny_produkt_360"
+      },
+      {
+        "uuid": "cd94bad6-d69e-4ae3-8873-1fe1e52826e2",
+        "degree": 1,
+        "name": "cd94bad6-d69e-4ae3-8873-1fe1e52826e2",
+        "code": "licencny_produkt_346"
+      },
+      {
+        "uuid": "64a30573-efb7-46e8-a6a7-5d246e99b7f6",
+        "degree": 1,
+        "name": "64a30573-efb7-46e8-a6a7-5d246e99b7f6",
+        "code": "licencny_produkt_569"
+      },
+      {
+        "uuid": "14f92439-263a-437b-aab8-9af9b1478cf5",
+        "degree": 1,
+        "name": "14f92439-263a-437b-aab8-9af9b1478cf5",
+        "code": "licencny_produkt_378"
+      },
+      {
+        "uuid": "e0091e3c-9e64-41a4-a456-5e012156dafc",
+        "degree": 1,
+        "name": "e0091e3c-9e64-41a4-a456-5e012156dafc",
+        "code": "licencny_produkt_531"
+      },
+      {
+        "uuid": "9f95b74e-d958-404e-bbaf-239c410b7626",
+        "degree": 1,
+        "name": "9f95b74e-d958-404e-bbaf-239c410b7626",
+        "code": "licencny_produkt_308"
+      },
+      {
+        "uuid": "aee81c84-6b30-4b90-a502-e71e80f8029c",
+        "degree": 1,
+        "name": "aee81c84-6b30-4b90-a502-e71e80f8029c",
+        "code": "licencny_produkt_299"
+      },
+      {
+        "uuid": "3c9af4e8-c40c-4134-a403-1928ea7e6d29",
+        "degree": 1,
+        "name": "3c9af4e8-c40c-4134-a403-1928ea7e6d29",
+        "code": "licencny_produkt_574"
+      },
+      {
+        "uuid": "3badacca-b4e1-4543-9534-95394a0c2e9a",
+        "degree": 1,
+        "name": "3badacca-b4e1-4543-9534-95394a0c2e9a",
+        "code": "licencny_produkt_408"
+      },
+      {
+        "uuid": "bfc1b63f-69cd-446e-9807-418f2ba603ac",
+        "degree": 1,
+        "name": "bfc1b63f-69cd-446e-9807-418f2ba603ac",
+        "code": "licencny_produkt_285"
+      },
+      {
+        "uuid": "4e8de6b6-3220-48ab-8c39-d636c0cb763e",
+        "degree": 1,
+        "name": "4e8de6b6-3220-48ab-8c39-d636c0cb763e",
+        "code": "licencny_produkt_405"
+      },
+      {
+        "uuid": "6b0d7664-f021-4f8f-b1e4-041ecd16b570",
+        "degree": 1,
+        "name": "6b0d7664-f021-4f8f-b1e4-041ecd16b570",
+        "code": "licencny_produkt_302"
+      },
+      {
+        "uuid": "d6b2d616-ee08-4f18-bef2-85d8f69e9e4b",
+        "degree": 1,
+        "name": "d6b2d616-ee08-4f18-bef2-85d8f69e9e4b",
+        "code": "licencny_produkt_327"
+      },
+      {
+        "uuid": "c1aa45a4-b7c9-4dbb-9c63-b9ace36b7737",
+        "degree": 1,
+        "name": "c1aa45a4-b7c9-4dbb-9c63-b9ace36b7737",
+        "code": "licencny_produkt_323"
+      },
+      {
+        "uuid": "d22a7ed3-9ce7-4f34-8887-4228fe0bbe88",
+        "degree": 1,
+        "name": "d22a7ed3-9ce7-4f34-8887-4228fe0bbe88",
+        "code": "licencny_produkt_454"
+      },
+      {
+        "uuid": "7e6ba3ed-242b-4c3a-9dac-d62bdb6449bc",
+        "degree": 1,
+        "name": "7e6ba3ed-242b-4c3a-9dac-d62bdb6449bc",
+        "code": "licencny_produkt_366"
+      },
+      {
+        "uuid": "0f438ec4-bcdd-4047-8bef-5052e3328543",
+        "degree": 1,
+        "name": "0f438ec4-bcdd-4047-8bef-5052e3328543",
+        "code": "licencny_produkt_281"
+      },
+      {
+        "uuid": "50c7aa32-33f1-4fee-beb6-9c86cb5ac936",
+        "degree": 1,
+        "name": "50c7aa32-33f1-4fee-beb6-9c86cb5ac936",
+        "code": "licencny_produkt_475"
+      },
+      {
+        "uuid": "58835d62-8699-4693-91e6-d47cea4a35a4",
+        "degree": 1,
+        "name": "58835d62-8699-4693-91e6-d47cea4a35a4",
+        "code": "licencny_produkt_367"
+      },
+      {
+        "uuid": "236073e5-f86a-487b-be2a-501347567eae",
+        "degree": 1,
+        "name": "236073e5-f86a-487b-be2a-501347567eae",
+        "code": "licencny_produkt_399"
+      },
+      {
+        "uuid": "b5b4ed93-2a58-41fb-9c95-19e34171abfd",
+        "degree": 1,
+        "name": "b5b4ed93-2a58-41fb-9c95-19e34171abfd",
+        "code": "licencny_produkt_433"
+      },
+      {
+        "uuid": "18f20204-b33f-4300-8f6e-c2b14a4af38f",
+        "degree": 1,
+        "name": "18f20204-b33f-4300-8f6e-c2b14a4af38f",
+        "code": "licencny_produkt_513"
+      },
+      {
+        "uuid": "21b7bb6b-d325-4742-a3d7-a21f20f64a48",
+        "degree": 1,
+        "name": "21b7bb6b-d325-4742-a3d7-a21f20f64a48",
+        "code": "licencny_produkt_551"
+      },
+      {
+        "uuid": "84c0685b-3c2e-4e75-8f22-dda93f1f43af",
+        "degree": 1,
+        "name": "84c0685b-3c2e-4e75-8f22-dda93f1f43af",
+        "code": "licencny_produkt_424"
+      },
+      {
+        "uuid": "df245c69-b908-452a-a5aa-ec6ffc58ff46",
+        "degree": 1,
+        "name": "df245c69-b908-452a-a5aa-ec6ffc58ff46",
+        "code": "licencny_produkt_507"
+      },
+      {
+        "uuid": "c5c17c9d-f326-4a6c-be1f-1f5f9be60e64",
+        "degree": 1,
+        "name": "c5c17c9d-f326-4a6c-be1f-1f5f9be60e64",
+        "code": "licencny_produkt_311"
+      },
+      {
+        "uuid": "5674188b-c93c-477f-8bce-a4686d07b3a9",
+        "degree": 1,
+        "name": "5674188b-c93c-477f-8bce-a4686d07b3a9",
+        "code": "licencny_produkt_428"
+      },
+      {
+        "uuid": "5779e017-4ad7-4066-83d5-ca8366c4d3aa",
+        "degree": 1,
+        "name": "5779e017-4ad7-4066-83d5-ca8366c4d3aa",
+        "code": "licencny_produkt_453"
+      },
+      {
+        "uuid": "d3e59dc4-e826-4565-86dd-a9d7348f43e3",
+        "degree": 1,
+        "name": "d3e59dc4-e826-4565-86dd-a9d7348f43e3",
+        "code": "licencny_produkt_437"
+      },
+      {
+        "uuid": "c3854266-36ef-4245-86d2-f71e6b550e35",
+        "degree": 1,
+        "name": "c3854266-36ef-4245-86d2-f71e6b550e35",
+        "code": "licencny_produkt_485"
+      },
+      {
+        "uuid": "3cf1cb8e-ca3b-49f4-88f5-ac19b822c109",
+        "degree": 1,
+        "name": "3cf1cb8e-ca3b-49f4-88f5-ac19b822c109",
+        "code": "licencny_produkt_456"
+      },
+      {
+        "uuid": "ba7a2622-0bae-41fd-ac5a-a6604361bbd1",
+        "degree": 1,
+        "name": "ba7a2622-0bae-41fd-ac5a-a6604361bbd1",
+        "code": "licencny_produkt_298"
+      },
+      {
+        "uuid": "916e4d0f-b40c-4f2f-bdd0-1d70c4453dc7",
+        "degree": 1,
+        "name": "916e4d0f-b40c-4f2f-bdd0-1d70c4453dc7",
+        "code": "licencny_produkt_395"
+      },
+      {
+        "uuid": "555cbb4f-3413-44dd-9c7c-278895623e3d",
+        "degree": 1,
+        "name": "555cbb4f-3413-44dd-9c7c-278895623e3d",
+        "code": "licencny_produkt_365"
+      },
+      {
+        "uuid": "34abf9fd-45b3-46de-87a5-7c56d1915dbf",
+        "degree": 1,
+        "name": "34abf9fd-45b3-46de-87a5-7c56d1915dbf",
+        "code": "licencny_produkt_465"
+      },
+      {
+        "uuid": "978b6f1d-7d08-4a48-8caf-d06b15973797",
+        "degree": 1,
+        "name": "978b6f1d-7d08-4a48-8caf-d06b15973797",
+        "code": "licencny_produkt_282"
+      },
+      {
+        "uuid": "4e8d6358-43a8-4ba0-9fc4-bebcf10828eb",
+        "degree": 1,
+        "name": "4e8d6358-43a8-4ba0-9fc4-bebcf10828eb",
+        "code": "licencny_produkt_446"
+      },
+      {
+        "uuid": "080f7ff2-b508-45b8-a6ee-b6fb9f8b6e0b",
+        "degree": 1,
+        "name": "080f7ff2-b508-45b8-a6ee-b6fb9f8b6e0b",
+        "code": "licencny_produkt_359"
+      },
+      {
+        "uuid": "3be25fcc-8c23-485f-9670-e3ed49ef1134",
+        "degree": 1,
+        "name": "3be25fcc-8c23-485f-9670-e3ed49ef1134",
+        "code": "licencny_produkt_576"
+      },
+      {
+        "uuid": "6ad41284-c638-461c-807b-f40d2489af61",
+        "degree": 1,
+        "name": "6ad41284-c638-461c-807b-f40d2489af61",
+        "code": "licencny_produkt_290"
+      },
+      {
+        "uuid": "fbe8a0f0-4373-464a-b341-fb1d71f16ad3",
+        "degree": 1,
+        "name": "fbe8a0f0-4373-464a-b341-fb1d71f16ad3",
+        "code": "licencny_produkt_381"
+      },
+      {
+        "uuid": "72505bae-5334-468b-9802-724a06c5fb21",
+        "degree": 1,
+        "name": "72505bae-5334-468b-9802-724a06c5fb21",
+        "code": "licencny_produkt_523"
+      },
+      {
+        "uuid": "13ed4469-8b40-450c-a3c8-e88e5666aedc",
+        "degree": 1,
+        "name": "13ed4469-8b40-450c-a3c8-e88e5666aedc",
+        "code": "licencny_produkt_443"
+      },
+      {
+        "uuid": "a5f392d6-396a-454f-91f3-9c9327d6d6f9",
+        "degree": 1,
+        "name": "a5f392d6-396a-454f-91f3-9c9327d6d6f9",
+        "code": "licencny_produkt_279"
+      },
+      {
+        "uuid": "7f5a558c-b8e3-4eee-a9f4-718ca6e663fa",
+        "degree": 1,
+        "name": "7f5a558c-b8e3-4eee-a9f4-718ca6e663fa",
+        "code": "licencny_produkt_287"
+      },
+      {
+        "uuid": "6ac2b24d-32e0-4a89-a945-8c701c94331f",
+        "degree": 1,
+        "name": "6ac2b24d-32e0-4a89-a945-8c701c94331f",
+        "code": "licencny_produkt_414"
+      },
+      {
+        "uuid": "bffcf8d6-6b1f-4e95-9611-6f9c095bca4b",
+        "degree": 1,
+        "name": "bffcf8d6-6b1f-4e95-9611-6f9c095bca4b",
+        "code": "licencny_produkt_341"
+      },
+      {
+        "uuid": "53622bd1-fea1-42c4-a65e-0eecd7909e7e",
+        "degree": 1,
+        "name": "53622bd1-fea1-42c4-a65e-0eecd7909e7e",
+        "code": "licencny_produkt_379"
+      },
+      {
+        "uuid": "1dc80b07-2f09-47cf-9489-312e9b7a51f3",
+        "degree": 1,
+        "name": "1dc80b07-2f09-47cf-9489-312e9b7a51f3",
+        "code": "licencny_produkt_384"
+      },
+      {
+        "uuid": "770ecbe9-b3d3-4dbc-81b8-b31574e1c11e",
+        "degree": 1,
+        "name": "770ecbe9-b3d3-4dbc-81b8-b31574e1c11e",
+        "code": "licencny_produkt_499"
+      },
+      {
+        "uuid": "9755c41b-b71f-4b1d-b639-3faca71bfcdc",
+        "degree": 1,
+        "name": "9755c41b-b71f-4b1d-b639-3faca71bfcdc",
+        "code": "licencny_produkt_333"
+      },
+      {
+        "uuid": "d7ee43b5-ee76-4ad8-9ff5-8a27c68cbe18",
+        "degree": 1,
+        "name": "d7ee43b5-ee76-4ad8-9ff5-8a27c68cbe18",
+        "code": "licencny_produkt_436"
+      },
+      {
+        "uuid": "d8b54a12-2bb3-4b59-81c8-d18463a815fc",
+        "degree": 1,
+        "name": "d8b54a12-2bb3-4b59-81c8-d18463a815fc",
+        "code": "licencny_produkt_335"
+      },
+      {
+        "uuid": "8d3ee2b9-422c-4565-aa01-55ecf7da898c",
+        "degree": 1,
+        "name": "8d3ee2b9-422c-4565-aa01-55ecf7da898c",
+        "code": "licencny_produkt_409"
+      },
+      {
+        "uuid": "b3bffbf0-d730-41a4-ba82-85bbc784a82a",
+        "degree": 1,
+        "name": "b3bffbf0-d730-41a4-ba82-85bbc784a82a",
+        "code": "licencny_produkt_514"
+      },
+      {
+        "uuid": "05731a3f-fbb1-4870-813b-6a8b88649a4f",
+        "degree": 1,
+        "name": "05731a3f-fbb1-4870-813b-6a8b88649a4f",
+        "code": "licencny_produkt_337"
+      },
+      {
+        "uuid": "5f3d028f-f639-4738-9056-e8eb054c8ce4",
+        "degree": 1,
+        "name": "5f3d028f-f639-4738-9056-e8eb054c8ce4",
+        "code": "licencny_produkt_464"
+      },
+      {
+        "uuid": "c501758a-9e60-4ae3-bfb5-acbf3d6c84ec",
+        "degree": 1,
+        "name": "c501758a-9e60-4ae3-bfb5-acbf3d6c84ec",
+        "code": "licencny_produkt_445"
+      },
+      {
+        "uuid": "ddaf7c94-2f32-4ccb-8bed-f39daa893c6f",
+        "degree": 1,
+        "name": "ddaf7c94-2f32-4ccb-8bed-f39daa893c6f",
+        "code": "licencny_produkt_494"
+      },
+      {
+        "uuid": "a0ce67d2-3894-460a-9f97-4063eb3f78bb",
+        "degree": 1,
+        "name": "a0ce67d2-3894-460a-9f97-4063eb3f78bb",
+        "code": "licencny_produkt_377"
+      },
+      {
+        "uuid": "247ebf1a-c39b-4317-af91-96c6e60002da",
+        "degree": 1,
+        "name": "247ebf1a-c39b-4317-af91-96c6e60002da",
+        "code": "licencny_produkt_511"
+      },
+      {
+        "uuid": "6b75577e-8406-4a0c-bcf5-d2bd44b08bed",
+        "degree": 1,
+        "name": "6b75577e-8406-4a0c-bcf5-d2bd44b08bed",
+        "code": "licencny_produkt_296"
+      },
+      {
+        "uuid": "d14538d1-bc96-4bc8-be7f-aa3e98ce9679",
+        "degree": 1,
+        "name": "d14538d1-bc96-4bc8-be7f-aa3e98ce9679",
+        "code": "licencny_produkt_458"
+      },
+      {
+        "uuid": "1115c39f-e08f-4f85-869c-16014e4e3820",
+        "degree": 1,
+        "name": "1115c39f-e08f-4f85-869c-16014e4e3820",
+        "code": "licencny_produkt_385"
+      },
+      {
+        "uuid": "fb02d865-cead-4c16-95a8-e460669e6e29",
+        "degree": 1,
+        "name": "fb02d865-cead-4c16-95a8-e460669e6e29",
+        "code": "licencny_produkt_410"
+      },
+      {
+        "uuid": "71dc9b87-af70-4ef4-9484-5158fc9e89b9",
+        "degree": 1,
+        "name": "71dc9b87-af70-4ef4-9484-5158fc9e89b9",
+        "code": "licencny_produkt_313"
+      },
+      {
+        "uuid": "572c7b3e-2ebf-4381-af4a-152eefce77d0",
+        "degree": 1,
+        "name": "572c7b3e-2ebf-4381-af4a-152eefce77d0",
+        "code": "licencny_produkt_480"
+      },
+      {
+        "uuid": "0a93b0ef-3bf1-41b2-8b88-729ff2919efa",
+        "degree": 1,
+        "name": "0a93b0ef-3bf1-41b2-8b88-729ff2919efa",
+        "code": "licencny_produkt_481"
+      },
+      {
+        "uuid": "d3c12abb-14d4-44d4-8559-498a7acb3a28",
+        "degree": 1,
+        "name": "d3c12abb-14d4-44d4-8559-498a7acb3a28",
+        "code": "licencny_produkt_355"
+      },
+      {
+        "uuid": "2e9c0343-f1ec-4f09-bb6e-f8f9eef42c61",
+        "degree": 1,
+        "name": "2e9c0343-f1ec-4f09-bb6e-f8f9eef42c61",
+        "code": "licencny_produkt_442"
+      },
+      {
+        "uuid": "3277ea63-51d3-4eec-b11f-2825b79df44e",
+        "degree": 1,
+        "name": "3277ea63-51d3-4eec-b11f-2825b79df44e",
+        "code": "licencny_produkt_560"
+      },
+      {
+        "uuid": "a6abe0e5-b318-4070-b3f6-dfa140a8d1f2",
+        "degree": 1,
+        "name": "a6abe0e5-b318-4070-b3f6-dfa140a8d1f2",
+        "code": "licencny_produkt_566"
+      },
+      {
+        "uuid": "49fe2270-4da4-4566-808f-a1e7ad6fae7d",
+        "degree": 1,
+        "name": "49fe2270-4da4-4566-808f-a1e7ad6fae7d",
+        "code": "licencny_produkt_278"
+      },
+      {
+        "uuid": "38333bd4-9398-4c97-a607-5ba5458394d4",
+        "degree": 1,
+        "name": "38333bd4-9398-4c97-a607-5ba5458394d4",
+        "code": "licencny_produkt_491"
+      },
+      {
+        "uuid": "5708da47-bd85-430e-80a5-13004aeb1015",
+        "degree": 1,
+        "name": "5708da47-bd85-430e-80a5-13004aeb1015",
+        "code": "licencny_produkt_471"
+      },
+      {
+        "uuid": "228e1a00-bc42-4b3c-910c-15a9c284f7d3",
+        "degree": 1,
+        "name": "228e1a00-bc42-4b3c-910c-15a9c284f7d3",
+        "code": "licencny_produkt_345"
+      },
+      {
+        "uuid": "9c183add-b03e-4927-9978-e3439054bc49",
+        "degree": 1,
+        "name": "9c183add-b03e-4927-9978-e3439054bc49",
+        "code": "licencny_produkt_571"
+      },
+      {
+        "uuid": "d2c59798-ae77-4b6c-bb04-27353bedf9ca",
+        "degree": 1,
+        "name": "d2c59798-ae77-4b6c-bb04-27353bedf9ca",
+        "code": "licencny_produkt_324"
+      },
+      {
+        "uuid": "dbf9eb35-b43a-4268-b93a-094b5c3f234f",
+        "degree": 1,
+        "name": "dbf9eb35-b43a-4268-b93a-094b5c3f234f",
+        "code": "licencny_produkt_570"
+      },
+      {
+        "uuid": "c9d676db-b734-4c7e-b23e-27991d4e7c65",
+        "degree": 1,
+        "name": "c9d676db-b734-4c7e-b23e-27991d4e7c65",
+        "code": "licencny_produkt_350"
+      },
+      {
+        "uuid": "f02f9177-183e-4041-aceb-5d307470cf4f",
+        "degree": 1,
+        "name": "f02f9177-183e-4041-aceb-5d307470cf4f",
+        "code": "licencny_produkt_467"
+      },
+      {
+        "uuid": "b826bd42-4eec-4c7a-932e-47a96d921831",
+        "degree": 1,
+        "name": "b826bd42-4eec-4c7a-932e-47a96d921831",
+        "code": "licencny_produkt_326"
+      },
+      {
+        "uuid": "dde8b335-baa1-4992-ba36-0ad8379720b5",
+        "degree": 1,
+        "name": "dde8b335-baa1-4992-ba36-0ad8379720b5",
+        "code": "licencny_produkt_565"
+      },
+      {
+        "uuid": "db9a4b9e-cd4d-44d8-83c6-a84feb11d4b6",
+        "degree": 1,
+        "name": "db9a4b9e-cd4d-44d8-83c6-a84feb11d4b6",
+        "code": "licencny_produkt_450"
+      },
+      {
+        "uuid": "abb29b2f-99f9-4520-81da-d5b83a3bf8de",
+        "degree": 1,
+        "name": "abb29b2f-99f9-4520-81da-d5b83a3bf8de",
+        "code": "licencny_produkt_306"
+      },
+      {
+        "uuid": "6719d119-5cb9-4f3c-8f99-7896166007be",
+        "degree": 1,
+        "name": "6719d119-5cb9-4f3c-8f99-7896166007be",
+        "code": "licencny_produkt_387"
+      },
+      {
+        "uuid": "36289ca4-cdcc-4165-9838-93f971252337",
+        "degree": 1,
+        "name": "36289ca4-cdcc-4165-9838-93f971252337",
+        "code": "licencny_produkt_394"
+      },
+      {
+        "uuid": "50528f22-14ba-4daf-bd02-a7bda728555e",
+        "degree": 1,
+        "name": "50528f22-14ba-4daf-bd02-a7bda728555e",
+        "code": "licencny_produkt_373"
+      },
+      {
+        "uuid": "9742a36e-8612-4cac-a95f-e141904224da",
+        "degree": 1,
+        "name": "9742a36e-8612-4cac-a95f-e141904224da",
+        "code": "licencny_produkt_396"
+      },
+      {
+        "uuid": "dcac900c-99bb-4812-a230-6af394dafb68",
+        "degree": 1,
+        "name": "dcac900c-99bb-4812-a230-6af394dafb68",
+        "code": "licencny_produkt_425"
+      },
+      {
+        "uuid": "1406a215-7468-4067-b1af-d93b35ed5c35",
+        "degree": 1,
+        "name": "1406a215-7468-4067-b1af-d93b35ed5c35",
+        "code": "licencny_produkt_564"
+      },
+      {
+        "uuid": "8e3802dd-72cb-4bfc-a4f8-f257c87b36de",
+        "degree": 1,
+        "name": "8e3802dd-72cb-4bfc-a4f8-f257c87b36de",
+        "code": "licencny_produkt_524"
+      },
+      {
+        "uuid": "b2d14098-e4b5-4644-a6e2-097e670c5d57",
+        "degree": 1,
+        "name": "b2d14098-e4b5-4644-a6e2-097e670c5d57",
+        "code": "licencny_produkt_493"
+      },
+      {
+        "uuid": "a7af68b0-1f72-4943-9864-6a585ce37716",
+        "degree": 1,
+        "name": "a7af68b0-1f72-4943-9864-6a585ce37716",
+        "code": "licencny_produkt_474"
+      },
+      {
+        "uuid": "65100999-ff4e-43a9-9cad-201de28de1d5",
+        "degree": 1,
+        "name": "65100999-ff4e-43a9-9cad-201de28de1d5",
+        "code": "licencny_produkt_330"
+      },
+      {
+        "uuid": "d008aa30-026f-435e-bb7e-851a72ac325a",
+        "degree": 1,
+        "name": "d008aa30-026f-435e-bb7e-851a72ac325a",
+        "code": "licencny_produkt_303"
+      },
+      {
+        "uuid": "a38d6826-d470-4364-8728-4d2d87c0fb5e",
+        "degree": 1,
+        "name": "a38d6826-d470-4364-8728-4d2d87c0fb5e",
+        "code": "licencny_produkt_404"
+      },
+      {
+        "uuid": "9a716788-bc66-4620-862f-1c8c252a5fb7",
+        "degree": 1,
+        "name": "9a716788-bc66-4620-862f-1c8c252a5fb7",
+        "code": "licencny_produkt_403"
+      },
+      {
+        "uuid": "8dd55cd3-042f-4401-8644-d3536a2b68bd",
+        "degree": 1,
+        "name": "8dd55cd3-042f-4401-8644-d3536a2b68bd",
+        "code": "licencny_produkt_527"
+      },
+      {
+        "uuid": "3c4c3415-afa6-443a-9122-5e87ae1a8d18",
+        "degree": 1,
+        "name": "3c4c3415-afa6-443a-9122-5e87ae1a8d18",
+        "code": "licencny_produkt_539"
+      },
+      {
+        "uuid": "10e8de1f-1254-4fc7-a689-6bf190d38896",
+        "degree": 1,
+        "name": "10e8de1f-1254-4fc7-a689-6bf190d38896",
+        "code": "licencny_produkt_412"
+      },
+      {
+        "uuid": "768de5c0-787c-4de5-a0a9-bcd953856a9c",
+        "degree": 1,
+        "name": "768de5c0-787c-4de5-a0a9-bcd953856a9c",
+        "code": "licencny_produkt_358"
+      },
+      {
+        "uuid": "73908dec-4511-4992-8a58-e3c1cb561999",
+        "degree": 1,
+        "name": "73908dec-4511-4992-8a58-e3c1cb561999",
+        "code": "licencny_produkt_553"
+      },
+      {
+        "uuid": "a027e421-8bc2-4310-a890-a462b5035084",
+        "degree": 1,
+        "name": "a027e421-8bc2-4310-a890-a462b5035084",
+        "code": "licencny_produkt_380"
+      },
+      {
+        "uuid": "b8cd3616-eea8-40ba-8180-a545b1f48b0a",
+        "degree": 1,
+        "name": "b8cd3616-eea8-40ba-8180-a545b1f48b0a",
+        "code": "licencny_produkt_319"
+      },
+      {
+        "uuid": "532d1e23-86d6-4ccd-8eeb-0114a63356e2",
+        "degree": 1,
+        "name": "532d1e23-86d6-4ccd-8eeb-0114a63356e2",
+        "code": "licencny_produkt_534"
+      },
+      {
+        "uuid": "3610cd00-42e1-42fc-88c2-daba3fb6ea6c",
+        "degree": 1,
+        "name": "3610cd00-42e1-42fc-88c2-daba3fb6ea6c",
+        "code": "licencny_produkt_300"
+      },
+      {
+        "uuid": "def2d8cb-e322-488b-b588-2bab2b4d8e14",
+        "degree": 1,
+        "name": "def2d8cb-e322-488b-b588-2bab2b4d8e14",
+        "code": "licencny_produkt_501"
+      },
+      {
+        "uuid": "f309e506-fe18-448e-9fe8-63d5251e26cb",
+        "degree": 1,
+        "name": "f309e506-fe18-448e-9fe8-63d5251e26cb",
+        "code": "licencny_produkt_538"
+      },
+      {
+        "uuid": "3b3c856e-159c-4f0a-be71-b1b962fbc615",
+        "degree": 1,
+        "name": "3b3c856e-159c-4f0a-be71-b1b962fbc615",
+        "code": "licencny_produkt_389"
+      },
+      {
+        "uuid": "339584d7-2ae5-4848-a472-3dce7c7e6c36",
+        "degree": 1,
+        "name": "339584d7-2ae5-4848-a472-3dce7c7e6c36",
+        "code": "licencny_produkt_506"
+      },
+      {
+        "uuid": "d458d314-f38a-41e8-88c2-24454d294b7e",
+        "degree": 1,
+        "name": "d458d314-f38a-41e8-88c2-24454d294b7e",
+        "code": "licencny_produkt_496"
+      },
+      {
+        "uuid": "418c7436-aa90-4b51-ab1a-ddcdf03c84a1",
+        "degree": 1,
+        "name": "418c7436-aa90-4b51-ab1a-ddcdf03c84a1",
+        "code": "licencny_produkt_325"
+      },
+      {
+        "uuid": "bfe03587-ae9d-4756-913c-93c80c6db974",
+        "degree": 1,
+        "name": "bfe03587-ae9d-4756-913c-93c80c6db974",
+        "code": "licencny_produkt_457"
+      },
+      {
+        "uuid": "98eb726c-f2b3-48c2-ab4e-0a8d5f220570",
+        "degree": 1,
+        "name": "98eb726c-f2b3-48c2-ab4e-0a8d5f220570",
+        "code": "licencny_produkt_413"
+      },
+      {
+        "uuid": "002e4bfb-4b39-4bcb-a02c-e7f73ef41046",
+        "degree": 1,
+        "name": "002e4bfb-4b39-4bcb-a02c-e7f73ef41046",
+        "code": "licencny_produkt_530"
+      },
+      {
+        "uuid": "704de09c-545d-418a-9c6a-2a258171af51",
+        "degree": 1,
+        "name": "704de09c-545d-418a-9c6a-2a258171af51",
+        "code": "licencny_produkt_318"
+      },
+      {
+        "uuid": "a01850b7-9534-4b50-9095-2a312cf947ce",
+        "degree": 1,
+        "name": "a01850b7-9534-4b50-9095-2a312cf947ce",
+        "code": "licencny_produkt_536"
+      },
+      {
+        "uuid": "3dd399a7-ac1a-479b-a08b-c53774962ac0",
+        "degree": 1,
+        "name": "3dd399a7-ac1a-479b-a08b-c53774962ac0",
+        "code": "licencny_produkt_541"
+      },
+      {
+        "uuid": "15d540d4-c413-4a36-9fe4-24010d430b4b",
+        "degree": 1,
+        "name": "15d540d4-c413-4a36-9fe4-24010d430b4b",
+        "code": "licencny_produkt_549"
+      },
+      {
+        "uuid": "156e0b9b-131a-408f-a3d3-1bae5b29a128",
+        "degree": 1,
+        "name": "156e0b9b-131a-408f-a3d3-1bae5b29a128",
+        "code": "licencny_produkt_328"
+      },
+      {
+        "uuid": "fe70172c-f9a1-4492-86de-7ca389562185",
+        "degree": 1,
+        "name": "fe70172c-f9a1-4492-86de-7ca389562185",
+        "code": "licencny_produkt_284"
+      },
+      {
+        "uuid": "1ffd3cd9-07fa-43ec-8beb-0e185122dc75",
+        "degree": 1,
+        "name": "1ffd3cd9-07fa-43ec-8beb-0e185122dc75",
+        "code": "licencny_produkt_344"
+      },
+      {
+        "uuid": "5a835b4c-0c59-4fbe-aaaf-65bc7e1ef610",
+        "degree": 1,
+        "name": "5a835b4c-0c59-4fbe-aaaf-65bc7e1ef610",
+        "code": "licencny_produkt_342"
+      },
+      {
+        "uuid": "9adc8b1d-6af5-4cd7-aeaa-ea04036a0b35",
+        "degree": 1,
+        "name": "9adc8b1d-6af5-4cd7-aeaa-ea04036a0b35",
+        "code": "licencny_produkt_444"
+      },
+      {
+        "uuid": "583b08fe-8d9c-4be2-a386-d63b1825276d",
+        "degree": 1,
+        "name": "583b08fe-8d9c-4be2-a386-d63b1825276d",
+        "code": "licencny_produkt_388"
+      },
+      {
+        "uuid": "d50eafec-2c8b-49eb-8efa-0f6b5b19300b",
+        "degree": 1,
+        "name": "d50eafec-2c8b-49eb-8efa-0f6b5b19300b",
+        "code": "licencny_produkt_519"
+      },
+      {
+        "uuid": "0b488aa4-1a25-47ce-bc9a-dc2f64eca0dd",
+        "degree": 1,
+        "name": "0b488aa4-1a25-47ce-bc9a-dc2f64eca0dd",
+        "code": "licencny_produkt_334"
+      },
+      {
+        "uuid": "d295a12d-8baf-4db7-be5f-15ae2914118a",
+        "degree": 1,
+        "name": "d295a12d-8baf-4db7-be5f-15ae2914118a",
+        "code": "licencny_produkt_340"
+      },
+      {
+        "uuid": "7881dec9-0dc1-48ac-91f2-a1d2c6eb0b8f",
+        "degree": 1,
+        "name": "7881dec9-0dc1-48ac-91f2-a1d2c6eb0b8f",
+        "code": "licencny_produkt_567"
+      },
+      {
+        "uuid": "856f4ad2-1372-4d93-b5fb-17d6dab0f1ba",
+        "degree": 1,
+        "name": "856f4ad2-1372-4d93-b5fb-17d6dab0f1ba",
+        "code": "licencny_produkt_483"
+      },
+      {
+        "uuid": "6aa5dafb-fabe-4125-9630-90850095f787",
+        "degree": 1,
+        "name": "6aa5dafb-fabe-4125-9630-90850095f787",
+        "code": "licencny_produkt_382"
+      },
+      {
+        "uuid": "f7bb6d8c-56b8-49c9-98e8-f69d296607c9",
+        "degree": 1,
+        "name": "f7bb6d8c-56b8-49c9-98e8-f69d296607c9",
+        "code": "licencny_produkt_406"
+      },
+      {
+        "uuid": "67e76ddc-21b1-498d-8108-99a06397d98f",
+        "degree": 1,
+        "name": "67e76ddc-21b1-498d-8108-99a06397d98f",
+        "code": "licencny_produkt_544"
+      },
+      {
+        "uuid": "ef90a7a6-3167-4cd2-8655-5bfcb239a0d4",
+        "degree": 1,
+        "name": "ef90a7a6-3167-4cd2-8655-5bfcb239a0d4",
+        "code": "licencny_produkt_546"
+      },
+      {
+        "uuid": "b5b1ab36-f864-47d9-a1db-3f6214847ade",
+        "degree": 1,
+        "name": "b5b1ab36-f864-47d9-a1db-3f6214847ade",
+        "code": "licencny_produkt_522"
+      },
+      {
+        "uuid": "8b2b8b00-0979-4c18-8695-9aa5caf5fe0d",
+        "degree": 1,
+        "name": "8b2b8b00-0979-4c18-8695-9aa5caf5fe0d",
+        "code": "licencny_produkt_370"
+      },
+      {
+        "uuid": "bc6aeb61-a0fc-44fa-85fb-389e0e191600",
+        "degree": 1,
+        "name": "bc6aeb61-a0fc-44fa-85fb-389e0e191600",
+        "code": "licencny_produkt_363"
+      },
+      {
+        "uuid": "9a2252f9-acac-4a58-bfc0-3ba13fc8ba05",
+        "degree": 1,
+        "name": "9a2252f9-acac-4a58-bfc0-3ba13fc8ba05",
+        "code": "licencny_produkt_351"
+      },
+      {
+        "uuid": "3cc7ef30-1054-4e2c-9268-5d38a404b28c",
+        "degree": 1,
+        "name": "3cc7ef30-1054-4e2c-9268-5d38a404b28c",
+        "code": "licencny_produkt_289"
+      },
+      {
+        "uuid": "3639564a-92d4-4b51-868c-0cf66938c6b6",
+        "degree": 1,
+        "name": "3639564a-92d4-4b51-868c-0cf66938c6b6",
+        "code": "licencny_produkt_401"
+      },
+      {
+        "uuid": "22a3f7cd-7684-4288-8a68-9699a4e6c6a4",
+        "degree": 1,
+        "name": "22a3f7cd-7684-4288-8a68-9699a4e6c6a4",
+        "code": "licencny_produkt_416"
+      },
+      {
+        "uuid": "84b74178-94cc-467d-a01e-1b63afb833bc",
+        "degree": 1,
+        "name": "84b74178-94cc-467d-a01e-1b63afb833bc",
+        "code": "licencny_produkt_488"
+      },
+      {
+        "uuid": "ba88e40f-35c7-48e1-bca7-35805f1e32b5",
+        "degree": 1,
+        "name": "ba88e40f-35c7-48e1-bca7-35805f1e32b5",
+        "code": "licencny_produkt_356"
+      },
+      {
+        "uuid": "c390d26f-9e19-4981-9d42-bff102510db8",
+        "degree": 1,
+        "name": "c390d26f-9e19-4981-9d42-bff102510db8",
+        "code": "licencny_produkt_322"
+      },
+      {
+        "uuid": "416394bd-7f2f-4b5b-9e59-ec624ac3e434",
+        "degree": 1,
+        "name": "416394bd-7f2f-4b5b-9e59-ec624ac3e434",
+        "code": "licencny_produkt_552"
+      },
+      {
+        "uuid": "fc07a2d4-29be-4310-bc88-929580422b54",
+        "degree": 1,
+        "name": "fc07a2d4-29be-4310-bc88-929580422b54",
+        "code": "licencny_produkt_331"
+      },
+      {
+        "uuid": "2d6290f8-5f69-430b-b7f7-e304f5822806",
+        "degree": 1,
+        "name": "2d6290f8-5f69-430b-b7f7-e304f5822806",
+        "code": "licencny_produkt_562"
+      },
+      {
+        "uuid": "5d100d4b-b5f6-4ae1-a58a-103b34185d8d",
+        "degree": 1,
+        "name": "5d100d4b-b5f6-4ae1-a58a-103b34185d8d",
+        "code": "licencny_produkt_554"
+      },
+      {
+        "uuid": "f6d088bf-b423-4021-9b8a-9b4469b15274",
+        "degree": 1,
+        "name": "f6d088bf-b423-4021-9b8a-9b4469b15274",
+        "code": "licencny_produkt_500"
+      },
+      {
+        "uuid": "6cc6da4f-81e5-4be2-8180-d01dd17dddb3",
+        "degree": 1,
+        "name": "6cc6da4f-81e5-4be2-8180-d01dd17dddb3",
+        "code": "licencny_produkt_568"
+      },
+      {
+        "uuid": "a8ec7409-0b79-4b7d-be5f-bc9b8260a2f5",
+        "degree": 1,
+        "name": "a8ec7409-0b79-4b7d-be5f-bc9b8260a2f5",
+        "code": "licencny_produkt_392"
+      },
+      {
+        "uuid": "712cf970-5015-4552-8a7b-a41625e802f8",
+        "degree": 1,
+        "name": "712cf970-5015-4552-8a7b-a41625e802f8",
+        "code": "licencny_produkt_520"
+      },
+      {
+        "uuid": "38d778f4-3481-46c2-9269-60e5ba2312c0",
+        "degree": 1,
+        "name": "38d778f4-3481-46c2-9269-60e5ba2312c0",
+        "code": "licencny_produkt_508"
+      },
+      {
+        "uuid": "925b2328-2663-4b92-acb7-0e8c09b820df",
+        "degree": 1,
+        "name": "925b2328-2663-4b92-acb7-0e8c09b820df",
+        "code": "licencny_produkt_398"
+      },
+      {
+        "uuid": "aaa7a2f6-3dd1-4635-b6ec-8f7d31152348",
+        "degree": 1,
+        "name": "aaa7a2f6-3dd1-4635-b6ec-8f7d31152348",
+        "code": "licencny_produkt_535"
+      },
+      {
+        "uuid": "ce6cd4e8-5d06-4456-830a-aa73a51619d9",
+        "degree": 1,
+        "name": "ce6cd4e8-5d06-4456-830a-aa73a51619d9",
+        "code": "licencny_produkt_547"
+      },
+      {
+        "uuid": "873a085d-a4d3-4a41-a6d9-af8ec9adf713",
+        "degree": 1,
+        "name": "873a085d-a4d3-4a41-a6d9-af8ec9adf713",
+        "code": "licencny_produkt_497"
+      },
+      {
+        "uuid": "d39465ac-07a6-4962-bf6f-8b3893b38afb",
+        "degree": 1,
+        "name": "d39465ac-07a6-4962-bf6f-8b3893b38afb",
+        "code": "licencny_produkt_371"
+      },
+      {
+        "uuid": "1805ccaa-8ec2-4423-a36a-07862a70ff0f",
+        "degree": 1,
+        "name": "1805ccaa-8ec2-4423-a36a-07862a70ff0f",
+        "code": "licencny_produkt_559"
+      },
+      {
+        "uuid": "32007466-852b-44ea-996b-bce19ae8b87c",
+        "degree": 1,
+        "name": "32007466-852b-44ea-996b-bce19ae8b87c",
+        "code": "licencny_produkt_478"
+      },
+      {
+        "uuid": "2c6aee9f-77f4-4575-83f6-deb0e4d7cc94",
+        "degree": 1,
+        "name": "2c6aee9f-77f4-4575-83f6-deb0e4d7cc94",
+        "code": "licencny_produkt_563"
+      },
+      {
+        "uuid": "2500d8d0-0a07-4bfc-8780-b0389242443c",
+        "degree": 1,
+        "name": "2500d8d0-0a07-4bfc-8780-b0389242443c",
+        "code": "licencny_produkt_469"
+      },
+      {
+        "uuid": "c17f8c38-1c2e-4751-8000-0c51d98953b4",
+        "degree": 1,
+        "name": "c17f8c38-1c2e-4751-8000-0c51d98953b4",
+        "code": "licencny_produkt_487"
+      },
+      {
+        "uuid": "b5a6763a-d79e-4173-a959-7f51bac72c40",
+        "degree": 1,
+        "name": "b5a6763a-d79e-4173-a959-7f51bac72c40",
+        "code": "licencny_produkt_509"
+      },
+      {
+        "uuid": "1ea2ed96-f98f-408d-a377-59873102918f",
+        "degree": 1,
+        "name": "1ea2ed96-f98f-408d-a377-59873102918f",
+        "code": "licencny_produkt_309"
+      },
+      {
+        "uuid": "c9706fa7-6c51-4d0a-8fa8-dcb27b7d6e0a",
+        "degree": 1,
+        "name": "c9706fa7-6c51-4d0a-8fa8-dcb27b7d6e0a",
+        "code": "licencny_produkt_482"
+      },
+      {
+        "uuid": "69e06b1d-d05c-472a-a360-8f7d0ff723bd",
+        "degree": 1,
+        "name": "69e06b1d-d05c-472a-a360-8f7d0ff723bd",
+        "code": "licencny_produkt_283"
+      },
+      {
+        "uuid": "137c36d3-b656-4a8e-8a87-624192f5abd8",
+        "degree": 1,
+        "name": "137c36d3-b656-4a8e-8a87-624192f5abd8",
+        "code": "licencny_produkt_473"
+      },
+      {
+        "uuid": "b895d2a5-5805-4fe3-bda6-22d7164d8aac",
+        "degree": 1,
+        "name": "b895d2a5-5805-4fe3-bda6-22d7164d8aac",
+        "code": "licencny_produkt_495"
+      },
+      {
+        "uuid": "34f24e41-ba5d-4e71-8336-f73e2f948771",
+        "degree": 1,
+        "name": "34f24e41-ba5d-4e71-8336-f73e2f948771",
+        "code": "licencny_produkt_432"
+      },
+      {
+        "uuid": "2489d989-602e-448a-9919-454f70961b07",
+        "degree": 1,
+        "name": "2489d989-602e-448a-9919-454f70961b07",
+        "code": "licencny_produkt_452"
+      },
+      {
+        "uuid": "0bf5c00a-fd97-47bd-9bd7-05c2f25e6b7e",
+        "degree": 1,
+        "name": "0bf5c00a-fd97-47bd-9bd7-05c2f25e6b7e",
+        "code": "licencny_produkt_470"
+      },
+      {
+        "uuid": "b97c92ed-a351-4cfa-98a3-42da933a6b58",
+        "degree": 1,
+        "name": "b97c92ed-a351-4cfa-98a3-42da933a6b58",
+        "code": "licencny_produkt_460"
+      },
+      {
+        "uuid": "6473e49c-a1c7-4369-aab5-b6c9fd0967b4",
+        "degree": 1,
+        "name": "6473e49c-a1c7-4369-aab5-b6c9fd0967b4",
+        "code": "licencny_produkt_304"
+      },
+      {
+        "uuid": "a571a812-086e-4805-94fe-20ba94e32d7d",
+        "degree": 1,
+        "name": "a571a812-086e-4805-94fe-20ba94e32d7d",
+        "code": "licencny_produkt_275"
+      },
+      {
+        "uuid": "a2db586e-1e93-414a-a7d2-326164d8c2ee",
+        "degree": 1,
+        "name": "a2db586e-1e93-414a-a7d2-326164d8c2ee",
+        "code": "licencny_produkt_315"
+      },
+      {
+        "uuid": "d9c4d350-43cc-4bd3-8a11-15fa1517af69",
+        "degree": 1,
+        "name": "d9c4d350-43cc-4bd3-8a11-15fa1517af69",
+        "code": "licencny_produkt_528"
+      },
+      {
+        "uuid": "386d4891-6043-44de-9ea7-64bb1e3af9e6",
+        "degree": 1,
+        "name": "386d4891-6043-44de-9ea7-64bb1e3af9e6",
+        "code": "licencny_produkt_386"
+      },
+      {
+        "uuid": "d7583f7b-29d5-495a-9481-2457ca3848a1",
+        "degree": 1,
+        "name": "d7583f7b-29d5-495a-9481-2457ca3848a1",
+        "code": "licencny_produkt_529"
+      },
+      {
+        "uuid": "87a92e1a-4f7d-4f69-974e-abb379a41bc9",
+        "degree": 1,
+        "name": "87a92e1a-4f7d-4f69-974e-abb379a41bc9",
+        "code": "licencny_produkt_415"
+      },
+      {
+        "uuid": "f8cd3f53-d003-4792-8143-60fb64bb7674",
+        "degree": 1,
+        "name": "f8cd3f53-d003-4792-8143-60fb64bb7674",
+        "code": "licencny_produkt_479"
+      },
+      {
+        "uuid": "ada9939a-8931-421a-baf9-81fd95f460da",
+        "degree": 1,
+        "name": "ada9939a-8931-421a-baf9-81fd95f460da",
+        "code": "licencny_produkt_407"
+      },
+      {
+        "uuid": "b8a51d8f-dd9c-4b83-be8c-2d9a9f243149",
+        "degree": 1,
+        "name": "b8a51d8f-dd9c-4b83-be8c-2d9a9f243149",
+        "code": "licencny_produkt_307"
+      },
+      {
+        "uuid": "97e447d6-6821-4e6e-990f-c35ebfa5440c",
+        "degree": 1,
+        "name": "97e447d6-6821-4e6e-990f-c35ebfa5440c",
+        "code": "licencny_produkt_400"
+      },
+      {
+        "uuid": "a323f71a-c846-426c-8635-15d97cad49d5",
+        "degree": 1,
+        "name": "a323f71a-c846-426c-8635-15d97cad49d5",
+        "code": "licencny_produkt_286"
+      },
+      {
+        "uuid": "2e54eb8e-5858-4b2e-bddd-7f19a426107a",
+        "degree": 1,
+        "name": "2e54eb8e-5858-4b2e-bddd-7f19a426107a",
+        "code": "licencny_produkt_362"
+      },
+      {
+        "uuid": "b56dd7fd-c797-4687-a370-c71fbdd9e02a",
+        "degree": 1,
+        "name": "b56dd7fd-c797-4687-a370-c71fbdd9e02a",
+        "code": "licencny_produkt_321"
+      },
+      {
+        "uuid": "98d90ed8-42d7-4e88-9d20-98f18666d0bb",
+        "degree": 1,
+        "name": "98d90ed8-42d7-4e88-9d20-98f18666d0bb",
+        "code": "licencny_produkt_336"
+      },
+      {
+        "uuid": "4008883a-043a-4dce-827b-44632e462b1e",
+        "degree": 1,
+        "name": "4008883a-043a-4dce-827b-44632e462b1e",
+        "code": "licencny_produkt_435"
+      },
+      {
+        "uuid": "d82a4486-7fc8-4220-aac1-1f219217b528",
+        "degree": 1,
+        "name": "d82a4486-7fc8-4220-aac1-1f219217b528",
+        "code": "licencny_produkt_510"
+      },
+      {
+        "uuid": "915bada5-7ee7-4673-b6e6-c443a076263c",
+        "degree": 1,
+        "name": "915bada5-7ee7-4673-b6e6-c443a076263c",
+        "code": "licencny_produkt_343"
+      },
+      {
+        "uuid": "ead52063-1501-4f2f-a368-abf132fac3e0",
+        "degree": 1,
+        "name": "ead52063-1501-4f2f-a368-abf132fac3e0",
+        "code": "licencny_produkt_502"
+      },
+      {
+        "uuid": "4466d99a-c619-4374-abd2-45735502eaaf",
+        "degree": 1,
+        "name": "4466d99a-c619-4374-abd2-45735502eaaf",
+        "code": "licencny_produkt_561"
+      },
+      {
+        "uuid": "ee2789af-6dc5-4845-a010-107a42e24a59",
+        "degree": 1,
+        "name": "ee2789af-6dc5-4845-a010-107a42e24a59",
+        "code": "licencny_produkt_420"
+      },
+      {
+        "uuid": "07f8c4c3-1697-4a24-bbe7-2ca22addd45c",
+        "degree": 1,
+        "name": "07f8c4c3-1697-4a24-bbe7-2ca22addd45c",
+        "code": "licencny_produkt_288"
+      },
+      {
+        "uuid": "aa18bf52-655a-47d0-8e24-abe0aaa00421",
+        "degree": 1,
+        "name": "aa18bf52-655a-47d0-8e24-abe0aaa00421",
+        "code": "licencny_produkt_422"
+      },
+      {
+        "uuid": "aa53fe8f-5b16-46a3-ac73-0343303bb1f7",
+        "degree": 1,
+        "name": "aa53fe8f-5b16-46a3-ac73-0343303bb1f7",
+        "code": "licencny_produkt_280"
+      },
+      {
+        "uuid": "262b1389-42de-41db-ab78-b3b0dd45e35b",
+        "degree": 1,
+        "name": "262b1389-42de-41db-ab78-b3b0dd45e35b",
+        "code": "licencny_produkt_372"
+      },
+      {
+        "uuid": "8ef7e385-fe18-4228-ad99-32bb11b78991",
+        "degree": 1,
+        "name": "8ef7e385-fe18-4228-ad99-32bb11b78991",
+        "code": "licencny_produkt_357"
+      },
+      {
+        "uuid": "ba1148ae-daa1-4b43-8e3f-a90427228d2e",
+        "degree": 1,
+        "name": "ba1148ae-daa1-4b43-8e3f-a90427228d2e",
+        "code": "licencny_produkt_537"
+      },
+      {
+        "uuid": "b91c9487-af02-4b43-b137-844f5aaf4783",
+        "degree": 1,
+        "name": "b91c9487-af02-4b43-b137-844f5aaf4783",
+        "code": "licencny_produkt_361"
+      },
+      {
+        "uuid": "6fc4aa6b-1e76-4673-aee3-e81212c3bff4",
+        "degree": 1,
+        "name": "6fc4aa6b-1e76-4673-aee3-e81212c3bff4",
+        "code": "licencny_produkt_516"
+      },
+      {
+        "uuid": "657a61a3-d991-4cd7-9437-1c8ce5f5aa9c",
+        "degree": 1,
+        "name": "657a61a3-d991-4cd7-9437-1c8ce5f5aa9c",
+        "code": "licencny_produkt_492"
+      },
+      {
+        "uuid": "091d9a48-54e5-420b-bbc3-82a95b2c737d",
+        "degree": 1,
+        "name": "091d9a48-54e5-420b-bbc3-82a95b2c737d",
+        "code": "licencny_produkt_314"
+      },
+      {
+        "uuid": "641dcf96-3696-47b6-bd76-933422f35c90",
+        "degree": 1,
+        "name": "641dcf96-3696-47b6-bd76-933422f35c90",
+        "code": "licencny_produkt_292"
+      },
+      {
+        "uuid": "d4fa12cc-adf4-4b71-b3eb-b911c6427f40",
+        "degree": 1,
+        "name": "d4fa12cc-adf4-4b71-b3eb-b911c6427f40",
+        "code": "licencny_produkt_472"
+      },
+      {
+        "uuid": "0d81230b-e66b-4fe0-ad66-6cf9fc209036",
+        "degree": 1,
+        "name": "0d81230b-e66b-4fe0-ad66-6cf9fc209036",
+        "code": "licencny_produkt_426"
+      },
+      {
+        "uuid": "b854b92a-1e4f-49f5-86fa-224007b7166c",
+        "degree": 1,
+        "name": "b854b92a-1e4f-49f5-86fa-224007b7166c",
+        "code": "licencny_produkt_490"
+      },
+      {
+        "uuid": "23f40265-e24b-4e6a-aa28-3a167413597d",
+        "degree": 1,
+        "name": "23f40265-e24b-4e6a-aa28-3a167413597d",
+        "code": "licencny_produkt_294"
+      },
+      {
+        "uuid": "58466cf0-1e31-49d0-9d95-66cdf0290263",
+        "degree": 1,
+        "name": "58466cf0-1e31-49d0-9d95-66cdf0290263",
+        "code": "licencny_produkt_518"
+      },
+      {
+        "uuid": "a848910d-2172-42d3-a023-fb69df3ec045",
+        "degree": 1,
+        "name": "a848910d-2172-42d3-a023-fb69df3ec045",
+        "code": "licencny_produkt_476"
+      },
+      {
+        "uuid": "914fd883-d4a1-4933-9f09-b3c71bc15419",
+        "degree": 1,
+        "name": "914fd883-d4a1-4933-9f09-b3c71bc15419",
+        "code": "licencny_produkt_393"
+      },
+      {
+        "uuid": "25a132ab-fecc-42f8-87fb-b679d6987308",
+        "degree": 1,
+        "name": "25a132ab-fecc-42f8-87fb-b679d6987308",
+        "code": "licencny_produkt_402"
+      },
+      {
+        "uuid": "290ecb87-f9ea-4a58-bf71-e23882fbeff6",
+        "degree": 1,
+        "name": "290ecb87-f9ea-4a58-bf71-e23882fbeff6",
+        "code": "licencny_produkt_297"
+      },
+      {
+        "uuid": "611e4607-8563-4782-86c0-1078df191825",
+        "degree": 1,
+        "name": "611e4607-8563-4782-86c0-1078df191825",
+        "code": "licencny_produkt_504"
+      },
+      {
+        "uuid": "b77b3ccf-5608-44e1-b097-f7c4eae41bc5",
+        "degree": 1,
+        "name": "b77b3ccf-5608-44e1-b097-f7c4eae41bc5",
+        "code": "licencny_produkt_540"
+      },
+      {
+        "uuid": "62bfd1da-3294-4681-a96a-e878521d72d1",
+        "degree": 1,
+        "name": "62bfd1da-3294-4681-a96a-e878521d72d1",
+        "code": "licencny_produkt_301"
+      },
+      {
+        "uuid": "410629c3-9763-453c-8bc3-db94c1fc2528",
+        "degree": 1,
+        "name": "410629c3-9763-453c-8bc3-db94c1fc2528",
+        "code": "licencny_produkt_427"
+      },
+      {
+        "uuid": "5efd280c-1eff-4bfa-8607-4b7f74e4a598",
+        "degree": 1,
+        "name": "5efd280c-1eff-4bfa-8607-4b7f74e4a598",
+        "code": "licencny_produkt_521"
+      },
+      {
+        "uuid": "d4b6fe77-2b8c-49fc-9dd0-8a5951238a01",
+        "degree": 1,
+        "name": "d4b6fe77-2b8c-49fc-9dd0-8a5951238a01",
+        "code": "licencny_produkt_349"
+      },
+      {
+        "uuid": "da37296f-47ee-4ed9-88db-79c837d03a0b",
+        "degree": 1,
+        "name": "da37296f-47ee-4ed9-88db-79c837d03a0b",
+        "code": "licencny_produkt_512"
+      },
+      {
+        "uuid": "b69c606b-be0e-4ea1-a632-809f720338d6",
+        "degree": 1,
+        "name": "b69c606b-be0e-4ea1-a632-809f720338d6",
+        "code": "licencny_produkt_575"
+      },
+      {
+        "uuid": "ae92ade2-8e26-40d3-b2cf-fa8476f17e38",
+        "degree": 1,
+        "name": "ae92ade2-8e26-40d3-b2cf-fa8476f17e38",
+        "code": "licencny_produkt_548"
+      },
+      {
+        "uuid": "3f90e605-3fbe-4921-8e9e-bef5b9989972",
+        "degree": 1,
+        "name": "3f90e605-3fbe-4921-8e9e-bef5b9989972",
+        "code": "licencny_produkt_316"
+      },
+      {
+        "uuid": "92d8b989-de93-4927-ad4f-eb6d9c9441db",
+        "degree": 1,
+        "name": "92d8b989-de93-4927-ad4f-eb6d9c9441db",
+        "code": "licencny_produkt_455"
+      },
+      {
+        "uuid": "78bb233f-4101-4cd0-bd4c-6498745d1230",
+        "degree": 1,
+        "name": "78bb233f-4101-4cd0-bd4c-6498745d1230",
+        "code": "licencny_produkt_542"
+      },
+      {
+        "uuid": "38e9b8f6-2f6b-499d-a246-f5b6a66ddad8",
+        "degree": 1,
+        "name": "38e9b8f6-2f6b-499d-a246-f5b6a66ddad8",
+        "code": "licencny_produkt_498"
+      },
+      {
+        "uuid": "75a1fe4c-fc17-4bdf-a125-725e6fb6ee5c",
+        "degree": 1,
+        "name": "75a1fe4c-fc17-4bdf-a125-725e6fb6ee5c",
+        "code": "licencny_produkt_417"
+      },
+      {
+        "uuid": "f13a3f3c-dbeb-4127-a853-4c60a748f547",
+        "degree": 1,
+        "name": "f13a3f3c-dbeb-4127-a853-4c60a748f547",
+        "code": "licencny_produkt_421"
+      },
+      {
+        "uuid": "b3071c28-cb2d-4796-91df-912b9d142fa1",
+        "degree": 1,
+        "name": "b3071c28-cb2d-4796-91df-912b9d142fa1",
+        "code": "licencny_produkt_439"
+      },
+      {
+        "uuid": "475981ce-e33a-448d-b083-b17bacbb0674",
+        "degree": 1,
+        "name": "475981ce-e33a-448d-b083-b17bacbb0674",
+        "code": "licencny_produkt_397"
+      },
+      {
+        "uuid": "7d694ec0-f490-4488-95ec-ec766cec1261",
+        "degree": 1,
+        "name": "7d694ec0-f490-4488-95ec-ec766cec1261",
+        "code": "licencny_produkt_418"
+      },
+      {
+        "uuid": "e8329c41-a3e5-4905-9f1a-4ca7962bc094",
+        "degree": 1,
+        "name": "e8329c41-a3e5-4905-9f1a-4ca7962bc094",
+        "code": "licencny_produkt_515"
+      },
+      {
+        "uuid": "0f118a15-be9e-40b4-acf7-5a162c104976",
+        "degree": 1,
+        "name": "0f118a15-be9e-40b4-acf7-5a162c104976",
+        "code": "licencny_produkt_320"
+      },
+      {
+        "uuid": "e8b009b5-15ee-458f-8e7b-ee1423a25ec2",
+        "degree": 1,
+        "name": "e8b009b5-15ee-458f-8e7b-ee1423a25ec2",
+        "code": "licencny_produkt_484"
+      },
+      {
+        "uuid": "da3e2af8-ff83-4ad3-ba92-8755fefc37aa",
+        "degree": 1,
+        "name": "da3e2af8-ff83-4ad3-ba92-8755fefc37aa",
+        "code": "licencny_produkt_434"
+      },
+      {
+        "uuid": "256681da-9eb7-4dc1-8355-85cb964c9343",
+        "degree": 1,
+        "name": "256681da-9eb7-4dc1-8355-85cb964c9343",
+        "code": "licencny_produkt_353"
+      },
+      {
+        "uuid": "9cdc169c-d09c-43e3-b99f-05254726d920",
+        "degree": 1,
+        "name": "9cdc169c-d09c-43e3-b99f-05254726d920",
+        "code": "licencny_produkt_448"
+      },
+      {
+        "uuid": "161a0c0d-939f-4147-91e9-67ffd94d8198",
+        "degree": 1,
+        "name": "161a0c0d-939f-4147-91e9-67ffd94d8198",
+        "code": "licencny_produkt_468"
+      },
+      {
+        "uuid": "0525f1d5-5e98-449c-b200-0db83010011a",
+        "degree": 1,
+        "name": "0525f1d5-5e98-449c-b200-0db83010011a",
+        "code": "licencny_produkt_364"
+      },
+      {
+        "uuid": "5b57d6ed-7571-4143-a08d-bcf7a6631771",
+        "degree": 1,
+        "name": "5b57d6ed-7571-4143-a08d-bcf7a6631771",
+        "code": "licencny_produkt_573"
+      },
+      {
+        "uuid": "2d446b52-11b2-4526-bd6f-8227876cfba9",
+        "degree": 1,
+        "name": "2d446b52-11b2-4526-bd6f-8227876cfba9",
+        "code": "licencny_produkt_558"
+      },
+      {
+        "uuid": "4e52d952-fdd7-4761-9e7b-1afbc5b10716",
+        "degree": 1,
+        "name": "4e52d952-fdd7-4761-9e7b-1afbc5b10716",
+        "code": "licencny_produkt_312"
+      },
+      {
+        "uuid": "a9838ca6-6f39-4ee2-b8b8-0e58fb0c4ed3",
+        "degree": 1,
+        "name": "a9838ca6-6f39-4ee2-b8b8-0e58fb0c4ed3",
+        "code": "licencny_produkt_305"
+      },
+      {
+        "uuid": "4e2faa48-2800-40f0-9829-54ce651afd59",
+        "degree": 1,
+        "name": "4e2faa48-2800-40f0-9829-54ce651afd59",
+        "code": "licencny_produkt_545"
+      },
+      {
+        "uuid": "549692ba-fc3d-4e27-a1d6-953d279b591f",
+        "degree": 1,
+        "name": "549692ba-fc3d-4e27-a1d6-953d279b591f",
+        "code": "licencny_produkt_583"
+      },
+      {
+        "uuid": "2aa2e6d8-e7da-448b-a22c-41ae0f3dfa66",
+        "degree": 1,
+        "name": "2aa2e6d8-e7da-448b-a22c-41ae0f3dfa66",
+        "code": "licencny_produkt_587"
+      },
+      {
+        "uuid": "9ff36067-6233-434a-bc9f-a04cbe2dc8c3",
+        "degree": 1,
+        "name": "9ff36067-6233-434a-bc9f-a04cbe2dc8c3",
+        "code": "licencny_produkt_584"
+      },
+      {
+        "uuid": "06582a36-d04f-400c-ae46-fbba797d9f32",
+        "degree": 1,
+        "name": "06582a36-d04f-400c-ae46-fbba797d9f32",
+        "code": "licencny_produkt_585"
+      },
+      {
+        "uuid": "28d9cc4d-d8e0-4997-bb35-1e108d6ababd",
+        "degree": 1,
+        "name": "28d9cc4d-d8e0-4997-bb35-1e108d6ababd",
+        "code": "licencny_produkt_586"
+      },
+      {
+        "uuid": "5dc36367-ef57-4999-83ee-11d7c54fe7e6",
+        "degree": 1,
+        "name": "5dc36367-ef57-4999-83ee-11d7c54fe7e6",
+        "code": "licencny_produkt_588"
+      },
+      {
+        "uuid": "cbb5582c-e489-411f-9c9b-988027d7d661",
+        "degree": 1,
+        "name": "cbb5582c-e489-411f-9c9b-988027d7d661",
+        "code": "licencny_produkt_582"
+      },
+      {
+        "uuid": "e1b15232-8e84-4c78-be4b-0eeecf1bd0ec",
+        "degree": 1,
+        "name": "e1b15232-8e84-4c78-be4b-0eeecf1bd0ec",
+        "code": "licencny_produkt_581"
+      },
+      {
+        "uuid": "c5642808-43c7-4c88-aeb7-59f0a0e97e5f",
+        "degree": 1,
+        "name": "c5642808-43c7-4c88-aeb7-59f0a0e97e5f",
+        "code": "licencny_produkt_580"
+      },
+      {
+        "uuid": "83265029-6cb8-4262-9651-89fea52aa517",
+        "degree": 1,
+        "name": "83265029-6cb8-4262-9651-89fea52aa517",
+        "code": "licencny_produkt_579"
+      },
+      {
+        "uuid": "2e922225-1112-481b-8ff9-17ee5670adb5",
+        "degree": 1,
+        "name": "2e922225-1112-481b-8ff9-17ee5670adb5",
+        "code": "licencny_produkt_577"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "fdf8f578-2fed-49e3-8185-3390f285f1b3",
+        "degree": 308,
+        "name": "Oracle",
+        "code": "dodavatel_licencii_1"
+      },
+      {
+        "uuid": "62f55ad3-8638-4f76-8ed0-4ddd6141f133",
+        "degree": 5,
+        "name": "Talend",
+        "code": "dodavatel_licencii_4"
+      }
+    ],
+    "islands": {
+      "total_nodes": 319,
+      "total_islands": 6,
+      "singleton_islands": 4,
+      "multi_islands": [
+        {
+          "size_total": 309,
+          "size_source": 308,
+          "size_target": 1,
+          "fraction_total": 0.9686520376175548,
+          "top_source_uuid": "5674188b-c93c-477f-8bce-a4686d07b3a9",
+          "top_source_degree": 1,
+          "top_target_uuid": "fdf8f578-2fed-49e3-8185-3390f285f1b3",
+          "top_target_degree": 308
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.018808777429467086,
+          "top_source_uuid": "cbb5582c-e489-411f-9c9b-988027d7d661",
+          "top_source_degree": 1,
+          "top_target_uuid": "62f55ad3-8638-4f76-8ed0-4ddd6141f133",
+          "top_target_degree": 5
+        }
+      ],
+      "source": {
+        "total_nodes": 314,
+        "total_islands": 3,
+        "singleton_islands": 1,
+        "multi_islands": [
+          {
+            "size": 308,
+            "fraction": 0.9808917197452229,
+            "size_total": 309,
+            "top_uuid": "5674188b-c93c-477f-8bce-a4686d07b3a9",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.01592356687898089,
+            "size_total": 6,
+            "top_uuid": "cbb5582c-e489-411f-9c9b-988027d7d661",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 5,
+        "total_islands": 5,
+        "singleton_islands": 5,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

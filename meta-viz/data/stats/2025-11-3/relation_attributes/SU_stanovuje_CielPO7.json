@@ -1,0 +1,1374 @@
+{
+  "relation_name": "SU_stanovuje_CielPO7",
+  "name": "Štúdia uskutočniteľnosti stanovuje Cieľ PO7",
+  "description": "Štúdia uskutočniteľnosti stanovuje Cieľ PO7",
+  "engDescription": "Feasibility study specifies Objective PO7",
+  "type": "application",
+  "source_type": "SU",
+  "source_name": "Štúdia uskutočniteľnosti",
+  "target_type": "CielPO7",
+  "target_name": "Cieľ PO7",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 325,
+    "unique_pairs": 322,
+    "duplicate_edges": 3,
+    "pairs_with_duplicates": 1,
+    "parallel_edges": 3,
+    "parallel_max": 4,
+    "source_total": 244,
+    "target_total": 9,
+    "source_connected": 201,
+    "target_connected": 9,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 6,
+      "avg": 1.6169154228855722,
+      "median": 1,
+      "p90": 3,
+      "p99": 5
+    },
+    "degree_target": {
+      "min": 4,
+      "max": 78,
+      "avg": 36.111111111111114,
+      "median": 37,
+      "p90": 74,
+      "p99": 78
+    },
+    "top_source": [
+      {
+        "uuid": "244b8d36-028c-87ac-efb8-5dbd7db4e74c",
+        "degree": 6,
+        "name": "ŠU SMART Bardejov - mesto na dosah",
+        "code": "su_633"
+      },
+      {
+        "uuid": "ea4b38dd-5aad-e40f-7a14-ca3b82b8139a",
+        "degree": 5,
+        "name": "Vybudovanie centrálneho informačného systému organizácie SPF",
+        "code": "su_540"
+      },
+      {
+        "uuid": "3fafa670-48d7-a8c3-73d4-7078846107c6",
+        "degree": 5,
+        "name": "Lepšie využívanie údajov pre komfort občanov",
+        "code": "su_524"
+      },
+      {
+        "uuid": "e164f392-4ed2-4953-9a3f-7362a5a70244",
+        "degree": 5,
+        "name": "Malé zlepšenia eGov služieb SPF",
+        "code": "su_470"
+      },
+      {
+        "uuid": "67cab118-1a08-e9dc-a136-a2f3a51811dd",
+        "degree": 5,
+        "name": "Informačný systém obchodného registra",
+        "code": "su_47"
+      },
+      {
+        "uuid": "101c6955-054a-846d-6029-64f076e6a817",
+        "degree": 5,
+        "name": "Informačný systém Kancelárie Najvyššieho súdu",
+        "code": "su_141"
+      },
+      {
+        "uuid": "615edebb-74aa-e030-6744-32ff3061136e",
+        "degree": 5,
+        "name": "Manažment údajov v rezorte školstva",
+        "code": "su_263"
+      },
+      {
+        "uuid": "55868edb-1061-7a57-9393-282ecc44c28d",
+        "degree": 5,
+        "name": "Lepší manažment dát Prešovského samosprávneho kraja II",
+        "code": "su_237"
+      },
+      {
+        "uuid": "d61451ee-fd86-44e6-bf9a-1656ffb9fe36",
+        "degree": 4,
+        "name": "Informačný systém výstavby",
+        "code": "su_21"
+      },
+      {
+        "uuid": "5f5a0b3d-15d0-4eac-aa72-a1e1ab7835c9",
+        "degree": 4,
+        "name": "Centrálny informačný systém štátnej služby",
+        "code": "su_11"
+      },
+      {
+        "uuid": "fe54d260-1286-638d-bcb4-3a2e00a83237",
+        "degree": 4,
+        "name": "Modernizácia, rozvoj a migrácia informačného systému Národnej rady Slovenskej republiky",
+        "code": "su_38"
+      },
+      {
+        "uuid": "9f9b989d-b87c-9772-4327-379a843b9c0c",
+        "degree": 4,
+        "name": "Elektronické služby Národného bezpečnostného úradu",
+        "code": "su_64"
+      },
+      {
+        "uuid": "d2112fad-b259-ae0c-157b-8587d43fa79a",
+        "degree": 4,
+        "name": "Rozvoj platformy integrácie údajov (centrálna integračná platforma) a Manažment osobných údajov",
+        "code": "su_100"
+      },
+      {
+        "uuid": "6c9f3cf9-fc69-ad67-ef9d-0ded914ed4ed",
+        "degree": 4,
+        "name": "Centrálna evidencia elektronických rozhodnutí – CEER – fáza I",
+        "code": "su_78"
+      },
+      {
+        "uuid": "b7eb9655-aed7-cbc6-1451-b44bb8136d5c",
+        "degree": 4,
+        "name": "Migrácia Centrálneho úložiska digitálneho edukačného obsahu  do Vládneho cloudu",
+        "code": "su_191"
+      },
+      {
+        "uuid": "35f79cf2-e2f4-4afd-a566-e5acdfbf2294",
+        "degree": 4,
+        "name": "ŠU Projektu rozvoja IS elektronických služieb RÚ",
+        "code": "su_149"
+      },
+      {
+        "uuid": "0ec157c1-890e-a58b-c535-4379fbf4f560",
+        "degree": 3,
+        "name": "Prediktívne modely prevenčných programov",
+        "code": "su_590"
+      },
+      {
+        "uuid": "ea751e92-781b-791f-843b-42c3a6d1e4f2",
+        "degree": 3,
+        "name": "Centrálny informačný systém na riadenie IT aktív verejnej správy",
+        "code": "su_288"
+      },
+      {
+        "uuid": "93fcce0c-138e-4ac0-905a-36d63a714a1b",
+        "degree": 3,
+        "name": "Implementácia a integrácia podporného informačného systému (IS ÚRPO)",
+        "code": "su_180"
+      },
+      {
+        "uuid": "e7d1d03e-581a-c244-0af2-bd5f50e1331d",
+        "degree": 3,
+        "name": "Centrálny ekonomický systém",
+        "code": "su_44"
+      },
+      {
+        "uuid": "b83e88c0-c57e-ddcd-dd26-ff53dba21845",
+        "degree": 3,
+        "name": "Inteligentné regulácie (IT platforma lepšej regulácie podľa stratégie RIA 2020)",
+        "code": "su_105"
+      },
+      {
+        "uuid": "d812c162-93ea-1e5f-b635-a7e5fb7b2c6d",
+        "degree": 3,
+        "name": "Zvyšovanie úžitkovej hodnoty digitálnych služieb pre občanov, podnikateľov a inštitúcie verejnej správy.",
+        "code": "su_77"
+      },
+      {
+        "uuid": "e714fd08-2733-e552-6062-7d01d997c873",
+        "degree": 3,
+        "name": "Zavedenie analytickej vrstvy pre lepšie využívanie údajov VšZP",
+        "code": "su_594"
+      },
+      {
+        "uuid": "d86d1d92-5c33-3d8f-f01c-553c540d4d26",
+        "degree": 3,
+        "name": "Register zbraní a streliva",
+        "code": "su_170"
+      },
+      {
+        "uuid": "21e1bcbd-d523-6df9-6e20-8df7122a11a4",
+        "degree": 3,
+        "name": "Dynamický cenový model",
+        "code": "su_498"
+      },
+      {
+        "uuid": "d31095b0-195c-f50c-2522-1a6f4c783d65",
+        "degree": 3,
+        "name": "Smart city solution - SCS Spišská Nová Ves",
+        "code": "su_749"
+      },
+      {
+        "uuid": "cd0d0faa-8f15-c655-c24d-108b7b47bce3",
+        "degree": 3,
+        "name": "ŠU pre projekt Manažment údajov mesta Trenčín",
+        "code": "su_361"
+      },
+      {
+        "uuid": "c413d4bb-1c2b-a7f1-b5b5-8612abb53190",
+        "degree": 3,
+        "name": "Socioekonomické aspekty BigData",
+        "code": "su_499"
+      },
+      {
+        "uuid": "7167f7be-bd5e-402b-af68-ddb9f372de28",
+        "degree": 2,
+        "name": "Manažment údajov v oblasti hydromeliorácií",
+        "code": "su_447"
+      },
+      {
+        "uuid": "6a3eda58-d61a-33e8-4034-33afda4eb51a",
+        "degree": 2,
+        "name": "Dátová integrácia: sprístupnenie údajovej základne VS vrátane otvorených údajov prostredníctvom platformy dátovej integrácie",
+        "code": "su_86"
+      },
+      {
+        "uuid": "a6d8b2b1-7d91-a38c-1a2c-0ad37a4073af",
+        "degree": 2,
+        "name": "ŠU Informačný systém Centra právnej pomoci",
+        "code": "su_80"
+      },
+      {
+        "uuid": "05708c1b-1535-4da0-9bde-98196e05c50e",
+        "degree": 2,
+        "name": "Migrácia KIS NKÚ SR a Webového sídla NKÚ SR do Vládneho cloudu",
+        "code": "su_199"
+      },
+      {
+        "uuid": "7295248f-b347-3f8a-7742-fcb1d19a22b0",
+        "degree": 2,
+        "name": "HW podpora digitálneho prostredia vo verejnej správe",
+        "code": "su_279"
+      },
+      {
+        "uuid": "23903b95-3d06-8405-aa07-8e3ad1098ce9",
+        "degree": 2,
+        "name": "Elektronické služby spracovania bezpečnostných spisov NBÚ - malé zlepšenie eGov služieb",
+        "code": "su_585"
+      },
+      {
+        "uuid": "4bd06fcb-c06a-22ee-e7b9-0a65b3998912",
+        "degree": 2,
+        "name": "Informačné systémy inteligentného mesta Michalovce",
+        "code": "su_615"
+      },
+      {
+        "uuid": "7be277e0-6a0a-0cfd-6d49-538d7f01feb0",
+        "degree": 2,
+        "name": "Elektronizácia služieb regionálneho a vysokého školstva SR",
+        "code": "su_241"
+      },
+      {
+        "uuid": "ba8e2ef3-7420-84b4-05dc-65f58c1bbb4f",
+        "degree": 2,
+        "name": "Elektronizácia služieb Úradu na ochranu osobných údajov Slovenskej republiky",
+        "code": "su_335"
+      },
+      {
+        "uuid": "303d27ef-1279-edd3-85d3-7c06dc3a20c5",
+        "degree": 2,
+        "name": "Rozšírenie portfólia služieb a inovácia služieb elektronického zdravotníctva",
+        "code": "su_334"
+      },
+      {
+        "uuid": "e00b085a-5eab-8222-a95a-5e9766079fbe",
+        "degree": 2,
+        "name": "Úprava elektrotechnicky služieb ESMAO",
+        "code": "su_377"
+      },
+      {
+        "uuid": "bd89e17b-f7dd-b237-a0c2-9368ddafa929",
+        "degree": 2,
+        "name": "DP Plošné rozšírenie IS DCOM na mestá",
+        "code": "su_381"
+      },
+      {
+        "uuid": "32793639-c88c-e59c-1647-97c998110732",
+        "degree": 2,
+        "name": "Malé zlepšenia eGov služieb  Ministerstvo životného prostredia SR",
+        "code": "su_369"
+      },
+      {
+        "uuid": "771d53ca-fd8d-aa7c-19c7-52dcd7c46af8",
+        "degree": 2,
+        "name": "Malé zlepšenia eGov služieb mesta Michalovce",
+        "code": "su_382"
+      },
+      {
+        "uuid": "edd5e0a8-8724-f715-65d5-ae3079e5a3be",
+        "degree": 2,
+        "name": "ŠU Bardejov na dosah - Bardejovský Inteligentný Komunikačný Systém (BIKS)",
+        "code": "su_431"
+      },
+      {
+        "uuid": "dd5c8f94-4a56-723d-8e87-c081ce9cd240",
+        "degree": 2,
+        "name": "Služby sprístupňovania a zdieľania doručovaných rozhodnutí - dopytová výzva malé zlepšenia eGov služieb",
+        "code": "su_423"
+      },
+      {
+        "uuid": "308aa311-0434-40c4-93c4-45ac5879765e",
+        "degree": 2,
+        "name": "Zavedenie pro-klientsky orientovaných procesov a služieb pre podporu klientov SP (EZK) - dopytovo orientovaný projekt",
+        "code": "su_405"
+      },
+      {
+        "uuid": "64e770df-dc7e-8da3-edeb-a21574a4cb76",
+        "degree": 2,
+        "name": "Malé zlepšenia eGov služieb mesta Kremnica",
+        "code": "su_394"
+      },
+      {
+        "uuid": "98fbf96d-737a-4f35-90cf-d16fe08f1bb4",
+        "degree": 2,
+        "name": "Malé zlepšenia eGov služieb mesta Sliač",
+        "code": "su_457"
+      },
+      {
+        "uuid": "a05fa5ec-702a-4847-b461-eba64c37c41b",
+        "degree": 2,
+        "name": "Malé zlepšenia eGov Služieb mesta Šaštín-Stráže",
+        "code": "su_458"
+      },
+      {
+        "uuid": "93f5945b-4581-4de2-6be4-1537a886af6b",
+        "degree": 2,
+        "name": "ePrehliadky ÚDZS",
+        "code": "su_452"
+      },
+      {
+        "uuid": "824e7936-c1ba-ed22-5f27-4e2558529f5b",
+        "degree": 2,
+        "name": "Malé zlepšenia eGov služieb mesta Košice",
+        "code": "su_584"
+      },
+      {
+        "uuid": "99874ac3-79b1-4555-abd0-c24124f1e890",
+        "degree": 2,
+        "name": "Štúdia uskutočniteľnosti  Monitorovací systém pre reguláciu a štátny dohľad (MSRŠD)",
+        "code": "su_150"
+      },
+      {
+        "uuid": "cb295a93-dd3f-a70c-d1af-d58e6e3ae6b4",
+        "degree": 2,
+        "name": "Digitálny ekosystém inklúzie",
+        "code": "su_117"
+      },
+      {
+        "uuid": "c6c73969-ebf1-82fd-209d-4ae76799c20f",
+        "degree": 2,
+        "name": "Analytické centrum dopravných informácií",
+        "code": "su_513"
+      },
+      {
+        "uuid": "b57060dc-cc18-9cdf-aa32-772d0922cc0a",
+        "degree": 2,
+        "name": "Konsolidácia, manažment a kvalita  údajov VšZP",
+        "code": "su_599"
+      },
+      {
+        "uuid": "9a9ce5e3-ca49-beae-ceac-e8a60e634395",
+        "degree": 2,
+        "name": "Komplexný manažment demografických údajov, publikovanie otvorených dát",
+        "code": "su_526"
+      },
+      {
+        "uuid": "8d5e25f2-b474-b08c-9a70-fa5b9a6a4725",
+        "degree": 2,
+        "name": "Štúdia uskutočniteľnosti dopytovo orientovaného projektu - Registre informačného systému o výstavbe",
+        "code": "su_193"
+      },
+      {
+        "uuid": "1db4a293-6abf-f85b-435a-ee18d8e8d619",
+        "degree": 2,
+        "name": "Štúdia uskutočniteľnosti dopytovo orientovaného projektu - Elektronické úložisko projektovej dokumentácie",
+        "code": "su_282"
+      },
+      {
+        "uuid": "417bd9d7-6def-58da-4235-da6f5ea9f630",
+        "degree": 2,
+        "name": "Konsolidovaná analytická vrstva",
+        "code": "su_351"
+      },
+      {
+        "uuid": "f6f7fea5-ad9c-f56b-f79e-b2d163ced141",
+        "degree": 2,
+        "name": "Jednotný informačný systém štatistických údajov",
+        "code": "su_309"
+      },
+      {
+        "uuid": "dc04c37a-ebb3-f364-c45f-27d6c0855401",
+        "degree": 2,
+        "name": "Manažment údajov Ministerstva kultúry Slovenskej republiky",
+        "code": "su_403"
+      },
+      {
+        "uuid": "c8ab8553-689b-ab50-eabb-99d7e3e4e086",
+        "degree": 2,
+        "name": "Manažment údajov v rezorte školstva",
+        "code": "su_428"
+      },
+      {
+        "uuid": "9c6ebc28-8e80-e8bd-4409-b1cef6d7e49b",
+        "degree": 2,
+        "name": "Manažment údajov Žilinského samosprávneho kraja",
+        "code": "su_244"
+      },
+      {
+        "uuid": "fa4d8950-a312-7834-43f5-4cf17dde98ae",
+        "degree": 2,
+        "name": "Manažment údajov Dopravného úradu",
+        "code": "su_446"
+      },
+      {
+        "uuid": "e02e9060-b09e-d6bd-8e99-11201c75ffcb",
+        "degree": 2,
+        "name": "Manažment údajov mesta Liptovský Mikuláš",
+        "code": "su_434"
+      },
+      {
+        "uuid": "5fda2546-b174-425c-80dc-21dbb3b09aa4",
+        "degree": 2,
+        "name": "Manažment údajov Úradu vlády Slovenskej republiky",
+        "code": "su_278"
+      },
+      {
+        "uuid": "117f3507-c9d7-cb20-c9e5-98a926fcfdc5",
+        "degree": 2,
+        "name": "Manažment údajov vo VS - MetaIS konsolidácia",
+        "code": "su_463"
+      },
+      {
+        "uuid": "174287b0-ad4d-6fec-9d19-86a733292033",
+        "degree": 2,
+        "name": "Manažment údajov - Manažment údajov lesných pozemkov NLC",
+        "code": "su_420"
+      },
+      {
+        "uuid": "a1d873e2-8ecc-a1e4-61ad-727b887a89ad",
+        "degree": 2,
+        "name": "Manažment údajov Informačného systému športu - Národné športové centrum",
+        "code": "su_336"
+      },
+      {
+        "uuid": "9c1c072f-a668-4dc1-b296-04d1bedf8ec6",
+        "degree": 2,
+        "name": "Manažment údajov Úradu priemyselného vlastníctva SR",
+        "code": "su_433"
+      },
+      {
+        "uuid": "9b9062d9-2b8d-e17b-b51e-ec40d28f8c88",
+        "degree": 2,
+        "name": "Participácia verejnosti pri ochrane lesa",
+        "code": "su_520"
+      },
+      {
+        "uuid": "feb8356f-d0e7-4976-b9f9-b4140b59cf27",
+        "degree": 2,
+        "name": "Informačný systém elektronickej fakturácie (IS EFA)",
+        "code": "su_137"
+      },
+      {
+        "uuid": "f9b18a7c-eb77-2009-f099-8c12fc88b366",
+        "degree": 1,
+        "name": "Inteligentný zber odpadov v meste Kolárovo",
+        "code": "su_678"
+      },
+      {
+        "uuid": "f9391f03-1faa-e733-c4a0-2a564b4cba0e",
+        "degree": 1,
+        "name": "Migrácia IS Webregistre ÚPV SR a IS Portál elektronických služieb ÚPV SR do vládneho cloudu",
+        "code": "su_558"
+      },
+      {
+        "uuid": "5f9db739-ce59-a405-0d1d-a7a1a6d263d7",
+        "degree": 1,
+        "name": "Migrácia ISVS  Ministerstva životného prostredia SR do IaaS",
+        "code": "su_416"
+      },
+      {
+        "uuid": "5d0c67fb-d8f8-1d9d-ccb5-e9708e7a9783",
+        "degree": 1,
+        "name": "Migrácia Informačného systému služieb zamestnanosti do Vládneho Cloudu SR - Externé moduly",
+        "code": "su_484"
+      },
+      {
+        "uuid": "cfb01abf-7073-9540-da79-e7af1075411b",
+        "degree": 1,
+        "name": "Migrácia Informačného systému služieb zamestnanosti do Vládneho Cloudu SR - Dátový sklad",
+        "code": "su_483"
+      },
+      {
+        "uuid": "9ed7739e-226f-63fa-846b-5fd5fee50ff2",
+        "degree": 1,
+        "name": "Migrácia Informačného systému služieb zamestnanosti do Vládneho Cloudu SR - Integrácie na interné a externé systémy",
+        "code": "su_482"
+      },
+      {
+        "uuid": "e3381f9f-1ce5-e8b6-836b-b2fb16091c69",
+        "degree": 1,
+        "name": "Migrácia Informačného systému služieb zamestnanosti do Vládneho Cloudu SR - Hlavný systém",
+        "code": "su_480"
+      },
+      {
+        "uuid": "d5a6f50a-0279-09cf-b3b0-86342f316a40",
+        "degree": 1,
+        "name": "Migrácia Informačného systému prípravkov na ochranu rastlín (IS POR) do Vládneho cloudu SR",
+        "code": "su_481"
+      },
+      {
+        "uuid": "b86be1e9-e19a-4c6f-96e2-31ff981d2956",
+        "degree": 1,
+        "name": "Register bytov",
+        "code": "su_15"
+      },
+      {
+        "uuid": "4727bf9f-57af-4a5f-83d2-e994280bcd8f",
+        "degree": 1,
+        "name": "Riadenie procesov a dát pre OÚ, PZ a HaZZ",
+        "code": "su_113"
+      },
+      {
+        "uuid": "d962550d-29d4-42ce-8c1a-3cd8a4dfddba",
+        "degree": 1,
+        "name": "Centrálne komponenty správneho konania vo verejnej správe",
+        "code": "su_112"
+      },
+      {
+        "uuid": "9420410b-5318-49af-8161-01ea4fe43bf2",
+        "degree": 1,
+        "name": "Digitálne pracovné prostredie zamestnanca Ministerstva vnútra Slovenskej republiky",
+        "code": "su_114"
+      },
+      {
+        "uuid": "b8479933-154f-21c4-357e-67b39fee3cf1",
+        "degree": 1,
+        "name": "Integrovaný systém úradov verejného zdravotníctva",
+        "code": "su_116"
+      },
+      {
+        "uuid": "10cee97d-1d42-f3b7-fd3b-4f63f219ff6d",
+        "degree": 1,
+        "name": "Migrácia systémov IS Centrálny finančný informačný systém pre verejné vysoké školy(IS SOFIA) do Vládneho Cloudu SR",
+        "code": "su_192"
+      },
+      {
+        "uuid": "0e3fbfaf-fa5a-dc8b-927e-469b185222f5",
+        "degree": 1,
+        "name": "Migrácia systémov Národného lesníckeho centra do vládneho cloudu",
+        "code": "su_209"
+      },
+      {
+        "uuid": "dc23bad0-6072-73f4-b6f1-a8f84ca1b072",
+        "degree": 1,
+        "name": "Bezpečnosť medzisystémovej komunikácie  v oblasti osobných dát",
+        "code": "su_248"
+      },
+      {
+        "uuid": "65aaaa93-6190-492f-8eec-66c6bb9adce4",
+        "degree": 1,
+        "name": "Migrácia MSEE do Vládneho cloudu",
+        "code": "su_272"
+      },
+      {
+        "uuid": "8f358133-63f4-134a-e32e-ef7f71677af2",
+        "degree": 1,
+        "name": "Migrácia IS IVIS, RPO Štatistického úradu SR do vládneho cloudu",
+        "code": "su_251"
+      },
+      {
+        "uuid": "4b3fa25c-c5c4-eac1-ad2e-b603626fb922",
+        "degree": 1,
+        "name": "Migrácia IS Vnútorná správa, IŠIS Štatistického úradu SR do vládneho cloudu",
+        "code": "su_236"
+      },
+      {
+        "uuid": "44a6ee89-61bd-512d-01f5-5cd764924be2",
+        "degree": 1,
+        "name": "Migrácia Informačného systému Elektronických služieb vzdelávacieho systému regionálneho školstva do Vládneho cloudu",
+        "code": "su_283"
+      },
+      {
+        "uuid": "77777487-654c-4a21-9765-bd0caa4f8c0b",
+        "degree": 1,
+        "name": "Migrácia systému PROFSME do Vládneho cloudu SR",
+        "code": "su_289"
+      },
+      {
+        "uuid": "8019b096-d35b-6356-0ba4-5964138717d1",
+        "degree": 1,
+        "name": "Zvýšenie kapacity vládneho cloudu v Datacentre Kopčianska",
+        "code": "su_344"
+      },
+      {
+        "uuid": "37a08512-f5e3-1e19-a504-44f87e1ff076",
+        "degree": 1,
+        "name": "Zvýšenie kapacity vládneho cloudu  v Datacentre Tajov",
+        "code": "su_359"
+      },
+      {
+        "uuid": "aa97115c-b341-1139-2256-642aead6c931",
+        "degree": 1,
+        "name": "Vládny cloud – rozšírenie o Komunitný zdravotnícky cloud",
+        "code": "su_333"
+      },
+      {
+        "uuid": "eca76fa8-49d2-4beb-b49b-ae58ab71de40",
+        "degree": 1,
+        "name": "Podpora a rozvoj hybridných cloudových služieb",
+        "code": "su_588"
+      },
+      {
+        "uuid": "40fbf84b-db0a-42f4-8f8b-049f9e6d20ae",
+        "degree": 1,
+        "name": "Zabezpečenie efektívneho používania služieb ESO1 poskytovateľmi zdravotnej starostlivosti na celom území SR (projekt ESO1 – D)",
+        "code": "su_127"
+      },
+      {
+        "uuid": "6773663c-3d29-27b8-7edd-25a5d88b4ba1",
+        "degree": 1,
+        "name": "Atlas pasívnej infraštruktúry ÚPREKAPS",
+        "code": "su_786"
+      },
+      {
+        "uuid": "806c56ed-8b6b-88a5-d303-54ce80bce000",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti - Atlas pasívnej infraštruktúry MŽP",
+        "code": "su_305"
+      },
+      {
+        "uuid": "50c12ff7-ac9e-2a36-516f-75cdaa76210f",
+        "degree": 1,
+        "name": "eInklúzia prostredníctvom komplexného elektronického riešenia problematiky parkovania osôb s ťažkým zdravotným postihnutím",
+        "code": "su_135"
+      },
+      {
+        "uuid": "ccadaebc-ada9-ee83-105a-935fa0c1ea7a",
+        "degree": 1,
+        "name": "Zlepšovanie digitálnych zručností seniorov a znevýhodnených skupín vo verejnej správe",
+        "code": "su_776"
+      },
+      {
+        "uuid": "5bc611d9-c767-d4bc-6c03-88d85ec18e96",
+        "degree": 1,
+        "name": "tzdravie – rozšírenie ezdravie o telemedicínske služby",
+        "code": "su_555"
+      },
+      {
+        "uuid": "5820f8a6-af2a-9f15-c213-f22127eea0da",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti digitálnej inklúzie v zariadeniach sociálnych služieb Žilinského samosprávneho kraja",
+        "code": "su_597"
+      },
+      {
+        "uuid": "818fdb57-9d43-3356-32d1-49ea0ff44166",
+        "degree": 1,
+        "name": "Univerzálny telemedicínsky systém pre ambulantný manažment kardiovaskulárnych ochorení",
+        "code": "su_575"
+      },
+      {
+        "uuid": "cf3b4a9e-b971-4a4d-69db-4c49f99ebaa5",
+        "degree": 1,
+        "name": "Digitálna inklúzia vo vzdelávaní - platforma pre sprístupnenie informácií a vzdelávacích materiálov pre osoby so zrakovým postihnutím",
+        "code": "su_560"
+      },
+      {
+        "uuid": "be96048f-cd6f-da0b-fedd-e577fd1592ae",
+        "degree": 1,
+        "name": "Zavedenie využívania nástrojov telemonitorovania pre zvýšenie kvality života občanov SR",
+        "code": "su_543"
+      },
+      {
+        "uuid": "9cce3ed3-355b-73f6-8330-ee6a2fbca55c",
+        "degree": 1,
+        "name": "Digitálna inklúzia vo vzdelávaní - systémová hardvérová a softvérová platforma pre sprístupnenie vzdelávacích materiálov pre osoby so sluchovým postihnutím",
+        "code": "su_510"
+      },
+      {
+        "uuid": "c83f0c63-ce3f-0dda-1fc6-5acba7216a7f",
+        "degree": 1,
+        "name": "Zavedenie elektronickych sluzieb pre podporu ziadatelov PPA",
+        "code": "su_425"
+      },
+      {
+        "uuid": "635b50c2-c482-049f-c6a3-1f5eca675621",
+        "degree": 1,
+        "name": "Otvorené údaje 2.0 - Rozvoj centrálnych komponentov pre kvalitné zabezpečenie otvorených údajov",
+        "code": "su_90"
+      },
+      {
+        "uuid": "aa68e0f9-2048-9bff-7fcc-5c442e7bb998",
+        "degree": 1,
+        "name": "Manažment údajov APVV",
+        "code": "su_600"
+      },
+      {
+        "uuid": "64eb029e-6292-074f-4bd0-e61205f88d17",
+        "degree": 1,
+        "name": "Elektronizácia dávok z nemocenského poistenia",
+        "code": "su_529"
+      },
+      {
+        "uuid": "13d4bedc-b6eb-f6dd-ade2-43363fe9a8f0",
+        "degree": 1,
+        "name": "Manažment údajov Centrálnej archeologickej evidencie Slovenskej republiky",
+        "code": "su_559"
+      },
+      {
+        "uuid": "1d173ffb-8722-2c6e-4e87-d6ec0bc63624",
+        "degree": 1,
+        "name": "Manažment údajov APVV",
+        "code": "su_202"
+      },
+      {
+        "uuid": "7dd1b228-290c-40a6-3050-149a5dba6536",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti pre dopytovú výzvu Manažment údajov - Centralizácia manažmentu údajov v Národnom lesníckom centre",
+        "code": "su_226"
+      },
+      {
+        "uuid": "44e0aa6b-8a02-4778-a581-564902f0e63d",
+        "degree": 1,
+        "name": "Manažment údajov Ministerstva financií Slovenskej republiky – Komplexný projekt pre manažment údajov",
+        "code": "su_257"
+      },
+      {
+        "uuid": "c4d4aa44-e465-eb83-7f34-fc652db59731",
+        "degree": 1,
+        "name": "Komplexný manažment demografických údajov, publikovanie otvorených dát a konštrukcia štandardných schém hodnotenia kvality registrov",
+        "code": "su_249"
+      },
+      {
+        "uuid": "727621f7-7839-2041-4a62-baf4b42e31d4",
+        "degree": 1,
+        "name": "Komplexný manažment demografických údajov, publikovanie otvorených dá",
+        "code": "su_392"
+      },
+      {
+        "uuid": "5b4bc301-3872-3a87-a40f-3f535180129e",
+        "degree": 1,
+        "name": "Lepšie využívanie dát pre optimalizáciu poskytovania zdravotnej starostlivosti v SR",
+        "code": "su_496"
+      },
+      {
+        "uuid": "839a1a86-f049-a534-3d88-c569eb03aab2",
+        "degree": 1,
+        "name": "Zavedenie moderných technológii s využitím prvkov umelej inteligencie do portálu Jesseniovej lekárskej fakulty v Martine Univerzity Komenského a Fakulty managementu Univerzity Komenského v Bratislave",
+        "code": "su_720"
+      },
+      {
+        "uuid": "f46740e1-f9bb-83dc-a6e6-cd8c512c4464",
+        "degree": 1,
+        "name": "Racionalizácia a zefektívnenie využívania verejných zdrojov zavedením moderných Open Source riešení do systému RPO prevádzkovaným Štatistickým úradom SR",
+        "code": "su_724"
+      },
+      {
+        "uuid": "192bf65b-cfa1-ed16-18df-1943950b0593",
+        "degree": 1,
+        "name": "Zvýšenie kvality portálu Mesta Bytča pomocou zavedenia moderných technológii s využitím prvkov umelej inteligencie",
+        "code": "su_685"
+      },
+      {
+        "uuid": "5f8cee66-69ae-b3b6-932b-d8057a99de85",
+        "degree": 1,
+        "name": "Zlepšenie služieb portálu Mesta Rajec pomocou zavedenia moderných technológii s využitím prvkov umelej inteligencie",
+        "code": "su_722"
+      },
+      {
+        "uuid": "9357c2f8-8f58-8f4b-9c75-7886cb3b3afc",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti pre \"Smart plán obce Dolný Ohaj\"",
+        "code": "su_689"
+      },
+      {
+        "uuid": "5789bf1d-0125-4604-a7f1-309f71597c1b",
+        "degree": 1,
+        "name": "Moderné technológie - chatbot v ÚNMS SR",
+        "code": "su_712"
+      },
+      {
+        "uuid": "e3cb74d7-6584-2f97-627f-4b850879b6af",
+        "degree": 1,
+        "name": "Moderné technológie - Chatbot KSK",
+        "code": "su_696"
+      },
+      {
+        "uuid": "342cd382-71b2-43d0-9b9d-39c7ce162c24",
+        "degree": 1,
+        "name": "Moderné technológie – ChatBot pre BBSK",
+        "code": "su_671"
+      },
+      {
+        "uuid": "774b7832-4b50-4aa7-81d6-1bb9f7dbd494",
+        "degree": 1,
+        "name": "Dynamický architektonický model governmentu",
+        "code": "su_552"
+      },
+      {
+        "uuid": "de222fb4-5529-c015-178d-c28b9c48a6d6",
+        "degree": 1,
+        "name": "Analýza a návrh migrácie do vládneho cloudu",
+        "code": "su_567"
+      },
+      {
+        "uuid": "d545c9ae-cb60-491e-8ea1-571be32367bb",
+        "degree": 1,
+        "name": "Lepšie využívanie údajov Nitrianskeho samosprávneho kraja",
+        "code": "su_566"
+      },
+      {
+        "uuid": "bc14aeba-2baf-7cae-4a14-3e041014322a",
+        "degree": 1,
+        "name": "Lepšie využívanie údajov pre kontrolu výskytu a šírenia baktérií - Antimikrobiálna rezistencia v SR (AMR)",
+        "code": "su_444"
+      },
+      {
+        "uuid": "92fcef4a-64fd-4412-d57f-5898370d8a45",
+        "degree": 1,
+        "name": "Zvýšenie efektívnosti využívania energetických údajov za účelom úspory financií v budovách verejnej správy",
+        "code": "su_522"
+      },
+      {
+        "uuid": "318cb0e2-746c-95d9-b89a-5d9d6e94c18c",
+        "degree": 1,
+        "name": "Manažérsky informačný systém",
+        "code": "su_518"
+      },
+      {
+        "uuid": "242fdd62-d475-4afd-985a-e40204b91a54",
+        "degree": 1,
+        "name": "Zvýšenie kvality služieb Portálu Finančnej Správy (PFS) pre občanov a podnikateľov",
+        "code": "su_509"
+      },
+      {
+        "uuid": "844cab95-f737-de08-2715-3ed90e4fdb64",
+        "degree": 1,
+        "name": "Rozvoj rizikovej analýzy a implementácia antifraudového systému v agendových IS PPA",
+        "code": "su_490"
+      },
+      {
+        "uuid": "3adec9a6-a376-8d13-97af-c5c50162e703",
+        "degree": 1,
+        "name": "Manažment údajov ÚDZS - CRP, RZP, RPZS, RÚ",
+        "code": "su_450"
+      },
+      {
+        "uuid": "d0881270-bd78-4a5a-b5ce-5909436c4e5a",
+        "degree": 1,
+        "name": "Migrácia IS obcí do vládneho cloudu. Plošné rozšírenie IS DCOM – 2. etapa (DCOM+)",
+        "code": "su_6"
+      },
+      {
+        "uuid": "6b6161bb-edd1-0a25-4d2e-375fd617dea9",
+        "degree": 1,
+        "name": "Zavedenie služieb Platform as a Service",
+        "code": "su_111"
+      },
+      {
+        "uuid": "a702ef12-b6dd-90fd-256c-47e844cbd920",
+        "degree": 1,
+        "name": "Jednotný prístup k priestorovým údajom a službám – JPPÚS",
+        "code": "su_144"
+      },
+      {
+        "uuid": "495cdc6e-bf2a-4c05-b757-f626a4179868",
+        "degree": 1,
+        "name": "Systém verejného obstarávania",
+        "code": "su_157"
+      },
+      {
+        "uuid": "0e2f7a98-80cc-4a65-bed7-b13be7bc8fcc",
+        "degree": 1,
+        "name": "Optimalizácia procesov riadenia a prevádzky Zboru väzenskej a justičnej stráže",
+        "code": "su_166"
+      },
+      {
+        "uuid": "348ddb2e-b57c-672b-92b0-e3ea2ee58518",
+        "degree": 1,
+        "name": "Analytický nástroj pre podporu ekonomickej regulácie zo strany MZ SR",
+        "code": "su_179"
+      },
+      {
+        "uuid": "faa1ebaa-310f-d632-ae5d-5e638a4992c4",
+        "degree": 1,
+        "name": "Elektronický register MNO",
+        "code": "su_168"
+      },
+      {
+        "uuid": "3ee46ad3-a9be-cd63-fc46-0a20b0cf30ef",
+        "degree": 1,
+        "name": "Živnostenský register",
+        "code": "su_174"
+      },
+      {
+        "uuid": "bcfae0b4-7fb4-4847-83ed-505137e7f89b",
+        "degree": 1,
+        "name": "Elektronizácia služieb NIP",
+        "code": "su_143"
+      },
+      {
+        "uuid": "287f3f1a-79c2-959b-fb2b-428f1e9989ed",
+        "degree": 1,
+        "name": "Online procesy eZdravia",
+        "code": "su_198"
+      },
+      {
+        "uuid": "f7dfd3cb-e263-0c3d-8e46-fe2e7d3b0378",
+        "degree": 1,
+        "name": "Pamiatkový informačný systém",
+        "code": "su_173"
+      },
+      {
+        "uuid": "ed6146af-477e-0052-d178-cc75c5dd7876",
+        "degree": 1,
+        "name": "Centrálna API Manažment Platforma (Platforma pre publikovanie služieb štátu cez Open API)",
+        "code": "su_214"
+      },
+      {
+        "uuid": "ba026e39-c7c2-42ed-a719-229ebd32be49",
+        "degree": 1,
+        "name": "IS Manažment údajov v oblasti neprofesionálneho umenia",
+        "code": "su_220"
+      },
+      {
+        "uuid": "e646c19e-2e79-1b84-29db-d2336b0d2b18",
+        "degree": 1,
+        "name": "Autentifikácia a autorizácia v prostredí MVSR",
+        "code": "su_217"
+      },
+      {
+        "uuid": "4550c784-0fe9-6f97-ab7f-111e0da13e00",
+        "degree": 1,
+        "name": "Zefektívnenie štátneho dozoru v starostlivosti o životné prostredie",
+        "code": "su_215"
+      },
+      {
+        "uuid": "eff35b0b-1b45-4032-bbfb-f1b2e0f9f30e",
+        "degree": 1,
+        "name": "Komplexný informačný systém riadenia výkonnosti a podpory",
+        "code": "su_224"
+      },
+      {
+        "uuid": "aa0a9c01-3fc6-4b55-8d93-dd512e0f623a",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti - Centrálny údajový repozitár ÚKSUP",
+        "code": "su_233"
+      },
+      {
+        "uuid": "91613818-84d2-5b1b-5896-b001dd691eff",
+        "degree": 1,
+        "name": "Modernizácia dávkových agend Sociálnej poisťovne (MODA SP)",
+        "code": "su_161"
+      },
+      {
+        "uuid": "dba71249-a853-4487-8fcb-43afc333f9c1",
+        "degree": 1,
+        "name": "Centralizovaný systém súdneho riadenia",
+        "code": "su_1"
+      },
+      {
+        "uuid": "ef945def-a29b-7e9b-5fb8-20f6823ac8ba",
+        "degree": 1,
+        "name": "Riešenie konsolidácie registrov OVM, organizácií, fariem a zahraničného obchodu.",
+        "code": "su_261"
+      },
+      {
+        "uuid": "a2ed67c8-d35c-8302-e461-600404c3efe5",
+        "degree": 1,
+        "name": "Manažment údajov pre oblasť vedy a výskumu",
+        "code": "su_243"
+      },
+      {
+        "uuid": "08142811-455f-2a75-5d01-e93f6a07e144",
+        "degree": 1,
+        "name": "Inteligentné prvky správy mesta Brezno",
+        "code": "su_616"
+      },
+      {
+        "uuid": "282444d1-2379-585a-cdb2-4ebdc98d7fa0",
+        "degree": 1,
+        "name": "Národné kompetenčné centrum pre vysokovýkonné počítanie",
+        "code": "su_536"
+      },
+      {
+        "uuid": "8c95df2d-700e-47ce-a1b0-4cbf3334b453",
+        "degree": 1,
+        "name": "WiFi4SK (WiFi pre Teba)",
+        "code": "su_115"
+      },
+      {
+        "uuid": "2069d9a0-cb3c-4804-bff8-5aae13fbd4f8",
+        "degree": 1,
+        "name": "Atlas pasívnej infraštruktúry",
+        "code": "su_20"
+      },
+      {
+        "uuid": "5ee6b602-4be7-bff8-ed6e-0790aca27517",
+        "degree": 1,
+        "name": "Detekcia zraniteľnosti koncových obslužných bodov",
+        "code": "su_767"
+      },
+      {
+        "uuid": "dc41ee4e-c41a-4aee-b691-b3a05a8ad2e2",
+        "degree": 1,
+        "name": "Centrum ochrany kritickej infraštruktúry a podpora činností v oblasti krízového riadenia Slovenskej republiky v gescii MH SR",
+        "code": "su_373"
+      },
+      {
+        "uuid": "d47bbf40-03eb-b229-4c8a-0b264a7b237f",
+        "degree": 1,
+        "name": "Vybudovanie centra simulácie, výskumu a výuky kybernetických hrozieb a kybernetickej bezpečnosti",
+        "code": "su_366"
+      },
+      {
+        "uuid": "e5b7aad4-f99d-317b-a248-6f3f81a10a21",
+        "degree": 1,
+        "name": "Vybudovanie nosnej infraštruktúry bezpečného informačno-komunikačného systému FS SR",
+        "code": "su_342"
+      },
+      {
+        "uuid": "6c434eaa-7a1f-d991-7a03-175c886106c5",
+        "degree": 1,
+        "name": "Národný systém riadenia incidentov kybernetickej bezpečnosti vo verejnej správe",
+        "code": "su_132"
+      },
+      {
+        "uuid": "910dc665-40b9-6371-2cf5-03a9fb3d048f",
+        "degree": 1,
+        "name": "Redizajn siete GOVNET",
+        "code": "su_119"
+      },
+      {
+        "uuid": "dec0706e-31e9-7fe5-6a34-b5b0c33d8553",
+        "degree": 1,
+        "name": "Inteligentné technológie mesta Tvrdošín",
+        "code": "su_672"
+      },
+      {
+        "uuid": "816e5270-06cf-d00a-3224-e79da7c3fcd0",
+        "degree": 1,
+        "name": "Moderné technológie v meste Žilina",
+        "code": "su_651"
+      },
+      {
+        "uuid": "fb733905-2469-13a1-4c2e-8eba56bad26a",
+        "degree": 1,
+        "name": "Zavedenie SMART technológií v meste Levice",
+        "code": "su_698"
+      },
+      {
+        "uuid": "ea2a189a-183a-2880-6cc4-8e08ef39ead6",
+        "degree": 1,
+        "name": "Zavedenie smart technológií v meste Kežmarok",
+        "code": "su_680"
+      },
+      {
+        "uuid": "1105ba46-07ee-82cf-05fd-e152201d087d",
+        "degree": 1,
+        "name": "Moderné technológie mesta Holíč",
+        "code": "su_650"
+      },
+      {
+        "uuid": "c66e19b4-d3c7-4779-3f15-9ff9547d6e57",
+        "degree": 1,
+        "name": "Zavádzanie inteligentných technológií v meste Vráble",
+        "code": "su_658"
+      },
+      {
+        "uuid": "bc0381aa-0aea-18c2-ee23-99fbc2c02999",
+        "degree": 1,
+        "name": "Moderné technológie mesta Skalica",
+        "code": "su_681"
+      },
+      {
+        "uuid": "01ea6df3-1bda-2bac-a250-a238082c782a",
+        "degree": 1,
+        "name": "Smart technológie mesta Ružomberok",
+        "code": "su_679"
+      },
+      {
+        "uuid": "cb8a8029-8da2-c056-b1ae-bb1d37311466",
+        "degree": 1,
+        "name": "Moderné technológie v centre mesta Bojnice",
+        "code": "su_721"
+      },
+      {
+        "uuid": "913ef607-c2a6-7542-ba64-908c3d339180",
+        "degree": 1,
+        "name": "Smart technológie pre mesto Trstená",
+        "code": "su_654"
+      },
+      {
+        "uuid": "c6683b07-1f67-cac5-9c24-934ed5e66f42",
+        "degree": 1,
+        "name": "Rozvoj mesta Dolný Kubín v oblasti moderných technológií",
+        "code": "su_652"
+      },
+      {
+        "uuid": "6426cd99-a77f-e5c9-a4b2-afa6cacfa593",
+        "degree": 1,
+        "name": "Moderné technológie - SMART CITY - Mesto Michalovce",
+        "code": "su_729"
+      },
+      {
+        "uuid": "37bc3565-d354-d16a-3c4d-c4e4cc3ec4c1",
+        "degree": 1,
+        "name": "Moderné technológie – Galanta na ceste SMART",
+        "code": "su_739"
+      },
+      {
+        "uuid": "117563dc-ce8d-4c05-b557-e87179f0da90",
+        "degree": 1,
+        "name": "Smart plán mesta Dunajská Streda",
+        "code": "su_740"
+      },
+      {
+        "uuid": "7a389d36-709f-2f96-23c5-fd4b3a0d9484",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti pre \"Smart plán mesta Senica\"",
+        "code": "su_688"
+      },
+      {
+        "uuid": "2418275f-e631-44a4-b80a-ca36d06eee3a",
+        "degree": 1,
+        "name": "Smart plán mesta Sládkovičovo",
+        "code": "su_738"
+      },
+      {
+        "uuid": "4c97b5ec-1f3c-9cfb-bd6b-e226a3c0e843",
+        "degree": 1,
+        "name": "SMART riešenia pre mesto Topoľčany",
+        "code": "su_735"
+      },
+      {
+        "uuid": "037f63f3-2a7c-427c-9171-34c91aa36b16",
+        "degree": 1,
+        "name": "Smart plán mesta Trenčín",
+        "code": "su_734"
+      },
+      {
+        "uuid": "37b4c20c-fa5b-9224-a9c8-3de0c5f09a11",
+        "degree": 1,
+        "name": "Inteligentné riadenie dopravy - smart Trnava",
+        "code": "su_715"
+      },
+      {
+        "uuid": "d630afa0-ba82-ed33-3c00-4abe41c5f5de",
+        "degree": 1,
+        "name": "Moderné technológie – Šaľa na ceste SMART",
+        "code": "su_727"
+      },
+      {
+        "uuid": "f88cd65a-be40-41bf-aafb-a0423db8b2b7",
+        "degree": 1,
+        "name": "Moderné technológie v meste Zlaté Moravce.",
+        "code": "su_716"
+      },
+      {
+        "uuid": "17480ce6-a09b-a3e1-f12a-213812daf903",
+        "degree": 1,
+        "name": "Moderné technológie – Nesvady na ceste SMART",
+        "code": "su_737"
+      },
+      {
+        "uuid": "5be9cffc-00f1-ff0e-ee8a-9c3803b94442",
+        "degree": 1,
+        "name": "Smart Želiezovce",
+        "code": "su_732"
+      },
+      {
+        "uuid": "092de580-3644-f44f-454d-8db0528d6038",
+        "degree": 1,
+        "name": "Inteligentná Rimavská Sobota",
+        "code": "su_730"
+      },
+      {
+        "uuid": "03bdc047-c33d-bbea-fbc7-25bbff07ee72",
+        "degree": 1,
+        "name": "Smart City platforma Vysoké Tatry",
+        "code": "su_718"
+      },
+      {
+        "uuid": "b2c57dbc-dc47-b090-0ac2-be549a401768",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti - Smart City Banská Štiavnica",
+        "code": "su_706"
+      },
+      {
+        "uuid": "37057974-dd26-56b1-bee0-1f45613104d5",
+        "degree": 1,
+        "name": "Zavádzanie moderných technológií do regulácie dopravy",
+        "code": "su_704"
+      },
+      {
+        "uuid": "e89529c6-28eb-7b2f-55ee-c53223e2f744",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti - SMART CITY Košice",
+        "code": "su_694"
+      },
+      {
+        "uuid": "3718e197-9a65-4927-9838-edf22eb89304",
+        "degree": 1,
+        "name": "Moderné technológie – SMART CITY Žiar nad Hronom",
+        "code": "su_682"
+      },
+      {
+        "uuid": "68aeb575-ca50-4f3e-b535-32c31c11129d",
+        "degree": 1,
+        "name": "Moderné technológie – SMART CITY Považská Bystrica",
+        "code": "su_666"
+      },
+      {
+        "uuid": "ce1959df-308e-b1ec-816c-d209d837fcc7",
+        "degree": 1,
+        "name": "Moderné technológie pre mesto Krásno nad Kysucou",
+        "code": "su_635"
+      },
+      {
+        "uuid": "c616440e-ff3b-ded5-db5b-f3678af84b96",
+        "degree": 1,
+        "name": "Moderné technológie pre mesto Vranov nad Topľou",
+        "code": "su_634"
+      },
+      {
+        "uuid": "60a9fe06-e9e3-e801-08ae-02daee588132",
+        "degree": 1,
+        "name": "Moderné technológie pre mesto Snina",
+        "code": "su_628"
+      },
+      {
+        "uuid": "da8a18c1-7330-a4d2-709e-bf963e9243ed",
+        "degree": 1,
+        "name": "Moderné technológie pre mesto Dubnica nad Váhom",
+        "code": "su_627"
+      },
+      {
+        "uuid": "579716ed-a4cb-a924-62d8-d45846a4f5b7",
+        "degree": 1,
+        "name": "Rozšírenie počtu osôb s ťažkým zdravotným postihnutím zapojených do komplexného elektronického riešenia problematiky parkovania osôb s ťažkým zdravotným postihnutím",
+        "code": "su_613"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "bf10a411-bba6-4e4d-a460-2a199eed1f86",
+        "degree": 78,
+        "name": "Umožnenie modernizácie a racionalizácie verejnej správy IKT prostriedkami",
+        "code": "ciel_po7_7"
+      },
+      {
+        "uuid": "f7c20d13-dae7-4fcd-b88e-00a3d4afe8a2",
+        "degree": 74,
+        "name": "Zvýšenie kvality, štandardu a dostupnosti eGovernment služieb pre občanov",
+        "code": "ciel_po7_4"
+      },
+      {
+        "uuid": "08350997-5576-4c1f-999f-123d098aed84",
+        "degree": 47,
+        "name": "Racionalizácia prevádzky informačných systémov pomocou eGovernment cloudu",
+        "code": "ciel_po7_8"
+      },
+      {
+        "uuid": "a4642cd6-7093-435e-b625-2487028c80a1",
+        "degree": 42,
+        "name": "Zlepšovanie celkovej dostupnosti dát verejnej správy vo forme otvorených dát",
+        "code": "ciel_po7_5"
+      },
+      {
+        "uuid": "342f8c19-74e2-409e-a5bc-1c8bdcd1fb07",
+        "degree": 37,
+        "name": "Zvýšenie kvality, štandardu a dostupnosti eGovernment služieb pre podnikateľov",
+        "code": "ciel_po7_3"
+      },
+      {
+        "uuid": "8b86455d-9199-4018-9440-2f4367e2542d",
+        "degree": 22,
+        "name": "Zlepšenie digitálnych zručností a inklúzie znevýhodnených jednotlivcov do digitálneho trhu",
+        "code": "ciel_po7_6"
+      },
+      {
+        "uuid": "e4665cc5-fe8b-4395-89b0-4fc90b78e519",
+        "degree": 13,
+        "name": "Zvýšenie kybernetickej bezpečnosti v spoločnosti",
+        "code": "ciel_po7_9"
+      },
+      {
+        "uuid": "d9045f9d-ba8e-488f-bea2-0e2c42774ef8",
+        "degree": 8,
+        "name": "Zvýšenie inovačnej kapacity najmä malých a stredných podnikateľov v digitálnej ekonomike",
+        "code": "ciel_po7_2"
+      },
+      {
+        "uuid": "847a45c4-67f9-4584-8f93-a4933f859de2",
+        "degree": 4,
+        "name": "Zvýšenie pokrytia širokopásmovým internetom / NGN",
+        "code": "ciel_po7_1"
+      }
+    ],
+    "islands": {
+      "total_nodes": 253,
+      "total_islands": 44,
+      "singleton_islands": 43,
+      "multi_islands": [
+        {
+          "size_total": 210,
+          "size_source": 201,
+          "size_target": 9,
+          "fraction_total": 0.8300395256916996,
+          "top_source_uuid": "244b8d36-028c-87ac-efb8-5dbd7db4e74c",
+          "top_source_degree": 6,
+          "top_target_uuid": "bf10a411-bba6-4e4d-a460-2a199eed1f86",
+          "top_target_degree": 78
+        }
+      ],
+      "source": {
+        "total_nodes": 244,
+        "total_islands": 44,
+        "singleton_islands": 43,
+        "multi_islands": [
+          {
+            "size": 201,
+            "fraction": 0.8237704918032787,
+            "size_total": 210,
+            "top_uuid": "244b8d36-028c-87ac-efb8-5dbd7db4e74c",
+            "top_degree": 6
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 9,
+        "total_islands": 1,
+        "singleton_islands": 0,
+        "multi_islands": [
+          {
+            "size": 9,
+            "fraction": 1.0,
+            "size_total": 210,
+            "top_uuid": "bf10a411-bba6-4e4d-a460-2a199eed1f86",
+            "top_degree": 78
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

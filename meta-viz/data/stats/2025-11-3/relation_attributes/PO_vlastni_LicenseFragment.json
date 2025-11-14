@@ -1,0 +1,294 @@
+{
+  "relation_name": "PO_vlastni_LicenseFragment",
+  "name": "PO vlastní fragment licencie",
+  "description": "PO vlastní fragment licencie.",
+  "engDescription": "PA owns license fragment.",
+  "type": "application",
+  "source_type": "PO",
+  "source_name": "Povinná osoba",
+  "target_type": "LicenseFragment",
+  "target_name": "Žiadosť o licenciu fragment",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 16,
+    "unique_pairs": 16,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 5788,
+    "target_total": 16,
+    "source_connected": 6,
+    "target_connected": 16,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 5,
+      "avg": 2.6666666666666665,
+      "median": 2.5,
+      "p90": 4,
+      "p99": 5
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "8f99cdbe-7815-4f30-959c-7ff96a59b629",
+        "degree": 5,
+        "name": "Úrad verejného zdravotníctva Slovenskej republiky",
+        "code": "00607223"
+      },
+      {
+        "uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+        "degree": 4,
+        "name": "Ministerstvo financií Slovenskej republiky",
+        "code": "00151742"
+      },
+      {
+        "uuid": "54b24ce2-87f2-445e-8f24-98eca37ca00a",
+        "degree": 3,
+        "name": "Úrad pre dohľad nad zdravotnou starostlivosťou",
+        "code": "30796482"
+      },
+      {
+        "uuid": "c67de740-0722-4b3d-9c12-8db578b7606a",
+        "degree": 2,
+        "name": "Ministerstvo zahraničných vecí a európskych záležitostí Slovenskej republiky",
+        "code": "00699021"
+      },
+      {
+        "uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+        "degree": 1,
+        "name": "Štatistický úrad Slovenskej republiky",
+        "code": "00166197"
+      },
+      {
+        "uuid": "993a59d1-d60b-4c3c-aa5c-a77a8baf4c8a",
+        "degree": 1,
+        "name": "Kancelária Ústavného súdu Slovenskej republiky",
+        "code": "31947000"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "0479ea98-0258-403d-af60-585d85a8876d",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "04816f02-2be4-485c-834e-79343854733a",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "07016cbe-78a6-499d-877c-ce1bf0c66e2c",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "17f27e09-0403-4a42-aff4-3a065dac0ba0",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "31e77e6c-c92f-46bc-ba6d-88ba6cd52b64",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": "19859732"
+      },
+      {
+        "uuid": "38a0e7b2-eeea-49a7-952d-da737cf70620",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "3f468910-6f46-411d-a939-6e108a6b3a08",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": "20389001"
+      },
+      {
+        "uuid": "479a1fe3-6bad-4134-9e97-c325526671f0",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "7f0740f8-ba16-4604-9123-aa842c7964c0",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "82844eb4-8dc7-4655-930c-e68528a2baa3",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": "19859732"
+      },
+      {
+        "uuid": "8868339f-da77-4e38-91a3-93077284041c",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "bbb2941d-ee1c-4f3c-8e89-3acd5643470f",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "c6a4d3bf-e678-461c-9735-d5932a85f986",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "cae32ab3-c4f8-4981-ad58-356be719d36c",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "e6783ea3-db9f-47f1-849d-548475c4fd4c",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "edad1c35-30c0-4c9d-976c-9bf468b83b15",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      }
+    ],
+    "islands": {
+      "total_nodes": 5804,
+      "total_islands": 5788,
+      "singleton_islands": 5782,
+      "multi_islands": [
+        {
+          "size_total": 6,
+          "size_source": 1,
+          "size_target": 5,
+          "fraction_total": 0.0010337698139214334,
+          "top_source_uuid": "8f99cdbe-7815-4f30-959c-7ff96a59b629",
+          "top_source_degree": 5,
+          "top_target_uuid": "edad1c35-30c0-4c9d-976c-9bf468b83b15",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.0008614748449345279,
+          "top_source_uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+          "top_source_degree": 4,
+          "top_target_uuid": "07016cbe-78a6-499d-877c-ce1bf0c66e2c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006891798759476223,
+          "top_source_uuid": "54b24ce2-87f2-445e-8f24-98eca37ca00a",
+          "top_source_degree": 3,
+          "top_target_uuid": "8868339f-da77-4e38-91a3-93077284041c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0005168849069607167,
+          "top_source_uuid": "c67de740-0722-4b3d-9c12-8db578b7606a",
+          "top_source_degree": 2,
+          "top_target_uuid": "31e77e6c-c92f-46bc-ba6d-88ba6cd52b64",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00034458993797381116,
+          "top_source_uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+          "top_source_degree": 1,
+          "top_target_uuid": "04816f02-2be4-485c-834e-79343854733a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00034458993797381116,
+          "top_source_uuid": "993a59d1-d60b-4c3c-aa5c-a77a8baf4c8a",
+          "top_source_degree": 1,
+          "top_target_uuid": "3f468910-6f46-411d-a939-6e108a6b3a08",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 5788,
+        "total_islands": 5788,
+        "singleton_islands": 5788,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 16,
+        "total_islands": 6,
+        "singleton_islands": 2,
+        "multi_islands": [
+          {
+            "size": 5,
+            "fraction": 0.3125,
+            "size_total": 6,
+            "top_uuid": "edad1c35-30c0-4c9d-976c-9bf468b83b15",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.25,
+            "size_total": 5,
+            "top_uuid": "07016cbe-78a6-499d-877c-ce1bf0c66e2c",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.1875,
+            "size_total": 4,
+            "top_uuid": "8868339f-da77-4e38-91a3-93077284041c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.125,
+            "size_total": 3,
+            "top_uuid": "31e77e6c-c92f-46bc-ba6d-88ba6cd52b64",
+            "top_degree": 1
+          }
+        ]
+      }
+    }
+  },
+  "attributes": []
+}

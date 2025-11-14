@@ -1,0 +1,3447 @@
+{
+  "id": 20,
+  "name": "ISVS",
+  "technicalName": "ISVS",
+  "description": "Informačný systém v pôsobnosti povinnej osoby ako správcu, ktorý slúži na výkon správy. Rozoznávame tri časti tohto informačného systému - vecnú (úseky správy – agendy a s nimi súvisiace procesy), inštitucionálnu (kompetencie inštitúcií verejnej správy, resp. povinných osôb vo vzťahu k agendám a procesom) a technologickú (nástroje a metódy; materiálne a technické prostriedky realizácie procesov). Správca určuje účel a prostriedky spracúvania informácií informačného systému. Z kompetenčného hľadiska ho definujeme ako „Informačný systém úradu, ktorý pozostáva z častí agend úsekov správy, ktoré vykonáva povinná osoba v súlade s kompetenciami ustanovenými osobitnými predpismi“. Z vecného hľadiska ho definujeme ako „Informačný systém úseku správy, ktorý pozostáva z častí agend úseku správy, ktoré vykonávajú povinné osoby, v súlade s ich kompetenciami ustanovenými osobitným predpisom.",
+  "roleList": [
+    "EA_GARPO",
+    "IKT_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#afffff",
+  "engName": "ISVS",
+  "category": "RWCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov informačného systému",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky bez skratiek.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name of information system",
+      "engDescription": "Brief, clear and accurate name of configuration item without abbreviations.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 97,
+      "name": "EA profil ISVS",
+      "description": "Špecifické informácie",
+      "technicalName": "EA_Profil_ISVS",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special information",
+      "attributes": [
+        {
+          "id": 841,
+          "name": "Doby odozvy v čase",
+          "description": "Doby odozvy v čase",
+          "type": "IMAGE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_ISVS_EA_Profil_ISVS_Grafana_Graph",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "IMAGE",
+          "engName": "Doby odozvy v čase",
+          "engDescription": "Doby odozvy v čase",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 205,
+          "name": "Modul ISVS",
+          "description": "Pole je žaskrtnuté, ak ide o modul ISVS, ktorý má reláciu na nadradený ISVS.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "EA_Profil_ISVS_modul_isvs",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "ISVS module",
+          "engDescription": "Field is checked if it is a case of PAIS module that has relation with superset PAIS",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 842,
+          "name": "Posledná doba odozvy",
+          "description": "Posledná doba odozvy",
+          "type": "IMAGE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_ISVS_EA_Profil_ISVS_Grafana_BarGauge",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "IMAGE",
+          "engName": "Last response time",
+          "engDescription": "Last response time",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 840,
+          "name": "Webové sidlo",
+          "description": "Prosím uviesť URL web sídla.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_ISVS_webove_sidlo",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Website",
+          "engDescription": "Please fill URL of website",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 312,
+          "name": "Popis súčasného stavu (as-is)",
+          "description": "Popis súčasného stavu (as-is) pričom pri agendových ISVS sa popíše súčasný stav\n- funkcionalít pre verejnosť (G2C, G2B), stav\n- funkcionalít pre verejnú správu (G2G),\n- integrácií pre iné ISVS,\n- vyhlásených referenčných údajov, pre ktoré je ISVS referenčným alebo zdrojovým\nregistrom,",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": "Prázdna",
+          "technicalName": "EA_Profil_ISVS_popis_as_is",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Description of current status (as-is)",
+          "engDescription": "Appropriate description of key features of ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 307,
+          "name": "Popis cielového stavu (to-be)",
+          "description": "Výstižný popis klúcových vlastností ISVS. Musí byt uvedený pre všetky prevádzkované ISVS. Pri plánovanom ISVS sa neuvádza.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_ISVS_popis_to_be",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Description of target status (to-be)",
+          "engDescription": "Appropriate description of key features of ISVS. It has to be specified for all operated ISVS. Not specified with planned ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 382,
+          "name": "Prvok rozpočtu",
+          "description": "Prvok rozpočtu ako identifikátor ISVS v systéme RIS. Použitý na zobrazenie údajov z RIS v module TCO.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_ISVS_prvok_rozpoctu",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "regex",
+              "id": null,
+              "regex": "^([0-9a-zA-Z]{3,7})?$"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Budget element",
+          "engDescription": "Budget element as identifier PAIS in RIS system. Used for showing data from RIS in TCO module.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 443,
+          "name": "Stav ISVS",
+          "description": "Triedenie stavu ISVS z hľadiska plánovania, prevádzky, rozvoja alebo zrušenia ISVS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_ISVS_stav_isvs",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "STAV_ISVS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "ISVS status",
+          "engDescription": "Classification of ISVS status in terms of planning, operation, development or abolition of PAIS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 495,
+          "name": "Typ ISVS",
+          "description": "Typ ISVS z hľadiska zabezpečovania výkonu špecializovaného úseku verejnej správy a úseku vnútornej správy (prezentačnej vrstvy, integračnej vrstvy, administratívnych aplikácií, ekonomického a administratívneho chodu inštitúcie).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_ISVS_typ_isvs",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_ISVS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "ISVS type",
+          "engDescription": "ISVS type in terms of providing performance of special section of public administration and section of internal administration (presentation layer, integration layer, administration applications, economical and administrative operation of institution).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Generický profil EA",
+      "description": "Informácie z architektonického modelu",
+      "technicalName": "Gen_Profil_EA",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Additional information",
+      "attributes": [
+        {
+          "id": 418,
+          "name": "Skratený názov",
+          "description": "Skratený názov položky prenášaný z názvu položky architektonického modelu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_skrateny_nazov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Abbreviated name",
+          "engDescription": "Abbreviated item name transfered from name of architecture model item.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 310,
+          "name": "Popis referencie",
+          "description": "Popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_popis_referencie",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference description",
+          "engDescription": "Description of document, picture, model describing reference detail.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 620,
+          "name": "Zoznam referencií",
+          "description": "Zoznam referencií. Odkaz a popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING_PAIR",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_zoznam_referencii",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING_PAIR",
+          "engName": "Reference list",
+          "engDescription": "Reference list. Link and description of document, picture, model where is detail of reference described.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 245,
+          "name": "Odkaz na referenciu",
+          "description": "URL odkaz týkajúci sa daného ISVS (napr. URL odkaz, napríklad na web daného ISVS, prípadne web popisjúci daný ISVS)",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_odkaz_na_referenciu",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Link to reference",
+          "engDescription": "URL link referring to given ISVS (e.g. URL link to a web site of particular ISVS or web site describing particular PAIS)",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 508,
+          "name": "Typ replikácie",
+          "description": "Hovorí o tom, či je daná položka v modeli replikovaná alebo nie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_typ_replikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_REPLIKACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Replication type",
+          "engDescription": "Determines if particular item in model is replicated or no.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 297,
+          "name": "Počet replikácií",
+          "description": "Hovorí o početnosti objektu, napr 500 PC s windows, optimalizuje repozitár (aby nemusel obsahovať 500 položiek). Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_pocet_replikacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "interval",
+              "id": null,
+              "minValue": 0.0,
+              "maxValue": 1000000000.0
+            }
+          ],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of replications",
+          "engDescription": "Deals with quantity of object. e.g. 500 PCs with Windows, optimized by repository (not to include 500 items). Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 69,
+      "name": "IKT profil pre ISVS",
+      "description": "IKT profil pre ISVS",
+      "technicalName": "IKT_Profil_ISVS",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "ICT profile for ISVS",
+      "attributes": [
+        {
+          "id": 294,
+          "name": "Počet používateľov",
+          "description": "Relevantné pre všetky typy ISVS.\nÚdaje IKT profilu pre ISVS majú byť zapísané k príslušnému materskému ISVS (k modulu nie).",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_pocet_pouzivatalov",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of users",
+          "engDescription": "Number of particular ISVS users. Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 185,
+          "name": "Manažér ISVS",
+          "description": "Hlavný zodpovedný manažér za dané ISVS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_ISVS_manazer_isvs",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "ISVS manager",
+          "engDescription": "Principal manager for particular ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 692,
+          "name": "Monitoring spotreby z Vládneho cloudu",
+          "description": "Monitorované údaje o spotrebe procesorového výkonu (vo vcpu, pričom jedno vcpu zodpovedá jednému jadru Intel Xeon E5-4627 v2 (3.3 GHz, 16 M cache). Spotrebu monitoruje a zapisuje prevádzkovateľ Vládneho cloudu mesačne.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": "",
+          "technicalName": "IKT_Profil_ISVS_Monitoring_spotreby_z_Vladneho_cloudu",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Monitoring of the Government´s Cloud Consumption",
+          "engDescription": "Processed power consumption data (vcpu), is monitored and recorded by the Cloud Operator monthly.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 695,
+          "name": "ISVS je nasadený vo vládnom cloude od roku",
+          "description": "Relevantné pre všetky typy ISVS. \nÚdaje IKT profilu pre ISVS majú byť zapísané k príslušnému materskému ISVS (k modulu nie) vo formáte YYYY.\n\nMusí byť uvedený jeden z atribútov IKT profilu pre \n- už je nasadený od roku,\n- migrácia začala v roku,\n- plánovaná migrácia v roku.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_Nasadenie_vo_vladnom_cloudu_od_roku",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "ISVS is runnig in Goverment´s Cloud from the year",
+          "engDescription": "ISVS is runnig in Goverment´s Cloud from the year",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 696,
+          "name": "Realizácia migrácie ISVS do vládneho cloudu začala v roku",
+          "description": "Relevantné pre všetky typy ISVS. \nÚdaje IKT profilu pre ISVS majú byť zapísané k príslušnému materskému ISVS (k modulu nie) vo formáte YYYY.\n\nMusí byť uvedený jeden z atribútov IKT profilu pre \n- už je nasadený od roku,\n- migrácia začala v roku,\n- plánovaná migrácia v roku.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_IKT_Profil_ISVS_Realizacia_vo_vladnom_cloudu_od_roku",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Realisation of migration of ISVS began in the year",
+          "engDescription": "Realisation of migration of ISVS began in the year",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 697,
+          "name": "Plánované nasadenie ISVS do vládneho cloudu v roku",
+          "description": "Relevantné pre všetky typy ISVS. \nÚdaje IKT profilu pre ISVS majú byť zapísané k príslušnému materskému ISVS (k modulu nie) vo formáte YYYY.\nMusí byť uvedený jeden z atribútov IKT profilu pre \n- už je nasadený od roku,\n- migrácia začala v roku,\n- plánované nasadenie v roku.\nAk je ISVS už v cloude alebo začala migrácia, spracovateľ napíše \"nerelevantné\".",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_IKT_Profil_ISVS_Planovana_migracia_do_vladneho_cloudu_v_roku",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Running of ISVS to Government´s Cloud is planned in the year",
+          "engDescription": "Running of ISVS to Government´s Cloud is planned in the year",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 693,
+          "name": "Plánovaná spotreba (vcpu)",
+          "description": "Uvedie sa predpokladaný nárok na procesorový výkon (vcpu) pre ISVS, pričom jedno \"vcpu\" zodpovedá jednému jadru Intel Xeon E5-4627 v2 (3.3 GHz,16M cache).",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_ISVS_Planovana_spotreba_z_Vladneho_cloudu",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Planned VCPU Consumption",
+          "engDescription": "Specify what processor power vcpu needs ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 882,
+          "name": "Prevádzka ISVS vo vládnom cloude",
+          "description": "Vyberte jednu z možností.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_Prevadzka_vo_vladnom_cloude",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PREVADZKA_ISVS_VO_VLADNOM_CLOUDE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Operation in gCloud",
+          "engDescription": "choose 1 option",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 896,
+          "name": "Nasadenie ISVS do vládneho cloudu od roku",
+          "description": "Uveďte dátum nasadenia vo Vládnom cloude v tvare „dd.mm.yyyy“. Ak neviete presný dátum (deň), zadajte prvý deň v tom mesiaci daného roku Ak neviete ani deň ani mesiac, zadajte prvý deň v roku (t.j. 01.01.202x). Ak ISVS nie je nasadený vo vládnom cloude hodnotu nevypĺňajte.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_IKT_Profil_ISVS_nasadenie_ISVS_do_vladneho_cloudu_v",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "ISVS is runnig in gCloud from the year",
+          "engDescription": "specify year",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 884,
+          "name": "Typ vládneho cloudu",
+          "description": "Vyberte jednu z možností, či ide o privátnu alebo verejnú časť vládneho cloudu. Ak neviete v?ktorom VC, hodnotu nevypĺňajte.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_typ_vladneho_cloudu",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_VLADNEHO_CLOUDU"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "gCloud Type",
+          "engDescription": "choose 1 option from gCloud part",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 885,
+          "name": "Požiadavka na vysokú dostupnosť (HA)",
+          "description": "Ak áno, označte checkbox, ak nie, checkbox neoznačujte, vysoká dostupnosť (HA) znamená architektúru, ktorá zabezpečuje rovnocennú náhradu poskytovania služby v prípade jej zlyhania",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_Poziadavka_na_vysoku_dostupnost",
+          "order": 11,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "High availability requirement",
+          "engDescription": "mark",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 886,
+          "name": "Plánovaná spotreba VCPU",
+          "description": "Uveďte hodnotu celého čísla parametra vCPU pre tento ISVS, ktorý má plánovanú prevádzku vo VC. Ak ISVS ešte nie je v cloude, hodnota predstavuje požadovanú hodnotu pre umiestnenie alebo migráciu ISVS do VC. Ak ISVS je už v cloude a má vyplnenú alokovanú hodnotu uvedenú nižšie, potom táto hodnota znamená novú požadovanú hodnotu (v prípade potreby navýšenia  alokovanej hodnoty).",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_planova_spotreba_VCPU",
+          "order": 12,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Planned Consumption of VCPU",
+          "engDescription": "specify rate",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 887,
+          "name": "Plánovaná spotreba RAM v GB",
+          "description": "Uveďte hodnotu celého čísla parametra RAM pre tento ISVS, ktorý má plánovanú prevádzku vo VC. Ak ISVS ešte nie je v cloude, hodnota predstavuje požadovanú hodnotu pre umiestnenie alebo migráciu ISVS do VC. Ak ISVS je už v cloude a má vyplnenú alokovanú hodnotu uvedenú nižšie, potom táto hodnota znamená novú požadovanú hodnotu (v prípade potreby navýšenia  alokovanej hodnoty).",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": "c_merna_jednotka.5",
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_planovana_spotreba_RAM",
+          "order": 13,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Planned Consumotion RAM in GB",
+          "engDescription": "specify rate",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 888,
+          "name": "Plánovaný diskový priestor TIER1 v TB",
+          "description": "Uveďte hodnotu celého čísla parametra TIER1 pre tento ISVS, ktorý má plánovanú prevádzku vo VC. Ak ISVS ešte nie je v cloude, hodnota predstavuje požadovanú hodnotu pre umiestnenie alebo migráciu ISVS do VC. Ak ISVS je už v cloude a má vyplnenú alokovanú hodnotu uvedenú nižšie, potom táto hodnota znamená novú požadovanú hodnotu (v prípade potreby navýšenia  alokovanej hodnoty).",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": "c_merna_jednotka.6",
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_planovany_diskovy_priestor_TIER",
+          "order": 14,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Planned disk space TIER1",
+          "engDescription": "specify ratio",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 889,
+          "name": "Plánovaný diskový priestor TIER2 v TB",
+          "description": "Uveďte hodnotu celého čísla parametra TIER2 pre tento ISVS, ktorý má plánovanú prevádzku vo VC. Ak ISVS ešte nie je v cloude, hodnota predstavuje požadovanú hodnotu pre umiestnenie alebo migráciu ISVS do VC. Ak ISVS je už v cloude a má vyplnenú alokovanú hodnotu uvedenú nižšie, potom táto hodnota znamená novú požadovanú hodnotu (v prípade potreby navýšenia  alokovanej hodnoty).",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": "c_merna_jednotka.6",
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_planovany_diskovy_priestor_TIE",
+          "order": 15,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Planned disk space TIER2",
+          "engDescription": "specify ratio",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 890,
+          "name": "Plánovaný diskový priestor TIER3 v TB",
+          "description": "Uveďte hodnotu celého čísla parametra TIER3 pre tento ISVS, ktorý má plánovanú prevádzku vo VC. Ak ISVS ešte nie je v cloude, hodnota predstavuje požadovanú hodnotu pre umiestnenie alebo migráciu ISVS do VC. Ak ISVS je už v cloude a má vyplnenú alokovanú hodnotu uvedenú nižšie, potom táto hodnota znamená novú požadovanú hodnotu (v prípade potreby navýšenia  alokovanej hodnoty).",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": "c_merna_jednotka.6",
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_planovy_diskovy_priestor_TI",
+          "order": 16,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Planned disk space TIER3",
+          "engDescription": "specify ratio",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 891,
+          "name": "Alokované VCPU",
+          "description": "Uveďte hodnotu celého čísla parametra vCPU pre tento ISVS, ktorý už je prevádzkovaný vo VC.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_alokovane_VCPU",
+          "order": 17,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "VCPU allocated",
+          "engDescription": "specify ratio",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 892,
+          "name": "Alokovaná RAM v GB",
+          "description": "Uveďte hodnotu celého čísla parametra RAM pre tento  ISVS, ktorý už je prevádzkovaný vo VC.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": "c_merna_jednotka.5",
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_alokovana_RAM",
+          "order": 18,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "RAM allocated",
+          "engDescription": "specify ratio",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 893,
+          "name": "Alokovaný diskový priestor TIER1 v TB",
+          "description": "Uveďte hodnotu celého čísla parametra TIER1 pre tento  ISVS, ktorý už je prevádzkovaný vo VC.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": "c_merna_jednotka.6",
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_alokovany_diskovy_priestor_TIER",
+          "order": 19,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "TIER1 disk space allocated",
+          "engDescription": "specify ratio",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 894,
+          "name": "Alokovaný diskový priestor TIER2 v TB",
+          "description": "Uveďte hodnotu celého čísla parametra TIER2 pre tento ISVS, ktorý už je prevádzkovaný vo VC.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": "c_merna_jednotka.6",
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_IKT_Profil_ISVS_alokovany_diskovy_priestor_TIER",
+          "order": 20,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "TIER2 disk space allocated",
+          "engDescription": "specify ratio",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 895,
+          "name": "Alokovaný diskový priestor TIER3 v TB",
+          "description": "Uveďte hodnotu celého čísla  parametra TIER3 pre tento ISVS, ktorý už je prevádzkovaný vo VC.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": "c_merna_jednotka.6",
+          "defaultValue": "0",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_alokovany_diskovy_priestor_TI",
+          "order": 21,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "TIER3 disk space allocated",
+          "engDescription": "specify ratio",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 883,
+          "name": "Nasadenie ISVS do vládneho cloudu od roku",
+          "description": "Uveďte rok Nasadenia ISVS do vládneho cloudu, ak ISVS nie je nasadený vo vládnom cloude, uveďte hodnotu 0000",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0000",
+          "technicalName": "IKT_Profil_ISVS_IKT_Profil_ISVS_nasadenie_ISVS_do_vladneho_cloudu",
+          "order": 39,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "ISVS is runnig in gCloud from the year",
+          "engDescription": "specify year",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 68,
+      "name": "IKT profil pre monitoring spotreby vcpu",
+      "description": "IKT profil pre monitoring spotreby vcpu",
+      "technicalName": "IKT_Migracia_ISVS",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "ICT profile for VCPU consumption",
+      "attributes": [
+        {
+          "id": 116,
+          "name": "ID",
+          "description": "Identifikátor daného ISVS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_ISVS_id",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "ID",
+          "engDescription": "Identifier of particular ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 228,
+          "name": "Názov IS",
+          "description": "Názov daného ISVS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_ISVS_nazov_is",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "IS name",
+          "engDescription": "Name of particular ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 161,
+          "name": "Kód z MetaIS",
+          "description": "Migrovaný kód MetaIS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_ISVS_kod_z_metais",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Code from MetaIS",
+          "engDescription": "Migrated MetaIS code",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 184,
+          "name": "Manažér",
+          "description": "Hlavný zodpovedný manažér za dané ISVS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_ISVS_manazer",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Manager",
+          "engDescription": "Principal manager for particular ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 327,
+          "name": "Používatelia",
+          "description": "Používatelia daného ISVS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_ISVS_pouzivatelia",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Users",
+          "engDescription": "Users of particular ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 44,
+          "name": "Dátové centrum",
+          "description": "Dátové centrum daného ISVS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_ISVS_datove_centrum",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Data center",
+          "engDescription": "Data center of particular ISVS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 8,
+          "name": "Aktuálny stav",
+          "description": "Aktuálny stav daného ISVS",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_ISVS_aktualny_stav",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Current status",
+          "engDescription": "Current status of particular ISVS",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "name": "Popis cieľového stavu ISVS",
+      "description": "Popis cieľového stavu ISVS",
+      "technicalName": "Cielovy_stav_ISVS",
+      "roleList": [
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "to-be status of information system",
+      "attributes": [
+        {
+          "id": 819,
+          "name": "Drobné zmeny alebo modifikácie funkcionalít",
+          "description": "Pole je žaskrtnuté ak sa jedná o drobné zmeny",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_drobne_zmeny",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Minor changes or modifications of features",
+          "engDescription": "The field is checked if it is a minor change",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 688,
+          "name": "Zdôvodnenie potreby a popis cieľov rozvoja alebo budovania ISVS",
+          "description": "Relevantné pre všetky typy ISVS.\nPredkladateľ uvedie, prečo je potrebné rozvíjať alebo vybudovať ISVS a aké sú ciele tohto rozvoja.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_Reason",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reason and goals",
+          "engDescription": "Relevantné pre všetky typy ISVS.\nPredkladateľ uvedie, prečo je potrebné rozvíjať alebo vybudovať ISVS a aké sú ciele tohto rozvoja.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 690,
+          "name": "Plánovaný začiatok a ukončenie projektu rozvoja alebo budovania ISVS",
+          "description": "Relevantné pre všetky typy ISVS.\nPredkladateľ uvedie plánovaný začiatok projektu a ukončenie projektu budovania alebo rozvoja ISVS vo formáte \"Plánovaný začiatok projektu MM/RRRR. Plánované ukončenie projektu MM/RRRR\".",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_zaciatok_koniec",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Start and finish",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 691,
+          "name": "Priorita",
+          "description": "Relevantné pre všetky typy ISVS.\nPredkladateľ uvedie, prioritizáciu z hľadiska potrieb rezortu. Vyberie z troch možností z hľadiska kompetencií rezortu:\nA - nevyhnutné \nB - potrebné \nC - vhodné.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_Cielovy_stav_ISVS_priorita",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Priority",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 689,
+          "name": "Priorita",
+          "description": "Relevantné pre všetky typy ISVS.\nPredkladateľ uvedie, prioritizáciu z hľadiska potrieb rezortu. Vyberie z troch možností z hľadiska kompetencií rezortu:\nA - nevyhnutné \nB - potrebné \nC - vhodné.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_priorita",
+          "order": 1,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Priority",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 674,
+          "name": "Popis funkcionalít pre verejnosť G2C a G2B",
+          "description": "Relevantné pre typ ISVS: agendový, prezentačný.\nPredkladateľ uvedie, aké nové funkcionality bude ISVS poskytovať pre G2C a G2B.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_Popis_funkcionalit_pre_verejnost",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Functions for public (G2C, G2B)",
+          "engDescription": "Functions for public (G2C, G2B)",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 675,
+          "name": "Popis funkcionalít pre verejnú správu G2G",
+          "description": "Relevantné pre typ ISVS: agendový, prezentačný.\nPredkladateľ uvedie, aké nové funkcionality bude ISVS poskytovať pre G2G.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_Popis_funkcionalit_pre_verejnu_spravu",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Functions for public administration",
+          "engDescription": "Functions for public administration",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 676,
+          "name": "Popis referenčných údajov, ktoré bude ISVS poskytovať",
+          "description": "Relevantné pre typ ISVS: agendový, ekonomický a administratívny chod inštitúcie.\nPredkladateľ uvedie, aké referenčné údaje o objektoch evidencie bude ISVS poskytovať  a či je ISVS referenčným alebo zdrojovým registrom. Spravidla agendový systém má poskytovať jedinečné údaje o vzniku, zmene a zániku údajov o objekte, o ktorých rozhoduje.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Popis_referencnych_udajov",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Referential entries",
+          "engDescription": "Referential entries",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 677,
+          "name": "Popis referenčných údajov, ktoré bude ISVS využívať z iných ISVS",
+          "description": "Relevantné pre typ ISVS: agendový, ekonomický a administratívny chod inštitúcie.\nPredkladateľ uvedie, aké referenčné údaje bude ISVS využívať z iných referenčných registrov. Ako prispejú k 1x a dosť - v akej koncovej službe sa využijú, aké údaje nebude už pýtať od občana/podnikateľa/OVM, aký papier sa zruší. Deklaruje záväzok, že všetky dostupné referenčné údaje a základné číselníky bude ISVS využívať.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_popis_referencnych_udajov_konzument",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Referential entries",
+          "engDescription": "Referential entries",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 678,
+          "name": "Popis informácií, ktoré bude ISVS poskytovať pre službu \"Moje dáta\"",
+          "description": "Relevantné pre typ ISVS: agendový, ekonomický a administratívny chod inštitúcie.\nPredkladateľ uvedie, aké údaje o objektoch bude ISVS poskytovať pre komponent Moje údaje v členení\n- poskytovanie informácií  o evidovaných údajoch o občanovi/podnikateľovi,\n- popis poskytovania informácií o stave vybavovania veci občana,\n- popis poskytnutia údajov o občanovi tretej osobe (kto k mojim údajom  \n  pristupoval).",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Moje_data",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "My data",
+          "engDescription": "My data",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 679,
+          "name": "Popis plánovanej automatizácie služieb, ktoré ISVS podporí",
+          "description": "Relevantné pre typ ISVS: agendový, integračný, ekonomický a administratívny chod inštitúcie.\nPredkladateľ uvedie plánovanú automatizáciu procesov, tzn. samoobslužné a okamžité zrealizovanie služby, tzn. bez nutnosti vstupu ľudského faktora v rámci vybavovania. V ostatných prípadoch, keď je nevyhnutná akcia zamestnanca verejnej správy, budú podania vybavované v čo najkratšom možnom čase vďaka  automatizovanému režimu, ktorý bude riadiť vybavovanie podania.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Automatizacia_sluzieb",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Services automatisation",
+          "engDescription": "Services automatisation",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 680,
+          "name": "Popis plánovanej proaktivity a reťazenia KS, ktoré ISVS podporí",
+          "description": "Relevantné pre typ ISVS: agendový, ekonomický a administratívny chod inštitúcie.\nPredkladateľ uvedie, ktoré KS pomôže zrealizovať tak, aby boli poskytované proaktívne a návrh na reťazenie KS v rámci životnej situácie s informáciou o tom, ktorý ISVS a KS plánuje zreťaziť.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Proaktivita_a_retazenie",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Proactivity and orchestration",
+          "engDescription": "Proactivity and orchestration",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 681,
+          "name": "Popis poskytovania otvorených údajov z ISVS",
+          "description": "Relevantné pre typ ISVS: agendový, ekonomický a administratívny chod inštitúcie.\nPredkladateľ uvedie, aké otvorené údaje, súbory alebo aplikácie ISVS poskytuje alebo  plánuje poskytovať minimálne na úrovni 4* publikované cez eDemokracia,  alebo prostredníctvom openAPI,  a popis prínosu zo zverejnenia.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Popis_poskytovania_otvorenych_udajov",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Open data",
+          "engDescription": "Open data",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 682,
+          "name": "Popis odstránenia bariér pri existujúcich koncových službách",
+          "description": "Relevantné pre typ ISVS: agendový, prezentačný, ekonomický a administratívny chod inštitúcie.\nPredkladateľ uvedie koncovú službu a dôvod odstránenia používateľských bariér, napr. že služba je k dispozícii už rok, ale nikto ju nevyužíva, a cieľom je dosiahnuť aby ju využívalo 1000 občanov mesačne. Alebo či bude možné platiť kartou.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Popis_odstranenia_barier_pri_KS",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Barriers elimination",
+          "engDescription": "Barriers elimination",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 683,
+          "name": "Popis plánovaného využívania spoločných modulov",
+          "description": "Relevantné pre typ ISVS: agendový, integračný, ekonomický a administratívny chod inštitúcie. Uvedie sa, ktoré spoločné moduly bude ISVS využívať, a to autentifikačný modul, elektronické schránky, modul elektronických formulárov, modul elektronického doručovania, platobný modul, modul centrálnej elektronickej podateľne, notifikačný modul, modul procesnej integrácie a integrácie údajov, modul dlhodobého uchovávania, eDemokracia - výberom z komboboxu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Vyuzivanie_spolocnych_modulov",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "SPOLOCNE_MODULY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Common moduls",
+          "engDescription": "common moduls",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 684,
+          "name": "Popis plánovaného využívania centrálnych spoločných blokov",
+          "description": "Relevantné pre typ ISVS: agendový, prezentačný, ekonomický a administratívny chod inštitúcie.\nPredkladateľ môže plánovať rozvoj doterajších ISVS, do vybudovania centrálnych spoločných blokov. Zároveň deklaruje čas prechodu na SaaS vládneho cloudu, napr. CES, registratúra, centrálny systém pre správu a obeh dokumentov, správne konanie a pod.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Vyuzivanie_centralnych_spolocnych_blokov",
+          "order": 11,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Using of common agendas blocks",
+          "engDescription": "Using of common agendas blocks",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 685,
+          "name": "Popis plánovanej migrácie do Vládneho cloudu (IaaS, PaaS)",
+          "description": "Relevantné pre všetky typy ISVS.\nPredkladateľ uvedie pri plánovanom rozvoji ISVS rok plánovanej migrácie do vládneho cloudu, pri budovanom ISVS uvedie, kde bude ISVS prevádzkovaný  a rok plánovanej migrácie do vládneho cloudu.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Migracia_do_vladneho_cloudu",
+          "order": 12,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Migration to gCloud",
+          "engDescription": "Migration to gCloud",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 686,
+          "name": "Popis plánovaného použitia Centrálneho modelu údajov verejnej správy na popis údajov ISVS",
+          "description": "Relevantné pre všetky typy ISVS.\nPredkladateľ deklaruje, že  ISVS budovaný alebo rozvíjaný bude používať na popis svojich údajov Centrálny model údajov verejnej správy založený na ontológiách, a súčasne na identifikáciu objektov budú použité registrované a schválené URI identifikátory v Centrálnom metainformačnom systéme.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Pouzitie_Centralneho_modelu_udajov_VS",
+          "order": 13,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Central model entry of public administration",
+          "engDescription": "Central model entry of public administration",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 687,
+          "name": "Popis plánovaného poskytovania analytických údajov na analytické spracovanie",
+          "description": "Relevantné pre všetky typy ISVS. Predkladateľ deklaruje, že budú z ISVS k dispozícii údaje použiteľné na analytické spracovanie a ak áno, že analytické údaje budú ukladané v spoločnom centrálnom úložisku (SaaS).",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Cielovy_stav_ISVS_Planovane_poskytovanie_analytickych_udajov",
+          "order": 14,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Analytical entries for analytical procesing",
+          "engDescription": "Analytical entries for analytical procesing",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "name": "Profil pre webové sídlo",
+      "description": "Profil pre webové sídlo",
+      "technicalName": "Profil_WeboveSidlo",
+      "roleList": [
+        "R_EGOV",
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile for Website",
+      "attributes": [
+        {
+          "id": 928,
+          "name": "Dátum odstránenia neprístupného obsahu",
+          "description": "Dátum odstránenia neprístupného obsahu",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Webove_Sidlo_datum_odstranenia_nepristupneho_obsahu",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Removal date of inaccessible content",
+          "engDescription": "Removal date of inaccessible content",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1155,
+          "name": "Kontakt na správcu",
+          "description": "Kontakt na správcu",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Webove_Sidlo_kontakt_na_spravcu",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Manager contact",
+          "engDescription": "Manager contact",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 929,
+          "name": "Typ rozhrania",
+          "description": "Typ rozhrania",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Webove_Sidlo_typ_rozhrania",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "INTERFACE_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Type of interface",
+          "engDescription": "Type of interface",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 930,
+          "name": "Url",
+          "description": "Url",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Webove_Sidlo_url",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Url",
+          "engDescription": "Url",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 931,
+          "name": "Url vyhlásenia",
+          "description": "Url vyhlásenia",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Webove_Sidlo_url_vyhlasenie",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Url of declaration",
+          "engDescription": "Url of declaration",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "name": "Profil vyhlásenia o prístupnosti",
+      "description": "Profil vyhlásenia o prístupnosti",
+      "technicalName": "Profil_Vyhlasenie_Pristupnost",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile of accessibility statement",
+      "attributes": [
+        {
+          "id": 950,
+          "name": "Stav súladu",
+          "description": "Vyberte jednu z možností",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_compliance",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "STAV_SULADU"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Compliance",
+          "engDescription": "Compliance",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 961,
+          "name": "Nesúlad so slovenskými právnymi predpismi",
+          "description": "Uveďte zoznam prvkov nesúladu webového sídla (sídel)/mobilnej aplikácie (aplikácií) a/alebo, opíšte, ktoré časti/obsah/funkcie ešte nie sú v súlade.",
+          "type": "HTML",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_noncompliance_sk",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "HTML",
+          "engName": "Noncompliance SK",
+          "engDescription": "Noncompliance SK",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 960,
+          "name": "Nesúlad so smernicou EÚ",
+          "description": "Uveďte zoznam prvkov nesúladu webového sídla (sídel)/mobilnej aplikácie (aplikácií) a/alebo, opíšte, ktoré časti/obsah/funkcie ešte nie sú v súlade.",
+          "type": "HTML",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_noncompliance_eu",
+          "order": 2,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "HTML",
+          "engName": "Noncompliance EU",
+          "engDescription": "Noncompliance EU",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 956,
+          "name": "Neprimerané zaťaženie",
+          "description": "Uveďte zoznam neprístupných častí/obsahu/funkcií, na ktoré sa dočasne uplatňuje výnimka z dôvodu neprimeraného zaťaženia v zmysle článku 5 smernice (EÚ) 2016/2102.",
+          "type": "HTML",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_disproportionate_burden",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "HTML",
+          "engName": "Disproportionate burden",
+          "engDescription": "Disproportionate burden",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 954,
+          "name": "Pôvodcom neprístupného obsahu je iný orgán riadenia alebo iná osoba, na ktorú sa nevzťahuje zákon č.95/2019 Z.z. o ITVS",
+          "description": "Uveďte zoznam neprístupných častí/obsahu/funkcií, ktoré nespadajú do rozsahu pôsobnosti platnej legislatívy.",
+          "type": "HTML",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_content_out_of_scope",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "HTML",
+          "engName": "Content out of scope",
+          "engDescription": "Content out of scope",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 952,
+          "name": "Prístupné alternatívy",
+          "description": "Uveďte prípadné prístupné alternatívy.",
+          "type": "HTML",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_accessible_alternatives",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "HTML",
+          "engName": "Accessible alternatives",
+          "engDescription": "Accessible alternatives",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 955,
+          "name": "Dátum vypracovania",
+          "description": "Uveďte dátum prvotného vypracovania vyhlásenia o prístupnosti alebo jeho následnej aktualizácie v nadväznosti na vyhodnotenie webových sídel/mobilných aplikácií, na ktoré sa vzťahuje.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_created",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Created at",
+          "engDescription": "Created at",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 959,
+          "name": "Metóda vypracovania vyhlásenia",
+          "description": "Vyberte jednu z možností",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_method",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "METODA_VYPRACOVANIA_VYHLASENIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Method",
+          "engDescription": "Method",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 963,
+          "name": "Dátum poslednej aktualizácie",
+          "description": "Presnosť tvrdení vo vyhlásení o prístupnosti sa odporúča kontrolovať pravidelne, no aspoň raz ročne.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_updated",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Updated at",
+          "engDescription": "Updated at",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 958,
+          "name": "Spätná väzba a kontaktné informácie",
+          "description": "Opíšte mechanizmus spätnej väzby a uveďte odkaz na tento mechanizmus, ktorý sa má použiť na upovedomenie daného subjektu verejného sektora o problémoch z hľadiska súladu a na vyžiadanie informácií a obsahu, ktoré sú vyňaté z rozsahu pôsobnosti smernice. <br> Uveďte kontaktné informácie príslušných subjektov/útvarov/osôb, ktoré sú zodpovedné za prístupnosť a za spracovanie žiadostí zasielaných v rámci mechanizmu spätnej väzby",
+          "type": "HTML",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_feedback",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "HTML",
+          "engName": "Feedback and contact",
+          "engDescription": "Feedback and contact",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 951,
+          "name": "Voliteľný obsah",
+          "description": "Voliteľný obsah",
+          "type": "HTML",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_customizable_content",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "HTML",
+          "engName": "Customizable content",
+          "engDescription": "Customizable content",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 957,
+          "name": "Email",
+          "description": "Vyhlásenie email",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_email",
+          "order": 11,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Email",
+          "engDescription": "Email",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 964,
+          "name": "Verzia",
+          "description": "V prípade mobilných aplikácií uveďte aj informácie o verzii a dátum.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "1.0.0",
+          "technicalName": "Vyhlasenie_Pristupnost_version",
+          "order": 12,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Version",
+          "engDescription": "Version",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 953,
+          "name": "Súlad výnimky",
+          "description": "Súlad výnimky",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_compliance_exception",
+          "order": 13,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "SULAD_VYNIMKY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Compliance exception",
+          "engDescription": "Compliance exception",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 962,
+          "name": "Publikované",
+          "description": "Vyhlasenie o pristupnosti",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Vyhlasenie_Pristupnost_published",
+          "order": 14,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Published",
+          "engDescription": "Published",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "isvs_",
+  "ownerRelation": "PO_je_spravca_ISVS",
+  "uriPrefix": "https://data.gov.sk/id/egov/isvs",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 30,
+        "name": "ISVS je zdroj pre Polozku referencneho registra",
+        "engName": "ISVS is a source for Reference register unit",
+        "technicalName": "ISVS_isSourceReferenceFor_ReferenceRegisterItem",
+        "description": "ISVS je zdroj pre Polozku referencneho registra.",
+        "type": "system",
+        "valid": false,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "ISVS is a source for Reference register unit.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 32,
+        "name": "ISVS modul patrí pod materský ISVS",
+        "engName": "ISVS is ISVS module",
+        "technicalName": "ISVS_patri_pod_ISVS",
+        "description": "Modul ISVS je súčasťou ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "ISVS module is a part of ISVS.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 33,
+        "name": "ISVS vytvára bázu dát",
+        "engName": "ISVS is making data base.",
+        "technicalName": "ISVS_vytvara_BazaDat",
+        "description": "Vybraný ISVS vytvára danú Bázu Dát.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Selected ISVS makes particular Data Base.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 34,
+        "name": "ISVS realizuje aplikačnú službu",
+        "engName": "ISVS performs application service",
+        "technicalName": "ISVS_realizuje_AS",
+        "description": "ISVS realizuje aplikačnú službu. Vzťah určuje ISVS, ktorý vykonáva aplikačnú službu. Aplikačná služba je implementovaná (je súčasťou API rozhrania) ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "ISVS performs application service. Relations is defined by ISVS that performs application service. Application service is implemented (is a part of API interface) by ISVS.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1193,
+        "name": "ISVS realizuje infraštruktúrnu (cloudovú) službu",
+        "engName": "Cloud Infrastructure service is realised by ISVS",
+        "technicalName": "ISVS_realizuje_infrastrukturnu_sluzbu",
+        "description": "ISVS realizuje infraštruktúrnu (cloudovú) službu",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1213,
+        "name": "ISVS je poskytovateľom AOE",
+        "engName": "ISVS ia a provider of Registry object attribute",
+        "technicalName": "ISVS_je_poskytovatelom_AOE",
+        "description": "ISVS je poskytovateľom AOE",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "ISVS ia a provider of Registry object attribute",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 1,
+        "name": "Register referencuje ISVS",
+        "engName": "Register references ISVS",
+        "technicalName": "ReferenceRegister_reference_ISVS",
+        "description": "Register referencuje ISVS.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register references ISVS.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 2,
+        "name": "Aplikačná služba aktualizuje ISVS",
+        "engName": "Application service updates ISVS",
+        "technicalName": "AS_aktualizuje_ISVS",
+        "description": "Aplikačná služba aktualizuje ISVS.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service updates ISVS.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 10,
+        "name": "Aplikačná služba sprístupňuje ISVS",
+        "engName": "Application service makes ISVS available",
+        "technicalName": "AS_spristupnuje_ISVS",
+        "description": "Aplikačná služba sprístupňuje obsah referenčného a zdrojového registra.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service makes content of reference and source register available.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 26,
+        "name": "Infraštruktúrna služba prevádzkuje ISVS",
+        "engName": "Infrastructure service operates ISVS",
+        "technicalName": "InfraSluzba_prevadzkuje_ISVS",
+        "description": "Infraštruktúrna služba prevádzkuje daný ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Infrastructure service operates particular ISVS",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 32,
+        "name": "ISVS modul patrí pod materský ISVS",
+        "engName": "ISVS is ISVS module",
+        "technicalName": "ISVS_patri_pod_ISVS",
+        "description": "Modul ISVS je súčasťou ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "ISVS module is a part of ISVS.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 35,
+        "name": "Kontrakt má konzumenta",
+        "engName": "Contract has a consumer",
+        "technicalName": "Kontrakt_ma_konzumenta",
+        "description": "Kontrakt má konzumenta.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "Contract has a consumer.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 37,
+        "name": "Kontrakt má poskytovateľa",
+        "engName": "Contract has a provider",
+        "technicalName": "Kontrakt_ma_poskytovatela",
+        "description": "Kontrakt má poskytovateľa.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "Contract has a provider.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 43,
+        "name": "KRIT rozvíja ISVS",
+        "engName": "KRIT develops ISVS",
+        "technicalName": "KRIS_rozvija_ISVS",
+        "description": "KRIT rozvíja ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KRIS_PODPIS",
+          "KRIS_TVORBA",
+          "KRIS_SCHVAL"
+        ],
+        "engDescription": "KRIT develops ISVS",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 57,
+        "name": "Miesto prevádzky umiesňuje ISVS",
+        "engName": "Operation site positions ISVS",
+        "technicalName": "MiestoPrevadzky_umiestnuje_ISVS",
+        "description": "ISVS je umiestnené v danej lokalite.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "ISVS is located in particular location.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 65,
+        "name": "Migrácia migruje ISVS",
+        "engName": "Migration migrates ISVS",
+        "technicalName": "Migracia_migruje_ISVS",
+        "description": "ISVS môže byť migrovaný",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "ISVS may be migrated",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 84,
+        "name": "Plán kontroly kontroluje ISVS",
+        "engName": "Control plan controls ISVS",
+        "technicalName": "PlanKontroly_kontroluje_ISVS",
+        "description": "Plán kontroly kontroluje jedno ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KONT_VYKON",
+          "KONT_MANAZ",
+          "KONT_PLAN"
+        ],
+        "engDescription": "Control plan controls one ISVS.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 89,
+        "name": "Platforma prevádzkuje ISVS",
+        "engName": "Platform operates ISVS",
+        "technicalName": "Platforma_prevadzkuje_ISVS",
+        "description": "Platforma ( platforma ) prevádzkuje  ISVS",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Platform ( platform ) operates ISVS",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 92,
+        "name": "Náklady TCO",
+        "engName": "TCO costs",
+        "technicalName": "Naklady_TCO",
+        "description": "Náklady TCO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "TCO_FiN_MANMF"
+        ],
+        "engDescription": "TCO costs.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 96,
+        "name": "Povinná osoba je prevádzkovateľom ISVS",
+        "engName": "Public authority is operator of ISVS",
+        "technicalName": "PO_je_prevadzkovatel_ISVS",
+        "description": "Inštitúcia, ktorú správca informačného systému verejnej správy poveril prevádzkovaním ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Institution that was appointed by public administration information system manager to operate ISVS.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 103,
+        "name": "Povinná osoba je správcom ISVS",
+        "engName": "Public authority is manager of ISVS",
+        "technicalName": "PO_je_spravca_ISVS",
+        "description": "Povinná osoba ktorá je správcom informačného systému verejnej správy.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Public authority that is public administration information system manager.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 114,
+        "name": "Projekt realizuje ISVS.",
+        "engName": "Project develops ISVS",
+        "technicalName": "Projekt_realizuje_ISVS",
+        "description": "Projekt môže súčasne rozvíjať viaceré ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Project may at the same time develop more ISVS.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 128,
+        "name": "Systémový softvér je používaný ISVS",
+        "engName": "System software is used by ISVS",
+        "technicalName": "SystemovySW_je_pouzivany_ISVS",
+        "description": "Systémový softvér je používaný ISVS",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "System software is used by ISVS",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 130,
+        "name": "Sieťový prvok je používany ISVS",
+        "engName": "Network element is used by ISVS",
+        "technicalName": "TP_SietovyPrvok_je_pouzivany_ISVS",
+        "description": "Sieťový prvok je používaný daným ISVS.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Network element is used by particular ISVS.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 132,
+        "name": "Špeciálna technológia je používaná ISVS",
+        "engName": "Special technology is used by ISVS",
+        "technicalName": "TP_SpecTechnologia_je_pouzivana_ISVS",
+        "description": "Vybrané ISVS používa danú špeciálnu technológiu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Selected ISVS uses particular special technology.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 134,
+        "name": "Úložisko je používané ISVS",
+        "engName": "Storage is used by ISVS",
+        "technicalName": "TP_Ulozisko_je_pouzivane_ISVS",
+        "description": "Vybrané ISVS používa dané úložiská.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Selected ISVS uses particular storages.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 136,
+        "name": "Výpočtový zdroj je používaný ISVS",
+        "engName": "Computing resource is used by ISVS",
+        "technicalName": "TP_VypoctovyZdroj_je_pouzivany_ISVS",
+        "description": "Výpočtový zdroj je používaný daným ISVS.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Computing resource is used by particular ISVS.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 138,
+        "name": "Zálohovacie zariadenie je používané ISVS",
+        "engName": "Backup device is used by ISVS",
+        "technicalName": "TP_Zalohovanie_je_pouzivane_ISVS",
+        "description": "Vybrané ISVS používa dané zálohovacie zariadenia.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Selected ISVS uses particular backup devices.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 177,
+        "name": "SLA dodávateľa ISVS",
+        "engName": "SLA has ISVS supplier",
+        "technicalName": "OLA_Kontrakt_dodavatela_ISVS",
+        "description": "SLA je pre dodávateľa ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA",
+          "INT_PODPIS"
+        ],
+        "engDescription": "SLA is for ISVS supplier",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 186,
+        "name": "Zdrojový register",
+        "engName": "Source information reference ISVS",
+        "technicalName": "ReferenceRegisterItemSourceReferenceHolder_reference_ISVS",
+        "description": "Uvedie sa názov zdrojového registra, ktorý je zhodný s názvom informačného systému evidovanom v Metainformačnom systéme.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Defines connection between reference item and ISVS as a source register.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1194,
+        "name": "Licencia je používana ISVS",
+        "engName": "License used by ISVS.",
+        "technicalName": "License_usedby_ISVS",
+        "description": "Licencia je používana ISVS",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "License used by ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1196,
+        "name": "Žiadosť o licenciu je používana ISVS",
+        "engName": "LicenseRequest used by ISVS.",
+        "technicalName": "LicenseRequest_usedby_ISVS",
+        "description": "Žiadosť o licenciu  je používana ISVS",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "LicenseRequest used by ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1198,
+        "name": "Infraštruktúrna služba slúži ISVS",
+        "engName": "ISVS uses sevice",
+        "technicalName": "Sluzba_sluzi_ISVS",
+        "description": null,
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO",
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1201,
+        "name": "Osobitný postup vo väzbe na ISVS",
+        "engName": "Special procedure in relation to ISVS",
+        "technicalName": "osobitny_postup_vztah_ISVS",
+        "description": "Osobitný postup vo väzbe na ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Special procedure in relation to ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1214,
+        "name": "AOE je čítaný ISVS",
+        "engName": "Registry object attribute is read by ISVS",
+        "technicalName": "AOE_je_citany_ISVS",
+        "description": "AOE je čítaný ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Registry object attribute is read by ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1221,
+        "name": "Aplikačná služba slúži ISVS",
+        "engName": "Application service serves to ISVS",
+        "technicalName": "AS_sluzi_ISVS",
+        "description": "Aplikačná služba slúži ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service serves to ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1227,
+        "name": "Objekt evidencie je čítaný ISVS",
+        "engName": "Registry object is read by ISVS",
+        "technicalName": "OE_je_citany_ISVS",
+        "description": "Objekt evidencie je čítaný ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Registry object is read by ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

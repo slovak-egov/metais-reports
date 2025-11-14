@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>meta-viz – MetaIS Visualizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar controls -->
+    <aside class="sidebar">
+      <h1 class="app-title">meta-viz</h1>
+      <p class="app-subtitle">MetaIS / Neo4j snapshot explorer</p>
+
+      <section class="control-section">
+        <h2>View</h2>
+        <div class="view-toggle">
+          <button id="view-nodes" class="view-btn view-btn-active">
+            Nodes
+          </button>
+          <button id="view-relations" class="view-btn"
+                  type="button"
+                  onclick="window.location.href='relations.html'">
+            Relations
+          </button>
+          <button id="view-hybrid" class="view-btn" disabled>
+            Hybrid
+          </button>
+        </div>
+      </section>
+
+      <section class="control-section">
+        <h2>Dataset</h2>
+        <label class="field">
+          <span class="field-label">Snapshot</span>
+          <select id="snapshot-select"></select>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Node type</span>
+          <select id="nodetype-select"></select>
+        </label>
+      </section>
+
+      <section class="control-section">
+        <h2>Node filters</h2>
+
+        <label class="field inline-field checkbox-field">
+          <input type="checkbox" id="filter-application" checked />
+          <span class="field-label">Application</span>
+        </label>
+
+        <label class="field inline-field checkbox-field">
+          <input type="checkbox" id="filter-codelist" />
+          <span class="field-label">Codelist</span>
+        </label>
+
+        <label class="field inline-field checkbox-field">
+          <input type="checkbox" id="filter-system" />
+          <span class="field-label">System</span>
+        </label>
+
+        <label class="field inline-field checkbox-field">
+          <input type="checkbox" id="filter-curated" />
+          <span class="field-label">Curated list only</span>
+        </label>
+      </section>
+
+      <section class="control-section">
+        <button id="reload-btn" class="primary-btn">
+          Reload data
+        </button>
+      </section>
+      <section class="control-section">
+        <div class="sprite-container">
+          <img id="node-sprite"
+               class="node-sprite"
+               alt="Node type icon" />
+        </div>
+      </section>
+
+      <section class="control-section meta-section">
+        <h2>Info</h2>
+        <p class="meta-text">
+          Static frontend designed to consume precomputed JSON
+          stats from raw metais database snapshots. Data is stored
+          inside the <code>data/</code> folder, folder structure
+          is maintained inside <code>data/stats/index.jss</code>
+        </p>
+      </section>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <div id="breadcrumb" class="breadcrumb"></div>
+          <div id="summary" class="summary-text"></div>
+        </div>
+        <div class="summary-badges">
+          <span id="badge-required" class="badge badge-strong">Required</span>
+          <span id="badge-common" class="badge badge-medium">Common</span>
+          <span id="badge-rare" class="badge badge-weak">Rare / missing</span>
+        </div>
+      </header>
+
+      <section class="content">
+        <!-- Attribute coverage chart -->
+        <div class="panel">
+          <h2>Attribute coverage</h2>
+          <p class="panel-help">
+            Bar chart depicting the utilization level of attributes.
+            <strong>&gt;= 95%</strong> = required-like,
+            <strong>50–95%</strong> = common,
+            <strong>&lt; 50%</strong> = rare.
+          </p>
+
+          <div id="chart" class="chart">
+            <!-- bars will be injected here -->
+          </div>
+        </div>
+
+        <!-- Attribute table -->
+        <div class="panel">
+          <h2>Attributes list</h2>
+          <div class="panel-toolbar">
+            <label class="field inline-field">
+              <span class="field-label">Filter</span>
+              <input id="filter-input" type="text"
+                     placeholder="Search attribute name..." />
+            </label>
+
+            <label class="field inline-field">
+              <span class="field-label">Show top</span>
+              <select id="limit-select">
+                <option value="25">25</option>
+                <option value="50" selected>50</option>
+                <option value="100">100</option>
+                <option value="0">All</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="attr-table">
+              <thead>
+                <tr>
+                  <th class="col-name">Attribute</th>
+                  <th class="col-count">Count</th>
+                  <th class="col-unique">Unique values</th>
+                  <th class="col-pct">% of objects</th>
+                </tr>
+              </thead>
+              <tbody id="attr-tbody">
+                <!-- rows injected here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/nodes.js"></script>
+</body>
+</html>

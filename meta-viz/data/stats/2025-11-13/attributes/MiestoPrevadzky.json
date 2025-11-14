@@ -1,0 +1,160 @@
+{
+  "type": "MiestoPrevadzky",
+  "count": 190,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 190,
+      "pct": 100.0,
+      "unique_count": 187,
+      "unique_pct": 98.42105263157895
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 190,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 1.0526315789473684
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 190,
+      "pct": 100.0,
+      "unique_count": 182,
+      "unique_pct": 95.78947368421052
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 190,
+      "pct": 100.0,
+      "unique_count": 187,
+      "unique_pct": 98.42105263157895
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_datove_centrum",
+      "count": 182,
+      "pct": 95.78947368421052,
+      "unique_count": 2,
+      "unique_pct": 1.098901098901099
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_City",
+      "count": 83,
+      "pct": 43.684210526315795,
+      "unique_count": 44,
+      "unique_pct": 53.01204819277109
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_street",
+      "count": 78,
+      "pct": 41.05263157894737,
+      "unique_count": 67,
+      "unique_pct": 85.8974358974359
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_number",
+      "count": 67,
+      "pct": 35.26315789473684,
+      "unique_count": 52,
+      "unique_pct": 77.61194029850746
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 61,
+      "pct": 32.10526315789474,
+      "unique_count": 58,
+      "unique_pct": 95.08196721311475
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_email_contact",
+      "count": 36,
+      "pct": 18.947368421052634,
+      "unique_count": 34,
+      "unique_pct": 94.44444444444444
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 23,
+      "pct": 12.105263157894736,
+      "unique_count": 1,
+      "unique_pct": 4.3478260869565215
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_adresa",
+      "count": 21,
+      "pct": 11.052631578947368,
+      "unique_count": 18,
+      "unique_pct": 85.71428571428571
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_kontaktna_osoba",
+      "count": 14,
+      "pct": 7.368421052631578,
+      "unique_count": 11,
+      "unique_pct": 78.57142857142857
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_pocet_rackov_obsadenych",
+      "count": 11,
+      "pct": 5.7894736842105265,
+      "unique_count": 9,
+      "unique_pct": 81.81818181818183
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 9,
+      "pct": 4.736842105263158,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_MiestoPrevadzky_pocet_rackov_volnych",
+      "count": 5,
+      "pct": 2.631578947368421,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "IKT_Migracia_MiestoPrevadzky_aktualny_stav",
+      "count": 4,
+      "pct": 2.1052631578947367,
+      "unique_count": 3,
+      "unique_pct": 75.0
+    },
+    {
+      "name": "IKT_Migracia_MiestoPrevadzky_kontaktna_osoba",
+      "count": 2,
+      "pct": 1.0526315789473684,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_MiestoPrevadzky_lokalita",
+      "count": 2,
+      "pct": 1.0526315789473684,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 2,
+      "pct": 1.0526315789473684,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 1,
+      "pct": 0.5263157894736842,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 1,
+      "pct": 0.5263157894736842,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

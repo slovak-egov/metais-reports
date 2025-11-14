@@ -1,0 +1,280 @@
+{
+  "id": 1228,
+  "name": "PO ma oprávnenie",
+  "technicalName": "PO_ma_opravnenie",
+  "description": "PO ma oprávnenie",
+  "roleList": [
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Obliged person has an authorization",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 149,
+      "name": "Profil OE oprávnenie",
+      "description": "Profil OE oprávnenie",
+      "technicalName": "Profil_OEOpravnenie",
+      "roleList": [
+        "R_EGOV",
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile for Registry object authorization",
+      "attributes": [
+        {
+          "id": 1008,
+          "name": "Právny účel",
+          "description": "Právny účel",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_OEOpravnenie_pravny_ucel",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Legal purpose",
+          "engDescription": "Legal purpose",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1009,
+          "name": "Právny základ",
+          "description": "Právny základ",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_OEOpravnenie_pravny_zaklad",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Legal basis",
+          "engDescription": "Legal basis",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1010,
+          "name": "Právny základ kód",
+          "description": "Právny základ kód",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_OEOpravnenie_pravny_zaklad_kod",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Legal basis code",
+          "engDescription": "Legal basis code",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1011,
+          "name": "Typ oprávnenia",
+          "description": "Typ oprávnenia",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "c_typ_opravnenia.3",
+          "technicalName": "Profil_OEOpravnenie_typ_opravnenia",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_OPRAVNENIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Authorization type",
+          "engDescription": "Authorization type",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1012,
+          "name": "Atribút objektu evidencie",
+          "description": "Atribút objektu evidencie",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_OEOpravnenie_atribut_objektu_evidencie",
+          "order": 12,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "AtributObjektuEvidencie"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Registry object attribute",
+          "engDescription": "Registry object attribute",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 37,
+      "name": "Povinná osoba",
+      "technicalName": "PO",
+      "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Public authority",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 100,
+      "name": "Objekt Evidencie",
+      "technicalName": "ObjektEvidencie",
+      "description": "Objekt Evidencie",
+      "roleList": [
+        "R_EGOV",
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Registry object",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_poskytovatelom_OE",
+      "uriPrefix": null,
+      "roles": ";R_EGOV;EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Obliged person has an authorization",
+  "codePrefix": null,
+  "uriPrefix": null
+}

@@ -1,0 +1,1386 @@
+{
+  "relation_name": "KRIS_stanovuje_Ciel",
+  "name": "KRIT Stanovuje Ciel",
+  "description": "KRIT Stanovuje Ciel.",
+  "engDescription": "KRIT determines Objective.",
+  "type": "application",
+  "source_type": "KRIS",
+  "source_name": "Koncept rozvoja IT",
+  "target_type": "Ciel",
+  "target_name": "Cieľ",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 708,
+    "unique_pairs": 702,
+    "duplicate_edges": 6,
+    "pairs_with_duplicates": 6,
+    "parallel_edges": 6,
+    "parallel_max": 2,
+    "source_total": 282,
+    "target_total": 12,
+    "source_connected": 201,
+    "target_connected": 11,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 13,
+      "avg": 3.5223880597014925,
+      "median": 3,
+      "p90": 7,
+      "p99": 11
+    },
+    "degree_target": {
+      "min": 14,
+      "max": 121,
+      "avg": 64.36363636363636,
+      "median": 62,
+      "p90": 109,
+      "p99": 121
+    },
+    "top_source": [
+      {
+        "uuid": "0842a946-3316-4a5d-a16a-7ea3bc0304dd",
+        "degree": 13,
+        "name": "KRIS Ministerstva školstva, vedy, výskumu a športu SR",
+        "code": "kris_314"
+      },
+      {
+        "uuid": "a2606ed5-f64f-473f-9484-6134f14870a9",
+        "degree": 11,
+        "name": "KRIS Mesto Rajec",
+        "code": "kris_377"
+      },
+      {
+        "uuid": "450bfb98-989c-474c-8942-df77effdd0d6",
+        "degree": 11,
+        "name": "Koncepcia rozvoja informačných systémov mesta Brezová pod Bradlom",
+        "code": "kris_421"
+      },
+      {
+        "uuid": "1149519c-b9ca-4484-bc41-585e22c0d920",
+        "degree": 11,
+        "name": "KRIS Úradu podpredsedu vlády SR pre investície a informatizáciu",
+        "code": "kris_385"
+      },
+      {
+        "uuid": "85fd5d08-abe5-4026-ba50-2e808701b8d1",
+        "degree": 11,
+        "name": "KRIS MŠVVaŠ SR",
+        "code": "kris_475"
+      },
+      {
+        "uuid": "3245afbe-7fa1-45d4-812f-b88891cc90f2",
+        "degree": 11,
+        "name": "KRIS Kancelárie prezidenta Slovenskej republiky",
+        "code": "kris_518"
+      },
+      {
+        "uuid": "67004893-f950-46fa-98a6-5efef06be855",
+        "degree": 11,
+        "name": "KRIT Elektronické služby MZVaEZ SR",
+        "code": "kris_832"
+      },
+      {
+        "uuid": "0936b5b1-791f-46e1-9561-e910e93d9450",
+        "degree": 10,
+        "name": "KRIS Úradu pre verejné obstarávanie - súčasný stav",
+        "code": "kris_20"
+      },
+      {
+        "uuid": "bf855ae9-9c35-4ced-8b44-8752438a80d0",
+        "degree": 10,
+        "name": "KRIS obce Miloslavov",
+        "code": "kris_423"
+      },
+      {
+        "uuid": "f916f454-a4db-4573-9378-f06932527f14",
+        "degree": 10,
+        "name": "KRIS Ministerstva pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
+        "code": "kris_538"
+      },
+      {
+        "uuid": "2478b6eb-835f-4097-9d86-cc7553938cf9",
+        "degree": 10,
+        "name": "KRIS Mesto Nováky",
+        "code": "kris_450"
+      },
+      {
+        "uuid": "5cc22fbe-436d-44b3-baea-244418fd2edb",
+        "degree": 9,
+        "name": "KRIS MPSVR SR - ESKO-2 - budúci stav",
+        "code": "kris_573"
+      },
+      {
+        "uuid": "f86b19a0-d742-45ab-8f34-188c38065923",
+        "degree": 8,
+        "name": "KRIS Ministerstva vnútra Slovenskej republiky",
+        "code": "kris_506"
+      },
+      {
+        "uuid": "5180e05d-5ee0-425d-9652-88611e2a35f4",
+        "degree": 8,
+        "name": "KRIS  - Ministerstva životného prostredia (budúci stav)",
+        "code": "kris_533"
+      },
+      {
+        "uuid": "cb284cfc-11ee-41ef-9e30-a3fe1447ba5a",
+        "degree": 8,
+        "name": "KRIS Ministerstva financií Slovenskej republiky - súčasný stav",
+        "code": "kris_333"
+      },
+      {
+        "uuid": "07a2082e-21c9-4e64-907a-9aba583ac1f8",
+        "degree": 8,
+        "name": "KRIS Ministerstvo financií SR - budúci stav",
+        "code": "kris_515"
+      },
+      {
+        "uuid": "a41a6d4c-6907-46e2-981b-4e3668c7954f",
+        "degree": 7,
+        "name": "KRIS Kancelárie Najvyššieho súdu Slovenskej republiky",
+        "code": "kris_293"
+      },
+      {
+        "uuid": "28530847-bbf5-4def-a52f-66a40fe996d0",
+        "degree": 7,
+        "name": "KRIT mesta Liptovský Mikuláš",
+        "code": "kris_768"
+      },
+      {
+        "uuid": "654f00b8-f629-413f-903a-11086b568ef3",
+        "degree": 7,
+        "name": "KRIT Štátneho fondu rozvoja bývania - budúci stav",
+        "code": "kris_690"
+      },
+      {
+        "uuid": "0222982f-5da3-4c07-af75-ff9fd410ab39",
+        "degree": 7,
+        "name": "KRIS Úradu podpredsedu vlády SR pre investície a informatizáciu ToBe",
+        "code": "kris_528"
+      },
+      {
+        "uuid": "d6a46985-3d5c-4952-998d-bc04c6d3e285",
+        "degree": 7,
+        "name": "Koncepcia rozvoja Informačného systému Centra právnej pomoci",
+        "code": "kris_449"
+      },
+      {
+        "uuid": "83885ccd-b990-42fc-99e5-a20241d22fce",
+        "degree": 7,
+        "name": "KRIS Kancelária Ústavného súdu SR",
+        "code": "kris_508"
+      },
+      {
+        "uuid": "dd52045b-e56d-49b3-b1c1-5f06fcc3c975",
+        "degree": 6,
+        "name": "KRIS Mesta Kremnica",
+        "code": "kris_647"
+      },
+      {
+        "uuid": "e00383d7-51c6-488d-9300-a9f3c39a9f06",
+        "degree": 6,
+        "name": "KRIT Tlačovej agentúry Slovenskej republiky",
+        "code": "kris_37"
+      },
+      {
+        "uuid": "32934fc1-6bf5-463b-a654-67592eccc1b9",
+        "degree": 6,
+        "name": "Koncepcia rozvoja informačných technológií obce Blatné",
+        "code": "kris_860"
+      },
+      {
+        "uuid": "62480938-4803-4eb4-b383-1f29e68db24d",
+        "degree": 6,
+        "name": "KRIS Kancelárie Najvyššieho súdu Slovenskej republiky - budúci stav",
+        "code": "kris_522"
+      },
+      {
+        "uuid": "fd094649-b7ee-4f83-ad64-7302d899a61d",
+        "degree": 6,
+        "name": "KRIT mesto Prešov - Koncepcia rozvoja informačných technológií mesta Prešov",
+        "code": "kris_859"
+      },
+      {
+        "uuid": "8023cddd-612b-4e01-bef7-3e8cf25eb3fb",
+        "degree": 6,
+        "name": "KRIS obce Nitrianske Pravno",
+        "code": "kris_705"
+      },
+      {
+        "uuid": "2d0c84d6-80cb-4818-a92e-a070abf1b63b",
+        "degree": 6,
+        "name": "KRIS Ministerstva zahraničných vecí a európskych záležitostí Slovenskej republiky - budúci stav",
+        "code": "kris_553"
+      },
+      {
+        "uuid": "b6dde8ef-60f8-4cad-a3b7-af80962c4e2c",
+        "degree": 6,
+        "name": "KRIS Ministerstva zahraničných vecí a európskych záležitostí Slovenskej republiky",
+        "code": "kris_8"
+      },
+      {
+        "uuid": "385d8bbe-bc18-456f-92d6-813a5bcc505d",
+        "degree": 6,
+        "name": "KRIS Úradu geodézie, kartografie a katastra Slovenskej republiky",
+        "code": "kris_17"
+      },
+      {
+        "uuid": "681d3b77-0e02-44f3-b5c2-af3d58a411e7",
+        "degree": 6,
+        "name": "KRIS mesta Rajecké Teplice",
+        "code": "kris_389"
+      },
+      {
+        "uuid": "2097bc9e-fd4b-49f1-bc9e-e4a0cf7951a4",
+        "degree": 6,
+        "name": "Koncepcia rozvoja Centrálneho  informačného systému štátnej služby",
+        "code": "kris_427"
+      },
+      {
+        "uuid": "0c82df6a-2647-464f-865e-626f325e1455",
+        "degree": 6,
+        "name": "KRIS DataCentra elektronizácie územnej samosprávy Slovenska",
+        "code": "kris_246"
+      },
+      {
+        "uuid": "c5a8719c-8b80-48da-ae44-b7982c3440dc",
+        "degree": 6,
+        "name": "KRIS Košického samosprávneho kraja",
+        "code": "kris_186"
+      },
+      {
+        "uuid": "6fe1bcdc-385d-49d2-a489-b81c169207b9",
+        "degree": 6,
+        "name": "KRIS DataCentra elektronizácie územnej samosprávy Slovenska",
+        "code": "kris_484"
+      },
+      {
+        "uuid": "e6f4ced6-17eb-44c7-a74d-5949698ebfdb",
+        "degree": 6,
+        "name": "KRIS Úradu Bratislavského samosprávneho kraja - budúci stav",
+        "code": "kris_519"
+      },
+      {
+        "uuid": "c62fb973-999a-4c5d-b62a-df0871441756",
+        "degree": 6,
+        "name": "KRIS Správy štátnych hmotných rezerv SR",
+        "code": "kris_379"
+      },
+      {
+        "uuid": "1e2b7bec-9d0a-47a6-8e28-c3526f123679",
+        "degree": 6,
+        "name": "KRIS Kancelária Súdnej rady Slovenskej republiky - Budúci stav",
+        "code": "kris_552"
+      },
+      {
+        "uuid": "f54f7a59-90de-40ea-83c6-298ba24f2811",
+        "degree": 5,
+        "name": "KRIT - Ministerstvo spravodlivosti",
+        "code": "kris_998"
+      },
+      {
+        "uuid": "60f517a6-f8ff-4353-ac3a-86fdb25ce2eb",
+        "degree": 5,
+        "name": "Koncepcia rozvoja informačných technológií obce Bernolákovo",
+        "code": "kris_701"
+      },
+      {
+        "uuid": "cb52ff03-b004-485a-9038-5e3b1c45a1ca",
+        "degree": 5,
+        "name": "KRIT Komplexného systému environmentálneho dohľadu",
+        "code": "kris_683"
+      },
+      {
+        "uuid": "fd559630-e0eb-48fc-91fb-bf7a501bb93b",
+        "degree": 5,
+        "name": "KRIS Bučany",
+        "code": "kris_678"
+      },
+      {
+        "uuid": "d539f2ca-414c-429e-8bec-660c071a7d62",
+        "degree": 5,
+        "name": "KRIS obec Bohdanovce nad Trnavou",
+        "code": "kris_666"
+      },
+      {
+        "uuid": "40656d75-7b7c-41cb-a6b3-4dfda0134e91",
+        "degree": 5,
+        "name": "KRIS - mesta Michalovce",
+        "code": "kris_676"
+      },
+      {
+        "uuid": "ba85ff00-4122-4201-bada-9d1164a856b1",
+        "degree": 5,
+        "name": "KRIS - Národné športové centrum - súčasný stav",
+        "code": "kris_650"
+      },
+      {
+        "uuid": "d8f2be6c-b744-413e-8ca6-c340b4c2fac9",
+        "degree": 5,
+        "name": "KRIS Zabezpečenia efektívneho používania služieb ESO1 - budúci stav",
+        "code": "kris_601"
+      },
+      {
+        "uuid": "1d6ea213-d151-444c-a7d0-328a7c72733c",
+        "degree": 5,
+        "name": "KRIS Centrálne úložisko digitálneho edukačného obsahu (CUDEO)",
+        "code": "kris_572"
+      },
+      {
+        "uuid": "70b9536b-0711-4953-8e31-98b9ff644484",
+        "degree": 5,
+        "name": "KRIS Centrálny finančný informačný systém pre verejné vysoké školy (SOFIA)",
+        "code": "kris_571"
+      },
+      {
+        "uuid": "225ab34f-443e-4509-b8dc-7cf377f98dee",
+        "degree": 5,
+        "name": "KRIT Otvorených údajov 2.0",
+        "code": "kris_723"
+      },
+      {
+        "uuid": "cffd03ea-0ae6-4a1c-ad12-f430a3ac8ce6",
+        "degree": 5,
+        "name": "KRIS Národného bezpečnostného úradu - TO BE",
+        "code": "kris_498"
+      },
+      {
+        "uuid": "af1de2b0-94cc-4361-91c4-3283e94d79c0",
+        "degree": 4,
+        "name": "KRIS Rady pre vysielanie a retransmisiu - súčasný stav",
+        "code": "kris_248"
+      },
+      {
+        "uuid": "215ea989-d4db-4f2b-b5d3-de091b530e5c",
+        "degree": 4,
+        "name": "KRIT Atlasu pasívnej infraštruktúry Ministerstva životného prostredia",
+        "code": "kris_739"
+      },
+      {
+        "uuid": "66d6a7c0-5971-4c22-b65e-feb36cd3752d",
+        "degree": 4,
+        "name": "KRIT mesta Košice - inteligentné mesto",
+        "code": "kris_1039"
+      },
+      {
+        "uuid": "d6e78274-9a49-41b2-ab7a-5f715a359c61",
+        "degree": 4,
+        "name": "Koncepcia rozvoja informačných technológií mesta Dunajska Streda",
+        "code": "kris_980"
+      },
+      {
+        "uuid": "7d45df49-60eb-46a7-bc82-b1fbe58f7c1d",
+        "degree": 4,
+        "name": "KRIT Všeobecnej zdravotnej poisťovne - budúci stav",
+        "code": "kris_632"
+      },
+      {
+        "uuid": "fb0b6135-a113-4804-9d7a-bb52f440137a",
+        "degree": 4,
+        "name": "Prediktívne modely prevenčných programov",
+        "code": "kris_842"
+      },
+      {
+        "uuid": "503ffef5-2e20-4c55-9857-b19340faf6ff",
+        "degree": 4,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Pôdohospodárska platobná agentúra",
+        "code": "kris_784"
+      },
+      {
+        "uuid": "70ee137f-67fc-41a9-8ab6-f3783cb1a750",
+        "degree": 4,
+        "name": "KRIT mesta Košice",
+        "code": "kris_288"
+      },
+      {
+        "uuid": "709717f9-21e1-4bff-8008-d943802b0706",
+        "degree": 4,
+        "name": "KRIT Manažment údajov a zlepšenie eGOV služieb - Slovenský pozemkový fond",
+        "code": "kris_720"
+      },
+      {
+        "uuid": "dff50a39-7b6b-4692-b4df-4deefab33798",
+        "degree": 4,
+        "name": "KRIT Modernizácie dávkových agend Sociálnej poisťovne",
+        "code": "kris_711"
+      },
+      {
+        "uuid": "1a789ecb-4c7a-49bb-8ab4-36134638935a",
+        "degree": 4,
+        "name": "KRIT Živnostenského registra - budúci stav",
+        "code": "kris_685"
+      },
+      {
+        "uuid": "2fdc67d3-467c-4eb8-864d-1ba81b5cff6f",
+        "degree": 4,
+        "name": "KRIT Registra zbraní a streliva",
+        "code": "kris_669"
+      },
+      {
+        "uuid": "b5d6ac25-a5dc-46e6-ade4-7c66cbe2f0e2",
+        "degree": 4,
+        "name": "KRIS Agentúry na podporu výskumu a vývoja",
+        "code": "kris_658"
+      },
+      {
+        "uuid": "c7d4b284-3a71-420b-a3af-fb630de922d9",
+        "degree": 4,
+        "name": "Koncepcia rozvoja IT (kybernetická bezpečnosť)",
+        "code": "kris_1037"
+      },
+      {
+        "uuid": "6e7a8cab-ed75-40f4-b457-47096999f413",
+        "degree": 4,
+        "name": "KRIS Detskej fakultnej nemocnice Košice",
+        "code": "kris_927"
+      },
+      {
+        "uuid": "e5a058d3-3c82-4933-b58e-60971b7baa37",
+        "degree": 4,
+        "name": "KRIS Košického samosprávneho kraja",
+        "code": "kris_509"
+      },
+      {
+        "uuid": "6338dd60-a53e-434c-b609-c4f29b60674b",
+        "degree": 4,
+        "name": "KRIS Úradu pre reguláciu sieťových odvetví",
+        "code": "kris_495"
+      },
+      {
+        "uuid": "60a9d629-ee2e-4d9a-9df8-01ac600e3688",
+        "degree": 4,
+        "name": "KRIS Ministerstva práce, sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "kris_9"
+      },
+      {
+        "uuid": "ac919670-73fb-4e1a-b43c-fc40a7b685f0",
+        "degree": 4,
+        "name": "KRIS Ministerstva práce, sociálnych vecí a rodiny Slovenskej republiky - budúci stav",
+        "code": "kris_570"
+      },
+      {
+        "uuid": "d2073a46-e662-4ddb-9a0d-8e4d8a02c46b",
+        "degree": 4,
+        "name": "KRIS MPSVR SR - Informačného systému Safe Work (IS SAWO) budúci stav",
+        "code": "kris_574"
+      },
+      {
+        "uuid": "018b8657-5682-4f06-810f-151a041bb246",
+        "degree": 4,
+        "name": "KRIT Implementácie a integrácie podporného informačného systému (IS ÚRPO)",
+        "code": "kris_802"
+      },
+      {
+        "uuid": "b0260c1f-150e-4207-87bd-9548524c0d16",
+        "degree": 4,
+        "name": "KRIT Manažment údajov Zboru väzenskej a justičnej stráže",
+        "code": "kris_751"
+      },
+      {
+        "uuid": "04e09c89-0300-44f1-800f-b8138740446d",
+        "degree": 4,
+        "name": "KRIS Mesto Trenčín",
+        "code": "kris_665"
+      },
+      {
+        "uuid": "3e83b0c0-8765-4859-9bb4-232779a1a3af",
+        "degree": 4,
+        "name": "KRIS Inteligentné regulácie",
+        "code": "kris_558"
+      },
+      {
+        "uuid": "d8306568-840b-4f7c-a9e7-e9b0a28e13dc",
+        "degree": 4,
+        "name": "KRIS obce Likavka",
+        "code": "kris_444"
+      },
+      {
+        "uuid": "66c8ca19-0484-4fa4-b622-bc562a7462dd",
+        "degree": 4,
+        "name": "KRIT Úradu priemyselného vlastníctva SR - budúci stav",
+        "code": "kris_828"
+      },
+      {
+        "uuid": "e30a9514-dc20-4bba-9963-aa780f82b95e",
+        "degree": 3,
+        "name": "Koncepcia rozvoja informačných technológií mesta Hlohovec",
+        "code": "kris_1036"
+      },
+      {
+        "uuid": "036c0ca5-59a3-49b1-8bb3-743ed410bad7",
+        "degree": 3,
+        "name": "Koncepcia rozvoja informačných technológií mesta Levice",
+        "code": "kris_801"
+      },
+      {
+        "uuid": "e2b801ad-f524-48fa-a93e-68d18a34ebce",
+        "degree": 3,
+        "name": "Koncepcia rozvoja informačných technológií mesta Žiar nad Hronom",
+        "code": "kris_973"
+      },
+      {
+        "uuid": "4cc317d2-db0d-46c5-9a26-5dee39e128e0",
+        "degree": 3,
+        "name": "Koncepcia rozvoja IT mesta Dubnica nad Váhom",
+        "code": "kris_803"
+      },
+      {
+        "uuid": "c919d9d6-3c6c-4f20-abec-728b1fdd91cc",
+        "degree": 3,
+        "name": "KRIT Manažment údajov a zlepšenie služieb Úradu pre dohľad nad zdravotnou starostlivosťou",
+        "code": "kris_778"
+      },
+      {
+        "uuid": "ef8b0c95-b98d-4771-b93d-d52422e71e33",
+        "degree": 3,
+        "name": "KRIT Úradu priemyselného vlastníctva SR - budúci stav",
+        "code": "kris_790"
+      },
+      {
+        "uuid": "bbdf5585-3ea1-499c-abc2-f1f62676adde",
+        "degree": 3,
+        "name": "KRIT Elektronizácia služieb regionálneho a vysokého školstva SR",
+        "code": "kris_697"
+      },
+      {
+        "uuid": "772d4370-b272-442f-9c04-306f6d6f7a30",
+        "degree": 3,
+        "name": "KRIT Úradu na ochranu osobných údajov SR - budúci stav",
+        "code": "kris_544"
+      },
+      {
+        "uuid": "63471449-a757-404a-82c6-9be7667ea024",
+        "degree": 3,
+        "name": "KRIS mestskej časti Bratislava Vajnory",
+        "code": "kris_585"
+      },
+      {
+        "uuid": "d3c45d10-c3d1-4be6-b650-93e6ddad5d65",
+        "degree": 3,
+        "name": "KRIS Úradu vlády Slovenskej republiky - budúci stav",
+        "code": "kris_579"
+      },
+      {
+        "uuid": "b9fff9d9-f214-41cd-b966-59a6f6e94161",
+        "degree": 3,
+        "name": "KRIS Úradu vlády Slovenskej republiky - súčasný stav",
+        "code": "kris_307"
+      },
+      {
+        "uuid": "390d00f3-b2f2-4445-8477-72f3ee8c414e",
+        "degree": 3,
+        "name": "Koncepcia rozvoja Ústredného portálu verejnej správy (ÚPVS)",
+        "code": "kris_537"
+      },
+      {
+        "uuid": "9f66e1ae-4fbb-4913-b08a-11b2deef446b",
+        "degree": 3,
+        "name": "KRIS Sociálnej poisťovne",
+        "code": "kris_34"
+      },
+      {
+        "uuid": "0d80f45b-f3ff-47f5-9ff6-4a0a43c65c4e",
+        "degree": 3,
+        "name": "Koncepcia rozvoja informačných technológií mesta Trnava",
+        "code": "kris_955"
+      },
+      {
+        "uuid": "16ddb194-0b86-4259-a7b5-de7225aa7b10",
+        "degree": 3,
+        "name": "KRIS Bratislava - Nové mesto",
+        "code": "kris_339"
+      },
+      {
+        "uuid": "28289734-e2fc-47a6-874d-8ff98c38405a",
+        "degree": 3,
+        "name": "Koncepcia rozvoja IS Manažmentu údajov Sociálnej poisťovne",
+        "code": "kris_454"
+      },
+      {
+        "uuid": "d5784e04-da6a-45c3-ae12-9337b3252586",
+        "degree": 3,
+        "name": "KRIS Sociálnej poisťovne - budúci stav",
+        "code": "kris_488"
+      },
+      {
+        "uuid": "4d329e12-18e1-4e6c-94fc-2fb0a5d5026f",
+        "degree": 3,
+        "name": "KRIS Protimonopolného úradu SR - budúci stav",
+        "code": "kris_485"
+      },
+      {
+        "uuid": "e2c81c91-dbe4-418d-9c4b-9dd695ce6c59",
+        "degree": 3,
+        "name": "KRIS Správy štátnych hmotných rezerv SR - budúci stav",
+        "code": "kris_496"
+      },
+      {
+        "uuid": "0c14888e-cbc8-46b0-a4c3-7cc735b62377",
+        "degree": 3,
+        "name": "KRIS Slovenskej lekárskej komory",
+        "code": "kris_392"
+      },
+      {
+        "uuid": "d3f834e2-4d6d-4bf4-bcdc-e01b69020ec9",
+        "degree": 3,
+        "name": "KRIT Manažment údajov Ministerstva kultúry Slovenskej republiky",
+        "code": "kris_760"
+      },
+      {
+        "uuid": "e1224463-c4a1-4d07-b170-592b099f5b98",
+        "degree": 3,
+        "name": "KRIT Manažmentu údajov v rezorte školstva",
+        "code": "kris_781"
+      },
+      {
+        "uuid": "060f1850-7bc4-45bf-8d6d-6f4a8efedcd6",
+        "degree": 3,
+        "name": "KRIT Dopravného úradu - budúci stav",
+        "code": "kris_750"
+      },
+      {
+        "uuid": "936828e2-9b05-495f-a5cd-87df8f421583",
+        "degree": 3,
+        "name": "KRIS Trenčianskeho samosprávneho kraja - súčasný stav",
+        "code": "kris_724"
+      },
+      {
+        "uuid": "aba18c36-e4d5-4b70-ae5a-a73fbbab1bfb",
+        "degree": 3,
+        "name": "KRIS Úradu pre reguláciu elektronických komunikácií a poštových služieb –  súčasný stav",
+        "code": "kris_296"
+      },
+      {
+        "uuid": "569804da-f19f-4154-8f91-f6b4a1e3ca0a",
+        "degree": 3,
+        "name": "Koncepcia rozvoja informačných technológii mesta Zvolen",
+        "code": "kris_884"
+      },
+      {
+        "uuid": "cb15767c-3ae1-4203-a20d-d50ecf753d61",
+        "degree": 3,
+        "name": "Koncepcia rozvoja informačných technológií mesta Banská Bystrica",
+        "code": "kris_989"
+      },
+      {
+        "uuid": "8b14504f-4ecd-4269-a50f-ac00cfc1b005",
+        "degree": 3,
+        "name": "KRIS Najvyššieho kontrolného úradu Slovenskej republiky - budúci stav",
+        "code": "kris_580"
+      },
+      {
+        "uuid": "b7f52d67-11fd-478b-8564-62ae8a269d0b",
+        "degree": 3,
+        "name": "KRIS MV SR v oblasti kybernetickej bezpečnosti - budúci stav",
+        "code": "kris_936"
+      },
+      {
+        "uuid": "e03af114-b3da-4df4-9289-3d323f1eb1bb",
+        "degree": 3,
+        "name": "KRIT Portálu Finančnej správy (PFS)",
+        "code": "kris_818"
+      },
+      {
+        "uuid": "ae5e6a45-9045-40a7-9bda-505ab24c22bc",
+        "degree": 3,
+        "name": "Koncepcia rozvoja informačných systémov mesta Detva",
+        "code": "kris_435"
+      },
+      {
+        "uuid": "c4b624cc-a58e-4ef3-85e7-2ee6de4bb6a2",
+        "degree": 3,
+        "name": "KRIT Manažmentu údajov Registrov Zbierky elektronických listín",
+        "code": "kris_792"
+      },
+      {
+        "uuid": "76af944b-c7ef-4621-9e5b-b3b480a432a0",
+        "degree": 3,
+        "name": "KRIS Ústavu pamäti národa",
+        "code": "kris_206"
+      },
+      {
+        "uuid": "e9f24b34-1c39-424c-a9c7-e85cf32089b1",
+        "degree": 2,
+        "name": "KRIT Informačného systému elektronickej fakturácie - budúci stav",
+        "code": "kris_612"
+      },
+      {
+        "uuid": "9b5ff594-f8c4-4703-99d3-9f2f2d501c27",
+        "degree": 2,
+        "name": "KRIT - Elektronizácia dávok z nemocenského poistenia",
+        "code": "kris_837"
+      },
+      {
+        "uuid": "04d23caa-f166-410e-a022-c9893711e8cf",
+        "degree": 2,
+        "name": "KRIT - Elektronické úložisko projektovej dokumentácie",
+        "code": "kris_830"
+      },
+      {
+        "uuid": "70afffcc-b98e-4684-b3eb-f33fa7298874",
+        "degree": 2,
+        "name": "KRIT Technickej univerzity v Košiciach",
+        "code": "kris_808"
+      },
+      {
+        "uuid": "29d12576-0a95-4e90-a111-b0037e6620f3",
+        "degree": 2,
+        "name": "KRIT - Malé zlepšenia e-gov služieb Ministerstva životného prostredia SR",
+        "code": "kris_791"
+      },
+      {
+        "uuid": "f9ecea59-dc6f-4f1c-ab44-e65d110eba98",
+        "degree": 2,
+        "name": "KRIT Komponentu sprístupňovania a zdieľania doručovaných rozhodnutí",
+        "code": "kris_788"
+      },
+      {
+        "uuid": "9ab89b5f-6f92-4167-b3eb-2a134a2fb26a",
+        "degree": 2,
+        "name": "KRIS Ministerstva spravodlivosti Slovenskej republiky stav \"to be\"",
+        "code": "kris_772"
+      },
+      {
+        "uuid": "6c4813b7-6227-491b-83e8-e2efc83dfea4",
+        "degree": 2,
+        "name": "KRIT Elektronickej zložky klienta",
+        "code": "kris_752"
+      },
+      {
+        "uuid": "697a4e28-5d07-48bb-917a-af7c9fb7e45d",
+        "degree": 2,
+        "name": "Koncepcia rozvoja informačných technológií mesta Pezinok - budúci stav",
+        "code": "kris_745"
+      },
+      {
+        "uuid": "274687fe-f79a-4974-b5e7-dc2849d85633",
+        "degree": 2,
+        "name": "KRIT Plošné rozšírenie IS DCOM na mestá",
+        "code": "kris_747"
+      },
+      {
+        "uuid": "d985b749-f9d5-4c67-a3ab-e8392642c48a",
+        "degree": 2,
+        "name": "KRIS Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "kris_479"
+      },
+      {
+        "uuid": "59bade3c-d72e-4bb8-a336-a55a37cd9223",
+        "degree": 2,
+        "name": "KRIS Mesto Sládkovičovo",
+        "code": "kris_411"
+      },
+      {
+        "uuid": "215c2e4c-6983-48d7-b226-5aed1d5a9685",
+        "degree": 2,
+        "name": "KRIS Generálnej prokuratúry SR - budúci stav",
+        "code": "kris_503"
+      },
+      {
+        "uuid": "98fe6c09-7d9b-4d03-a1f8-afe9d828b92c",
+        "degree": 2,
+        "name": "KRIT Manažérskeho informačného systému MDV SR",
+        "code": "kris_812"
+      },
+      {
+        "uuid": "bf6d834c-1754-401d-862f-001f1c5af36f",
+        "degree": 2,
+        "name": "KRIT Lepšieho manažmentu dát Prešovského samosprávneho kraja II",
+        "code": "kris_754"
+      },
+      {
+        "uuid": "0633a2f5-0817-4459-8d9c-f57a292cef58",
+        "degree": 2,
+        "name": "KRIT Manažmentu údajov Centrálneho metainformačného systému verejnej správy",
+        "code": "kris_779"
+      },
+      {
+        "uuid": "73102845-f9dc-4125-ac89-e956db8509ab",
+        "degree": 2,
+        "name": "KRIT Manažmentu údajov - Hydromeliorácie š.p.",
+        "code": "kris_765"
+      },
+      {
+        "uuid": "64e94d18-090e-41ff-be22-00057dd0fdb2",
+        "degree": 2,
+        "name": "KRIT Manažmentu údajov Žilinského samosprávneho kraja",
+        "code": "kris_755"
+      },
+      {
+        "uuid": "f7897301-6376-4901-a966-b5dcfbee30ae",
+        "degree": 2,
+        "name": "KRIT Pamiatkového úradu SR - budúci stav",
+        "code": "kris_688"
+      },
+      {
+        "uuid": "e762b59f-e734-4a9c-b07e-3b87701cace6",
+        "degree": 2,
+        "name": "KRIS Analytického nástroja pre ekonomickú reguláciu MZ SR - budúci stav",
+        "code": "kris_644"
+      },
+      {
+        "uuid": "454663af-a2b8-454a-a3d8-e8f1a19e1182",
+        "degree": 2,
+        "name": "KRIS Manažment údajov v oblasti neprofesionálneho umenia",
+        "code": "kris_622"
+      },
+      {
+        "uuid": "74440c87-ccbd-4219-a34b-302beaa1446b",
+        "degree": 2,
+        "name": "KRIS Manažment údajov Žilinského samosprávneho kraja - budúci stav",
+        "code": "kris_615"
+      },
+      {
+        "uuid": "c671a205-b1f1-4298-9da7-1c80c8c33ea9",
+        "degree": 2,
+        "name": "KRIS Manažment údajov Ministerstva financií Slovenskej republiky - budúci stav",
+        "code": "kris_638"
+      },
+      {
+        "uuid": "c036b7cb-4b09-4b04-9bed-4c086c0f6163",
+        "degree": 2,
+        "name": "KRIS Digitálne pracovné prostredie zamestnanca MV SR",
+        "code": "kris_587"
+      },
+      {
+        "uuid": "c0ba5216-5ea7-42a8-b1a4-77eda2b046e0",
+        "degree": 2,
+        "name": "KRIS Riadenie procesov a dát",
+        "code": "kris_588"
+      },
+      {
+        "uuid": "af781a26-0c3e-4afe-b837-d676940e042b",
+        "degree": 2,
+        "name": "KRIS Centrálne komponenty správneho konania vo verejnej správe",
+        "code": "kris_586"
+      },
+      {
+        "uuid": "8ddc7f5d-66fa-4376-a8a9-5f7784b25cde",
+        "degree": 2,
+        "name": "KRIT Úradu pre verejné obstarávanie - budúci stav",
+        "code": "kris_414"
+      },
+      {
+        "uuid": "934abdb5-a789-4bdf-bd8f-22d3db27a164",
+        "degree": 2,
+        "name": "KRIS Národného bezpečnostného úradu - AS IS",
+        "code": "kris_23"
+      },
+      {
+        "uuid": "e8b744a2-807a-4bfc-ad50-247d542de1a1",
+        "degree": 2,
+        "name": "KRIS Ministerstva spravodlivosti SR - súčasný stav",
+        "code": "kris_349"
+      },
+      {
+        "uuid": "958fe202-3eb5-452d-8698-89c1b7013381",
+        "degree": 2,
+        "name": "KRIT Centrálneho metainformačného systému verejnej správy pre oblasť služieb vládneho cloudu",
+        "code": "kris_836"
+      },
+      {
+        "uuid": "34645edf-782e-495c-8145-027a246df1c5",
+        "degree": 2,
+        "name": "KRIT Manažmentu údajov Národného lesníckeho centra",
+        "code": "kris_787"
+      },
+      {
+        "uuid": "f481cdea-0fc1-4df6-a667-f453440093c0",
+        "degree": 2,
+        "name": "KRIT Manažment údajov Národné športové centrum - budúci stav",
+        "code": "kris_789"
+      },
+      {
+        "uuid": "2c6702d9-c6af-4009-8eb7-ce65d8b044a3",
+        "degree": 2,
+        "name": "KRIT Manažmentu údajov Úradu vlády SR",
+        "code": "kris_786"
+      },
+      {
+        "uuid": "35055b1c-3bc9-49da-a72c-b9951a0a8a71",
+        "degree": 2,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Štátna veterinárna a potravinová správa Slovenskej republiky",
+        "code": "kris_783"
+      },
+      {
+        "uuid": "c68908d7-1eee-4fc4-ab2b-51e0845f929d",
+        "degree": 2,
+        "name": "KRIT Komplexného informačného systému riadenia výkonnosti a podpory",
+        "code": "kris_714"
+      },
+      {
+        "uuid": "cb7a841f-a98b-4716-b99a-a58e887f8c76",
+        "degree": 2,
+        "name": "KRIS Manažmentu údajov pre oblast vedy a výskumu",
+        "code": "kris_661"
+      },
+      {
+        "uuid": "56a060c7-2732-4c07-a541-161efb9d57c1",
+        "degree": 2,
+        "name": "KRIT Migrácia systému PROFSME do Vládneho cloudu SR",
+        "code": "kris_641"
+      },
+      {
+        "uuid": "2e786900-2f7f-4283-a007-034bf5c2d996",
+        "degree": 2,
+        "name": "KRIS Manažment údajov a správa Open Data",
+        "code": "kris_639"
+      },
+      {
+        "uuid": "3ea7f76c-e4c7-40e0-a7c4-5741a278abe7",
+        "degree": 2,
+        "name": "KRIS Štatistického úradu Slovenskej republiky - budúci stav",
+        "code": "kris_620"
+      },
+      {
+        "uuid": "2df13376-8579-45e1-8d0e-d253c4b45035",
+        "degree": 2,
+        "name": "KRIS Registre informačného systému o výstavbe",
+        "code": "kris_583"
+      },
+      {
+        "uuid": "9df26e1b-a931-4760-acb5-be12a71037a1",
+        "degree": 2,
+        "name": "KRIS Najvyššieho kontrolného úradu Slovenskej republiky",
+        "code": "kris_33"
+      },
+      {
+        "uuid": "c7a4eb50-f4c2-413f-9ccc-506464bca714",
+        "degree": 2,
+        "name": "KRIS Štatistického úradu Slovenskej republiky",
+        "code": "kris_16"
+      },
+      {
+        "uuid": "59a0c455-f46c-4289-92aa-682ef5eeebe8",
+        "degree": 2,
+        "name": "KRIS Národného lesníckeho centra",
+        "code": "kris_614"
+      },
+      {
+        "uuid": "e02ae92a-6a40-463a-8cc2-512f13b7fa80",
+        "degree": 2,
+        "name": "KRIS Bratislava - Nové Mesto - budúci stav (to-be)",
+        "code": "kris_543"
+      },
+      {
+        "uuid": "efa602c1-98d1-435b-b80a-6f02159971f1",
+        "degree": 2,
+        "name": "KRIS Úradu pre reguláciu elektronických komunikácii a poštových služieb - budúci stav",
+        "code": "kris_536"
+      },
+      {
+        "uuid": "4df1901b-85a8-4191-8ae6-398b60d4959f",
+        "degree": 2,
+        "name": "KRIS Prešovského samosprávneho kraja",
+        "code": "kris_168"
+      },
+      {
+        "uuid": "542ee6b7-897b-42fe-9ec6-de057eff561e",
+        "degree": 2,
+        "name": "KRIS Prešovského samosprávneho kraja - budúci stav",
+        "code": "kris_504"
+      },
+      {
+        "uuid": "82c1c7c8-32d2-4a47-89ea-866e5e896862",
+        "degree": 2,
+        "name": "KRIS Banskobystrického samosprávneho kraja - budúci stav",
+        "code": "kris_510"
+      },
+      {
+        "uuid": "7a152c82-4e29-4a9d-9c4d-ea539d3ec6da",
+        "degree": 2,
+        "name": "KRIT Redizajn siete GOVNET",
+        "code": "kris_728"
+      },
+      {
+        "uuid": "e4ee7e03-5fc2-4035-9cda-c5dda8b958e3",
+        "degree": 2,
+        "name": "KRIS Ministerstva dopravy a výstavby Slovenskej republiky - budúci stav",
+        "code": "kris_555"
+      },
+      {
+        "uuid": "2956cc4f-25c7-4cd9-90b2-c1e3981180c9",
+        "degree": 1,
+        "name": "KRIT Národného kompetenčného centra pre vysokovýkonné počítanie",
+        "code": "kris_852"
+      },
+      {
+        "uuid": "0d78710c-be4a-4906-b49b-85f1701c10d8",
+        "degree": 1,
+        "name": "KRIS",
+        "code": "kris_878"
+      },
+      {
+        "uuid": "6ade3a33-ee8c-4688-a9bd-bc2edf81e228",
+        "degree": 1,
+        "name": "KRIT univerzálneho telemedicínskeho systému pre ambulantný manažment kardiovaskulárnych ochorení",
+        "code": "kris_865"
+      },
+      {
+        "uuid": "4fb4d534-f363-4848-bfba-ead2db161e2c",
+        "degree": 1,
+        "name": "KRIT - Elektronické služby spracovávania bezpečnostných spisov",
+        "code": "kris_839"
+      },
+      {
+        "uuid": "e212af95-a603-4ecd-af53-42dceeeb29a8",
+        "degree": 1,
+        "name": "KRIS Úradu pre dohľad nad zdravotnou starostlivosťou - budúci stav",
+        "code": "kris_551"
+      },
+      {
+        "uuid": "d2390104-6d12-45e9-8de5-c75e13312f59",
+        "degree": 1,
+        "name": "KRIS Úradu pre dohľad nad zdravotnou starostlivosťou",
+        "code": "kris_205"
+      },
+      {
+        "uuid": "28a5b9eb-ba29-4aaf-99af-47c6ca4d348d",
+        "degree": 1,
+        "name": "KRIT Lepšieho využívania údajov Nitrianskeho samosprávneho kraja",
+        "code": "kris_493"
+      },
+      {
+        "uuid": "1d1a6b4f-01fb-41c5-be2b-fa66c72c4c0a",
+        "degree": 1,
+        "name": "KRIT Dynamického architektonického modelu governmentu",
+        "code": "kris_849"
+      },
+      {
+        "uuid": "2b5c980f-ce2b-4f94-b365-2688d2b3089c",
+        "degree": 1,
+        "name": "KRIS Centrálneho údajového repozitára ÚKSÚP - budúci stav",
+        "code": "kris_626"
+      },
+      {
+        "uuid": "a311c124-f080-4a58-988a-c073fc648d63",
+        "degree": 1,
+        "name": "KRIT Centrálneho informačného systému na riadenie IT aktív",
+        "code": "kris_822"
+      },
+      {
+        "uuid": "27fdfd15-486b-4316-b2c3-2f4beb7ce7bc",
+        "degree": 1,
+        "name": "KRIT Lepšie využívanie údajov pre kontrolu výskytu a šírenia baktérií - Antimikrobiálna rezistencia v SR (AMR) - budúci stav",
+        "code": "kris_819"
+      },
+      {
+        "uuid": "01ef2cdc-8926-47f1-93ed-24381d515b29",
+        "degree": 1,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Ústredný kontrolný a skúšobný ústav poľnohospodársky",
+        "code": "kris_782"
+      },
+      {
+        "uuid": "e8212b45-14c8-4ef1-bba2-7f58a55bfbc1",
+        "degree": 1,
+        "name": "KRIT Centralizovaného systému súdneho riadenia (CSSR)",
+        "code": "kris_762"
+      },
+      {
+        "uuid": "b58d0ccb-1aa1-45b1-92f6-511c2a96bd54",
+        "degree": 1,
+        "name": "KRIS Online procesy eZdravia - budúci stav",
+        "code": "kris_600"
+      },
+      {
+        "uuid": "09108b24-d313-4b8e-b510-23c9d7d3eb3b",
+        "degree": 1,
+        "name": "KRIS Optimalizácie procesov riadenia a prevádzky Zboru väzenskej a justičnej stráže",
+        "code": "kris_604"
+      },
+      {
+        "uuid": "8191acb8-941d-492f-ba93-e322612872be",
+        "degree": 1,
+        "name": "KRIS Integrovaný systém úradov verejného zdravotníctva - budúci stav",
+        "code": "kris_613"
+      },
+      {
+        "uuid": "9ecc392e-12a1-4a2e-96e8-8d0c0571b6b3",
+        "degree": 1,
+        "name": "KRIS Registra mimovládnych neziskových organizácií",
+        "code": "kris_602"
+      },
+      {
+        "uuid": "503405c0-12de-4bd2-9fb8-e94e5224974f",
+        "degree": 1,
+        "name": "KRIS Úradu pre reguláciu sieťových odvetví",
+        "code": "kris_27"
+      },
+      {
+        "uuid": "ab153db4-e717-45a9-b6f8-d71cd4075200",
+        "degree": 1,
+        "name": "KRIT manažmentu údajov Centrálnej archeologickej evidencie SR",
+        "code": "kris_855"
+      },
+      {
+        "uuid": "be4a5c73-7ba3-4236-a6f5-c67cecfa6aee",
+        "degree": 1,
+        "name": "KRIT Konsolidovanej analytickej vrstvy",
+        "code": "kris_820"
+      },
+      {
+        "uuid": "e36e434a-c77f-48a5-8740-2d2f18947a53",
+        "degree": 1,
+        "name": "KRIT tzdravie – rozšírenie ezdravie o telemedicínske služby  - budúci stav",
+        "code": "kris_854"
+      },
+      {
+        "uuid": "21844744-30a2-48b6-9929-5bfe55ee7535",
+        "degree": 1,
+        "name": "KRIT pre podporu aktívneho asistovaného života v podmienkach Trenčianskeho samosprávneho kraja",
+        "code": "kris_807"
+      },
+      {
+        "uuid": "dfb4775d-d1fd-4a3f-bdcf-111650ef5a12",
+        "degree": 1,
+        "name": "Rozvoj informačnej/kybernetickej bezpečnosti",
+        "code": "kris_1009"
+      },
+      {
+        "uuid": "4b1d4d9e-8f65-4ad9-84dc-e0cd1acea7f6",
+        "degree": 1,
+        "name": "KRIS - Implementácia SOC",
+        "code": "kris_825"
+      },
+      {
+        "uuid": "8397c2d9-892c-4f4c-868f-8db4934c5814",
+        "degree": 1,
+        "name": "KRIS Ministerstva vnútra Slovenskej republiky",
+        "code": "kris_6"
+      },
+      {
+        "uuid": "12c33098-5d7a-4e10-97b6-bd0c7b98f5d4",
+        "degree": 1,
+        "name": "KRIS Exportno-importnej banky SR - budúci stav",
+        "code": "kris_546"
+      },
+      {
+        "uuid": "caa92cc8-70ce-4f49-935c-53385e9fe9fe",
+        "degree": 1,
+        "name": "Koncepcia rozvoja IT Ministerstva financií Slovenskej republiky - súčasný stav",
+        "code": "krit_1053"
+      },
+      {
+        "uuid": "af4000f6-769c-4c60-82d4-cca7c0961ec8",
+        "degree": 1,
+        "name": "KRIT MVSR - budúci stav",
+        "code": "kris_959"
+      },
+      {
+        "uuid": "47724be4-b222-425d-ba05-6c08ddf019da",
+        "degree": 1,
+        "name": "KRIT Migrácie Informačného systému služieb zamestnanosti",
+        "code": "kris_827"
+      },
+      {
+        "uuid": "ac4bac4e-7001-4e96-9966-335ac551096b",
+        "degree": 1,
+        "name": "KRIT Správy pre IaaS infraštruktúru (Datacentrum Kopčianska)",
+        "code": "kris_795"
+      },
+      {
+        "uuid": "174836f9-1b77-4177-8991-4a0f2f211aa8",
+        "degree": 1,
+        "name": "KRIT Migrácia ISVS Ústredného kontrolného a skúšobného ústavu poľnohospodárskeho do IaaS",
+        "code": "kris_794"
+      },
+      {
+        "uuid": "c2d0fe53-01f6-42a9-bf20-579de8805aef",
+        "degree": 1,
+        "name": "KRIT - Migrácia ISVS Ministerstva životného prostredia SR do IaaS",
+        "code": "kris_793"
+      },
+      {
+        "uuid": "70bcd843-4e3e-4d2a-af6e-927d8498aa37",
+        "degree": 1,
+        "name": "KRIT Migrácia IS Elektronizácia vzdelávacieho systému regionálneho školstva",
+        "code": "kris_776"
+      },
+      {
+        "uuid": "4a343548-167b-4344-ba3d-4ba4edc7dfdb",
+        "degree": 1,
+        "name": "KRIS Rozšírenie portfólia služieb a inovácia služieb elektronického zdravotníctva - budúci stav",
+        "code": "kris_748"
+      },
+      {
+        "uuid": "515c1b72-53b4-4ca5-8226-b9033469c63c",
+        "degree": 1,
+        "name": "KRIT Informačného systému pre certifikáciu kompetencií v informatike",
+        "code": "kris_706"
+      },
+      {
+        "uuid": "87153abf-ba44-411e-bc17-55b8b37e87bc",
+        "degree": 1,
+        "name": "KRIT Centrálnej API Manažment platformy",
+        "code": "kris_695"
+      },
+      {
+        "uuid": "5755ac7e-7046-4620-a1c5-0b000f224686",
+        "degree": 1,
+        "name": "KRIS migracia IS ŠIOV do vl. cloudu",
+        "code": "kris_689"
+      },
+      {
+        "uuid": "6a3f9921-04c4-48f7-8a73-b44ab4ca202f",
+        "degree": 1,
+        "name": "KRIS Systému elektronickej pošty Ministerstva spravodlivosti Slovenskej republiky",
+        "code": "kris_643"
+      },
+      {
+        "uuid": "785376ae-4afa-4549-a689-fef56f791a0f",
+        "degree": 1,
+        "name": "KRIS Jednotného prístupu k priestorovým údajom a službám",
+        "code": "kris_603"
+      },
+      {
+        "uuid": "c565ca12-c44c-4bc0-866d-8ced032547b5",
+        "degree": 1,
+        "name": "Koncepcia rozvoja PaaS platformy vládneho cloudu",
+        "code": "kris_565"
+      },
+      {
+        "uuid": "dcfd798c-1a1e-4efb-a6c9-b1da8930d977",
+        "degree": 1,
+        "name": "KRIS Ústavu pamäti národa - budúci stav",
+        "code": "kris_521"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "5f76c573-6f72-420c-9fcc-161a12f5e179",
+        "degree": 121,
+        "name": "Zlepšíme výkonnosť verejnej správy vďaka nasadeniu moderných informačných technológií",
+        "code": "ciel_10"
+      },
+      {
+        "uuid": "638d92d7-9b01-471c-b9be-a360df9abad1",
+        "degree": 109,
+        "name": "Zlepšíme dostupnosť údajov verejnej správy vo forme otvorených údajov",
+        "code": "ciel_14"
+      },
+      {
+        "uuid": "2dbb6ddc-72bf-415c-a8ab-dbbf225fb8c7",
+        "degree": 98,
+        "name": "Zvýšime kvalitu, štandard a dostupnosť elektronických služieb pre občanov",
+        "code": "ciel_7"
+      },
+      {
+        "uuid": "521283b1-60b8-422d-8dae-5e5757694f07",
+        "degree": 85,
+        "name": "Zlepšíme využívanie údajov a znalostí v rozhodovacích procesoch vo verejnej správe",
+        "code": "ciel_12"
+      },
+      {
+        "uuid": "fd7fcdd2-6da7-4436-b971-7b2460b3099a",
+        "degree": 80,
+        "name": "Racionalizujeme prevádzku informačných systémov pomocou vládneho cloudu",
+        "code": "ciel_15"
+      },
+      {
+        "uuid": "8acfe718-6285-4ded-afe6-40d8f924df5a",
+        "degree": 62,
+        "name": "Zvýšime kvalitu, štandard a dostupnosť elektronických služieb pre podnikateľov",
+        "code": "ciel_8"
+      },
+      {
+        "uuid": "85866427-9c9b-417a-ae6c-99aac51f098a",
+        "degree": 57,
+        "name": "Zvýšime ochranu kybernetického priestoru",
+        "code": "ciel_16"
+      },
+      {
+        "uuid": "3a9c616b-9f88-41fb-893a-d8e181c774ce",
+        "degree": 39,
+        "name": "Zlepšíme „governance“ verejného IT",
+        "code": "ciel_11"
+      },
+      {
+        "uuid": "81b7d739-777f-42e3-bef0-0b15f4b7e14c",
+        "degree": 24,
+        "name": "Zlepšíme digitálne zručnosti a inklúziu znevýhodnených jednotlivcov do digitálneho trhu",
+        "code": "ciel_5"
+      },
+      {
+        "uuid": "22579579-e2c9-4d3b-8d62-23b09e1c2ad6",
+        "degree": 19,
+        "name": "Zvýšime inovačnú kapacitu najmä malých a stredných podnikateľov v digitálnej ekonomike",
+        "code": "ciel_9"
+      },
+      {
+        "uuid": "8ba7c611-caad-4401-8c2b-37c2bce5cf8e",
+        "degree": 14,
+        "name": "Zvýšime pokrytie širokopásmovým internetom",
+        "code": "ciel_6"
+      }
+    ],
+    "islands": {
+      "total_nodes": 294,
+      "total_islands": 83,
+      "singleton_islands": 82,
+      "multi_islands": [
+        {
+          "size_total": 212,
+          "size_source": 201,
+          "size_target": 11,
+          "fraction_total": 0.7210884353741497,
+          "top_source_uuid": "0842a946-3316-4a5d-a16a-7ea3bc0304dd",
+          "top_source_degree": 13,
+          "top_target_uuid": "5f76c573-6f72-420c-9fcc-161a12f5e179",
+          "top_target_degree": 121
+        }
+      ],
+      "source": {
+        "total_nodes": 282,
+        "total_islands": 82,
+        "singleton_islands": 81,
+        "multi_islands": [
+          {
+            "size": 201,
+            "fraction": 0.7127659574468085,
+            "size_total": 212,
+            "top_uuid": "0842a946-3316-4a5d-a16a-7ea3bc0304dd",
+            "top_degree": 13
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 12,
+        "total_islands": 2,
+        "singleton_islands": 1,
+        "multi_islands": [
+          {
+            "size": 11,
+            "fraction": 0.9166666666666666,
+            "size_total": 212,
+            "top_uuid": "5f76c573-6f72-420c-9fcc-161a12f5e179",
+            "top_degree": 121
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

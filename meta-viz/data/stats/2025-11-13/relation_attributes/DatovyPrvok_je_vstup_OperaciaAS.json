@@ -1,0 +1,72 @@
+{
+  "relation_name": "DatovyPrvok_je_vstup_OperaciaAS",
+  "name": "Dátový prvok je vstupom operácie AS",
+  "description": "Dátový prvok je vstupom (vstupnou hodnotou / množinou hodnôt) aplikačnej služby.",
+  "engDescription": "Data element is input (input value / set of values) of application service.",
+  "type": "application",
+  "source_type": "DatovyPrvok",
+  "source_name": "Dátový prvok",
+  "target_type": "OperaciaAS",
+  "target_name": "Operácia aplikačnej služby",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 659,
+    "target_total": 915,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 1574,
+      "total_islands": 1574,
+      "singleton_islands": 1574,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 659,
+        "total_islands": 659,
+        "singleton_islands": 659,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 915,
+        "total_islands": 915,
+        "singleton_islands": 915,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": 78,
+  "name": "Zvolená cloudová služba má migrovaný parameter služby",
+  "technicalName": "MigSluzba_ma_MigParameter",
+  "description": "Služba má parametre služby",
+  "roleList": [
+    "IKT_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Selected cloud service has migrated service parameter",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 84,
+      "name": "Zvolené cloudové služby",
+      "technicalName": "MigSluzba",
+      "description": "Detaily týkajúce sa sluzby.",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Selected cloud services",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";IKT_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 28,
+      "name": "Migrovaný parameter služby",
+      "technicalName": "MigParameter",
+      "description": "Detaily týkajúce sa parametra služby.",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Migrated service parameter",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";IKT_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Service has service parameters",
+  "codePrefix": null,
+  "uriPrefix": null
+}

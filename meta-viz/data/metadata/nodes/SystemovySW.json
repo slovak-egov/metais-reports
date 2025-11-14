@@ -1,0 +1,1125 @@
+{
+  "id": 51,
+  "name": "Systémový softvér",
+  "technicalName": "SystemovySW",
+  "description": "Detaily týkajúce sa platformy.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#afffff",
+  "engName": "System software",
+  "category": "RWCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 87,
+      "name": "Generický profil EA",
+      "description": "Informácie z architektonického modelu",
+      "technicalName": "Gen_Profil_EA",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Additional information",
+      "attributes": [
+        {
+          "id": 418,
+          "name": "Skratený názov",
+          "description": "Skratený názov položky prenášaný z názvu položky architektonického modelu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_skrateny_nazov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Abbreviated name",
+          "engDescription": "Abbreviated item name transfered from name of architecture model item.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 310,
+          "name": "Popis referencie",
+          "description": "Popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_popis_referencie",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference description",
+          "engDescription": "Description of document, picture, model describing reference detail.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 620,
+          "name": "Zoznam referencií",
+          "description": "Zoznam referencií. Odkaz a popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING_PAIR",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_zoznam_referencii",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING_PAIR",
+          "engName": "Reference list",
+          "engDescription": "Reference list. Link and description of document, picture, model where is detail of reference described.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 245,
+          "name": "Odkaz na referenciu",
+          "description": "Samotný odkaz (URL) na referenciu (napr. v DMS).",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_odkaz_na_referenciu",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Link to reference",
+          "engDescription": "Particular link (URL) to reference (e.g. in DMS).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 508,
+          "name": "Typ replikácie",
+          "description": "Hovorí o tom, či je daná položka v modeli replikovaná alebo nie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_typ_replikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_REPLIKACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Replication type",
+          "engDescription": "Determines if particular item in model is replicated or no.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 297,
+          "name": "Počet replikácií",
+          "description": "Hovorí o početnosti objektu, napr 500 PC s windows, optimalizuje repozitár (aby nemusel obsahovať 500 položiek). Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_pocet_replikacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "interval",
+              "id": null,
+              "minValue": 0.0,
+              "maxValue": 1000000000.0
+            }
+          ],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of replications",
+          "engDescription": "Deals with quantity of object. e.g. 500 PCs with Windows, optimized by repository (not to include 500 items). Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "name": "IKT profil pre Licenciu",
+      "description": "IKT profil pre licenciu.",
+      "technicalName": "IKT_Profil_Licencia",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "ICT profile for license",
+      "attributes": [
+        {
+          "id": 204,
+          "name": "Licenčný model",
+          "description": "Kategorizácia licenčného modelu. Napríklad: procesorová licencia, na používateľa, CAL.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Licencia_model_licencny",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "License model",
+          "engDescription": "License model categorization. E.g.: CPU license, User, CAL ...",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 825,
+          "name": "Vendor",
+          "description": "Vendor licencie",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Licencia_vendor",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Vedor",
+          "engDescription": "License Vendor",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 41,
+          "name": "CRD",
+          "description": "Príznak či licencia bola nadobudnutá cez centrálnu rámcovú dohodu.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Licencia_crd",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "CRD",
+          "engDescription": "Attribute or license was acquired based on central framework contract.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 826,
+          "name": "Názov produktu",
+          "description": "Názov produktu",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Licencia_product_name",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Product Name",
+          "engDescription": "Product Name",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 827,
+          "name": "Podnázov produktu",
+          "description": "Podnázov produktu",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Licencia_subtitle",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Product Subtitle",
+          "engDescription": "Product Subtitle",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 436,
+          "name": "Stav",
+          "description": "Príznak stavu licenice:  ak CRD=FALSE je prázdny \"null\", ak CRD=TRUE nadobúda hodnoty PRIRADENÁ alebo NEPOUŽÍVANÁ.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Licencia_stav",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "STAV_IKT_LICENCIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Status",
+          "engDescription": "License status attribute: if CRD=FALSE is empty \"null\", if CRD=TRUE takes values ASSIGNED or UNUSED.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 828,
+          "name": "Možnosti",
+          "description": "Možnosti licencie",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Licencia_options",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Options",
+          "engDescription": "License Options",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 829,
+          "name": "Opensource",
+          "description": "Opensource",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Licencia_opensource",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Opensource",
+          "engDescription": "Opensource",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "name": "IKT profil pre migráciu systémového softvéru",
+      "description": "IKT profil pre migráciu systémového softvéru",
+      "technicalName": "IKT_Migracia_SystemovySW",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "ICT profile for system software migration",
+      "attributes": [
+        {
+          "id": 120,
+          "name": "ID PS",
+          "description": "Identifikátor zadávaný vyplňovateľom excelu ( 4.2.8 - Platformový softvér).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_id_ps",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "ID PS",
+          "engDescription": "Identifier submitted by person completing excel ( 4.2.8 - Platform software).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 213,
+          "name": "Názov",
+          "description": "Názov systémového softvéru.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_nazov",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Name",
+          "engDescription": "Software name.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 487,
+          "name": "Typ aplikácie",
+          "description": "Základná kategória softvéru. Napríklad: systémový, aplikačný, vlastný.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_typ_aplikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_IKT_APLIKACIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Application type",
+          "engDescription": "Basic software category. For example: system, application, custom.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 562,
+          "name": "Verzia PS",
+          "description": "Reťazec verzie softvéru tak, ako je udaný výrobcom. Napríklad: 3.5, 6.0, 2008, 2008 R2.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_verzia_ps",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Version of PS",
+          "engDescription": "String of software version as declared by manufacturer. E.g.: 3.5, 6.0, 2008, 2008 R2.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 284,
+          "name": "Počet",
+          "description": "Počet kusov softvéru.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_pocet",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Number",
+          "engDescription": "Number of software items.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 175,
+          "name": "Licenčný model",
+          "description": "Procesorová licencia, Na používateľa, CAL ...",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_licencny_model",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "License model",
+          "engDescription": "CPU license, User, CAL ...",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 587,
+          "name": "Výrobca",
+          "description": "Identifikátor výrobcu softvéru. Napríklad: VMWare, Oracle, Centos, Microsoft, Fabasoft.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_vyrobca",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Manufacturer",
+          "engDescription": "Software manufacturer identifier. E.g.: VMWare, Oracle, Centos, Microsoft, Fabasoft.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 266,
+          "name": "Platforma",
+          "description": "ID platformy, do ktorej zaraďujeme daný SW.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_platforma",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Platform",
+          "engDescription": "ID of platform to which we assign particular SW",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 10,
+          "name": "Aktuálny stav",
+          "description": "Aktuálny stav životného cyklu aplikácie. Napríklad: Pr - prevádzka, Vv - vo výstavbe, Pl - plánované.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_SystemovySW_aktualny_stav",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Current status",
+          "engDescription": "Current status of life cycle. E.g.: Op - in operation, Uc - under construction, Pl - planned.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "IKT profil pre systémový softvér",
+      "description": "IKT profil špecifický pre entitu systémový softvér",
+      "technicalName": "IKT_Profil_SystemovySW",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special ICT profile for system software entity",
+      "attributes": [
+        {
+          "id": 558,
+          "name": "Verzia",
+          "description": "Verzia systémového softvéru.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_SystemovySW_verzia",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Version",
+          "engDescription": "System software version.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 203,
+          "name": "Množstvo",
+          "description": "Množstvo. Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_SystemovySW_mnozstvo",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Quantity",
+          "engDescription": "Quantity. Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 376,
+          "name": "Príznak schválenia",
+          "description": "Príznak schválenia systémového softvéru.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_SystemovySW_priznak_schvalenia",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Attribute of approval",
+          "engDescription": "Attribute of system software approval.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "systemovy_sw_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/system-software",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 128,
+        "name": "Systémový softvér je používaný ISVS",
+        "engName": "System software is used by ISVS",
+        "technicalName": "SystemovySW_je_pouzivany_ISVS",
+        "description": "Systémový softvér je používaný ISVS",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "System software is used by ISVS",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 129,
+        "name": "Systémový softvér je používaný platformou",
+        "engName": "System software is used by platform",
+        "technicalName": "SystemovySW_je_pouzivany_Platforma",
+        "description": "Systémový softvér je používaný platformou",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "System software is used by platform",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 67,
+        "name": "Migrácia migruje systémový softvér",
+        "engName": "Migration migrates system software",
+        "technicalName": "Migracia_migruje_SystemovySW",
+        "description": "Systémový softvér môže byť migrovaný.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "System software may be migrated.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1195,
+        "name": "Licencia je používana SW",
+        "engName": "License used by SW.",
+        "technicalName": "License_usedby_SW",
+        "description": "Licencia je používana SW",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "License used by SW",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1197,
+        "name": "Žiadosť o licenciu je používana SW",
+        "engName": "LicenseRequest used by SW.",
+        "technicalName": "LicenseRequest_usedby_SW",
+        "description": "Žiadosť o licenciu  je používana SW",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "LicenseRequest used by SW",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "id": 1206,
+  "name": "Osobitný postup vo väzbe na KRIT",
+  "technicalName": "osobitny_postup_vztah_KRIT",
+  "description": "Osobitný postup vo väzbe na KRIT",
+  "roleList": [
+    "IKT_GARPO",
+    "KRIS_TVORBA",
+    "KRIS_SCHVAL",
+    "KRIS_PODPIS",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Special procedure in relation to KRIT",
+  "category": "RWNCB",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 96,
+      "name": "Osobitný postup podľa zákona o ITVS",
+      "technicalName": "OsobitnyPostup",
+      "description": "Osobitný postup podľa zákona o ITVS",
+      "roleList": [
+        "R_EGOV",
+        "EA_GARPO",
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Special procedure acoording to ISVS Law",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "Osobitny_postup_je_spravovany_PO",
+      "uriPrefix": null,
+      "roles": ";R_EGOV;EA_GARPO;IKT_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 22,
+      "name": "Koncept rozvoja IT",
+      "technicalName": "KRIS",
+      "description": "Koncept rozvoja IT",
+      "roleList": [
+        "KRIS_PODPIS",
+        "KRIS_TVORBA",
+        "KRIS_SCHVAL"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "KRIT",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";KRIS_PODPIS;KRIS_TVORBA;KRIS_SCHVAL;",
+      "labels": []
+    }
+  ],
+  "engDescription": "SPecial procedure in relation to KRIT",
+  "codePrefix": null,
+  "uriPrefix": null
+}

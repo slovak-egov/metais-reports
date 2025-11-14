@@ -1,0 +1,69 @@
+{
+  "type": "Migracia",
+  "count": 3,
+  "attributes": [
+    {
+      "name": "IKT_Profil_Schvalenie_schvalenie_vo_faze_planovania",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Schvalenie_stav_migracie",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Schvalenie_schvalenie_vo_faze_analyzy",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 1,
+      "pct": 33.33333333333333,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Migracia_vydavky_na_migraciu",
+      "count": 1,
+      "pct": 33.33333333333333,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

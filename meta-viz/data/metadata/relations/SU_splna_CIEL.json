@@ -1,0 +1,81 @@
+{
+  "id": 126,
+  "name": "Štúdia Uskutočniteľnosti spĺňa Ciel",
+  "technicalName": "SU_splna_CIEL",
+  "description": "Štúdia Uskutočniteľnosti spĺňa Ciel.",
+  "roleList": [
+    "SU_TVORBA",
+    "SU_SCHVAL"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Feasibility Study meets Objective",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [],
+  "targets": [],
+  "engDescription": "Feasibility Study meets Objective.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>meta-viz – Relations</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar controls -->
+    <aside class="sidebar">
+      <h1 class="app-title">meta-viz</h1>
+      <p class="app-subtitle">MetaIS / Neo4j snapshot explorer</p>
+
+      <section class="control-section">
+        <h2>View</h2>
+        <div class="view-toggle">
+          <button id="view-nodes"
+                  class="view-btn"
+                  type="button"
+                  onclick="window.location.href='nodes.html'">
+            Nodes
+          </button>
+      
+          <button id="view-relations"
+                  class="view-btn view-btn-active"
+                  type="button">
+            Relations
+          </button>
+      
+          <button id="view-hybrid" class="view-btn" disabled>
+            Hybrid
+          </button>
+        </div>
+      </section>
+
+      <section class="control-section">
+        <h2>Dataset</h2>
+        <label class="field">
+          <span class="field-label">Snapshot</span>
+          <select id="snapshot-select"></select>
+        </label>
+
+        <label class="field">
+          <span class="field-label">Relation</span>
+          <select id="relation-select"></select>
+        </label>
+      </section>
+
+      <section class="control-section">
+        <h2>Relation filters</h2>
+
+        <label class="field inline-field checkbox-field">
+          <input type="checkbox" id="filter-application" checked/>
+          <span class="field-label">Application</span>
+        </label>
+
+        <label class="field inline-field checkbox-field">
+          <input type="checkbox" id="filter-system" />
+          <span class="field-label">System</span>
+        </label>
+
+        <label class="field inline-field checkbox-field">
+          <input type="checkbox" id="filter-curated" />
+          <span class="field-label">Curated relations only</span>
+        </label>
+      </section>
+
+      <section class="control-section">
+        <button id="reload-btn" class="primary-btn">
+          Reload data
+        </button>
+      </section>
+
+      <section class="control-section meta-section">
+        <h2>Info</h2>
+        <p class="meta-text">
+          Relations view uses precomputed statistics from
+          <code>data/stats/&lt;date&gt;/relations/</code> and
+          metadata from <code>data/metadata/relation_index.json</code>.
+        </p>
+      </section>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <header class="main-header">
+        <div class="main-header-left">
+          <div id="breadcrumb" class="breadcrumb"></div>
+          <div id="summary" class="summary-text"></div>
+        </div>
+      
+        <div id="relation-header" class="relation-header"></div>
+      </header>
+    
+      <!-- two side-by-side panels -->
+      <section class="content relation-layout">
+        <!-- left = source -->
+        <div class="panel relation-side">
+          <div id="relation-source"></div>
+        </div>
+    
+        <!-- right = target -->
+        <div class="panel relation-side">
+          <div id="relation-target"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/relations.js"></script>
+</body>
+</html>

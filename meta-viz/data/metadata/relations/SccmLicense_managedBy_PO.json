@@ -1,0 +1,74 @@
+{
+  "id": 147,
+  "name": "SCCM Licensie managuje PO",
+  "technicalName": "SccmLicense_managedBy_PO",
+  "description": "SCCM Licensie managuje PO.",
+  "roleList": [
+    "LIC_ZLPO",
+    "EA_GARPO"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "SCCM licenses are managed by PA",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 80,
+      "name": "SCCM Licencie",
+      "technicalName": "SccmLicense",
+      "description": "SCCM Licencie",
+      "roleList": [
+        "LIC_ZLPO"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "SCCM Licenses",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_ZLPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 37,
+      "name": "Povinná osoba",
+      "technicalName": "PO",
+      "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Public authority",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "SCCM licenses are managed by PA.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

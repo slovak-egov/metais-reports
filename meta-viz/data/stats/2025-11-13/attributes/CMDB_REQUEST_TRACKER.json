@@ -1,0 +1,13 @@
+{
+  "type": "CMDB_REQUEST_TRACKER",
+  "count": 1,
+  "attributes": [
+    {
+      "name": "genprof_CMDB_REQUEST_TRACKER_curTransId",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

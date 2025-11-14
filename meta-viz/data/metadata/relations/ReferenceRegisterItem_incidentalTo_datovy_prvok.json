@@ -1,0 +1,76 @@
+{
+  "id": 122,
+  "name": "Register suvisi s datovym prvkom",
+  "technicalName": "ReferenceRegisterItem_incidentalTo_datovy_prvok",
+  "description": "Register suvisi s datovym prvkom.",
+  "roleList": [
+    "REFID_URI_DEF",
+    "RR_MANAGER",
+    "REFID_URI_SZ"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Register relates to data element",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 36,
+      "name": "Polozka referencneho registra",
+      "technicalName": "ReferenceRegisterItem",
+      "description": "Polozka referencneho registra.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register item",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 69,
+      "name": "Dátový prvok",
+      "technicalName": "DatovyPrvok",
+      "description": "Detaily týkajúce sa entity dátový prvok.",
+      "roleList": [
+        "REFID_URI_SZ",
+        "REFID_URI_DEF"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Data element",
+      "category": "RONCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";REFID_URI_SZ;REFID_URI_DEF;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Register relates to data element.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

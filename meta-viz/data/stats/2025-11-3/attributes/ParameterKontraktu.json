@@ -1,0 +1,34 @@
+{
+  "type": "ParameterKontraktu",
+  "count": 6,
+  "attributes": [
+    {
+      "name": "Profil_Parameter_hodnota",
+      "count": 6,
+      "pct": 100.0,
+      "unique_count": 6,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Parameter_typ_hodnoty",
+      "count": 6,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 16.666666666666664
+    },
+    {
+      "name": "Profil_Parameter_typ_parametra",
+      "count": 6,
+      "pct": 100.0,
+      "unique_count": 6,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Parameter_is_active",
+      "count": 6,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 16.666666666666664
+    }
+  ]
+}

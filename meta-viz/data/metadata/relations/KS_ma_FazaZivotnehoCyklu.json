@@ -1,0 +1,198 @@
+{
+  "id": 49,
+  "name": "Koncová služba má fázu životného cyklu",
+  "technicalName": "KS_ma_FazaZivotnehoCyklu",
+  "description": "Fázy životného cyklu koncovej služby.",
+  "roleList": [
+    "IKT_GARPO",
+    "R_TECH",
+    "EA_GARPO",
+    "R_ADMIN",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "eGov service has a life cycle phase",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 88,
+      "name": "Profil relácii fáz životného cyklu",
+      "description": "Údaje k fáze životného cyklu",
+      "technicalName": "Profil_Rel_FazaZivotnehoCyklu",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV",
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Information about life cycle phase",
+      "attributes": [
+        {
+          "id": 66,
+          "name": "Dátum začatia",
+          "description": "Dátum začatia fázy",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Rel_FazaZivotnehoCyklu_datum_zacatia",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Date initiation",
+          "engDescription": "Date of phase initiation",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 57,
+          "name": "Dátum ukončenia",
+          "description": "Dátum ukončenia fázy",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Rel_FazaZivotnehoCyklu_datum_ukoncenia",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "End date",
+          "engDescription": "Date of phase conclusion",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 31,
+      "name": "Koncová služba",
+      "technicalName": "KS",
+      "description": "Koncová služba je z hľadiska používateľa jeden pracovný výsledok určitej organizačnej jednotky realizujúcej konkrétny procesný úkon pri vybavovaní veci v rámci konkrétnej agendy. Každá služba spadá pod určitú agendu. Koncová služba predstavuje nadmnožinu eGovernment služieb. Napríklad: nahlásenie zmeny adresy Dopravnému inšpektorátu je konkrétna služba.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "eGov service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_gestor_KS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 74,
+      "name": "Fáza životného cyklu",
+      "technicalName": "FazaZivotnehoCyklu",
+      "description": "Fáza životného cyklu",
+      "roleList": [
+        "R_ADMIN",
+        "R_TECH"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Life cycle phase",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";R_ADMIN;R_TECH;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Life cycle phases of eGov service.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

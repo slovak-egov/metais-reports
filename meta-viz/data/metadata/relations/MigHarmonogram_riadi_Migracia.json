@@ -1,0 +1,124 @@
+{
+  "id": 64,
+  "name": "Harmonogram migrácie riadi migráciu",
+  "technicalName": "MigHarmonogram_riadi_Migracia",
+  "description": "Migrácia prostriedkov sa riadi harmonogramom.",
+  "roleList": [
+    "IKT_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Migration schedule manages migration",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 14,
+      "name": "Harmonogram migrácie",
+      "technicalName": "MigHarmonogram",
+      "description": "Detaily týkajúce sa harmonogramu migracie.",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Migration schedule",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";IKT_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 26,
+      "name": "Migrácia",
+      "technicalName": "Migracia",
+      "description": "Detaily týkajúce sa migrácie.",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Migration",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";IKT_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Resources migration is managed by schedule.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

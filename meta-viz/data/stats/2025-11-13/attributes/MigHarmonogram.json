@@ -1,0 +1,76 @@
+{
+  "type": "MigHarmonogram",
+  "count": 1,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_MigHarmonogram_dlzka_vypadku",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_MigHarmonogram_akceptuje",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_MigHarmonogram_faza",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_MigHarmonogram_koordinator",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_MigHarmonogram_vydavky",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

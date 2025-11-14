@@ -1,0 +1,55 @@
+{
+  "type": "local_statistical_territorial_unit_1_district",
+  "count": 80,
+  "attributes": [
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 80,
+      "pct": 100.0,
+      "unique_count": 80,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 80,
+      "pct": 100.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 80,
+      "pct": 100.0,
+      "unique_count": 80,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 80,
+      "pct": 100.0,
+      "unique_count": 80,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 80,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 1.25
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 80,
+      "pct": 100.0,
+      "unique_count": 80,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 79,
+      "pct": 98.75,
+      "unique_count": 79,
+      "unique_pct": 100.0
+    }
+  ]
+}

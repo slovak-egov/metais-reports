@@ -1,0 +1,124 @@
+{
+  "id": 1235,
+  "name": "Číselník je podriadený číselníku",
+  "technicalName": "Ciselnik_je_podriadeny_Ciselnik",
+  "description": "Určuje podriadenosť číselníka k inému číselníku.",
+  "roleList": [
+    "SZC_HLGES"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Codelist id subordinate to codelist",
+  "category": "RONCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 4,
+      "name": "Základný číselník",
+      "technicalName": "ZC",
+      "description": "Podľa 275/2006 Z. z. § 2 Vymedzenie základných pojmov f) základným číselníkom číselník vedený centrálne prostredníctvom informačného systému verejnej správy,",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Codelist",
+      "category": "RONCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 4,
+      "name": "Základný číselník",
+      "technicalName": "ZC",
+      "description": "Podľa 275/2006 Z. z. § 2 Vymedzenie základných pojmov f) základným číselníkom číselník vedený centrálne prostredníctvom informačného systému verejnej správy,",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Codelist",
+      "category": "RONCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": []
+    }
+  ],
+  "engDescription": "It determines subordination of codelist to other codelist.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

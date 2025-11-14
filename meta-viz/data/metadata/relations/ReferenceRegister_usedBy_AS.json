@@ -1,0 +1,104 @@
+{
+  "id": 117,
+  "name": "Register puziva AS",
+  "technicalName": "ReferenceRegister_usedBy_AS",
+  "description": "Register puziva AS.",
+  "roleList": [
+    "IKT_GARPO",
+    "RR_MANAGER",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Register is used by AS",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 334,
+      "name": "Poznamka",
+      "description": "Poznámka k aplikačnej službe, ktorá poskytuje údaje referenčného registra.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_usedBy_AS_Profile_note",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note to application service that provides data of reference register.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 44,
+      "name": "Referencny register",
+      "technicalName": "ReferenceRegister",
+      "description": "Referencny register.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 18,
+      "name": "Aplikačná služba",
+      "technicalName": "AS",
+      "description": "Aplikačná služba je aktivita vykonávaná v rámci poskytovania koncovej služby informačným systémom verejnej správy podporujúca spravidla jeden procesný krok vykonávania koncovej služby.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Application service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_spravca_AS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Register is used by AS.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

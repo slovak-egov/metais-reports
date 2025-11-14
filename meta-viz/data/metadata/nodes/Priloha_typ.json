@@ -1,0 +1,857 @@
+{
+  "id": 102,
+  "name": "Typ prílohy",
+  "technicalName": "Priloha_typ",
+  "description": "Stručný, výstižný a jednoznačný názov položky Typu prílohy. Zaevidované majú byť len také prílohy, ktoré sa nenachádzajú v číselníku dôkazov  OOTS CL000016. ",
+  "roleList": [
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#ffffaf",
+  "engName": "Attachment type",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov typu prílohy",
+      "description": "Stručný, výstižný a jednoznačný názov prílohy - pre niektoré typy príloh môže existovať metodika tvorby názvoslovia.\nStručný, výstižný a jednoznačný názov položky Typu prílohy. Zaevidované majú byť len také prílohy, ktoré sa nenachádzajú v číselníku dôkazov  OOTS CL000016. ",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis typu prílohy",
+      "description": "Detailnejší popis typu prílohy. Detailnejší popis Typu prílohy nad rámec dôkazov OOTS.\n",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS. MetaIS vypĺňa aurtomaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS. MetaIS vypĺňa automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 87,
+      "name": "Generický profil EA",
+      "description": "Informácie z architektonického modelu",
+      "technicalName": "Gen_Profil_EA",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Additional information",
+      "attributes": [
+        {
+          "id": 418,
+          "name": "Skratený názov",
+          "description": "Skratený názov položky prenášaný z názvu položky architektonického modelu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_skrateny_nazov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Abbreviated name",
+          "engDescription": "Abbreviated item name transfered from name of architecture model item.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 310,
+          "name": "Popis referencie",
+          "description": "Popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_popis_referencie",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference description",
+          "engDescription": "Description of document, picture, model describing reference detail.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 620,
+          "name": "Zoznam referencií",
+          "description": "Zoznam referencií. Odkaz a popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING_PAIR",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_zoznam_referencii",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING_PAIR",
+          "engName": "Reference list",
+          "engDescription": "Reference list. Link and description of document, picture, model where is detail of reference described.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 245,
+          "name": "Odkaz na referenciu",
+          "description": "Samotný odkaz (URL) na referenciu (napr. v DMS).",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_odkaz_na_referenciu",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Link to reference",
+          "engDescription": "Particular link (URL) to reference (e.g. in DMS).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 508,
+          "name": "Typ replikácie",
+          "description": "Hovorí o tom, či je daná položka v modeli replikovaná alebo nie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_typ_replikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_REPLIKACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Replication type",
+          "engDescription": "Determines if particular item in model is replicated or no.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 297,
+          "name": "Počet replikácií",
+          "description": "Hovorí o početnosti objektu, napr 500 PC s windows, optimalizuje repozitár (aby nemusel obsahovať 500 položiek). Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_pocet_replikacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "interval",
+              "id": null,
+              "minValue": 0.0,
+              "maxValue": 1000000000.0
+            }
+          ],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of replications",
+          "engDescription": "Deals with quantity of object. e.g. 500 PCs with Windows, optimized by repository (not to include 500 items). Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "name": "Profil Typu Prílohy",
+      "description": "Profil Typu Prílohy",
+      "technicalName": "Profil_typ_prilohy",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile for Attachment type",
+      "attributes": [
+        {
+          "id": 989,
+          "name": "Formát prílohy",
+          "description": "Vyhláškou č. 78/202 Z.z. o štandardoch pre ITVS sú ustanovené povinné formáty (pre textové súbory - § 19, pre podpisové kontajnery - § 47, pre obrázky - § 20, pre audio a video - § 21). \nDo atribútu uveďte len formát, na ktorý bol vydaný osobitný postup, že sa povinný formát nemusí dočasne používať a dobu trvania výnimky.\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_typ_prilohy_attachment_format",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "EDESK_MIME_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Attachment format",
+          "engDescription": "Attachment format",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1170,
+          "name": "Nepovolený formát prílohy",
+          "description": "Vyhláškou č. 78/202 Z.z. o štandardoch pre ITVS sú ustanovené povinné formáty (pre textové súbory - § 19, pre podpisové kontajnery - § 47, pre obrázky - § 20, pre audio a video - § 21). \nDo atribútu uveďte len formát, na ktorý bol vydaný osobitný postup, že sa povinný formát nemusí dočasne používať a dobu trvania výnimky.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "Profil_typ_prilohy_Profil_typ_prilohy_attachment_format2",
+          "order": 1,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Invalid attachment format",
+          "engDescription": "Decree No. 78/202 Coll. on standards for ITVS establishes mandatory formats (for text files - § 19, for signature containers - § 47, for images - § 20, for audio and video - § 21). \nIn the attribute, only indicate the format for which a special procedure has been issued, that the mandatory format does not have to be used temporarily, and the duration of the exception.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1165,
+          "name": "Príloha je povinná",
+          "description": "Ak je príloha povinná a ak podávajúci nepriloží žiadnu prílohu, také podanie nebude odoslané do schránky.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_typ_prilohy_required",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Attachment is mandatory",
+          "engDescription": "Flag whether attachemnt is mandatory.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1178,
+          "name": "Spôsob autorizácie",
+          "description": "Spôsob autorizácie zaevidujte výberom položiek z číselníka pre koncovú službu, inštanciu alebo typ prílohy.\n1.\tZaevidovaný spôsob autorizácie umožní autorizovať všetkými spôsobmi, ktoré sú zaevidované.\n2.\tSpôsob autorizácie KEPom je možný vždy, aj keď nie je zaevidovaný.\n3.\tAk je zaevidovaný okrem iného aj atribút „bez autorizácie“, umožnené bude aj podanie bez autorizácie. \n4.\tAk je zaevidovaný výlučne spôsob „bez autorizácie“, bude umožnené  podanie bez autorizácie. \nAtribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "Profil_typ_prilohy_Profil_typ_prilohy_attachment_authorization",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "AUTHORIZATION_LEVEL"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Required Authorization",
+          "engDescription": "",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1193,
+          "name": "Požiadavka na kontrolu časovej pečiatky autorizácie",
+          "description": "Tento atribút sa týka príloh podania, ktoré boli podpísané inými podpisovými aplikáciami. Ak nie je atribút vyplnený,  časovú pečiatku netreba kontrolovať.  Ak treba časovú pečiatku kontrolovať, vyberte druh časovej pečiatky, ktorý má byť kontrolovaný. \nAtribút je povinný vo fáze \"nasadenie do ostrej prevádzky\". ",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "c_kontrola_casovej_peciatky.4",
+          "technicalName": "Profil_typ_prilohy_Profil_typ_prilohy_Profil_typ_prilohy_request_to_check_authorization_timestamp_new",
+          "order": 15,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "KONTROLA_CASOVEJ_PECIATKY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Request to check Authorization Timestamp",
+          "engDescription": "Request to check Authorization Timestamp",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1180,
+          "name": "Požiadavka na kontrolu časovej pečiatky autorizácie",
+          "description": "Tento atribút sa týka príloh podania, ktoré boli podpísané inými podpisovými aplikáciami. Ak nie je atribút vyplnený,  časovú pečiatku netreba kontrolovať.  Ak treba časovú pečiatku kontrolovať, vyberte druh časovej pečiatky, ktorý má byť kontrolovaný. \nAtribút je povinný vo fáze \"nasadenie do ostrej prevádzky\". ",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "Profil_typ_prilohy_Profil_typ_prilohy_request_to_check_authorization_timestamp",
+          "order": 15,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "KONTROLA_CASOVEJ_PECIATKY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Request to check Authorization Timestamp",
+          "engDescription": "Request to check Authorization Timestamp",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1167,
+          "name": "Príloha musí byť autorizovaná",
+          "description": "Príznak, ktorý určuje povinnosť autorizácie prílohy.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_typ_prilohy_signatureRequired",
+          "order": 20,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Attachment must be signed",
+          "engDescription": "Attachment must be signed",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 992,
+          "name": "Spôsob autorizácie typu prílohy",
+          "description": "Vyžadovaný spôsob autorizácie typu prílohy podľa číselníka CL009011 Spôsoby autorizácie elektronického úradného dokumentu alebo príloh k elektronickému úradnému dokumentu. \nDoplnená položka číselníka \"bez autorizácie\".\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_typ_prilohy_attachment_sign_type",
+          "order": 30,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Attachment sign type",
+          "engDescription": "Attachment sign type",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1168,
+          "name": "Vyžadovaný počet príloh",
+          "description": "Vyžadovaný počet príloh. Môže obsahovať iba celé číslo. V prípade neuvedenia vyžadovaného počtu bude možné pripojiť ľubovoľný počet príloh daného typu.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_typ_prilohy_attachment_multiplicity",
+          "order": 40,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Required number of attachments",
+          "engDescription": "Required number of attachments",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 991,
+          "name": "Spoločná  autorizácia príloh ",
+          "description": "Príznak, či príloha môže obsahovať viaceré dokumenty naraz podpísané jednou spoločnou autorizáciou.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "true",
+          "technicalName": "Profil_typ_prilohy_attachment_sign_mass",
+          "order": 50,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "The attachment may contain a joint authorization",
+          "engDescription": "A flag whether the signed attachment may contain more jointly authorized documents",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1166,
+          "name": "Vyžadovaný XML formulár v prílohe",
+          "description": " Vyžadovaný vyplnený XML formulár priložený do prílohy formulára podania. Uveďte XML namespace formulára alebo názov koreňového elementu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_typ_prilohy_allowedForm",
+          "order": 60,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Required XML form in the attachment",
+          "engDescription": "Allowed XML data filled in according to the form. 'null' – any document can be uploaded.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Špecifický profil určujúci platnosť záznamu",
+      "description": "Špecifický profil určujúci platnosť záznamu",
+      "technicalName": "Profil_Platnost",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV",
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Special profile defining validity of entry",
+      "attributes": [
+        {
+          "id": 604,
+          "name": "Začiatok platnosti",
+          "description": "Začiatok platnosti.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Platnost_platnost_od",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Entry into force",
+          "engDescription": "Entry into force.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 163,
+          "name": "Koniec platnosti",
+          "description": "Koniec platnosti položky.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Platnost_platnost_do",
+          "order": 1,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Expiry date",
+          "engDescription": "Item expiry date.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "priloha_typ_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/egov/typ-prilohy",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 1225,
+        "name": "Formulár má typ prílohy",
+        "engName": "Form has Attachment type",
+        "technicalName": "Formular_ma_prilohu",
+        "description": "Formulár má typ prílohy",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Form has Attachment type",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

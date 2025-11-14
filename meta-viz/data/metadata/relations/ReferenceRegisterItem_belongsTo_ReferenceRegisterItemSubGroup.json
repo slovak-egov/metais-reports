@@ -1,0 +1,73 @@
+{
+  "id": 120,
+  "name": "Podskupina referečných údajov",
+  "technicalName": "ReferenceRegisterItem_belongsTo_ReferenceRegisterItemSubGroup",
+  "description": "Použije sa v prípade, keď je potrebné referenčný údaj zaradiť do podskupiny referenčných údajov. Napríklad k fyzickej osobe k skupine \"údaje o pobyte\" patrí podskupina \"trvalý pobyt\".",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Reference register item belongs to subgroup",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 36,
+      "name": "Polozka referencneho registra",
+      "technicalName": "ReferenceRegisterItem",
+      "description": "Polozka referencneho registra.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register item",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 35,
+      "name": "Podskupina poloziek referencneho registra",
+      "technicalName": "ReferenceRegisterItemSubGroup",
+      "description": "Podskupina poloziek referencneho registra.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register item subgroup",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Reference register item belongs to subgroup.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

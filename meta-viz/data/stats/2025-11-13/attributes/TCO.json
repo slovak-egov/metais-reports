@@ -1,0 +1,13 @@
+{
+  "type": "TCO",
+  "count": 74,
+  "attributes": [
+    {
+      "name": "genprof_TCO_typ_nakladov",
+      "count": 74,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 1.3513513513513513
+    }
+  ]
+}

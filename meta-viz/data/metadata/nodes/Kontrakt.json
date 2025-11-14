@@ -1,0 +1,809 @@
+{
+  "id": 21,
+  "name": "Kontrakt",
+  "technicalName": "Kontrakt",
+  "description": "Dohoda o úrovni poskytovaných služieb alebo service-level agreement (SLA) je časť zmluvy o poskytovaní služieb, v ktorej je definovaná určitá úroveň služby.",
+  "roleList": [
+    "SLA_SPRAVA",
+    "INT_PODPIS"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#ffffaf",
+  "engName": "Contract",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 22,
+      "name": "Manažment profil pre integráciu",
+      "description": "Manažment profil špecifický pre entitu Integrácia",
+      "technicalName": "Manazment_Profil_Integracia",
+      "roleList": [
+        "INT_MANAZ"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special management profile for Integration entity",
+      "attributes": [
+        {
+          "id": 547,
+          "name": "Uzamknutý dokument",
+          "description": "Príznak uzamknutia dokumentu v nástroji na kolaboráciu a prácu s dokumentami. Tento príznak vie meniť iba používateľ so špecifickým oprávnením.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Manazment_Profil_Integracia_uzamknuty_dokument",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": " Uzamknutý dokument (EN)",
+          "engDescription": "Príznak uzamknutia dokumentu v nástroji na kolaboráciu a prácu s dokumentami. Tento príznak vie meniť iba používateľ so špecifickým oprávnením. (EN)",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Profil pre kontrakt",
+      "description": "Profil pre kontrakt",
+      "technicalName": "Profil_Kontrakt",
+      "roleList": [
+        "SLA_SPRAVA",
+        "INT_PODPIS"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Contract profile",
+      "attributes": [
+        {
+          "id": 92,
+          "name": "Fáza kontraktu",
+          "description": "Stav kontraktu, špecifický pre integračný SLA kontrakt. Stav môže obsahovať hodnoty: draft, schválený, podpísaný.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_faza",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "FAZA_KONTRAKTU"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Contract phase",
+          "engDescription": "Contract status specific for integration SLA contract. Status may include values: draft, approved, signed.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 96,
+          "name": "Forma kontaktu Service Desku",
+          "description": "Podpora - forma kontaktu Service Desku (SD). Výber zo zoznamu: e-mail; telefón; kontaktný formulár; aplikácia",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_podpora_forma_kontaktu",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PODPORA_FORMA_KONTAKTU"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Form of contacting Service Desk",
+          "engDescription": "Support - form of contacting Service Desk (SD) Select from the list: email; telephone. contact form; application",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 97,
+          "name": "Forma kontaktu Service Desku mimo prevádzkových hodín",
+          "description": "Podpora - forma kontaktu Service Desku (SD) mimo prevádzkových hodín. Výber zo zoznamu: e-mail; telefón; kontaktný formulár; aplikácia.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_podpora_forma_kontaktu_mimo_prevadzky",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PODPORA_FORMA_KONTAKTU"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Form of contacting Service Desk outside operating hours",
+          "engDescription": "Support - Form of contacting Service Desk (SD) outside operating hours. Select from the list: email; telephone. contact form; application.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 130,
+          "name": "Identifikátor kontraktu",
+          "description": "Identifikátor zmluvy podľa CRZ, alebo jej názov. Toto je linka, ktora identifikuje externý kontrakt v CRZ.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_identifikator",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Contract identifier",
+          "engDescription": "Contract identifier as in CRC or its name. This is a link that identifies external contract in CRC.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 138,
+          "name": "Inštrukcie pre kontaktovanie Service Desku",
+          "description": "Podpora - inštrukcie pre kontaktovanie Service Desku. Voľný text.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_podpora_instrukcie_kontaktovania",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Instructions for contacting Service Desk",
+          "engDescription": "Support - instructions for contacting Service Desk. Free text.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 186,
+          "name": "Maximálna dĺžka odozvy mimo prevádzky SD",
+          "description": "Podpora - maximálna dĺžka odozvy mimo prevádzky SD. Výber zo zoznamu: okamžite; 0,5; 2; 4; 8; 24; 48 hod.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_podpora_max_odozva_mimo_prevadzky",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PODPORA_DLZKA_ODOZVY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Maximum response time without SD",
+          "engDescription": "Support - Maximum response time without SD Select from the list: now; 0,5; 2; 4; 8; 24; 48 hr.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 187,
+          "name": "Maximálna dĺžka odozvy počas prevádzky SD",
+          "description": "Podpora - maximálna dĺžka odozvy počas prevádzky SD. Výber zo zoznamu: okamžite; 0,5; 2; 4; 8; 24; 48 hod.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_podpora_max_odozva_pocas_prevadzky",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PODPORA_DLZKA_ODOZVY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Maximum response time with SD",
+          "engDescription": "Support - Maximum response time with SD Select from the list: now; 0,5; 2; 4; 8; 24; 48 hr.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 280,
+          "name": "Platnosť do",
+          "description": "Koniec platnosti ISLA kontraktu.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_platnost_do",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Valid until",
+          "engDescription": "ISLA contract expiry date.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 281,
+          "name": "Platnosť od",
+          "description": "Začiatok platnosti ISLA kontraktu.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "Profil_Kontrakt_platnost_od",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Valid from",
+          "engDescription": "ISLA contract entry into force.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 308,
+          "name": "Popis eskalácie",
+          "description": "Popis eskalačného mechanizmu - všeobecné ustanovenia a popis jednotlivých eskalačných aktivít. Bude dostupný v dokumente ISLA kontrakt.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_popis_eskalacie",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Escalation description",
+          "engDescription": "Description of escalation mechanism - general provisions and description of particular escalation activities. Will be available in document ISLA contract.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 355,
+          "name": "Predmet kontraktu",
+          "description": "Text, špecifický pre Integračný ISLA kontrakt, vkladá sa do generovaného dokumentu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_predmet",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Object of contract",
+          "engDescription": "Text, specific for Integration ISLA contract, inserted into generated document.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 359,
+          "name": "Prevádzkové hodiny Service Desku",
+          "description": "Podpora - prevádzkové hodiny Service Desku (SD). Výber  zo zoznamu: Pracovná doba 8-16, 24/7.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_podpora_prevadzkova_doba",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PODPORA_PREVADZKOVA_DOBA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Operating hours of Service Desk",
+          "engDescription": "Support - operating hours of Service Desk (SD). Select from the list: Operating hours 8-16, 24/7.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 496,
+          "name": "Typ kontraktu",
+          "description": "Typ kontraktu: napríklad Integračná SLA alebo SLA s dodávateľom.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_typ_kontraktu",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_KONTRAKTU"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Contract type",
+          "engDescription": "Contract type: for example Integration SLA or SLA with supplier",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 502,
+          "name": "Typ podpory",
+          "description": "Rozlíšenie spôsobov podpory na dodávateľskú podporu, podporu vlastnými zdrojmi alebo prostriedkov v prenájme.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_typ_podpory",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Support type",
+          "engDescription": "Distinguishing types of support to supplier support, support by means of own resources or leased resources.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 530,
+          "name": "Údaje o podpore",
+          "description": "Údaje o podpore ako sú poskytovateľ, platnosť, ročné výdavky, identifikátory prostriedkov, úroveň poskytovania služby, hodnota a ďalšie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Kontrakt_udaje_o_podpore",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Information about support",
+          "engDescription": "Information about support such as provider, validity, annual costs, instrument identifiers, level of service providing, value and other.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "kontrakt_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/egov/contract",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 35,
+        "name": "Kontrakt má konzumenta",
+        "engName": "Contract has a consumer",
+        "technicalName": "Kontrakt_ma_konzumenta",
+        "description": "Kontrakt má konzumenta.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "Contract has a consumer.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 36,
+        "name": "Kontrakt má parameter",
+        "engName": "Contract has a parameter",
+        "technicalName": "Kontrakt_ma_Parameter",
+        "description": "Kontrakt má parameter.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "Contract has a parameter.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 37,
+        "name": "Kontrakt má poskytovateľa",
+        "engName": "Contract has a provider",
+        "technicalName": "Kontrakt_ma_poskytovatela",
+        "description": "Kontrakt má poskytovateľa.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "Contract has a provider.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": []
+  }
+}

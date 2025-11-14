@@ -1,0 +1,133 @@
+{
+  "relation_name": "Program_obsahuje_Projekt",
+  "name": "Program obsahuje projekt",
+  "description": "Program osahuje projekt.",
+  "engDescription": "Program contains project.",
+  "type": "application",
+  "source_type": "Program",
+  "source_name": "Program",
+  "target_type": "Projekt",
+  "target_name": "Projekt rozvoja IT",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 2,
+    "unique_pairs": 2,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 7,
+    "target_total": 1604,
+    "source_connected": 2,
+    "target_connected": 2,
+    "cardinality": "one-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "74c92785-4bb3-4bff-957c-e5783b2035a1",
+        "degree": 1,
+        "name": "Fond obnovy a odolnosti RRF",
+        "code": "prg_36"
+      },
+      {
+        "uuid": "6b80f7a6-3b2e-42ba-892f-d57070e75642",
+        "degree": 1,
+        "name": "Program Slovensko",
+        "code": "prg_37"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "ec931f5f-6cc9-4fee-8763-877905602267",
+        "degree": 1,
+        "name": "Budovanie životných situácií pre organizáciu ŠVPS SR",
+        "code": "projekt_3690"
+      },
+      {
+        "uuid": "3a249cb1-8988-4de0-9db6-2b3e1475688a",
+        "degree": 1,
+        "name": "Interaktívne technológie pre strategické a územné plánovanie",
+        "code": "projekt_3685"
+      }
+    ],
+    "islands": {
+      "total_nodes": 1611,
+      "total_islands": 1609,
+      "singleton_islands": 1607,
+      "multi_islands": [
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0012414649286157666,
+          "top_source_uuid": "6b80f7a6-3b2e-42ba-892f-d57070e75642",
+          "top_source_degree": 1,
+          "top_target_uuid": "3a249cb1-8988-4de0-9db6-2b3e1475688a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0012414649286157666,
+          "top_source_uuid": "74c92785-4bb3-4bff-957c-e5783b2035a1",
+          "top_source_degree": 1,
+          "top_target_uuid": "ec931f5f-6cc9-4fee-8763-877905602267",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 7,
+        "total_islands": 7,
+        "singleton_islands": 7,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 1604,
+        "total_islands": 1604,
+        "singleton_islands": 1604,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

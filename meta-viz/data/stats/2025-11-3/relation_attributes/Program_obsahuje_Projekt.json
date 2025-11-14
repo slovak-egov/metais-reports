@@ -1,0 +1,71 @@
+{
+  "relation_name": "Program_obsahuje_Projekt",
+  "name": "Program obsahuje projekt",
+  "description": "Program osahuje projekt.",
+  "engDescription": "Program contains project.",
+  "type": "application",
+  "source_type": "Program",
+  "source_name": "Program",
+  "target_type": "Projekt",
+  "target_name": "Projekt rozvoja IT",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 7,
+    "target_total": 1531,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 1538,
+      "total_islands": 1538,
+      "singleton_islands": 1538,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 7,
+        "total_islands": 7,
+        "singleton_islands": 7,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 1531,
+        "total_islands": 1531,
+        "singleton_islands": 1531,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

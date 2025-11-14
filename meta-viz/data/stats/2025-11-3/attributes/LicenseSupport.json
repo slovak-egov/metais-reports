@@ -1,0 +1,83 @@
+{
+  "type": "LicenseSupport",
+  "count": 558,
+  "attributes": [
+    {
+      "name": "Profile_LicenseSupport_type",
+      "count": 558,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.17921146953405018
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 558,
+      "pct": 100.0,
+      "unique_count": 558,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 558,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.17921146953405018
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 558,
+      "pct": 100.0,
+      "unique_count": 558,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 558,
+      "pct": 100.0,
+      "unique_count": 558,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_LicenseSupport_fromExistingLicense",
+      "count": 558,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.35842293906810035
+    },
+    {
+      "name": "Profile_LicenseSupport_validFrom",
+      "count": 556,
+      "pct": 99.6415770609319,
+      "unique_count": 28,
+      "unique_pct": 5.0359712230215825
+    },
+    {
+      "name": "Profile_LicenseSupport_validTo",
+      "count": 556,
+      "pct": 99.6415770609319,
+      "unique_count": 16,
+      "unique_pct": 2.877697841726619
+    },
+    {
+      "name": "Profile_LicenseSupport_contractType",
+      "count": 554,
+      "pct": 99.2831541218638,
+      "unique_count": 1,
+      "unique_pct": 0.18050541516245489
+    },
+    {
+      "name": "Profile_LicenseSupport_licenseNumber",
+      "count": 554,
+      "pct": 99.2831541218638,
+      "unique_count": 3,
+      "unique_pct": 0.5415162454873645
+    },
+    {
+      "name": "Profile_LicenseSupport_price",
+      "count": 548,
+      "pct": 98.2078853046595,
+      "unique_count": 294,
+      "unique_pct": 53.64963503649635
+    }
+  ]
+}

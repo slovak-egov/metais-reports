@@ -1,0 +1,74 @@
+{
+  "id": 121,
+  "name": "RegisterItem ma registratora PO",
+  "technicalName": "ReferenceRegisterItem_hasRegistrator_PO",
+  "description": "RegisterItem ma registratora PO.",
+  "roleList": [
+    "RR_MANAGER",
+    "EA_GARPO"
+  ],
+  "type": "system",
+  "valid": false,
+  "color": null,
+  "engName": "RegisterItem has registrar PA",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 36,
+      "name": "Polozka referencneho registra",
+      "technicalName": "ReferenceRegisterItem",
+      "description": "Polozka referencneho registra.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register item",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 37,
+      "name": "Povinná osoba",
+      "technicalName": "PO",
+      "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Public authority",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "RegisterItem has registrar PA.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

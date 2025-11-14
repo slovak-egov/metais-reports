@@ -1,0 +1,842 @@
+{
+  "relation_name": "Platforma_podporuje_BazaDat",
+  "name": "Platforma podporuje bázu dát",
+  "description": "Platforma podporuje danú Bázu Dát.",
+  "engDescription": "Platform supports particular Data Base.",
+  "type": "application",
+  "source_type": "Platforma",
+  "source_name": "Platforma",
+  "target_type": "BazaDat",
+  "target_name": "Báza dát",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 80,
+    "unique_pairs": 80,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 53,
+    "target_total": 275,
+    "source_connected": 23,
+    "target_connected": 60,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 15,
+      "avg": 3.4782608695652173,
+      "median": 1,
+      "p90": 9,
+      "p99": 15
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.3333333333333333,
+      "median": 1.0,
+      "p90": 2,
+      "p99": 2
+    },
+    "top_source": [
+      {
+        "uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+        "degree": 15,
+        "name": "SQL 2008 R2 - databázová platforma (K NR SR)",
+        "code": "platforma_8"
+      },
+      {
+        "uuid": "56f42f23-a11e-4906-ba0e-cb22c92e4c83",
+        "degree": 10,
+        "name": "Systémová platforma AIX (DCN)",
+        "code": "platforma_32"
+      },
+      {
+        "uuid": "4af31125-c8e2-4a6b-a4e4-3cbff276e8e0",
+        "degree": 9,
+        "name": "Databázová platforma Oracle (DCN)",
+        "code": "platforma_26"
+      },
+      {
+        "uuid": "b4ba5c8a-8ed1-420b-9eae-15fce1bae5f9",
+        "degree": 8,
+        "name": "Platforma CISŠS",
+        "code": "platforma_4"
+      },
+      {
+        "uuid": "6e7784ab-b8c4-4ffa-803d-f664c4d888d3",
+        "degree": 8,
+        "name": "Databázová platforma SQL (DCN)",
+        "code": "platforma_30"
+      },
+      {
+        "uuid": "2342194a-78bd-4f4a-9cb3-92b394adf4c4",
+        "degree": 5,
+        "name": "Microsoft Hyper-V 2012 R2 - Virtuálna platforma (K NR SR)",
+        "code": "platforma_9"
+      },
+      {
+        "uuid": "500e99b6-4cdb-4ec9-889d-f0e83bc424f7",
+        "degree": 4,
+        "name": "Systémová platforma Windows (DCN)",
+        "code": "platforma_33"
+      },
+      {
+        "uuid": "55b7fc72-cb8f-4407-a139-c2d1fe14098c",
+        "degree": 3,
+        "name": "Platforma registra bytov",
+        "code": "platforma_1"
+      },
+      {
+        "uuid": "d7174d53-22a0-4548-8aa6-0d9d1e0f8f68",
+        "degree": 2,
+        "name": "Business Process Management (BPM) platforma  (MV SR)",
+        "code": "platforma_38"
+      },
+      {
+        "uuid": "aff16159-2f1e-4a51-abe6-a4c32bc69acf",
+        "degree": 2,
+        "name": "Databázová platforma Informix (DCN)",
+        "code": "platforma_31"
+      },
+      {
+        "uuid": "d039756b-ed12-4461-91cb-0ab339d1ac84",
+        "degree": 2,
+        "name": "Platforma atlasu pasívnej infraštruktúry",
+        "code": "platforma_2"
+      },
+      {
+        "uuid": "ddaa8e9c-e764-41a9-88c3-9ec977e7c4b3",
+        "degree": 1,
+        "name": "Portálová platforma (management) (MV SR)",
+        "code": "platforma_45"
+      },
+      {
+        "uuid": "866d0d5c-153c-4eb2-8421-5f8e35f5f4d9",
+        "degree": 1,
+        "name": "Integračná platforma (ESB+cache) (MV SR)",
+        "code": "platforma_40"
+      },
+      {
+        "uuid": "c6a28fcb-1a4b-4f09-8bd4-10dd2ba0fad9",
+        "degree": 1,
+        "name": "Integračná platforma (SOA+BRE) (MV SR)",
+        "code": "platforma_39"
+      },
+      {
+        "uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+        "degree": 1,
+        "name": "Microsoft Hyper-V 2008 R2- Virtuálna platforma (K NR SR)",
+        "code": "platforma_5"
+      },
+      {
+        "uuid": "c9ec2adc-7069-4cbe-a137-73a730844c1f",
+        "degree": 1,
+        "name": "Portálová platforma (intranet) (MV SR)",
+        "code": "platforma_46"
+      },
+      {
+        "uuid": "33c6f6b4-7469-419d-9965-7a72038e53c0",
+        "degree": 1,
+        "name": "Portálová databáza (management) (MV SR)",
+        "code": "platforma_47"
+      },
+      {
+        "uuid": "87f46c77-fe56-4fdd-b6b6-78696c3fffa5",
+        "degree": 1,
+        "name": "Aplikačná management platforma (MV SR)",
+        "code": "platforma_44"
+      },
+      {
+        "uuid": "ab2d5575-a835-4c4e-9cb2-c1b4ff8a21b3",
+        "degree": 1,
+        "name": "API management platforma (MV SR)",
+        "code": "platforma_43"
+      },
+      {
+        "uuid": "98bbda9f-2436-42a9-93ba-6f8329cf0d51",
+        "degree": 1,
+        "name": "Databázová platforma SQL (ZDCT)",
+        "code": "platforma_58"
+      },
+      {
+        "uuid": "2db64c96-71b0-4ea4-99e2-2b60d4646580",
+        "degree": 1,
+        "name": "Systémová platforma Windows (ZDCT)",
+        "code": "platforma_59"
+      },
+      {
+        "uuid": "dd50eec4-c396-45a0-98b6-99f3fd4fc534",
+        "degree": 1,
+        "name": "Event Driven Architecture (EDA) & MQ platforma (MV SR)",
+        "code": "platforma_41"
+      },
+      {
+        "uuid": "d77a4d39-a48a-4ede-826e-02990c75f0a3",
+        "degree": 1,
+        "name": "Platforma dátovej integrácie (MV SR)",
+        "code": "platforma_42"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "0d8582ec-8f6e-49f5-876d-a1d58810fe0f",
+        "degree": 2,
+        "name": "Databáza MOSS (DCN)",
+        "code": "baza_dat_72"
+      },
+      {
+        "uuid": "0e55f375-b064-4e6b-a167-7c28f086aea0",
+        "degree": 2,
+        "name": "Databáza EKR-PFS (DCN)",
+        "code": "baza_dat_76"
+      },
+      {
+        "uuid": "1f0fb05b-b0f5-46ec-a526-4214ee1f85af",
+        "degree": 2,
+        "name": "Databáza ISKZ (DCN)",
+        "code": "baza_dat_77"
+      },
+      {
+        "uuid": "3d37c506-8ed3-400e-af3f-a3d9977144cd",
+        "degree": 2,
+        "name": "Databáza ISFS (DCN)",
+        "code": "baza_dat_71"
+      },
+      {
+        "uuid": "483efb74-5eb9-46c5-ab35-5681c5a03d0f",
+        "degree": 2,
+        "name": "Databáza VIES (DCN)",
+        "code": "baza_dat_78"
+      },
+      {
+        "uuid": "66e0bd6e-16ae-4e87-af42-5cb58a1d2301",
+        "degree": 2,
+        "name": "Databáza CIS (DCN)",
+        "code": "baza_dat_67"
+      },
+      {
+        "uuid": "6aafce66-59b8-48e9-a594-2a2c7e9638b3",
+        "degree": 2,
+        "name": "Databáza PFS (DCN)",
+        "code": "baza_dat_75"
+      },
+      {
+        "uuid": "6dfb4eb0-5a45-470f-8300-c96de8ce7455",
+        "degree": 2,
+        "name": "Databáza VRP (DCN)",
+        "code": "baza_dat_70"
+      },
+      {
+        "uuid": "8943bbf8-ea9d-4a41-a48e-7b1a0caf1079",
+        "degree": 2,
+        "name": "Databáza DRSCAN (DCN)",
+        "code": "baza_dat_83"
+      },
+      {
+        "uuid": "9747b4fc-306c-4711-89eb-980dc00ba296",
+        "degree": 2,
+        "name": "Databáza CReg (DCN)",
+        "code": "baza_dat_81"
+      },
+      {
+        "uuid": "a9530500-9cb8-4aa5-b89f-eae6409aa8f5",
+        "degree": 2,
+        "name": "Databáza ADMIS (DCN)",
+        "code": "baza_dat_73"
+      },
+      {
+        "uuid": "b17acb46-4152-422d-93da-d76ff0d7ec79",
+        "degree": 2,
+        "name": "Databáza CIS (ZDC Tajov)",
+        "code": "baza_dat_324"
+      },
+      {
+        "uuid": "b691921c-319e-4ca4-892f-5d750febb3e0",
+        "degree": 2,
+        "name": "databáza rozprava (K NR SR)",
+        "code": "baza_dat_30"
+      },
+      {
+        "uuid": "b71f0fab-14fc-40b3-8de3-5962427326d6",
+        "degree": 2,
+        "name": "Databáza DWH (DCN)",
+        "code": "baza_dat_69"
+      },
+      {
+        "uuid": "cc14c83c-53fe-4224-88e1-b7b70f5115b7",
+        "degree": 2,
+        "name": "Databáza KV DPH (DCN)",
+        "code": "baza_dat_82"
+      },
+      {
+        "uuid": "d7088b30-441b-4751-b093-01fbd0a6b387",
+        "degree": 2,
+        "name": "databáza constable (K NR SR)",
+        "code": "baza_dat_27"
+      },
+      {
+        "uuid": "dcc108b0-6c64-47f9-8926-ee48163acd53",
+        "degree": 2,
+        "name": "databáza DS (K NR SR)",
+        "code": "baza_dat_28"
+      },
+      {
+        "uuid": "ddd313e3-4092-441f-80fa-21da5451fd43",
+        "degree": 2,
+        "name": "Databáza konsolidovaných údajov (NoSQL) - MV SR",
+        "code": "baza_dat_89"
+      },
+      {
+        "uuid": "e2af5cc0-4496-4a90-8bb2-aa1aa666e384",
+        "degree": 2,
+        "name": "Databáza HPSM (DCN)",
+        "code": "baza_dat_80"
+      },
+      {
+        "uuid": "ebf84edf-2759-439a-a4cc-5d61daacd7d9",
+        "degree": 2,
+        "name": "databáza eurovoc (K NR SR)",
+        "code": "baza_dat_29"
+      },
+      {
+        "uuid": "04f5b248-263c-45a2-8ec7-19c9698abd75",
+        "degree": 1,
+        "name": "DB pre Register štátnych zamestnancov, uchádzačov o štátne zamestnanie a nadbytočných zamestnancov CISŠS",
+        "code": "baza_dat_61"
+      },
+      {
+        "uuid": "0746ebe2-81ca-4c4d-8e47-733ceb08b70e",
+        "degree": 1,
+        "name": "Portálová databáza (management) (MV SR)",
+        "code": "baza_dat_93"
+      },
+      {
+        "uuid": "09966b48-4817-4156-993f-ffaad2a291c1",
+        "degree": 1,
+        "name": "Databáza CRFS (DCN)",
+        "code": "baza_dat_323"
+      },
+      {
+        "uuid": "135c0f09-f314-48f0-8545-99c2fe18a92c",
+        "degree": 1,
+        "name": "Evidencia žiadostí a procesu ich posudzovania Akreditačnou komisiou",
+        "code": "baza_dat_176"
+      },
+      {
+        "uuid": "15a67036-d27c-4656-a01e-3fc893ced732",
+        "degree": 1,
+        "name": "Databáza procesov (BPM) - MV SR",
+        "code": "baza_dat_85"
+      },
+      {
+        "uuid": "1ea2adee-7bf7-43b0-a922-75ce115abc52",
+        "degree": 1,
+        "name": "databáza navstevy (K NR SR)",
+        "code": "baza_dat_25"
+      },
+      {
+        "uuid": "218ffee3-539e-42b5-a5ec-1578892b4c78",
+        "degree": 1,
+        "name": "Databáza dočasných záznamov (cache) - MV SR",
+        "code": "baza_dat_87"
+      },
+      {
+        "uuid": "27b81648-4efd-46b0-9050-ed9a1d64a435",
+        "degree": 1,
+        "name": "Databáza integračných služieb (SOA, BRE) - MV SR",
+        "code": "baza_dat_86"
+      },
+      {
+        "uuid": "2875cdba-aeae-4949-a230-ba46d9a2ead9",
+        "degree": 1,
+        "name": "databáza SharePoint_AdminContent (K NR SR)",
+        "code": "baza_dat_33"
+      },
+      {
+        "uuid": "2ca4d129-65fb-4f75-a169-c5b7082eb4a7",
+        "degree": 1,
+        "name": "Databáza charakteristík objektov Registra bytov",
+        "code": "baza_dat_5"
+      },
+      {
+        "uuid": "2cd422ca-d37a-42ba-9b2e-cde1fa05d9f3",
+        "degree": 1,
+        "name": "databáza SRS (K NR SR)",
+        "code": "baza_dat_23"
+      },
+      {
+        "uuid": "2e4aee94-3dce-4bc9-bea8-8def3ed00e5f",
+        "degree": 1,
+        "name": "Databáza evidovaných objektov Registra bytov",
+        "code": "baza_dat_4"
+      },
+      {
+        "uuid": "31e7d52e-fa8a-49f9-a2d8-f13b495acfdb",
+        "degree": 1,
+        "name": "DB prevádzkových informácií CISŠS",
+        "code": "baza_dat_47"
+      },
+      {
+        "uuid": "3463fd66-9c67-4006-adfc-8d1609965045",
+        "degree": 1,
+        "name": "databáza Kredit (K NR SR)",
+        "code": "baza_dat_22"
+      },
+      {
+        "uuid": "38218bf6-8b33-47f7-a1cb-076ee56b1e24",
+        "degree": 1,
+        "name": "Konfiguračná databáza CISŠS",
+        "code": "baza_dat_20"
+      },
+      {
+        "uuid": "4d9dde89-b154-4b2d-ab81-3209e4b0be52",
+        "degree": 1,
+        "name": "Osobné údaje CISŠS",
+        "code": "baza_dat_17"
+      },
+      {
+        "uuid": "504907da-d3bb-4a0f-851b-feead3727f22",
+        "degree": 1,
+        "name": "Sekundárne údaje IS API",
+        "code": "baza_dat_13"
+      },
+      {
+        "uuid": "52978d55-0380-459b-b139-8b7392a9a6cc",
+        "degree": 1,
+        "name": "DB pre Register Výberových konaní CISŠS",
+        "code": "baza_dat_59"
+      },
+      {
+        "uuid": "5d01dbd2-208d-4560-867d-dd21b31e78e8",
+        "degree": 1,
+        "name": "Analytická databáza CISŠS",
+        "code": "baza_dat_19"
+      },
+      {
+        "uuid": "69c70a24-3e76-43e6-9246-c1f223753b9e",
+        "degree": 1,
+        "name": "Dokumenty prislúchajúce k objektom Registra bytov",
+        "code": "baza_dat_6"
+      },
+      {
+        "uuid": "6b6c0e2c-db70-42cb-a5da-4e6a9f8c5d29",
+        "degree": 1,
+        "name": "Portálová databáza (intranet) (MV SR)",
+        "code": "baza_dat_94"
+      },
+      {
+        "uuid": "6d142d49-681e-4515-8565-fe841f87a486",
+        "degree": 1,
+        "name": "databáza WSS_content_mojWeb",
+        "code": "baza_dat_36"
+      },
+      {
+        "uuid": "6e5d1be2-6859-46a6-9f1f-b0f715b97241",
+        "degree": 1,
+        "name": "databáza sharepoint config (K NR SR)",
+        "code": "baza_dat_32"
+      },
+      {
+        "uuid": "72874457-c617-428e-b35a-cf554025c585",
+        "degree": 1,
+        "name": "databáza SRS_EUR (K NR SR)",
+        "code": "baza_dat_24"
+      },
+      {
+        "uuid": "7ed08f02-d01d-425c-9cc1-c401beedd4fe",
+        "degree": 1,
+        "name": "BAM databáza (MV SR)",
+        "code": "baza_dat_95"
+      },
+      {
+        "uuid": "85fcb48f-8460-431e-9c24-475c41001312",
+        "degree": 1,
+        "name": "Service management databáza (MV SR)",
+        "code": "baza_dat_92"
+      },
+      {
+        "uuid": "89b9afd7-dddc-4fff-bf49-33318ba16972",
+        "degree": 1,
+        "name": "DB ADMIS",
+        "code": "baza_dat_66"
+      },
+      {
+        "uuid": "94afae0e-d692-454d-985a-8e3e642dd135",
+        "degree": 1,
+        "name": "databáza WSS_content_Moss01 (K NR SR)",
+        "code": "baza_dat_35"
+      },
+      {
+        "uuid": "992d1c3e-0918-4c2c-bd88-e845a4adb484",
+        "degree": 1,
+        "name": "Register členov Akreditačnej komisie a jej pracovných skupín",
+        "code": "baza_dat_175"
+      },
+      {
+        "uuid": "a1493439-02d6-4380-b998-1178200ea681",
+        "degree": 1,
+        "name": "Primárne údaje IS API",
+        "code": "baza_dat_12"
+      },
+      {
+        "uuid": "a34ae278-4f9a-40e7-8b25-47c30bb364ab",
+        "degree": 1,
+        "name": "Databáza služieb (MV SR)",
+        "code": "baza_dat_90"
+      },
+      {
+        "uuid": "bc0f3cdb-ac34-4c1f-aef8-dbc37ce067b7",
+        "degree": 1,
+        "name": "databáza WSS_content (K NR SR)",
+        "code": "baza_dat_34"
+      },
+      {
+        "uuid": "bd5bd902-b833-45fe-a874-f341252f8121",
+        "degree": 1,
+        "name": "DB registra štátnozamestnaneckých miest (CISŠS)",
+        "code": "baza_dat_18"
+      },
+      {
+        "uuid": "c52afda8-e800-4a77-ab3f-a6a21f9b4139",
+        "degree": 1,
+        "name": "Banky úloh pre elektronické testovanie",
+        "code": "baza_dat_196"
+      },
+      {
+        "uuid": "c75cec38-a243-473a-b17e-e781a94654c3",
+        "degree": 1,
+        "name": "MQ databáza - MV SR",
+        "code": "baza_dat_88"
+      },
+      {
+        "uuid": "e2221871-5b91-4460-bf4f-fd2e9de7c2be",
+        "degree": 1,
+        "name": "databáza WSS_Logging (K NR SR)",
+        "code": "baza_dat_37"
+      },
+      {
+        "uuid": "e3e91515-b335-4748-8edd-fc2900563894",
+        "degree": 1,
+        "name": "databáza NTAOTS_Prepis (K NR SR)",
+        "code": "baza_dat_38"
+      },
+      {
+        "uuid": "e48e85a7-06ec-4157-ac5d-62187d6d0e55",
+        "degree": 1,
+        "name": "DB služobných preukazov štátnych zamestnancov (CISŠS)",
+        "code": "baza_dat_63"
+      },
+      {
+        "uuid": "ea068f2e-73ec-4f89-9422-fd07ae1d0305",
+        "degree": 1,
+        "name": "databáza ISIS (K NR SR)",
+        "code": "baza_dat_31"
+      },
+      {
+        "uuid": "eba0375f-08e7-4530-972d-02ad77022754",
+        "degree": 1,
+        "name": "databáza cpar_konverzia (K NR SR)",
+        "code": "baza_dat_26"
+      }
+    ],
+    "islands": {
+      "total_nodes": 328,
+      "total_islands": 262,
+      "singleton_islands": 245,
+      "multi_islands": [
+        {
+          "size_total": 18,
+          "size_source": 2,
+          "size_target": 16,
+          "fraction_total": 0.054878048780487805,
+          "top_source_uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+          "top_source_degree": 15,
+          "top_target_uuid": "dcc108b0-6c64-47f9-8926-ee48163acd53",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 14,
+          "size_source": 3,
+          "size_target": 11,
+          "fraction_total": 0.042682926829268296,
+          "top_source_uuid": "56f42f23-a11e-4906-ba0e-cb22c92e4c83",
+          "top_source_degree": 10,
+          "top_target_uuid": "cc14c83c-53fe-4224-88e1-b7b70f5115b7",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 10,
+          "size_source": 2,
+          "size_target": 8,
+          "fraction_total": 0.03048780487804878,
+          "top_source_uuid": "6e7784ab-b8c4-4ffa-803d-f664c4d888d3",
+          "top_source_degree": 8,
+          "top_target_uuid": "8943bbf8-ea9d-4a41-a48e-7b1a0caf1079",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 9,
+          "size_source": 1,
+          "size_target": 8,
+          "fraction_total": 0.027439024390243903,
+          "top_source_uuid": "b4ba5c8a-8ed1-420b-9eae-15fce1bae5f9",
+          "top_source_degree": 8,
+          "top_target_uuid": "04f5b248-263c-45a2-8ec7-19c9698abd75",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 2,
+          "size_target": 2,
+          "fraction_total": 0.012195121951219513,
+          "top_source_uuid": "d7174d53-22a0-4548-8aa6-0d9d1e0f8f68",
+          "top_source_degree": 2,
+          "top_target_uuid": "ddd313e3-4092-441f-80fa-21da5451fd43",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.012195121951219513,
+          "top_source_uuid": "55b7fc72-cb8f-4407-a139-c2d1fe14098c",
+          "top_source_degree": 3,
+          "top_target_uuid": "2ca4d129-65fb-4f75-a169-c5b7082eb4a7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.009146341463414634,
+          "top_source_uuid": "d039756b-ed12-4461-91cb-0ab339d1ac84",
+          "top_source_degree": 2,
+          "top_target_uuid": "a1493439-02d6-4380-b998-1178200ea681",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.009146341463414634,
+          "top_source_uuid": "98bbda9f-2436-42a9-93ba-6f8329cf0d51",
+          "top_source_degree": 1,
+          "top_target_uuid": "b17acb46-4152-422d-93da-d76ff0d7ec79",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "c6a28fcb-1a4b-4f09-8bd4-10dd2ba0fad9",
+          "top_source_degree": 1,
+          "top_target_uuid": "27b81648-4efd-46b0-9050-ed9a1d64a435",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "c9ec2adc-7069-4cbe-a137-73a730844c1f",
+          "top_source_degree": 1,
+          "top_target_uuid": "6b6c0e2c-db70-42cb-a5da-4e6a9f8c5d29",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "866d0d5c-153c-4eb2-8421-5f8e35f5f4d9",
+          "top_source_degree": 1,
+          "top_target_uuid": "218ffee3-539e-42b5-a5ec-1578892b4c78",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "ab2d5575-a835-4c4e-9cb2-c1b4ff8a21b3",
+          "top_source_degree": 1,
+          "top_target_uuid": "a34ae278-4f9a-40e7-8b25-47c30bb364ab",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "ddaa8e9c-e764-41a9-88c3-9ec977e7c4b3",
+          "top_source_degree": 1,
+          "top_target_uuid": "0746ebe2-81ca-4c4d-8e47-733ceb08b70e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+          "top_source_degree": 1,
+          "top_target_uuid": "3463fd66-9c67-4006-adfc-8d1609965045",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "33c6f6b4-7469-419d-9965-7a72038e53c0",
+          "top_source_degree": 1,
+          "top_target_uuid": "7ed08f02-d01d-425c-9cc1-c401beedd4fe",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "87f46c77-fe56-4fdd-b6b6-78696c3fffa5",
+          "top_source_degree": 1,
+          "top_target_uuid": "85fcb48f-8460-431e-9c24-475c41001312",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006097560975609756,
+          "top_source_uuid": "dd50eec4-c396-45a0-98b6-99f3fd4fc534",
+          "top_source_degree": 1,
+          "top_target_uuid": "c75cec38-a243-473a-b17e-e781a94654c3",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 53,
+        "total_islands": 47,
+        "singleton_islands": 42,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.05660377358490566,
+            "size_total": 14,
+            "top_uuid": "56f42f23-a11e-4906-ba0e-cb22c92e4c83",
+            "top_degree": 10
+          },
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 4,
+            "top_uuid": "d7174d53-22a0-4548-8aa6-0d9d1e0f8f68",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 18,
+            "top_uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+            "top_degree": 15
+          },
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 10,
+            "top_uuid": "6e7784ab-b8c4-4ffa-803d-f664c4d888d3",
+            "top_degree": 8
+          },
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 3,
+            "top_uuid": "98bbda9f-2436-42a9-93ba-6f8329cf0d51",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 275,
+        "total_islands": 232,
+        "singleton_islands": 225,
+        "multi_islands": [
+          {
+            "size": 16,
+            "fraction": 0.05818181818181818,
+            "size_total": 18,
+            "top_uuid": "dcc108b0-6c64-47f9-8926-ee48163acd53",
+            "top_degree": 2
+          },
+          {
+            "size": 11,
+            "fraction": 0.04,
+            "size_total": 14,
+            "top_uuid": "cc14c83c-53fe-4224-88e1-b7b70f5115b7",
+            "top_degree": 2
+          },
+          {
+            "size": 8,
+            "fraction": 0.02909090909090909,
+            "size_total": 9,
+            "top_uuid": "04f5b248-263c-45a2-8ec7-19c9698abd75",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.02909090909090909,
+            "size_total": 10,
+            "top_uuid": "8943bbf8-ea9d-4a41-a48e-7b1a0caf1079",
+            "top_degree": 2
+          },
+          {
+            "size": 3,
+            "fraction": 0.01090909090909091,
+            "size_total": 4,
+            "top_uuid": "2ca4d129-65fb-4f75-a169-c5b7082eb4a7",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.007272727272727273,
+            "size_total": 4,
+            "top_uuid": "ddd313e3-4092-441f-80fa-21da5451fd43",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.007272727272727273,
+            "size_total": 3,
+            "top_uuid": "a1493439-02d6-4380-b998-1178200ea681",
+            "top_degree": 1
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

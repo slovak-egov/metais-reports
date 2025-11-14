@@ -1,0 +1,696 @@
+{
+  "id": 59,
+  "name": "Formulár",
+  "technicalName": "Formular",
+  "description": "Formulár.",
+  "roleList": [
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#afffff",
+  "engName": "Form",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov formulára",
+      "description": "Výber zo zoznamu elektronických formulárov, ktorý sa do MetaIS automatizovane preberá z Modulu elektronických formulárov, vrátane jazykovej lokácie alebo s *, ktorá znamená, že je to aktuálne platná verzia formulára.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of eform. Each form contains a version at the end of the name, which is managed for Business services for purposes of UPVS service locator . Version can be a specific value (number) or * (symbol). A concrete number indicates that UPVS will use a concrete version with (related to) the number regardless of what alternative (other) versions exist. The * indicates that system always uses the last existing version.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Názov formulára v anglickom jazyku.\n",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Upresňujúci popis formulára.\n",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Kód formulára pridelený v systéme MetaIS, ktorý sa generuje automaticky systémom.\n",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 99,
+      "name": "Špecifický profil pre formulár",
+      "description": "Špecifické informácie",
+      "technicalName": "EA_Profil_Formular",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special information",
+      "attributes": [
+        {
+          "id": 1005,
+          "name": "Namespace",
+          "description": "Needitovateľné pole a vytvára sa automaticky na základe hodnoty z poľa \"Identifikátor formulára\", ktorá sa vloží za reťazec \"http://schemas.gov.sk/form/\". Obsahuje predvolený XML namespace pre elektronické formuláre. Hodnota sa používa z dôvodu spätnej funkcionality konštruktora správy ÚPVS.\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Formular_namespace",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Namespace",
+          "engDescription": "Namespace",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 154,
+          "name": "Identifikátor formulára",
+          "description": "Identifikátor sa generuje automatizovane z vybraného formulára MEF.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Formular_kod_formulara",
+          "order": 1,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Form id",
+          "engDescription": "Unambiguous form identificator.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 540,
+          "name": "URL volania služby",
+          "description": "V prípade, že KS je aktivovaná prostredníctvom formulára, ktorý sa vypĺňa na špecializovanom  portáli, povinná osoba uvedie URL odkaz na špecializovaný portál. Ak je podanie aktivované na ÚPVS prostredníctvom transformácie, URL volania sa nevypĺňa.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Formular_url",
+          "order": 1,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "URL of form",
+          "engDescription": "V prípade, že koncová služba je dostupná prostredníctvom formulára, povinná osoba uvedie okrem typu formulára aj URL adresu formulára na vlastnom portáli, resp. URL adresu formulára na ÚPVS",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1006,
+          "name": "Povoliť prílohy",
+          "description": "Príznak určujúci, či je povolené pripájať prílohy k formuláru podania.\n",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Formular_povolit_prilohy",
+          "order": 2,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Allow attachments",
+          "engDescription": "Allow attachments",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 653,
+          "name": "Typ formulára",
+          "description": "Výber zo zoznamu – podanie (vstup), rozhodnutie (výstup)",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "EA_Profil_Formular_typ_formulara_upvs",
+          "order": 2,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_FORMULARA_UPVS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "UPVS form type",
+          "engDescription": "It is UPVS form type. Possible values of form type are service and resolution.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 142,
+          "name": "Jazyk",
+          "description": "Jazyk formulára.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Formular_jazyk",
+          "order": 3,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Language",
+          "engDescription": "Form language.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 561,
+          "name": "Verzia formulára",
+          "description": "Verzia formulára. Hodnota má formát celého čísla.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "1",
+          "technicalName": "EA_Profil_Formular_verzia_formulara",
+          "order": 3,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Form version",
+          "engDescription": "Form version. Value in format of integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 144,
+          "name": "Je hlavný",
+          "description": "Hlavný formulár, ktorý sa používateľovi zobrazuje pri výbere služby . Hlavných formulárov môže byť viac, typicky zrejme iba jeden.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "EA_Profil_Formular_je_hlavny",
+          "order": 4,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "It is major",
+          "engDescription": "Attribute providing information if form is major or not.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 665,
+          "name": "Vyžaduje KEP",
+          "description": "Formulár pred odoslaním vyžaduje podpísanie KEPom.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Formular_vyzaduje_zep",
+          "order": 6,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "It requires ZEP",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 661,
+          "name": "Neštruktúrované prílohy",
+          "description": "Vymenované potrebné neštrukturované prílohy formulára, ktoré musí používateľ priložiť v elektronickej forme.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Formular_prilohy",
+          "order": 8,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Attachments",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1176,
+          "name": "Jazyk formulára",
+          "description": "Príznak určujúci jazyk formulára a to v prípade, ak je okrem formulára v úradnom jazyku slovenčina dostupný formulár v inom jazyku.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "EA_Profil_Formular_EA_Profil_Formular_jazyk_formulara",
+          "order": 15,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "JAZYK_NARODNOSTNYCH_MENSIN"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": " form language",
+          "engDescription": "A flag specifying the language of the form, if, in addition to the form in the official language of Slovak, a form in another language is available.",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        }
+      ]
+    }
+  ],
+  "codePrefix": "formular_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/doc/eform",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 149,
+        "name": "Formulár rieši koncovú službu",
+        "engName": "Form handles eGov service",
+        "technicalName": "Formular_riesi_KS",
+        "description": "Formulár rieši koncovú službu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Form handles eGov service.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 188,
+        "name": "Hlavný formulár má prílohu",
+        "engName": "Main form have attachment",
+        "technicalName": "Formular_ma_formular",
+        "description": "Hlavný formulár má prílohu",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV",
+          "IKT_GARPO"
+        ],
+        "engDescription": "Main form have attachment",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1225,
+        "name": "Formulár má typ prílohy",
+        "engName": "Form has Attachment type",
+        "technicalName": "Formular_ma_prilohu",
+        "description": "Formulár má typ prílohy",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Form has Attachment type",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1226,
+        "name": "Formulár patrí osobe",
+        "engName": "Form belongs to Person",
+        "technicalName": "Formular_patri_PO",
+        "description": "Formulár patrí osobe",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Form belongs to Person",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 188,
+        "name": "Hlavný formulár má prílohu",
+        "engName": "Main form have attachment",
+        "technicalName": "Formular_ma_formular",
+        "description": "Hlavný formulár má prílohu",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV",
+          "IKT_GARPO"
+        ],
+        "engDescription": "Main form have attachment",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

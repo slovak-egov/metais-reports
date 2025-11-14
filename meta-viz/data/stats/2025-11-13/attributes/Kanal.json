@@ -1,0 +1,62 @@
+{
+  "type": "Kanal",
+  "count": 10,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 30.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 9,
+      "pct": 90.0,
+      "unique_count": 1,
+      "unique_pct": 11.11111111111111
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 8,
+      "pct": 80.0,
+      "unique_count": 8,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 4,
+      "pct": 40.0,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "type": "OkruhZS",
+  "count": 20,
+  "attributes": [
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 20,
+      "pct": 100.0,
+      "unique_count": 20,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 20,
+      "pct": 100.0,
+      "unique_count": 20,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 20,
+      "pct": 100.0,
+      "unique_count": 20,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 20,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 5.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 20,
+      "pct": 100.0,
+      "unique_count": 20,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Platnost_platnost_od",
+      "count": 20,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 5.0
+    }
+  ]
+}

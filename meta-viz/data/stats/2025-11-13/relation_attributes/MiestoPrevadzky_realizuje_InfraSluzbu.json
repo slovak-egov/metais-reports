@@ -1,0 +1,125 @@
+{
+  "relation_name": "MiestoPrevadzky_realizuje_InfraSluzbu",
+  "name": "Miesto prevádzky realizuje infraštruktúrnu službu",
+  "description": null,
+  "engDescription": "",
+  "type": "application",
+  "source_type": "MiestoPrevadzky",
+  "source_name": "Miesto prevádzky",
+  "target_type": "InfraSluzba",
+  "target_name": "Infraštruktúrna služba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 2,
+    "unique_pairs": 2,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 190,
+    "target_total": 477,
+    "source_connected": 1,
+    "target_connected": 2,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 2,
+      "max": 2,
+      "avg": 2.0,
+      "median": 2,
+      "p90": 2,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+        "degree": 2,
+        "name": "DataCentrum (Bratislava, Cintorínska)",
+        "code": "mp_18"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "02dd14d1-714f-4733-bd50-0249ebe76dce",
+        "degree": 1,
+        "name": "Komunikačno-technická infraštruktúra 1 DataCentra",
+        "code": "infra_sluzba_202"
+      },
+      {
+        "uuid": "a02c9f85-d7f4-4837-9549-7efdfcdacb6f",
+        "degree": 1,
+        "name": "Komunikačno-technická infraštruktúra 2 DataCentra",
+        "code": "infra_sluzba_203"
+      }
+    ],
+    "islands": {
+      "total_nodes": 667,
+      "total_islands": 665,
+      "singleton_islands": 664,
+      "multi_islands": [
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+          "top_source_degree": 2,
+          "top_target_uuid": "02dd14d1-714f-4733-bd50-0249ebe76dce",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 190,
+        "total_islands": 190,
+        "singleton_islands": 190,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 477,
+        "total_islands": 476,
+        "singleton_islands": 475,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.0041928721174004195,
+            "size_total": 3,
+            "top_uuid": "02dd14d1-714f-4733-bd50-0249ebe76dce",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

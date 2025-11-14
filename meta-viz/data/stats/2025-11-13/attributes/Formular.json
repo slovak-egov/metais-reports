@@ -1,0 +1,118 @@
+{
+  "type": "Formular",
+  "count": 2851,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 2851,
+      "pct": 100.0,
+      "unique_count": 2816,
+      "unique_pct": 98.77236057523676
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 2851,
+      "pct": 100.0,
+      "unique_count": 2189,
+      "unique_pct": 76.7800771659067
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 2851,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.07015082427218519
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 2851,
+      "pct": 100.0,
+      "unique_count": 2703,
+      "unique_pct": 94.8088390038583
+    },
+    {
+      "name": "EA_Profil_Formular_kod_formulara",
+      "count": 2830,
+      "pct": 99.26341634514205,
+      "unique_count": 2668,
+      "unique_pct": 94.2756183745583
+    },
+    {
+      "name": "EA_Profil_Formular_url",
+      "count": 991,
+      "pct": 34.75973342686777,
+      "unique_count": 520,
+      "unique_pct": 52.472250252270435
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 956,
+      "pct": 33.53209400210452,
+      "unique_count": 736,
+      "unique_pct": 76.98744769874477
+    },
+    {
+      "name": "EA_Profil_Formular_typ_formulara_upvs",
+      "count": 161,
+      "pct": 5.647141353910908,
+      "unique_count": 1,
+      "unique_pct": 0.6211180124223602
+    },
+    {
+      "name": "EA_Profil_Formular_verzia_formulara",
+      "count": 161,
+      "pct": 5.647141353910908,
+      "unique_count": 1,
+      "unique_pct": 0.6211180124223602
+    },
+    {
+      "name": "EA_Profil_Formular_je_hlavny",
+      "count": 161,
+      "pct": 5.647141353910908,
+      "unique_count": 1,
+      "unique_pct": 0.6211180124223602
+    },
+    {
+      "name": "EA_Profil_Formular_povolit_prilohy",
+      "count": 140,
+      "pct": 4.910557699052964,
+      "unique_count": 2,
+      "unique_pct": 1.4285714285714286
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 40,
+      "pct": 1.403016485443704,
+      "unique_count": 36,
+      "unique_pct": 90.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 21,
+      "pct": 0.7365836548579445,
+      "unique_count": 20,
+      "unique_pct": 95.23809523809523
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 15,
+      "pct": 0.526131182041389,
+      "unique_count": 13,
+      "unique_pct": 86.66666666666667
+    },
+    {
+      "name": "EA_Profil_Formular_namespace",
+      "count": 15,
+      "pct": 0.526131182041389,
+      "unique_count": 14,
+      "unique_pct": 93.33333333333333
+    },
+    {
+      "name": "EA_Profil_Formular_prilohy",
+      "count": 14,
+      "pct": 0.4910557699052964,
+      "unique_count": 13,
+      "unique_pct": 92.85714285714286
+    }
+  ]
+}

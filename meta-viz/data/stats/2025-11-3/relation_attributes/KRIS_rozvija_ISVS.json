@@ -1,0 +1,5016 @@
+{
+  "relation_name": "KRIS_rozvija_ISVS",
+  "name": "KRIT rozvíja ISVS",
+  "description": "KRIT rozvíja ISVS",
+  "engDescription": "KRIT develops ISVS",
+  "type": "application",
+  "source_type": "KRIS",
+  "source_name": "Koncept rozvoja IT",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 635,
+    "unique_pairs": 635,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 282,
+    "target_total": 6492,
+    "source_connected": 51,
+    "target_connected": 635,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 67,
+      "avg": 12.450980392156863,
+      "median": 7,
+      "p90": 27,
+      "p99": 67
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "8397c2d9-892c-4f4c-868f-8db4934c5814",
+        "degree": 67,
+        "name": "KRIS Ministerstva vnútra Slovenskej republiky",
+        "code": "kris_6"
+      },
+      {
+        "uuid": "61b15fc6-48a4-4295-9290-e5983e5af1a4",
+        "degree": 67,
+        "name": "KRIS Ministerstva pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
+        "code": "kris_4"
+      },
+      {
+        "uuid": "384b58dc-6083-4f37-ad54-a5033f57af04",
+        "degree": 29,
+        "name": "KRIS Nitrianskeho samosprávneho kraja",
+        "code": "kris_103"
+      },
+      {
+        "uuid": "a088d1f9-d821-4eb6-b49e-840146cc3f84",
+        "degree": 29,
+        "name": "Dodatok č. 3 ku KRIS Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky",
+        "code": "kris_12"
+      },
+      {
+        "uuid": "61da0008-6ce5-4846-b8ce-7c6d9bfb1846",
+        "degree": 27,
+        "name": "KRIS Bratislavského samosprávneho kraja - súčasný stav",
+        "code": "kris_38"
+      },
+      {
+        "uuid": "17b56a55-5b98-4854-a17c-89357b77d0fa",
+        "degree": 27,
+        "name": "Referenčná KRIS pre stredné mestá",
+        "code": "kris_215"
+      },
+      {
+        "uuid": "10abd0d0-dbfa-44e3-95aa-198e8a9c1124",
+        "degree": 26,
+        "name": "KRIS mesta Nitra",
+        "code": "kris_282"
+      },
+      {
+        "uuid": "a37198b7-186c-4f01-9a26-fafb7ad215f1",
+        "degree": 26,
+        "name": "KRIS mesta Stupava",
+        "code": "kris_299"
+      },
+      {
+        "uuid": "6dc617df-b95a-4f14-9962-9fde673de62f",
+        "degree": 26,
+        "name": "KRIS mesta Pezinok",
+        "code": "kris_301"
+      },
+      {
+        "uuid": "4df1901b-85a8-4191-8ae6-398b60d4959f",
+        "degree": 26,
+        "name": "KRIS Prešovského samosprávneho kraja",
+        "code": "kris_168"
+      },
+      {
+        "uuid": "5a56b5e1-fd9a-481d-9b46-b37359f4a7b9",
+        "degree": 26,
+        "name": "KRIS mesta Žilina",
+        "code": "kris_281"
+      },
+      {
+        "uuid": "cda7b536-e204-41a3-8afc-5be6ffa3fe4c",
+        "degree": 26,
+        "name": "KRIS mesta Malacky",
+        "code": "kris_298"
+      },
+      {
+        "uuid": "c5a8719c-8b80-48da-ae44-b7982c3440dc",
+        "degree": 23,
+        "name": "KRIS Košického samosprávneho kraja",
+        "code": "kris_186"
+      },
+      {
+        "uuid": "38c292c3-c716-465c-8c40-6ceb6382efcc",
+        "degree": 20,
+        "name": "KRIS Ministerstva kultúry Slovenskej republiky - súčasný stav",
+        "code": "kris_11"
+      },
+      {
+        "uuid": "b69c3fc5-2ec2-4eb3-a31f-b7f76ae1ab56",
+        "degree": 16,
+        "name": "KRIS Trnavského samosprávneho kraja",
+        "code": "kris_49"
+      },
+      {
+        "uuid": "81809065-1e74-45f0-8e64-0d37ffbb4297",
+        "degree": 15,
+        "name": "Dodatok č. 4 ku KRIS Ministerstva financií Slovenskej republiky",
+        "code": "kris_2"
+      },
+      {
+        "uuid": "aba18c36-e4d5-4b70-ae5a-a73fbbab1bfb",
+        "degree": 13,
+        "name": "KRIS Úradu pre reguláciu elektronických komunikácií a poštových služieb –  súčasný stav",
+        "code": "kris_296"
+      },
+      {
+        "uuid": "67e7d01e-4ebd-4420-aefa-79c77bcd73eb",
+        "degree": 13,
+        "name": "KRIS Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "kris_13"
+      },
+      {
+        "uuid": "0c82df6a-2647-464f-865e-626f325e1455",
+        "degree": 10,
+        "name": "KRIS DataCentra elektronizácie územnej samosprávy Slovenska",
+        "code": "kris_246"
+      },
+      {
+        "uuid": "217e3878-7c4a-447b-ae39-55f1802c718d",
+        "degree": 9,
+        "name": "KRIS Úradu vlády Slovenskej republiky 2013",
+        "code": "kris_14"
+      },
+      {
+        "uuid": "9f66e1ae-4fbb-4913-b08a-11b2deef446b",
+        "degree": 8,
+        "name": "KRIS Sociálnej poisťovne",
+        "code": "kris_34"
+      },
+      {
+        "uuid": "bced5129-0a2d-4ad1-bcac-af02226ddb81",
+        "degree": 8,
+        "name": "KRIS Kancelárie Národnej rady Slovenskej republiky",
+        "code": "kris_28"
+      },
+      {
+        "uuid": "b6dde8ef-60f8-4cad-a3b7-af80962c4e2c",
+        "degree": 8,
+        "name": "KRIS Ministerstva zahraničných vecí a európskych záležitostí Slovenskej republiky",
+        "code": "kris_8"
+      },
+      {
+        "uuid": "3119014c-9281-4789-8123-4225206e9be5",
+        "degree": 7,
+        "name": "KRIS Exportno-importnej banky SR",
+        "code": "kris_292"
+      },
+      {
+        "uuid": "5cb38699-c1dc-4d1f-8610-18f25f0c40ed",
+        "degree": 7,
+        "name": "KRIS Ministerstva dopravy a výstavby Slovenskej republiky",
+        "code": "kris_218"
+      },
+      {
+        "uuid": "c7a4eb50-f4c2-413f-9ccc-506464bca714",
+        "degree": 7,
+        "name": "KRIS Štatistického úradu Slovenskej republiky",
+        "code": "kris_16"
+      },
+      {
+        "uuid": "b32e76b5-b332-4fb8-8556-bcd8f05b9191",
+        "degree": 6,
+        "name": "KRIS Rozhlasu a televízie Slovenska",
+        "code": "kris_242"
+      },
+      {
+        "uuid": "e00383d7-51c6-488d-9300-a9f3c39a9f06",
+        "degree": 6,
+        "name": "KRIT Tlačovej agentúry Slovenskej republiky",
+        "code": "kris_37"
+      },
+      {
+        "uuid": "60a9d629-ee2e-4d9a-9df8-01ac600e3688",
+        "degree": 6,
+        "name": "KRIS Ministerstva práce, sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "kris_9"
+      },
+      {
+        "uuid": "0936b5b1-791f-46e1-9561-e910e93d9450",
+        "degree": 4,
+        "name": "KRIS Úradu pre verejné obstarávanie - súčasný stav",
+        "code": "kris_20"
+      },
+      {
+        "uuid": "9855b11a-1bcd-450f-ae2b-101d4e110a4f",
+        "degree": 4,
+        "name": "KRIS Generálnej prokuratúry Slovenskej republiky - súčasný stav",
+        "code": "kris_32"
+      },
+      {
+        "uuid": "934abdb5-a789-4bdf-bd8f-22d3db27a164",
+        "degree": 4,
+        "name": "KRIS Národného bezpečnostného úradu - AS IS",
+        "code": "kris_23"
+      },
+      {
+        "uuid": "9df26e1b-a931-4760-acb5-be12a71037a1",
+        "degree": 4,
+        "name": "KRIS Najvyššieho kontrolného úradu Slovenskej republiky",
+        "code": "kris_33"
+      },
+      {
+        "uuid": "385d8bbe-bc18-456f-92d6-813a5bcc505d",
+        "degree": 3,
+        "name": "KRIS Úradu geodézie, kartografie a katastra Slovenskej republiky",
+        "code": "kris_17"
+      },
+      {
+        "uuid": "297eacfb-adb9-4734-96f3-5a38ca521d1e",
+        "degree": 3,
+        "name": "KRIS Kancelárie prezidenta Slovenskej republiky",
+        "code": "kris_29"
+      },
+      {
+        "uuid": "4d973ec6-6d8e-44d5-88ba-07cd15ad835d",
+        "degree": 3,
+        "name": "KRIS Úradu jadrového dozoru",
+        "code": "kris_18"
+      },
+      {
+        "uuid": "503405c0-12de-4bd2-9fb8-e94e5224974f",
+        "degree": 3,
+        "name": "KRIS Úradu pre reguláciu sieťových odvetví",
+        "code": "kris_27"
+      },
+      {
+        "uuid": "e4bfbff7-bf74-46e5-b4da-7e978d16fb10",
+        "degree": 3,
+        "name": "KRIS Úradu na ochranu osobných údajov - súčasný stav",
+        "code": "kris_24"
+      },
+      {
+        "uuid": "af1de2b0-94cc-4361-91c4-3283e94d79c0",
+        "degree": 3,
+        "name": "KRIS Rady pre vysielanie a retransmisiu - súčasný stav",
+        "code": "kris_248"
+      },
+      {
+        "uuid": "66b53874-67bc-4317-a51d-6a2c8a85638a",
+        "degree": 3,
+        "name": "KRIS Kancelárie verejného ochrancu práv",
+        "code": "kris_31"
+      },
+      {
+        "uuid": "76af944b-c7ef-4621-9e5b-b3b480a432a0",
+        "degree": 2,
+        "name": "KRIS Ústavu pamäti národa",
+        "code": "kris_206"
+      },
+      {
+        "uuid": "7fccbd51-e731-48e4-9053-65d11b8311f1",
+        "degree": 2,
+        "name": "KRIS Dôvery zdravotnej poisťovne a. s.",
+        "code": "kris_249"
+      },
+      {
+        "uuid": "83262fdb-0f5a-41e5-b676-85817c7ecf0d",
+        "degree": 2,
+        "name": "KRIS UNION zdravotnej poisťovne a. s.",
+        "code": "kris_35"
+      },
+      {
+        "uuid": "c06e519b-71dc-4119-8f1f-789d6be7a088",
+        "degree": 1,
+        "name": "KRIT Všeobecnej zdravotnej poisťovne - súčasný stav",
+        "code": "kris_36"
+      },
+      {
+        "uuid": "458e8092-9e9c-4f7d-985f-09107ceb4a6b",
+        "degree": 1,
+        "name": "Kris Protimonopolného úradu Slovenskej republiky",
+        "code": "kris_15"
+      },
+      {
+        "uuid": "85621e60-5069-4266-8bfa-46c51af2cbf8",
+        "degree": 1,
+        "name": "KRIS Kancelárie Súdnej rady Slovenskej republiky - súčasný stav",
+        "code": "kris_250"
+      },
+      {
+        "uuid": "6c7428a8-29cd-40dd-8002-480452de6260",
+        "degree": 1,
+        "name": "KRIS Ministerstva obrany Slovenskej republiky",
+        "code": "kris_217"
+      },
+      {
+        "uuid": "a41a6d4c-6907-46e2-981b-4e3668c7954f",
+        "degree": 1,
+        "name": "KRIS Kancelárie Najvyššieho súdu Slovenskej republiky",
+        "code": "kris_293"
+      },
+      {
+        "uuid": "d2390104-6d12-45e9-8de5-c75e13312f59",
+        "degree": 1,
+        "name": "KRIS Úradu pre dohľad nad zdravotnou starostlivosťou",
+        "code": "kris_205"
+      },
+      {
+        "uuid": "e0d5b74d-3f1d-4fd9-a36b-fc5556d28a8f",
+        "degree": 1,
+        "name": "KRIS Kancelárie Ústavného súdu Slovenskej republiky - súčasný stav",
+        "code": "kris_30"
+      },
+      {
+        "uuid": "70ee137f-67fc-41a9-8ab6-f3783cb1a750",
+        "degree": 1,
+        "name": "KRIT mesta Košice",
+        "code": "kris_288"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "00221898-51d1-4d59-bd3e-c10dc72b05a9",
+        "degree": 1,
+        "name": "Lokálne registre - Register obyvateľov",
+        "code": "isvs_5571"
+      },
+      {
+        "uuid": "00415054-15b9-455a-bb46-ad954c76c827",
+        "degree": 1,
+        "name": "Centrálna evidencia interných predpisov (CEIP) staré",
+        "code": "isvs_233"
+      },
+      {
+        "uuid": "0081036d-ea48-489b-86b9-47c33c97fb13",
+        "degree": 1,
+        "name": "DMS - Document management system",
+        "code": "isvs_5796"
+      },
+      {
+        "uuid": "00b7e104-d53a-4add-b58a-effee0923cef",
+        "degree": 1,
+        "name": "Informačný systém SPIN",
+        "code": "isvs_424"
+      },
+      {
+        "uuid": "00c11696-e714-4b74-9a0d-db51e180a58d",
+        "degree": 1,
+        "name": "Evidencia cudzincov",
+        "code": "isvs_189"
+      },
+      {
+        "uuid": "00e5b37a-2ecb-40e3-b322-08ec1f45dc61",
+        "degree": 1,
+        "name": "Webové sídlo Ministerstva pôdohospodárstva a rozvoja vidieka SR",
+        "code": "isvs_5891"
+      },
+      {
+        "uuid": "020fea1c-13f1-46d0-a0ff-87814cea7065",
+        "degree": 1,
+        "name": "Modul Majetok a prenajímanie",
+        "code": "isvs_6003"
+      },
+      {
+        "uuid": "02a2f5c3-5a79-4859-a0d1-ceba8cb5e13a",
+        "degree": 1,
+        "name": "ASPREG (IS Registratúra)",
+        "code": "isvs_5810"
+      },
+      {
+        "uuid": "02b0429b-3584-4ab0-b51e-4ed474e83ae0",
+        "degree": 1,
+        "name": "Webové sídlo ÚVO - Publikačný portál ÚVO www.uvo.gov.sk",
+        "code": "isvs_453"
+      },
+      {
+        "uuid": "02ba6eee-f39b-4e5b-b502-2896f8d1628e",
+        "degree": 1,
+        "name": "Global position system – GPS rezortu",
+        "code": "isvs_197"
+      },
+      {
+        "uuid": "038a5a15-68ef-412e-901b-6ccf7b18416c",
+        "degree": 1,
+        "name": "Rozpočtový systém",
+        "code": "isvs_1694"
+      },
+      {
+        "uuid": "038f9a7d-1f73-4115-9721-ee56bfca8ed4",
+        "degree": 1,
+        "name": "Modul dane a poplatky",
+        "code": "isvs_6043"
+      },
+      {
+        "uuid": "03fecd5d-4aad-4eb5-9699-d6883abb2784",
+        "degree": 1,
+        "name": "IS MCS - Informačný systém modelu cestnej siete",
+        "code": "isvs_5806"
+      },
+      {
+        "uuid": "0437a386-077f-4f20-a48f-55af254417e7",
+        "degree": 1,
+        "name": "DALI - Informačný systém pre kategorizáciu",
+        "code": "isvs_4851"
+      },
+      {
+        "uuid": "043bb6af-00f2-4968-85ea-e0d64c469849",
+        "degree": 1,
+        "name": "ITMS",
+        "code": "isvs_135"
+      },
+      {
+        "uuid": "045e21d5-e3dd-46c3-9179-5f60b00bcee6",
+        "degree": 1,
+        "name": "Modul Dotácie",
+        "code": "isvs_3482"
+      },
+      {
+        "uuid": "04629d4c-719d-45e2-99c9-68576e3b1a60",
+        "degree": 1,
+        "name": "Register poskytovateľov sociálnych služieb",
+        "code": "isvs_3009"
+      },
+      {
+        "uuid": "0490888a-28c6-42c4-a168-fe5521d0f199",
+        "degree": 1,
+        "name": "Referendum",
+        "code": "isvs_417"
+      },
+      {
+        "uuid": "06d27b69-18e6-475f-bea7-05b5718128a4",
+        "degree": 1,
+        "name": "Evidencia predarchívnej starostlivosti (ProArchiv)",
+        "code": "isvs_209"
+      },
+      {
+        "uuid": "070e1369-7140-4e81-bfac-dff2faa5b69b",
+        "degree": 1,
+        "name": "Webová stránka Národneho ústavu celoživotného vzdelávania",
+        "code": "isvs_5831"
+      },
+      {
+        "uuid": "07700f40-8878-4401-be93-bdd1aa5c3e72",
+        "degree": 1,
+        "name": "TACHONET - Digitálny tachograf",
+        "code": "isvs_74"
+      },
+      {
+        "uuid": "07732409-8125-4c61-a4e3-f28a3cccc82d",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_3005"
+      },
+      {
+        "uuid": "0803889d-15f2-40b8-bd4f-18177b6a73d9",
+        "degree": 1,
+        "name": "Register neinvestičných fondov",
+        "code": "isvs_218"
+      },
+      {
+        "uuid": "0831ff04-e174-4127-a2d0-661227d80c25",
+        "degree": 1,
+        "name": "Systém elektronických služieb (SES)",
+        "code": "isvs_551"
+      },
+      {
+        "uuid": "0880b55a-0055-4c08-963a-26856e52cc32",
+        "degree": 1,
+        "name": "Modul elektronickej podateľne",
+        "code": "isvs_4835"
+      },
+      {
+        "uuid": "0989b5bf-c922-4db2-92b7-8ccab7c10a56",
+        "degree": 1,
+        "name": "Integračný a procesný modul (BPM)",
+        "code": "isvs_3971"
+      },
+      {
+        "uuid": "098ec5a0-8555-412b-b6f7-cf7e7f0c9b26",
+        "degree": 1,
+        "name": "Modul GIS",
+        "code": "isvs_6033"
+      },
+      {
+        "uuid": "09b114e7-14c6-4e1b-9117-21bd181843c9",
+        "degree": 1,
+        "name": "Modul Registrovanie",
+        "code": "isvs_6012"
+      },
+      {
+        "uuid": "0aa24bdc-f597-43a2-942a-79e91bbe06c0",
+        "degree": 1,
+        "name": "Portál Ministerstva vnútra Slovenskej republiky",
+        "code": "isvs_6108"
+      },
+      {
+        "uuid": "0b85ad0a-f4cb-4f4e-9d19-7979e9c19573",
+        "degree": 1,
+        "name": "Portál Metodicko-pedagogického centra",
+        "code": "isvs_5821"
+      },
+      {
+        "uuid": "0ba9c173-a56e-4f52-a8a5-a4d2e535f6bd",
+        "degree": 1,
+        "name": "Hlásenie pobytu",
+        "code": "isvs_200"
+      },
+      {
+        "uuid": "0c1f6798-f78f-4a4f-81da-c683c25459a8",
+        "degree": 1,
+        "name": "Portál Kategorizácia",
+        "code": "isvs_4845"
+      },
+      {
+        "uuid": "0c690b1f-eca4-4ccd-a51f-638bb84ebe28",
+        "degree": 1,
+        "name": "Modul Licencie",
+        "code": "isvs_3483"
+      },
+      {
+        "uuid": "0c6e8e4c-dbea-4b3f-b1e8-046172e5099b",
+        "degree": 1,
+        "name": "Knižničný informačný systém",
+        "code": "isvs_535"
+      },
+      {
+        "uuid": "0cbdccff-c315-4dc2-9e54-2e339291b623",
+        "degree": 1,
+        "name": "Modul Majetok a prenajímanie",
+        "code": "isvs_5539"
+      },
+      {
+        "uuid": "0d739ed7-c8e4-4c3f-a5e2-9c2a5c7a376d",
+        "degree": 1,
+        "name": "DMS – Systém správy dokumentov",
+        "code": "isvs_664"
+      },
+      {
+        "uuid": "0de57437-7d63-459c-8000-250ed1a673f8",
+        "degree": 1,
+        "name": "Integrovaný informačný systém mesta (IISM)",
+        "code": "isvs_6054"
+      },
+      {
+        "uuid": "0de9aee1-1e5e-451b-bde9-23a962c499bc",
+        "degree": 1,
+        "name": "Registratúra",
+        "code": "isvs_6084"
+      },
+      {
+        "uuid": "0e2d272c-a5e4-48c5-a9d0-337aaf6db18e",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_4819"
+      },
+      {
+        "uuid": "0e5548bc-9463-4794-8bfa-58b1da98675e",
+        "degree": 1,
+        "name": "Portál Výskumného ústavu detskej psychológie a patopsychológie",
+        "code": "isvs_5832"
+      },
+      {
+        "uuid": "0e736fa5-4c84-46bb-97da-8f187a596c7e",
+        "degree": 1,
+        "name": "Záujmové osoby Policajného zboru",
+        "code": "isvs_174"
+      },
+      {
+        "uuid": "0efdba42-ee26-4baa-a60f-a99b63765747",
+        "degree": 1,
+        "name": "Portál NSK integrovaný s ÚPVS",
+        "code": "isvs_1679"
+      },
+      {
+        "uuid": "1035b505-efea-483a-9b6a-a125432d9abc",
+        "degree": 1,
+        "name": "Portál VÚC integrovaný s ÚPVS",
+        "code": "isvs_3466"
+      },
+      {
+        "uuid": "10527bf6-4c95-4b90-b9a6-b1dfa9fa0693",
+        "degree": 1,
+        "name": "IS dôchodkového poistenia (DP)",
+        "code": "isvs_546"
+      },
+      {
+        "uuid": "10758832-6acc-4b14-bca1-20962de43e8d",
+        "degree": 1,
+        "name": "Kontrola úžitkovosti",
+        "code": "isvs_106"
+      },
+      {
+        "uuid": "1094ddb6-27f1-45c4-bba8-0d56f2d2cf0d",
+        "degree": 1,
+        "name": "Plemenná kniha",
+        "code": "isvs_5977"
+      },
+      {
+        "uuid": "109f4170-f12e-4913-83ba-9fd23e05c296",
+        "degree": 1,
+        "name": "Informačný portál o duševnom vlastníctve",
+        "code": "isvs_354"
+      },
+      {
+        "uuid": "114b8167-e2df-4812-8b01-71f741eaa398",
+        "degree": 1,
+        "name": "Zoznam periodickej tlače",
+        "code": "isvs_360"
+      },
+      {
+        "uuid": "119b6dd2-1dea-4557-9f9a-4fd25affe29f",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_5537"
+      },
+      {
+        "uuid": "11d48011-ff60-4d83-8e8b-3b5a65239e4c",
+        "degree": 1,
+        "name": "Informačný systém poľovníctva",
+        "code": "isvs_5931"
+      },
+      {
+        "uuid": "121a89cd-0a52-49e6-982f-e9d1122cd62d",
+        "degree": 1,
+        "name": "ZASIELKY",
+        "code": "isvs_5966"
+      },
+      {
+        "uuid": "12403385-45d9-493b-8d59-c019605f1c7d",
+        "degree": 1,
+        "name": "Národný portál zdravia (NPZ)",
+        "code": "isvs_401"
+      },
+      {
+        "uuid": "12b361c4-c174-4905-8ffc-66e2a190474f",
+        "degree": 1,
+        "name": "Vnútorná správa",
+        "code": "isvs_419"
+      },
+      {
+        "uuid": "12ed5c6b-7194-4d3c-aa75-1bbeb7953a25",
+        "degree": 1,
+        "name": "WFM – Work Flow Management System",
+        "code": "isvs_4828"
+      },
+      {
+        "uuid": "13143dfc-ec97-4376-b705-6670da12f986",
+        "degree": 1,
+        "name": "IS výberu poistného a príspevkov (VPP)",
+        "code": "isvs_545"
+      },
+      {
+        "uuid": "134485ad-7a64-4428-9e1e-f597398a481b",
+        "degree": 1,
+        "name": "Sčítanie obyvateľov, domov a bytov 2011",
+        "code": "isvs_413"
+      },
+      {
+        "uuid": "139af4da-31e5-4c31-9ee2-b927ef125f73",
+        "degree": 1,
+        "name": "Register poľnohospodárskych produkčných plôch (Register LPIS)",
+        "code": "isvs_117"
+      },
+      {
+        "uuid": "145e2e5f-2372-4934-918c-f29e6505fa35",
+        "degree": 1,
+        "name": "Lokálne registre - Register adries a nehnuteľností",
+        "code": "isvs_6045"
+      },
+      {
+        "uuid": "1572453e-c392-44c7-b5e7-9db306e4c8bc",
+        "degree": 1,
+        "name": "CMS – Systém správy obsahu",
+        "code": "isvs_4830"
+      },
+      {
+        "uuid": "15c7e178-dc9c-4285-8506-3250f4f5597e",
+        "degree": 1,
+        "name": "Informačný systém Pokladňa",
+        "code": "isvs_497"
+      },
+      {
+        "uuid": "1652b6f1-25f5-4fd7-bb15-4798ee20d73c",
+        "degree": 1,
+        "name": "Informačný systém o audiovízii (SK CINEMA)",
+        "code": "isvs_359"
+      },
+      {
+        "uuid": "16963de7-9121-4753-afe5-00b81b67b192",
+        "degree": 1,
+        "name": "Kvalifikované dôveryhodné služby",
+        "code": "isvs_471"
+      },
+      {
+        "uuid": "16eefa56-9bf3-4276-9f18-2bc657d69ab0",
+        "degree": 1,
+        "name": "Info modul",
+        "code": "isvs_3006"
+      },
+      {
+        "uuid": "17cbbb94-3d6b-416f-a13f-e0eafe66deb9",
+        "degree": 1,
+        "name": "SEPIA",
+        "code": "isvs_4593"
+      },
+      {
+        "uuid": "17d21532-6aba-4667-8d90-331824b93139",
+        "degree": 1,
+        "name": "Podatelna",
+        "code": "isvs_536"
+      },
+      {
+        "uuid": "184d1f2c-4809-4159-8b6a-11f288f4e518",
+        "degree": 1,
+        "name": "Dochádzkový, prístupový a návštevný informačný systém",
+        "code": "isvs_692"
+      },
+      {
+        "uuid": "18a93078-6b8f-465d-80c2-5d13dc21c282",
+        "degree": 1,
+        "name": "Integrovaný IS TASR",
+        "code": "isvs_563"
+      },
+      {
+        "uuid": "1944ce25-fb10-44a4-85a7-9e7a0bb7a2cd",
+        "degree": 1,
+        "name": "Modul Majetok a prenajímanie",
+        "code": "isvs_5867"
+      },
+      {
+        "uuid": "1b297f28-2cc2-493e-b432-5cdc3adc74f1",
+        "degree": 1,
+        "name": "BPM – Business Proces Management Systém",
+        "code": "isvs_1683"
+      },
+      {
+        "uuid": "1c0b1a4f-9629-4834-899b-fab8fd83823b",
+        "degree": 1,
+        "name": "Register poskytovateľov zdravotných a zdravotníckych zariadení",
+        "code": "isvs_1700"
+      },
+      {
+        "uuid": "1c52ce14-7b95-4a55-b583-6a5d95c87aa8",
+        "degree": 1,
+        "name": "CERTIFIKACIA",
+        "code": "isvs_5967"
+      },
+      {
+        "uuid": "1c7695ce-08dc-4286-9a7d-40d588267d72",
+        "degree": 1,
+        "name": "Webové sídlo Agentúry pre rozvoj vidieka - www.nsrv.sk",
+        "code": "isvs_5904"
+      },
+      {
+        "uuid": "1ce929ce-72fc-41b0-9dc9-060f6c0cb1e3",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_4821"
+      },
+      {
+        "uuid": "1cf34bc8-a948-4764-bfe8-cef8488bf217",
+        "degree": 1,
+        "name": "Centrálny register včelstiev, chovateľov včiel a stanovíšť včelstiev",
+        "code": "isvs_111"
+      },
+      {
+        "uuid": "1d2cc6db-4f37-4782-931f-0cd9897fadcc",
+        "degree": 1,
+        "name": "ForestPortál - lesnícky portál",
+        "code": "isvs_5933"
+      },
+      {
+        "uuid": "1d3bde5e-076f-4942-9743-e3880515488f",
+        "degree": 1,
+        "name": "Modul Platby",
+        "code": "isvs_6051"
+      },
+      {
+        "uuid": "1d43ea80-445b-410b-8ed8-b61c19d9c103",
+        "degree": 1,
+        "name": "PROVYS",
+        "code": "isvs_4594"
+      },
+      {
+        "uuid": "1d88a0fd-ed46-4673-bc40-0de899d7bfcd",
+        "degree": 1,
+        "name": "Lokálne registre - Register obyvateľov",
+        "code": "isvs_5545"
+      },
+      {
+        "uuid": "1e169bdc-64ca-42ca-8289-01ca3361968c",
+        "degree": 1,
+        "name": "Webový portál IUVENTA",
+        "code": "isvs_5830"
+      },
+      {
+        "uuid": "1e901a2c-6bff-42cb-a68a-7370e953422d",
+        "degree": 1,
+        "name": "Lokálne registre - Register právnických osôb",
+        "code": "isvs_6046"
+      },
+      {
+        "uuid": "1f42b2de-2517-44b7-9fdd-428082028a68",
+        "degree": 1,
+        "name": "Elektronické služby  MZVEZ SR (IS ES MZVEZ SR)",
+        "code": "isvs_6102"
+      },
+      {
+        "uuid": "20416464-2bf1-47ba-8890-6487d850e446",
+        "degree": 1,
+        "name": "Centrálna aplikačná infraštruktúra a registratúra (CAIR)",
+        "code": "isvs_331"
+      },
+      {
+        "uuid": "20ee9ee5-16b1-470f-8f74-36adbf38888c",
+        "degree": 1,
+        "name": "CMS – Systém správy obsahu",
+        "code": "isvs_3015"
+      },
+      {
+        "uuid": "214313f4-505b-4435-a61a-5b16735ef781",
+        "degree": 1,
+        "name": "Informovanie a poradenstvo",
+        "code": "isvs_4721"
+      },
+      {
+        "uuid": "215e817a-8bd2-40c0-b8e0-a69c910e8b24",
+        "degree": 1,
+        "name": "Human",
+        "code": "isvs_4849"
+      },
+      {
+        "uuid": "21ad9c0e-6768-4e23-b2ea-f50419db0369",
+        "degree": 1,
+        "name": "Informačný systém riadenia sociálnych dávok (RSD)",
+        "code": "isvs_279"
+      },
+      {
+        "uuid": "21e6b736-958a-4730-b909-27cf1f7a5104",
+        "degree": 1,
+        "name": "Redakčný systém TASR",
+        "code": "isvs_560"
+      },
+      {
+        "uuid": "227ddd68-0e99-4ec1-8c28-2f915562279d",
+        "degree": 1,
+        "name": "Modul informovanie a poradenstvo",
+        "code": "isvs_5535"
+      },
+      {
+        "uuid": "22839d7e-a64b-41ac-927b-bd41b92126f6",
+        "degree": 1,
+        "name": "Webový portál Výskumnej agentúry Slovenskej republiky",
+        "code": "isvs_5819"
+      },
+      {
+        "uuid": "231014a6-ef27-4bf3-9214-3a0206641264",
+        "degree": 1,
+        "name": "Webové sídlo Múzeum vo Svätom Antone",
+        "code": "isvs_5927"
+      },
+      {
+        "uuid": "23129581-d143-4146-93e1-5a4cf6c9430c",
+        "degree": 1,
+        "name": "Modul Účtovníctvo",
+        "code": "isvs_6040"
+      },
+      {
+        "uuid": "234af1fc-7749-47a1-892a-f667de3a7007",
+        "degree": 1,
+        "name": "Elektronická podateľňa",
+        "code": "isvs_5859"
+      },
+      {
+        "uuid": "238dcd66-c677-43a8-bcac-f3869a51df38",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Definičné údaje podaní",
+        "code": "isvs_3010"
+      },
+      {
+        "uuid": "247a65f1-8dd8-415c-b57c-db9532fee97c",
+        "degree": 1,
+        "name": "Modul elektronickej podateľne",
+        "code": "isvs_680"
+      },
+      {
+        "uuid": "24d469a6-743a-4114-a940-ca40e9eca197",
+        "degree": 1,
+        "name": "Informačný systém Dokument management system (DMS)",
+        "code": "isvs_274"
+      },
+      {
+        "uuid": "254d687b-7667-48c0-824b-7e6cb7cb8e2e",
+        "degree": 1,
+        "name": "Integrovaný informačný systém mesta (IISM)",
+        "code": "isvs_5883"
+      },
+      {
+        "uuid": "2555aa2f-175e-4c73-87a7-5401a5bd14d9",
+        "degree": 1,
+        "name": "Centrálny metainformačný systém verejnej správy",
+        "code": "isvs_63"
+      },
+      {
+        "uuid": "25e53d61-630f-47cf-b712-7bb9577e53b1",
+        "degree": 1,
+        "name": "Modul Dotácie",
+        "code": "isvs_1695"
+      },
+      {
+        "uuid": "26c85894-4f36-4628-8770-8f9d8d552e48",
+        "degree": 1,
+        "name": "Interný reporting",
+        "code": "isvs_5551"
+      },
+      {
+        "uuid": "272a06ec-bcd6-42b4-a576-7ae566206a9c",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_665"
+      },
+      {
+        "uuid": "27e38312-e5b7-4368-a68c-87b62f9c1b28",
+        "degree": 1,
+        "name": "Modul interný reporting",
+        "code": "isvs_1690"
+      },
+      {
+        "uuid": "2889acf9-5a6d-47ad-8e1a-a8ad74afbcf5",
+        "degree": 1,
+        "name": "Majetok a prenajímanie",
+        "code": "isvs_4714"
+      },
+      {
+        "uuid": "28f05b3d-b05a-4cea-ae17-a589117d6e10",
+        "degree": 1,
+        "name": "Informačný systém osvetovej činnosti",
+        "code": "isvs_355"
+      },
+      {
+        "uuid": "291a69af-7e17-4a4a-8c35-39ff6be26974",
+        "degree": 1,
+        "name": "Modul Ohlasovanie, sťažnosti a notifikácie",
+        "code": "isvs_6017"
+      },
+      {
+        "uuid": "29691913-feec-42ac-9620-cd9fc83f2415",
+        "degree": 1,
+        "name": "VEMA",
+        "code": "isvs_506"
+      },
+      {
+        "uuid": "29997e9c-ed7c-46ef-b2d1-c7006e55bab2",
+        "degree": 1,
+        "name": "Rezortná a colná  štatistika",
+        "code": "isvs_5851"
+      },
+      {
+        "uuid": "29c82f6d-3d77-4272-b00f-b3762794a790",
+        "degree": 1,
+        "name": "Dane a poplatky",
+        "code": "isvs_4689"
+      },
+      {
+        "uuid": "2a31f30f-6c74-482d-8d6f-9a56a0b5057d",
+        "degree": 1,
+        "name": "Ústredná evidencia priestupkov",
+        "code": "isvs_6100"
+      },
+      {
+        "uuid": "2b40147f-df02-46f1-b69e-bfb22f06c46e",
+        "degree": 1,
+        "name": "Register združení obcí",
+        "code": "isvs_226"
+      },
+      {
+        "uuid": "2b785741-ac47-4fbf-a400-7ce8358f36b0",
+        "degree": 1,
+        "name": "Automatizovaná správa registratúry pre Ministerstvo vnútra Slovenskej republiky",
+        "code": "isvs_6105"
+      },
+      {
+        "uuid": "2c50ba0e-b53a-4458-a3a3-c7284349bf46",
+        "degree": 1,
+        "name": "Informačný eHealth portál eZdravotnictvo.sk",
+        "code": "isvs_4844"
+      },
+      {
+        "uuid": "2c8271e1-bf3c-423a-92db-1dac8833b0e8",
+        "degree": 1,
+        "name": "Elektronická pošta",
+        "code": "isvs_6089"
+      },
+      {
+        "uuid": "2c8e92cd-41e8-4045-9927-4e11f63c899c",
+        "degree": 1,
+        "name": "CMS - Systém pre správu obsahu",
+        "code": "isvs_5864"
+      },
+      {
+        "uuid": "2cbe3452-32fa-4937-9c92-a15071c6e255",
+        "degree": 1,
+        "name": "BPM – Business Proces Management Systém",
+        "code": "isvs_3012"
+      },
+      {
+        "uuid": "2cc9ff13-74e1-4433-bc30-96fb595fd37e",
+        "degree": 1,
+        "name": "Digitálny archív ÚPN",
+        "code": "isvs_3800"
+      },
+      {
+        "uuid": "2cd5a8da-f850-449f-90b3-c8c7d2cb4dfe",
+        "degree": 1,
+        "name": "Plemenársky informačný systém",
+        "code": "isvs_5945"
+      },
+      {
+        "uuid": "2cd7de73-6727-4dec-995b-ceeace435e65",
+        "degree": 1,
+        "name": "Národná databáza krmív (NDK)",
+        "code": "isvs_109"
+      },
+      {
+        "uuid": "2d6260ec-ea92-405f-aef2-5a5a8678acbf",
+        "degree": 1,
+        "name": "Portál vysokých škôl",
+        "code": "isvs_375"
+      },
+      {
+        "uuid": "2d6ede34-57d4-4768-b67b-9643540b8aec",
+        "degree": 1,
+        "name": "Modul interný reporting",
+        "code": "isvs_3477"
+      },
+      {
+        "uuid": "2e817ae5-67e1-40ea-a9b6-6e4cc547af3f",
+        "degree": 1,
+        "name": "IS SOFTIP Profit",
+        "code": "isvs_559"
+      },
+      {
+        "uuid": "2ec0ad76-8b7c-4705-9900-84abc4a565b4",
+        "degree": 1,
+        "name": "AGROFORUM",
+        "code": "isvs_5895"
+      },
+      {
+        "uuid": "2ef3b366-03f5-4011-90c9-5092f4e7c44d",
+        "degree": 1,
+        "name": "Webový portál Operačný program bratislavský kraj",
+        "code": "isvs_5899"
+      },
+      {
+        "uuid": "2f4e5848-9551-48f8-8a76-82dfe3e55c1b",
+        "degree": 1,
+        "name": "DMS – Systém správy dokumentov",
+        "code": "isvs_3004"
+      },
+      {
+        "uuid": "2fac7778-f89f-499d-8364-c269ac0e9ca5",
+        "degree": 1,
+        "name": "Reštauračný systém Bluegastro",
+        "code": "isvs_6086"
+      },
+      {
+        "uuid": "2fb77b58-9c9f-4b33-813e-7f9240d1b6b6",
+        "degree": 1,
+        "name": "Modul Platby",
+        "code": "isvs_3973"
+      },
+      {
+        "uuid": "2fbe51e0-eb80-4d2b-aab2-215c720e5fe5",
+        "degree": 1,
+        "name": "Modul Rozpočet a financie",
+        "code": "isvs_3957"
+      },
+      {
+        "uuid": "2fcfb276-bac5-4f9d-aae1-88f5156c0bf9",
+        "degree": 1,
+        "name": "Register občianskych združení",
+        "code": "isvs_220"
+      },
+      {
+        "uuid": "2ff5c579-ac9b-445e-8146-1a2ec9fa2c02",
+        "degree": 1,
+        "name": "Systém účtovníctvo a majetok - SPIN/iSPIN",
+        "code": "isvs_3016"
+      },
+      {
+        "uuid": "300709d0-a1b4-48c6-b464-5c0c60de2799",
+        "degree": 1,
+        "name": "Register poskytovateľov sociálnych služieb",
+        "code": "isvs_4823"
+      },
+      {
+        "uuid": "305cdb6d-1e35-45fd-a5dd-f35981413d32",
+        "degree": 1,
+        "name": "DENNIK hraničnej inšpekčnej služby (HIS)",
+        "code": "isvs_5968"
+      },
+      {
+        "uuid": "30744200-e449-48ee-9594-0e95ff92f815",
+        "degree": 1,
+        "name": "Voľby do Národnej Rady Slovenskej republiky",
+        "code": "isvs_412"
+      },
+      {
+        "uuid": "30d76c4c-3c08-4dff-994d-b07a2afae85d",
+        "degree": 1,
+        "name": "Manažment projektov",
+        "code": "isvs_5911"
+      },
+      {
+        "uuid": "30f48d1f-ad9a-4ac3-b4fd-cceba40c29d5",
+        "degree": 1,
+        "name": "Informačný systém Rokovania vlády SR",
+        "code": "isvs_5798"
+      },
+      {
+        "uuid": "3100cf8d-cb6b-4170-b9fc-f661c9b32bb4",
+        "degree": 1,
+        "name": "Systém pre zastupiteľstvo VÚC",
+        "code": "isvs_3475"
+      },
+      {
+        "uuid": "315cf52b-29c0-4f02-ba28-6ab5d856bb41",
+        "degree": 1,
+        "name": "Informačný systém Centrálny register zmlúv",
+        "code": "isvs_5797"
+      },
+      {
+        "uuid": "316b00f3-5591-4320-a6dd-ee97808e93cd",
+        "degree": 1,
+        "name": "Registratúra",
+        "code": "isvs_4833"
+      },
+      {
+        "uuid": "31ca26fb-4516-4d80-93eb-ae8e976e9d16",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Údaje o vykonávaní podaní",
+        "code": "isvs_687"
+      },
+      {
+        "uuid": "32c6748d-4ca6-4fa9-90dd-146a999f353a",
+        "degree": 1,
+        "name": "Modul zastupiteľstvo",
+        "code": "isvs_6039"
+      },
+      {
+        "uuid": "3350d0f4-11fb-4027-a7b1-f68b579455a1",
+        "degree": 1,
+        "name": "Systém pre zastupiteľstvo VÚC",
+        "code": "isvs_4832"
+      },
+      {
+        "uuid": "336b9020-fa6c-4a6d-9bea-9c76a20047ec",
+        "degree": 1,
+        "name": "Informačný systém Správa frekvenčného spektra",
+        "code": "isvs_482"
+      },
+      {
+        "uuid": "33eef206-7f99-4f0e-bb35-3f3e544e39b8",
+        "degree": 1,
+        "name": "IS úrazového poistenia (UP)",
+        "code": "isvs_549"
+      },
+      {
+        "uuid": "34868257-ce70-4627-91d4-05ace69ee148",
+        "degree": 1,
+        "name": "GigaOffice - Monitorovací systém pre reguláciu a štátny dohľad (MSRŠD)",
+        "code": "isvs_483"
+      },
+      {
+        "uuid": "34d91b8e-e018-4c30-8eaf-77e1d8bed035",
+        "degree": 1,
+        "name": "Webové sídlo Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "isvs_4826"
+      },
+      {
+        "uuid": "3613e4a1-80be-4ad2-96f2-0ead163c6435",
+        "degree": 1,
+        "name": "Sociálne služby",
+        "code": "isvs_4692"
+      },
+      {
+        "uuid": "36337485-ab51-4eee-9405-c95b9a4153d8",
+        "degree": 1,
+        "name": "Register právnických osôb, podnikateľov a orgánov verejnej moci",
+        "code": "isvs_420"
+      },
+      {
+        "uuid": "3662ae34-af0b-4ae4-b051-e3a94209cb6d",
+        "degree": 1,
+        "name": "Portál Medzinárodného laserového centra",
+        "code": "isvs_5820"
+      },
+      {
+        "uuid": "36c97c39-2d44-4fc2-93f7-0670f630b430",
+        "degree": 1,
+        "name": "Modul registratúra",
+        "code": "isvs_3476"
+      },
+      {
+        "uuid": "36edf6f7-deb9-4885-9c71-001af2abffbe",
+        "degree": 1,
+        "name": "Integračná zbernica a  SOA Security Gateway (SSG)",
+        "code": "isvs_275"
+      },
+      {
+        "uuid": "3708c2d9-0ffa-4a20-a31b-f2fc4c3af54a",
+        "degree": 1,
+        "name": "Modul dane a poplatky",
+        "code": "isvs_3958"
+      },
+      {
+        "uuid": "3740db02-449b-484b-9e07-29f784b50ecf",
+        "degree": 1,
+        "name": "HelpDesk pre podporu užívateľov úradu - SW TaskPool",
+        "code": "isvs_541"
+      },
+      {
+        "uuid": "3793b96a-d23c-44cb-9ecd-d8cef82d523b",
+        "degree": 1,
+        "name": "Modul Licencie",
+        "code": "isvs_1696"
+      },
+      {
+        "uuid": "3818fb27-e4ea-467c-8d36-bfdb82ea8654",
+        "degree": 1,
+        "name": "Modul Registrácie",
+        "code": "isvs_1699"
+      },
+      {
+        "uuid": "38262d5f-0568-4981-bea5-79810074ef01",
+        "degree": 1,
+        "name": "Komplexný informačný systém VšZP",
+        "code": "isvs_558"
+      },
+      {
+        "uuid": "3923e6a0-f7bf-422b-bd18-f42f82b981a5",
+        "degree": 1,
+        "name": "Intranetový portál",
+        "code": "isvs_6090"
+      },
+      {
+        "uuid": "392586f9-9e90-42c6-adab-5fc1214ae8e2",
+        "degree": 1,
+        "name": "Register fyzických osôb",
+        "code": "isvs_191"
+      },
+      {
+        "uuid": "394bf44a-030c-4e2f-ae32-92c148c067c6",
+        "degree": 1,
+        "name": "Integrovaný systém riadenia sociálnych dávok",
+        "code": "isvs_1680"
+      },
+      {
+        "uuid": "39704066-4320-4127-ba40-e01014fff2a4",
+        "degree": 1,
+        "name": "Integračný a procesný modul (BPM)",
+        "code": "isvs_5532"
+      },
+      {
+        "uuid": "399cc1d1-07bc-4b04-8b17-69b029b596f9",
+        "degree": 1,
+        "name": "Informačný systém Doklady (IS Doklady)",
+        "code": "isvs_4862"
+      },
+      {
+        "uuid": "3a86f8cc-aff0-4599-be04-b4294b647b26",
+        "degree": 1,
+        "name": "Elektronický informačný  systém pre správu registratúry - ESSR",
+        "code": "isvs_6106"
+      },
+      {
+        "uuid": "3ac0f4b3-e389-4165-bd5b-a60d137bf7f3",
+        "degree": 1,
+        "name": "Portál poisťovacieho informačného systému EXIMBANKY SR",
+        "code": "isvs_5787"
+      },
+      {
+        "uuid": "3b14cc0b-78a5-4cdb-b79e-b671c054237f",
+        "degree": 1,
+        "name": "Registratúra - Administratívny informačný systém (AIS)",
+        "code": "isvs_678"
+      },
+      {
+        "uuid": "3b526ab3-a3a7-48f8-b3ce-5e7f9e6476dd",
+        "degree": 1,
+        "name": "Veterinárny informačný systém (VIS)",
+        "code": "isvs_5963"
+      },
+      {
+        "uuid": "3ba0e016-254d-4282-b07d-aeb461f0194f",
+        "degree": 1,
+        "name": "Dostihová prevádzka - zúčtovacie centrum",
+        "code": "isvs_5976"
+      },
+      {
+        "uuid": "3c007267-c5a7-4a17-a7f6-81a2e514b376",
+        "degree": 1,
+        "name": "Sieť GOVNET",
+        "code": "isvs_404"
+      },
+      {
+        "uuid": "3c1ba68c-f866-4833-95cf-6d3ac65c10c0",
+        "degree": 1,
+        "name": "Evidencia zvierat - evidencia a účtovanie zvierat",
+        "code": "isvs_5922"
+      },
+      {
+        "uuid": "3d4b3752-680f-4304-b1f8-bff5f5492794",
+        "degree": 1,
+        "name": "Modul zastupiteľstvo",
+        "code": "isvs_3964"
+      },
+      {
+        "uuid": "3d64294d-6d66-4b22-b909-d4352e7189a2",
+        "degree": 1,
+        "name": "Volebný informačný systém",
+        "code": "isvs_5833"
+      },
+      {
+        "uuid": "3dae72eb-9a05-4a70-acdb-141eca1c457b",
+        "degree": 1,
+        "name": "ISES Portál",
+        "code": "isvs_472"
+      },
+      {
+        "uuid": "3dc19986-2b81-490a-aace-5e2611a07e93",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Definičné údaje podaní",
+        "code": "isvs_3468"
+      },
+      {
+        "uuid": "3e3d8118-c265-4f0d-9892-25d7cbecb041",
+        "degree": 1,
+        "name": "Centrálna elektronická prihláška na vysoké školy",
+        "code": "isvs_376"
+      },
+      {
+        "uuid": "3e7cdd86-0328-4755-ae01-434bc39139f4",
+        "degree": 1,
+        "name": "KRPK-systém kalkulácie, riadenia, plánovania a kontroly",
+        "code": "isvs_5924"
+      },
+      {
+        "uuid": "3e9454ed-cdbb-4a12-83ca-7347ef3f879c",
+        "degree": 1,
+        "name": "Modul dane a poplatky",
+        "code": "isvs_6008"
+      },
+      {
+        "uuid": "3f68435a-911e-4d0d-8e69-8dfc7913a829",
+        "degree": 1,
+        "name": "Centrálna evidencia diel výtvarného umenia na Slovensku (CEDVU)",
+        "code": "isvs_334"
+      },
+      {
+        "uuid": "400aa10b-8887-41c0-83a3-65e1c097dbd9",
+        "degree": 1,
+        "name": "Správa pre IaaS infraštruktúru",
+        "code": "isvs_5837"
+      },
+      {
+        "uuid": "4032d599-cf71-494b-9041-7d884a1071da",
+        "degree": 1,
+        "name": "Vízový informačný systém",
+        "code": "isvs_188"
+      },
+      {
+        "uuid": "409fd3cc-5544-4732-9160-9252e58cb829",
+        "degree": 1,
+        "name": "Centrálny register plemenníkov",
+        "code": "isvs_5954"
+      },
+      {
+        "uuid": "40f063fc-5aea-45ba-9798-8787c9291135",
+        "degree": 1,
+        "name": "Integračný a procesný modul (BPM)",
+        "code": "isvs_5860"
+      },
+      {
+        "uuid": "413fc24f-b67b-45b6-876a-c3493b43fa55",
+        "degree": 1,
+        "name": "JISCD - Jednotný informačný systém v cestnej doprave",
+        "code": "isvs_4867"
+      },
+      {
+        "uuid": "41d0c6b5-eeed-4b28-998b-c17d168d7135",
+        "degree": 1,
+        "name": "Pôdohospodársky poradenský systém",
+        "code": "isvs_5909"
+      },
+      {
+        "uuid": "4204495c-e68d-4e3c-a297-2839bc0739a1",
+        "degree": 1,
+        "name": "NOA system",
+        "code": "isvs_4548"
+      },
+      {
+        "uuid": "428b9879-2c6f-46be-9e72-e6a9a0d0f3bb",
+        "degree": 1,
+        "name": "Webové sídlo bibliografickej databázy rezortu MPRV SR",
+        "code": "isvs_5894"
+      },
+      {
+        "uuid": "438f4b7b-789b-4e1a-b92b-ebd0d2d1e897",
+        "degree": 1,
+        "name": "IS starobného dôchodkového sporenia (SDS)",
+        "code": "isvs_555"
+      },
+      {
+        "uuid": "4391b960-f933-4396-90ba-5dd9e7ca4df8",
+        "degree": 1,
+        "name": "Geografický informačný systém Hasičského a záchranného zboru",
+        "code": "isvs_172"
+      },
+      {
+        "uuid": "43ac56a9-60c0-42a1-81e7-fb6dc419eefa",
+        "degree": 1,
+        "name": "Kontroly na bitúnkoch a farmách (CESKO2)",
+        "code": "isvs_5975"
+      },
+      {
+        "uuid": "43f140c7-72ca-415f-9214-c89f99f3707e",
+        "degree": 1,
+        "name": "Informačný systém ACASE",
+        "code": "isvs_426"
+      },
+      {
+        "uuid": "443b2863-01dc-404f-bcea-ea48709c5905",
+        "degree": 1,
+        "name": "Manažment konaní o priestupkoch",
+        "code": "isvs_6101"
+      },
+      {
+        "uuid": "44f6ee0b-44b1-4006-950e-48166b0f5280",
+        "degree": 1,
+        "name": "Integrovaný informačný systém Ministerstva vnútra Slovenskej republiky",
+        "code": "isvs_5783"
+      },
+      {
+        "uuid": "457e34ee-bca1-4315-a157-9e62f66724a8",
+        "degree": 1,
+        "name": "Elektronická identifikačná karta",
+        "code": "isvs_180"
+      },
+      {
+        "uuid": "45b28284-9936-4ab2-95c9-0f1e8ced4702",
+        "degree": 1,
+        "name": "Webový  portál Prezidenta Slovenskej republiky",
+        "code": "isvs_515"
+      },
+      {
+        "uuid": "45cd57fa-9909-4f98-bdc2-0d9367e9fd49",
+        "degree": 1,
+        "name": "Modul dane a poplatky",
+        "code": "isvs_5570"
+      },
+      {
+        "uuid": "462dc243-a110-4f9a-8da0-515c7d9881bf",
+        "degree": 1,
+        "name": "Integrovaný informačný systém mesta (IISM)",
+        "code": "isvs_6019"
+      },
+      {
+        "uuid": "4695f067-5c26-47bd-890c-483251a74cb9",
+        "degree": 1,
+        "name": "Modul licencovanie a povoľovanie",
+        "code": "isvs_6014"
+      },
+      {
+        "uuid": "469ad177-ce5b-4e51-93dc-61f0a58452da",
+        "degree": 1,
+        "name": "Modul Registrovanie",
+        "code": "isvs_5574"
+      },
+      {
+        "uuid": "471d8bd8-94cc-48ff-84c8-32de8c4b4aee",
+        "degree": 1,
+        "name": "Softip PROFIT Plus",
+        "code": "isvs_5921"
+      },
+      {
+        "uuid": "479dfc94-236e-4089-aeee-95bb10cfe6fe",
+        "degree": 1,
+        "name": "Administratívny systém úradu (WinASU)",
+        "code": "isvs_214"
+      },
+      {
+        "uuid": "4886365d-808e-4254-85ba-c3b0e8a979ee",
+        "degree": 1,
+        "name": "Modul registratúra",
+        "code": "isvs_1689"
+      },
+      {
+        "uuid": "48ae5e27-515b-45e9-b933-7305f8acb3fb",
+        "degree": 1,
+        "name": "Modul Obstarávanie",
+        "code": "isvs_4837"
+      },
+      {
+        "uuid": "48d6533b-262c-43a3-81f5-e9bbf4624e1d",
+        "degree": 1,
+        "name": "Modul Dotácia a príspevky",
+        "code": "isvs_5549"
+      },
+      {
+        "uuid": "48e2f2a6-43b4-47bd-84ed-742f0a39c133",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_5865"
+      },
+      {
+        "uuid": "48f72175-6acf-40ea-babe-006a1a679484",
+        "degree": 1,
+        "name": "Modul správa registratúry",
+        "code": "isvs_5997"
+      },
+      {
+        "uuid": "49a35b39-18d8-4a2c-8980-f0837c3a3f94",
+        "degree": 1,
+        "name": "CMS - Systém pre správu obsahu",
+        "code": "isvs_5536"
+      },
+      {
+        "uuid": "4a34ec00-0c69-4d80-87d9-32a60bf83882",
+        "degree": 1,
+        "name": "MIGRA (DEMIG)",
+        "code": "isvs_187"
+      },
+      {
+        "uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+        "degree": 1,
+        "name": "Informačný systém pre evidenciu a monitorovanie pomoci „IS SEMP“",
+        "code": "isvs_47"
+      },
+      {
+        "uuid": "4b746c51-6091-4d59-a895-7914d09730af",
+        "degree": 1,
+        "name": "Modul elektronickej podateľne",
+        "code": "isvs_1691"
+      },
+      {
+        "uuid": "4b91b440-8073-4bb4-9c3e-b074b8becf1c",
+        "degree": 1,
+        "name": "IS Spin",
+        "code": "isvs_564"
+      },
+      {
+        "uuid": "4ba09092-481c-49c8-a6d6-8b74ff3aa4d0",
+        "degree": 1,
+        "name": "OCTOPUS",
+        "code": "isvs_4595"
+      },
+      {
+        "uuid": "4c21d3e3-f11f-4ae6-84d1-ec71446671c2",
+        "degree": 1,
+        "name": "CMS – Systém správy obsahu",
+        "code": "isvs_1686"
+      },
+      {
+        "uuid": "4caa0c2d-8188-4509-8da0-9f08653a5809",
+        "degree": 1,
+        "name": "Modul Ohlasovanie, sťažnosti a notifikácie",
+        "code": "isvs_5553"
+      },
+      {
+        "uuid": "4d5c48b7-6280-4641-8e45-c30124ed9e4c",
+        "degree": 1,
+        "name": "CMS - Systém pre správu obsahu",
+        "code": "isvs_6000"
+      },
+      {
+        "uuid": "4dad4fe5-6351-455b-a720-746cd8c25d00",
+        "degree": 1,
+        "name": "Štatisticko-informačný systém dopravných nehôd",
+        "code": "isvs_177"
+      },
+      {
+        "uuid": "4ddccf09-28d3-4c8f-b2df-cc17b9bd2f83",
+        "degree": 1,
+        "name": "Centrálna evidencia hospodárskych zvierat - webové služby (CEHZ_WS)",
+        "code": "isvs_5946"
+      },
+      {
+        "uuid": "4e7a0fac-8b06-4f20-8244-9810f53a6742",
+        "degree": 1,
+        "name": "Helpdesk a e-learning systém",
+        "code": "isvs_1701"
+      },
+      {
+        "uuid": "4e9fb4c4-250d-4fa8-8a9c-ae55ead67f89",
+        "degree": 1,
+        "name": "Portál Národného športového centra",
+        "code": "isvs_5822"
+      },
+      {
+        "uuid": "4eeaf972-c36a-4c66-9259-1da449639ad0",
+        "degree": 1,
+        "name": "Cestné kontroly živých zvierat (CESKO1)",
+        "code": "isvs_5974"
+      },
+      {
+        "uuid": "4f43b95c-14fd-45b1-97ec-328d594d6ac9",
+        "degree": 1,
+        "name": "IS administratívnych agiend Datalan Memphis",
+        "code": "isvs_409"
+      },
+      {
+        "uuid": "50b541f1-24fd-4d9f-b8cd-cbb2668ec232",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_1678"
+      },
+      {
+        "uuid": "50eda05f-c895-4ecb-8d1f-01a846756d99",
+        "degree": 1,
+        "name": "Elektronické služby informačných systémov MV SR na úseku policajného zboru",
+        "code": "isvs_235"
+      },
+      {
+        "uuid": "524fa18b-b59c-4bb8-b6a1-acd0cbc789c1",
+        "degree": 1,
+        "name": "Heraldický register Slovenskej republiky",
+        "code": "isvs_221"
+      },
+      {
+        "uuid": "53cd0c82-a2c6-4188-9e41-ff40e518c341",
+        "degree": 1,
+        "name": "Automatizovaný systém správy registratúry (ARIS)",
+        "code": "isvs_509"
+      },
+      {
+        "uuid": "544d694c-60e1-4a9a-8c95-4a48a7244c20",
+        "degree": 1,
+        "name": "Colný informačný systém (CIS)",
+        "code": "isvs_53"
+      },
+      {
+        "uuid": "5456ec43-963d-4ecc-b870-8ae438401fb0",
+        "degree": 1,
+        "name": "Register adries",
+        "code": "isvs_192"
+      },
+      {
+        "uuid": "54c80232-4884-4c3a-a8fa-4fdef3acaf2f",
+        "degree": 1,
+        "name": "Systém účtovníctvo a majetok - Ekonomický informačný systém SPIN",
+        "code": "isvs_676"
+      },
+      {
+        "uuid": "56fb4575-7034-41c8-bf51-c4c97c50bcf4",
+        "degree": 1,
+        "name": "Ústredný portál verejnej správy",
+        "code": "isvs_62"
+      },
+      {
+        "uuid": "57403460-11eb-4425-9a24-fd29002391a5",
+        "degree": 1,
+        "name": "Modul Ohlasovanie, sťažnosti a notifikácie",
+        "code": "isvs_5881"
+      },
+      {
+        "uuid": "574638d2-b4f1-4a97-aac0-0115a4fa1225",
+        "degree": 1,
+        "name": "Modul Obstarávanie",
+        "code": "isvs_3022"
+      },
+      {
+        "uuid": "576b309b-68df-4521-89da-36302f0b3ddc",
+        "degree": 1,
+        "name": "Intranetový portál MZVaEZ SR",
+        "code": "isvs_4864"
+      },
+      {
+        "uuid": "5780fc77-fe39-498b-9c92-98a6cecaf76a",
+        "degree": 1,
+        "name": "Modul interný reporting",
+        "code": "isvs_3019"
+      },
+      {
+        "uuid": "5798ffbc-a0a5-4718-95c9-892498dc2e2d",
+        "degree": 1,
+        "name": "Webový portál Regionálneho operačného programu",
+        "code": "isvs_5898"
+      },
+      {
+        "uuid": "57a0d7a2-89ea-40fa-8fe8-9af4da211e05",
+        "degree": 1,
+        "name": "DMS – Systém správy dokumentov",
+        "code": "isvs_1675"
+      },
+      {
+        "uuid": "57ca40e9-4258-497f-b339-3ba2bea344a3",
+        "degree": 1,
+        "name": "Register inštitúcií verejnej správy",
+        "code": "isvs_234"
+      },
+      {
+        "uuid": "58b35911-beb5-4bfb-9bf4-baa5c3faab3d",
+        "degree": 1,
+        "name": "Základná báza údajov pre geografický informačný systém",
+        "code": "isvs_423"
+      },
+      {
+        "uuid": "59469eae-1383-4306-9076-a8f0bbe2c395",
+        "degree": 1,
+        "name": "Filmový archív ÚPN",
+        "code": "isvs_5992"
+      },
+      {
+        "uuid": "5a75fffe-86c8-4b24-9bed-bb5d0f4cd2fa",
+        "degree": 1,
+        "name": "Rozpočtový systém",
+        "code": "isvs_683"
+      },
+      {
+        "uuid": "5abc8c93-74bd-47f4-a0dc-eb2606b4ddb9",
+        "degree": 1,
+        "name": "Informačný systém Kancelária Súdnej rady Slovenskej republiky",
+        "code": "isvs_4727"
+      },
+      {
+        "uuid": "5b2f1928-1aec-48e5-8cc0-fbbd7a7f3fed",
+        "degree": 1,
+        "name": "Agrárny informačný systém PPA (IS AGIS PPA)",
+        "code": "isvs_103"
+      },
+      {
+        "uuid": "5b46b5f1-60c0-4304-a208-953da837d6ab",
+        "degree": 1,
+        "name": "ISES Registratúrny systém",
+        "code": "isvs_474"
+      },
+      {
+        "uuid": "5b499a5e-11f7-465b-a888-b1464fed8e14",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Údaje o vykonávaní podaní",
+        "code": "isvs_1698"
+      },
+      {
+        "uuid": "5b4f07ec-602e-4f00-a009-ad3eed0c8b76",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_5564"
+      },
+      {
+        "uuid": "5b611d30-4914-4ae2-b689-26aedee9511f",
+        "degree": 1,
+        "name": "Modul Registrácie",
+        "code": "isvs_4842"
+      },
+      {
+        "uuid": "5b62c3af-7c3f-4f82-b966-c0f3312d508e",
+        "degree": 1,
+        "name": "Modul zastupiteľstvo",
+        "code": "isvs_5566"
+      },
+      {
+        "uuid": "5c382269-6e47-42ad-931e-6dcc08089deb",
+        "degree": 1,
+        "name": "Info modul",
+        "code": "isvs_3464"
+      },
+      {
+        "uuid": "5d29c750-bde5-4d73-aa10-33d511393bfa",
+        "degree": 1,
+        "name": "Modul Platby",
+        "code": "isvs_6016"
+      },
+      {
+        "uuid": "5d4e29a0-30ab-4f09-b154-288046c137b5",
+        "degree": 1,
+        "name": "Info modul",
+        "code": "isvs_1677"
+      },
+      {
+        "uuid": "5d516aa5-4466-42a1-b987-ea57b7e980ed",
+        "degree": 1,
+        "name": "Modul informovanie a poradenstvo",
+        "code": "isvs_5999"
+      },
+      {
+        "uuid": "5f5a1196-5c50-49e0-9bbf-1d284ad676aa",
+        "degree": 1,
+        "name": "Notifikácie a sťažnosti",
+        "code": "isvs_4713"
+      },
+      {
+        "uuid": "5f6145f1-9121-4df7-8df2-0c7d97b7ce8f",
+        "degree": 1,
+        "name": "Webový portál Závodisko, š. p.",
+        "code": "isvs_5978"
+      },
+      {
+        "uuid": "5ffbf509-65d9-4827-b261-75528437eae9",
+        "degree": 1,
+        "name": "IS SOFTIP – Profit",
+        "code": "isvs_534"
+      },
+      {
+        "uuid": "60414316-1bfb-4285-88ee-d92c52727c06",
+        "degree": 1,
+        "name": "Značka kvality SK",
+        "code": "isvs_5892"
+      },
+      {
+        "uuid": "60db169f-5a00-4ff4-a300-d8f0c5dad836",
+        "degree": 1,
+        "name": "GIS Back Office",
+        "code": "isvs_4840"
+      },
+      {
+        "uuid": "60e088fc-ecca-4bf4-baae-467c4904acd9",
+        "degree": 1,
+        "name": "Registratúrny systém Úradu jadrového dozoru Slovenskej republiky",
+        "code": "isvs_425"
+      },
+      {
+        "uuid": "616cf364-699c-4223-b03b-21f07d439668",
+        "degree": 1,
+        "name": "BRE – Business Rules Engine Systém - Integračný informačný systém",
+        "code": "isvs_674"
+      },
+      {
+        "uuid": "619a9a39-b260-49b5-9636-08f9f41497f3",
+        "degree": 1,
+        "name": "Internetový portál Dôvery zdravotnej poisťovne a. s.",
+        "code": "isvs_4726"
+      },
+      {
+        "uuid": "61c5a8fa-30d7-4a2d-9081-90f286abe9ff",
+        "degree": 1,
+        "name": "Registratúra",
+        "code": "isvs_500"
+      },
+      {
+        "uuid": "6217c2c5-30c6-4839-9d33-cd8d5f6e6589",
+        "degree": 1,
+        "name": "Integrovaný informačný systém mesta (IISM)",
+        "code": "isvs_3952"
+      },
+      {
+        "uuid": "62a22e60-be58-49d4-89bf-e5252fa08f89",
+        "degree": 1,
+        "name": "Informačný systém pre Správu pohľadávok",
+        "code": "isvs_486"
+      },
+      {
+        "uuid": "62b33665-4e2b-4516-a39e-3c740b334a8c",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_3955"
+      },
+      {
+        "uuid": "633b68de-4a24-40f5-a76e-428f5fc24e23",
+        "degree": 1,
+        "name": "Kontrolná inšpekčná činnosť (KIČ)",
+        "code": "isvs_5980"
+      },
+      {
+        "uuid": "637ff800-8ab6-486b-a61f-6180713aab6f",
+        "degree": 1,
+        "name": "Lokálne registre - Register adries a nehnuteľností",
+        "code": "isvs_3956"
+      },
+      {
+        "uuid": "6384ac03-d8f4-4044-b3df-8663447ecb6a",
+        "degree": 1,
+        "name": "HELIOS",
+        "code": "isvs_4590"
+      },
+      {
+        "uuid": "63a7a72f-2b40-4d08-abea-1893b1eed341",
+        "degree": 1,
+        "name": "Webové sídlo Národného centra zdravotníckych informácií",
+        "code": "isvs_4857"
+      },
+      {
+        "uuid": "63fac9a0-3803-45c4-98e9-2368188fbf80",
+        "degree": 1,
+        "name": "Modul Majetok a prenajímanie",
+        "code": "isvs_6038"
+      },
+      {
+        "uuid": "640baa5a-97b5-4edd-abd6-e179b8e3dbf3",
+        "degree": 1,
+        "name": "Modul GIS",
+        "code": "isvs_5998"
+      },
+      {
+        "uuid": "6441b0e4-2a9d-43eb-ab27-7acbb6ca6b61",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Definičné údaje podaní",
+        "code": "isvs_670"
+      },
+      {
+        "uuid": "65c1e57a-8254-4ca4-a5a7-53b403c98d47",
+        "degree": 1,
+        "name": "ERP SAP R/3",
+        "code": "isvs_5790"
+      },
+      {
+        "uuid": "6615c366-9708-4137-b7ed-34777d3f0b2f",
+        "degree": 1,
+        "name": "RIS - Rezortný informačný systém",
+        "code": "isvs_6092"
+      },
+      {
+        "uuid": "666ba5bc-d299-4cb3-a667-cfa813a97d83",
+        "degree": 1,
+        "name": "BACH - evidenčny systém odborného spracovania múzejných zbierok",
+        "code": "isvs_5915"
+      },
+      {
+        "uuid": "66c2d979-50c1-4c6b-b33d-26c1000a298e",
+        "degree": 1,
+        "name": "Rezortný Identity Access Management",
+        "code": "isvs_6097"
+      },
+      {
+        "uuid": "66e09fb3-a687-4fef-a9dd-a60eb8e337b6",
+        "degree": 1,
+        "name": "Registratúra - Fabasoft",
+        "code": "isvs_3018"
+      },
+      {
+        "uuid": "671ad8d8-5833-404c-a7cb-4e89f5888d19",
+        "degree": 1,
+        "name": "BPM – Business Proces management System",
+        "code": "isvs_4827"
+      },
+      {
+        "uuid": "67355c8b-f461-4c80-9632-f16a7969bb3b",
+        "degree": 1,
+        "name": "Elektronická podateľňa",
+        "code": "isvs_6030"
+      },
+      {
+        "uuid": "69282834-50cd-4f48-badd-bf35d71bb214",
+        "degree": 1,
+        "name": "Modul správa registratúry",
+        "code": "isvs_6032"
+      },
+      {
+        "uuid": "69f90031-8529-47e9-892d-d3d7eed50378",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Definičné údaje podaní",
+        "code": "isvs_4824"
+      },
+      {
+        "uuid": "6a13c063-e81f-4dc1-9132-a8f6c2c45e55",
+        "degree": 1,
+        "name": "DMS – Systém správy dokumentov",
+        "code": "isvs_4818"
+      },
+      {
+        "uuid": "6a8aeb76-c983-4cc7-a27f-bb6514105f76",
+        "degree": 1,
+        "name": "Interný reporting",
+        "code": "isvs_5879"
+      },
+      {
+        "uuid": "6ac5eb76-88ee-4690-b0e7-6b645a21ac43",
+        "degree": 1,
+        "name": "Systém podpory riadenia v integrovanom záchrannom systéme",
+        "code": "isvs_170"
+      },
+      {
+        "uuid": "6b09f807-b38e-4eb0-9320-22bc91b79b92",
+        "degree": 1,
+        "name": "Elektronický archívny informačný systém (EAIS)",
+        "code": "isvs_207"
+      },
+      {
+        "uuid": "6c44eb98-55fc-4cb8-993b-13f3dfa26e94",
+        "degree": 1,
+        "name": "IS RIS - Registračný informačný systém",
+        "code": "isvs_120"
+      },
+      {
+        "uuid": "6d3430bd-d12b-447a-97fe-87cba7fde7d8",
+        "degree": 1,
+        "name": "IS CRO - Centrálny register odrôd",
+        "code": "isvs_121"
+      },
+      {
+        "uuid": "6d383dfa-8318-445d-92bf-2d4c245d1ea1",
+        "degree": 1,
+        "name": "Modul informovanie a poradenstvo",
+        "code": "isvs_6034"
+      },
+      {
+        "uuid": "6d7c4521-791e-4cd1-893c-8a4276f10e3f",
+        "degree": 1,
+        "name": "Register neziskových organizácií poskytujúcich všeobecne prospešné služby",
+        "code": "isvs_219"
+      },
+      {
+        "uuid": "6e55aacc-cab8-497e-8778-e5ebb6d1efac",
+        "degree": 1,
+        "name": "Modul Registrovanie",
+        "code": "isvs_6047"
+      },
+      {
+        "uuid": "6f88c529-09e0-48c0-a479-f6e62745d70e",
+        "degree": 1,
+        "name": "Integrovaný informačný systém mesta (IISM)",
+        "code": "isvs_5581"
+      },
+      {
+        "uuid": "6fda9eac-46f9-41e5-8e8b-528c3478f03a",
+        "degree": 1,
+        "name": "Policajný informačný systém",
+        "code": "isvs_173"
+      },
+      {
+        "uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+        "degree": 1,
+        "name": "Ekonomický informačný systém (EIS)",
+        "code": "isvs_48"
+      },
+      {
+        "uuid": "70a18f4b-30cf-4083-b3b2-fc40d74666a3",
+        "degree": 1,
+        "name": "DMS - Systém pre správu dokumentov",
+        "code": "isvs_3969"
+      },
+      {
+        "uuid": "70edbbd6-7538-49d6-815e-423f2fde4022",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_6002"
+      },
+      {
+        "uuid": "715a75f7-36b4-4a3c-a3ac-62f28eafed14",
+        "degree": 1,
+        "name": "IAM",
+        "code": "isvs_6053"
+      },
+      {
+        "uuid": "7228c58f-99bb-4b67-b989-479201abd8b0",
+        "degree": 1,
+        "name": "Modul zastupiteľstvo",
+        "code": "isvs_6004"
+      },
+      {
+        "uuid": "7229dfe1-e2b3-408d-9519-6a0366298c57",
+        "degree": 1,
+        "name": "Portál/Mobilná aplikácia",
+        "code": "isvs_5556"
+      },
+      {
+        "uuid": "723e8ed6-caa8-4c07-957d-917dff855aff",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_5538"
+      },
+      {
+        "uuid": "734a4a5c-b864-4e22-81f9-055feff54e45",
+        "degree": 1,
+        "name": "Modul licencovanie a povoľovanie",
+        "code": "isvs_3967"
+      },
+      {
+        "uuid": "738bc2b9-7fca-42eb-b973-b773383b25cc",
+        "degree": 1,
+        "name": "Webové sídlo Pôdohospodárskej platobnej agentúry.",
+        "code": "isvs_5982"
+      },
+      {
+        "uuid": "73c0effe-dc67-4404-92f8-612b6757f647",
+        "degree": 1,
+        "name": "GIS Back Office",
+        "code": "isvs_3026"
+      },
+      {
+        "uuid": "73c2632b-a548-422a-8b80-15201f7f68c3",
+        "degree": 1,
+        "name": "Zoznam obcí",
+        "code": "isvs_222"
+      },
+      {
+        "uuid": "73c97498-96d1-4d0b-9187-8c3f6dec295e",
+        "degree": 1,
+        "name": "Lokálne registre - Register právnických osôb",
+        "code": "isvs_6011"
+      },
+      {
+        "uuid": "73d8ba5b-bacb-451b-8ae1-c5d2e06001f5",
+        "degree": 1,
+        "name": "Informačný systém STATA",
+        "code": "isvs_4850"
+      },
+      {
+        "uuid": "743c4cd1-3f19-4b11-890e-d7fc8da6c963",
+        "degree": 1,
+        "name": "Modul Registrácie",
+        "code": "isvs_3028"
+      },
+      {
+        "uuid": "7473efbe-fb9a-4b85-9141-ae000822310e",
+        "degree": 1,
+        "name": "Informačný systém geodetických základov",
+        "code": "isvs_422"
+      },
+      {
+        "uuid": "74f8efe3-6e5a-4e54-a238-3d0410f4091b",
+        "degree": 1,
+        "name": "Fabasoft - registratúra MD SR",
+        "code": "isvs_84"
+      },
+      {
+        "uuid": "75c7f71c-2abf-4a70-b04a-b59aa00a0eee",
+        "degree": 1,
+        "name": "Informačný systém pre databázu referenčných cien pre potreby Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "isvs_4852"
+      },
+      {
+        "uuid": "761edd72-f7f5-4f08-9239-642b0e89f9a1",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_3007"
+      },
+      {
+        "uuid": "76b79abc-215e-4039-b58d-886ccad9e336",
+        "degree": 1,
+        "name": "Elektronická podateľňa",
+        "code": "isvs_5995"
+      },
+      {
+        "uuid": "76c7336d-d4f0-480b-9105-52d65e8b04a2",
+        "degree": 1,
+        "name": "IS rezortných webových stránok",
+        "code": "isvs_119"
+      },
+      {
+        "uuid": "77538350-1048-43c9-8a8b-1dd994ebf675",
+        "degree": 1,
+        "name": "Modul Účtovníctvo",
+        "code": "isvs_3962"
+      },
+      {
+        "uuid": "775cf7fd-ed95-4fb6-ab7e-3a340d28c751",
+        "degree": 1,
+        "name": "Centrálny elektronický databázový informačný systém (CEDIS)",
+        "code": "isvs_51"
+      },
+      {
+        "uuid": "776cdd05-a009-4a4f-9f4d-aee409099991",
+        "degree": 1,
+        "name": "IS Vema",
+        "code": "isvs_476"
+      },
+      {
+        "uuid": "7805ef1c-9f3a-406b-9d34-451a4dc4e437",
+        "degree": 1,
+        "name": "Register poskytovateľov zdravotných a zdravotníckych zariadení",
+        "code": "isvs_4843"
+      },
+      {
+        "uuid": "7826f524-5847-42df-aec0-197e916cbc7b",
+        "degree": 1,
+        "name": "Aplikácia na sprístupnenie archívnych dokumentov – máp a plánov (ProArchiv Mapy)",
+        "code": "isvs_212"
+      },
+      {
+        "uuid": "7abd8b1a-8829-4bc0-9b00-b1fb0661e6e9",
+        "degree": 1,
+        "name": "Modul zastupiteľstvo",
+        "code": "isvs_5868"
+      },
+      {
+        "uuid": "7ad05ecf-a1e7-4e04-8201-8fe7dd760c65",
+        "degree": 1,
+        "name": "Dotačný systém MK SR",
+        "code": "isvs_365"
+      },
+      {
+        "uuid": "7b8d1ab8-4bf6-4d7b-8bda-39557fc215cb",
+        "degree": 1,
+        "name": "BRE – Business Rules Engine Systém",
+        "code": "isvs_1685"
+      },
+      {
+        "uuid": "7b9bcbc4-c8f9-46c1-80dd-b8f9712a064d",
+        "degree": 1,
+        "name": "Informačný systém MK SR",
+        "code": "isvs_372"
+      },
+      {
+        "uuid": "7bea11d3-cd38-4747-8fc3-6a4398823aaf",
+        "degree": 1,
+        "name": "DMS – Systém správy dokumentov",
+        "code": "isvs_3462"
+      },
+      {
+        "uuid": "7c249162-74cb-432e-a2c5-0891c89b16ee",
+        "degree": 1,
+        "name": "Informačný systém Personalistika a mzdy",
+        "code": "isvs_489"
+      },
+      {
+        "uuid": "7cb91775-cab3-44db-8a2c-2e21d18c68af",
+        "degree": 1,
+        "name": "Modul Účtovníctvo",
+        "code": "isvs_5541"
+      },
+      {
+        "uuid": "7cdee0f7-e0bb-42cb-a374-300b0718e6ee",
+        "degree": 1,
+        "name": "KOBRA-Potravinové kontroly",
+        "code": "isvs_5969"
+      },
+      {
+        "uuid": "7d90045c-2fe0-4741-a650-0dd18848a147",
+        "degree": 1,
+        "name": "Modul obstarávanie",
+        "code": "isvs_3972"
+      },
+      {
+        "uuid": "7dd8b0e0-ca6f-4f6f-88a2-b4f4b8692cd0",
+        "degree": 1,
+        "name": "Portál Národného informačného systému podpory, výskumu a vývoja na Slovensku (NISPEZ)",
+        "code": "isvs_5816"
+      },
+      {
+        "uuid": "7e2d9260-d2f9-424c-8d22-d5f41fb7129e",
+        "degree": 1,
+        "name": "WFM – Work Flow Management Systém - Integračný informačný systém",
+        "code": "isvs_673"
+      },
+      {
+        "uuid": "7e719ff4-7946-4bf6-a63a-f5b1d494c51c",
+        "degree": 1,
+        "name": "Integrovaný informačný systém eDemokracie a otvorenej vlády",
+        "code": "isvs_5782"
+      },
+      {
+        "uuid": "7e9bf8eb-6983-4773-ae28-28df7b0a66f3",
+        "degree": 1,
+        "name": "Elektronická pobočka Dôvery zdravotnej poisťovne",
+        "code": "isvs_5808"
+      },
+      {
+        "uuid": "7ebe86ac-418d-493f-b3e9-a4379bc914e2",
+        "degree": 1,
+        "name": "Interný reporting",
+        "code": "isvs_4861"
+      },
+      {
+        "uuid": "7eec3f3c-ddfa-4b27-99fe-16cefd73c277",
+        "degree": 1,
+        "name": "PIS - Poistný informačný systém",
+        "code": "isvs_5789"
+      },
+      {
+        "uuid": "7f9e6f64-0f5a-4c98-82f6-cc95b4b31644",
+        "degree": 1,
+        "name": "KKV-ADR - IS pre kvalifikačné karty vodičov",
+        "code": "isvs_76"
+      },
+      {
+        "uuid": "7ffa7444-661f-42a1-9af7-df215f83622f",
+        "degree": 1,
+        "name": "Modul Dotácie",
+        "code": "isvs_3024"
+      },
+      {
+        "uuid": "8064e47f-496b-4b02-a1e1-faac81abb1b9",
+        "degree": 1,
+        "name": "Centrálny konsolidačný systém (CKS)",
+        "code": "isvs_52"
+      },
+      {
+        "uuid": "80f9d338-1b5f-4993-8152-427b3b20f0ef",
+        "degree": 1,
+        "name": "Informačný systém Rady pre mediálne služby",
+        "code": "isvs_4723"
+      },
+      {
+        "uuid": "8122f7e3-2cb4-4774-8000-6855b656351e",
+        "degree": 1,
+        "name": "WinASU",
+        "code": "isvs_5950"
+      },
+      {
+        "uuid": "8224c5d9-216a-4ff0-9300-37080201e468",
+        "degree": 1,
+        "name": "Mzdový systém",
+        "code": "isvs_4836"
+      },
+      {
+        "uuid": "823e8bdb-f485-4675-8f34-56f6de27f019",
+        "degree": 1,
+        "name": "Národný vízový informačný systém (NVIS)",
+        "code": "isvs_270"
+      },
+      {
+        "uuid": "82bd6c25-45c5-43d4-a2df-aa39babfcd11",
+        "degree": 1,
+        "name": "Centrálny Informačný Systém Inšpektorátu kúpeľov a žriediel Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "isvs_4853"
+      },
+      {
+        "uuid": "848348b4-5c87-4fda-ae79-a1f0723f5bf7",
+        "degree": 1,
+        "name": "Databáza živočíšnych genetických zdrojov (EFABIS)",
+        "code": "isvs_112"
+      },
+      {
+        "uuid": "8492e9d7-d41d-45e1-a2d2-6fbc6a5653b1",
+        "degree": 1,
+        "name": "Modul elektronickej podateľne",
+        "code": "isvs_3478"
+      },
+      {
+        "uuid": "84d97527-efff-42a1-95fc-21c43cd94a67",
+        "degree": 1,
+        "name": "BORIS",
+        "code": "isvs_185"
+      },
+      {
+        "uuid": "85432d3b-4eaa-42b5-9737-c579edbc5b95",
+        "degree": 1,
+        "name": "Informačný systém pre platby a evidenciu správnych a súdnych poplatkov (IS PEP)",
+        "code": "isvs_5585"
+      },
+      {
+        "uuid": "8592439a-75e7-4c1a-ba8a-38ef9720e763",
+        "degree": 1,
+        "name": "Modul Ohlasovanie, sťažnosti a notifikácie",
+        "code": "isvs_3970"
+      },
+      {
+        "uuid": "85a584c5-4788-46ea-a295-77f4d5780059",
+        "degree": 1,
+        "name": "GIS Front End",
+        "code": "isvs_4825"
+      },
+      {
+        "uuid": "85e80dc2-5616-49e6-8031-0e92095bbe03",
+        "degree": 1,
+        "name": "Dopravno-správne agendy",
+        "code": "isvs_229"
+      },
+      {
+        "uuid": "8628dc99-48b9-4e36-9dfb-9b8ada75c41d",
+        "degree": 1,
+        "name": "SAP ERP 6.0",
+        "code": "isvs_273"
+      },
+      {
+        "uuid": "8742eb62-f5ba-4426-aaad-3effb4ab84a0",
+        "degree": 1,
+        "name": "Knižničný systém Proflib",
+        "code": "isvs_6088"
+      },
+      {
+        "uuid": "877af198-b80a-4bb6-8d49-d065bf872511",
+        "degree": 1,
+        "name": "BRE – Business Rules Engine Systém",
+        "code": "isvs_3014"
+      },
+      {
+        "uuid": "881485ee-ce8a-4d75-85ac-91a0088da926",
+        "degree": 1,
+        "name": "Informačný systém súkromnej bezpečnosti",
+        "code": "isvs_181"
+      },
+      {
+        "uuid": "88c5dbf1-3bb0-4cf9-8de7-b46d68819128",
+        "degree": 1,
+        "name": "Evidencia vozidiel",
+        "code": "isvs_171"
+      },
+      {
+        "uuid": "89bf1a16-ab74-4d0b-8ce9-91e7caf7ae0d",
+        "degree": 1,
+        "name": "BPM – Integračný informačný systém",
+        "code": "isvs_672"
+      },
+      {
+        "uuid": "8af00e85-03b5-4fe1-b588-6924314a9f54",
+        "degree": 1,
+        "name": "Webové sídlo Agentúry na podporu výskumu a vývoja",
+        "code": "isvs_5818"
+      },
+      {
+        "uuid": "8b1f7b0a-3775-4c0f-a911-533cdde39fb7",
+        "degree": 1,
+        "name": "Modul Rozpočet a financie",
+        "code": "isvs_5870"
+      },
+      {
+        "uuid": "8b58848f-5daa-4167-a720-ac7b958c0d39",
+        "degree": 1,
+        "name": "Rozpočtový informačný systém (RIS)",
+        "code": "isvs_45"
+      },
+      {
+        "uuid": "8c2125c5-9b96-4d12-94eb-0e247ca6ef9b",
+        "degree": 1,
+        "name": "Mzdový systém",
+        "code": "isvs_681"
+      },
+      {
+        "uuid": "8c2b0a47-d07f-466b-ac31-b07710019bf8",
+        "degree": 1,
+        "name": "DMS - Systém pre správu dokumentov",
+        "code": "isvs_6042"
+      },
+      {
+        "uuid": "8cd99990-710c-473c-842a-08bee40e4fd7",
+        "degree": 1,
+        "name": "Internetový portál Úradu vlády Slovenskej republiky",
+        "code": "isvs_408"
+      },
+      {
+        "uuid": "8d151a95-d041-437a-86a1-e673cc99b04f",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_5563"
+      },
+      {
+        "uuid": "8e271ec5-dfc2-4aec-aa26-39255e04782d",
+        "degree": 1,
+        "name": "Mzdový systém",
+        "code": "isvs_1692"
+      },
+      {
+        "uuid": "8e44f116-1485-4667-908b-3723b5c60a20",
+        "degree": 1,
+        "name": "Register zverejňovania ponúk prevodu vlastníctva poľnohospodárskeho pozemku",
+        "code": "isvs_5896"
+      },
+      {
+        "uuid": "8ea4ce8e-ea84-40f3-a6a5-1ce7af493e76",
+        "degree": 1,
+        "name": "ERRU - Elektronický register dopravcov",
+        "code": "isvs_75"
+      },
+      {
+        "uuid": "8ec8668a-9cc9-464b-8a0a-3a0d2e973b5c",
+        "degree": 1,
+        "name": "Informačný systém sledovania úloh z uznesení vlády SR",
+        "code": "isvs_6098"
+      },
+      {
+        "uuid": "8ee8d2a1-9dba-40d3-a570-94b5e8170f32",
+        "degree": 1,
+        "name": "Informačný systém zbraní, streliva a strelníc",
+        "code": "isvs_179"
+      },
+      {
+        "uuid": "900668c7-9970-4797-8561-37f045e06a36",
+        "degree": 1,
+        "name": "Portál Slovenskej pedagogickej knižnice",
+        "code": "isvs_5824"
+      },
+      {
+        "uuid": "901ed599-81ea-4380-88c5-83ed65944fea",
+        "degree": 1,
+        "name": "Modul Registrovanie",
+        "code": "isvs_5876"
+      },
+      {
+        "uuid": "90bd84f5-0695-4125-892c-19e07101e25a",
+        "degree": 1,
+        "name": "Modul Registrácie",
+        "code": "isvs_3486"
+      },
+      {
+        "uuid": "910395a3-7cd4-4e64-bae1-211454fa7746",
+        "degree": 1,
+        "name": "Prístupový a dochádzkový systém - SW Visitor",
+        "code": "isvs_542"
+      },
+      {
+        "uuid": "91b7cac5-acf1-41ef-a2ec-50a9638f83b3",
+        "degree": 1,
+        "name": "Modul informovanie a poradenstvo",
+        "code": "isvs_5863"
+      },
+      {
+        "uuid": "91d070f2-23f6-4962-908c-2438be810dd2",
+        "degree": 1,
+        "name": "Informačný systém Syscom – redakčný systém",
+        "code": "isvs_495"
+      },
+      {
+        "uuid": "91de51aa-37aa-4979-ba7f-537724b0b766",
+        "degree": 1,
+        "name": "Portál Štátnej školskej inšpekcie",
+        "code": "isvs_5825"
+      },
+      {
+        "uuid": "920c8138-a259-4d0d-8fb0-892a927e8f18",
+        "degree": 1,
+        "name": "Modul GIS",
+        "code": "isvs_5560"
+      },
+      {
+        "uuid": "92720e22-dbab-48af-8327-533b52d1e31e",
+        "degree": 1,
+        "name": "Modul Licencie",
+        "code": "isvs_4860"
+      },
+      {
+        "uuid": "929a35fd-017b-4250-8dfd-0133f3baf14f",
+        "degree": 1,
+        "name": "Modul licencovanie a povoľovanie",
+        "code": "isvs_6049"
+      },
+      {
+        "uuid": "929db792-f57c-4ad2-9281-62b3a4fdf486",
+        "degree": 1,
+        "name": "Ekonomický informačný systém (EKIS)",
+        "code": "isvs_266"
+      },
+      {
+        "uuid": "93d0b6ab-33ec-43c8-af67-72f7e54d1d88",
+        "degree": 1,
+        "name": "eDovoz",
+        "code": "isvs_5781"
+      },
+      {
+        "uuid": "93f48df3-45d1-4657-a003-804d36f583dc",
+        "degree": 1,
+        "name": "Kontrolórsky informačný systém NKÚ SR",
+        "code": "isvs_539"
+      },
+      {
+        "uuid": "95502c07-6b97-4238-8dd1-1fbfd6fb2c58",
+        "degree": 1,
+        "name": "Rozpočtový systém",
+        "code": "isvs_3023"
+      },
+      {
+        "uuid": "95672bad-45d4-40c6-87f9-46c3055ba042",
+        "degree": 1,
+        "name": "Register BPEJ (Bonitované pôdno-ekologické jednotky)",
+        "code": "isvs_118"
+      },
+      {
+        "uuid": "9604615a-5e83-4faf-94a8-21609bd6396f",
+        "degree": 1,
+        "name": "IAM",
+        "code": "isvs_5554"
+      },
+      {
+        "uuid": "96212044-0cfb-46b5-a68c-1d79e84cec28",
+        "degree": 1,
+        "name": "Integračný a procesný modul (BPM)",
+        "code": "isvs_6031"
+      },
+      {
+        "uuid": "96d7cd62-2fd7-4be3-8816-ff9a7da50fb0",
+        "degree": 1,
+        "name": "Systém účtovníctvo a majetok",
+        "code": "isvs_4831"
+      },
+      {
+        "uuid": "96e856f0-eca1-4973-81fb-ea638643ef9b",
+        "degree": 1,
+        "name": "Lokálne registre - Register obyvateľov",
+        "code": "isvs_3965"
+      },
+      {
+        "uuid": "973a6d73-39e2-4b23-89ce-b00f5dcfc829",
+        "degree": 1,
+        "name": "Interný reporting",
+        "code": "isvs_6015"
+      },
+      {
+        "uuid": "97db977c-bcdf-4e30-99fb-9e870ab9469d",
+        "degree": 1,
+        "name": "Modul dane a poplatky",
+        "code": "isvs_5872"
+      },
+      {
+        "uuid": "980d3ae1-4f48-471d-b435-4433e68b5d55",
+        "degree": 1,
+        "name": "Modul Rozpočet a financie",
+        "code": "isvs_5542"
+      },
+      {
+        "uuid": "9a5ea277-a303-405c-aad9-9962f334c2da",
+        "degree": 1,
+        "name": "GENESYS",
+        "code": "isvs_4585"
+      },
+      {
+        "uuid": "9a90c2e1-0d19-4a82-9776-15661d27c72d",
+        "degree": 1,
+        "name": "Portál rezortu obrany",
+        "code": "isvs_4013"
+      },
+      {
+        "uuid": "9ae10d4f-de68-459a-af62-f7dbc58762c9",
+        "degree": 1,
+        "name": "Modul Účtovníctvo",
+        "code": "isvs_6005"
+      },
+      {
+        "uuid": "9ae5a072-1784-4243-9a29-3e70f433eec1",
+        "degree": 1,
+        "name": "Modul Účtovníctvo",
+        "code": "isvs_5869"
+      },
+      {
+        "uuid": "9b1207a3-c029-4f39-86ab-8c5372a1eb5b",
+        "degree": 1,
+        "name": "DMS - Systém pre správu dokumentov",
+        "code": "isvs_5871"
+      },
+      {
+        "uuid": "9bffcad0-26f8-405b-af94-17fb06858b6b",
+        "degree": 1,
+        "name": "Interný reporting",
+        "code": "isvs_5577"
+      },
+      {
+        "uuid": "9c09fa1a-5ccb-49b6-8ff4-990824768ce3",
+        "degree": 1,
+        "name": "Lokálne registre - Register obyvateľov",
+        "code": "isvs_5873"
+      },
+      {
+        "uuid": "9c152006-56a6-4e8c-a90c-7d6bd0a86b29",
+        "degree": 1,
+        "name": "DMS-WINASU",
+        "code": "isvs_5965"
+      },
+      {
+        "uuid": "9c4b4b70-6c5d-4b35-85b8-73d9cb5ff834",
+        "degree": 1,
+        "name": "Lokálne registre - Register právnických osôb",
+        "code": "isvs_5547"
+      },
+      {
+        "uuid": "9cd9938f-2297-4acb-89ff-1e442f5a309a",
+        "degree": 1,
+        "name": "EZK - elektronická zložka klienta",
+        "code": "isvs_5795"
+      },
+      {
+        "uuid": "9d5fdc3c-0b86-44bb-8341-de14e1c6dc05",
+        "degree": 1,
+        "name": "Integračný a procesný modul (BPM)",
+        "code": "isvs_5996"
+      },
+      {
+        "uuid": "9d92db3c-655b-4a20-b3fe-a868156b5851",
+        "degree": 1,
+        "name": "Evidencie",
+        "code": "isvs_4709"
+      },
+      {
+        "uuid": "9dd2ce6a-dfcb-4896-9a62-d11fb27ab63f",
+        "degree": 1,
+        "name": "Register ISMN",
+        "code": "isvs_347"
+      },
+      {
+        "uuid": "9e6abe3f-5c56-487b-8910-d8f0accd9590",
+        "degree": 1,
+        "name": "Register verejných zbierok - RegiZ",
+        "code": "isvs_223"
+      },
+      {
+        "uuid": "9ea995af-93da-46b2-8281-892dfd5e7b9b",
+        "degree": 1,
+        "name": "Integrovaný štatistický informačný systém",
+        "code": "isvs_411"
+      },
+      {
+        "uuid": "9f833e8a-ace9-438a-be22-a115759cb593",
+        "degree": 1,
+        "name": "Edičný portál",
+        "code": "isvs_5812"
+      },
+      {
+        "uuid": "9f8a26b4-b9a3-4e14-b3f2-4e6d44272035",
+        "degree": 1,
+        "name": "Modul informovanie a poradenstvo",
+        "code": "isvs_3968"
+      },
+      {
+        "uuid": "9fe84a11-a980-4f7e-85b0-76a87d26e8bf",
+        "degree": 1,
+        "name": "Elektronická podateľňa",
+        "code": "isvs_5531"
+      },
+      {
+        "uuid": "a03f9657-461f-411f-b54c-c7105870c3f0",
+        "degree": 1,
+        "name": "Webové sídlo Štátnej veterinárnej a potravinovej správy SR",
+        "code": "isvs_5981"
+      },
+      {
+        "uuid": "a0e65aef-47ca-4dbb-92c1-8d1ddd15377a",
+        "degree": 1,
+        "name": "WFM – Work Flow Management Systém",
+        "code": "isvs_3013"
+      },
+      {
+        "uuid": "a17c190e-dcaa-4734-bac8-8c1b86217df9",
+        "degree": 1,
+        "name": "Aplikácia na sprístupnenie archívnych dokumentov – listín (ProArchiv Listiny)",
+        "code": "isvs_211"
+      },
+      {
+        "uuid": "a20291f2-d7c3-4cd9-bf7b-8676a5617e0e",
+        "degree": 1,
+        "name": "Modul správa registratúry",
+        "code": "isvs_5533"
+      },
+      {
+        "uuid": "a28b50fc-f00f-4822-8ae2-52de05279cda",
+        "degree": 1,
+        "name": "Modul licencovanie a povoľovanie",
+        "code": "isvs_5878"
+      },
+      {
+        "uuid": "a2d3312e-0ad7-479b-a243-a1b97acb6951",
+        "degree": 1,
+        "name": "Platby",
+        "code": "isvs_4712"
+      },
+      {
+        "uuid": "a31169d6-4848-430f-8638-acaf03bee496",
+        "degree": 1,
+        "name": "Portál/Mobilná aplikácia",
+        "code": "isvs_5994"
+      },
+      {
+        "uuid": "a33fbf35-4d50-4c00-aa1b-2676e2e918a7",
+        "degree": 1,
+        "name": "Register Najvyššieho súdu",
+        "code": "isvs_5802"
+      },
+      {
+        "uuid": "a37cd67b-51ab-4757-8fec-b0feceb9bf63",
+        "degree": 1,
+        "name": "Portál VÚC - Regionálny informačný portál (RIP)",
+        "code": "isvs_668"
+      },
+      {
+        "uuid": "a3b887e2-305e-4466-81a3-def03eae5829",
+        "degree": 1,
+        "name": "Centrálny register študentov vysokých škôl",
+        "code": "isvs_374"
+      },
+      {
+        "uuid": "a3d021bd-9f13-4e83-a325-e208858b4b5c",
+        "degree": 1,
+        "name": "Mapové služby STALES",
+        "code": "isvs_5943"
+      },
+      {
+        "uuid": "a408c0a5-0935-4c66-8fa9-0a350b67c01c",
+        "degree": 1,
+        "name": "Geopriestorové informácie v lesnom hospodárstve",
+        "code": "isvs_5932"
+      },
+      {
+        "uuid": "a4a139fe-17a8-4505-b49a-8d8f5e8a8b8d",
+        "degree": 1,
+        "name": "IAM",
+        "code": "isvs_5580"
+      },
+      {
+        "uuid": "a4ac07b2-2468-4d31-8a67-968ce32910c9",
+        "degree": 1,
+        "name": "Register nadácií",
+        "code": "isvs_217"
+      },
+      {
+        "uuid": "a4acc64c-8bca-4594-9b70-694afff722b3",
+        "degree": 1,
+        "name": "Modul Obstarávanie",
+        "code": "isvs_3480"
+      },
+      {
+        "uuid": "a5d8e720-9373-4eb5-8f3d-2b5960301041",
+        "degree": 1,
+        "name": "Webové sídlo Lesopoľnohospodársky majetok Ulič",
+        "code": "isvs_5926"
+      },
+      {
+        "uuid": "a698ac99-5ebf-4243-809f-7d8bfe2b93a5",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Údaje o vykonávaní podaní",
+        "code": "isvs_4841"
+      },
+      {
+        "uuid": "a730b41d-9235-4a6b-b4db-cc7bece0291e",
+        "degree": 1,
+        "name": "Register cirkvi a náboženských spoločnosti",
+        "code": "isvs_357"
+      },
+      {
+        "uuid": "a85f746c-a6b7-4481-9aa9-ceaea57f55dc",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_3463"
+      },
+      {
+        "uuid": "a872cef7-d6c6-4f2a-a4c6-b11311b3726b",
+        "degree": 1,
+        "name": "Integrovaný systém Finančnej správy",
+        "code": "isvs_4859"
+      },
+      {
+        "uuid": "a8997da6-a7f1-447c-9dba-090f6142d3f5",
+        "degree": 1,
+        "name": "Modul dane a poplatky",
+        "code": "isvs_5544"
+      },
+      {
+        "uuid": "a8aa6c3d-56df-4bc8-86a7-43a0458a026f",
+        "degree": 1,
+        "name": "Integrovaný administratívny a kontrolný systém PPA (IS IACS PPA)",
+        "code": "isvs_102"
+      },
+      {
+        "uuid": "a8e13b9e-f3d3-4ae7-8d20-b1dbd6784814",
+        "degree": 1,
+        "name": "MIGDOC",
+        "code": "isvs_183"
+      },
+      {
+        "uuid": "a92f8cfc-bfdf-48da-91ef-31c61ae951d4",
+        "degree": 1,
+        "name": "Modul Dotácia a príspevky",
+        "code": "isvs_6013"
+      },
+      {
+        "uuid": "a9c07bad-b217-4f8d-95b8-76d9eb5c0451",
+        "degree": 1,
+        "name": "Štátne občianstvo (ŠO)",
+        "code": "isvs_228"
+      },
+      {
+        "uuid": "aa334139-d0d5-4ac7-8b8b-e8945acd9faa",
+        "degree": 1,
+        "name": "Systém FOTOWARE",
+        "code": "isvs_561"
+      },
+      {
+        "uuid": "aace2c79-cc48-4b6d-824b-b1c082ddfc17",
+        "degree": 1,
+        "name": "Informačný systém identifikátorov fyzickej osoby",
+        "code": "isvs_194"
+      },
+      {
+        "uuid": "ab8d2b89-b91d-4758-82bf-2c227830d742",
+        "degree": 1,
+        "name": "BRE – Business Rules Engine Systém",
+        "code": "isvs_4829"
+      },
+      {
+        "uuid": "abdcb06b-932f-407d-a7e9-dbc239087414",
+        "degree": 1,
+        "name": "Register poskytovateľov zdravotných a zdravotníckych zariadení",
+        "code": "isvs_3487"
+      },
+      {
+        "uuid": "ac011014-fb54-4257-9b77-ec47fe0b24e3",
+        "degree": 1,
+        "name": "IS Centrálna platforma dátovej integrácie (IS CPDI)",
+        "code": "isvs_5836"
+      },
+      {
+        "uuid": "ac85ab4f-fc37-4d17-ad93-a31e6d355fdb",
+        "degree": 1,
+        "name": "Elektronická podateľňa",
+        "code": "isvs_5557"
+      },
+      {
+        "uuid": "ac9568dc-348c-421f-a213-5e30b0d795a9",
+        "degree": 1,
+        "name": "Virtuálna akadémia ďalšieho vzdelávania (VAMK)",
+        "code": "isvs_363"
+      },
+      {
+        "uuid": "ad561061-7e86-4978-93f6-2774d70c1439",
+        "degree": 1,
+        "name": "Portál Centra vedecko technických informácií Slovenskej republiky",
+        "code": "isvs_5815"
+      },
+      {
+        "uuid": "ad599f6c-82b0-49d5-b961-be822982d891",
+        "degree": 1,
+        "name": "CMS - Systém pre správu obsahu",
+        "code": "isvs_5562"
+      },
+      {
+        "uuid": "ae3224ba-5edc-4c9b-bd7b-ff6304781131",
+        "degree": 1,
+        "name": "Softip profit",
+        "code": "isvs_523"
+      },
+      {
+        "uuid": "aeb8bdd5-b844-44e4-b44d-439d5730a5e3",
+        "degree": 1,
+        "name": "Ekonomický a účtovný systém Garis",
+        "code": "isvs_473"
+      },
+      {
+        "uuid": "aeb96d07-801b-4452-b9bc-9ff6b1451594",
+        "degree": 1,
+        "name": "GIS Back Office",
+        "code": "isvs_1697"
+      },
+      {
+        "uuid": "af2aaf94-63b1-4b57-81f8-ed509ca0d37a",
+        "degree": 1,
+        "name": "IS eSpis",
+        "code": "isvs_477"
+      },
+      {
+        "uuid": "af2dcab9-6b9a-47fd-a2b5-32bf64d29b23",
+        "degree": 1,
+        "name": "Analýza údajov a výber vzorky - SW IDEA",
+        "code": "isvs_540"
+      },
+      {
+        "uuid": "af357404-a963-4e5a-87e4-d84d08be0872",
+        "degree": 1,
+        "name": "KATASTER net",
+        "code": "isvs_5925"
+      },
+      {
+        "uuid": "aff20674-b120-4f6a-bb5f-55c91776aeee",
+        "degree": 1,
+        "name": "Register strán",
+        "code": "isvs_224"
+      },
+      {
+        "uuid": "b0b6633f-ba96-4eaa-9466-5d5925d6e512",
+        "degree": 1,
+        "name": "Systém účtovníctvo a majetok",
+        "code": "isvs_1687"
+      },
+      {
+        "uuid": "b0d1156d-48e4-420d-8e83-5374e85fb4ca",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_5866"
+      },
+      {
+        "uuid": "b1cddfc3-f078-40a1-8bda-007907c5fea5",
+        "degree": 1,
+        "name": "Informačný systém Úradu pre dohľad nad zdravotnou starostlivosťou",
+        "code": "isvs_3799"
+      },
+      {
+        "uuid": "b1d3a9ca-b297-4455-9df2-81f523368cef",
+        "degree": 1,
+        "name": "Mzdový systém - MAGMA",
+        "code": "isvs_3021"
+      },
+      {
+        "uuid": "b21aa7f3-c315-404d-acd7-f8a4eccc4e71",
+        "degree": 1,
+        "name": "Informačný systém služieb zamestnanosti  (ISSZ)",
+        "code": "isvs_278"
+      },
+      {
+        "uuid": "b2cc675c-3a6b-465e-b9ba-6b2ae98ac6ec",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_1676"
+      },
+      {
+        "uuid": "b317666e-d111-451f-834e-ef5eeafca4ee",
+        "degree": 1,
+        "name": "MV_PRB28 na evidenciu dotácií bytovej výstavby",
+        "code": "isvs_150"
+      },
+      {
+        "uuid": "b386b7cb-4c90-47ba-b7af-6d174427b682",
+        "degree": 1,
+        "name": "Informačný systém športu",
+        "code": "isvs_391"
+      },
+      {
+        "uuid": "b3a9191f-fb87-4a73-974b-ec1ded7eff9a",
+        "degree": 1,
+        "name": "Systém pre zastupiteľstvo NSK",
+        "code": "isvs_1688"
+      },
+      {
+        "uuid": "b4a05ad7-962d-46fa-a407-975b3326e234",
+        "degree": 1,
+        "name": "Register múzeí a galérií SR",
+        "code": "isvs_335"
+      },
+      {
+        "uuid": "b4bccad5-3a36-41c4-abf9-a3eb9f336b07",
+        "degree": 1,
+        "name": "IS Systém zberu údajov",
+        "code": "isvs_451"
+      },
+      {
+        "uuid": "b59dfb37-70be-43d3-8d37-c80d657fc3b8",
+        "degree": 1,
+        "name": "Licencovanie a povoľovanie",
+        "code": "isvs_4699"
+      },
+      {
+        "uuid": "b5fb05af-f896-4cfa-a2c3-e659ffd76101",
+        "degree": 1,
+        "name": "Knižničný informačný systém (PROFLIB)",
+        "code": "isvs_114"
+      },
+      {
+        "uuid": "b63be1a6-53bd-4853-816a-50153166f96d",
+        "degree": 1,
+        "name": "Modul Dotácia a príspevky",
+        "code": "isvs_5575"
+      },
+      {
+        "uuid": "b66ef470-669e-4ddc-86c8-15d4391e67b5",
+        "degree": 1,
+        "name": "Internetový portál Union zdravotnej poisťovne",
+        "code": "isvs_557"
+      },
+      {
+        "uuid": "b6b5ae25-2bd4-48f7-a38a-41cbe39e04a4",
+        "degree": 1,
+        "name": "Portál VÚC",
+        "code": "isvs_4822"
+      },
+      {
+        "uuid": "b7b4195f-2825-4c31-8a9f-038b4e50d693",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_3465"
+      },
+      {
+        "uuid": "b8a36c87-1b6d-449d-aa62-fe5b4ce1e12f",
+        "degree": 1,
+        "name": "Centrálny jednotný ekonomický systém SOFTIP PROFIT",
+        "code": "isvs_367"
+      },
+      {
+        "uuid": "b8ad23ff-ff26-4f7f-be81-5cd324d94007",
+        "degree": 1,
+        "name": "Automatizovaný systém riadenia prepisov zo schôdzí NR SR",
+        "code": "isvs_6082"
+      },
+      {
+        "uuid": "b8e77c26-4c77-4298-a450-b4cbe99e11d7",
+        "degree": 1,
+        "name": "ISOP – informačný systém ochrany práce (1995)",
+        "code": "isvs_290"
+      },
+      {
+        "uuid": "b8f17ea0-a8e0-4efb-9885-6c1cf5ab2c9b",
+        "degree": 1,
+        "name": "CMS - Systém pre správu obsahu",
+        "code": "isvs_3953"
+      },
+      {
+        "uuid": "b9c463d8-9fbc-44f3-8ae4-955bc1d1c4e0",
+        "degree": 1,
+        "name": "Lokálne registre - Register adries a nehnuteľností",
+        "code": "isvs_5546"
+      },
+      {
+        "uuid": "b9e29ef3-3990-45af-a425-9f408d39302e",
+        "degree": 1,
+        "name": "CMS – Systém správy obsahu",
+        "code": "isvs_3473"
+      },
+      {
+        "uuid": "ba2e7e9b-e413-4c76-9718-19322588dc08",
+        "degree": 1,
+        "name": "Centrálny intranetový portál ministerstva",
+        "code": "isvs_204"
+      },
+      {
+        "uuid": "bb3b2473-908b-4a6d-9d8b-217458ffafec",
+        "degree": 1,
+        "name": "Modul Rozpočet a financie",
+        "code": "isvs_6006"
+      },
+      {
+        "uuid": "bbe4a923-32fe-40e6-926f-9f4ae1ecbabd",
+        "degree": 1,
+        "name": "Informačný systém Štatistika ďalšieho vzdelávania - DALV",
+        "code": "isvs_387"
+      },
+      {
+        "uuid": "bcb75651-e21f-4f73-a402-98f3be2f6f19",
+        "degree": 1,
+        "name": "BIS - Bankový informačný systém",
+        "code": "isvs_5786"
+      },
+      {
+        "uuid": "bcbee728-5f30-4e6b-b54f-0e498bf87b97",
+        "degree": 1,
+        "name": "Centrálny prezentačný, rezervačný a predajný systém (OReS)",
+        "code": "isvs_366"
+      },
+      {
+        "uuid": "bcfb998a-df9d-4978-bf42-f65a824814e4",
+        "degree": 1,
+        "name": "WFM – Work Flow Management Systém",
+        "code": "isvs_3471"
+      },
+      {
+        "uuid": "bd362cdb-3c08-4da8-856f-7b61ef1a0ca8",
+        "degree": 1,
+        "name": "Modul správa registratúry",
+        "code": "isvs_5861"
+      },
+      {
+        "uuid": "bdc50400-c6e6-4167-b44a-951ef9262cc6",
+        "degree": 1,
+        "name": "Obstarávanie",
+        "code": "isvs_4704"
+      },
+      {
+        "uuid": "bed4dc52-d4a9-489d-aa87-a1ed555e17a5",
+        "degree": 1,
+        "name": "Portál VÚC integrovaný s ÚPVS",
+        "code": "isvs_3008"
+      },
+      {
+        "uuid": "bfaad63d-ed70-4969-a547-02a1350b2882",
+        "degree": 1,
+        "name": "Portál/Mobilná aplikácia",
+        "code": "isvs_3978"
+      },
+      {
+        "uuid": "c00894df-65bc-4ff6-96a5-4b0d6865593c",
+        "degree": 1,
+        "name": "Modul Platby",
+        "code": "isvs_5578"
+      },
+      {
+        "uuid": "c0564ad7-df06-47b3-8d18-75930291b683",
+        "degree": 1,
+        "name": "Interný reporting - Manažérsky informačný systém",
+        "code": "isvs_679"
+      },
+      {
+        "uuid": "c0906ae0-47aa-444d-aa37-ac43b28cff70",
+        "degree": 1,
+        "name": "Centrálny informačný systém pre   výskum, vývoj a inovácie - CIP VVI",
+        "code": "isvs_398"
+      },
+      {
+        "uuid": "c0dfc8ab-118f-4c36-b8f1-8092ba5efcbb",
+        "degree": 1,
+        "name": "Modul Rozpočet a financie",
+        "code": "isvs_6041"
+      },
+      {
+        "uuid": "c157e48d-861f-4c04-8e8f-c4ae7c2d3784",
+        "degree": 1,
+        "name": "GIS Front End",
+        "code": "isvs_1682"
+      },
+      {
+        "uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+        "degree": 1,
+        "name": "Centrálny elektronický priečinok (CEP)",
+        "code": "isvs_66"
+      },
+      {
+        "uuid": "c1b01efb-ef0b-4bf7-9319-3e0b436365ed",
+        "degree": 1,
+        "name": "Informačný systém Cestovné príkazy",
+        "code": "isvs_493"
+      },
+      {
+        "uuid": "c1ccf6a3-fa2a-4e3d-be26-2be8d7ffca2c",
+        "degree": 1,
+        "name": "Centrálna evidencia hospodárskych zvierat (CEHZ)",
+        "code": "isvs_105"
+      },
+      {
+        "uuid": "c2023717-fa02-4024-bd27-905c7ca30d6b",
+        "degree": 1,
+        "name": "Aplikácia na sprístupnenie a digitalizáciu archívnych dokumentov (ProArchiv Inventáre)",
+        "code": "isvs_210"
+      },
+      {
+        "uuid": "c26a11b1-57bc-46b4-9c41-554a1a5ef53f",
+        "degree": 1,
+        "name": "Lokálne registre - Register adries a nehnuteľností",
+        "code": "isvs_6010"
+      },
+      {
+        "uuid": "c4066e00-07f3-4f50-8e74-a8eea9998fc1",
+        "degree": 1,
+        "name": "Internetový portál TASR",
+        "code": "isvs_562"
+      },
+      {
+        "uuid": "c49290fe-f13e-4927-85c2-adc02c067f09",
+        "degree": 1,
+        "name": "Utečenec",
+        "code": "isvs_184"
+      },
+      {
+        "uuid": "c5b532ad-7209-4411-9a81-0df124a6c7ff",
+        "degree": 1,
+        "name": "Integrovaný informačný systém VÚC",
+        "code": "isvs_3003"
+      },
+      {
+        "uuid": "c6b6da40-c760-4252-85d1-2e3ebf53a5fa",
+        "degree": 1,
+        "name": "Intranet Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "isvs_4848"
+      },
+      {
+        "uuid": "c6e100a7-b524-4312-900d-69b56962c931",
+        "degree": 1,
+        "name": "Modul Majetok a prenajímanie",
+        "code": "isvs_3975"
+      },
+      {
+        "uuid": "c72de0c3-fe50-42ce-a072-258dfd1568b2",
+        "degree": 1,
+        "name": "Informačný systém Registre, evidencie, zoznamy (REZ)",
+        "code": "isvs_203"
+      },
+      {
+        "uuid": "c78948fb-407c-4e2e-8e6e-0118bd1de472",
+        "degree": 1,
+        "name": "Laboratórium genetiky",
+        "code": "isvs_5956"
+      },
+      {
+        "uuid": "c78d40ce-d80b-495e-aa8a-99879bcf163a",
+        "degree": 1,
+        "name": "BPM – Business Proces Management Systém",
+        "code": "isvs_3470"
+      },
+      {
+        "uuid": "c89ef01e-55cf-4af3-9c0a-95b70922560c",
+        "degree": 1,
+        "name": "Knižničný informačný systém 3. generácie (KIS3G)",
+        "code": "isvs_337"
+      },
+      {
+        "uuid": "c94113df-e6c7-4966-b9dd-3d4900dd504b",
+        "degree": 1,
+        "name": "Spoločné podporné moduly",
+        "code": "isvs_452"
+      },
+      {
+        "uuid": "c9b2b37f-3724-44ab-af0d-0e3772268f27",
+        "degree": 1,
+        "name": "Portál/Mobilná aplikácia",
+        "code": "isvs_5858"
+      },
+      {
+        "uuid": "c9f90f3b-96e7-43a6-97be-b4554981d33b",
+        "degree": 1,
+        "name": "Modul správa registratúry",
+        "code": "isvs_5559"
+      },
+      {
+        "uuid": "ca1f8deb-fbc5-4e6f-b445-3b7a7ba13717",
+        "degree": 1,
+        "name": "IS Ústavného súdu",
+        "code": "isvs_517"
+      },
+      {
+        "uuid": "ca39e129-5aba-4e41-8f56-ada1cd0f7750",
+        "degree": 1,
+        "name": "Živnostenský register",
+        "code": "isvs_199"
+      },
+      {
+        "uuid": "ca43d147-2383-42db-92c8-c4db79ef1bce",
+        "degree": 1,
+        "name": "Integrované obslužné miesto",
+        "code": "isvs_61"
+      },
+      {
+        "uuid": "ca4a3a18-1882-4ed1-8ec2-556d7840eb57",
+        "degree": 1,
+        "name": "Geografický informačný systém rezortu",
+        "code": "isvs_196"
+      },
+      {
+        "uuid": "ca5aee87-3679-425e-8504-d9d13e09c634",
+        "degree": 1,
+        "name": "GIS Front End",
+        "code": "isvs_3011"
+      },
+      {
+        "uuid": "ca6a66a4-df8a-4d1a-9c45-caea23995882",
+        "degree": 1,
+        "name": "IAM",
+        "code": "isvs_3974"
+      },
+      {
+        "uuid": "cacdabf1-c98e-423d-8214-6dbeb7fe1611",
+        "degree": 1,
+        "name": "Elektronická podateľňa",
+        "code": "isvs_3979"
+      },
+      {
+        "uuid": "cae1c3cd-91e1-426e-8949-2a8561299b47",
+        "degree": 1,
+        "name": "DWH - data warehouse",
+        "code": "isvs_5792"
+      },
+      {
+        "uuid": "cb0b6954-c7e9-48d8-95de-0fac828515e2",
+        "degree": 1,
+        "name": "Interný reporting",
+        "code": "isvs_3963"
+      },
+      {
+        "uuid": "cbe44b22-d0fe-4d12-8e6d-54aeb7821511",
+        "degree": 1,
+        "name": "Portál Antidopingovej agentúry Slovenskej republiky",
+        "code": "isvs_5828"
+      },
+      {
+        "uuid": "cc5a7fb9-5dce-48c1-bc6d-a38a69cb31ac",
+        "degree": 1,
+        "name": "IS nemocenského poistenia a lekárskej posudkovej činnosti (IS NPaLPČ)",
+        "code": "isvs_547"
+      },
+      {
+        "uuid": "ccac9f04-9198-4adf-80d4-3d4ee7f0bd06",
+        "degree": 1,
+        "name": "IS POR - Informačný systém prípravkov na ochranu rastlín",
+        "code": "isvs_124"
+      },
+      {
+        "uuid": "ccd8e6a2-7603-4247-af26-74e00e6255cf",
+        "degree": 1,
+        "name": "Rozšírenie projektu Elektronické služby informačných systémov MVSR na úseku policajného zboru (RPESISPZ)",
+        "code": "isvs_5838"
+      },
+      {
+        "uuid": "cd193821-4023-476f-9d39-79dd53325afe",
+        "degree": 1,
+        "name": "Centrálna evidencia múzejných zbierok (CEMUZ)",
+        "code": "isvs_333"
+      },
+      {
+        "uuid": "cd7fd911-d591-490c-aa20-7842941c9d76",
+        "degree": 1,
+        "name": "Ústredná evidencia vojnových hrobov",
+        "code": "isvs_236"
+      },
+      {
+        "uuid": "ce19d585-b6cd-49db-9e64-81bbc75c630e",
+        "degree": 1,
+        "name": "Modul Platby",
+        "code": "isvs_5552"
+      },
+      {
+        "uuid": "ce7f4f07-3e23-4bd2-b88f-587e7978b2cc",
+        "degree": 1,
+        "name": "Evidencia organizácií s medzinárodným prvkom",
+        "code": "isvs_215"
+      },
+      {
+        "uuid": "cf2286b2-9aa8-4484-bcb0-03a1fc6db850",
+        "degree": 1,
+        "name": "Webové sídlo potravinových kontrol",
+        "code": "isvs_5973"
+      },
+      {
+        "uuid": "cfe0b8bc-0f78-4ad2-a55f-89efb0638618",
+        "degree": 1,
+        "name": "CMS – Systém správy obsahu",
+        "code": "isvs_675"
+      },
+      {
+        "uuid": "cff9ca2a-e328-4944-afb3-492c6859dde5",
+        "degree": 1,
+        "name": "Modul Majetok a prenajímanie",
+        "code": "isvs_5565"
+      },
+      {
+        "uuid": "d05d297c-c5a7-4db6-9235-c4df1954f10f",
+        "degree": 1,
+        "name": "Evidencia publikačnej činnosti",
+        "code": "isvs_5938"
+      },
+      {
+        "uuid": "d0bedc02-ed08-4371-8605-53e46a305a59",
+        "degree": 1,
+        "name": "Policajný informačný systém WPOLDAT",
+        "code": "isvs_182"
+      },
+      {
+        "uuid": "d0d6f5e3-8546-49f1-8d53-b7608fa60a87",
+        "degree": 1,
+        "name": "Modul elektronickej podateľne",
+        "code": "isvs_3020"
+      },
+      {
+        "uuid": "d0ed2d15-cf2d-4918-b186-02bee536f9aa",
+        "degree": 1,
+        "name": "Informačný systém pre Verejné obstarávanie",
+        "code": "isvs_488"
+      },
+      {
+        "uuid": "d16c1ba7-2af4-478c-ae8d-30b5ace5da46",
+        "degree": 1,
+        "name": "Účtovníctvo, personalistika a správa majetku Rady pre mediálne služby",
+        "code": "isvs_4725"
+      },
+      {
+        "uuid": "d20f43be-2423-4a92-9cd5-0fc94eee5091",
+        "degree": 1,
+        "name": "Systém pre zastupiteľstvo VÚC",
+        "code": "isvs_3017"
+      },
+      {
+        "uuid": "d2310376-45aa-4e3f-82e0-53aee922d9c8",
+        "degree": 1,
+        "name": "DMS - Systém pre správu dokumentov",
+        "code": "isvs_5569"
+      },
+      {
+        "uuid": "d28cd71b-3268-474d-b4cd-138c57669866",
+        "degree": 1,
+        "name": "Webové sídlo Národného žrebčína Topoľčianky",
+        "code": "isvs_5928"
+      },
+      {
+        "uuid": "d2963da1-5a4e-4126-96b7-0c10024324e2",
+        "degree": 1,
+        "name": "Register ISBN",
+        "code": "isvs_345"
+      },
+      {
+        "uuid": "d29f8467-8dba-44bf-9c8e-5f520280caae",
+        "degree": 1,
+        "name": "Informačný systém Elektronických služieb vzdelávacieho systému regionálneho školstva",
+        "code": "isvs_5788"
+      },
+      {
+        "uuid": "d2e7b5fc-f40f-465e-8189-6f0543c5460f",
+        "degree": 1,
+        "name": "Modul Registrovanie",
+        "code": "isvs_3977"
+      },
+      {
+        "uuid": "d3103a95-bea8-4444-abf2-16a69e943bf5",
+        "degree": 1,
+        "name": "Geografický informačný systém civilnej ochrany",
+        "code": "isvs_195"
+      },
+      {
+        "uuid": "d323a511-2db8-4e9d-b81c-d72e54241b91",
+        "degree": 1,
+        "name": "Informačný systém lesného hospodárstva",
+        "code": "isvs_5930"
+      },
+      {
+        "uuid": "d34cbb0d-c811-4268-9679-65e2eda793f3",
+        "degree": 1,
+        "name": "Internetový portál Rady pre mediálne služby",
+        "code": "isvs_4724"
+      },
+      {
+        "uuid": "d35eb14d-0203-486b-bd2c-34c02772181e",
+        "degree": 1,
+        "name": "WFM – Work Flow Management Systém",
+        "code": "isvs_1684"
+      },
+      {
+        "uuid": "d3d1aaaa-8f3b-4047-a25c-3bed5b2c252a",
+        "degree": 1,
+        "name": "Integrovaný informačný systém NSK",
+        "code": "isvs_1674"
+      },
+      {
+        "uuid": "d4038e30-a04c-48a4-bdce-c0a0fd500f92",
+        "degree": 1,
+        "name": "Lokálne registre - Register adries a nehnuteľností",
+        "code": "isvs_5874"
+      },
+      {
+        "uuid": "d544ab84-3255-4f76-a320-e137e5841e09",
+        "degree": 1,
+        "name": "Lokálne registre - Register adries a nehnuteľností",
+        "code": "isvs_5572"
+      },
+      {
+        "uuid": "d55e5fc5-fc95-4584-8760-9b246d7a375b",
+        "degree": 1,
+        "name": "Integrovaný informačný systém VÚC",
+        "code": "isvs_5979"
+      },
+      {
+        "uuid": "d5836c36-f4ae-4686-a9f8-2b3b582f49d4",
+        "degree": 1,
+        "name": "Modul Ohlasovanie, sťažnosti a notifikácie",
+        "code": "isvs_5579"
+      },
+      {
+        "uuid": "d5b2f000-7220-4b78-9427-445582bb0b51",
+        "degree": 1,
+        "name": "Modul Dotácie",
+        "code": "isvs_4839"
+      },
+      {
+        "uuid": "d5cc03e9-3ec9-4369-a6d9-2b3e5e5b1a21",
+        "degree": 1,
+        "name": "Modul GIS",
+        "code": "isvs_5534"
+      },
+      {
+        "uuid": "d61780ec-6b1c-4ae4-926d-704ce22e3c61",
+        "degree": 1,
+        "name": "IS Správa registratúry",
+        "code": "isvs_537"
+      },
+      {
+        "uuid": "d62bd1d4-3052-46b3-a099-4507546f669a",
+        "degree": 1,
+        "name": "Modul Dotácia a príspevky",
+        "code": "isvs_3960"
+      },
+      {
+        "uuid": "d659315c-f2ef-4060-a495-14341bfbfd7b",
+        "degree": 1,
+        "name": "Modul licencovanie a povoľovanie",
+        "code": "isvs_5550"
+      },
+      {
+        "uuid": "d6b922fa-a8c8-41bb-8d63-fe1f71c25365",
+        "degree": 1,
+        "name": "Modul Registrovanie",
+        "code": "isvs_5548"
+      },
+      {
+        "uuid": "d746edc5-e811-4d63-b2eb-6cb18f0c78b2",
+        "degree": 1,
+        "name": "DMS - Systém pre správu dokumentov",
+        "code": "isvs_6007"
+      },
+      {
+        "uuid": "d7721383-e681-435d-a182-88f7057dbbb7",
+        "degree": 1,
+        "name": "Elektronický systém štatistického zisťovania KULT",
+        "code": "isvs_361"
+      },
+      {
+        "uuid": "d7ae8306-921e-425e-8800-ff33fc29d282",
+        "degree": 1,
+        "name": "Portál Národného ústavu certifikovaných meraní vzdelávania",
+        "code": "isvs_5823"
+      },
+      {
+        "uuid": "d7d673ba-22e4-46f6-a058-4229b92bd25c",
+        "degree": 1,
+        "name": "Webový portál Slovenského poľnohospodárskeho múzea",
+        "code": "isvs_5917"
+      },
+      {
+        "uuid": "d7f7c556-3405-404f-8b39-d125ca592a32",
+        "degree": 1,
+        "name": "CMS - Systém pre správu obsahu",
+        "code": "isvs_6035"
+      },
+      {
+        "uuid": "d91e435d-493a-4841-ad1a-353f801e55cb",
+        "degree": 1,
+        "name": "Elektronická podateľňa",
+        "code": "isvs_490"
+      },
+      {
+        "uuid": "d93dd8ed-db47-49e2-bf47-bdac6619030d",
+        "degree": 1,
+        "name": "GIS Front End",
+        "code": "isvs_3469"
+      },
+      {
+        "uuid": "d9683cd3-6eb8-4346-9403-d737d607527e",
+        "degree": 1,
+        "name": "IS poistenia v nezamestnanosti a garančného poistenia (PvN a GP)",
+        "code": "isvs_550"
+      },
+      {
+        "uuid": "d9b0591b-a21b-483a-b3b8-5b39c94071d5",
+        "degree": 1,
+        "name": "Informačný systém strediská MZVaEZ SR pre pomoc a služby občanom",
+        "code": "isvs_265"
+      },
+      {
+        "uuid": "d9b06848-a547-42a2-a7e4-a52eba0d7f6e",
+        "degree": 1,
+        "name": "Informačný systém pre Správu majetku",
+        "code": "isvs_487"
+      },
+      {
+        "uuid": "da5a3c80-6245-4400-9559-9560b90e5a07",
+        "degree": 1,
+        "name": "Register obyvateľov",
+        "code": "isvs_190"
+      },
+      {
+        "uuid": "da785548-5338-43d4-b568-fc7fe49600d1",
+        "degree": 1,
+        "name": "Centrálny finančný informačný systém pre verejné vysoké školy (SOFIA)",
+        "code": "isvs_396"
+      },
+      {
+        "uuid": "dac88839-7cb2-4206-ab28-a17a7660c227",
+        "degree": 1,
+        "name": "Modul zastupiteľstvo",
+        "code": "isvs_5540"
+      },
+      {
+        "uuid": "db332300-e3e5-420f-84d9-480fe03d8975",
+        "degree": 1,
+        "name": "Modul správa registratúry",
+        "code": "isvs_3966"
+      },
+      {
+        "uuid": "db6a9c4c-59a2-4763-b21a-876b030ce32d",
+        "degree": 1,
+        "name": "Memphis - Registratúra UVSR",
+        "code": "isvs_6093"
+      },
+      {
+        "uuid": "dc97ae13-d837-4dcc-a405-2c007e35bf50",
+        "degree": 1,
+        "name": "IS centrálneho spracovania údajov",
+        "code": "isvs_449"
+      },
+      {
+        "uuid": "dcf04a1f-91fe-4679-9618-323e9c53de75",
+        "degree": 1,
+        "name": "Webové sídlo Agrokomplex",
+        "code": "isvs_5916"
+      },
+      {
+        "uuid": "ddaa3aa0-93b0-47d9-846a-c68732446368",
+        "degree": 1,
+        "name": "Verejný portál ministerstva vnútra",
+        "code": "isvs_201"
+      },
+      {
+        "uuid": "ddbefb2b-ee3a-4e02-8e9d-d7da2e0ef425",
+        "degree": 1,
+        "name": "Portál/Mobilná aplikácia",
+        "code": "isvs_6029"
+      },
+      {
+        "uuid": "ddd3b279-7183-45a3-9cff-ad074c809a9a",
+        "degree": 1,
+        "name": "Lokálne registre - Register obyvateľov",
+        "code": "isvs_6044"
+      },
+      {
+        "uuid": "dedf5bf3-b8e1-408c-89cd-35399aef61b4",
+        "degree": 1,
+        "name": "Portál Štátneho inštitútu odborného vzdelávania",
+        "code": "isvs_5826"
+      },
+      {
+        "uuid": "df7f33b1-16be-46fd-b693-cf14301389ff",
+        "degree": 1,
+        "name": "Lokálne registre - Register právnických osôb",
+        "code": "isvs_3976"
+      },
+      {
+        "uuid": "df7f9984-45fd-42fb-86c2-74c91237b4a5",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_3959"
+      },
+      {
+        "uuid": "df869b9f-3213-4bd9-b6c8-ea7b61b387c5",
+        "degree": 1,
+        "name": "Lokálne registre - Register právnických osôb",
+        "code": "isvs_5875"
+      },
+      {
+        "uuid": "dfbe85a1-fcce-47f4-b6b9-1f3065ff36cc",
+        "degree": 1,
+        "name": "Informačný systém štátnej pokladnice (ISŠP)",
+        "code": "isvs_46"
+      },
+      {
+        "uuid": "dfeb8c8c-50e7-477d-ac34-207729eee0a1",
+        "degree": 1,
+        "name": "Elektronický archív ministerstva vnútra SR",
+        "code": "isvs_202"
+      },
+      {
+        "uuid": "e008c98b-cddf-45db-be15-b5f72aad9e57",
+        "degree": 1,
+        "name": "IAM",
+        "code": "isvs_6018"
+      },
+      {
+        "uuid": "e14cc05a-1eb1-4cfb-83cf-8b085919215a",
+        "degree": 1,
+        "name": "Modul Dotácia a príspevky",
+        "code": "isvs_5877"
+      },
+      {
+        "uuid": "e15b2987-ede3-4b62-9bde-f80be978f665",
+        "degree": 1,
+        "name": "Modul licencovanie a povoľovanie",
+        "code": "isvs_5576"
+      },
+      {
+        "uuid": "e21eaae0-d2be-4248-a154-3cfd5fa91452",
+        "degree": 1,
+        "name": "Lokálne registre - Register obyvateľov",
+        "code": "isvs_6009"
+      },
+      {
+        "uuid": "e22c4abc-3038-4c2a-976a-a4fafd42ccb5",
+        "degree": 1,
+        "name": "Interný reporting",
+        "code": "isvs_6050"
+      },
+      {
+        "uuid": "e244c860-4a0f-4da1-8d4d-1aca753dec9b",
+        "degree": 1,
+        "name": "IAM",
+        "code": "isvs_5882"
+      },
+      {
+        "uuid": "e27afd26-91c8-4b33-bc91-8c0555e83a01",
+        "degree": 1,
+        "name": "Elektronické formuláre",
+        "code": "isvs_6037"
+      },
+      {
+        "uuid": "e27b425a-dc8a-4f91-8d4e-479aca1b3672",
+        "degree": 1,
+        "name": "Modul Dotácia a príspevky",
+        "code": "isvs_6048"
+      },
+      {
+        "uuid": "e292242c-4b28-40b0-ad07-8d36205ce03b",
+        "degree": 1,
+        "name": "Portál/Mobilná aplikácia",
+        "code": "isvs_5530"
+      },
+      {
+        "uuid": "e3030512-c82a-45da-8db9-f09b20951b81",
+        "degree": 1,
+        "name": "Integrovaný informačný systém mesta Košice (IIS Mesta Košice)",
+        "code": "isvs_5754"
+      },
+      {
+        "uuid": "e31f278a-6d47-4e75-9aff-e96b517dc1f0",
+        "degree": 1,
+        "name": "Register poskytovateľov zdravotných a zdravotníckych zariadení",
+        "code": "isvs_3029"
+      },
+      {
+        "uuid": "e37db55b-d51f-44c4-9e9d-985f02228b30",
+        "degree": 1,
+        "name": "Lokálne registre - Register právnických osôb",
+        "code": "isvs_5573"
+      },
+      {
+        "uuid": "e3a2554d-35c9-4c58-b6ee-5308368d26f6",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_6036"
+      },
+      {
+        "uuid": "e518238c-1fed-4548-a6ae-9b01106ba38a",
+        "degree": 1,
+        "name": "Verejný portál MZVaEZ SR",
+        "code": "isvs_271"
+      },
+      {
+        "uuid": "e5af019b-6f7b-472e-a9d3-3f626bf85d98",
+        "degree": 1,
+        "name": "Epidemiologický informačný systém",
+        "code": "isvs_6103"
+      },
+      {
+        "uuid": "e5e994a9-aeb9-4517-a3ee-0a16228ce01e",
+        "degree": 1,
+        "name": "Ekonomický informačný systém rezortu školstva",
+        "code": "isvs_395"
+      },
+      {
+        "uuid": "e642d919-d5e1-41ed-8792-75658192713f",
+        "degree": 1,
+        "name": "Webový portál Programu cezhraničnej spolupráce",
+        "code": "isvs_5900"
+      },
+      {
+        "uuid": "e68e11fc-15eb-4df9-924e-542bbe2faaf1",
+        "degree": 1,
+        "name": "Personálno-ekonomický IS",
+        "code": "isvs_6083"
+      },
+      {
+        "uuid": "e6a74460-b4cb-42f3-a459-da5edf93386c",
+        "degree": 1,
+        "name": "Modul Platby",
+        "code": "isvs_5880"
+      },
+      {
+        "uuid": "e6c26744-0d67-41bc-831e-19506940a468",
+        "degree": 1,
+        "name": "eDemokracia",
+        "code": "isvs_4687"
+      },
+      {
+        "uuid": "e76d33b5-da04-49d1-bdf3-462b82cf9b47",
+        "degree": 1,
+        "name": "BRE – Business Rules Engine Systém",
+        "code": "isvs_3472"
+      },
+      {
+        "uuid": "e7d7feaf-afe1-4ec8-bb6b-b9248dbb5dfd",
+        "degree": 1,
+        "name": "Evidenčno-štatistický systém kriminality",
+        "code": "isvs_175"
+      },
+      {
+        "uuid": "e87ef3e1-d710-4fec-8d2e-7cbfd1d4d3c8",
+        "degree": 1,
+        "name": "Webové sídlo Verejného ochrancu práv",
+        "code": "isvs_5477"
+      },
+      {
+        "uuid": "e88ac559-4252-4735-9f3b-a301e357341c",
+        "degree": 1,
+        "name": "Zabezpečený komunikačný systém",
+        "code": "isvs_1702"
+      },
+      {
+        "uuid": "e8ea1b45-4d57-4a2f-bab1-8285c0527364",
+        "degree": 1,
+        "name": "Register ISSN",
+        "code": "isvs_346"
+      },
+      {
+        "uuid": "e95020e8-b0ce-46b0-a505-45296fe789d4",
+        "degree": 1,
+        "name": "Registratúra Kancelárie verejného ochrancu práv",
+        "code": "isvs_528"
+      },
+      {
+        "uuid": "e9a31547-d42c-44b6-ad2e-8bc04d02ce47",
+        "degree": 1,
+        "name": "Webové sídlo Výskumného ústavu živočíšnej výroby v Nitre",
+        "code": "isvs_110"
+      },
+      {
+        "uuid": "eb4c5d94-7aa2-4070-9035-28b3c5e6ed79",
+        "degree": 1,
+        "name": "Národný zdravotnícky informačný systém (NZIS)",
+        "code": "isvs_400"
+      },
+      {
+        "uuid": "ebed7ce5-6a9e-4bcc-a21a-7ad10b24cc07",
+        "degree": 1,
+        "name": "Centrálny informačný systém regulovaných subjektov",
+        "code": "isvs_499"
+      },
+      {
+        "uuid": "ecda8848-b2d1-421d-a290-03da512f7e26",
+        "degree": 1,
+        "name": "Centrálny informačný systém matričnej agendy (CISMA)",
+        "code": "isvs_193"
+      },
+      {
+        "uuid": "eced0d54-fe94-4c61-9095-3056fe2a4313",
+        "degree": 1,
+        "name": "Informačný systém Ekonomika",
+        "code": "isvs_498"
+      },
+      {
+        "uuid": "ed156819-1335-4a8d-b39f-f36b2961b962",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Údaje o vykonávaní podaní",
+        "code": "isvs_3485"
+      },
+      {
+        "uuid": "ee2a5490-6c61-4f17-a1fa-11e758604a5a",
+        "degree": 1,
+        "name": "Webové sídlo Lesov SR",
+        "code": "isvs_5993"
+      },
+      {
+        "uuid": "eedf3b09-0aa5-4668-8817-59e4e011d40c",
+        "degree": 1,
+        "name": "Účtovníctvo, výkazníctvo, majetok a pokladne",
+        "code": "isvs_501"
+      },
+      {
+        "uuid": "f0c43cee-8719-4a4b-9557-b33e62eb1e96",
+        "degree": 1,
+        "name": "Rozpočtový systém",
+        "code": "isvs_4838"
+      },
+      {
+        "uuid": "f1b107be-e939-43a7-8227-93cc801f5f23",
+        "degree": 1,
+        "name": "Modul GIS",
+        "code": "isvs_3961"
+      },
+      {
+        "uuid": "f3779620-db0e-4c92-b6d8-e41a2894ada2",
+        "degree": 1,
+        "name": "Systém riadenia podaní – Definičné údaje podaní",
+        "code": "isvs_1681"
+      },
+      {
+        "uuid": "f409b4a6-e334-4609-a019-8328d64f274a",
+        "degree": 1,
+        "name": "Produkčný informačný systém zdravotného poistenia - PISZP",
+        "code": "isvs_556"
+      },
+      {
+        "uuid": "f427fdac-2737-4ed5-9091-b50f6d24182b",
+        "degree": 1,
+        "name": "Modul Obstarávanie",
+        "code": "isvs_1693"
+      },
+      {
+        "uuid": "f43fa553-dfea-4c6d-834a-6205d800e617",
+        "degree": 1,
+        "name": "Modul Ohlasovanie, sťažnosti a notifikácie",
+        "code": "isvs_6052"
+      },
+      {
+        "uuid": "f488415c-60fb-44f0-9789-fedcafbd79f6",
+        "degree": 1,
+        "name": "Informačný systém jednotných kontaktných miest (JKM2)",
+        "code": "isvs_5584"
+      },
+      {
+        "uuid": "f497924c-4843-45ba-a3d4-227a2c9c35f5",
+        "degree": 1,
+        "name": "Evidencia archívneho dedičstva (AFONDY)",
+        "code": "isvs_208"
+      },
+      {
+        "uuid": "f4a3c7cd-49cb-4095-9684-4db229c425c4",
+        "degree": 1,
+        "name": "Indentity manažment, bezpečnosť a podporné služby",
+        "code": "isvs_231"
+      },
+      {
+        "uuid": "f4c96060-017e-4040-8cfe-479fc01583f3",
+        "degree": 1,
+        "name": "Hotelový systém Horec",
+        "code": "isvs_6085"
+      },
+      {
+        "uuid": "f51dac45-30bc-42d3-b6f9-2be3fc5a6066",
+        "degree": 1,
+        "name": "Register poskytovateľov sociálnych služieb",
+        "code": "isvs_3467"
+      },
+      {
+        "uuid": "f567f721-3bd6-4789-abd6-b7a3ce33ffc1",
+        "degree": 1,
+        "name": "Centrálna správa registratúry",
+        "code": "isvs_369"
+      },
+      {
+        "uuid": "f5d0007a-d479-4f62-b784-cd4bd498148a",
+        "degree": 1,
+        "name": "Informačný systém Dochádzka",
+        "code": "isvs_485"
+      },
+      {
+        "uuid": "f679a198-dccc-4c4b-9530-cb72f81538ce",
+        "degree": 1,
+        "name": "Modul eDemokracia",
+        "code": "isvs_6001"
+      },
+      {
+        "uuid": "f7a05684-f69a-4c09-9828-b6f51dfb95f0",
+        "degree": 1,
+        "name": "Administratívny informačný systém",
+        "code": "isvs_56"
+      },
+      {
+        "uuid": "f7ba9a86-1ccf-477c-afc8-bae35cf54b25",
+        "degree": 1,
+        "name": "Register spoločenstiev vlastníkov bytov a nebytových priestorov",
+        "code": "isvs_225"
+      },
+      {
+        "uuid": "f7f81ae8-4429-4cf9-8e61-6ddfef9daa40",
+        "degree": 1,
+        "name": "Integračný a procesný modul (BPM)",
+        "code": "isvs_5558"
+      },
+      {
+        "uuid": "f8b94691-3f96-4014-8096-76fe65bd1c26",
+        "degree": 1,
+        "name": "AgroCont - agrárny informačný system",
+        "code": "isvs_5923"
+      },
+      {
+        "uuid": "f9383fec-62ab-4677-936f-ad9bcebb6882",
+        "degree": 1,
+        "name": "Agenda cestovných dokladov",
+        "code": "isvs_178"
+      },
+      {
+        "uuid": "f93e1f76-ed99-46c4-af54-5ab7adbd0496",
+        "degree": 1,
+        "name": "LABORATORNY SYSTEM Evidencia vysledkov",
+        "code": "isvs_5964"
+      },
+      {
+        "uuid": "fa508f4d-d8b0-4aa8-8a0f-fc3eab3f7b88",
+        "degree": 1,
+        "name": "Informačný systém Úradu na ochranu osobných údajov",
+        "code": "isvs_475"
+      },
+      {
+        "uuid": "fa826d20-1750-4e1a-b552-0a024b512e2b",
+        "degree": 1,
+        "name": "IS finančného riadenia (FR)",
+        "code": "isvs_552"
+      },
+      {
+        "uuid": "faf7f357-d41f-42d8-9ec6-db8e4f443d79",
+        "degree": 1,
+        "name": "GIS Back Office",
+        "code": "isvs_3484"
+      },
+      {
+        "uuid": "fb82a55f-558f-4eca-bbae-a344b95e0a54",
+        "degree": 1,
+        "name": "Webový portál Programu ovocie a zelenina do škôl",
+        "code": "isvs_5893"
+      },
+      {
+        "uuid": "fc4b47e2-8a4a-4b93-b54b-c8f46378335b",
+        "degree": 1,
+        "name": "Modul Účtovníctvo",
+        "code": "isvs_5567"
+      },
+      {
+        "uuid": "fc5b12de-d0e4-40d2-b63a-0de3a2c56ffb",
+        "degree": 1,
+        "name": "Informačný systém ďalšieho vzdelávania",
+        "code": "isvs_392"
+      },
+      {
+        "uuid": "fcc0118e-0171-40c4-bd76-615247a63e0e",
+        "degree": 1,
+        "name": "Info Modul",
+        "code": "isvs_4820"
+      },
+      {
+        "uuid": "fd5efe5f-cada-423b-98a3-8d9fbba2ff68",
+        "degree": 1,
+        "name": "DMS - Systém pre správu dokumentov",
+        "code": "isvs_5543"
+      },
+      {
+        "uuid": "fda40fa1-1652-4b0d-85a1-f8a9952d7e14",
+        "degree": 1,
+        "name": "Integrovaný informačný systém mesta (IISM)",
+        "code": "isvs_5555"
+      },
+      {
+        "uuid": "fde6bdb7-0ecb-47ca-b8d8-9f8addbef4f5",
+        "degree": 1,
+        "name": "Portál Štátneho pedagogického ústavu",
+        "code": "isvs_5827"
+      },
+      {
+        "uuid": "fdfb512f-bdda-4d6a-9fbe-015ca22ca58c",
+        "degree": 1,
+        "name": "Modul informovanie a poradenstvo",
+        "code": "isvs_5561"
+      },
+      {
+        "uuid": "fe0f8fc1-ecfe-4d03-adce-0ffdfac8f5cc",
+        "degree": 1,
+        "name": "Modul Rozpočet a financie",
+        "code": "isvs_5568"
+      },
+      {
+        "uuid": "fe7a3d79-b424-46e4-9d3f-9ae8f5d6afe0",
+        "degree": 1,
+        "name": "Modul Licencie",
+        "code": "isvs_3025"
+      },
+      {
+        "uuid": "feaf877b-9ff1-40f5-8fd1-73424ed23d7b",
+        "degree": 1,
+        "name": "Aplikácia na evidenciu a katalogizáciu knižničného fondu (ProArchiv Knižnica)",
+        "code": "isvs_213"
+      },
+      {
+        "uuid": "fed06f7d-c1e2-4d82-bb6d-02f0c08f7924",
+        "degree": 1,
+        "name": "Index nežiadúcich a blokovaných osôb",
+        "code": "isvs_186"
+      },
+      {
+        "uuid": "feec7a61-fcf2-4118-bcd6-75d13d98b477",
+        "degree": 1,
+        "name": "Užívateľská podpora (Help Desk/ Service Desk)",
+        "code": "isvs_232"
+      },
+      {
+        "uuid": "fffb50a8-245b-4403-8563-ac76ef35cbcd",
+        "degree": 1,
+        "name": "Modul GIS",
+        "code": "isvs_5862"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6774,
+      "total_islands": 6139,
+      "singleton_islands": 6088,
+      "multi_islands": [
+        {
+          "size_total": 68,
+          "size_source": 1,
+          "size_target": 67,
+          "fraction_total": 0.010038382049010924,
+          "top_source_uuid": "8397c2d9-892c-4f4c-868f-8db4934c5814",
+          "top_source_degree": 67,
+          "top_target_uuid": "aff20674-b120-4f6a-bb5f-55c91776aeee",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 68,
+          "size_source": 1,
+          "size_target": 67,
+          "fraction_total": 0.010038382049010924,
+          "top_source_uuid": "61b15fc6-48a4-4295-9290-e5983e5af1a4",
+          "top_source_degree": 67,
+          "top_target_uuid": "29997e9c-ed7c-46ef-b2d1-c7006e55bab2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 30,
+          "size_source": 1,
+          "size_target": 29,
+          "fraction_total": 0.0044286979627989375,
+          "top_source_uuid": "384b58dc-6083-4f37-ad54-a5033f57af04",
+          "top_source_degree": 29,
+          "top_target_uuid": "d3d1aaaa-8f3b-4047-a25c-3bed5b2c252a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 30,
+          "size_source": 1,
+          "size_target": 29,
+          "fraction_total": 0.0044286979627989375,
+          "top_source_uuid": "a088d1f9-d821-4eb6-b49e-840146cc3f84",
+          "top_source_degree": 29,
+          "top_target_uuid": "c0906ae0-47aa-444d-aa37-ac43b28cff70",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 28,
+          "size_source": 1,
+          "size_target": 27,
+          "fraction_total": 0.004133451431945674,
+          "top_source_uuid": "61da0008-6ce5-4846-b8ce-7c6d9bfb1846",
+          "top_source_degree": 27,
+          "top_target_uuid": "0e2d272c-a5e4-48c5-a9d0-337aaf6db18e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 28,
+          "size_source": 1,
+          "size_target": 27,
+          "fraction_total": 0.004133451431945674,
+          "top_source_uuid": "17b56a55-5b98-4854-a17c-89357b77d0fa",
+          "top_source_degree": 27,
+          "top_target_uuid": "3708c2d9-0ffa-4a20-a31b-f2fc4c3af54a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 27,
+          "size_source": 1,
+          "size_target": 26,
+          "fraction_total": 0.003985828166519044,
+          "top_source_uuid": "a37198b7-186c-4f01-9a26-fafb7ad215f1",
+          "top_source_degree": 26,
+          "top_target_uuid": "9d5fdc3c-0b86-44bb-8341-de14e1c6dc05",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 27,
+          "size_source": 1,
+          "size_target": 26,
+          "fraction_total": 0.003985828166519044,
+          "top_source_uuid": "cda7b536-e204-41a3-8afc-5be6ffa3fe4c",
+          "top_source_degree": 26,
+          "top_target_uuid": "a28b50fc-f00f-4822-8ae2-52de05279cda",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 27,
+          "size_source": 1,
+          "size_target": 26,
+          "fraction_total": 0.003985828166519044,
+          "top_source_uuid": "4df1901b-85a8-4191-8ae6-398b60d4959f",
+          "top_source_degree": 26,
+          "top_target_uuid": "07732409-8125-4c61-a4e3-f28a3cccc82d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 27,
+          "size_source": 1,
+          "size_target": 26,
+          "fraction_total": 0.003985828166519044,
+          "top_source_uuid": "5a56b5e1-fd9a-481d-9b46-b37359f4a7b9",
+          "top_source_degree": 26,
+          "top_target_uuid": "227ddd68-0e99-4ec1-8c28-2f915562279d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 27,
+          "size_source": 1,
+          "size_target": 26,
+          "fraction_total": 0.003985828166519044,
+          "top_source_uuid": "10abd0d0-dbfa-44e3-95aa-198e8a9c1124",
+          "top_source_degree": 26,
+          "top_target_uuid": "5b62c3af-7c3f-4f82-b966-c0f3312d508e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 27,
+          "size_source": 1,
+          "size_target": 26,
+          "fraction_total": 0.003985828166519044,
+          "top_source_uuid": "6dc617df-b95a-4f14-9962-9fde673de62f",
+          "top_source_degree": 26,
+          "top_target_uuid": "929a35fd-017b-4250-8dfd-0133f3baf14f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 24,
+          "size_source": 1,
+          "size_target": 23,
+          "fraction_total": 0.00354295837023915,
+          "top_source_uuid": "c5a8719c-8b80-48da-ae44-b7982c3440dc",
+          "top_source_degree": 23,
+          "top_target_uuid": "bcfb998a-df9d-4978-bf42-f65a824814e4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 21,
+          "size_source": 1,
+          "size_target": 20,
+          "fraction_total": 0.003100088573959256,
+          "top_source_uuid": "38c292c3-c716-465c-8c40-6ceb6382efcc",
+          "top_source_degree": 20,
+          "top_target_uuid": "c89ef01e-55cf-4af3-9c0a-95b70922560c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 17,
+          "size_source": 1,
+          "size_target": 16,
+          "fraction_total": 0.002509595512252731,
+          "top_source_uuid": "b69c3fc5-2ec2-4eb3-a31f-b7f76ae1ab56",
+          "top_source_degree": 16,
+          "top_target_uuid": "cfe0b8bc-0f78-4ad2-a55f-89efb0638618",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 16,
+          "size_source": 1,
+          "size_target": 15,
+          "fraction_total": 0.0023619722468261,
+          "top_source_uuid": "81809065-1e74-45f0-8e64-0d37ffbb4297",
+          "top_source_degree": 15,
+          "top_target_uuid": "93d0b6ab-33ec-43c8-af67-72f7e54d1d88",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 14,
+          "size_source": 1,
+          "size_target": 13,
+          "fraction_total": 0.002066725715972837,
+          "top_source_uuid": "67e7d01e-4ebd-4420-aefa-79c77bcd73eb",
+          "top_source_degree": 13,
+          "top_target_uuid": "c6b6da40-c760-4252-85d1-2e3ebf53a5fa",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 14,
+          "size_source": 1,
+          "size_target": 13,
+          "fraction_total": 0.002066725715972837,
+          "top_source_uuid": "aba18c36-e4d5-4b70-ae5a-a73fbbab1bfb",
+          "top_source_degree": 13,
+          "top_target_uuid": "eced0d54-fe94-4c61-9095-3056fe2a4313",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 11,
+          "size_source": 1,
+          "size_target": 10,
+          "fraction_total": 0.0016238559196929435,
+          "top_source_uuid": "0c82df6a-2647-464f-865e-626f325e1455",
+          "top_source_degree": 10,
+          "top_target_uuid": "2889acf9-5a6d-47ad-8e1a-a8ad74afbcf5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 10,
+          "size_source": 1,
+          "size_target": 9,
+          "fraction_total": 0.0014762326542663124,
+          "top_source_uuid": "217e3878-7c4a-447b-ae39-55f1802c718d",
+          "top_source_degree": 9,
+          "top_target_uuid": "7e719ff4-7946-4bf6-a63a-f5b1d494c51c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 9,
+          "size_source": 1,
+          "size_target": 8,
+          "fraction_total": 0.001328609388839681,
+          "top_source_uuid": "9f66e1ae-4fbb-4913-b08a-11b2deef446b",
+          "top_source_degree": 8,
+          "top_target_uuid": "cc5a7fb9-5dce-48c1-bc6d-a38a69cb31ac",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 9,
+          "size_source": 1,
+          "size_target": 8,
+          "fraction_total": 0.001328609388839681,
+          "top_source_uuid": "b6dde8ef-60f8-4cad-a3b7-af80962c4e2c",
+          "top_source_degree": 8,
+          "top_target_uuid": "576b309b-68df-4521-89da-36302f0b3ddc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 9,
+          "size_source": 1,
+          "size_target": 8,
+          "fraction_total": 0.001328609388839681,
+          "top_source_uuid": "bced5129-0a2d-4ad1-bcac-af02226ddb81",
+          "top_source_degree": 8,
+          "top_target_uuid": "f4c96060-017e-4040-8cfe-479fc01583f3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 8,
+          "size_source": 1,
+          "size_target": 7,
+          "fraction_total": 0.00118098612341305,
+          "top_source_uuid": "3119014c-9281-4789-8123-4225206e9be5",
+          "top_source_degree": 7,
+          "top_target_uuid": "3ac0f4b3-e389-4165-bd5b-a60d137bf7f3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 8,
+          "size_source": 1,
+          "size_target": 7,
+          "fraction_total": 0.00118098612341305,
+          "top_source_uuid": "5cb38699-c1dc-4d1f-8610-18f25f0c40ed",
+          "top_source_degree": 7,
+          "top_target_uuid": "07700f40-8878-4401-be93-bdd1aa5c3e72",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 8,
+          "size_source": 1,
+          "size_target": 7,
+          "fraction_total": 0.00118098612341305,
+          "top_source_uuid": "c7a4eb50-f4c2-413f-9ccc-506464bca714",
+          "top_source_degree": 7,
+          "top_target_uuid": "134485ad-7a64-4428-9e1e-f597398a481b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 7,
+          "size_source": 1,
+          "size_target": 6,
+          "fraction_total": 0.0010333628579864186,
+          "top_source_uuid": "b32e76b5-b332-4fb8-8556-bcd8f05b9191",
+          "top_source_degree": 6,
+          "top_target_uuid": "6384ac03-d8f4-4044-b3df-8663447ecb6a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 7,
+          "size_source": 1,
+          "size_target": 6,
+          "fraction_total": 0.0010333628579864186,
+          "top_source_uuid": "60a9d629-ee2e-4d9a-9df8-01ac600e3688",
+          "top_source_degree": 6,
+          "top_target_uuid": "36edf6f7-deb9-4885-9c71-001af2abffbe",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 7,
+          "size_source": 1,
+          "size_target": 6,
+          "fraction_total": 0.0010333628579864186,
+          "top_source_uuid": "e00383d7-51c6-488d-9300-a9f3c39a9f06",
+          "top_source_degree": 6,
+          "top_target_uuid": "4b91b440-8073-4bb4-9c3e-b074b8becf1c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.0007381163271331562,
+          "top_source_uuid": "0936b5b1-791f-46e1-9561-e910e93d9450",
+          "top_source_degree": 4,
+          "top_target_uuid": "dc97ae13-d837-4dcc-a405-2c007e35bf50",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.0007381163271331562,
+          "top_source_uuid": "934abdb5-a789-4bdf-bd8f-22d3db27a164",
+          "top_source_degree": 4,
+          "top_target_uuid": "aeb8bdd5-b844-44e4-b44d-439d5730a5e3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.0007381163271331562,
+          "top_source_uuid": "9855b11a-1bcd-450f-ae2b-101d4e110a4f",
+          "top_source_degree": 4,
+          "top_target_uuid": "0c6e8e4c-dbea-4b3f-b1e8-046172e5099b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.0007381163271331562,
+          "top_source_uuid": "9df26e1b-a931-4760-acb5-be12a71037a1",
+          "top_source_degree": 4,
+          "top_target_uuid": "910395a3-7cd4-4e64-bae1-211454fa7746",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.000590493061706525,
+          "top_source_uuid": "503405c0-12de-4bd2-9fb8-e94e5224974f",
+          "top_source_degree": 3,
+          "top_target_uuid": "eedf3b09-0aa5-4668-8817-59e4e011d40c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.000590493061706525,
+          "top_source_uuid": "e4bfbff7-bf74-46e5-b4da-7e978d16fb10",
+          "top_source_degree": 3,
+          "top_target_uuid": "fa508f4d-d8b0-4aa8-8a0f-fc3eab3f7b88",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.000590493061706525,
+          "top_source_uuid": "66b53874-67bc-4317-a51d-6a2c8a85638a",
+          "top_source_degree": 3,
+          "top_target_uuid": "ae3224ba-5edc-4c9b-bd7b-ff6304781131",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.000590493061706525,
+          "top_source_uuid": "297eacfb-adb9-4734-96f3-5a38ca521d1e",
+          "top_source_degree": 3,
+          "top_target_uuid": "29691913-feec-42ac-9620-cd9fc83f2415",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.000590493061706525,
+          "top_source_uuid": "4d973ec6-6d8e-44d5-88ba-07cd15ad835d",
+          "top_source_degree": 3,
+          "top_target_uuid": "43f140c7-72ca-415f-9214-c89f99f3707e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.000590493061706525,
+          "top_source_uuid": "385d8bbe-bc18-456f-92d6-813a5bcc505d",
+          "top_source_degree": 3,
+          "top_target_uuid": "7473efbe-fb9a-4b85-9141-ae000822310e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.000590493061706525,
+          "top_source_uuid": "af1de2b0-94cc-4361-91c4-3283e94d79c0",
+          "top_source_degree": 3,
+          "top_target_uuid": "d34cbb0d-c811-4268-9679-65e2eda793f3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004428697962798937,
+          "top_source_uuid": "7fccbd51-e731-48e4-9053-65d11b8311f1",
+          "top_source_degree": 2,
+          "top_target_uuid": "7e9bf8eb-6983-4773-ae28-28df7b0a66f3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004428697962798937,
+          "top_source_uuid": "76af944b-c7ef-4621-9e5b-b3b480a432a0",
+          "top_source_degree": 2,
+          "top_target_uuid": "2cc9ff13-74e1-4433-bc30-96fb595fd37e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004428697962798937,
+          "top_source_uuid": "83262fdb-0f5a-41e5-b676-85817c7ecf0d",
+          "top_source_degree": 2,
+          "top_target_uuid": "b66ef470-669e-4ddc-86c8-15d4391e67b5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002952465308532625,
+          "top_source_uuid": "d2390104-6d12-45e9-8de5-c75e13312f59",
+          "top_source_degree": 1,
+          "top_target_uuid": "b1cddfc3-f078-40a1-8bda-007907c5fea5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002952465308532625,
+          "top_source_uuid": "85621e60-5069-4266-8bfa-46c51af2cbf8",
+          "top_source_degree": 1,
+          "top_target_uuid": "5abc8c93-74bd-47f4-a0dc-eb2606b4ddb9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002952465308532625,
+          "top_source_uuid": "c06e519b-71dc-4119-8f1f-789d6be7a088",
+          "top_source_degree": 1,
+          "top_target_uuid": "38262d5f-0568-4981-bea5-79810074ef01",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002952465308532625,
+          "top_source_uuid": "6c7428a8-29cd-40dd-8002-480452de6260",
+          "top_source_degree": 1,
+          "top_target_uuid": "9a90c2e1-0d19-4a82-9776-15661d27c72d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002952465308532625,
+          "top_source_uuid": "70ee137f-67fc-41a9-8ab6-f3783cb1a750",
+          "top_source_degree": 1,
+          "top_target_uuid": "e3030512-c82a-45da-8db9-f09b20951b81",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002952465308532625,
+          "top_source_uuid": "a41a6d4c-6907-46e2-981b-4e3668c7954f",
+          "top_source_degree": 1,
+          "top_target_uuid": "a33fbf35-4d50-4c00-aa1b-2676e2e918a7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002952465308532625,
+          "top_source_uuid": "458e8092-9e9c-4f7d-985f-09107ceb4a6b",
+          "top_source_degree": 1,
+          "top_target_uuid": "4f43b95c-14fd-45b1-97ec-328d594d6ac9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002952465308532625,
+          "top_source_uuid": "e0d5b74d-3f1d-4fd9-a36b-fc5556d28a8f",
+          "top_source_degree": 1,
+          "top_target_uuid": "ca1f8deb-fbc5-4e6f-b445-3b7a7ba13717",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 282,
+        "total_islands": 282,
+        "singleton_islands": 282,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 6492,
+        "total_islands": 5908,
+        "singleton_islands": 5865,
+        "multi_islands": [
+          {
+            "size": 67,
+            "fraction": 0.010320394331484904,
+            "size_total": 68,
+            "top_uuid": "aff20674-b120-4f6a-bb5f-55c91776aeee",
+            "top_degree": 1
+          },
+          {
+            "size": 67,
+            "fraction": 0.010320394331484904,
+            "size_total": 68,
+            "top_uuid": "29997e9c-ed7c-46ef-b2d1-c7006e55bab2",
+            "top_degree": 1
+          },
+          {
+            "size": 29,
+            "fraction": 0.004467036352433764,
+            "size_total": 30,
+            "top_uuid": "d3d1aaaa-8f3b-4047-a25c-3bed5b2c252a",
+            "top_degree": 1
+          },
+          {
+            "size": 29,
+            "fraction": 0.004467036352433764,
+            "size_total": 30,
+            "top_uuid": "c0906ae0-47aa-444d-aa37-ac43b28cff70",
+            "top_degree": 1
+          },
+          {
+            "size": 27,
+            "fraction": 0.004158964879852125,
+            "size_total": 28,
+            "top_uuid": "0e2d272c-a5e4-48c5-a9d0-337aaf6db18e",
+            "top_degree": 1
+          },
+          {
+            "size": 27,
+            "fraction": 0.004158964879852125,
+            "size_total": 28,
+            "top_uuid": "3708c2d9-0ffa-4a20-a31b-f2fc4c3af54a",
+            "top_degree": 1
+          },
+          {
+            "size": 26,
+            "fraction": 0.004004929143561306,
+            "size_total": 27,
+            "top_uuid": "9d5fdc3c-0b86-44bb-8341-de14e1c6dc05",
+            "top_degree": 1
+          },
+          {
+            "size": 26,
+            "fraction": 0.004004929143561306,
+            "size_total": 27,
+            "top_uuid": "a28b50fc-f00f-4822-8ae2-52de05279cda",
+            "top_degree": 1
+          },
+          {
+            "size": 26,
+            "fraction": 0.004004929143561306,
+            "size_total": 27,
+            "top_uuid": "07732409-8125-4c61-a4e3-f28a3cccc82d",
+            "top_degree": 1
+          },
+          {
+            "size": 26,
+            "fraction": 0.004004929143561306,
+            "size_total": 27,
+            "top_uuid": "227ddd68-0e99-4ec1-8c28-2f915562279d",
+            "top_degree": 1
+          },
+          {
+            "size": 26,
+            "fraction": 0.004004929143561306,
+            "size_total": 27,
+            "top_uuid": "5b62c3af-7c3f-4f82-b966-c0f3312d508e",
+            "top_degree": 1
+          },
+          {
+            "size": 26,
+            "fraction": 0.004004929143561306,
+            "size_total": 27,
+            "top_uuid": "929a35fd-017b-4250-8dfd-0133f3baf14f",
+            "top_degree": 1
+          },
+          {
+            "size": 23,
+            "fraction": 0.003542821934688848,
+            "size_total": 24,
+            "top_uuid": "bcfb998a-df9d-4978-bf42-f65a824814e4",
+            "top_degree": 1
+          },
+          {
+            "size": 20,
+            "fraction": 0.0030807147258163892,
+            "size_total": 21,
+            "top_uuid": "c89ef01e-55cf-4af3-9c0a-95b70922560c",
+            "top_degree": 1
+          },
+          {
+            "size": 16,
+            "fraction": 0.0024645717806531116,
+            "size_total": 17,
+            "top_uuid": "cfe0b8bc-0f78-4ad2-a55f-89efb0638618",
+            "top_degree": 1
+          },
+          {
+            "size": 15,
+            "fraction": 0.0023105360443622922,
+            "size_total": 16,
+            "top_uuid": "93d0b6ab-33ec-43c8-af67-72f7e54d1d88",
+            "top_degree": 1
+          },
+          {
+            "size": 13,
+            "fraction": 0.002002464571780653,
+            "size_total": 14,
+            "top_uuid": "c6b6da40-c760-4252-85d1-2e3ebf53a5fa",
+            "top_degree": 1
+          },
+          {
+            "size": 13,
+            "fraction": 0.002002464571780653,
+            "size_total": 14,
+            "top_uuid": "eced0d54-fe94-4c61-9095-3056fe2a4313",
+            "top_degree": 1
+          },
+          {
+            "size": 10,
+            "fraction": 0.0015403573629081946,
+            "size_total": 11,
+            "top_uuid": "2889acf9-5a6d-47ad-8e1a-a8ad74afbcf5",
+            "top_degree": 1
+          },
+          {
+            "size": 9,
+            "fraction": 0.0013863216266173752,
+            "size_total": 10,
+            "top_uuid": "7e719ff4-7946-4bf6-a63a-f5b1d494c51c",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.0012322858903265558,
+            "size_total": 9,
+            "top_uuid": "cc5a7fb9-5dce-48c1-bc6d-a38a69cb31ac",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.0012322858903265558,
+            "size_total": 9,
+            "top_uuid": "576b309b-68df-4521-89da-36302f0b3ddc",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.0012322858903265558,
+            "size_total": 9,
+            "top_uuid": "f4c96060-017e-4040-8cfe-479fc01583f3",
+            "top_degree": 1
+          },
+          {
+            "size": 7,
+            "fraction": 0.0010782501540357362,
+            "size_total": 8,
+            "top_uuid": "3ac0f4b3-e389-4165-bd5b-a60d137bf7f3",
+            "top_degree": 1
+          },
+          {
+            "size": 7,
+            "fraction": 0.0010782501540357362,
+            "size_total": 8,
+            "top_uuid": "07700f40-8878-4401-be93-bdd1aa5c3e72",
+            "top_degree": 1
+          },
+          {
+            "size": 7,
+            "fraction": 0.0010782501540357362,
+            "size_total": 8,
+            "top_uuid": "134485ad-7a64-4428-9e1e-f597398a481b",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.0009242144177449168,
+            "size_total": 7,
+            "top_uuid": "6384ac03-d8f4-4044-b3df-8663447ecb6a",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.0009242144177449168,
+            "size_total": 7,
+            "top_uuid": "36edf6f7-deb9-4885-9c71-001af2abffbe",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.0009242144177449168,
+            "size_total": 7,
+            "top_uuid": "4b91b440-8073-4bb4-9c3e-b074b8becf1c",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0006161429451632779,
+            "size_total": 5,
+            "top_uuid": "dc97ae13-d837-4dcc-a405-2c007e35bf50",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0006161429451632779,
+            "size_total": 5,
+            "top_uuid": "aeb8bdd5-b844-44e4-b44d-439d5730a5e3",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0006161429451632779,
+            "size_total": 5,
+            "top_uuid": "0c6e8e4c-dbea-4b3f-b1e8-046172e5099b",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0006161429451632779,
+            "size_total": 5,
+            "top_uuid": "910395a3-7cd4-4e64-bae1-211454fa7746",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0004621072088724584,
+            "size_total": 4,
+            "top_uuid": "eedf3b09-0aa5-4668-8817-59e4e011d40c",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0004621072088724584,
+            "size_total": 4,
+            "top_uuid": "fa508f4d-d8b0-4aa8-8a0f-fc3eab3f7b88",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0004621072088724584,
+            "size_total": 4,
+            "top_uuid": "ae3224ba-5edc-4c9b-bd7b-ff6304781131",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0004621072088724584,
+            "size_total": 4,
+            "top_uuid": "29691913-feec-42ac-9620-cd9fc83f2415",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0004621072088724584,
+            "size_total": 4,
+            "top_uuid": "43f140c7-72ca-415f-9214-c89f99f3707e",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0004621072088724584,
+            "size_total": 4,
+            "top_uuid": "7473efbe-fb9a-4b85-9141-ae000822310e",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0004621072088724584,
+            "size_total": 4,
+            "top_uuid": "d34cbb0d-c811-4268-9679-65e2eda793f3",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.00030807147258163895,
+            "size_total": 3,
+            "top_uuid": "7e9bf8eb-6983-4773-ae28-28df7b0a66f3",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.00030807147258163895,
+            "size_total": 3,
+            "top_uuid": "2cc9ff13-74e1-4433-bc30-96fb595fd37e",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.00030807147258163895,
+            "size_total": 3,
+            "top_uuid": "b66ef470-669e-4ddc-86c8-15d4391e67b5",
+            "top_degree": 1
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

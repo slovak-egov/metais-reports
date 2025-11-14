@@ -1,0 +1,110 @@
+{
+  "relation_name": "Migracia_migruje_MigSluzba",
+  "name": "Migrácia migruje zvolenú cloudovú službu",
+  "description": "Identifikuje  služby určené pre migráciu. Obsahuje zoznam zvolených služieb z katalógu služieb, s vybranými parametrami a úrovňami poskytovania. Je odkazovaná zo zoznamu migrovaných prostriedkov. A taktiež tvorí prílohu zmluvy s poskytovateľom služieb.",
+  "engDescription": "It identifies services designated for migration. It includes list of selected services from service catalogue with selected parameters and levels of providing. It is referenced from list of migrated resources. And it also forms attachment of Contract with service provider.",
+  "type": "application",
+  "source_type": "Migracia",
+  "source_name": "Migrácia",
+  "target_type": "MigSluzba",
+  "target_name": "Zvolené cloudové služby",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 1,
+    "unique_pairs": 1,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 3,
+    "target_total": 1,
+    "source_connected": 1,
+    "target_connected": 1,
+    "cardinality": "one-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "d026755b-0c6c-4de0-83d9-227faa63abd9",
+        "degree": 1,
+        "name": "Migrácia ISVS Ministerstva životného prostredia SR do IaaS",
+        "code": "migracia_15"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "9a4e5cf8-a074-4273-b3e0-3778ef64e556",
+        "degree": 1,
+        "name": "IaaS služby Vládneho cloudu zvolené pre projekt migrácie vybraných IS rezortu MŽP SR",
+        "code": "mig_sluzba_12"
+      }
+    ],
+    "islands": {
+      "total_nodes": 4,
+      "total_islands": 3,
+      "singleton_islands": 2,
+      "multi_islands": [
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.5,
+          "top_source_uuid": "d026755b-0c6c-4de0-83d9-227faa63abd9",
+          "top_source_degree": 1,
+          "top_target_uuid": "9a4e5cf8-a074-4273-b3e0-3778ef64e556",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 3,
+        "total_islands": 3,
+        "singleton_islands": 3,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 1,
+        "total_islands": 1,
+        "singleton_islands": 1,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

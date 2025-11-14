@@ -1,0 +1,1867 @@
+{
+  "relation_name": "Individuum_je_typu_DatovyPrvok",
+  "name": "Individuum je typu dátový prvok",
+  "description": "Výber vytvorenej triedy (dátový prvok)",
+  "engDescription": "Selection of established class (data element)",
+  "type": "application",
+  "source_type": "Individuum",
+  "source_name": "Individuum",
+  "target_type": "DatovyPrvok",
+  "target_name": "Dátový prvok",
+  "sourceCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 84,
+    "unique_pairs": 84,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 88,
+    "target_total": 617,
+    "source_connected": 84,
+    "target_connected": 77,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 3,
+      "avg": 1.0909090909090908,
+      "median": 1,
+      "p90": 1,
+      "p99": 2
+    },
+    "top_source": [
+      {
+        "uuid": "e223e5b6-e4ae-456f-8544-278c3cb1e9a0",
+        "degree": 1,
+        "name": "URI konkrétnej infraštruktúrnej služby",
+        "code": "individuum_42"
+      },
+      {
+        "uuid": "0d5720fd-7608-4be9-b881-619921a96fac",
+        "degree": 1,
+        "name": "URI konkrétnej infraštruktúrnej služby",
+        "code": "individuum_17"
+      },
+      {
+        "uuid": "e3e91fc7-50dd-4532-ae9e-c89d3820e5b6",
+        "degree": 1,
+        "name": "URI konkrétneho cieľa EGOV pre Prioritnú os 7",
+        "code": "individuum_19"
+      },
+      {
+        "uuid": "49e8c922-4acd-41ac-a3e5-e0b082b07990",
+        "degree": 1,
+        "name": "URI konkrétneho koncového bodu aplikačnej služby",
+        "code": "individuum_16"
+      },
+      {
+        "uuid": "e03ff2f4-8259-4cb9-aa08-9ed276311df0",
+        "degree": 1,
+        "name": "URI konkrétnej URI žiadosti pre dataset",
+        "code": "individuum_96"
+      },
+      {
+        "uuid": "695ab270-bad8-4e29-959d-d0d2809e6acc",
+        "degree": 1,
+        "name": "URI konkrétnej úspory migrácie",
+        "code": "individuum_78"
+      },
+      {
+        "uuid": "9ec92ed6-84ef-4b53-9cc1-d75fda4a622e",
+        "degree": 1,
+        "name": "URI konkrétnej URI žiadosti pre ontológiu",
+        "code": "individuum_95"
+      },
+      {
+        "uuid": "a776b361-2faf-44a9-9b50-4a3e6a42ce48",
+        "degree": 1,
+        "name": "URI konkrétneho výpočtového zdroja",
+        "code": "individuum_80"
+      },
+      {
+        "uuid": "ebb51134-6f2c-4d9d-b03f-b5570f5f4610",
+        "degree": 1,
+        "name": "URI konkrétnej fyzickej osoby podľa anonymného id (pre medzisystémovú komunikáciu)",
+        "code": "individuum_178"
+      },
+      {
+        "uuid": "701189b3-5cab-4732-b2f4-2e6761f68376",
+        "degree": 1,
+        "name": "URI konkrétneho elektronického formulára",
+        "code": "individuum_6"
+      },
+      {
+        "uuid": "4e2d0050-cd40-4534-8871-3575693b19e1",
+        "degree": 1,
+        "name": "Konkrétny elektronický formulár na stiahnutie",
+        "code": "individuum_166"
+      },
+      {
+        "uuid": "9482e69c-8580-4f4a-8484-df9804317d8c",
+        "degree": 1,
+        "name": "Identifikátor konkrétneho elektronického formulára",
+        "code": "individuum_167"
+      },
+      {
+        "uuid": "7a541135-3759-4318-be72-b92c42b2bef5",
+        "degree": 1,
+        "name": "URI konkrétnej oblasti hodnotenia",
+        "code": "individuum_59"
+      },
+      {
+        "uuid": "30312acb-aec9-4ae8-b0ee-82751d66fbce",
+        "degree": 1,
+        "name": "URI konkrétneho princípu EGOV",
+        "code": "individuum_20"
+      },
+      {
+        "uuid": "ba58f385-e575-492e-9fc0-be58cf91eb1e",
+        "degree": 1,
+        "name": "URI konkrétnej žiadosti licencie fragment",
+        "code": "individuum_85"
+      },
+      {
+        "uuid": "5484c15b-9b73-443c-955d-14529e4333f6",
+        "degree": 1,
+        "name": "URI konkrétnej SLA pre IKT",
+        "code": "individuum_88"
+      },
+      {
+        "uuid": "d1df4726-1c4f-4d16-a14f-e5d4d1af7c77",
+        "degree": 1,
+        "name": "URI konkrétnej licencie IKT",
+        "code": "individuum_53"
+      },
+      {
+        "uuid": "cbe4a383-4b03-427f-b1aa-bb6251346c47",
+        "degree": 1,
+        "name": "URI konkrétneho ikt rizika",
+        "code": "individuum_68"
+      },
+      {
+        "uuid": "c2b22d73-52ab-4058-94d3-9201d79eb093",
+        "degree": 1,
+        "name": "URI konkrétnej regionálnej štatistickej jednotky (kraj)",
+        "code": "individuum_127"
+      },
+      {
+        "uuid": "09c2ba8d-4c63-4ff3-bf77-e360d97f97b3",
+        "degree": 1,
+        "name": "URI konkrétneho egov kanála",
+        "code": "individuum_47"
+      },
+      {
+        "uuid": "a7347fbd-c48e-4160-b479-643fa7dc78ef",
+        "degree": 1,
+        "name": "Identifikačné číslo právneho subjektu",
+        "code": "individuum_115"
+      },
+      {
+        "uuid": "ee3489ea-2de6-4d78-a5e7-0e16de2961a4",
+        "degree": 1,
+        "name": "URI konkrétneho prínosu migrácie",
+        "code": "individuum_65"
+      },
+      {
+        "uuid": "a9fe95e5-5cf7-417d-9d02-93414d8eb095",
+        "degree": 1,
+        "name": "URI konkrétneho cieľa EGOV",
+        "code": "individuum_18"
+      },
+      {
+        "uuid": "430a38f6-8a3a-4560-9a1a-15141eece850",
+        "degree": 1,
+        "name": "URI konkrétnej infraštruktúry (IKT)",
+        "code": "individuum_94"
+      },
+      {
+        "uuid": "54562cdb-fbd3-46a0-9f53-fb6d050ee1f1",
+        "degree": 1,
+        "name": "URI konkrétneho úseku verejnej správy",
+        "code": "individuum_13"
+      },
+      {
+        "uuid": "e27daf03-0ad0-4b35-a1e2-59b0fdf13819",
+        "degree": 1,
+        "name": "URI konkrétnej lokálnej štatistickej jednotky (okres)",
+        "code": "individuum_128"
+      },
+      {
+        "uuid": "f0a63413-760c-40d3-9834-b928b4bff7a7",
+        "degree": 1,
+        "name": "URI konkrétnej lokálnej štatistickej jednotky úrovne 1 (okres)",
+        "code": "individuum_131"
+      },
+      {
+        "uuid": "00abc490-9dc2-469e-ab27-272993c64463",
+        "degree": 1,
+        "name": "URI konkrétneho protokolu KRISu",
+        "code": "individuum_22"
+      },
+      {
+        "uuid": "88b75ff4-edc1-4859-a881-4f0fe7a2327e",
+        "degree": 1,
+        "name": "Medzisystémový identifikátor fyzickej osoby v Registri fyzických osôb",
+        "code": "individuum_204"
+      },
+      {
+        "uuid": "8bdb2ea5-5f6a-4747-ad7f-3588c071bd17",
+        "degree": 1,
+        "name": "URI Medzisystémový identifikátor fyzickej osoby v Registri fyzických osôb",
+        "code": "individuum_205"
+      },
+      {
+        "uuid": "d882f0ba-36e1-4cbb-b33b-b26da1ff9ef4",
+        "degree": 1,
+        "name": "URI konkrétnej požiadavky na súčinnosť",
+        "code": "individuum_64"
+      },
+      {
+        "uuid": "da7afbbd-1349-47b5-8c33-a76814fc1324",
+        "degree": 1,
+        "name": "URI konkrétnej nákladovej položky IKT",
+        "code": "individuum_73"
+      },
+      {
+        "uuid": "c4da0db8-f86b-4fb5-b9d0-cdde8c7e139e",
+        "degree": 1,
+        "name": "URI konkrétneho KRISu",
+        "code": "individuum_21"
+      },
+      {
+        "uuid": "dc0f368c-d249-4ff3-a590-e489a9b7cdbb",
+        "degree": 1,
+        "name": "URI konkrétnej žiadosti licencie",
+        "code": "individuum_86"
+      },
+      {
+        "uuid": "8adc6ed1-b047-4fd1-a765-b325020a7da8",
+        "degree": 1,
+        "name": "URI definície fázy životného cyklu egov projektu",
+        "code": "individuum_39"
+      },
+      {
+        "uuid": "c65ddc39-fe49-4de5-82a3-7722d01ea2e3",
+        "degree": 1,
+        "name": "URI konkrétneho egov procesu",
+        "code": "individuum_66"
+      },
+      {
+        "uuid": "58128636-57ff-4407-8cf2-abc5a2fd90f7",
+        "degree": 1,
+        "name": "URI konkrétnej platformy",
+        "code": "individuum_62"
+      },
+      {
+        "uuid": "481ab34e-0031-4fac-8fa1-b9033fb81028",
+        "degree": 1,
+        "name": "URI konkrétneho úložiska",
+        "code": "individuum_76"
+      },
+      {
+        "uuid": "e2469d52-69c4-4c4a-a710-11f9afdb207b",
+        "degree": 1,
+        "name": "URI konkrétneho systémového sofvéru",
+        "code": "individuum_70"
+      },
+      {
+        "uuid": "9245ec39-b0c0-4730-9847-4e5ece20cb05",
+        "degree": 1,
+        "name": "URI konkrétnej migrovanej služby",
+        "code": "individuum_56"
+      },
+      {
+        "uuid": "1ffa19f8-baba-4f87-9461-93690c3d3d53",
+        "degree": 1,
+        "name": "URI konkrétnej agendy",
+        "code": "individuum_11"
+      },
+      {
+        "uuid": "3afe3b0f-06d8-4c36-803d-276e73eef14f",
+        "degree": 1,
+        "name": "URI konkrétneho egov kontraktu",
+        "code": "individuum_48"
+      },
+      {
+        "uuid": "d5d6f956-c875-4ec9-be48-0c35415c322c",
+        "degree": 1,
+        "name": "URI konkrétneho egov kontraktu",
+        "code": "individuum_123"
+      },
+      {
+        "uuid": "80f505c5-1bf1-4370-936c-341ab266a526",
+        "degree": 1,
+        "name": "URI konkrétneho projektu EGOV",
+        "code": "individuum_25"
+      },
+      {
+        "uuid": "e5677bc3-343e-4950-84c6-9a85721c6324",
+        "degree": 1,
+        "name": "URI konkrétnej fyzickej osoby podľa RČ",
+        "code": "individuum_177"
+      },
+      {
+        "uuid": "cb6a99dd-4f2d-43bb-93f3-dfa1e8352263",
+        "degree": 1,
+        "name": "URI konkrétnej operácie aplikačnej služby",
+        "code": "individuum_15"
+      },
+      {
+        "uuid": "38709e68-59bf-49ba-9faf-3586410a48e2",
+        "degree": 1,
+        "name": "URI konkrétnej koncovej služby",
+        "code": "individuum_8"
+      },
+      {
+        "uuid": "51f4d58d-5b7c-43f6-b587-c9e15d615932",
+        "degree": 1,
+        "name": "URI konkrétneho plánu kontrolu IKT",
+        "code": "individuum_84"
+      },
+      {
+        "uuid": "95873e13-2879-4d90-be31-cf7b2d9d9b01",
+        "degree": 1,
+        "name": "URI konkrétnej štúdie uskutočniteľnosti",
+        "code": "individuum_23"
+      },
+      {
+        "uuid": "58bea852-17a1-4ac5-91b3-ca15a5619b08",
+        "degree": 1,
+        "name": "Identifikátor adresy",
+        "code": "individuum_147"
+      },
+      {
+        "uuid": "6c588baf-4062-48ba-8f00-9687105a5c20",
+        "degree": 1,
+        "name": "URI konkrétneho sieťového prvku",
+        "code": "individuum_69"
+      },
+      {
+        "uuid": "8a193fcd-33ad-45dc-a130-04d01fa0ccba",
+        "degree": 1,
+        "name": "URI konkrétneho harmonogramu migrácie",
+        "code": "individuum_41"
+      },
+      {
+        "uuid": "a6d1a94f-e324-45ac-9793-21637c940da4",
+        "degree": 1,
+        "name": "URI konkrétnej špeciálnej technológie",
+        "code": "individuum_71"
+      },
+      {
+        "uuid": "8fc0f8b5-f996-40cc-a936-aa3c4a7d230b",
+        "degree": 1,
+        "name": "URI konkrétnej aplikačnej služby",
+        "code": "individuum_10"
+      },
+      {
+        "uuid": "22fe6376-b07c-453e-ad41-b77fb483f1fe",
+        "degree": 1,
+        "name": "URI konkrétneho ISVS",
+        "code": "individuum_7"
+      },
+      {
+        "uuid": "41d55306-0fad-4502-8b6b-66e98a93b90e",
+        "degree": 1,
+        "name": "URI konkrétnej ISVS",
+        "code": "individuum_219"
+      },
+      {
+        "uuid": "fad4f34d-9c8f-40f0-9055-9381bae5c0d4",
+        "degree": 1,
+        "name": "URI konkrétneho operačného programu",
+        "code": "individuum_24"
+      },
+      {
+        "uuid": "2eb04777-50e5-4026-900c-159be12a1206",
+        "degree": 1,
+        "name": "URI konkrétneho produktu vendora",
+        "code": "individuum_67"
+      },
+      {
+        "uuid": "e9bbc0c3-9589-4265-9b8d-b1bd8f48e881",
+        "degree": 1,
+        "name": "URI konkrétneho migrovaného parametra služby",
+        "code": "individuum_57"
+      },
+      {
+        "uuid": "787164c4-d41b-4812-a59c-0f89c6f9f49c",
+        "degree": 1,
+        "name": "URI konkrétnej právnej formy",
+        "code": "individuum_5"
+      },
+      {
+        "uuid": "42041c5a-fb7f-4eae-959f-9a97ce69f5e1",
+        "degree": 1,
+        "name": "URI konkrétneho druhu stavby",
+        "code": "individuum_3"
+      },
+      {
+        "uuid": "995df585-f33f-484f-98fd-580c39baac86",
+        "degree": 1,
+        "name": "URI konkrétnej migrovanej SLA",
+        "code": "individuum_55"
+      },
+      {
+        "uuid": "8c23d6fb-965e-4b4b-9f69-c7024e7a0731",
+        "degree": 1,
+        "name": "URI konkrétneho dotazníka spokojnosti",
+        "code": "individuum_35"
+      },
+      {
+        "uuid": "209ce9e7-ced7-4844-9b8f-39ab4172e24f",
+        "degree": 1,
+        "name": "URI konkrétnej aktivity harmonogramu migrácie",
+        "code": "individuum_33"
+      },
+      {
+        "uuid": "469adb53-88bc-4121-94ba-44e2862e90bf",
+        "degree": 1,
+        "name": "URI konkrétneho integračného míľnika",
+        "code": "individuum_45"
+      },
+      {
+        "uuid": "b583b9f7-8b9b-4028-ad72-99c3d4e3917a",
+        "degree": 1,
+        "name": "URI konkrétneho vendora licencie",
+        "code": "individuum_91"
+      },
+      {
+        "uuid": "fc60739b-4fca-4230-a9c8-b96503fce726",
+        "degree": 1,
+        "name": "URI konkrétnej URI žiadosti pre katalóg",
+        "code": "individuum_97"
+      },
+      {
+        "uuid": "e6352d55-27d8-475f-9a52-5acb6a7262c3",
+        "degree": 1,
+        "name": "URI konkrétneho zálohovacieho zariadenia",
+        "code": "individuum_81"
+      },
+      {
+        "uuid": "fa7c2259-a0b7-49ac-980c-eb7c74242039",
+        "degree": 1,
+        "name": "URI konkrétnej databázy",
+        "code": "individuum_34"
+      },
+      {
+        "uuid": "b109c241-b2a9-45af-bbae-a619959d716f",
+        "degree": 1,
+        "name": "URI konkrétnej URI žiadosti pre šablónu",
+        "code": "individuum_93"
+      },
+      {
+        "uuid": "b3b90a5a-dfe4-4984-8ece-a26eed4bb596",
+        "degree": 1,
+        "name": "URI definície typu životnej situácie",
+        "code": "individuum_83"
+      },
+      {
+        "uuid": "e256264e-7c0f-4d7f-89e8-8cae0932a659",
+        "degree": 1,
+        "name": "URI konkrétnej migrácie",
+        "code": "individuum_54"
+      },
+      {
+        "uuid": "efecfb10-d54d-4b80-be89-d37021442a01",
+        "degree": 1,
+        "name": "URI konkrétnej licenčnej dohody pre IKT",
+        "code": "individuum_75"
+      },
+      {
+        "uuid": "608ebfef-b83b-499d-b4d0-ef428edfcb07",
+        "degree": 1,
+        "name": "Položka číselníka pre typ elektronického formulára",
+        "code": "individuum_165"
+      },
+      {
+        "uuid": "42cf5ddf-c852-49f3-9661-e46aaed2141b",
+        "degree": 1,
+        "name": "Konkrétny elektronický úradný dokument",
+        "code": "individuum_164"
+      },
+      {
+        "uuid": "aa74aa27-0406-4a33-8d89-a8dad32d184a",
+        "degree": 1,
+        "name": "URI definície fázy projektu",
+        "code": "individuum_36"
+      },
+      {
+        "uuid": "e297fd42-891c-463a-a872-3795eb16d657",
+        "degree": 1,
+        "name": "URI konkrétnej URI žiadosti pre dátový prvok",
+        "code": "individuum_92"
+      },
+      {
+        "uuid": "816ac616-aaab-4a9a-8eb5-fd8dc3a211ae",
+        "degree": 1,
+        "name": "URI konkrétneho parametra kontraktu",
+        "code": "individuum_60"
+      },
+      {
+        "uuid": "16a16bf5-34a4-4ae2-a2a5-63ee063f5d6a",
+        "degree": 1,
+        "name": "URI konkrétnej monitorovanej hodnoty",
+        "code": "individuum_58"
+      },
+      {
+        "uuid": "b304011f-8493-4d80-8c90-106bb564279d",
+        "degree": 1,
+        "name": "URI definície typu okruhu životnej situácie",
+        "code": "individuum_124"
+      },
+      {
+        "uuid": "12078245-1658-4f02-a1d7-6f1aef720e31",
+        "degree": 1,
+        "name": "URI konkrétnej integrácie",
+        "code": "individuum_44"
+      },
+      {
+        "uuid": "801be3ff-3369-4cb3-bccf-cc7b736234e8",
+        "degree": 1,
+        "name": "Šablóna doložky",
+        "code": "individuum_174"
+      },
+      {
+        "uuid": "e2cb8abf-e243-4495-8133-3f331e9f2f45",
+        "degree": 1,
+        "name": "URI konkrétnej doložky",
+        "code": "individuum_175"
+      },
+      {
+        "uuid": "e0f79d9b-7775-466c-b2cf-78d496b61751",
+        "degree": 1,
+        "name": "URI konkrétneho parametra služby",
+        "code": "individuum_61"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "208bd164-ef19-4005-bfd0-8505fc4f99f8",
+        "degree": 3,
+        "name": "Elektronický formulár",
+        "code": "datovy_prvok_30"
+      },
+      {
+        "uuid": "3e37f8a6-fdb0-49f6-9a00-8abc2b4acee9",
+        "degree": 2,
+        "name": "Okres",
+        "code": "datovy_prvok_25"
+      },
+      {
+        "uuid": "48f6c41a-e218-4558-8fad-93850f45e4bf",
+        "degree": 2,
+        "name": "Fyzická osoba",
+        "code": "datovy_prvok_567"
+      },
+      {
+        "uuid": "70af6b11-5ad2-4f93-afcf-698b9879ac05",
+        "degree": 2,
+        "name": "Kontrakt",
+        "code": "datovy_prvok_133"
+      },
+      {
+        "uuid": "a2cf7aec-b917-4e20-9876-23b66078d20e",
+        "degree": 2,
+        "name": "Informačný systém verejnej správy",
+        "code": "datovy_prvok_31"
+      },
+      {
+        "uuid": "f4959b9b-5f5e-4156-8b89-7cc9a25801ce",
+        "degree": 2,
+        "name": "Doložka",
+        "code": "datovy_prvok_841"
+      },
+      {
+        "uuid": "055e3486-1024-4ccb-93f7-5529b394ef85",
+        "degree": 1,
+        "name": "Infraštruktúrna služba",
+        "code": "datovy_prvok_126"
+      },
+      {
+        "uuid": "06da91c4-f0b7-4809-8035-9464b1051138",
+        "degree": 1,
+        "name": "Infraštruktúrna služba",
+        "code": "datovy_prvok_42"
+      },
+      {
+        "uuid": "0701fcb4-d904-417c-98ce-d3124d0912b2",
+        "degree": 1,
+        "name": "Cieľ EGOV pre Prioritnú os 7",
+        "code": "datovy_prvok_44"
+      },
+      {
+        "uuid": "08e6f9c2-745e-4eeb-a46e-d80f23b412b0",
+        "degree": 1,
+        "name": "Koncový bod",
+        "code": "datovy_prvok_41"
+      },
+      {
+        "uuid": "0d8b94df-d2ee-45d6-b84d-15f01eee641c",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI pre dataset",
+        "code": "datovy_prvok_195"
+      },
+      {
+        "uuid": "1a68299e-bb33-4c82-87fb-f22a23744b57",
+        "degree": 1,
+        "name": "Úspora migrácie",
+        "code": "datovy_prvok_170"
+      },
+      {
+        "uuid": "1ac3db80-0ea8-420d-ab63-513984e84395",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI pre ontológiu",
+        "code": "datovy_prvok_194"
+      },
+      {
+        "uuid": "1da83d8b-b95a-4661-81fa-dae73ca454e0",
+        "degree": 1,
+        "name": "Výpočtový zdroj",
+        "code": "datovy_prvok_172"
+      },
+      {
+        "uuid": "207cbf5b-b512-4cf1-8659-4a68dd9c15a9",
+        "degree": 1,
+        "name": "Identifikátor",
+        "code": "datovy_prvok_249"
+      },
+      {
+        "uuid": "221817fd-e10c-4fcc-a595-ef031181cc34",
+        "degree": 1,
+        "name": "Oblasť hodnotenia",
+        "code": "datovy_prvok_145"
+      },
+      {
+        "uuid": "2b9373dc-ec1e-4ad2-9f59-ffb50e5a91b5",
+        "degree": 1,
+        "name": "EGOV Princíp",
+        "code": "datovy_prvok_46"
+      },
+      {
+        "uuid": "2c1712d9-b733-446d-993f-a48e27c286a9",
+        "degree": 1,
+        "name": "Žiadost o licenciu fragment",
+        "code": "datovy_prvok_180"
+      },
+      {
+        "uuid": "317c54dc-96bf-42fe-80c3-f000b612e2fa",
+        "degree": 1,
+        "name": "Dohoda o úrovni poskytovaných služieb (OLA)",
+        "code": "datovy_prvok_182"
+      },
+      {
+        "uuid": "32907a37-cfc5-4a1d-b60b-c6e36892695e",
+        "degree": 1,
+        "name": "Licencia",
+        "code": "datovy_prvok_138"
+      },
+      {
+        "uuid": "36762125-da79-401e-8b2a-bec13cb407b6",
+        "degree": 1,
+        "name": "Riziko (IKT)",
+        "code": "datovy_prvok_158"
+      },
+      {
+        "uuid": "37c95040-4362-43d1-9e31-d26693354e27",
+        "degree": 1,
+        "name": "Regionálna štatistická územná jednotka 3",
+        "code": "datovy_prvok_754"
+      },
+      {
+        "uuid": "38fd273c-e06a-44ee-9b2b-a22728d02224",
+        "degree": 1,
+        "name": "Kanál",
+        "code": "datovy_prvok_132"
+      },
+      {
+        "uuid": "3945862b-c12c-4fa7-831a-812edef93fa8",
+        "degree": 1,
+        "name": "Právny subjekt",
+        "code": "datovy_prvok_663"
+      },
+      {
+        "uuid": "3a0b7746-19f8-4933-86e7-45fcd4a5f5bc",
+        "degree": 1,
+        "name": "Prínos migrácie",
+        "code": "datovy_prvok_152"
+      },
+      {
+        "uuid": "3a9528fa-69bf-4a02-8392-8aeb63d49717",
+        "degree": 1,
+        "name": "Cieľ",
+        "code": "datovy_prvok_43"
+      },
+      {
+        "uuid": "3ac3d123-9705-4bb9-87e2-2f297602d541",
+        "degree": 1,
+        "name": "Infraštruktúra VS",
+        "code": "datovy_prvok_193"
+      },
+      {
+        "uuid": "3b2f6c56-b8e9-4684-a52e-c069527a2d5d",
+        "degree": 1,
+        "name": "Úsek verejnej správy",
+        "code": "datovy_prvok_37"
+      },
+      {
+        "uuid": "4827570e-c913-48ba-adf9-dc6f0438027b",
+        "degree": 1,
+        "name": "KRIS Protokol",
+        "code": "datovy_prvok_48"
+      },
+      {
+        "uuid": "4bae075d-a896-4932-8e42-ae8085dab527",
+        "degree": 1,
+        "name": "Požiadavka na súčinnosť",
+        "code": "datovy_prvok_150"
+      },
+      {
+        "uuid": "4dd7a5cf-eece-4c56-895d-586ffbe94ace",
+        "degree": 1,
+        "name": "Nákladová položka (TCO)",
+        "code": "datovy_prvok_164"
+      },
+      {
+        "uuid": "4fb85654-c26b-4ae1-bd24-68a5f53dda90",
+        "degree": 1,
+        "name": "Koncepcia rozvoja ISVS",
+        "code": "datovy_prvok_47"
+      },
+      {
+        "uuid": "55b495c4-15d5-4a7a-92da-3203dcd57f87",
+        "degree": 1,
+        "name": "Žiadost o licenciu",
+        "code": "datovy_prvok_181"
+      },
+      {
+        "uuid": "5c0fd6e8-8aed-4c3a-b6df-7f80925b906b",
+        "degree": 1,
+        "name": "Fáza životného cyklu",
+        "code": "datovy_prvok_122"
+      },
+      {
+        "uuid": "5c71d632-7742-4040-90cf-d6ccefe61644",
+        "degree": 1,
+        "name": "Proces (EGOV)",
+        "code": "datovy_prvok_154"
+      },
+      {
+        "uuid": "5d784382-37cd-4bec-aa69-132e79841533",
+        "degree": 1,
+        "name": "Platforma",
+        "code": "datovy_prvok_148"
+      },
+      {
+        "uuid": "61e59e3b-c1cc-4fd9-ab0c-86ec05b4b01f",
+        "degree": 1,
+        "name": "Úložisko",
+        "code": "datovy_prvok_167"
+      },
+      {
+        "uuid": "62892cc3-c72c-475c-b7f8-e8b4502721f6",
+        "degree": 1,
+        "name": "Systémový softvér",
+        "code": "datovy_prvok_161"
+      },
+      {
+        "uuid": "6779fec6-004e-4314-a950-dec2fe9a8f39",
+        "degree": 1,
+        "name": "Migrovaná služba",
+        "code": "datovy_prvok_142"
+      },
+      {
+        "uuid": "6c07ad6f-274e-420a-b952-09805153f12e",
+        "degree": 1,
+        "name": "Agenda",
+        "code": "datovy_prvok_34"
+      },
+      {
+        "uuid": "727a1718-2f31-4d29-9041-928ddcf9b4c5",
+        "degree": 1,
+        "name": "EGOV Projekt",
+        "code": "datovy_prvok_52"
+      },
+      {
+        "uuid": "77b7ef4a-2f83-4527-a63c-dc22ab413582",
+        "degree": 1,
+        "name": "Rodné číslo",
+        "code": "datovy_prvok_449"
+      },
+      {
+        "uuid": "7e15e3fd-7328-4caf-bb68-505020993882",
+        "degree": 1,
+        "name": "Operácia aplikačnej služby",
+        "code": "datovy_prvok_40"
+      },
+      {
+        "uuid": "887e36af-1337-4133-82ff-7db90484d94a",
+        "degree": 1,
+        "name": "Koncová služba",
+        "code": "datovy_prvok_32"
+      },
+      {
+        "uuid": "8fca3b3f-2bb5-48ba-845f-458a87dfd572",
+        "degree": 1,
+        "name": "Plán kontroly",
+        "code": "datovy_prvok_177"
+      },
+      {
+        "uuid": "909e5391-2092-4f85-8454-1f9b10315b30",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti",
+        "code": "datovy_prvok_50"
+      },
+      {
+        "uuid": "93805aa9-7fcd-420e-9aba-57e7832a71b3",
+        "degree": 1,
+        "name": "fyzická adresa",
+        "code": "datovy_prvok_763"
+      },
+      {
+        "uuid": "95f6a7db-1aca-4986-aa9d-632b22513cef",
+        "degree": 1,
+        "name": "Sieťový prvok",
+        "code": "datovy_prvok_159"
+      },
+      {
+        "uuid": "9b0bdfe1-eba7-4813-bc70-2ad8722b3b32",
+        "degree": 1,
+        "name": "Harmonogram migrácie",
+        "code": "datovy_prvok_124"
+      },
+      {
+        "uuid": "9ed971f8-d56a-4b51-be9a-32d4172b6cf1",
+        "degree": 1,
+        "name": "Špeciálna technológia",
+        "code": "datovy_prvok_162"
+      },
+      {
+        "uuid": "a2451037-c462-4dcc-8354-be5b92c711b5",
+        "degree": 1,
+        "name": "Aplikačná služba",
+        "code": "datovy_prvok_33"
+      },
+      {
+        "uuid": "a494828d-75f8-4bf8-9438-db0abeadbab3",
+        "degree": 1,
+        "name": "Operačný program",
+        "code": "datovy_prvok_51"
+      },
+      {
+        "uuid": "a4b01bf6-dbb7-4066-a07f-89bffac3cb60",
+        "degree": 1,
+        "name": "Produkt vendora",
+        "code": "datovy_prvok_155"
+      },
+      {
+        "uuid": "a5f3d6d5-cada-4d68-a07f-3669e6dcd121",
+        "degree": 1,
+        "name": "Migrovaný parameter služby",
+        "code": "datovy_prvok_143"
+      },
+      {
+        "uuid": "a992499c-6183-4742-ac3f-f0f899a217c0",
+        "degree": 1,
+        "name": "Právna forma",
+        "code": "datovy_prvok_15"
+      },
+      {
+        "uuid": "a9e1bdd4-c7c8-42fb-afd8-c332e95459a8",
+        "degree": 1,
+        "name": "Kód druhu stavby",
+        "code": "datovy_prvok_29"
+      },
+      {
+        "uuid": "ac5a1311-5c09-49ec-a951-88b6bfcb2365",
+        "degree": 1,
+        "name": "Migrovaná SLA",
+        "code": "datovy_prvok_141"
+      },
+      {
+        "uuid": "bfa9988b-4c91-4777-9ec6-4c04c1d878f9",
+        "degree": 1,
+        "name": "Dotazník spokojnosti",
+        "code": "datovy_prvok_120"
+      },
+      {
+        "uuid": "c45e2ad6-c9d8-4839-b2cf-aa989855a7b5",
+        "degree": 1,
+        "name": "Aktivita harmonogramu migrácie",
+        "code": "datovy_prvok_118"
+      },
+      {
+        "uuid": "c47f4ae5-c98b-4b90-9ae6-97915f9e527c",
+        "degree": 1,
+        "name": "Integračný míľnik",
+        "code": "datovy_prvok_131"
+      },
+      {
+        "uuid": "c69a6f24-b08b-4ace-a2d0-ce51a6f07fbc",
+        "degree": 1,
+        "name": "Vendor licencie",
+        "code": "datovy_prvok_186"
+      },
+      {
+        "uuid": "c75a85cf-b9be-4bd9-b82e-190b622814ff",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI pre katalóg",
+        "code": "datovy_prvok_196"
+      },
+      {
+        "uuid": "c9ac5d76-dbec-4112-a15c-f703c7c8c476",
+        "degree": 1,
+        "name": "Zálohovacie zariadenie",
+        "code": "datovy_prvok_173"
+      },
+      {
+        "uuid": "ca179d7f-f57a-4b17-af14-2123ba4446e6",
+        "degree": 1,
+        "name": "Báza dát",
+        "code": "datovy_prvok_119"
+      },
+      {
+        "uuid": "cb5ec20b-707c-4519-b3d2-dd51e94799a7",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI šablóny",
+        "code": "datovy_prvok_192"
+      },
+      {
+        "uuid": "d0e8eb4e-5b6f-4eef-8e2d-d0bc73bb844b",
+        "degree": 1,
+        "name": "Typ životnej situácie",
+        "code": "datovy_prvok_38"
+      },
+      {
+        "uuid": "d28b6a67-accc-4cda-826a-e726510ba59f",
+        "degree": 1,
+        "name": "Migrácia",
+        "code": "datovy_prvok_139"
+      },
+      {
+        "uuid": "d60be41f-2e37-42c2-b7e7-f0a58ef0b208",
+        "degree": 1,
+        "name": "Typ licenčnej dohody",
+        "code": "datovy_prvok_166"
+      },
+      {
+        "uuid": "e096291b-b4b8-4da1-b88a-e8e4a03e5c3e",
+        "degree": 1,
+        "name": "Typ elektronického formulára",
+        "code": "datovy_prvok_802"
+      },
+      {
+        "uuid": "e11c8006-828b-440d-94c3-9c79ea4b21a5",
+        "degree": 1,
+        "name": "Elektronický úradný dokument (rozhodnutie OVM)",
+        "code": "datovy_prvok_800"
+      },
+      {
+        "uuid": "e3f920be-bd08-4313-8436-01bbc7b29add",
+        "degree": 1,
+        "name": "Fáza projektu",
+        "code": "datovy_prvok_121"
+      },
+      {
+        "uuid": "e3f98291-f199-4c3d-9fd9-9b9eb214f1de",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI pre dátový prvok",
+        "code": "datovy_prvok_191"
+      },
+      {
+        "uuid": "e61f7703-8807-44ff-8ed9-5ef71497a84e",
+        "degree": 1,
+        "name": "Parameter kontraktu",
+        "code": "datovy_prvok_146"
+      },
+      {
+        "uuid": "eb651482-10a9-4a61-91e2-5b0575374cec",
+        "degree": 1,
+        "name": "Monitor hodnota",
+        "code": "datovy_prvok_144"
+      },
+      {
+        "uuid": "efa76872-550f-4630-aaac-0db4d1ed08ce",
+        "degree": 1,
+        "name": "Okruh životnej situácie",
+        "code": "datovy_prvok_501"
+      },
+      {
+        "uuid": "f3f1464b-633e-4cdc-b8b8-d3dd57614abf",
+        "degree": 1,
+        "name": "Integrácia",
+        "code": "datovy_prvok_128"
+      },
+      {
+        "uuid": "f7f17c17-ae7a-4693-91c0-48339c227eb0",
+        "degree": 1,
+        "name": "Parameter služby",
+        "code": "datovy_prvok_147"
+      }
+    ],
+    "islands": {
+      "total_nodes": 705,
+      "total_islands": 621,
+      "singleton_islands": 544,
+      "multi_islands": [
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005673758865248227,
+          "top_source_uuid": "4e2d0050-cd40-4534-8871-3575693b19e1",
+          "top_source_degree": 1,
+          "top_target_uuid": "208bd164-ef19-4005-bfd0-8505fc4f99f8",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.00425531914893617,
+          "top_source_uuid": "8bdb2ea5-5f6a-4747-ad7f-3588c071bd17",
+          "top_source_degree": 1,
+          "top_target_uuid": "48f6c41a-e218-4558-8fad-93850f45e4bf",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.00425531914893617,
+          "top_source_uuid": "e27daf03-0ad0-4b35-a1e2-59b0fdf13819",
+          "top_source_degree": 1,
+          "top_target_uuid": "3e37f8a6-fdb0-49f6-9a00-8abc2b4acee9",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.00425531914893617,
+          "top_source_uuid": "41d55306-0fad-4502-8b6b-66e98a93b90e",
+          "top_source_degree": 1,
+          "top_target_uuid": "a2cf7aec-b917-4e20-9876-23b66078d20e",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.00425531914893617,
+          "top_source_uuid": "d5d6f956-c875-4ec9-be48-0c35415c322c",
+          "top_source_degree": 1,
+          "top_target_uuid": "70af6b11-5ad2-4f93-afcf-698b9879ac05",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.00425531914893617,
+          "top_source_uuid": "e2cb8abf-e243-4495-8133-3f331e9f2f45",
+          "top_source_degree": 1,
+          "top_target_uuid": "f4959b9b-5f5e-4156-8b89-7cc9a25801ce",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e297fd42-891c-463a-a872-3795eb16d657",
+          "top_source_degree": 1,
+          "top_target_uuid": "e3f98291-f199-4c3d-9fd9-9b9eb214f1de",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "42041c5a-fb7f-4eae-959f-9a97ce69f5e1",
+          "top_source_degree": 1,
+          "top_target_uuid": "a9e1bdd4-c7c8-42fb-afd8-c332e95459a8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "b109c241-b2a9-45af-bbae-a619959d716f",
+          "top_source_degree": 1,
+          "top_target_uuid": "cb5ec20b-707c-4519-b3d2-dd51e94799a7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "695ab270-bad8-4e29-959d-d0d2809e6acc",
+          "top_source_degree": 1,
+          "top_target_uuid": "1a68299e-bb33-4c82-87fb-f22a23744b57",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "816ac616-aaab-4a9a-8eb5-fd8dc3a211ae",
+          "top_source_degree": 1,
+          "top_target_uuid": "e61f7703-8807-44ff-8ed9-5ef71497a84e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "efecfb10-d54d-4b80-be89-d37021442a01",
+          "top_source_degree": 1,
+          "top_target_uuid": "d60be41f-2e37-42c2-b7e7-f0a58ef0b208",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "fc60739b-4fca-4230-a9c8-b96503fce726",
+          "top_source_degree": 1,
+          "top_target_uuid": "c75a85cf-b9be-4bd9-b82e-190b622814ff",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "ebb51134-6f2c-4d9d-b03f-b5570f5f4610",
+          "top_source_degree": 1,
+          "top_target_uuid": "207cbf5b-b512-4cf1-8659-4a68dd9c15a9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "ee3489ea-2de6-4d78-a5e7-0e16de2961a4",
+          "top_source_degree": 1,
+          "top_target_uuid": "3a0b7746-19f8-4933-86e7-45fcd4a5f5bc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e6352d55-27d8-475f-9a52-5acb6a7262c3",
+          "top_source_degree": 1,
+          "top_target_uuid": "c9ac5d76-dbec-4112-a15c-f703c7c8c476",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "5484c15b-9b73-443c-955d-14529e4333f6",
+          "top_source_degree": 1,
+          "top_target_uuid": "317c54dc-96bf-42fe-80c3-f000b612e2fa",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "209ce9e7-ced7-4844-9b8f-39ab4172e24f",
+          "top_source_degree": 1,
+          "top_target_uuid": "c45e2ad6-c9d8-4839-b2cf-aa989855a7b5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "9ec92ed6-84ef-4b53-9cc1-d75fda4a622e",
+          "top_source_degree": 1,
+          "top_target_uuid": "1ac3db80-0ea8-420d-ab63-513984e84395",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "1ffa19f8-baba-4f87-9461-93690c3d3d53",
+          "top_source_degree": 1,
+          "top_target_uuid": "6c07ad6f-274e-420a-b952-09805153f12e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "c2b22d73-52ab-4058-94d3-9201d79eb093",
+          "top_source_degree": 1,
+          "top_target_uuid": "37c95040-4362-43d1-9e31-d26693354e27",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "fad4f34d-9c8f-40f0-9055-9381bae5c0d4",
+          "top_source_degree": 1,
+          "top_target_uuid": "a494828d-75f8-4bf8-9438-db0abeadbab3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "481ab34e-0031-4fac-8fa1-b9033fb81028",
+          "top_source_degree": 1,
+          "top_target_uuid": "61e59e3b-c1cc-4fd9-ab0c-86ec05b4b01f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "da7afbbd-1349-47b5-8c33-a76814fc1324",
+          "top_source_degree": 1,
+          "top_target_uuid": "4dd7a5cf-eece-4c56-895d-586ffbe94ace",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "8a193fcd-33ad-45dc-a130-04d01fa0ccba",
+          "top_source_degree": 1,
+          "top_target_uuid": "9b0bdfe1-eba7-4813-bc70-2ad8722b3b32",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "8c23d6fb-965e-4b4b-9f69-c7024e7a0731",
+          "top_source_degree": 1,
+          "top_target_uuid": "bfa9988b-4c91-4777-9ec6-4c04c1d878f9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e5677bc3-343e-4950-84c6-9a85721c6324",
+          "top_source_degree": 1,
+          "top_target_uuid": "77b7ef4a-2f83-4527-a63c-dc22ab413582",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "30312acb-aec9-4ae8-b0ee-82751d66fbce",
+          "top_source_degree": 1,
+          "top_target_uuid": "2b9373dc-ec1e-4ad2-9f59-ffb50e5a91b5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "00abc490-9dc2-469e-ab27-272993c64463",
+          "top_source_degree": 1,
+          "top_target_uuid": "4827570e-c913-48ba-adf9-dc6f0438027b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "42cf5ddf-c852-49f3-9661-e46aaed2141b",
+          "top_source_degree": 1,
+          "top_target_uuid": "e11c8006-828b-440d-94c3-9c79ea4b21a5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "cbe4a383-4b03-427f-b1aa-bb6251346c47",
+          "top_source_degree": 1,
+          "top_target_uuid": "36762125-da79-401e-8b2a-bec13cb407b6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "95873e13-2879-4d90-be31-cf7b2d9d9b01",
+          "top_source_degree": 1,
+          "top_target_uuid": "909e5391-2092-4f85-8454-1f9b10315b30",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "cb6a99dd-4f2d-43bb-93f3-dfa1e8352263",
+          "top_source_degree": 1,
+          "top_target_uuid": "7e15e3fd-7328-4caf-bb68-505020993882",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e3e91fc7-50dd-4532-ae9e-c89d3820e5b6",
+          "top_source_degree": 1,
+          "top_target_uuid": "0701fcb4-d904-417c-98ce-d3124d0912b2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "c65ddc39-fe49-4de5-82a3-7722d01ea2e3",
+          "top_source_degree": 1,
+          "top_target_uuid": "5c71d632-7742-4040-90cf-d6ccefe61644",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "8adc6ed1-b047-4fd1-a765-b325020a7da8",
+          "top_source_degree": 1,
+          "top_target_uuid": "5c0fd6e8-8aed-4c3a-b6df-7f80925b906b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "09c2ba8d-4c63-4ff3-bf77-e360d97f97b3",
+          "top_source_degree": 1,
+          "top_target_uuid": "38fd273c-e06a-44ee-9b2b-a22728d02224",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "ba58f385-e575-492e-9fc0-be58cf91eb1e",
+          "top_source_degree": 1,
+          "top_target_uuid": "2c1712d9-b733-446d-993f-a48e27c286a9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e03ff2f4-8259-4cb9-aa08-9ed276311df0",
+          "top_source_degree": 1,
+          "top_target_uuid": "0d8b94df-d2ee-45d6-b84d-15f01eee641c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "b3b90a5a-dfe4-4984-8ece-a26eed4bb596",
+          "top_source_degree": 1,
+          "top_target_uuid": "d0e8eb4e-5b6f-4eef-8e2d-d0bc73bb844b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "80f505c5-1bf1-4370-936c-341ab266a526",
+          "top_source_degree": 1,
+          "top_target_uuid": "727a1718-2f31-4d29-9041-928ddcf9b4c5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "38709e68-59bf-49ba-9faf-3586410a48e2",
+          "top_source_degree": 1,
+          "top_target_uuid": "887e36af-1337-4133-82ff-7db90484d94a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "430a38f6-8a3a-4560-9a1a-15141eece850",
+          "top_source_degree": 1,
+          "top_target_uuid": "3ac3d123-9705-4bb9-87e2-2f297602d541",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "49e8c922-4acd-41ac-a3e5-e0b082b07990",
+          "top_source_degree": 1,
+          "top_target_uuid": "08e6f9c2-745e-4eeb-a46e-d80f23b412b0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "a7347fbd-c48e-4160-b479-643fa7dc78ef",
+          "top_source_degree": 1,
+          "top_target_uuid": "3945862b-c12c-4fa7-831a-812edef93fa8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "aa74aa27-0406-4a33-8d89-a8dad32d184a",
+          "top_source_degree": 1,
+          "top_target_uuid": "e3f920be-bd08-4313-8436-01bbc7b29add",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "51f4d58d-5b7c-43f6-b587-c9e15d615932",
+          "top_source_degree": 1,
+          "top_target_uuid": "8fca3b3f-2bb5-48ba-845f-458a87dfd572",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "b583b9f7-8b9b-4028-ad72-99c3d4e3917a",
+          "top_source_degree": 1,
+          "top_target_uuid": "c69a6f24-b08b-4ace-a2d0-ce51a6f07fbc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "995df585-f33f-484f-98fd-580c39baac86",
+          "top_source_degree": 1,
+          "top_target_uuid": "ac5a1311-5c09-49ec-a951-88b6bfcb2365",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e223e5b6-e4ae-456f-8544-278c3cb1e9a0",
+          "top_source_degree": 1,
+          "top_target_uuid": "055e3486-1024-4ccb-93f7-5529b394ef85",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "8fc0f8b5-f996-40cc-a936-aa3c4a7d230b",
+          "top_source_degree": 1,
+          "top_target_uuid": "a2451037-c462-4dcc-8354-be5b92c711b5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "12078245-1658-4f02-a1d7-6f1aef720e31",
+          "top_source_degree": 1,
+          "top_target_uuid": "f3f1464b-633e-4cdc-b8b8-d3dd57614abf",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "a9fe95e5-5cf7-417d-9d02-93414d8eb095",
+          "top_source_degree": 1,
+          "top_target_uuid": "3a9528fa-69bf-4a02-8392-8aeb63d49717",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "608ebfef-b83b-499d-b4d0-ef428edfcb07",
+          "top_source_degree": 1,
+          "top_target_uuid": "e096291b-b4b8-4da1-b88a-e8e4a03e5c3e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "b304011f-8493-4d80-8c90-106bb564279d",
+          "top_source_degree": 1,
+          "top_target_uuid": "efa76872-550f-4630-aaac-0db4d1ed08ce",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "9245ec39-b0c0-4730-9847-4e5ece20cb05",
+          "top_source_degree": 1,
+          "top_target_uuid": "6779fec6-004e-4314-a950-dec2fe9a8f39",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "fa7c2259-a0b7-49ac-980c-eb7c74242039",
+          "top_source_degree": 1,
+          "top_target_uuid": "ca179d7f-f57a-4b17-af14-2123ba4446e6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "6c588baf-4062-48ba-8f00-9687105a5c20",
+          "top_source_degree": 1,
+          "top_target_uuid": "95f6a7db-1aca-4986-aa9d-632b22513cef",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "a776b361-2faf-44a9-9b50-4a3e6a42ce48",
+          "top_source_degree": 1,
+          "top_target_uuid": "1da83d8b-b95a-4661-81fa-dae73ca454e0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e256264e-7c0f-4d7f-89e8-8cae0932a659",
+          "top_source_degree": 1,
+          "top_target_uuid": "d28b6a67-accc-4cda-826a-e726510ba59f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "58bea852-17a1-4ac5-91b3-ca15a5619b08",
+          "top_source_degree": 1,
+          "top_target_uuid": "93805aa9-7fcd-420e-9aba-57e7832a71b3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "2eb04777-50e5-4026-900c-159be12a1206",
+          "top_source_degree": 1,
+          "top_target_uuid": "a4b01bf6-dbb7-4066-a07f-89bffac3cb60",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "58128636-57ff-4407-8cf2-abc5a2fd90f7",
+          "top_source_degree": 1,
+          "top_target_uuid": "5d784382-37cd-4bec-aa69-132e79841533",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "54562cdb-fbd3-46a0-9f53-fb6d050ee1f1",
+          "top_source_degree": 1,
+          "top_target_uuid": "3b2f6c56-b8e9-4684-a52e-c069527a2d5d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "0d5720fd-7608-4be9-b881-619921a96fac",
+          "top_source_degree": 1,
+          "top_target_uuid": "06da91c4-f0b7-4809-8035-9464b1051138",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "787164c4-d41b-4812-a59c-0f89c6f9f49c",
+          "top_source_degree": 1,
+          "top_target_uuid": "a992499c-6183-4742-ac3f-f0f899a217c0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "d1df4726-1c4f-4d16-a14f-e5d4d1af7c77",
+          "top_source_degree": 1,
+          "top_target_uuid": "32907a37-cfc5-4a1d-b60b-c6e36892695e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "d882f0ba-36e1-4cbb-b33b-b26da1ff9ef4",
+          "top_source_degree": 1,
+          "top_target_uuid": "4bae075d-a896-4932-8e42-ae8085dab527",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "c4da0db8-f86b-4fb5-b9d0-cdde8c7e139e",
+          "top_source_degree": 1,
+          "top_target_uuid": "4fb85654-c26b-4ae1-bd24-68a5f53dda90",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e2469d52-69c4-4c4a-a710-11f9afdb207b",
+          "top_source_degree": 1,
+          "top_target_uuid": "62892cc3-c72c-475c-b7f8-e8b4502721f6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e9bbc0c3-9589-4265-9b8d-b1bd8f48e881",
+          "top_source_degree": 1,
+          "top_target_uuid": "a5f3d6d5-cada-4d68-a07f-3669e6dcd121",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "a6d1a94f-e324-45ac-9793-21637c940da4",
+          "top_source_degree": 1,
+          "top_target_uuid": "9ed971f8-d56a-4b51-be9a-32d4172b6cf1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "dc0f368c-d249-4ff3-a590-e489a9b7cdbb",
+          "top_source_degree": 1,
+          "top_target_uuid": "55b495c4-15d5-4a7a-92da-3203dcd57f87",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "16a16bf5-34a4-4ae2-a2a5-63ee063f5d6a",
+          "top_source_degree": 1,
+          "top_target_uuid": "eb651482-10a9-4a61-91e2-5b0575374cec",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "e0f79d9b-7775-466c-b2cf-78d496b61751",
+          "top_source_degree": 1,
+          "top_target_uuid": "f7f17c17-ae7a-4693-91c0-48339c227eb0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "469adb53-88bc-4121-94ba-44e2862e90bf",
+          "top_source_degree": 1,
+          "top_target_uuid": "c47f4ae5-c98b-4b90-9ae6-97915f9e527c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0028368794326241137,
+          "top_source_uuid": "7a541135-3759-4318-be72-b92c42b2bef5",
+          "top_source_degree": 1,
+          "top_target_uuid": "221817fd-e10c-4fcc-a595-ef031181cc34",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 88,
+        "total_islands": 81,
+        "singleton_islands": 75,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.03409090909090909,
+            "size_total": 4,
+            "top_uuid": "4e2d0050-cd40-4534-8871-3575693b19e1",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.022727272727272728,
+            "size_total": 3,
+            "top_uuid": "8bdb2ea5-5f6a-4747-ad7f-3588c071bd17",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.022727272727272728,
+            "size_total": 3,
+            "top_uuid": "e27daf03-0ad0-4b35-a1e2-59b0fdf13819",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.022727272727272728,
+            "size_total": 3,
+            "top_uuid": "41d55306-0fad-4502-8b6b-66e98a93b90e",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.022727272727272728,
+            "size_total": 3,
+            "top_uuid": "d5d6f956-c875-4ec9-be48-0c35415c322c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.022727272727272728,
+            "size_total": 3,
+            "top_uuid": "e2cb8abf-e243-4495-8133-3f331e9f2f45",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 617,
+        "total_islands": 617,
+        "singleton_islands": 617,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

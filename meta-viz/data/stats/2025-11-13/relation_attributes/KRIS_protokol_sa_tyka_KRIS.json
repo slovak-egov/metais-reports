@@ -1,0 +1,5071 @@
+{
+  "relation_name": "KRIS_protokol_sa_tyka_KRIS",
+  "name": "KRIT protokol sa tyka KRITu",
+  "description": "KRIT protokol sa tyka KRITu.",
+  "engDescription": "KRIT protocol refers to KRIT.",
+  "type": "application",
+  "source_type": "KRIS_Protokol",
+  "source_name": "KRIT Protocol",
+  "target_type": "KRIS",
+  "target_name": "Koncept rozvoja IT",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 338,
+    "unique_pairs": 338,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 343,
+    "target_total": 282,
+    "source_connected": 338,
+    "target_connected": 143,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 9,
+      "avg": 2.3636363636363638,
+      "median": 2,
+      "p90": 4,
+      "p99": 6
+    },
+    "top_source": [
+      {
+        "uuid": "ef2c46c9-749f-4bd2-bdea-a965f37eeb36",
+        "degree": 1,
+        "name": "kris_p_69",
+        "code": "kris_p_69"
+      },
+      {
+        "uuid": "f66a1b14-770d-4f97-9824-aa9d3c43bd2b",
+        "degree": 1,
+        "name": "kris_p_24",
+        "code": "kris_p_24"
+      },
+      {
+        "uuid": "8348de13-eebc-4a5f-b287-471164713abb",
+        "degree": 1,
+        "name": "kris_p_14",
+        "code": "kris_p_14"
+      },
+      {
+        "uuid": "71097ae6-597c-456f-98b1-89db0f8e6717",
+        "degree": 1,
+        "name": "kris_p_3",
+        "code": "kris_p_3"
+      },
+      {
+        "uuid": "92ecd8a1-0066-470a-9200-418ee71386b7",
+        "degree": 1,
+        "name": "kris_p_296",
+        "code": "kris_p_296"
+      },
+      {
+        "uuid": "60dd99ac-2cef-4f94-b32e-185d0e808a1a",
+        "degree": 1,
+        "name": "kris_p_247",
+        "code": "kris_p_247"
+      },
+      {
+        "uuid": "fa37cce6-758f-458f-b962-09f089298e4d",
+        "degree": 1,
+        "name": "kris_p_209",
+        "code": "kris_p_209"
+      },
+      {
+        "uuid": "f9fbd146-1fd9-42ad-8fff-c805fc857de2",
+        "degree": 1,
+        "name": "kris_p_44",
+        "code": "kris_p_44"
+      },
+      {
+        "uuid": "0b692e92-74ad-4149-aa67-510a303cfb98",
+        "degree": 1,
+        "name": "kris_p_117",
+        "code": "kris_p_117"
+      },
+      {
+        "uuid": "af0beb1a-a600-4548-971d-3a3cd4cdacaa",
+        "degree": 1,
+        "name": "kris_p_104",
+        "code": "kris_p_104"
+      },
+      {
+        "uuid": "ba417dbc-82c4-4b08-ba28-0fbfd488b2dc",
+        "degree": 1,
+        "name": "kris_p_120",
+        "code": "kris_p_120"
+      },
+      {
+        "uuid": "7eee765b-1dda-4718-922f-86d21dd9fd0a",
+        "degree": 1,
+        "name": "kris_p_105",
+        "code": "kris_p_105"
+      },
+      {
+        "uuid": "e1c6a1cd-efba-4185-8c33-a325bc6c6178",
+        "degree": 1,
+        "name": "kris_p_71",
+        "code": "kris_p_71"
+      },
+      {
+        "uuid": "2e9abbf3-f4c4-4f80-931d-5e189fb2f16e",
+        "degree": 1,
+        "name": "kris_p_25",
+        "code": "kris_p_25"
+      },
+      {
+        "uuid": "99728f09-6353-4241-9620-2a352c70d125",
+        "degree": 1,
+        "name": "kris_p_113",
+        "code": "kris_p_113"
+      },
+      {
+        "uuid": "0caaddec-7324-4d21-831c-716fe1681461",
+        "degree": 1,
+        "name": "kris_p_83",
+        "code": "kris_p_83"
+      },
+      {
+        "uuid": "873076a5-bbf3-4b7e-aa20-5c514075ecb5",
+        "degree": 1,
+        "name": "kris_p_100",
+        "code": "kris_p_100"
+      },
+      {
+        "uuid": "aced7d60-dc71-4846-ae68-12ee48067219",
+        "degree": 1,
+        "name": "kris_p_23",
+        "code": "kris_p_23"
+      },
+      {
+        "uuid": "99e22f26-1b20-4c59-a303-956418478f1e",
+        "degree": 1,
+        "name": "kris_p_407",
+        "code": "kris_p_407"
+      },
+      {
+        "uuid": "62a9420c-baa1-499f-b5f4-295e17db45a0",
+        "degree": 1,
+        "name": "kris_p_406",
+        "code": "kris_p_406"
+      },
+      {
+        "uuid": "08fb9069-6d97-4be5-9b5a-b5cf60241bce",
+        "degree": 1,
+        "name": "kris_p_50",
+        "code": "kris_p_50"
+      },
+      {
+        "uuid": "441b5010-d5e1-4a7e-85e0-f500283d75f6",
+        "degree": 1,
+        "name": "kris_p_110",
+        "code": "kris_p_110"
+      },
+      {
+        "uuid": "ce654a80-14e8-47a8-b1cd-70a317fbec42",
+        "degree": 1,
+        "name": "kris_p_103",
+        "code": "kris_p_103"
+      },
+      {
+        "uuid": "9c42c8de-85a2-4bcd-90db-1464577e9491",
+        "degree": 1,
+        "name": "kris_p_409",
+        "code": "kris_p_409"
+      },
+      {
+        "uuid": "532bc80c-2112-4d0c-aea3-1af3f420baca",
+        "degree": 1,
+        "name": "kris_p_408",
+        "code": "kris_p_408"
+      },
+      {
+        "uuid": "9b6e006c-240b-4285-b9e8-d25a7c479505",
+        "degree": 1,
+        "name": "kris_p_188",
+        "code": "kris_p_188"
+      },
+      {
+        "uuid": "4e40c4d2-747a-4908-ae50-591bdfa4e777",
+        "degree": 1,
+        "name": "kris_p_186",
+        "code": "kris_p_186"
+      },
+      {
+        "uuid": "85cb308e-e12e-4293-bc7a-7ef525542ae6",
+        "degree": 1,
+        "name": "kris_p_119",
+        "code": "kris_p_119"
+      },
+      {
+        "uuid": "3c32c839-4054-4d9f-aeaf-38c1245725c7",
+        "degree": 1,
+        "name": "kris_p_72",
+        "code": "kris_p_72"
+      },
+      {
+        "uuid": "b611034c-ceb2-425e-975e-a610076bba07",
+        "degree": 1,
+        "name": "kris_p_42",
+        "code": "kris_p_42"
+      },
+      {
+        "uuid": "cca8d16b-f4c5-4119-8224-1c14f1d46a0f",
+        "degree": 1,
+        "name": "kris_p_96",
+        "code": "kris_p_96"
+      },
+      {
+        "uuid": "d507b038-5361-4ca0-a027-25255aef177d",
+        "degree": 1,
+        "name": "kris_p_111",
+        "code": "kris_p_111"
+      },
+      {
+        "uuid": "3c10ad80-cfdc-4380-8ec2-db4c6e4e7cd1",
+        "degree": 1,
+        "name": "kris_p_60",
+        "code": "kris_p_60"
+      },
+      {
+        "uuid": "1cae8426-9492-48c2-bdde-603766eeaa9b",
+        "degree": 1,
+        "name": "kris_p_31",
+        "code": "kris_p_31"
+      },
+      {
+        "uuid": "1673494a-b6f7-4bad-8f81-e9e9afe061c2",
+        "degree": 1,
+        "name": "kris_p_49",
+        "code": "kris_p_49"
+      },
+      {
+        "uuid": "db7aff08-f8e3-4464-9eef-adcb2d1cc5d8",
+        "degree": 1,
+        "name": "kris_p_112",
+        "code": "kris_p_112"
+      },
+      {
+        "uuid": "be0b5df9-f2cc-4c57-bcb7-86b36e753322",
+        "degree": 1,
+        "name": "kris_p_40",
+        "code": "kris_p_40"
+      },
+      {
+        "uuid": "7326bc6e-8259-4928-af58-3ca4b7191d74",
+        "degree": 1,
+        "name": "kris_p_102",
+        "code": "kris_p_102"
+      },
+      {
+        "uuid": "f8a5b0da-e0aa-463a-b5bf-b78a277a3286",
+        "degree": 1,
+        "name": "kris_p_35",
+        "code": "kris_p_35"
+      },
+      {
+        "uuid": "ab932c23-38e0-4d9d-9301-f41b68e950e1",
+        "degree": 1,
+        "name": "kris_p_16",
+        "code": "kris_p_16"
+      },
+      {
+        "uuid": "422924ca-7250-47f1-97a5-2b520c85d507",
+        "degree": 1,
+        "name": "kris_p_75",
+        "code": "kris_p_75"
+      },
+      {
+        "uuid": "219318c1-0494-4b87-8544-b63c56913bba",
+        "degree": 1,
+        "name": "kris_p_59",
+        "code": "kris_p_59"
+      },
+      {
+        "uuid": "0f0c15b8-c477-41e2-ad11-4e6485536607",
+        "degree": 1,
+        "name": "kris_p_39",
+        "code": "kris_p_39"
+      },
+      {
+        "uuid": "3019e0f3-87db-4c49-b557-c08dfa7e2e68",
+        "degree": 1,
+        "name": "kris_p_46",
+        "code": "kris_p_46"
+      },
+      {
+        "uuid": "c0210cc0-798d-47bd-a7f9-3fbf0386dbda",
+        "degree": 1,
+        "name": "kris_p_68",
+        "code": "kris_p_68"
+      },
+      {
+        "uuid": "5ab56226-77e1-4652-b502-954dbcde7b1d",
+        "degree": 1,
+        "name": "kris_p_58",
+        "code": "kris_p_58"
+      },
+      {
+        "uuid": "86d90291-fe62-4cc1-bbc5-82a67315e63b",
+        "degree": 1,
+        "name": "kris_p_21",
+        "code": "kris_p_21"
+      },
+      {
+        "uuid": "3b4feb44-09e7-4086-b1eb-35a5542a45cb",
+        "degree": 1,
+        "name": "kris_p_116",
+        "code": "kris_p_116"
+      },
+      {
+        "uuid": "cc413416-9832-49f1-ae6a-0dbd2ff8dbbe",
+        "degree": 1,
+        "name": "kris_p_84",
+        "code": "kris_p_84"
+      },
+      {
+        "uuid": "e62104b9-a9e2-4dd8-8d2e-59ffc85054df",
+        "degree": 1,
+        "name": "kris_p_340",
+        "code": "kris_p_340"
+      },
+      {
+        "uuid": "e2bd6e16-ad92-4716-a418-d5e3e4545741",
+        "degree": 1,
+        "name": "kris_p_82",
+        "code": "kris_p_82"
+      },
+      {
+        "uuid": "f2c59f11-8367-4eeb-83f2-b5722246f8ad",
+        "degree": 1,
+        "name": "kris_p_43",
+        "code": "kris_p_43"
+      },
+      {
+        "uuid": "a0826b48-a7ec-40bd-be3f-15cf467969fb",
+        "degree": 1,
+        "name": "kris_p_106",
+        "code": "kris_p_106"
+      },
+      {
+        "uuid": "c3c85db3-75e1-4e23-b1d9-16b315e70135",
+        "degree": 1,
+        "name": "kris_p_62",
+        "code": "kris_p_62"
+      },
+      {
+        "uuid": "7289b19f-1517-4450-964d-b12b89330e67",
+        "degree": 1,
+        "name": "kris_p_28",
+        "code": "kris_p_28"
+      },
+      {
+        "uuid": "8253172e-3b08-4327-b43f-dcd65a7b9c59",
+        "degree": 1,
+        "name": "kris_p_93",
+        "code": "kris_p_93"
+      },
+      {
+        "uuid": "f76fb1a1-8600-4512-9e82-7d2a7eb86c09",
+        "degree": 1,
+        "name": "kris_p_65",
+        "code": "kris_p_65"
+      },
+      {
+        "uuid": "64b798e8-ffb5-4c5d-8db7-87de9e0c3520",
+        "degree": 1,
+        "name": "kris_p_41",
+        "code": "kris_p_41"
+      },
+      {
+        "uuid": "b54ff2dd-be4f-4b63-8779-13f40a122024",
+        "degree": 1,
+        "name": "kris_p_15",
+        "code": "kris_p_15"
+      },
+      {
+        "uuid": "78ac5c28-dbf5-4fa1-b981-0e3867a05c90",
+        "degree": 1,
+        "name": "kris_p_57",
+        "code": "kris_p_57"
+      },
+      {
+        "uuid": "66a71506-d256-49e4-b11e-48c257f1bf7b",
+        "degree": 1,
+        "name": "kris_p_33",
+        "code": "kris_p_33"
+      },
+      {
+        "uuid": "2829252b-8964-4c76-9683-3f71aaf9ade5",
+        "degree": 1,
+        "name": "kris_p_201",
+        "code": "kris_p_201"
+      },
+      {
+        "uuid": "44f61691-1392-4379-b359-8016ad9e0674",
+        "degree": 1,
+        "name": "kris_p_53",
+        "code": "kris_p_53"
+      },
+      {
+        "uuid": "869dfaa2-9476-4513-8e50-0a1a9f645837",
+        "degree": 1,
+        "name": "kris_p_131",
+        "code": "kris_p_131"
+      },
+      {
+        "uuid": "0cb1334e-fc2b-44b9-b19d-94a863617ebf",
+        "degree": 1,
+        "name": "kris_p_26",
+        "code": "kris_p_26"
+      },
+      {
+        "uuid": "ac19e4b8-e0de-449a-b5b9-e7245d1e653b",
+        "degree": 1,
+        "name": "kris_p_17",
+        "code": "kris_p_17"
+      },
+      {
+        "uuid": "d59ad224-295b-4e0a-a539-c98c7f4a7f02",
+        "degree": 1,
+        "name": "kris_p_45",
+        "code": "kris_p_45"
+      },
+      {
+        "uuid": "0d6279b2-18b4-41ab-bd62-cca516c82bd0",
+        "degree": 1,
+        "name": "kris_p_128",
+        "code": "kris_p_128"
+      },
+      {
+        "uuid": "7edd4390-320e-48f0-9f37-c5ca73e2669e",
+        "degree": 1,
+        "name": "kris_p_127",
+        "code": "kris_p_127"
+      },
+      {
+        "uuid": "66018234-fe6a-4cbf-af9f-a63ebb0ea034",
+        "degree": 1,
+        "name": "kris_p_98",
+        "code": "kris_p_98"
+      },
+      {
+        "uuid": "fdbf9fb0-98f9-4058-ba3e-7a2ed50613aa",
+        "degree": 1,
+        "name": "kris_p_90",
+        "code": "kris_p_90"
+      },
+      {
+        "uuid": "43b7807a-9fbd-4397-a6e5-d64785e957f1",
+        "degree": 1,
+        "name": "kris_p_34",
+        "code": "kris_p_34"
+      },
+      {
+        "uuid": "414807c1-1976-47f2-8c45-e88188f177e8",
+        "degree": 1,
+        "name": "kris_p_118",
+        "code": "kris_p_118"
+      },
+      {
+        "uuid": "a0905a33-efe8-4fb0-81ab-96e4c847acfe",
+        "degree": 1,
+        "name": "kris_p_94",
+        "code": "kris_p_94"
+      },
+      {
+        "uuid": "77b9260b-1ee0-4ee9-8cc6-4d84fdfe31ef",
+        "degree": 1,
+        "name": "kris_p_199",
+        "code": "kris_p_199"
+      },
+      {
+        "uuid": "847321e1-011a-4de7-a064-560ad237900d",
+        "degree": 1,
+        "name": "kris_p_196",
+        "code": "kris_p_196"
+      },
+      {
+        "uuid": "6f26aafd-3dcb-41c4-aad3-8123aea13ffd",
+        "degree": 1,
+        "name": "kris_p_36",
+        "code": "kris_p_36"
+      },
+      {
+        "uuid": "28f02a67-6530-4cf4-ad18-67c0000296e3",
+        "degree": 1,
+        "name": "kris_p_158",
+        "code": "kris_p_158"
+      },
+      {
+        "uuid": "6e8d93e8-35c2-4f5c-9d03-4dff2c5170ab",
+        "degree": 1,
+        "name": "kris_p_389",
+        "code": "kris_p_389"
+      },
+      {
+        "uuid": "fb8ff46a-f965-49a0-9a19-2d62869c4a15",
+        "degree": 1,
+        "name": "kris_p_153",
+        "code": "kris_p_153"
+      },
+      {
+        "uuid": "1d2991ce-b8d0-4b23-ab42-4658130b6420",
+        "degree": 1,
+        "name": "kris_p_55",
+        "code": "kris_p_55"
+      },
+      {
+        "uuid": "19f4d042-5323-4abd-9dbb-c67654f34200",
+        "degree": 1,
+        "name": "kris_p_154",
+        "code": "kris_p_154"
+      },
+      {
+        "uuid": "93ed95bf-3265-4e91-8e23-9465b2c3f2de",
+        "degree": 1,
+        "name": "kris_p_144",
+        "code": "kris_p_144"
+      },
+      {
+        "uuid": "43f9510f-e775-4f4c-b821-7459ae50b586",
+        "degree": 1,
+        "name": "kris_p_54",
+        "code": "kris_p_54"
+      },
+      {
+        "uuid": "a509c457-c57c-4ccd-86f1-d78966f2cf12",
+        "degree": 1,
+        "name": "kris_p_67",
+        "code": "kris_p_67"
+      },
+      {
+        "uuid": "00ac19b6-7b1e-4937-a923-04342cc17f8a",
+        "degree": 1,
+        "name": "kris_p_20",
+        "code": "kris_p_20"
+      },
+      {
+        "uuid": "aabcdd4b-4df8-4222-9a0a-a339ffad944d",
+        "degree": 1,
+        "name": "kris_p_70",
+        "code": "kris_p_70"
+      },
+      {
+        "uuid": "41af873a-100a-48f9-a86d-6d9be126eb81",
+        "degree": 1,
+        "name": "kris_p_198",
+        "code": "kris_p_198"
+      },
+      {
+        "uuid": "94710528-51b5-47e5-affe-1e6fd79996fa",
+        "degree": 1,
+        "name": "kris_p_197",
+        "code": "kris_p_197"
+      },
+      {
+        "uuid": "1fea2380-e3ab-4021-91f2-0233df1c6642",
+        "degree": 1,
+        "name": "kris_p_63",
+        "code": "kris_p_63"
+      },
+      {
+        "uuid": "edeac17f-9369-467a-a9a5-19dbf5de6ef0",
+        "degree": 1,
+        "name": "kris_p_30",
+        "code": "kris_p_30"
+      },
+      {
+        "uuid": "89de0f4c-2bce-44ab-8127-8e86863d662d",
+        "degree": 1,
+        "name": "kris_p_80",
+        "code": "kris_p_80"
+      },
+      {
+        "uuid": "8a2a50c1-228d-4bb5-998d-d5ab5625214f",
+        "degree": 1,
+        "name": "kris_p_52",
+        "code": "kris_p_52"
+      },
+      {
+        "uuid": "a94edf4f-f3fb-40ce-a186-b5926da68ee3",
+        "degree": 1,
+        "name": "kris_p_208",
+        "code": "kris_p_208"
+      },
+      {
+        "uuid": "18f2a0a5-a67f-4147-b373-94a799400102",
+        "degree": 1,
+        "name": "kris_p_37",
+        "code": "kris_p_37"
+      },
+      {
+        "uuid": "2a2a06b0-7c73-4929-a554-3fed683b2f12",
+        "degree": 1,
+        "name": "kris_p_150",
+        "code": "kris_p_150"
+      },
+      {
+        "uuid": "acf0fd75-e5ee-49b1-81e0-3155ff3e4c01",
+        "degree": 1,
+        "name": "kris_p_141",
+        "code": "kris_p_141"
+      },
+      {
+        "uuid": "ec0a487b-290c-4d2a-926a-2e1d339b958e",
+        "degree": 1,
+        "name": "kris_p_124",
+        "code": "kris_p_124"
+      },
+      {
+        "uuid": "8d536ead-d66b-434e-9d60-7ad451c9e915",
+        "degree": 1,
+        "name": "kris_p_47",
+        "code": "kris_p_47"
+      },
+      {
+        "uuid": "880b7b40-65d6-415e-94c0-0b9a0cbd0288",
+        "degree": 1,
+        "name": "kris_p_169",
+        "code": "kris_p_169"
+      },
+      {
+        "uuid": "17aa4aa1-17c4-4e10-aebe-18c03042835e",
+        "degree": 1,
+        "name": "kris_p_56",
+        "code": "kris_p_56"
+      },
+      {
+        "uuid": "03e34f7e-9178-4c4c-a43e-1bbec598a952",
+        "degree": 1,
+        "name": "kris_p_29",
+        "code": "kris_p_29"
+      },
+      {
+        "uuid": "57c65acd-ccb8-49e8-a029-df0349f853c8",
+        "degree": 1,
+        "name": "kris_p_130",
+        "code": "kris_p_130"
+      },
+      {
+        "uuid": "9efb6367-c8d7-4d1c-a214-2f7409c5e16b",
+        "degree": 1,
+        "name": "kris_p_51",
+        "code": "kris_p_51"
+      },
+      {
+        "uuid": "a70710f4-f3dc-4deb-aed6-0c64713d520c",
+        "degree": 1,
+        "name": "kris_p_77",
+        "code": "kris_p_77"
+      },
+      {
+        "uuid": "c844607d-7cc3-4a75-9194-9465a330a9cb",
+        "degree": 1,
+        "name": "kris_p_19",
+        "code": "kris_p_19"
+      },
+      {
+        "uuid": "c9d6894b-6010-48d3-8526-5ed881e2fcb9",
+        "degree": 1,
+        "name": "kris_p_138",
+        "code": "kris_p_138"
+      },
+      {
+        "uuid": "4e1137ea-0db6-4c23-ac4e-bfb2cb140bd7",
+        "degree": 1,
+        "name": "kris_p_91",
+        "code": "kris_p_91"
+      },
+      {
+        "uuid": "29c545e2-9767-4e34-9350-202f7fedfce1",
+        "degree": 1,
+        "name": "kris_p_297",
+        "code": "kris_p_297"
+      },
+      {
+        "uuid": "52c2163b-c8b4-45a6-9f62-1fac3eaef71e",
+        "degree": 1,
+        "name": "kris_p_38",
+        "code": "kris_p_38"
+      },
+      {
+        "uuid": "6d55c7ee-05c1-47a7-9fd5-6a37ce107820",
+        "degree": 1,
+        "name": "kris_p_64",
+        "code": "kris_p_64"
+      },
+      {
+        "uuid": "13c195a9-f733-4274-ae26-47b2345f8f6c",
+        "degree": 1,
+        "name": "kris_p_22",
+        "code": "kris_p_22"
+      },
+      {
+        "uuid": "c8d9295f-8b62-4d86-a4b0-c9c51d5ea4a0",
+        "degree": 1,
+        "name": "kris_p_310",
+        "code": "kris_p_310"
+      },
+      {
+        "uuid": "0c4eb1f1-cbb1-4a18-a1cb-42643f870e98",
+        "degree": 1,
+        "name": "kris_p_190",
+        "code": "kris_p_190"
+      },
+      {
+        "uuid": "538acb0d-6d5c-4147-b4ce-4748dd43304f",
+        "degree": 1,
+        "name": "kris_p_89",
+        "code": "kris_p_89"
+      },
+      {
+        "uuid": "42cf7117-25e9-46d1-ad07-5bcb16a29bd6",
+        "degree": 1,
+        "name": "kris_p_27",
+        "code": "kris_p_27"
+      },
+      {
+        "uuid": "93064839-c8df-4c44-9e41-bdf4402d9561",
+        "degree": 1,
+        "name": "kris_p_78",
+        "code": "kris_p_78"
+      },
+      {
+        "uuid": "647fd7c5-1092-46e6-8282-b258744f37a1",
+        "degree": 1,
+        "name": "kris_p_32",
+        "code": "kris_p_32"
+      },
+      {
+        "uuid": "7e7ea31d-76b3-4264-8290-767786cc8060",
+        "degree": 1,
+        "name": "kris_p_129",
+        "code": "kris_p_129"
+      },
+      {
+        "uuid": "9e43cf01-300f-4647-b74b-bdb8704f10bc",
+        "degree": 1,
+        "name": "kris_p_48",
+        "code": "kris_p_48"
+      },
+      {
+        "uuid": "245bc4f2-9dae-461f-9c44-c19c98960437",
+        "degree": 1,
+        "name": "kris_p_73",
+        "code": "kris_p_73"
+      },
+      {
+        "uuid": "e01c1310-f3f5-4a8a-9840-51805d6f1188",
+        "degree": 1,
+        "name": "kris_p_160",
+        "code": "kris_p_160"
+      },
+      {
+        "uuid": "51487a22-9b24-448c-b729-948b4f817eb5",
+        "degree": 1,
+        "name": "kris_p_300",
+        "code": "kris_p_300"
+      },
+      {
+        "uuid": "ff6f71d7-f211-4179-90d0-0d7e760fdc10",
+        "degree": 1,
+        "name": "kris_p_176",
+        "code": "kris_p_176"
+      },
+      {
+        "uuid": "21cbad53-03d5-4aa6-9664-d78f76486fe1",
+        "degree": 1,
+        "name": "kris_p_95",
+        "code": "kris_p_95"
+      },
+      {
+        "uuid": "7d4a588a-943e-4fbc-9534-b5ee94f769ab",
+        "degree": 1,
+        "name": "kris_p_293",
+        "code": "kris_p_293"
+      },
+      {
+        "uuid": "c0e7e0a3-6e2b-4915-8a5c-eab983237ffa",
+        "degree": 1,
+        "name": "kris_p_263",
+        "code": "kris_p_263"
+      },
+      {
+        "uuid": "26bbd453-9544-4744-9c01-1e2959c8a8c3",
+        "degree": 1,
+        "name": "kris_p_256",
+        "code": "kris_p_256"
+      },
+      {
+        "uuid": "36212403-b204-4258-88ec-d84eaddfda9b",
+        "degree": 1,
+        "name": "kris_p_251",
+        "code": "kris_p_251"
+      },
+      {
+        "uuid": "b34a5e17-6d5d-4b5c-b50e-cef380c8723c",
+        "degree": 1,
+        "name": "kris_p_235",
+        "code": "kris_p_235"
+      },
+      {
+        "uuid": "8d9b79a9-bf7b-4591-a92f-d543873c66c1",
+        "degree": 1,
+        "name": "kris_p_234",
+        "code": "kris_p_234"
+      },
+      {
+        "uuid": "889188fd-d362-4925-8fd4-5ff3b8ee5852",
+        "degree": 1,
+        "name": "kris_p_233",
+        "code": "kris_p_233"
+      },
+      {
+        "uuid": "cfd21c3e-afc4-42a8-ae68-8441be4bdc3f",
+        "degree": 1,
+        "name": "kris_p_210",
+        "code": "kris_p_210"
+      },
+      {
+        "uuid": "28b235e2-50a8-459c-9607-ba22175fce04",
+        "degree": 1,
+        "name": "kris_p_185",
+        "code": "kris_p_185"
+      },
+      {
+        "uuid": "49fd7e9a-0951-4af1-91c9-2d14642c702f",
+        "degree": 1,
+        "name": "kris_p_114",
+        "code": "kris_p_114"
+      },
+      {
+        "uuid": "dfa035d7-4384-4b19-9d96-ac47d5de6da0",
+        "degree": 1,
+        "name": "kris_p_109",
+        "code": "kris_p_109"
+      },
+      {
+        "uuid": "3066b656-a74e-4d1e-8536-6f50ede610c4",
+        "degree": 1,
+        "name": "kris_p_107",
+        "code": "kris_p_107"
+      },
+      {
+        "uuid": "a12822e1-e80e-474e-beb6-11d0a3cdc160",
+        "degree": 1,
+        "name": "kris_p_97",
+        "code": "kris_p_97"
+      },
+      {
+        "uuid": "c535a0c9-7ad0-4981-bac6-0efbf5140f33",
+        "degree": 1,
+        "name": "kris_p_99",
+        "code": "kris_p_99"
+      },
+      {
+        "uuid": "b4cdcf51-5393-4aec-b285-16f5f756f904",
+        "degree": 1,
+        "name": "kris_p_123",
+        "code": "kris_p_123"
+      },
+      {
+        "uuid": "b06b4f8d-110b-4742-a3bc-e61741c58a15",
+        "degree": 1,
+        "name": "kris_p_121",
+        "code": "kris_p_121"
+      },
+      {
+        "uuid": "6d2297b8-4d7f-4385-b92e-e441cf4cfba5",
+        "degree": 1,
+        "name": "kris_p_122",
+        "code": "kris_p_122"
+      },
+      {
+        "uuid": "5db29df8-e9d1-4a7e-9a17-82ab77e7494b",
+        "degree": 1,
+        "name": "kris_p_125",
+        "code": "kris_p_125"
+      },
+      {
+        "uuid": "298e3ac7-c07b-4b29-bdac-1a453b18e53c",
+        "degree": 1,
+        "name": "kris_p_157",
+        "code": "kris_p_157"
+      },
+      {
+        "uuid": "ef0f5716-b7d1-44a8-956d-76f77a52f271",
+        "degree": 1,
+        "name": "kris_p_137",
+        "code": "kris_p_137"
+      },
+      {
+        "uuid": "44a1415a-6564-4a5f-aee5-267ac8c0bdf8",
+        "degree": 1,
+        "name": "kris_p_354",
+        "code": "kris_p_354"
+      },
+      {
+        "uuid": "24066f35-3682-403b-ae8a-6a65bc8d1143",
+        "degree": 1,
+        "name": "kris_p_145",
+        "code": "kris_p_145"
+      },
+      {
+        "uuid": "aa28a309-223e-48cc-8f2b-b81f5b2ecbe6",
+        "degree": 1,
+        "name": "kris_p_182",
+        "code": "kris_p_182"
+      },
+      {
+        "uuid": "b94bfb08-cab9-4861-a32f-6a2021e7b708",
+        "degree": 1,
+        "name": "kris_p_173",
+        "code": "kris_p_173"
+      },
+      {
+        "uuid": "2dee182d-bb7b-4dad-9bec-1577e895748a",
+        "degree": 1,
+        "name": "kris_p_164",
+        "code": "kris_p_164"
+      },
+      {
+        "uuid": "18c050bf-7371-44f7-90bb-a7fd43f02f0f",
+        "degree": 1,
+        "name": "kris_p_142",
+        "code": "kris_p_142"
+      },
+      {
+        "uuid": "6b9a3d22-63e4-4e84-9ce4-8dac5b627058",
+        "degree": 1,
+        "name": "kris_p_181",
+        "code": "kris_p_181"
+      },
+      {
+        "uuid": "9468b021-3201-460e-ac26-ded1540fd72c",
+        "degree": 1,
+        "name": "kris_p_168",
+        "code": "kris_p_168"
+      },
+      {
+        "uuid": "54a59c34-f8bc-4059-9b8d-572dbcf3c167",
+        "degree": 1,
+        "name": "kris_p_136",
+        "code": "kris_p_136"
+      },
+      {
+        "uuid": "65e8d580-f21e-4b1b-a9fa-2d88e9f81f60",
+        "degree": 1,
+        "name": "kris_p_175",
+        "code": "kris_p_175"
+      },
+      {
+        "uuid": "ea32572d-6e2a-4b80-ac49-3e6f2d991103",
+        "degree": 1,
+        "name": "kris_p_132",
+        "code": "kris_p_132"
+      },
+      {
+        "uuid": "d7fc4b30-e4e4-4772-9e58-3646e1ff780c",
+        "degree": 1,
+        "name": "kris_p_272",
+        "code": "kris_p_272"
+      },
+      {
+        "uuid": "bea82498-00a6-4319-a114-83b510620afe",
+        "degree": 1,
+        "name": "kris_p_252",
+        "code": "kris_p_252"
+      },
+      {
+        "uuid": "aec14e5d-9210-4801-9616-935bfdf564e8",
+        "degree": 1,
+        "name": "kris_p_249",
+        "code": "kris_p_249"
+      },
+      {
+        "uuid": "13a98d47-5eb4-466c-b1d4-2b6d57426de1",
+        "degree": 1,
+        "name": "kris_p_227",
+        "code": "kris_p_227"
+      },
+      {
+        "uuid": "c13074fe-84ef-4817-8242-08c9103153ac",
+        "degree": 1,
+        "name": "kris_p_226",
+        "code": "kris_p_226"
+      },
+      {
+        "uuid": "099cece9-817a-416d-9be0-8210a3ce7bee",
+        "degree": 1,
+        "name": "kris_p_213",
+        "code": "kris_p_213"
+      },
+      {
+        "uuid": "ad49c6fd-0bd4-46e8-bd36-dc9d0afa7dc6",
+        "degree": 1,
+        "name": "kris_p_151",
+        "code": "kris_p_151"
+      },
+      {
+        "uuid": "2f6834cf-7e56-4135-a31c-e4c21db702d3",
+        "degree": 1,
+        "name": "kris_p_135",
+        "code": "kris_p_135"
+      },
+      {
+        "uuid": "80ef6e5a-d0e9-4372-84eb-7c6a5bd15152",
+        "degree": 1,
+        "name": "kris_p_133",
+        "code": "kris_p_133"
+      },
+      {
+        "uuid": "317b62b9-9622-47da-94d8-94453ce84fc3",
+        "degree": 1,
+        "name": "kris_p_149",
+        "code": "kris_p_149"
+      },
+      {
+        "uuid": "b094f7bb-30e0-4d19-8276-f6f66b2f4fcc",
+        "degree": 1,
+        "name": "kris_p_140",
+        "code": "kris_p_140"
+      },
+      {
+        "uuid": "d27650b3-d83b-4c54-b6f6-92b6a6ed058c",
+        "degree": 1,
+        "name": "kris_p_148",
+        "code": "kris_p_148"
+      },
+      {
+        "uuid": "b1622c29-2af8-4759-94c1-7e4e9b3bbfc2",
+        "degree": 1,
+        "name": "kris_p_139",
+        "code": "kris_p_139"
+      },
+      {
+        "uuid": "6d8c9204-0604-421f-9a7f-1c0632c33d38",
+        "degree": 1,
+        "name": "kris_p_410",
+        "code": "kris_p_410"
+      },
+      {
+        "uuid": "7f75b7ab-3b03-402d-84b4-f702b7b6341a",
+        "degree": 1,
+        "name": "kris_p_146",
+        "code": "kris_p_146"
+      },
+      {
+        "uuid": "bb1006b0-7257-47a5-9b58-699e4cb753f1",
+        "degree": 1,
+        "name": "kris_p_156",
+        "code": "kris_p_156"
+      },
+      {
+        "uuid": "c1605a6c-7e9c-4b22-9e50-73a8535bac25",
+        "degree": 1,
+        "name": "kris_p_155",
+        "code": "kris_p_155"
+      },
+      {
+        "uuid": "1d97abda-2d0b-4bbf-98c3-c90f6fed6e30",
+        "degree": 1,
+        "name": "kris_p_177",
+        "code": "kris_p_177"
+      },
+      {
+        "uuid": "7fe1c817-d086-4da2-b267-0e520e444564",
+        "degree": 1,
+        "name": "kris_p_167",
+        "code": "kris_p_167"
+      },
+      {
+        "uuid": "fffe3156-c95e-4779-9e3b-d295d1ba63a9",
+        "degree": 1,
+        "name": "kris_p_165",
+        "code": "kris_p_165"
+      },
+      {
+        "uuid": "3dbae457-fa12-40dd-ad18-587550dc3e3d",
+        "degree": 1,
+        "name": "kris_p_163",
+        "code": "kris_p_163"
+      },
+      {
+        "uuid": "66b4fcab-28bd-4aaa-9e26-fe65829d870e",
+        "degree": 1,
+        "name": "kris_p_161",
+        "code": "kris_p_161"
+      },
+      {
+        "uuid": "a240ece0-8c59-4458-a7d6-e2f6665aa61b",
+        "degree": 1,
+        "name": "kris_p_159",
+        "code": "kris_p_159"
+      },
+      {
+        "uuid": "da1ca5d3-869e-4259-a2bb-10456f7f8af3",
+        "degree": 1,
+        "name": "kris_p_396",
+        "code": "kris_p_396"
+      },
+      {
+        "uuid": "444a3889-b7e1-4d1b-a218-b689ec1deb9c",
+        "degree": 1,
+        "name": "kris_p_166",
+        "code": "kris_p_166"
+      },
+      {
+        "uuid": "6af29c34-1f0e-4ad2-ad1b-a5818936ce86",
+        "degree": 1,
+        "name": "kris_p_162",
+        "code": "kris_p_162"
+      },
+      {
+        "uuid": "0ea7eefa-f16b-47b3-af90-b57470ef76da",
+        "degree": 1,
+        "name": "kris_p_376",
+        "code": "kris_p_376"
+      },
+      {
+        "uuid": "5db672b1-bceb-4d7a-b4e7-f2855b25b6dd",
+        "degree": 1,
+        "name": "kris_p_364",
+        "code": "kris_p_364"
+      },
+      {
+        "uuid": "e65bb2cd-e328-4c8b-865e-c9b649f6da90",
+        "degree": 1,
+        "name": "kris_p_363",
+        "code": "kris_p_363"
+      },
+      {
+        "uuid": "7f2e420c-8887-4f03-aa64-bcaf29f1d5ba",
+        "degree": 1,
+        "name": "kris_p_218",
+        "code": "kris_p_218"
+      },
+      {
+        "uuid": "13d26c38-202d-44e9-b75a-0a0088b76d8d",
+        "degree": 1,
+        "name": "kris_p_178",
+        "code": "kris_p_178"
+      },
+      {
+        "uuid": "464bee4b-c927-4ed7-8351-3098f4908964",
+        "degree": 1,
+        "name": "kris_p_171",
+        "code": "kris_p_171"
+      },
+      {
+        "uuid": "30227a68-941f-45d7-8f23-47cd61fc4614",
+        "degree": 1,
+        "name": "kris_p_187",
+        "code": "kris_p_187"
+      },
+      {
+        "uuid": "79fdb4ce-04ca-4aff-a0a6-333c0ac82d84",
+        "degree": 1,
+        "name": "kris_p_184",
+        "code": "kris_p_184"
+      },
+      {
+        "uuid": "b9d7e144-9b07-4e2a-86de-d9cce22d5eee",
+        "degree": 1,
+        "name": "kris_p_183",
+        "code": "kris_p_183"
+      },
+      {
+        "uuid": "98621eea-9438-469d-8efc-b9a37b10782d",
+        "degree": 1,
+        "name": "kris_p_180",
+        "code": "kris_p_180"
+      },
+      {
+        "uuid": "f97f8a0a-4e0a-4f5f-a0d3-e99688270011",
+        "degree": 1,
+        "name": "kris_p_192",
+        "code": "kris_p_192"
+      },
+      {
+        "uuid": "a15bc5ed-21ec-4f5f-9253-545db68dd587",
+        "degree": 1,
+        "name": "kris_p_304",
+        "code": "kris_p_304"
+      },
+      {
+        "uuid": "efd02925-9c23-4f9a-8d0c-7a1c77127d2b",
+        "degree": 1,
+        "name": "kris_p_215",
+        "code": "kris_p_215"
+      },
+      {
+        "uuid": "11e567a4-8923-4a7d-8cfa-c740a59903ad",
+        "degree": 1,
+        "name": "kris_p_211",
+        "code": "kris_p_211"
+      },
+      {
+        "uuid": "27520c09-bf50-4b84-8477-e35fbb26ee60",
+        "degree": 1,
+        "name": "kris_p_194",
+        "code": "kris_p_194"
+      },
+      {
+        "uuid": "3b6911f8-0ad1-4a80-a5fe-d1c4a35f34cf",
+        "degree": 1,
+        "name": "kris_p_193",
+        "code": "kris_p_193"
+      },
+      {
+        "uuid": "575c20d4-0005-4028-a231-c09f4a3ac88f",
+        "degree": 1,
+        "name": "kris_p_195",
+        "code": "kris_p_195"
+      },
+      {
+        "uuid": "5695ad1f-6acd-418b-97e8-050d6c166a13",
+        "degree": 1,
+        "name": "kris_p_405",
+        "code": "kris_p_405"
+      },
+      {
+        "uuid": "2ed248d1-b8f5-4d5c-8a2d-ffc85f60b1f5",
+        "degree": 1,
+        "name": "kris_p_403",
+        "code": "kris_p_403"
+      },
+      {
+        "uuid": "e1bc3a06-6ca9-4972-b93a-7906a918e5bc",
+        "degree": 1,
+        "name": "kris_p_401",
+        "code": "kris_p_401"
+      },
+      {
+        "uuid": "0ebccce0-eb4a-4db5-a7a0-cf7ea68616c9",
+        "degree": 1,
+        "name": "kris_p_400",
+        "code": "kris_p_400"
+      },
+      {
+        "uuid": "b27fb9e8-7511-454b-81e9-d2a60ad37c95",
+        "degree": 1,
+        "name": "kris_p_398",
+        "code": "kris_p_398"
+      },
+      {
+        "uuid": "95377aa7-37a3-48ee-ab6b-91dad3280647",
+        "degree": 1,
+        "name": "kris_p_379",
+        "code": "kris_p_379"
+      },
+      {
+        "uuid": "d668f14a-dca4-4b6d-8fa3-2602d26cb368",
+        "degree": 1,
+        "name": "kris_p_349",
+        "code": "kris_p_349"
+      },
+      {
+        "uuid": "b1679e9f-32ef-461b-839f-cf8fadc7f454",
+        "degree": 1,
+        "name": "kris_p_207",
+        "code": "kris_p_207"
+      },
+      {
+        "uuid": "ccd570d5-e6bb-41da-b8c6-99b34a0ca2fa",
+        "degree": 1,
+        "name": "kris_p_206",
+        "code": "kris_p_206"
+      },
+      {
+        "uuid": "cc32320f-d238-44b4-8adb-d83d81ec2024",
+        "degree": 1,
+        "name": "kris_p_205",
+        "code": "kris_p_205"
+      },
+      {
+        "uuid": "6e0ec184-56aa-4e1a-a986-0e0952bccf77",
+        "degree": 1,
+        "name": "kris_p_204",
+        "code": "kris_p_204"
+      },
+      {
+        "uuid": "6922f9b9-d187-40b5-9710-b1ed9855dc46",
+        "degree": 1,
+        "name": "kris_p_203",
+        "code": "kris_p_203"
+      },
+      {
+        "uuid": "c9b08087-af79-426c-9df2-776c75510685",
+        "degree": 1,
+        "name": "kris_p_202",
+        "code": "kris_p_202"
+      },
+      {
+        "uuid": "51f63ccc-e88a-4acc-8e9c-3ccbd09b5e7a",
+        "degree": 1,
+        "name": "kris_p_288",
+        "code": "kris_p_288"
+      },
+      {
+        "uuid": "8b7f4bad-12e8-46fd-80ae-bb3015032185",
+        "degree": 1,
+        "name": "kris_p_271",
+        "code": "kris_p_271"
+      },
+      {
+        "uuid": "8fe09cc0-51b2-4f04-8b3d-b80b65af4bb9",
+        "degree": 1,
+        "name": "kris_p_287",
+        "code": "kris_p_287"
+      },
+      {
+        "uuid": "4a2988e5-2609-4886-a74c-6e2d19c72205",
+        "degree": 1,
+        "name": "kris_p_243",
+        "code": "kris_p_243"
+      },
+      {
+        "uuid": "e3b22213-da82-4ff6-9d9a-99a2beb6616b",
+        "degree": 1,
+        "name": "kris_p_214",
+        "code": "kris_p_214"
+      },
+      {
+        "uuid": "629fb451-421a-424d-ae39-d7ae3787aeea",
+        "degree": 1,
+        "name": "kris_p_290",
+        "code": "kris_p_290"
+      },
+      {
+        "uuid": "eb2924f3-4887-40c1-b071-63c7612aa183",
+        "degree": 1,
+        "name": "kris_p_229",
+        "code": "kris_p_229"
+      },
+      {
+        "uuid": "297d6891-1355-4f95-98ac-baa439109cdc",
+        "degree": 1,
+        "name": "kris_p_365",
+        "code": "kris_p_365"
+      },
+      {
+        "uuid": "53c12694-122a-4f9b-9df0-4f81c17d6997",
+        "degree": 1,
+        "name": "kris_p_359",
+        "code": "kris_p_359"
+      },
+      {
+        "uuid": "a1a55e82-83c6-4f18-85e6-be2be9a7108b",
+        "degree": 1,
+        "name": "kris_p_295",
+        "code": "kris_p_295"
+      },
+      {
+        "uuid": "9ce31b3d-23e3-4259-8415-a20d4c899c45",
+        "degree": 1,
+        "name": "kris_p_257",
+        "code": "kris_p_257"
+      },
+      {
+        "uuid": "dd67e713-1c3f-4592-9fef-ec695861f738",
+        "degree": 1,
+        "name": "kris_p_240",
+        "code": "kris_p_240"
+      },
+      {
+        "uuid": "e25fc608-60f1-469e-bc7d-371b33ee414c",
+        "degree": 1,
+        "name": "kris_p_216",
+        "code": "kris_p_216"
+      },
+      {
+        "uuid": "80be5414-f88a-49a2-be1f-36e36d74b864",
+        "degree": 1,
+        "name": "kris_p_277",
+        "code": "kris_p_277"
+      },
+      {
+        "uuid": "2374f864-c1d0-49be-b10f-bcb826b9648f",
+        "degree": 1,
+        "name": "kris_p_225",
+        "code": "kris_p_225"
+      },
+      {
+        "uuid": "8c1f62cd-ff13-4b4e-993c-c91febe00fe9",
+        "degree": 1,
+        "name": "kris_p_223",
+        "code": "kris_p_223"
+      },
+      {
+        "uuid": "f3521beb-7549-4bed-8142-664a3817cdb0",
+        "degree": 1,
+        "name": "kris_p_265",
+        "code": "kris_p_265"
+      },
+      {
+        "uuid": "ca42da1f-9a9e-4cab-bf2b-7e16a642712e",
+        "degree": 1,
+        "name": "kris_p_219",
+        "code": "kris_p_219"
+      },
+      {
+        "uuid": "7cdb7c85-be89-4f57-9224-06f35086de97",
+        "degree": 1,
+        "name": "kris_p_217",
+        "code": "kris_p_217"
+      },
+      {
+        "uuid": "2513289a-5c13-4e4a-82e9-b3a255c1468b",
+        "degree": 1,
+        "name": "kris_p_267",
+        "code": "kris_p_267"
+      },
+      {
+        "uuid": "21550b0d-a8f2-4615-afb1-e4be61a3f73d",
+        "degree": 1,
+        "name": "kris_p_224",
+        "code": "kris_p_224"
+      },
+      {
+        "uuid": "d49a0023-98b3-4608-8cd3-824a27df35a3",
+        "degree": 1,
+        "name": "kris_p_268",
+        "code": "kris_p_268"
+      },
+      {
+        "uuid": "efcabf72-fa76-462e-84c5-e9206594cc35",
+        "degree": 1,
+        "name": "kris_p_228",
+        "code": "kris_p_228"
+      },
+      {
+        "uuid": "3ac3039b-2632-4551-a9cb-1ac504c3705f",
+        "degree": 1,
+        "name": "kris_p_221",
+        "code": "kris_p_221"
+      },
+      {
+        "uuid": "03a876ea-101d-4bd2-987d-a379a98e809d",
+        "degree": 1,
+        "name": "kris_p_312",
+        "code": "kris_p_312"
+      },
+      {
+        "uuid": "6ddf1641-5767-4871-b9ac-350f683475a3",
+        "degree": 1,
+        "name": "kris_p_258",
+        "code": "kris_p_258"
+      },
+      {
+        "uuid": "169a32fd-fff4-46b8-8458-86509100b414",
+        "degree": 1,
+        "name": "kris_p_250",
+        "code": "kris_p_250"
+      },
+      {
+        "uuid": "5b2e2a78-2a52-40ed-b0c0-4b09f3cdfdfb",
+        "degree": 1,
+        "name": "kris_p_309",
+        "code": "kris_p_309"
+      },
+      {
+        "uuid": "c1b4ebf1-3459-4385-a3f9-619d89e0db6c",
+        "degree": 1,
+        "name": "kris_p_307",
+        "code": "kris_p_307"
+      },
+      {
+        "uuid": "cb7115fd-1b1a-4e9a-86d3-745bc8e307ad",
+        "degree": 1,
+        "name": "kris_p_305",
+        "code": "kris_p_305"
+      },
+      {
+        "uuid": "3179e37c-cdff-4b70-8862-0abef2e68745",
+        "degree": 1,
+        "name": "kris_p_330",
+        "code": "kris_p_330"
+      },
+      {
+        "uuid": "d7341ac9-219b-4bd1-8226-8da725c2336d",
+        "degree": 1,
+        "name": "kris_p_314",
+        "code": "kris_p_314"
+      },
+      {
+        "uuid": "9d4acff4-c8b4-4e80-ade6-4c96e8f0b69c",
+        "degree": 1,
+        "name": "kris_p_301",
+        "code": "kris_p_301"
+      },
+      {
+        "uuid": "ed596bed-baf1-4ad6-b25d-5e907804026a",
+        "degree": 1,
+        "name": "kris_p_242",
+        "code": "kris_p_242"
+      },
+      {
+        "uuid": "1275020e-041a-4d32-b1a5-1b03348c35b4",
+        "degree": 1,
+        "name": "kris_p_255",
+        "code": "kris_p_255"
+      },
+      {
+        "uuid": "d642b73e-ea95-4383-99d0-9ffabee7310b",
+        "degree": 1,
+        "name": "kris_p_222",
+        "code": "kris_p_222"
+      },
+      {
+        "uuid": "01892495-82d9-4b8d-9bc4-eadda7f90876",
+        "degree": 1,
+        "name": "kris_p_291",
+        "code": "kris_p_291"
+      },
+      {
+        "uuid": "76fa7490-6afd-4065-abd0-3e9f3e400cae",
+        "degree": 1,
+        "name": "kris_p_276",
+        "code": "kris_p_276"
+      },
+      {
+        "uuid": "e287f949-2a8b-4936-b997-2c60113fcafd",
+        "degree": 1,
+        "name": "kris_p_275",
+        "code": "kris_p_275"
+      },
+      {
+        "uuid": "1331e718-809f-4b3c-a157-8de44a960767",
+        "degree": 1,
+        "name": "kris_p_261",
+        "code": "kris_p_261"
+      },
+      {
+        "uuid": "9136ed2a-679e-406a-a263-37b61837cc82",
+        "degree": 1,
+        "name": "kris_p_230",
+        "code": "kris_p_230"
+      },
+      {
+        "uuid": "c7572440-0141-415a-8c6a-b92bb88acfa6",
+        "degree": 1,
+        "name": "kris_p_273",
+        "code": "kris_p_273"
+      },
+      {
+        "uuid": "73a2ff4f-eb98-4d65-8121-2834efcadfd9",
+        "degree": 1,
+        "name": "kris_p_248",
+        "code": "kris_p_248"
+      },
+      {
+        "uuid": "8a43fbb8-5ded-4c76-9ddc-40220f56b444",
+        "degree": 1,
+        "name": "kris_p_220",
+        "code": "kris_p_220"
+      },
+      {
+        "uuid": "a9dc00f9-b6dc-436c-bfd3-83ad51c0b5da",
+        "degree": 1,
+        "name": "kris_p_232",
+        "code": "kris_p_232"
+      },
+      {
+        "uuid": "f4cc4544-861e-415a-a8ea-d077f2260da8",
+        "degree": 1,
+        "name": "kris_p_334",
+        "code": "kris_p_334"
+      },
+      {
+        "uuid": "70cda5ac-c07f-47d8-9697-6d8303d3ba93",
+        "degree": 1,
+        "name": "kris_p_306",
+        "code": "kris_p_306"
+      },
+      {
+        "uuid": "8d4fdde2-db7a-4bb3-9977-f7302bbd0b0c",
+        "degree": 1,
+        "name": "kris_p_239",
+        "code": "kris_p_239"
+      },
+      {
+        "uuid": "d2bf77cf-cdbd-452e-b0af-b4f90baeb608",
+        "degree": 1,
+        "name": "kris_p_333",
+        "code": "kris_p_333"
+      },
+      {
+        "uuid": "47cdf00f-64e4-4a46-afad-2ecbf79d7437",
+        "degree": 1,
+        "name": "kris_p_317",
+        "code": "kris_p_317"
+      },
+      {
+        "uuid": "42925d69-c77c-4d8f-8e18-ed3143de150f",
+        "degree": 1,
+        "name": "kris_p_303",
+        "code": "kris_p_303"
+      },
+      {
+        "uuid": "f1bccb5c-75d7-467d-a833-c40021777b52",
+        "degree": 1,
+        "name": "kris_p_236",
+        "code": "kris_p_236"
+      },
+      {
+        "uuid": "fc14fdc7-8c32-48fb-89b8-ae92d6cc80a1",
+        "degree": 1,
+        "name": "kris_p_332",
+        "code": "kris_p_332"
+      },
+      {
+        "uuid": "d4576dda-0ba7-45f1-9913-2ffdfd205e30",
+        "degree": 1,
+        "name": "kris_p_316",
+        "code": "kris_p_316"
+      },
+      {
+        "uuid": "7079142d-8fb7-4ffc-b54d-c2f0d5bcd1ac",
+        "degree": 1,
+        "name": "kris_p_308",
+        "code": "kris_p_308"
+      },
+      {
+        "uuid": "0764efab-f812-4028-be70-fad87a5bd69b",
+        "degree": 1,
+        "name": "kris_p_237",
+        "code": "kris_p_237"
+      },
+      {
+        "uuid": "bf51e73f-894c-493a-9566-b4357a725ef4",
+        "degree": 1,
+        "name": "kris_p_270",
+        "code": "kris_p_270"
+      },
+      {
+        "uuid": "7952b14a-6d5d-476b-a08d-ef41882975b5",
+        "degree": 1,
+        "name": "kris_p_253",
+        "code": "kris_p_253"
+      },
+      {
+        "uuid": "9a5bd39e-adfa-4530-9269-c05e6d09dadb",
+        "degree": 1,
+        "name": "kris_p_245",
+        "code": "kris_p_245"
+      },
+      {
+        "uuid": "eb1c9b93-1061-4cb6-a9a1-ac5c510348d2",
+        "degree": 1,
+        "name": "kris_p_231",
+        "code": "kris_p_231"
+      },
+      {
+        "uuid": "2cdf1485-0326-45ac-b30d-4f5d543faa5d",
+        "degree": 1,
+        "name": "kris_p_331",
+        "code": "kris_p_331"
+      },
+      {
+        "uuid": "55c9fc62-78b9-4756-b760-7bfa29904881",
+        "degree": 1,
+        "name": "kris_p_302",
+        "code": "kris_p_302"
+      },
+      {
+        "uuid": "2d9a5342-9fe0-487b-847c-5a77b9b2cda7",
+        "degree": 1,
+        "name": "kris_p_299",
+        "code": "kris_p_299"
+      },
+      {
+        "uuid": "490a9bf7-cf97-4308-af50-90f78a5e5c8e",
+        "degree": 1,
+        "name": "kris_p_298",
+        "code": "kris_p_298"
+      },
+      {
+        "uuid": "2aaeaba2-426a-4446-8bd1-27819af75402",
+        "degree": 1,
+        "name": "kris_p_294",
+        "code": "kris_p_294"
+      },
+      {
+        "uuid": "b1fbeb9e-4897-486d-84c0-bda97128ca2c",
+        "degree": 1,
+        "name": "kris_p_238",
+        "code": "kris_p_238"
+      },
+      {
+        "uuid": "f412870f-886e-469e-acb9-ba9295eb8db9",
+        "degree": 1,
+        "name": "kris_p_324",
+        "code": "kris_p_324"
+      },
+      {
+        "uuid": "4d06a8ca-378c-4a4d-a2d4-785480225cef",
+        "degree": 1,
+        "name": "kris_p_264",
+        "code": "kris_p_264"
+      },
+      {
+        "uuid": "6b10be48-d390-4260-a78d-1b5da883b566",
+        "degree": 1,
+        "name": "kris_p_378",
+        "code": "kris_p_378"
+      },
+      {
+        "uuid": "b4350af6-a475-43bc-82d3-db533f0b747a",
+        "degree": 1,
+        "name": "kris_p_345",
+        "code": "kris_p_345"
+      },
+      {
+        "uuid": "ba9fa88f-6f40-400d-bdd8-b7b95c8981f2",
+        "degree": 1,
+        "name": "kris_p_336",
+        "code": "kris_p_336"
+      },
+      {
+        "uuid": "99f9482c-dc05-42bf-8172-1e4a9f1e4108",
+        "degree": 1,
+        "name": "kris_p_246",
+        "code": "kris_p_246"
+      },
+      {
+        "uuid": "3b6d6364-d8cd-4e01-8887-76799baa8f9e",
+        "degree": 1,
+        "name": "kris_p_338",
+        "code": "kris_p_338"
+      },
+      {
+        "uuid": "8bff3af3-4c28-4f6b-af75-ad70436a11ac",
+        "degree": 1,
+        "name": "kris_p_278",
+        "code": "kris_p_278"
+      },
+      {
+        "uuid": "45eabab5-4c16-4a04-a76c-cf3a38e18062",
+        "degree": 1,
+        "name": "kris_p_285",
+        "code": "kris_p_285"
+      },
+      {
+        "uuid": "ebcf97f9-c199-4663-b6dd-3e74d2178bff",
+        "degree": 1,
+        "name": "kris_p_259",
+        "code": "kris_p_259"
+      },
+      {
+        "uuid": "38bf056b-7b9c-456d-8e53-ef123e148775",
+        "degree": 1,
+        "name": "kris_p_319",
+        "code": "kris_p_319"
+      },
+      {
+        "uuid": "c7684d22-d786-43b5-9736-80d1d90a9efd",
+        "degree": 1,
+        "name": "kris_p_286",
+        "code": "kris_p_286"
+      },
+      {
+        "uuid": "0b611194-b3d2-4e58-ad07-97f4202a41e8",
+        "degree": 1,
+        "name": "kris_p_262",
+        "code": "kris_p_262"
+      },
+      {
+        "uuid": "015c947b-fb03-4877-9aae-c8742658965c",
+        "degree": 1,
+        "name": "kris_p_260",
+        "code": "kris_p_260"
+      },
+      {
+        "uuid": "6613ead7-5031-41ab-8a22-464568b7454d",
+        "degree": 1,
+        "name": "kris_p_387",
+        "code": "kris_p_387"
+      },
+      {
+        "uuid": "05f07da5-51e0-4c9f-a52f-11d6b54939a4",
+        "degree": 1,
+        "name": "kris_p_377",
+        "code": "kris_p_377"
+      },
+      {
+        "uuid": "dbd1aff9-980d-4ab6-8cb8-bc7fde2261f3",
+        "degree": 1,
+        "name": "kris_p_325",
+        "code": "kris_p_325"
+      },
+      {
+        "uuid": "49958209-b58f-4f41-9000-ea01c8245836",
+        "degree": 1,
+        "name": "kris_p_318",
+        "code": "kris_p_318"
+      },
+      {
+        "uuid": "307ce71e-a900-4862-bf02-7bb15e8ce7de",
+        "degree": 1,
+        "name": "kris_p_315",
+        "code": "kris_p_315"
+      },
+      {
+        "uuid": "a253d718-505d-487d-ba56-1d2a6e189897",
+        "degree": 1,
+        "name": "kris_p_344",
+        "code": "kris_p_344"
+      },
+      {
+        "uuid": "0934985b-5575-4b3c-9526-a11ce4a518b9",
+        "degree": 1,
+        "name": "kris_p_313",
+        "code": "kris_p_313"
+      },
+      {
+        "uuid": "3773b7cc-a2ef-4dcd-818e-c3d9d17e6430",
+        "degree": 1,
+        "name": "kris_p_343",
+        "code": "kris_p_343"
+      },
+      {
+        "uuid": "98c91eff-dcdb-4b43-92fc-76059bd568bd",
+        "degree": 1,
+        "name": "kris_p_361",
+        "code": "kris_p_361"
+      },
+      {
+        "uuid": "da440f23-8914-4516-9220-1b88631a1fd8",
+        "degree": 1,
+        "name": "kris_p_360",
+        "code": "kris_p_360"
+      },
+      {
+        "uuid": "f894a76d-d662-4508-a2d3-3e1dd5242401",
+        "degree": 1,
+        "name": "kris_p_357",
+        "code": "kris_p_357"
+      },
+      {
+        "uuid": "4198b96a-dbd6-4eec-a3c7-6b5b063cccf7",
+        "degree": 1,
+        "name": "kris_p_323",
+        "code": "kris_p_323"
+      },
+      {
+        "uuid": "811dabef-0c56-47f2-a6fc-6394b07986c0",
+        "degree": 1,
+        "name": "kris_p_320",
+        "code": "kris_p_320"
+      },
+      {
+        "uuid": "8d963a73-da5f-4d83-a4ea-c0ef0c4203f1",
+        "degree": 1,
+        "name": "kris_p_341",
+        "code": "kris_p_341"
+      },
+      {
+        "uuid": "776cd495-40e3-4016-a381-dec11c38374b",
+        "degree": 1,
+        "name": "kris_p_395",
+        "code": "kris_p_395"
+      },
+      {
+        "uuid": "60e1543b-30c7-4a90-ad1c-d9190e2a502f",
+        "degree": 1,
+        "name": "kris_p_390",
+        "code": "kris_p_390"
+      },
+      {
+        "uuid": "a2a96aee-9448-489f-a8d5-8cfc1d9314b0",
+        "degree": 1,
+        "name": "kris_p_347",
+        "code": "kris_p_347"
+      },
+      {
+        "uuid": "4a516191-fff3-4034-ae18-172250004c79",
+        "degree": 1,
+        "name": "kris_p_342",
+        "code": "kris_p_342"
+      },
+      {
+        "uuid": "a855cb41-afdc-42d1-a304-f2723b5d3308",
+        "degree": 1,
+        "name": "kris_p_348",
+        "code": "kris_p_348"
+      },
+      {
+        "uuid": "7b03a6cc-9ffa-41c8-b79b-4de0aaee4eb2",
+        "degree": 1,
+        "name": "kris_p_386",
+        "code": "kris_p_386"
+      },
+      {
+        "uuid": "5c0ab97a-ea27-4a39-af99-5c1dd1169519",
+        "degree": 1,
+        "name": "kris_p_371",
+        "code": "kris_p_371"
+      },
+      {
+        "uuid": "6e69c8cb-f382-4eae-9dcd-7637e8335512",
+        "degree": 1,
+        "name": "kris_p_362",
+        "code": "kris_p_362"
+      },
+      {
+        "uuid": "51f124cb-2dd0-4c92-9c32-5c18a3683046",
+        "degree": 1,
+        "name": "kris_p_358",
+        "code": "kris_p_358"
+      },
+      {
+        "uuid": "8986f086-a819-4974-b1d0-32dc5af48e3c",
+        "degree": 1,
+        "name": "kris_p_355",
+        "code": "kris_p_355"
+      },
+      {
+        "uuid": "cc89b3dc-4891-47bb-8ed9-349759f86f74",
+        "degree": 1,
+        "name": "kris_p_382",
+        "code": "kris_p_382"
+      },
+      {
+        "uuid": "b91681ae-85c3-4020-87c6-2b2319d1e215",
+        "degree": 1,
+        "name": "kris_p_372",
+        "code": "kris_p_372"
+      },
+      {
+        "uuid": "f13648ed-b7ff-4ab3-aafd-18d1b6923530",
+        "degree": 1,
+        "name": "kris_p_356",
+        "code": "kris_p_356"
+      },
+      {
+        "uuid": "e87818b2-4c7f-47bd-b99a-95b09f647872",
+        "degree": 1,
+        "name": "kris_p_353",
+        "code": "kris_p_353"
+      },
+      {
+        "uuid": "4d19d6dd-f71a-44c5-a880-1427e443f5a8",
+        "degree": 1,
+        "name": "kris_p_352",
+        "code": "kris_p_352"
+      },
+      {
+        "uuid": "87c24df8-c79e-4c49-89fe-3515e0253d93",
+        "degree": 1,
+        "name": "kris_p_351",
+        "code": "kris_p_351"
+      },
+      {
+        "uuid": "8a364562-bcb6-45fa-b9bd-4b10cbb5bc2c",
+        "degree": 1,
+        "name": "kris_p_350",
+        "code": "kris_p_350"
+      },
+      {
+        "uuid": "8184bbed-d232-46c2-9257-86d62c4fa202",
+        "degree": 1,
+        "name": "kris_p_373",
+        "code": "kris_p_373"
+      },
+      {
+        "uuid": "3e9845da-57e3-4f16-83ea-ce928ef425dd",
+        "degree": 1,
+        "name": "kris_p_367",
+        "code": "kris_p_367"
+      },
+      {
+        "uuid": "e46717aa-3785-4f95-a0d8-d552d728b345",
+        "degree": 1,
+        "name": "kris_p_388",
+        "code": "kris_p_388"
+      },
+      {
+        "uuid": "e82a2dc2-af75-434a-a47b-dc2ff1e5b50d",
+        "degree": 1,
+        "name": "kris_p_385",
+        "code": "kris_p_385"
+      },
+      {
+        "uuid": "4831d5c6-c916-4153-8268-e2257cc747c5",
+        "degree": 1,
+        "name": "kris_p_384",
+        "code": "kris_p_384"
+      },
+      {
+        "uuid": "bfaf98fd-698d-49d1-8d0f-1ee32dac899d",
+        "degree": 1,
+        "name": "kris_p_383",
+        "code": "kris_p_383"
+      },
+      {
+        "uuid": "58a1ca66-9633-4af6-9e20-de71c71e7023",
+        "degree": 1,
+        "name": "kris_p_369",
+        "code": "kris_p_369"
+      },
+      {
+        "uuid": "1164f6dc-51a2-4cc0-aedf-e45d2e5468e6",
+        "degree": 1,
+        "name": "kris_p_368",
+        "code": "kris_p_368"
+      },
+      {
+        "uuid": "afbec4d0-e9eb-4fb7-a076-36b96b6e19f7",
+        "degree": 1,
+        "name": "kris_p_366",
+        "code": "kris_p_366"
+      },
+      {
+        "uuid": "99d0410b-5740-48d0-bc8c-6a212e701027",
+        "degree": 1,
+        "name": "kris_p_392",
+        "code": "kris_p_392"
+      },
+      {
+        "uuid": "c466db1f-8a73-4376-9b51-608fd635ed55",
+        "degree": 1,
+        "name": "kris_p_391",
+        "code": "kris_p_391"
+      },
+      {
+        "uuid": "d100ba79-068d-4d3a-b32d-233ae0693981",
+        "degree": 1,
+        "name": "kris_p_380",
+        "code": "kris_p_380"
+      },
+      {
+        "uuid": "299ab871-6dbf-46b5-afa3-c5fb21c70c0c",
+        "degree": 1,
+        "name": "kris_p_397",
+        "code": "kris_p_397"
+      },
+      {
+        "uuid": "4e491ee9-d6f2-4b8d-9822-4c4ad8c8e913",
+        "degree": 1,
+        "name": "kris_p_399",
+        "code": "kris_p_399"
+      },
+      {
+        "uuid": "3230e834-87ab-42aa-a0b1-af6723965fde",
+        "degree": 1,
+        "name": "kris_p_394",
+        "code": "kris_p_394"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "f27fd488-1544-41bb-949a-20ca516bc4b1",
+        "degree": 9,
+        "name": "KRIS Dopravného úradu - súčasný stav",
+        "code": "kris_418"
+      },
+      {
+        "uuid": "af1de2b0-94cc-4361-91c4-3283e94d79c0",
+        "degree": 6,
+        "name": "KRIS Rady pre vysielanie a retransmisiu - súčasný stav",
+        "code": "kris_248"
+      },
+      {
+        "uuid": "772d4370-b272-442f-9c04-306f6d6f7a30",
+        "degree": 6,
+        "name": "KRIT Úradu na ochranu osobných údajov SR - budúci stav",
+        "code": "kris_544"
+      },
+      {
+        "uuid": "709717f9-21e1-4bff-8008-d943802b0706",
+        "degree": 6,
+        "name": "KRIT Manažment údajov a zlepšenie eGOV služieb - Slovenský pozemkový fond",
+        "code": "kris_720"
+      },
+      {
+        "uuid": "7a152c82-4e29-4a9d-9c4d-ea539d3ec6da",
+        "degree": 6,
+        "name": "KRIT Redizajn siete GOVNET",
+        "code": "kris_728"
+      },
+      {
+        "uuid": "060f1850-7bc4-45bf-8d6d-6f4a8efedcd6",
+        "degree": 6,
+        "name": "KRIT Dopravného úradu - budúci stav",
+        "code": "kris_750"
+      },
+      {
+        "uuid": "34645edf-782e-495c-8145-027a246df1c5",
+        "degree": 6,
+        "name": "KRIT Manažmentu údajov Národného lesníckeho centra",
+        "code": "kris_787"
+      },
+      {
+        "uuid": "04d23caa-f166-410e-a022-c9893711e8cf",
+        "degree": 6,
+        "name": "KRIT - Elektronické úložisko projektovej dokumentácie",
+        "code": "kris_830"
+      },
+      {
+        "uuid": "c919d9d6-3c6c-4f20-abec-728b1fdd91cc",
+        "degree": 5,
+        "name": "KRIT Manažment údajov a zlepšenie služieb Úradu pre dohľad nad zdravotnou starostlivosťou",
+        "code": "kris_778"
+      },
+      {
+        "uuid": "98fe6c09-7d9b-4d03-a1f8-afe9d828b92c",
+        "degree": 5,
+        "name": "KRIT Manažérskeho informačného systému MDV SR",
+        "code": "kris_812"
+      },
+      {
+        "uuid": "9f66e1ae-4fbb-4913-b08a-11b2deef446b",
+        "degree": 4,
+        "name": "KRIS Sociálnej poisťovne",
+        "code": "kris_34"
+      },
+      {
+        "uuid": "385d8bbe-bc18-456f-92d6-813a5bcc505d",
+        "degree": 4,
+        "name": "KRIS Úradu geodézie, kartografie a katastra Slovenskej republiky",
+        "code": "kris_17"
+      },
+      {
+        "uuid": "0c82df6a-2647-464f-865e-626f325e1455",
+        "degree": 4,
+        "name": "KRIS DataCentra elektronizácie územnej samosprávy Slovenska",
+        "code": "kris_246"
+      },
+      {
+        "uuid": "297eacfb-adb9-4734-96f3-5a38ca521d1e",
+        "degree": 4,
+        "name": "KRIS Kancelárie prezidenta Slovenskej republiky",
+        "code": "kris_29"
+      },
+      {
+        "uuid": "e4bfbff7-bf74-46e5-b4da-7e978d16fb10",
+        "degree": 4,
+        "name": "KRIS Úradu na ochranu osobných údajov - súčasný stav",
+        "code": "kris_24"
+      },
+      {
+        "uuid": "0842a946-3316-4a5d-a16a-7ea3bc0304dd",
+        "degree": 4,
+        "name": "KRIS Ministerstva školstva, vedy, výskumu a športu SR",
+        "code": "kris_314"
+      },
+      {
+        "uuid": "c62fb973-999a-4c5d-b62a-df0871441756",
+        "degree": 4,
+        "name": "KRIS Správy štátnych hmotných rezerv SR",
+        "code": "kris_379"
+      },
+      {
+        "uuid": "f7897301-6376-4901-a966-b5dcfbee30ae",
+        "degree": 4,
+        "name": "KRIT Pamiatkového úradu SR - budúci stav",
+        "code": "kris_688"
+      },
+      {
+        "uuid": "73102845-f9dc-4125-ac89-e956db8509ab",
+        "degree": 4,
+        "name": "KRIT Manažmentu údajov - Hydromeliorácie š.p.",
+        "code": "kris_765"
+      },
+      {
+        "uuid": "35055b1c-3bc9-49da-a72c-b9951a0a8a71",
+        "degree": 4,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Štátna veterinárna a potravinová správa Slovenskej republiky",
+        "code": "kris_783"
+      },
+      {
+        "uuid": "503ffef5-2e20-4c55-9857-b19340faf6ff",
+        "degree": 4,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Pôdohospodárska platobná agentúra",
+        "code": "kris_784"
+      },
+      {
+        "uuid": "2c6702d9-c6af-4009-8eb7-ce65d8b044a3",
+        "degree": 4,
+        "name": "KRIT Manažmentu údajov Úradu vlády SR",
+        "code": "kris_786"
+      },
+      {
+        "uuid": "f481cdea-0fc1-4df6-a667-f453440093c0",
+        "degree": 4,
+        "name": "KRIT Manažment údajov Národné športové centrum - budúci stav",
+        "code": "kris_789"
+      },
+      {
+        "uuid": "27fdfd15-486b-4316-b2c3-2f4beb7ce7bc",
+        "degree": 4,
+        "name": "KRIT Lepšie využívanie údajov pre kontrolu výskytu a šírenia baktérií - Antimikrobiálna rezistencia v SR (AMR) - budúci stav",
+        "code": "kris_819"
+      },
+      {
+        "uuid": "47724be4-b222-425d-ba05-6c08ddf019da",
+        "degree": 4,
+        "name": "KRIT Migrácie Informačného systému služieb zamestnanosti",
+        "code": "kris_827"
+      },
+      {
+        "uuid": "958fe202-3eb5-452d-8698-89c1b7013381",
+        "degree": 4,
+        "name": "KRIT Centrálneho metainformačného systému verejnej správy pre oblasť služieb vládneho cloudu",
+        "code": "kris_836"
+      },
+      {
+        "uuid": "bced5129-0a2d-4ad1-bcac-af02226ddb81",
+        "degree": 3,
+        "name": "KRIS Kancelárie Národnej rady Slovenskej republiky",
+        "code": "kris_28"
+      },
+      {
+        "uuid": "384b58dc-6083-4f37-ad54-a5033f57af04",
+        "degree": 3,
+        "name": "KRIS Nitrianskeho samosprávneho kraja",
+        "code": "kris_103"
+      },
+      {
+        "uuid": "4d973ec6-6d8e-44d5-88ba-07cd15ad835d",
+        "degree": 3,
+        "name": "KRIS Úradu jadrového dozoru",
+        "code": "kris_18"
+      },
+      {
+        "uuid": "aba18c36-e4d5-4b70-ae5a-a73fbbab1bfb",
+        "degree": 3,
+        "name": "KRIS Úradu pre reguláciu elektronických komunikácií a poštových služieb –  súčasný stav",
+        "code": "kris_296"
+      },
+      {
+        "uuid": "a41a6d4c-6907-46e2-981b-4e3668c7954f",
+        "degree": 3,
+        "name": "KRIS Kancelárie Najvyššieho súdu Slovenskej republiky",
+        "code": "kris_293"
+      },
+      {
+        "uuid": "458e8092-9e9c-4f7d-985f-09107ceb4a6b",
+        "degree": 3,
+        "name": "Kris Protimonopolného úradu Slovenskej republiky",
+        "code": "kris_15"
+      },
+      {
+        "uuid": "934abdb5-a789-4bdf-bd8f-22d3db27a164",
+        "degree": 3,
+        "name": "KRIS Národného bezpečnostného úradu - AS IS",
+        "code": "kris_23"
+      },
+      {
+        "uuid": "66b53874-67bc-4317-a51d-6a2c8a85638a",
+        "degree": 3,
+        "name": "KRIS Kancelárie verejného ochrancu práv",
+        "code": "kris_31"
+      },
+      {
+        "uuid": "61b15fc6-48a4-4295-9290-e5983e5af1a4",
+        "degree": 3,
+        "name": "KRIS Ministerstva pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
+        "code": "kris_4"
+      },
+      {
+        "uuid": "5cb38699-c1dc-4d1f-8610-18f25f0c40ed",
+        "degree": 3,
+        "name": "KRIS Ministerstva dopravy a výstavby Slovenskej republiky",
+        "code": "kris_218"
+      },
+      {
+        "uuid": "8ddc7f5d-66fa-4376-a8a9-5f7784b25cde",
+        "degree": 3,
+        "name": "KRIT Úradu pre verejné obstarávanie - budúci stav",
+        "code": "kris_414"
+      },
+      {
+        "uuid": "215c2e4c-6983-48d7-b226-5aed1d5a9685",
+        "degree": 3,
+        "name": "KRIS Generálnej prokuratúry SR - budúci stav",
+        "code": "kris_503"
+      },
+      {
+        "uuid": "59a0c455-f46c-4289-92aa-682ef5eeebe8",
+        "degree": 3,
+        "name": "KRIS Národného lesníckeho centra",
+        "code": "kris_614"
+      },
+      {
+        "uuid": "56a060c7-2732-4c07-a541-161efb9d57c1",
+        "degree": 3,
+        "name": "KRIT Migrácia systému PROFSME do Vládneho cloudu SR",
+        "code": "kris_641"
+      },
+      {
+        "uuid": "515c1b72-53b4-4ca5-8226-b9033469c63c",
+        "degree": 3,
+        "name": "KRIT Informačného systému pre certifikáciu kompetencií v informatike",
+        "code": "kris_706"
+      },
+      {
+        "uuid": "274687fe-f79a-4974-b5e7-dc2849d85633",
+        "degree": 3,
+        "name": "KRIT Plošné rozšírenie IS DCOM na mestá",
+        "code": "kris_747"
+      },
+      {
+        "uuid": "b0260c1f-150e-4207-87bd-9548524c0d16",
+        "degree": 3,
+        "name": "KRIT Manažment údajov Zboru väzenskej a justičnej stráže",
+        "code": "kris_751"
+      },
+      {
+        "uuid": "6c4813b7-6227-491b-83e8-e2efc83dfea4",
+        "degree": 3,
+        "name": "KRIT Elektronickej zložky klienta",
+        "code": "kris_752"
+      },
+      {
+        "uuid": "64e94d18-090e-41ff-be22-00057dd0fdb2",
+        "degree": 3,
+        "name": "KRIT Manažmentu údajov Žilinského samosprávneho kraja",
+        "code": "kris_755"
+      },
+      {
+        "uuid": "d3f834e2-4d6d-4bf4-bcdc-e01b69020ec9",
+        "degree": 3,
+        "name": "KRIT Manažment údajov Ministerstva kultúry Slovenskej republiky",
+        "code": "kris_760"
+      },
+      {
+        "uuid": "e8212b45-14c8-4ef1-bba2-7f58a55bfbc1",
+        "degree": 3,
+        "name": "KRIT Centralizovaného systému súdneho riadenia (CSSR)",
+        "code": "kris_762"
+      },
+      {
+        "uuid": "0633a2f5-0817-4459-8d9c-f57a292cef58",
+        "degree": 3,
+        "name": "KRIT Manažmentu údajov Centrálneho metainformačného systému verejnej správy",
+        "code": "kris_779"
+      },
+      {
+        "uuid": "01ef2cdc-8926-47f1-93ed-24381d515b29",
+        "degree": 3,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Ústredný kontrolný a skúšobný ústav poľnohospodársky",
+        "code": "kris_782"
+      },
+      {
+        "uuid": "c2d0fe53-01f6-42a9-bf20-579de8805aef",
+        "degree": 3,
+        "name": "KRIT - Migrácia ISVS Ministerstva životného prostredia SR do IaaS",
+        "code": "kris_793"
+      },
+      {
+        "uuid": "ac4bac4e-7001-4e96-9966-335ac551096b",
+        "degree": 3,
+        "name": "KRIT Správy pre IaaS infraštruktúru (Datacentrum Kopčianska)",
+        "code": "kris_795"
+      },
+      {
+        "uuid": "9b5ff594-f8c4-4703-99d3-9f2f2d501c27",
+        "degree": 3,
+        "name": "KRIT - Elektronizácia dávok z nemocenského poistenia",
+        "code": "kris_837"
+      },
+      {
+        "uuid": "4fb4d534-f363-4848-bfba-ead2db161e2c",
+        "degree": 3,
+        "name": "KRIT - Elektronické služby spracovávania bezpečnostných spisov",
+        "code": "kris_839"
+      },
+      {
+        "uuid": "d2390104-6d12-45e9-8de5-c75e13312f59",
+        "degree": 2,
+        "name": "KRIS Úradu pre dohľad nad zdravotnou starostlivosťou",
+        "code": "kris_205"
+      },
+      {
+        "uuid": "9df26e1b-a931-4760-acb5-be12a71037a1",
+        "degree": 2,
+        "name": "KRIS Najvyššieho kontrolného úradu Slovenskej republiky",
+        "code": "kris_33"
+      },
+      {
+        "uuid": "b6dde8ef-60f8-4cad-a3b7-af80962c4e2c",
+        "degree": 2,
+        "name": "KRIS Ministerstva zahraničných vecí a európskych záležitostí Slovenskej republiky",
+        "code": "kris_8"
+      },
+      {
+        "uuid": "e00383d7-51c6-488d-9300-a9f3c39a9f06",
+        "degree": 2,
+        "name": "KRIT Tlačovej agentúry Slovenskej republiky",
+        "code": "kris_37"
+      },
+      {
+        "uuid": "4df1901b-85a8-4191-8ae6-398b60d4959f",
+        "degree": 2,
+        "name": "KRIS Prešovského samosprávneho kraja",
+        "code": "kris_168"
+      },
+      {
+        "uuid": "c5a8719c-8b80-48da-ae44-b7982c3440dc",
+        "degree": 2,
+        "name": "KRIS Košického samosprávneho kraja",
+        "code": "kris_186"
+      },
+      {
+        "uuid": "7fccbd51-e731-48e4-9053-65d11b8311f1",
+        "degree": 2,
+        "name": "KRIS Dôvery zdravotnej poisťovne a. s.",
+        "code": "kris_249"
+      },
+      {
+        "uuid": "c7a4eb50-f4c2-413f-9ccc-506464bca714",
+        "degree": 2,
+        "name": "KRIS Štatistického úradu Slovenskej republiky",
+        "code": "kris_16"
+      },
+      {
+        "uuid": "e0d5b74d-3f1d-4fd9-a36b-fc5556d28a8f",
+        "degree": 2,
+        "name": "KRIS Kancelárie Ústavného súdu Slovenskej republiky - súčasný stav",
+        "code": "kris_30"
+      },
+      {
+        "uuid": "85621e60-5069-4266-8bfa-46c51af2cbf8",
+        "degree": 2,
+        "name": "KRIS Kancelárie Súdnej rady Slovenskej republiky - súčasný stav",
+        "code": "kris_250"
+      },
+      {
+        "uuid": "38c292c3-c716-465c-8c40-6ceb6382efcc",
+        "degree": 2,
+        "name": "KRIS Ministerstva kultúry Slovenskej republiky - súčasný stav",
+        "code": "kris_11"
+      },
+      {
+        "uuid": "60a9d629-ee2e-4d9a-9df8-01ac600e3688",
+        "degree": 2,
+        "name": "KRIS Ministerstva práce, sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "kris_9"
+      },
+      {
+        "uuid": "9855b11a-1bcd-450f-ae2b-101d4e110a4f",
+        "degree": 2,
+        "name": "KRIS Generálnej prokuratúry Slovenskej republiky - súčasný stav",
+        "code": "kris_32"
+      },
+      {
+        "uuid": "76af944b-c7ef-4621-9e5b-b3b480a432a0",
+        "degree": 2,
+        "name": "KRIS Ústavu pamäti národa",
+        "code": "kris_206"
+      },
+      {
+        "uuid": "b9fff9d9-f214-41cd-b966-59a6f6e94161",
+        "degree": 2,
+        "name": "KRIS Úradu vlády Slovenskej republiky - súčasný stav",
+        "code": "kris_307"
+      },
+      {
+        "uuid": "cb284cfc-11ee-41ef-9e30-a3fe1447ba5a",
+        "degree": 2,
+        "name": "KRIS Ministerstva financií Slovenskej republiky - súčasný stav",
+        "code": "kris_333"
+      },
+      {
+        "uuid": "e8b744a2-807a-4bfc-ad50-247d542de1a1",
+        "degree": 2,
+        "name": "KRIS Ministerstva spravodlivosti SR - súčasný stav",
+        "code": "kris_349"
+      },
+      {
+        "uuid": "5015edc5-9267-41e9-8017-c4cc3e5d20eb",
+        "degree": 2,
+        "name": "KRIS Úrad pre normalizáciu, metrológiu a skúšobnictvo Slovenskej republiky",
+        "code": "kris_356"
+      },
+      {
+        "uuid": "2f8c0887-b995-40f9-8597-738223f308c9",
+        "degree": 2,
+        "name": "KRIS Trenčianskeho samosprávneho kraja",
+        "code": "kris_372"
+      },
+      {
+        "uuid": "65430463-fc43-4338-aa22-702e2d14a3b0",
+        "degree": 2,
+        "name": "KRIS - Ministerstva životného prostredia",
+        "code": "kris_376"
+      },
+      {
+        "uuid": "9fb7ef1f-77c5-458f-a30a-42c06ea968f7",
+        "degree": 2,
+        "name": "KRIS Ministerstva hospodárstva Slovenskej republiky",
+        "code": "kris_378"
+      },
+      {
+        "uuid": "5ac9b299-8425-45c8-8832-552700025a98",
+        "degree": 2,
+        "name": "KRIS Úradu priemyselného vlastníctva Slovenskej Republiky - súčasný stav",
+        "code": "kris_381"
+      },
+      {
+        "uuid": "1149519c-b9ca-4484-bc41-585e22c0d920",
+        "degree": 2,
+        "name": "KRIS Úradu podpredsedu vlády SR pre investície a informatizáciu",
+        "code": "kris_385"
+      },
+      {
+        "uuid": "bf855ae9-9c35-4ced-8b44-8752438a80d0",
+        "degree": 2,
+        "name": "KRIS obce Miloslavov",
+        "code": "kris_423"
+      },
+      {
+        "uuid": "2097bc9e-fd4b-49f1-bc9e-e4a0cf7951a4",
+        "degree": 2,
+        "name": "Koncepcia rozvoja Centrálneho  informačného systému štátnej služby",
+        "code": "kris_427"
+      },
+      {
+        "uuid": "dcfd798c-1a1e-4efb-a6c9-b1da8930d977",
+        "degree": 2,
+        "name": "KRIS Ústavu pamäti národa - budúci stav",
+        "code": "kris_521"
+      },
+      {
+        "uuid": "70b9536b-0711-4953-8e31-98b9ff644484",
+        "degree": 2,
+        "name": "KRIS Centrálny finančný informačný systém pre verejné vysoké školy (SOFIA)",
+        "code": "kris_571"
+      },
+      {
+        "uuid": "1d6ea213-d151-444c-a7d0-328a7c72733c",
+        "degree": 2,
+        "name": "KRIS Centrálne úložisko digitálneho edukačného obsahu (CUDEO)",
+        "code": "kris_572"
+      },
+      {
+        "uuid": "2df13376-8579-45e1-8d0e-d253c4b45035",
+        "degree": 2,
+        "name": "KRIS Registre informačného systému o výstavbe",
+        "code": "kris_583"
+      },
+      {
+        "uuid": "74440c87-ccbd-4219-a34b-302beaa1446b",
+        "degree": 2,
+        "name": "KRIS Manažment údajov Žilinského samosprávneho kraja - budúci stav",
+        "code": "kris_615"
+      },
+      {
+        "uuid": "c671a205-b1f1-4298-9da7-1c80c8c33ea9",
+        "degree": 2,
+        "name": "KRIS Manažment údajov Ministerstva financií Slovenskej republiky - budúci stav",
+        "code": "kris_638"
+      },
+      {
+        "uuid": "dff50a39-7b6b-4692-b4df-4deefab33798",
+        "degree": 2,
+        "name": "KRIT Modernizácie dávkových agend Sociálnej poisťovne",
+        "code": "kris_711"
+      },
+      {
+        "uuid": "215ea989-d4db-4f2b-b5d3-de091b530e5c",
+        "degree": 2,
+        "name": "KRIT Atlasu pasívnej infraštruktúry Ministerstva životného prostredia",
+        "code": "kris_739"
+      },
+      {
+        "uuid": "4a343548-167b-4344-ba3d-4ba4edc7dfdb",
+        "degree": 2,
+        "name": "KRIS Rozšírenie portfólia služieb a inovácia služieb elektronického zdravotníctva - budúci stav",
+        "code": "kris_748"
+      },
+      {
+        "uuid": "bf6d834c-1754-401d-862f-001f1c5af36f",
+        "degree": 2,
+        "name": "KRIT Lepšieho manažmentu dát Prešovského samosprávneho kraja II",
+        "code": "kris_754"
+      },
+      {
+        "uuid": "70bcd843-4e3e-4d2a-af6e-927d8498aa37",
+        "degree": 2,
+        "name": "KRIT Migrácia IS Elektronizácia vzdelávacieho systému regionálneho školstva",
+        "code": "kris_776"
+      },
+      {
+        "uuid": "f9ecea59-dc6f-4f1c-ab44-e65d110eba98",
+        "degree": 2,
+        "name": "KRIT Komponentu sprístupňovania a zdieľania doručovaných rozhodnutí",
+        "code": "kris_788"
+      },
+      {
+        "uuid": "ef8b0c95-b98d-4771-b93d-d52422e71e33",
+        "degree": 2,
+        "name": "KRIT Úradu priemyselného vlastníctva SR - budúci stav",
+        "code": "kris_790"
+      },
+      {
+        "uuid": "29d12576-0a95-4e90-a111-b0037e6620f3",
+        "degree": 2,
+        "name": "KRIT - Malé zlepšenia e-gov služieb Ministerstva životného prostredia SR",
+        "code": "kris_791"
+      },
+      {
+        "uuid": "174836f9-1b77-4177-8991-4a0f2f211aa8",
+        "degree": 2,
+        "name": "KRIT Migrácia ISVS Ústredného kontrolného a skúšobného ústavu poľnohospodárskeho do IaaS",
+        "code": "kris_794"
+      },
+      {
+        "uuid": "018b8657-5682-4f06-810f-151a041bb246",
+        "degree": 2,
+        "name": "KRIT Implementácie a integrácie podporného informačného systému (IS ÚRPO)",
+        "code": "kris_802"
+      },
+      {
+        "uuid": "67004893-f950-46fa-98a6-5efef06be855",
+        "degree": 2,
+        "name": "KRIT Elektronické služby MZVaEZ SR",
+        "code": "kris_832"
+      },
+      {
+        "uuid": "b32e76b5-b332-4fb8-8556-bcd8f05b9191",
+        "degree": 1,
+        "name": "KRIS Rozhlasu a televízie Slovenska",
+        "code": "kris_242"
+      },
+      {
+        "uuid": "3119014c-9281-4789-8123-4225206e9be5",
+        "degree": 1,
+        "name": "KRIS Exportno-importnej banky SR",
+        "code": "kris_292"
+      },
+      {
+        "uuid": "8397c2d9-892c-4f4c-868f-8db4934c5814",
+        "degree": 1,
+        "name": "KRIS Ministerstva vnútra Slovenskej republiky",
+        "code": "kris_6"
+      },
+      {
+        "uuid": "70ee137f-67fc-41a9-8ab6-f3783cb1a750",
+        "degree": 1,
+        "name": "KRIT mesta Košice",
+        "code": "kris_288"
+      },
+      {
+        "uuid": "61da0008-6ce5-4846-b8ce-7c6d9bfb1846",
+        "degree": 1,
+        "name": "KRIS Bratislavského samosprávneho kraja - súčasný stav",
+        "code": "kris_38"
+      },
+      {
+        "uuid": "0936b5b1-791f-46e1-9561-e910e93d9450",
+        "degree": 1,
+        "name": "KRIS Úradu pre verejné obstarávanie - súčasný stav",
+        "code": "kris_20"
+      },
+      {
+        "uuid": "503405c0-12de-4bd2-9fb8-e94e5224974f",
+        "degree": 1,
+        "name": "KRIS Úradu pre reguláciu sieťových odvetví",
+        "code": "kris_27"
+      },
+      {
+        "uuid": "c06e519b-71dc-4119-8f1f-789d6be7a088",
+        "degree": 1,
+        "name": "KRIT Všeobecnej zdravotnej poisťovne - súčasný stav",
+        "code": "kris_36"
+      },
+      {
+        "uuid": "67e7d01e-4ebd-4420-aefa-79c77bcd73eb",
+        "degree": 1,
+        "name": "KRIS Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "kris_13"
+      },
+      {
+        "uuid": "ec09c12a-1868-4fc2-98c8-fd4b12ddc08b",
+        "degree": 1,
+        "name": "Posúdenie súčastného stavu a doterajších riešení ISVS MO",
+        "code": "kris_342"
+      },
+      {
+        "uuid": "0c14888e-cbc8-46b0-a4c3-7cc735b62377",
+        "degree": 1,
+        "name": "KRIS Slovenskej lekárskej komory",
+        "code": "kris_392"
+      },
+      {
+        "uuid": "6ccba3c5-6759-439c-98a1-7bf65d91404d",
+        "degree": 1,
+        "name": "KRIS Žilinského samosprávneho kraja - súčasný stav",
+        "code": "kris_397"
+      },
+      {
+        "uuid": "450bfb98-989c-474c-8942-df77effdd0d6",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných systémov mesta Brezová pod Bradlom",
+        "code": "kris_421"
+      },
+      {
+        "uuid": "1656f3bc-29b7-4987-bc0b-c4d6d36039ef",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Informačného systému Obchodného registra Ministerstva spravodlivosti SR",
+        "code": "kris_425"
+      },
+      {
+        "uuid": "4f186786-df04-45ad-a309-aa1a1bf91145",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Centrálneho ekonomického systému Ministerstva financií SR",
+        "code": "kris_426"
+      },
+      {
+        "uuid": "d6a46985-3d5c-4952-998d-bc04c6d3e285",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Informačného systému Centra právnej pomoci",
+        "code": "kris_449"
+      },
+      {
+        "uuid": "28289734-e2fc-47a6-874d-8ff98c38405a",
+        "degree": 1,
+        "name": "Koncepcia rozvoja IS Manažmentu údajov Sociálnej poisťovne",
+        "code": "kris_454"
+      },
+      {
+        "uuid": "6fe1bcdc-385d-49d2-a489-b81c169207b9",
+        "degree": 1,
+        "name": "KRIS DataCentra elektronizácie územnej samosprávy Slovenska",
+        "code": "kris_484"
+      },
+      {
+        "uuid": "4d329e12-18e1-4e6c-94fc-2fb0a5d5026f",
+        "degree": 1,
+        "name": "KRIS Protimonopolného úradu SR - budúci stav",
+        "code": "kris_485"
+      },
+      {
+        "uuid": "28a5b9eb-ba29-4aaf-99af-47c6ca4d348d",
+        "degree": 1,
+        "name": "KRIT Lepšieho využívania údajov Nitrianskeho samosprávneho kraja",
+        "code": "kris_493"
+      },
+      {
+        "uuid": "cffd03ea-0ae6-4a1c-ad12-f430a3ac8ce6",
+        "degree": 1,
+        "name": "KRIS Národného bezpečnostného úradu - TO BE",
+        "code": "kris_498"
+      },
+      {
+        "uuid": "542ee6b7-897b-42fe-9ec6-de057eff561e",
+        "degree": 1,
+        "name": "KRIS Prešovského samosprávneho kraja - budúci stav",
+        "code": "kris_504"
+      },
+      {
+        "uuid": "62480938-4803-4eb4-b383-1f29e68db24d",
+        "degree": 1,
+        "name": "KRIS Kancelárie Najvyššieho súdu Slovenskej republiky - budúci stav",
+        "code": "kris_522"
+      },
+      {
+        "uuid": "efa602c1-98d1-435b-b80a-6f02159971f1",
+        "degree": 1,
+        "name": "KRIS Úradu pre reguláciu elektronických komunikácii a poštových služieb - budúci stav",
+        "code": "kris_536"
+      },
+      {
+        "uuid": "390d00f3-b2f2-4445-8477-72f3ee8c414e",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Ústredného portálu verejnej správy (ÚPVS)",
+        "code": "kris_537"
+      },
+      {
+        "uuid": "2d0c84d6-80cb-4818-a92e-a070abf1b63b",
+        "degree": 1,
+        "name": "KRIS Ministerstva zahraničných vecí a európskych záležitostí Slovenskej republiky - budúci stav",
+        "code": "kris_553"
+      },
+      {
+        "uuid": "3e83b0c0-8765-4859-9bb4-232779a1a3af",
+        "degree": 1,
+        "name": "KRIS Inteligentné regulácie",
+        "code": "kris_558"
+      },
+      {
+        "uuid": "c565ca12-c44c-4bc0-866d-8ced032547b5",
+        "degree": 1,
+        "name": "Koncepcia rozvoja PaaS platformy vládneho cloudu",
+        "code": "kris_565"
+      },
+      {
+        "uuid": "5cc22fbe-436d-44b3-baea-244418fd2edb",
+        "degree": 1,
+        "name": "KRIS MPSVR SR - ESKO-2 - budúci stav",
+        "code": "kris_573"
+      },
+      {
+        "uuid": "8b14504f-4ecd-4269-a50f-ac00cfc1b005",
+        "degree": 1,
+        "name": "KRIS Najvyššieho kontrolného úradu Slovenskej republiky - budúci stav",
+        "code": "kris_580"
+      },
+      {
+        "uuid": "b58d0ccb-1aa1-45b1-92f6-511c2a96bd54",
+        "degree": 1,
+        "name": "KRIS Online procesy eZdravia - budúci stav",
+        "code": "kris_600"
+      },
+      {
+        "uuid": "7d45df49-60eb-46a7-bc82-b1fbe58f7c1d",
+        "degree": 1,
+        "name": "KRIT Všeobecnej zdravotnej poisťovne - budúci stav",
+        "code": "kris_632"
+      },
+      {
+        "uuid": "ba85ff00-4122-4201-bada-9d1164a856b1",
+        "degree": 1,
+        "name": "KRIS - Národné športové centrum - súčasný stav",
+        "code": "kris_650"
+      },
+      {
+        "uuid": "b5d6ac25-a5dc-46e6-ade4-7c66cbe2f0e2",
+        "degree": 1,
+        "name": "KRIS Agentúry na podporu výskumu a vývoja",
+        "code": "kris_658"
+      },
+      {
+        "uuid": "cb7a841f-a98b-4716-b99a-a58e887f8c76",
+        "degree": 1,
+        "name": "KRIS Manažmentu údajov pre oblast vedy a výskumu",
+        "code": "kris_661"
+      },
+      {
+        "uuid": "bbdf5585-3ea1-499c-abc2-f1f62676adde",
+        "degree": 1,
+        "name": "KRIT Elektronizácia služieb regionálneho a vysokého školstva SR",
+        "code": "kris_697"
+      },
+      {
+        "uuid": "c68908d7-1eee-4fc4-ab2b-51e0845f929d",
+        "degree": 1,
+        "name": "KRIT Komplexného informačného systému riadenia výkonnosti a podpory",
+        "code": "kris_714"
+      },
+      {
+        "uuid": "936828e2-9b05-495f-a5cd-87df8f421583",
+        "degree": 1,
+        "name": "KRIS Trenčianskeho samosprávneho kraja - súčasný stav",
+        "code": "kris_724"
+      },
+      {
+        "uuid": "e1224463-c4a1-4d07-b170-592b099f5b98",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov v rezorte školstva",
+        "code": "kris_781"
+      },
+      {
+        "uuid": "c4b624cc-a58e-4ef3-85e7-2ee6de4bb6a2",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov Registrov Zbierky elektronických listín",
+        "code": "kris_792"
+      },
+      {
+        "uuid": "21844744-30a2-48b6-9929-5bfe55ee7535",
+        "degree": 1,
+        "name": "KRIT pre podporu aktívneho asistovaného života v podmienkach Trenčianskeho samosprávneho kraja",
+        "code": "kris_807"
+      },
+      {
+        "uuid": "e03af114-b3da-4df4-9289-3d323f1eb1bb",
+        "degree": 1,
+        "name": "KRIT Portálu Finančnej správy (PFS)",
+        "code": "kris_818"
+      },
+      {
+        "uuid": "be4a5c73-7ba3-4236-a6f5-c67cecfa6aee",
+        "degree": 1,
+        "name": "KRIT Konsolidovanej analytickej vrstvy",
+        "code": "kris_820"
+      },
+      {
+        "uuid": "a311c124-f080-4a58-988a-c073fc648d63",
+        "degree": 1,
+        "name": "KRIT Centrálneho informačného systému na riadenie IT aktív",
+        "code": "kris_822"
+      },
+      {
+        "uuid": "66c8ca19-0484-4fa4-b622-bc562a7462dd",
+        "degree": 1,
+        "name": "KRIT Úradu priemyselného vlastníctva SR - budúci stav",
+        "code": "kris_828"
+      },
+      {
+        "uuid": "fb0b6135-a113-4804-9d7a-bb52f440137a",
+        "degree": 1,
+        "name": "Prediktívne modely prevenčných programov",
+        "code": "kris_842"
+      },
+      {
+        "uuid": "1d1a6b4f-01fb-41c5-be2b-fa66c72c4c0a",
+        "degree": 1,
+        "name": "KRIT Dynamického architektonického modelu governmentu",
+        "code": "kris_849"
+      },
+      {
+        "uuid": "ab153db4-e717-45a9-b6f8-d71cd4075200",
+        "degree": 1,
+        "name": "KRIT manažmentu údajov Centrálnej archeologickej evidencie SR",
+        "code": "kris_855"
+      }
+    ],
+    "islands": {
+      "total_nodes": 625,
+      "total_islands": 287,
+      "singleton_islands": 144,
+      "multi_islands": [
+        {
+          "size_total": 10,
+          "size_source": 9,
+          "size_target": 1,
+          "fraction_total": 0.016,
+          "top_source_uuid": "889188fd-d362-4925-8fd4-5ff3b8ee5852",
+          "top_source_degree": 1,
+          "top_target_uuid": "f27fd488-1544-41bb-949a-20ca516bc4b1",
+          "top_target_degree": 9
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0112,
+          "top_source_uuid": "4e40c4d2-747a-4908-ae50-591bdfa4e777",
+          "top_source_degree": 1,
+          "top_target_uuid": "af1de2b0-94cc-4361-91c4-3283e94d79c0",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0112,
+          "top_source_uuid": "dd67e713-1c3f-4592-9fef-ec695861f738",
+          "top_source_degree": 1,
+          "top_target_uuid": "060f1850-7bc4-45bf-8d6d-6f4a8efedcd6",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0112,
+          "top_source_uuid": "b91681ae-85c3-4020-87c6-2b2319d1e215",
+          "top_source_degree": 1,
+          "top_target_uuid": "04d23caa-f166-410e-a022-c9893711e8cf",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0112,
+          "top_source_uuid": "b1fbeb9e-4897-486d-84c0-bda97128ca2c",
+          "top_source_degree": 1,
+          "top_target_uuid": "34645edf-782e-495c-8145-027a246df1c5",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0112,
+          "top_source_uuid": "aec14e5d-9210-4801-9616-935bfdf564e8",
+          "top_source_degree": 1,
+          "top_target_uuid": "772d4370-b272-442f-9c04-306f6d6f7a30",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0112,
+          "top_source_uuid": "95377aa7-37a3-48ee-ab6b-91dad3280647",
+          "top_source_degree": 1,
+          "top_target_uuid": "709717f9-21e1-4bff-8008-d943802b0706",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0112,
+          "top_source_uuid": "ccd570d5-e6bb-41da-b8c6-99b34a0ca2fa",
+          "top_source_degree": 1,
+          "top_target_uuid": "7a152c82-4e29-4a9d-9c4d-ea539d3ec6da",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.0096,
+          "top_source_uuid": "4198b96a-dbd6-4eec-a3c7-6b5b063cccf7",
+          "top_source_degree": 1,
+          "top_target_uuid": "98fe6c09-7d9b-4d03-a1f8-afe9d828b92c",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.0096,
+          "top_source_uuid": "1331e718-809f-4b3c-a157-8de44a960767",
+          "top_source_degree": 1,
+          "top_target_uuid": "c919d9d6-3c6c-4f20-abec-728b1fdd91cc",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "d4576dda-0ba7-45f1-9913-2ffdfd205e30",
+          "top_source_degree": 1,
+          "top_target_uuid": "503ffef5-2e20-4c55-9857-b19340faf6ff",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "4831d5c6-c916-4153-8268-e2257cc747c5",
+          "top_source_degree": 1,
+          "top_target_uuid": "958fe202-3eb5-452d-8698-89c1b7013381",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "f9fbd146-1fd9-42ad-8fff-c805fc857de2",
+          "top_source_degree": 1,
+          "top_target_uuid": "385d8bbe-bc18-456f-92d6-813a5bcc505d",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "0c4eb1f1-cbb1-4a18-a1cb-42643f870e98",
+          "top_source_degree": 1,
+          "top_target_uuid": "c62fb973-999a-4c5d-b62a-df0871441756",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "47cdf00f-64e4-4a46-afad-2ecbf79d7437",
+          "top_source_degree": 1,
+          "top_target_uuid": "35055b1c-3bc9-49da-a72c-b9951a0a8a71",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "8348de13-eebc-4a5f-b287-471164713abb",
+          "top_source_degree": 1,
+          "top_target_uuid": "9f66e1ae-4fbb-4913-b08a-11b2deef446b",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "edeac17f-9369-467a-a9a5-19dbf5de6ef0",
+          "top_source_degree": 1,
+          "top_target_uuid": "e4bfbff7-bf74-46e5-b4da-7e978d16fb10",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "acf0fd75-e5ee-49b1-81e0-3155ff3e4c01",
+          "top_source_degree": 1,
+          "top_target_uuid": "0842a946-3316-4a5d-a16a-7ea3bc0304dd",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "ed596bed-baf1-4ad6-b25d-5e907804026a",
+          "top_source_degree": 1,
+          "top_target_uuid": "73102845-f9dc-4125-ac89-e956db8509ab",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "4a516191-fff3-4034-ae18-172250004c79",
+          "top_source_degree": 1,
+          "top_target_uuid": "27fdfd15-486b-4316-b2c3-2f4beb7ce7bc",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "fdbf9fb0-98f9-4058-ba3e-7a2ed50613aa",
+          "top_source_degree": 1,
+          "top_target_uuid": "297eacfb-adb9-4734-96f3-5a38ca521d1e",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "ba9fa88f-6f40-400d-bdd8-b7b95c8981f2",
+          "top_source_degree": 1,
+          "top_target_uuid": "f481cdea-0fc1-4df6-a667-f453440093c0",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "b9d7e144-9b07-4e2a-86de-d9cce22d5eee",
+          "top_source_degree": 1,
+          "top_target_uuid": "f7897301-6376-4901-a966-b5dcfbee30ae",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "bf51e73f-894c-493a-9566-b4357a725ef4",
+          "top_source_degree": 1,
+          "top_target_uuid": "2c6702d9-c6af-4009-8eb7-ce65d8b044a3",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "b54ff2dd-be4f-4b63-8779-13f40a122024",
+          "top_source_degree": 1,
+          "top_target_uuid": "0c82df6a-2647-464f-865e-626f325e1455",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.008,
+          "top_source_uuid": "6e69c8cb-f382-4eae-9dcd-7637e8335512",
+          "top_source_degree": 1,
+          "top_target_uuid": "47724be4-b222-425d-ba05-6c08ddf019da",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "efd02925-9c23-4f9a-8d0c-7a1c77127d2b",
+          "top_source_degree": 1,
+          "top_target_uuid": "515c1b72-53b4-4ca5-8226-b9033469c63c",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "ac19e4b8-e0de-449a-b5b9-e7245d1e653b",
+          "top_source_degree": 1,
+          "top_target_uuid": "66b53874-67bc-4317-a51d-6a2c8a85638a",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "2e9abbf3-f4c4-4f80-931d-5e189fb2f16e",
+          "top_source_degree": 1,
+          "top_target_uuid": "bced5129-0a2d-4ad1-bcac-af02226ddb81",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "8fe09cc0-51b2-4f04-8b3d-b80b65af4bb9",
+          "top_source_degree": 1,
+          "top_target_uuid": "274687fe-f79a-4974-b5e7-dc2849d85633",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "307ce71e-a900-4862-bf02-7bb15e8ce7de",
+          "top_source_degree": 1,
+          "top_target_uuid": "ac4bac4e-7001-4e96-9966-335ac551096b",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "b94bfb08-cab9-4861-a32f-6a2021e7b708",
+          "top_source_degree": 1,
+          "top_target_uuid": "215c2e4c-6983-48d7-b226-5aed1d5a9685",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "414807c1-1976-47f2-8c45-e88188f177e8",
+          "top_source_degree": 1,
+          "top_target_uuid": "61b15fc6-48a4-4295-9290-e5983e5af1a4",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "422924ca-7250-47f1-97a5-2b520c85d507",
+          "top_source_degree": 1,
+          "top_target_uuid": "a41a6d4c-6907-46e2-981b-4e3668c7954f",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "a0826b48-a7ec-40bd-be3f-15cf467969fb",
+          "top_source_degree": 1,
+          "top_target_uuid": "934abdb5-a789-4bdf-bd8f-22d3db27a164",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "0ea7eefa-f16b-47b3-af90-b57470ef76da",
+          "top_source_degree": 1,
+          "top_target_uuid": "56a060c7-2732-4c07-a541-161efb9d57c1",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "86d90291-fe62-4cc1-bbc5-82a67315e63b",
+          "top_source_degree": 1,
+          "top_target_uuid": "458e8092-9e9c-4f7d-985f-09107ceb4a6b",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "d507b038-5361-4ca0-a027-25255aef177d",
+          "top_source_degree": 1,
+          "top_target_uuid": "4d973ec6-6d8e-44d5-88ba-07cd15ad835d",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "f3521beb-7549-4bed-8142-664a3817cdb0",
+          "top_source_degree": 1,
+          "top_target_uuid": "6c4813b7-6227-491b-83e8-e2efc83dfea4",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "fffe3156-c95e-4779-9e3b-d295d1ba63a9",
+          "top_source_degree": 1,
+          "top_target_uuid": "59a0c455-f46c-4289-92aa-682ef5eeebe8",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "c466db1f-8a73-4376-9b51-608fd635ed55",
+          "top_source_degree": 1,
+          "top_target_uuid": "4fb4d534-f363-4848-bfba-ead2db161e2c",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "6ddf1641-5767-4871-b9ac-350f683475a3",
+          "top_source_degree": 1,
+          "top_target_uuid": "d3f834e2-4d6d-4bf4-bcdc-e01b69020ec9",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "7326bc6e-8259-4928-af58-3ca4b7191d74",
+          "top_source_degree": 1,
+          "top_target_uuid": "aba18c36-e4d5-4b70-ae5a-a73fbbab1bfb",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "93ed95bf-3265-4e91-8e23-9465b2c3f2de",
+          "top_source_degree": 1,
+          "top_target_uuid": "5cb38699-c1dc-4d1f-8610-18f25f0c40ed",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "8d4fdde2-db7a-4bb3-9977-f7302bbd0b0c",
+          "top_source_degree": 1,
+          "top_target_uuid": "01ef2cdc-8926-47f1-93ed-24381d515b29",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "8c1f62cd-ff13-4b4e-993c-c91febe00fe9",
+          "top_source_degree": 1,
+          "top_target_uuid": "b0260c1f-150e-4207-87bd-9548524c0d16",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "73a2ff4f-eb98-4d65-8121-2834efcadfd9",
+          "top_source_degree": 1,
+          "top_target_uuid": "0633a2f5-0817-4459-8d9c-f57a292cef58",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "ce654a80-14e8-47a8-b1cd-70a317fbec42",
+          "top_source_degree": 1,
+          "top_target_uuid": "384b58dc-6083-4f37-ad54-a5033f57af04",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "d49a0023-98b3-4608-8cd3-824a27df35a3",
+          "top_source_degree": 1,
+          "top_target_uuid": "64e94d18-090e-41ff-be22-00057dd0fdb2",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "015c947b-fb03-4877-9aae-c8742658965c",
+          "top_source_degree": 1,
+          "top_target_uuid": "c2d0fe53-01f6-42a9-bf20-579de8805aef",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "51487a22-9b24-448c-b729-948b4f817eb5",
+          "top_source_degree": 1,
+          "top_target_uuid": "8ddc7f5d-66fa-4376-a8a9-5f7784b25cde",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "1164f6dc-51a2-4cc0-aedf-e45d2e5468e6",
+          "top_source_degree": 1,
+          "top_target_uuid": "9b5ff594-f8c4-4703-99d3-9f2f2d501c27",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0064,
+          "top_source_uuid": "cb7115fd-1b1a-4e9a-86d3-745bc8e307ad",
+          "top_source_degree": 1,
+          "top_target_uuid": "e8212b45-14c8-4ef1-bba2-7f58a55bfbc1",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "2829252b-8964-4c76-9683-3f71aaf9ade5",
+          "top_source_degree": 1,
+          "top_target_uuid": "e0d5b74d-3f1d-4fd9-a36b-fc5556d28a8f",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "b094f7bb-30e0-4d19-8276-f6f66b2f4fcc",
+          "top_source_degree": 1,
+          "top_target_uuid": "70b9536b-0711-4953-8e31-98b9ff644484",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "847321e1-011a-4de7-a064-560ad237900d",
+          "top_source_degree": 1,
+          "top_target_uuid": "85621e60-5069-4266-8bfa-46c51af2cbf8",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "89de0f4c-2bce-44ab-8127-8e86863d662d",
+          "top_source_degree": 1,
+          "top_target_uuid": "76af944b-c7ef-4621-9e5b-b3b480a432a0",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "6613ead7-5031-41ab-8a22-464568b7454d",
+          "top_source_degree": 1,
+          "top_target_uuid": "174836f9-1b77-4177-8991-4a0f2f211aa8",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "3b4feb44-09e7-4086-b1eb-35a5542a45cb",
+          "top_source_degree": 1,
+          "top_target_uuid": "7fccbd51-e731-48e4-9053-65d11b8311f1",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "8bff3af3-4c28-4f6b-af75-ad70436a11ac",
+          "top_source_degree": 1,
+          "top_target_uuid": "ef8b0c95-b98d-4771-b93d-d52422e71e33",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "1673494a-b6f7-4bad-8f81-e9e9afe061c2",
+          "top_source_degree": 1,
+          "top_target_uuid": "c5a8719c-8b80-48da-ae44-b7982c3440dc",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "647fd7c5-1092-46e6-8282-b258744f37a1",
+          "top_source_degree": 1,
+          "top_target_uuid": "5ac9b299-8425-45c8-8832-552700025a98",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "3e9845da-57e3-4f16-83ea-ce928ef425dd",
+          "top_source_degree": 1,
+          "top_target_uuid": "67004893-f950-46fa-98a6-5efef06be855",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "9468b021-3201-460e-ac26-ded1540fd72c",
+          "top_source_degree": 1,
+          "top_target_uuid": "dcfd798c-1a1e-4efb-a6c9-b1da8930d977",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "3066b656-a74e-4d1e-8536-6f50ede610c4",
+          "top_source_degree": 1,
+          "top_target_uuid": "bf855ae9-9c35-4ced-8b44-8752438a80d0",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "fb8ff46a-f965-49a0-9a19-2d62869c4a15",
+          "top_source_degree": 1,
+          "top_target_uuid": "60a9d629-ee2e-4d9a-9df8-01ac600e3688",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "c1605a6c-7e9c-4b22-9e50-73a8535bac25",
+          "top_source_degree": 1,
+          "top_target_uuid": "2df13376-8579-45e1-8d0e-d253c4b45035",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "66b4fcab-28bd-4aaa-9e26-fe65829d870e",
+          "top_source_degree": 1,
+          "top_target_uuid": "74440c87-ccbd-4219-a34b-302beaa1446b",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "a509c457-c57c-4ccd-86f1-d78966f2cf12",
+          "top_source_degree": 1,
+          "top_target_uuid": "9855b11a-1bcd-450f-ae2b-101d4e110a4f",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "eb2924f3-4887-40c1-b071-63c7612aa183",
+          "top_source_degree": 1,
+          "top_target_uuid": "4a343548-167b-4344-ba3d-4ba4edc7dfdb",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "0b692e92-74ad-4149-aa67-510a303cfb98",
+          "top_source_degree": 1,
+          "top_target_uuid": "d2390104-6d12-45e9-8de5-c75e13312f59",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "62a9420c-baa1-499f-b5f4-295e17db45a0",
+          "top_source_degree": 1,
+          "top_target_uuid": "e00383d7-51c6-488d-9300-a9f3c39a9f06",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "18f2a0a5-a67f-4147-b373-94a799400102",
+          "top_source_degree": 1,
+          "top_target_uuid": "b9fff9d9-f214-41cd-b966-59a6f6e94161",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "3b6911f8-0ad1-4a80-a5fe-d1c4a35f34cf",
+          "top_source_degree": 1,
+          "top_target_uuid": "dff50a39-7b6b-4692-b4df-4deefab33798",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "6f26aafd-3dcb-41c4-aad3-8123aea13ffd",
+          "top_source_degree": 1,
+          "top_target_uuid": "38c292c3-c716-465c-8c40-6ceb6382efcc",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "f2c59f11-8367-4eeb-83f2-b5722246f8ad",
+          "top_source_degree": 1,
+          "top_target_uuid": "c7a4eb50-f4c2-413f-9ccc-506464bca714",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "f412870f-886e-469e-acb9-ba9295eb8db9",
+          "top_source_degree": 1,
+          "top_target_uuid": "f9ecea59-dc6f-4f1c-ab44-e65d110eba98",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "b611034c-ceb2-425e-975e-a610076bba07",
+          "top_source_degree": 1,
+          "top_target_uuid": "4df1901b-85a8-4191-8ae6-398b60d4959f",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "873076a5-bbf3-4b7e-aa20-5c514075ecb5",
+          "top_source_degree": 1,
+          "top_target_uuid": "b6dde8ef-60f8-4cad-a3b7-af80962c4e2c",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "880b7b40-65d6-415e-94c0-0b9a0cbd0288",
+          "top_source_degree": 1,
+          "top_target_uuid": "cb284cfc-11ee-41ef-9e30-a3fe1447ba5a",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "444a3889-b7e1-4d1b-a218-b689ec1deb9c",
+          "top_source_degree": 1,
+          "top_target_uuid": "c671a205-b1f1-4298-9da7-1c80c8c33ea9",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "0934985b-5575-4b3c-9526-a11ce4a518b9",
+          "top_source_degree": 1,
+          "top_target_uuid": "018b8657-5682-4f06-810f-151a041bb246",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "c844607d-7cc3-4a75-9194-9465a330a9cb",
+          "top_source_degree": 1,
+          "top_target_uuid": "5015edc5-9267-41e9-8017-c4cc3e5d20eb",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "57c65acd-ccb8-49e8-a029-df0349f853c8",
+          "top_source_degree": 1,
+          "top_target_uuid": "e8b744a2-807a-4bfc-ad50-247d542de1a1",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "6d55c7ee-05c1-47a7-9fd5-6a37ce107820",
+          "top_source_degree": 1,
+          "top_target_uuid": "9fb7ef1f-77c5-458f-a30a-42c06ea968f7",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "ebcf97f9-c199-4663-b6dd-3e74d2178bff",
+          "top_source_degree": 1,
+          "top_target_uuid": "29d12576-0a95-4e90-a111-b0037e6620f3",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "1275020e-041a-4d32-b1a5-1b03348c35b4",
+          "top_source_degree": 1,
+          "top_target_uuid": "70bcd843-4e3e-4d2a-af6e-927d8498aa37",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "b1622c29-2af8-4759-94c1-7e4e9b3bbfc2",
+          "top_source_degree": 1,
+          "top_target_uuid": "1d6ea213-d151-444c-a7d0-328a7c72733c",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "29c545e2-9767-4e34-9350-202f7fedfce1",
+          "top_source_degree": 1,
+          "top_target_uuid": "65430463-fc43-4338-aa22-702e2d14a3b0",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "4e1137ea-0db6-4c23-ac4e-bfb2cb140bd7",
+          "top_source_degree": 1,
+          "top_target_uuid": "2f8c0887-b995-40f9-8597-738223f308c9",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "99728f09-6353-4241-9620-2a352c70d125",
+          "top_source_degree": 1,
+          "top_target_uuid": "9df26e1b-a931-4760-acb5-be12a71037a1",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "51f63ccc-e88a-4acc-8e9c-3ccbd09b5e7a",
+          "top_source_degree": 1,
+          "top_target_uuid": "215ea989-d4db-4f2b-b5d3-de091b530e5c",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "9e43cf01-300f-4647-b74b-bdb8704f10bc",
+          "top_source_degree": 1,
+          "top_target_uuid": "1149519c-b9ca-4484-bc41-585e22c0d920",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "21550b0d-a8f2-4615-afb1-e4be61a3f73d",
+          "top_source_degree": 1,
+          "top_target_uuid": "bf6d834c-1754-401d-862f-001f1c5af36f",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0048,
+          "top_source_uuid": "b06b4f8d-110b-4742-a3bc-e61741c58a15",
+          "top_source_degree": 1,
+          "top_target_uuid": "2097bc9e-fd4b-49f1-bc9e-e4a0cf7951a4",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "49fd7e9a-0951-4af1-91c9-2d14642c702f",
+          "top_source_degree": 1,
+          "top_target_uuid": "450bfb98-989c-474c-8942-df77effdd0d6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "f97f8a0a-4e0a-4f5f-a0d3-e99688270011",
+          "top_source_degree": 1,
+          "top_target_uuid": "bbdf5585-3ea1-499c-abc2-f1f62676adde",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "d668f14a-dca4-4b6d-8fa3-2602d26cb368",
+          "top_source_degree": 1,
+          "top_target_uuid": "936828e2-9b05-495f-a5cd-87df8f421583",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "aabcdd4b-4df8-4222-9a0a-a339ffad944d",
+          "top_source_degree": 1,
+          "top_target_uuid": "67e7d01e-4ebd-4420-aefa-79c77bcd73eb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "4e491ee9-d6f2-4b8d-9822-4c4ad8c8e913",
+          "top_source_degree": 1,
+          "top_target_uuid": "1d1a6b4f-01fb-41c5-be2b-fa66c72c4c0a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "2f6834cf-7e56-4135-a31c-e4c21db702d3",
+          "top_source_degree": 1,
+          "top_target_uuid": "3e83b0c0-8765-4859-9bb4-232779a1a3af",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "03e34f7e-9178-4c4c-a43e-1bbec598a952",
+          "top_source_degree": 1,
+          "top_target_uuid": "ec09c12a-1868-4fc2-98c8-fd4b12ddc08b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "6d2297b8-4d7f-4385-b92e-e441cf4cfba5",
+          "top_source_degree": 1,
+          "top_target_uuid": "d6a46985-3d5c-4952-998d-bc04c6d3e285",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "38bf056b-7b9c-456d-8e53-ef123e148775",
+          "top_source_degree": 1,
+          "top_target_uuid": "c4b624cc-a58e-4ef3-85e7-2ee6de4bb6a2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "464bee4b-c927-4ed7-8351-3098f4908964",
+          "top_source_degree": 1,
+          "top_target_uuid": "cb7a841f-a98b-4716-b99a-a58e887f8c76",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "1d97abda-2d0b-4bbf-98c3-c90f6fed6e30",
+          "top_source_degree": 1,
+          "top_target_uuid": "b58d0ccb-1aa1-45b1-92f6-511c2a96bd54",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "7b03a6cc-9ffa-41c8-b79b-4de0aaee4eb2",
+          "top_source_degree": 1,
+          "top_target_uuid": "a311c124-f080-4a58-988a-c073fc648d63",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "a855cb41-afdc-42d1-a304-f2723b5d3308",
+          "top_source_degree": 1,
+          "top_target_uuid": "be4a5c73-7ba3-4236-a6f5-c67cecfa6aee",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "3230e834-87ab-42aa-a0b1-af6723965fde",
+          "top_source_degree": 1,
+          "top_target_uuid": "ab153db4-e717-45a9-b6f8-d71cd4075200",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "ef0f5716-b7d1-44a8-956d-76f77a52f271",
+          "top_source_degree": 1,
+          "top_target_uuid": "4d329e12-18e1-4e6c-94fc-2fb0a5d5026f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "299ab871-6dbf-46b5-afa3-c5fb21c70c0c",
+          "top_source_degree": 1,
+          "top_target_uuid": "fb0b6135-a113-4804-9d7a-bb52f440137a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "6d8c9204-0604-421f-9a7f-1c0632c33d38",
+          "top_source_degree": 1,
+          "top_target_uuid": "5cc22fbe-436d-44b3-baea-244418fd2edb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "3019e0f3-87db-4c49-b557-c08dfa7e2e68",
+          "top_source_degree": 1,
+          "top_target_uuid": "8397c2d9-892c-4f4c-868f-8db4934c5814",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "da1ca5d3-869e-4259-a2bb-10456f7f8af3",
+          "top_source_degree": 1,
+          "top_target_uuid": "7d45df49-60eb-46a7-bc82-b1fbe58f7c1d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "3773b7cc-a2ef-4dcd-818e-c3d9d17e6430",
+          "top_source_degree": 1,
+          "top_target_uuid": "21844744-30a2-48b6-9929-5bfe55ee7535",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "5db29df8-e9d1-4a7e-9a17-82ab77e7494b",
+          "top_source_degree": 1,
+          "top_target_uuid": "28289734-e2fc-47a6-874d-8ff98c38405a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "ba417dbc-82c4-4b08-ba28-0fbfd488b2dc",
+          "top_source_degree": 1,
+          "top_target_uuid": "b32e76b5-b332-4fb8-8556-bcd8f05b9191",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "245bc4f2-9dae-461f-9c44-c19c98960437",
+          "top_source_degree": 1,
+          "top_target_uuid": "0c14888e-cbc8-46b0-a4c3-7cc735b62377",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "e01c1310-f3f5-4a8a-9840-51805d6f1188",
+          "top_source_degree": 1,
+          "top_target_uuid": "6ccba3c5-6759-439c-98a1-7bf65d91404d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "13d26c38-202d-44e9-b75a-0a0088b76d8d",
+          "top_source_degree": 1,
+          "top_target_uuid": "b5d6ac25-a5dc-46e6-ade4-7c66cbe2f0e2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "7f2e420c-8887-4f03-aa64-bcaf29f1d5ba",
+          "top_source_degree": 1,
+          "top_target_uuid": "ba85ff00-4122-4201-bada-9d1164a856b1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "d59ad224-295b-4e0a-a539-c98c7f4a7f02",
+          "top_source_degree": 1,
+          "top_target_uuid": "503405c0-12de-4bd2-9fb8-e94e5224974f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "66a71506-d256-49e4-b11e-48c257f1bf7b",
+          "top_source_degree": 1,
+          "top_target_uuid": "0936b5b1-791f-46e1-9561-e910e93d9450",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "54a59c34-f8bc-4059-9b8d-572dbcf3c167",
+          "top_source_degree": 1,
+          "top_target_uuid": "62480938-4803-4eb4-b383-1f29e68db24d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "cc89b3dc-4891-47bb-8ed9-349759f86f74",
+          "top_source_degree": 1,
+          "top_target_uuid": "66c8ca19-0484-4fa4-b622-bc562a7462dd",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "80ef6e5a-d0e9-4372-84eb-7c6a5bd15152",
+          "top_source_degree": 1,
+          "top_target_uuid": "c565ca12-c44c-4bc0-866d-8ced032547b5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "a12822e1-e80e-474e-beb6-11d0a3cdc160",
+          "top_source_degree": 1,
+          "top_target_uuid": "1656f3bc-29b7-4987-bc0b-c4d6d36039ef",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "7f75b7ab-3b03-402d-84b4-f702b7b6341a",
+          "top_source_degree": 1,
+          "top_target_uuid": "8b14504f-4ecd-4269-a50f-ac00cfc1b005",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "e62104b9-a9e2-4dd8-8d2e-59ffc85054df",
+          "top_source_degree": 1,
+          "top_target_uuid": "70ee137f-67fc-41a9-8ab6-f3783cb1a750",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "298e3ac7-c07b-4b29-bdac-1a453b18e53c",
+          "top_source_degree": 1,
+          "top_target_uuid": "6fe1bcdc-385d-49d2-a489-b81c169207b9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "be0b5df9-f2cc-4c57-bcb7-86b36e753322",
+          "top_source_degree": 1,
+          "top_target_uuid": "3119014c-9281-4789-8123-4225206e9be5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "18c050bf-7371-44f7-90bb-a7fd43f02f0f",
+          "top_source_degree": 1,
+          "top_target_uuid": "542ee6b7-897b-42fe-9ec6-de057eff561e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "44a1415a-6564-4a5f-aee5-267ac8c0bdf8",
+          "top_source_degree": 1,
+          "top_target_uuid": "28a5b9eb-ba29-4aaf-99af-47c6ca4d348d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "ad49c6fd-0bd4-46e8-bd36-dc9d0afa7dc6",
+          "top_source_degree": 1,
+          "top_target_uuid": "2d0c84d6-80cb-4818-a92e-a070abf1b63b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "6e8d93e8-35c2-4f5c-9d03-4dff2c5170ab",
+          "top_source_degree": 1,
+          "top_target_uuid": "c06e519b-71dc-4119-8f1f-789d6be7a088",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "24066f35-3682-403b-ae8a-6a65bc8d1143",
+          "top_source_degree": 1,
+          "top_target_uuid": "cffd03ea-0ae6-4a1c-ad12-f430a3ac8ce6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "a9dc00f9-b6dc-436c-bfd3-83ad51c0b5da",
+          "top_source_degree": 1,
+          "top_target_uuid": "e1224463-c4a1-4d07-b170-592b099f5b98",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "ea32572d-6e2a-4b80-ac49-3e6f2d991103",
+          "top_source_degree": 1,
+          "top_target_uuid": "390d00f3-b2f2-4445-8477-72f3ee8c414e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "78ac5c28-dbf5-4fa1-b981-0e3867a05c90",
+          "top_source_degree": 1,
+          "top_target_uuid": "61da0008-6ce5-4846-b8ce-7c6d9bfb1846",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "8d963a73-da5f-4d83-a4ea-c0ef0c4203f1",
+          "top_source_degree": 1,
+          "top_target_uuid": "e03af114-b3da-4df4-9289-3d323f1eb1bb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "575c20d4-0005-4028-a231-c09f4a3ac88f",
+          "top_source_degree": 1,
+          "top_target_uuid": "c68908d7-1eee-4fc4-ab2b-51e0845f929d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "c535a0c9-7ad0-4981-bac6-0efbf5140f33",
+          "top_source_degree": 1,
+          "top_target_uuid": "4f186786-df04-45ad-a309-aa1a1bf91145",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0032,
+          "top_source_uuid": "65e8d580-f21e-4b1b-a9fa-2d88e9f81f60",
+          "top_source_degree": 1,
+          "top_target_uuid": "efa602c1-98d1-435b-b80a-6f02159971f1",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 343,
+        "total_islands": 148,
+        "singleton_islands": 53,
+        "multi_islands": [
+          {
+            "size": 9,
+            "fraction": 0.026239067055393587,
+            "size_total": 10,
+            "top_uuid": "889188fd-d362-4925-8fd4-5ff3b8ee5852",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.01749271137026239,
+            "size_total": 7,
+            "top_uuid": "4e40c4d2-747a-4908-ae50-591bdfa4e777",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.01749271137026239,
+            "size_total": 7,
+            "top_uuid": "dd67e713-1c3f-4592-9fef-ec695861f738",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.01749271137026239,
+            "size_total": 7,
+            "top_uuid": "b91681ae-85c3-4020-87c6-2b2319d1e215",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.01749271137026239,
+            "size_total": 7,
+            "top_uuid": "b1fbeb9e-4897-486d-84c0-bda97128ca2c",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.01749271137026239,
+            "size_total": 7,
+            "top_uuid": "aec14e5d-9210-4801-9616-935bfdf564e8",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.01749271137026239,
+            "size_total": 7,
+            "top_uuid": "95377aa7-37a3-48ee-ab6b-91dad3280647",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.01749271137026239,
+            "size_total": 7,
+            "top_uuid": "ccd570d5-e6bb-41da-b8c6-99b34a0ca2fa",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.014577259475218658,
+            "size_total": 6,
+            "top_uuid": "4198b96a-dbd6-4eec-a3c7-6b5b063cccf7",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.014577259475218658,
+            "size_total": 6,
+            "top_uuid": "1331e718-809f-4b3c-a157-8de44a960767",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "d4576dda-0ba7-45f1-9913-2ffdfd205e30",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "4831d5c6-c916-4153-8268-e2257cc747c5",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "f9fbd146-1fd9-42ad-8fff-c805fc857de2",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "0c4eb1f1-cbb1-4a18-a1cb-42643f870e98",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "47cdf00f-64e4-4a46-afad-2ecbf79d7437",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "8348de13-eebc-4a5f-b287-471164713abb",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "edeac17f-9369-467a-a9a5-19dbf5de6ef0",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "acf0fd75-e5ee-49b1-81e0-3155ff3e4c01",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "ed596bed-baf1-4ad6-b25d-5e907804026a",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "4a516191-fff3-4034-ae18-172250004c79",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "fdbf9fb0-98f9-4058-ba3e-7a2ed50613aa",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "ba9fa88f-6f40-400d-bdd8-b7b95c8981f2",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "b9d7e144-9b07-4e2a-86de-d9cce22d5eee",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "bf51e73f-894c-493a-9566-b4357a725ef4",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "b54ff2dd-be4f-4b63-8779-13f40a122024",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.011661807580174927,
+            "size_total": 5,
+            "top_uuid": "6e69c8cb-f382-4eae-9dcd-7637e8335512",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "efd02925-9c23-4f9a-8d0c-7a1c77127d2b",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "ac19e4b8-e0de-449a-b5b9-e7245d1e653b",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "2e9abbf3-f4c4-4f80-931d-5e189fb2f16e",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "8fe09cc0-51b2-4f04-8b3d-b80b65af4bb9",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "307ce71e-a900-4862-bf02-7bb15e8ce7de",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "b94bfb08-cab9-4861-a32f-6a2021e7b708",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "414807c1-1976-47f2-8c45-e88188f177e8",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "422924ca-7250-47f1-97a5-2b520c85d507",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "a0826b48-a7ec-40bd-be3f-15cf467969fb",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "0ea7eefa-f16b-47b3-af90-b57470ef76da",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "86d90291-fe62-4cc1-bbc5-82a67315e63b",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "d507b038-5361-4ca0-a027-25255aef177d",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "f3521beb-7549-4bed-8142-664a3817cdb0",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "fffe3156-c95e-4779-9e3b-d295d1ba63a9",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "c466db1f-8a73-4376-9b51-608fd635ed55",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "6ddf1641-5767-4871-b9ac-350f683475a3",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "7326bc6e-8259-4928-af58-3ca4b7191d74",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "93ed95bf-3265-4e91-8e23-9465b2c3f2de",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "8d4fdde2-db7a-4bb3-9977-f7302bbd0b0c",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "8c1f62cd-ff13-4b4e-993c-c91febe00fe9",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "73a2ff4f-eb98-4d65-8121-2834efcadfd9",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "ce654a80-14e8-47a8-b1cd-70a317fbec42",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "d49a0023-98b3-4608-8cd3-824a27df35a3",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "015c947b-fb03-4877-9aae-c8742658965c",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "51487a22-9b24-448c-b729-948b4f817eb5",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "1164f6dc-51a2-4cc0-aedf-e45d2e5468e6",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.008746355685131196,
+            "size_total": 4,
+            "top_uuid": "cb7115fd-1b1a-4e9a-86d3-745bc8e307ad",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "2829252b-8964-4c76-9683-3f71aaf9ade5",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "b094f7bb-30e0-4d19-8276-f6f66b2f4fcc",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "847321e1-011a-4de7-a064-560ad237900d",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "89de0f4c-2bce-44ab-8127-8e86863d662d",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "6613ead7-5031-41ab-8a22-464568b7454d",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "3b4feb44-09e7-4086-b1eb-35a5542a45cb",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "8bff3af3-4c28-4f6b-af75-ad70436a11ac",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "1673494a-b6f7-4bad-8f81-e9e9afe061c2",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "647fd7c5-1092-46e6-8282-b258744f37a1",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "3e9845da-57e3-4f16-83ea-ce928ef425dd",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "9468b021-3201-460e-ac26-ded1540fd72c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "3066b656-a74e-4d1e-8536-6f50ede610c4",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "fb8ff46a-f965-49a0-9a19-2d62869c4a15",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "c1605a6c-7e9c-4b22-9e50-73a8535bac25",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "66b4fcab-28bd-4aaa-9e26-fe65829d870e",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "a509c457-c57c-4ccd-86f1-d78966f2cf12",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "eb2924f3-4887-40c1-b071-63c7612aa183",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "0b692e92-74ad-4149-aa67-510a303cfb98",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "62a9420c-baa1-499f-b5f4-295e17db45a0",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "18f2a0a5-a67f-4147-b373-94a799400102",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "3b6911f8-0ad1-4a80-a5fe-d1c4a35f34cf",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "6f26aafd-3dcb-41c4-aad3-8123aea13ffd",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "f2c59f11-8367-4eeb-83f2-b5722246f8ad",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "f412870f-886e-469e-acb9-ba9295eb8db9",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "b611034c-ceb2-425e-975e-a610076bba07",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "873076a5-bbf3-4b7e-aa20-5c514075ecb5",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "880b7b40-65d6-415e-94c0-0b9a0cbd0288",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "444a3889-b7e1-4d1b-a218-b689ec1deb9c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "0934985b-5575-4b3c-9526-a11ce4a518b9",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "c844607d-7cc3-4a75-9194-9465a330a9cb",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "57c65acd-ccb8-49e8-a029-df0349f853c8",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "6d55c7ee-05c1-47a7-9fd5-6a37ce107820",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "ebcf97f9-c199-4663-b6dd-3e74d2178bff",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "1275020e-041a-4d32-b1a5-1b03348c35b4",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "b1622c29-2af8-4759-94c1-7e4e9b3bbfc2",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "29c545e2-9767-4e34-9350-202f7fedfce1",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "4e1137ea-0db6-4c23-ac4e-bfb2cb140bd7",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "99728f09-6353-4241-9620-2a352c70d125",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "51f63ccc-e88a-4acc-8e9c-3ccbd09b5e7a",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "9e43cf01-300f-4647-b74b-bdb8704f10bc",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "21550b0d-a8f2-4615-afb1-e4be61a3f73d",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0058309037900874635,
+            "size_total": 3,
+            "top_uuid": "b06b4f8d-110b-4742-a3bc-e61741c58a15",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 282,
+        "total_islands": 282,
+        "singleton_islands": 282,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

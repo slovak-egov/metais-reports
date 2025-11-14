@@ -1,0 +1,111 @@
+{
+  "relation_name": "MigHarmonogram_riadi_Migracia",
+  "name": "Harmonogram migrácie riadi migráciu",
+  "description": "Migrácia prostriedkov sa riadi harmonogramom.",
+  "engDescription": "Resources migration is managed by schedule.",
+  "type": "application",
+  "source_type": "MigHarmonogram",
+  "source_name": "Harmonogram migrácie",
+  "target_type": "Migracia",
+  "target_name": "Migrácia",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 1,
+    "unique_pairs": 1,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 1,
+    "target_total": 3,
+    "source_connected": 1,
+    "target_connected": 1,
+    "cardinality": "one-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "8a6ef0a9-438e-472a-83ea-3cbb4868fe4b",
+        "degree": 1,
+        "name": "Harmonogram migrácie vybraných IS rezortu MŽP SR",
+        "code": "mig_hm_13"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "d026755b-0c6c-4de0-83d9-227faa63abd9",
+        "degree": 1,
+        "name": "Migrácia ISVS Ministerstva životného prostredia SR do IaaS",
+        "code": "migracia_15"
+      }
+    ],
+    "islands": {
+      "total_nodes": 4,
+      "total_islands": 3,
+      "singleton_islands": 2,
+      "multi_islands": [
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.5,
+          "top_source_uuid": "8a6ef0a9-438e-472a-83ea-3cbb4868fe4b",
+          "top_source_degree": 1,
+          "top_target_uuid": "d026755b-0c6c-4de0-83d9-227faa63abd9",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 1,
+        "total_islands": 1,
+        "singleton_islands": 1,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 3,
+        "total_islands": 3,
+        "singleton_islands": 3,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

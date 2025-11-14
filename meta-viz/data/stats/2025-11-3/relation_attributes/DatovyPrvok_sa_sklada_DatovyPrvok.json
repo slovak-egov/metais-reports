@@ -1,0 +1,1960 @@
+{
+  "relation_name": "DatovyPrvok_sa_sklada_DatovyPrvok",
+  "name": "Dátový prvok sa skladá z dátových prvkov",
+  "description": "Výber podradených dátových prvkov",
+  "engDescription": "Selection of subordinate data elements",
+  "type": "application",
+  "source_type": "DatovyPrvok",
+  "source_name": "Dátový prvok",
+  "target_type": "DatovyPrvok",
+  "target_name": "Dátový prvok",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 170,
+    "unique_pairs": 170,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 617,
+    "target_total": 617,
+    "source_connected": 162,
+    "target_connected": 45,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 3,
+      "avg": 1.0493827160493827,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 15,
+      "avg": 3.7777777777777777,
+      "median": 3,
+      "p90": 8,
+      "p99": 15
+    },
+    "top_source": [
+      {
+        "uuid": "b2d55810-04b5-40fc-a361-1a3096ce5d6d",
+        "degree": 3,
+        "name": "mena",
+        "code": "datovy_prvok_532"
+      },
+      {
+        "uuid": "2d9ef1f6-cc7c-4f49-97ec-8c53b61993dc",
+        "degree": 2,
+        "name": "titul za menom",
+        "code": "datovy_prvok_264"
+      },
+      {
+        "uuid": "71eabbf7-f0b3-4c9e-9c50-49744cdbefbc",
+        "degree": 2,
+        "name": "organizačná jednotka",
+        "code": "datovy_prvok_609"
+      },
+      {
+        "uuid": "86dfe46c-2d82-43c5-ad2f-906b1d4991b8",
+        "degree": 2,
+        "name": "meno osoby",
+        "code": "datovy_prvok_271"
+      },
+      {
+        "uuid": "9c8ee6c0-431b-44fc-ad23-ef833f103415",
+        "degree": 2,
+        "name": "názov právneho subjektu",
+        "code": "datovy_prvok_602"
+      },
+      {
+        "uuid": "9ea1d31e-bee8-4629-9835-e0e71d57d3a3",
+        "degree": 2,
+        "name": "titul pred menom",
+        "code": "datovy_prvok_263"
+      },
+      {
+        "uuid": "f4959b9b-5f5e-4156-8b89-7cc9a25801ce",
+        "degree": 2,
+        "name": "Doložka",
+        "code": "datovy_prvok_841"
+      },
+      {
+        "uuid": "024351f4-14de-4e17-83b7-3e76687bd1fa",
+        "degree": 1,
+        "name": "úmrtie",
+        "code": "datovy_prvok_295"
+      },
+      {
+        "uuid": "03ea46b3-cea4-4f56-9ae4-f6aad752f950",
+        "degree": 1,
+        "name": "rok narodenia",
+        "code": "datovy_prvok_279"
+      },
+      {
+        "uuid": "055a35d3-af0a-4c69-856d-de5028c1d077",
+        "degree": 1,
+        "name": "typ štatutárneho orgánu",
+        "code": "datovy_prvok_655"
+      },
+      {
+        "uuid": "05aa7cc7-7d1c-4498-98e2-536eed629a50",
+        "degree": 1,
+        "name": "oprávnenie konať",
+        "code": "datovy_prvok_652"
+      },
+      {
+        "uuid": "05d21712-b871-4c9f-99a5-c3f1202cf1f1",
+        "degree": 1,
+        "name": "typ organizačnej jednotky",
+        "code": "datovy_prvok_607"
+      },
+      {
+        "uuid": "06e7bd67-f6da-4a07-8e33-8a060ec0dd5c",
+        "degree": 1,
+        "name": "koniec zákazu pobytu",
+        "code": "datovy_prvok_315"
+      },
+      {
+        "uuid": "0b91f3cb-c10e-4d89-aa98-261165b8debb",
+        "degree": 1,
+        "name": "typ zainteresovanej osoby",
+        "code": "datovy_prvok_377"
+      },
+      {
+        "uuid": "10ff46bb-1f0d-41bf-9c94-904a43bc4faf",
+        "degree": 1,
+        "name": "množstvo akcií",
+        "code": "datovy_prvok_637"
+      },
+      {
+        "uuid": "14100c90-ed25-479e-8cf6-6f25a17d09f7",
+        "degree": 1,
+        "name": "Typ zainteresovanej osoby",
+        "code": "datovy_prvok_630"
+      },
+      {
+        "uuid": "164b9a31-d1b6-43ae-b12c-2e479c9c1a18",
+        "degree": 1,
+        "name": "výška základného imania",
+        "code": "datovy_prvok_372"
+      },
+      {
+        "uuid": "175ea620-0f4f-4b63-b10b-774d2fca0610",
+        "degree": 1,
+        "name": "menovitá hodnota akcie",
+        "code": "datovy_prvok_635"
+      },
+      {
+        "uuid": "18f1285c-d96c-4ba1-94c5-c655a4c0832e",
+        "degree": 1,
+        "name": "právna skutočnosť",
+        "code": "datovy_prvok_527"
+      },
+      {
+        "uuid": "1a878bed-9a2d-4ba4-8163-66a5b9e78aec",
+        "degree": 1,
+        "name": "tuzemské bankové spojenie",
+        "code": "datovy_prvok_332"
+      },
+      {
+        "uuid": "1db4f391-4cb6-4db0-b177-297542a6a544",
+        "degree": 1,
+        "name": "typ akcie",
+        "code": "datovy_prvok_392"
+      },
+      {
+        "uuid": "1eef1399-fd55-4d01-b12c-90ef5c37bf8e",
+        "degree": 1,
+        "name": "schválená výška základného imania",
+        "code": "datovy_prvok_370"
+      },
+      {
+        "uuid": "1f799beb-84e1-448a-a419-26b7e444b96c",
+        "degree": 1,
+        "name": "orientačné číslo",
+        "code": "datovy_prvok_422"
+      },
+      {
+        "uuid": "202cc619-1534-4eb8-9909-519520e9e032",
+        "degree": 1,
+        "name": "oprávnenie konať",
+        "code": "datovy_prvok_559"
+      },
+      {
+        "uuid": "213d8b31-0d92-4871-ac69-0259dbdf7230",
+        "degree": 1,
+        "name": "účel budovy",
+        "code": "datovy_prvok_700"
+      },
+      {
+        "uuid": "26fca800-f724-4e80-b4ba-7ca66f896342",
+        "degree": 1,
+        "name": "koniec obmedzenia právnej spôsobilosti",
+        "code": "datovy_prvok_311"
+      },
+      {
+        "uuid": "28b6c1f4-2535-4c86-b098-b4462339ff61",
+        "degree": 1,
+        "name": "prevoditeľnosť akcií",
+        "code": "datovy_prvok_636"
+      },
+      {
+        "uuid": "291d4bbe-f729-43b7-b935-9aca55b61a28",
+        "degree": 1,
+        "name": "typ vkladu",
+        "code": "datovy_prvok_648"
+      },
+      {
+        "uuid": "299d2a4b-694b-4f4d-b04b-8e41bae916ee",
+        "degree": 1,
+        "name": "preferované meno",
+        "code": "datovy_prvok_256"
+      },
+      {
+        "uuid": "29c1eb59-44a1-4228-9a41-f350b1cff96c",
+        "degree": 1,
+        "name": "množstvo akcií",
+        "code": "datovy_prvok_541"
+      },
+      {
+        "uuid": "2acb38e7-0f36-48ba-adf5-08644e215d6e",
+        "degree": 1,
+        "name": "rok úmrtia",
+        "code": "datovy_prvok_284"
+      },
+      {
+        "uuid": "2b798fcd-2326-460c-8aeb-1e68e13f41b7",
+        "degree": 1,
+        "name": "začiatok príbuzenského vzťahu",
+        "code": "datovy_prvok_298"
+      },
+      {
+        "uuid": "2f3737dc-b200-436e-b5a2-8e231f074fa8",
+        "degree": 1,
+        "name": "prevoditeľnosť akcií",
+        "code": "datovy_prvok_381"
+      },
+      {
+        "uuid": "2f89bbf4-3dd9-48a8-b176-d9bafa62b2b9",
+        "degree": 1,
+        "name": "časť obce",
+        "code": "datovy_prvok_415"
+      },
+      {
+        "uuid": "33114dc0-6633-48d0-a206-5fd25e130b2d",
+        "degree": 1,
+        "name": "štátna príslušnosť",
+        "code": "datovy_prvok_288"
+      },
+      {
+        "uuid": "341dfc02-2777-4007-a3af-b0de07c5c74e",
+        "degree": 1,
+        "name": "národnosť",
+        "code": "datovy_prvok_305"
+      },
+      {
+        "uuid": "37901706-6175-43d7-8d7b-197789914031",
+        "degree": 1,
+        "name": "meno",
+        "code": "datovy_prvok_255"
+      },
+      {
+        "uuid": "38697be9-9cfb-4eae-bb4f-e940f489b2b3",
+        "degree": 1,
+        "name": "mena akcie",
+        "code": "datovy_prvok_384"
+      },
+      {
+        "uuid": "3b8c56da-c697-4d14-bb9f-29be7d17e5fd",
+        "degree": 1,
+        "name": "súpisné číslo",
+        "code": "datovy_prvok_421"
+      },
+      {
+        "uuid": "3cf2418e-8537-4a83-8b0b-f37c69cc4b02",
+        "degree": 1,
+        "name": "typ akcie",
+        "code": "datovy_prvok_642"
+      },
+      {
+        "uuid": "3d1fbcd2-21cc-4656-acb8-91535dd82c31",
+        "degree": 1,
+        "name": "rok a mesiac narodenia",
+        "code": "datovy_prvok_280"
+      },
+      {
+        "uuid": "429491b1-f39f-4d5b-a124-2ae6e0b094ea",
+        "degree": 1,
+        "name": "medzinárodné bankové spojenie",
+        "code": "datovy_prvok_336"
+      },
+      {
+        "uuid": "435ad443-e2e6-4ef9-9d5c-492bede7135b",
+        "degree": 1,
+        "name": "mena základného imania",
+        "code": "datovy_prvok_374"
+      },
+      {
+        "uuid": "4480e20a-0c26-45fd-8393-ac29cd60977c",
+        "degree": 1,
+        "name": "časť budovy",
+        "code": "datovy_prvok_704"
+      },
+      {
+        "uuid": "45f3aeec-732c-4c1b-b65a-2b21a5ffc0ed",
+        "degree": 1,
+        "name": "IBAN",
+        "code": "datovy_prvok_334"
+      },
+      {
+        "uuid": "4a04db55-4c9c-4cbf-b027-2a6714f5e8f8",
+        "degree": 1,
+        "name": "právna skutočnosť",
+        "code": "datovy_prvok_619"
+      },
+      {
+        "uuid": "4c7f9e2c-e4f5-4104-873a-395a3839d6ac",
+        "degree": 1,
+        "name": "priezvisko",
+        "code": "datovy_prvok_258"
+      },
+      {
+        "uuid": "54221a56-4d72-4042-84ab-d162ac07a6bc",
+        "degree": 1,
+        "name": "obmedzenie právnej spôsobilosti",
+        "code": "datovy_prvok_312"
+      },
+      {
+        "uuid": "58d7e8b0-7158-44c7-b768-eec389cc1fc9",
+        "degree": 1,
+        "name": "schválená výška základného imania",
+        "code": "datovy_prvok_529"
+      },
+      {
+        "uuid": "5967c740-8f02-444d-a90e-50ed99ef6a65",
+        "degree": 1,
+        "name": "dátum splatnosti vkladu",
+        "code": "datovy_prvok_551"
+      },
+      {
+        "uuid": "5b3a30d6-eb0c-4ac9-a3d3-a052a909c3b3",
+        "degree": 1,
+        "name": "dátum splatnosti vkladu",
+        "code": "datovy_prvok_396"
+      },
+      {
+        "uuid": "5d12205c-23ba-4783-88de-5b794b24c5a4",
+        "degree": 1,
+        "name": "zákaz pobytu",
+        "code": "datovy_prvok_318"
+      },
+      {
+        "uuid": "5d371ca2-b2b6-4038-8ebc-60a63eb1a720",
+        "degree": 1,
+        "name": "typ obmedzenia právnej spôsobilosti",
+        "code": "datovy_prvok_308"
+      },
+      {
+        "uuid": "5e40444d-7cc0-4c91-b40d-2976cc4168af",
+        "degree": 1,
+        "name": "rodné priezvisko",
+        "code": "datovy_prvok_259"
+      },
+      {
+        "uuid": "617bbe66-061d-461d-b4f4-9e445a9b8cf1",
+        "degree": 1,
+        "name": "zainteresovaná osoba",
+        "code": "datovy_prvok_539"
+      },
+      {
+        "uuid": "62e3347e-5ab5-469c-a4c2-93f583f96702",
+        "degree": 1,
+        "name": "forma akcie",
+        "code": "datovy_prvok_389"
+      },
+      {
+        "uuid": "6494d9d2-79ab-42b1-aebd-e13120c634f2",
+        "degree": 1,
+        "name": "názov právnickej osoby",
+        "code": "datovy_prvok_510"
+      },
+      {
+        "uuid": "6679aa92-34c3-4f6b-b4e8-4f9325f3096a",
+        "degree": 1,
+        "name": "výška splateného základného imania",
+        "code": "datovy_prvok_530"
+      },
+      {
+        "uuid": "69c10b73-3787-43c8-abff-3f961b997cd1",
+        "degree": 1,
+        "name": "typ organizačnej jednotky",
+        "code": "datovy_prvok_353"
+      },
+      {
+        "uuid": "6b848524-48a7-4fca-b0fb-a0c19e04fb51",
+        "degree": 1,
+        "name": "poštový priečinok",
+        "code": "datovy_prvok_707"
+      },
+      {
+        "uuid": "6be3f4ce-5367-46bd-86ef-1fc5276deaca",
+        "degree": 1,
+        "name": "formátovaná adresa",
+        "code": "datovy_prvok_420"
+      },
+      {
+        "uuid": "6e1d86b2-b592-42a9-b3d5-51fe97e7a8a3",
+        "degree": 1,
+        "name": "menovitá hodnota akcie",
+        "code": "datovy_prvok_383"
+      },
+      {
+        "uuid": "700eed2a-1fb8-4a61-ae90-62459957a83e",
+        "degree": 1,
+        "name": "rodinný stav",
+        "code": "datovy_prvok_273"
+      },
+      {
+        "uuid": "70783975-6ccf-4257-a7af-cd40ae0c68f4",
+        "degree": 1,
+        "name": "Doložka právoplatnosti",
+        "code": "datovy_prvok_842"
+      },
+      {
+        "uuid": "733bd22e-6b75-4b87-9a4c-85c19e17b3a2",
+        "degree": 1,
+        "name": "stav akcie",
+        "code": "datovy_prvok_545"
+      },
+      {
+        "uuid": "7557ea33-15a0-43d9-92af-fe268bb29b79",
+        "degree": 1,
+        "name": "právny subjekt",
+        "code": "datovy_prvok_662"
+      },
+      {
+        "uuid": "765525a3-42e9-45f0-ba3b-f96e5a8042eb",
+        "degree": 1,
+        "name": "lokálna štatistická územná jednotka 2",
+        "code": "datovy_prvok_753"
+      },
+      {
+        "uuid": "787225a6-40cf-49b4-b02f-5fe0f22392e1",
+        "degree": 1,
+        "name": "bankové spojenie",
+        "code": "datovy_prvok_341"
+      },
+      {
+        "uuid": "79018691-d57d-4a60-a5b6-c18c5aae1dc0",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_658"
+      },
+      {
+        "uuid": "7b63e439-594d-488f-8959-f96266929073",
+        "degree": 1,
+        "name": "začiatok obmedzenia právnej spôsobilosti",
+        "code": "datovy_prvok_310"
+      },
+      {
+        "uuid": "7bb663bd-8e48-4776-a376-3ffe07e745a7",
+        "degree": 1,
+        "name": "výška splateného základného imania",
+        "code": "datovy_prvok_371"
+      },
+      {
+        "uuid": "7bf653c9-8743-4ee7-93f6-41ef12861259",
+        "degree": 1,
+        "name": "poštové smerovacie číslo",
+        "code": "datovy_prvok_709"
+      },
+      {
+        "uuid": "7c4a8e09-126b-4247-86ea-bd4ebc8a40c8",
+        "degree": 1,
+        "name": "výška základného imania",
+        "code": "datovy_prvok_623"
+      },
+      {
+        "uuid": "7d4ed4cb-c2cd-44ee-b863-6915c1fb7eca",
+        "degree": 1,
+        "name": "právna forma",
+        "code": "datovy_prvok_512"
+      },
+      {
+        "uuid": "7e353701-e90c-4db9-b11c-a08c76eb03cf",
+        "degree": 1,
+        "name": "ulica",
+        "code": "datovy_prvok_417"
+      },
+      {
+        "uuid": "7e9fc3ad-40d0-41e7-a0cc-ad7e398b6f3e",
+        "degree": 1,
+        "name": "náboženstvo",
+        "code": "datovy_prvok_289"
+      },
+      {
+        "uuid": "7f1af4c1-8e7a-408e-96b1-275a5a09e096",
+        "degree": 1,
+        "name": "základné imanie",
+        "code": "datovy_prvok_533"
+      },
+      {
+        "uuid": "8067f142-ada2-4295-88a7-99e5fe05e413",
+        "degree": 1,
+        "name": "názov organizačnej jednotky",
+        "code": "datovy_prvok_515"
+      },
+      {
+        "uuid": "8123dba9-fba0-4b95-8c40-f1f7be50904c",
+        "degree": 1,
+        "name": "typ adresy",
+        "code": "datovy_prvok_759"
+      },
+      {
+        "uuid": "81b7f522-0713-4b71-be2e-240bf4a480f9",
+        "degree": 1,
+        "name": "typ vkladu",
+        "code": "datovy_prvok_398"
+      },
+      {
+        "uuid": "81fa2c3b-32f0-4543-96ed-c3ab720c5a47",
+        "degree": 1,
+        "name": "pohlavie",
+        "code": "datovy_prvok_275"
+      },
+      {
+        "uuid": "82fe40da-b756-4f07-ad6a-a2d49b2be077",
+        "degree": 1,
+        "name": "budova",
+        "code": "datovy_prvok_702"
+      },
+      {
+        "uuid": "859c560d-60d6-4bee-b239-d6ee56ebb6d3",
+        "degree": 1,
+        "name": "hodnota identifikátora",
+        "code": "datovy_prvok_243"
+      },
+      {
+        "uuid": "88025fe2-15cf-41c7-b404-37717fae0771",
+        "degree": 1,
+        "name": "fyzická osoba",
+        "code": "datovy_prvok_566"
+      },
+      {
+        "uuid": "88d6cf30-edd9-406d-8aa2-052ca7abdf7c",
+        "degree": 1,
+        "name": "stav akcie",
+        "code": "datovy_prvok_640"
+      },
+      {
+        "uuid": "8998313e-75e5-48c9-9b16-f73e07aba67d",
+        "degree": 1,
+        "name": "miesto narodenia",
+        "code": "datovy_prvok_278"
+      },
+      {
+        "uuid": "8f5b4ce4-9f32-4d40-828d-07a5f760cb5d",
+        "degree": 1,
+        "name": "názov organizačnej jednotky",
+        "code": "datovy_prvok_352"
+      },
+      {
+        "uuid": "92718f47-b919-407e-8148-e16a9082e3aa",
+        "degree": 1,
+        "name": "klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_521"
+      },
+      {
+        "uuid": "9285ff9d-57ae-4a85-9db5-18f730a46da4",
+        "degree": 1,
+        "name": "popis ekonomickej činnosti",
+        "code": "datovy_prvok_613"
+      },
+      {
+        "uuid": "93033058-627d-4c27-877d-5297e0215df4",
+        "degree": 1,
+        "name": "akcie",
+        "code": "datovy_prvok_549"
+      },
+      {
+        "uuid": "9435e9e5-6cd4-4f51-991b-ed8260f51d63",
+        "degree": 1,
+        "name": "názov organizačnej jednotky",
+        "code": "datovy_prvok_606"
+      },
+      {
+        "uuid": "983f5ea8-db10-4dbf-9c8d-d98d2d8385d1",
+        "degree": 1,
+        "name": "rok a mesiac úmrtia",
+        "code": "datovy_prvok_285"
+      },
+      {
+        "uuid": "98a6bb26-6eea-4462-aba2-737c1acecaf6",
+        "degree": 1,
+        "name": "zainteresovaná osoba",
+        "code": "datovy_prvok_631"
+      },
+      {
+        "uuid": "9e36d827-4fec-4e4a-93b5-b5c01902f354",
+        "degree": 1,
+        "name": "typ štatutárneho orgánu",
+        "code": "datovy_prvok_403"
+      },
+      {
+        "uuid": "9f89f646-836a-4ed4-be34-f94713c18f85",
+        "degree": 1,
+        "name": "klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_360"
+      },
+      {
+        "uuid": "a29d7e14-e1b4-4e0b-ad5e-dcd8b5961041",
+        "degree": 1,
+        "name": "popis ekonomickej činnosti",
+        "code": "datovy_prvok_523"
+      },
+      {
+        "uuid": "a3d83f73-639a-4c40-9fb5-db28d0d14d67",
+        "degree": 1,
+        "name": "typ štatutárneho orgánu",
+        "code": "datovy_prvok_560"
+      },
+      {
+        "uuid": "a7b28236-f828-406e-b040-828ce3af8539",
+        "degree": 1,
+        "name": "zákaz vykonávania povolania",
+        "code": "datovy_prvok_320"
+      },
+      {
+        "uuid": "a973c979-eebd-4db3-9d59-ff2191487804",
+        "degree": 1,
+        "name": "alternatívne meno právneho subjektu",
+        "code": "datovy_prvok_603"
+      },
+      {
+        "uuid": "ab4de050-ac1c-4308-97a4-c4276e3242ea",
+        "degree": 1,
+        "name": "alternatívne meno",
+        "code": "datovy_prvok_272"
+      },
+      {
+        "uuid": "ac5b2533-3575-4248-8283-ad6663759386",
+        "degree": 1,
+        "name": "lokálna štatistická územná jednotka 1",
+        "code": "datovy_prvok_752"
+      },
+      {
+        "uuid": "ac7b209f-3068-479f-bb0d-977a59b6437e",
+        "degree": 1,
+        "name": "výška vkladu",
+        "code": "datovy_prvok_397"
+      },
+      {
+        "uuid": "ae7c3dae-1fb3-4ce1-a250-6406618de65f",
+        "degree": 1,
+        "name": "schválená výška základného imania",
+        "code": "datovy_prvok_621"
+      },
+      {
+        "uuid": "aef675b0-68bc-47e8-ace1-0f9b38353c47",
+        "degree": 1,
+        "name": "výška splateného základného imania",
+        "code": "datovy_prvok_622"
+      },
+      {
+        "uuid": "af146d1d-7a8a-4123-8f2a-3131972e14f6",
+        "degree": 1,
+        "name": "dátum splatnosti vkladu",
+        "code": "datovy_prvok_646"
+      },
+      {
+        "uuid": "b24c28af-2d92-4f4d-b42e-6b4474d518ec",
+        "degree": 1,
+        "name": "alternatívne meno právnickej osoby",
+        "code": "datovy_prvok_511"
+      },
+      {
+        "uuid": "b291f243-56f9-43da-89dd-dc6291c4dd12",
+        "degree": 1,
+        "name": "právny stav",
+        "code": "datovy_prvok_557"
+      },
+      {
+        "uuid": "b299eb3e-9ea7-4103-b6e3-f1db9ca2b50f",
+        "degree": 1,
+        "name": "formátované bankové spojenie",
+        "code": "datovy_prvok_326"
+      },
+      {
+        "uuid": "b505e7c0-effe-4377-b8df-0d170217564f",
+        "degree": 1,
+        "name": "základné číslo účtu",
+        "code": "datovy_prvok_328"
+      },
+      {
+        "uuid": "b5196990-3de7-464c-bebf-e09e9cc0afd6",
+        "degree": 1,
+        "name": "typ akcie",
+        "code": "datovy_prvok_547"
+      },
+      {
+        "uuid": "b626e27c-9b11-40b5-8636-cf44e59c431e",
+        "degree": 1,
+        "name": "kód banky",
+        "code": "datovy_prvok_330"
+      },
+      {
+        "uuid": "b94470e1-7d9a-4f26-a578-e2d754c5437b",
+        "degree": 1,
+        "name": "prevoditeľnosť akcií",
+        "code": "datovy_prvok_540"
+      },
+      {
+        "uuid": "ba844486-8457-4f1e-91f7-49ae2c779d24",
+        "degree": 1,
+        "name": "výška vkladu",
+        "code": "datovy_prvok_552"
+      },
+      {
+        "uuid": "bac6889a-0677-47ae-bd81-c95d1f4c620c",
+        "degree": 1,
+        "name": "formátované meno",
+        "code": "datovy_prvok_252"
+      },
+      {
+        "uuid": "bb870b39-b89b-4613-bf0c-e86ca93ca766",
+        "degree": 1,
+        "name": "zánik",
+        "code": "datovy_prvok_612"
+      },
+      {
+        "uuid": "bc2a695f-c780-40fd-9762-eab8e82bbc7e",
+        "degree": 1,
+        "name": "právna forma",
+        "code": "datovy_prvok_604"
+      },
+      {
+        "uuid": "c0c967c0-81f8-4b59-b310-3d0b78c3443a",
+        "degree": 1,
+        "name": "názov budovy",
+        "code": "datovy_prvok_426"
+      },
+      {
+        "uuid": "c0efb92a-9740-48c7-9f94-bfb50e5687f8",
+        "degree": 1,
+        "name": "vlastník bankového účtu",
+        "code": "datovy_prvok_339"
+      },
+      {
+        "uuid": "c2cb05f2-4019-4850-a73e-5d164c8932ad",
+        "degree": 1,
+        "name": "dátum úmrtia",
+        "code": "datovy_prvok_282"
+      },
+      {
+        "uuid": "c60650a7-1d59-4909-af9a-1ff2d7da8a43",
+        "degree": 1,
+        "name": "stav akcie",
+        "code": "datovy_prvok_390"
+      },
+      {
+        "uuid": "c662df45-7077-4dd7-9e34-ed27d7e9caf7",
+        "degree": 1,
+        "name": "typ identifikátora",
+        "code": "datovy_prvok_242"
+      },
+      {
+        "uuid": "c991553e-da74-43a0-a85c-1d4ffa3179ae",
+        "degree": 1,
+        "name": "poštová adresa",
+        "code": "datovy_prvok_712"
+      },
+      {
+        "uuid": "ca397531-fbb8-429c-aed8-1cc659427b8a",
+        "degree": 1,
+        "name": "príjemca pošty",
+        "code": "datovy_prvok_706"
+      },
+      {
+        "uuid": "ce4e7dfb-a9d7-4da1-b9e7-506383b68dc4",
+        "degree": 1,
+        "name": "titul",
+        "code": "datovy_prvok_269"
+      },
+      {
+        "uuid": "cf422942-4ec8-427f-b523-7c644907661f",
+        "degree": 1,
+        "name": "právne meno",
+        "code": "datovy_prvok_254"
+      },
+      {
+        "uuid": "d2aa7960-6f13-447d-9a29-bb4660c54195",
+        "degree": 1,
+        "name": "právny stav",
+        "code": "datovy_prvok_653"
+      },
+      {
+        "uuid": "d2b4d7f2-2997-4cb4-ba31-dbbf5883c8b6",
+        "degree": 1,
+        "name": "typ vkladu",
+        "code": "datovy_prvok_553"
+      },
+      {
+        "uuid": "d32d9696-3fbc-4a7c-aa92-88e6969783f9",
+        "degree": 1,
+        "name": "povolanie",
+        "code": "datovy_prvok_291"
+      },
+      {
+        "uuid": "d3438c9f-1fcc-426f-b34d-d041d00d5806",
+        "degree": 1,
+        "name": "BIC",
+        "code": "datovy_prvok_335"
+      },
+      {
+        "uuid": "d3815e1b-b907-44dc-aaf0-047a4802b7f7",
+        "degree": 1,
+        "name": "výška vkladu",
+        "code": "datovy_prvok_647"
+      },
+      {
+        "uuid": "d3f15ea3-64ab-4aad-a15c-fed5ff982ec1",
+        "degree": 1,
+        "name": "organizačná jednotka",
+        "code": "datovy_prvok_516"
+      },
+      {
+        "uuid": "d84b3417-bf2a-4a4f-ae77-43d7d5e1aee8",
+        "degree": 1,
+        "name": "typ organizačnej jednotky",
+        "code": "datovy_prvok_513"
+      },
+      {
+        "uuid": "d8bb301d-1ffc-44ea-8ed5-5e7e0c567eb2",
+        "degree": 1,
+        "name": "vznik",
+        "code": "datovy_prvok_611"
+      },
+      {
+        "uuid": "dae26f48-60f2-4d5f-ac76-21bb919ad0b4",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_562"
+      },
+      {
+        "uuid": "dbcaa275-7225-4da7-ab73-718dce253c70",
+        "degree": 1,
+        "name": "zánik",
+        "code": "datovy_prvok_519"
+      },
+      {
+        "uuid": "dda1fd89-fa23-4b0d-8be9-dc9d89981f2b",
+        "degree": 1,
+        "name": "dátum evidencie adresy",
+        "code": "datovy_prvok_761"
+      },
+      {
+        "uuid": "df23cf41-64d1-4d55-835b-ec2588b3e753",
+        "degree": 1,
+        "name": "miesto úmrtia",
+        "code": "datovy_prvok_283"
+      },
+      {
+        "uuid": "df2b5c71-43bc-4cba-9be1-db6254cf7df5",
+        "degree": 1,
+        "name": "predčíslie účtu",
+        "code": "datovy_prvok_327"
+      },
+      {
+        "uuid": "df683cc8-38f3-49a8-86a2-0d6048acc524",
+        "degree": 1,
+        "name": "popis ekonomickej činnosti",
+        "code": "datovy_prvok_362"
+      },
+      {
+        "uuid": "e0f3cbae-78cd-42f8-99df-e61f63cae6a6",
+        "degree": 1,
+        "name": "typ príbuzenstva",
+        "code": "datovy_prvok_300"
+      },
+      {
+        "uuid": "e1349005-27fd-4b7d-8ab2-28bf0c345969",
+        "degree": 1,
+        "name": "množstvo akcií",
+        "code": "datovy_prvok_382"
+      },
+      {
+        "uuid": "e2f888d0-f3e4-46e3-8465-b8a0bffaed1c",
+        "degree": 1,
+        "name": "klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_614"
+      },
+      {
+        "uuid": "e3e83f40-757b-43c0-82da-c704d94067b0",
+        "degree": 1,
+        "name": "narodenie",
+        "code": "datovy_prvok_281"
+      },
+      {
+        "uuid": "e5cf7887-8637-48fd-9c83-81566b8461b6",
+        "degree": 1,
+        "name": "typ zainteresovanej osoby",
+        "code": "datovy_prvok_535"
+      },
+      {
+        "uuid": "e6aa6717-22fc-49de-9817-340ad4633c6a",
+        "degree": 1,
+        "name": "výška základného imania",
+        "code": "datovy_prvok_531"
+      },
+      {
+        "uuid": "e8794a43-2bec-4a08-b733-8d175cc93fbd",
+        "degree": 1,
+        "name": "ďalšie meno",
+        "code": "datovy_prvok_257"
+      },
+      {
+        "uuid": "ea0e86c3-874c-4625-a99a-c3c71a004619",
+        "degree": 1,
+        "name": "začiatok zákazu pobytu",
+        "code": "datovy_prvok_314"
+      },
+      {
+        "uuid": "ea395966-9a71-4147-8f0f-d7db5890ae8d",
+        "degree": 1,
+        "name": "vklad",
+        "code": "datovy_prvok_555"
+      },
+      {
+        "uuid": "ec50526d-ea92-49c2-84e7-2b0c3a993cfe",
+        "degree": 1,
+        "name": "koniec príbuzenského vzťahu",
+        "code": "datovy_prvok_299"
+      },
+      {
+        "uuid": "ec73e010-3cda-4ca7-a7b1-8a6ebc3f1cb4",
+        "degree": 1,
+        "name": "menovitá hodnota akcie",
+        "code": "datovy_prvok_542"
+      },
+      {
+        "uuid": "ed3d39b6-5349-45ca-9000-18f218882075",
+        "degree": 1,
+        "name": "akcie",
+        "code": "datovy_prvok_644"
+      },
+      {
+        "uuid": "f19062f7-9760-459b-a224-9c0208b4741f",
+        "degree": 1,
+        "name": "forma akcie",
+        "code": "datovy_prvok_543"
+      },
+      {
+        "uuid": "f4d14256-d2a4-4fba-a5ca-5846643fac18",
+        "degree": 1,
+        "name": "vklad",
+        "code": "datovy_prvok_650"
+      },
+      {
+        "uuid": "f5285e8e-1f5d-42e3-ba9c-19c0e83fc76b",
+        "degree": 1,
+        "name": "regionálna štatistická územná jednotka 3",
+        "code": "datovy_prvok_751"
+      },
+      {
+        "uuid": "f685828c-6bbb-489d-abb6-61f2a1dd4136",
+        "degree": 1,
+        "name": "ekonomická činnosť",
+        "code": "datovy_prvok_616"
+      },
+      {
+        "uuid": "f9252fb1-024d-44b0-abe3-a2d481235fa1",
+        "degree": 1,
+        "name": "dátum narodenia",
+        "code": "datovy_prvok_277"
+      },
+      {
+        "uuid": "f97a4d08-a210-43fd-8323-433f7226a77f",
+        "degree": 1,
+        "name": "ekonomická činnosť",
+        "code": "datovy_prvok_524"
+      },
+      {
+        "uuid": "fbb38b09-682b-40d4-82b0-ee5b756bfd29",
+        "degree": 1,
+        "name": "základné imanie",
+        "code": "datovy_prvok_625"
+      },
+      {
+        "uuid": "fccec2c5-1ef2-4fd2-97ba-ec9ea5de3f23",
+        "degree": 1,
+        "name": "forma akcie",
+        "code": "datovy_prvok_638"
+      },
+      {
+        "uuid": "fd7ef232-7139-424e-8933-cd4f94491854",
+        "degree": 1,
+        "name": "typ budovy",
+        "code": "datovy_prvok_427"
+      },
+      {
+        "uuid": "fe724637-d2f5-4e98-970a-b397785d44b5",
+        "degree": 1,
+        "name": "dátum ukončenia evidencie adresy",
+        "code": "datovy_prvok_762"
+      },
+      {
+        "uuid": "fea420d3-e3f8-4cd2-95a4-272a43fd89f9",
+        "degree": 1,
+        "name": "Doložka vykonateľnosti",
+        "code": "datovy_prvok_843"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "7557ea33-15a0-43d9-92af-fe268bb29b79",
+        "degree": 15,
+        "name": "právny subjekt",
+        "code": "datovy_prvok_662"
+      },
+      {
+        "uuid": "082a9283-c7a7-4c97-a081-904551775a5f",
+        "degree": 14,
+        "name": "Fyzická osoba",
+        "code": "datovy_prvok_343"
+      },
+      {
+        "uuid": "b40a097a-1f34-4b93-be4e-27f6826aff62",
+        "degree": 14,
+        "name": "právnická osoba",
+        "code": "datovy_prvok_593"
+      },
+      {
+        "uuid": "93805aa9-7fcd-420e-9aba-57e7832a71b3",
+        "degree": 14,
+        "name": "fyzická adresa",
+        "code": "datovy_prvok_763"
+      },
+      {
+        "uuid": "86dfe46c-2d82-43c5-ad2f-906b1d4991b8",
+        "degree": 8,
+        "name": "meno osoby",
+        "code": "datovy_prvok_271"
+      },
+      {
+        "uuid": "ed3d39b6-5349-45ca-9000-18f218882075",
+        "degree": 7,
+        "name": "akcie",
+        "code": "datovy_prvok_644"
+      },
+      {
+        "uuid": "0c8e647f-d9b1-47c5-85d8-c1d8560c7cac",
+        "degree": 7,
+        "name": "akcie",
+        "code": "datovy_prvok_394"
+      },
+      {
+        "uuid": "93033058-627d-4c27-877d-5297e0215df4",
+        "degree": 6,
+        "name": "akcie",
+        "code": "datovy_prvok_549"
+      },
+      {
+        "uuid": "e3e83f40-757b-43c0-82da-c704d94067b0",
+        "degree": 4,
+        "name": "narodenie",
+        "code": "datovy_prvok_281"
+      },
+      {
+        "uuid": "4cb1f95f-90a6-4a8b-a3f1-792573cec9e2",
+        "degree": 4,
+        "name": "základné imanie",
+        "code": "datovy_prvok_375"
+      },
+      {
+        "uuid": "024351f4-14de-4e17-83b7-3e76687bd1fa",
+        "degree": 4,
+        "name": "úmrtie",
+        "code": "datovy_prvok_295"
+      },
+      {
+        "uuid": "7f1af4c1-8e7a-408e-96b1-275a5a09e096",
+        "degree": 4,
+        "name": "základné imanie",
+        "code": "datovy_prvok_533"
+      },
+      {
+        "uuid": "fbb38b09-682b-40d4-82b0-ee5b756bfd29",
+        "degree": 4,
+        "name": "základné imanie",
+        "code": "datovy_prvok_625"
+      },
+      {
+        "uuid": "1a878bed-9a2d-4ba4-8163-66a5b9e78aec",
+        "degree": 4,
+        "name": "tuzemské bankové spojenie",
+        "code": "datovy_prvok_332"
+      },
+      {
+        "uuid": "787225a6-40cf-49b4-b02f-5fe0f22392e1",
+        "degree": 3,
+        "name": "bankové spojenie",
+        "code": "datovy_prvok_341"
+      },
+      {
+        "uuid": "82fe40da-b756-4f07-ad6a-a2d49b2be077",
+        "degree": 3,
+        "name": "budova",
+        "code": "datovy_prvok_702"
+      },
+      {
+        "uuid": "54221a56-4d72-4042-84ab-d162ac07a6bc",
+        "degree": 3,
+        "name": "obmedzenie právnej spôsobilosti",
+        "code": "datovy_prvok_312"
+      },
+      {
+        "uuid": "f4d14256-d2a4-4fba-a5ca-5846643fac18",
+        "degree": 3,
+        "name": "vklad",
+        "code": "datovy_prvok_650"
+      },
+      {
+        "uuid": "9e7da980-8274-4db4-8c06-8a2f12184433",
+        "degree": 3,
+        "name": "príbuzenstvo",
+        "code": "datovy_prvok_304"
+      },
+      {
+        "uuid": "ea395966-9a71-4147-8f0f-d7db5890ae8d",
+        "degree": 3,
+        "name": "vklad",
+        "code": "datovy_prvok_555"
+      },
+      {
+        "uuid": "e36fc07f-56d1-4a67-9cb2-b0b2a5724dc2",
+        "degree": 3,
+        "name": "vklad",
+        "code": "datovy_prvok_400"
+      },
+      {
+        "uuid": "c991553e-da74-43a0-a85c-1d4ffa3179ae",
+        "degree": 3,
+        "name": "poštová adresa",
+        "code": "datovy_prvok_712"
+      },
+      {
+        "uuid": "ca397531-fbb8-429c-aed8-1cc659427b8a",
+        "degree": 3,
+        "name": "príjemca pošty",
+        "code": "datovy_prvok_706"
+      },
+      {
+        "uuid": "71eabbf7-f0b3-4c9e-9c50-49744cdbefbc",
+        "degree": 2,
+        "name": "organizačná jednotka",
+        "code": "datovy_prvok_609"
+      },
+      {
+        "uuid": "5d12205c-23ba-4783-88de-5b794b24c5a4",
+        "degree": 2,
+        "name": "zákaz pobytu",
+        "code": "datovy_prvok_318"
+      },
+      {
+        "uuid": "ce4e7dfb-a9d7-4da1-b9e7-506383b68dc4",
+        "degree": 2,
+        "name": "titul",
+        "code": "datovy_prvok_269"
+      },
+      {
+        "uuid": "fefd5b37-f721-4ec1-b61d-0e23263db509",
+        "degree": 2,
+        "name": "titul",
+        "code": "datovy_prvok_267"
+      },
+      {
+        "uuid": "429491b1-f39f-4d5b-a124-2ae6e0b094ea",
+        "degree": 2,
+        "name": "medzinárodné bankové spojenie",
+        "code": "datovy_prvok_336"
+      },
+      {
+        "uuid": "8f0fd7c0-f99a-445c-bdcf-7e9bde752a35",
+        "degree": 2,
+        "name": "organizačná jednotka",
+        "code": "datovy_prvok_366"
+      },
+      {
+        "uuid": "84c70d22-2c57-44b2-93e7-da78c99674ab",
+        "degree": 2,
+        "name": "agent",
+        "code": "datovy_prvok_735"
+      },
+      {
+        "uuid": "d3f15ea3-64ab-4aad-a15c-fed5ff982ec1",
+        "degree": 2,
+        "name": "organizačná jednotka",
+        "code": "datovy_prvok_516"
+      },
+      {
+        "uuid": "d7437860-9a01-469a-bb4e-14e33f1f8c3a",
+        "degree": 2,
+        "name": "identifikátor",
+        "code": "datovy_prvok_244"
+      },
+      {
+        "uuid": "f97a4d08-a210-43fd-8323-433f7226a77f",
+        "degree": 2,
+        "name": "ekonomická činnosť",
+        "code": "datovy_prvok_524"
+      },
+      {
+        "uuid": "f685828c-6bbb-489d-abb6-61f2a1dd4136",
+        "degree": 2,
+        "name": "ekonomická činnosť",
+        "code": "datovy_prvok_616"
+      },
+      {
+        "uuid": "e27436a6-3714-42c6-8b02-541f5dba66a4",
+        "degree": 2,
+        "name": "ekonomická činnosť",
+        "code": "datovy_prvok_363"
+      },
+      {
+        "uuid": "79018691-d57d-4a60-a5b6-c18c5aae1dc0",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_658"
+      },
+      {
+        "uuid": "f77f719d-0ffc-40b5-b0e5-91d7f857a022",
+        "degree": 1,
+        "name": "Zainteresovaná osoba",
+        "code": "datovy_prvok_379"
+      },
+      {
+        "uuid": "98a6bb26-6eea-4462-aba2-737c1acecaf6",
+        "degree": 1,
+        "name": "zainteresovaná osoba",
+        "code": "datovy_prvok_631"
+      },
+      {
+        "uuid": "7983223d-0b4b-4a36-891c-d5d524ebe8d0",
+        "degree": 1,
+        "name": "Dátum právoplatnosti",
+        "code": "datovy_prvok_846"
+      },
+      {
+        "uuid": "7dca650d-d023-4233-851d-62768da84f88",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_405"
+      },
+      {
+        "uuid": "dae26f48-60f2-4d5f-ac76-21bb919ad0b4",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_562"
+      },
+      {
+        "uuid": "617bbe66-061d-461d-b4f4-9e445a9b8cf1",
+        "degree": 1,
+        "name": "zainteresovaná osoba",
+        "code": "datovy_prvok_539"
+      },
+      {
+        "uuid": "64e95436-136d-4908-bd58-0a326374a5d6",
+        "degree": 1,
+        "name": "relácie doložky",
+        "code": "datovy_prvok_862"
+      },
+      {
+        "uuid": "c98d052d-b0f8-41c8-b776-e1ad19341f01",
+        "degree": 1,
+        "name": "relácie doložky",
+        "code": "datovy_prvok_844"
+      },
+      {
+        "uuid": "4496680e-a6c0-48e9-9586-81602f242092",
+        "degree": 1,
+        "name": "Dátum vykonateľnosti",
+        "code": "datovy_prvok_845"
+      }
+    ],
+    "islands": {
+      "total_nodes": 1234,
+      "total_islands": 1066,
+      "singleton_islands": 1027,
+      "multi_islands": [
+        {
+          "size_total": 32,
+          "size_source": 29,
+          "size_target": 3,
+          "fraction_total": 0.02593192868719611,
+          "top_source_uuid": "86dfe46c-2d82-43c5-ad2f-906b1d4991b8",
+          "top_source_degree": 2,
+          "top_target_uuid": "7557ea33-15a0-43d9-92af-fe268bb29b79",
+          "top_target_degree": 15
+        },
+        {
+          "size_total": 16,
+          "size_source": 13,
+          "size_target": 3,
+          "fraction_total": 0.012965964343598054,
+          "top_source_uuid": "b2d55810-04b5-40fc-a361-1a3096ce5d6d",
+          "top_source_degree": 3,
+          "top_target_uuid": "ed3d39b6-5349-45ca-9000-18f218882075",
+          "top_target_degree": 7
+        },
+        {
+          "size_total": 15,
+          "size_source": 14,
+          "size_target": 1,
+          "fraction_total": 0.012155591572123177,
+          "top_source_uuid": "ac5b2533-3575-4248-8283-ad6663759386",
+          "top_source_degree": 1,
+          "top_target_uuid": "93805aa9-7fcd-420e-9aba-57e7832a71b3",
+          "top_target_degree": 14
+        },
+        {
+          "size_total": 15,
+          "size_source": 14,
+          "size_target": 1,
+          "fraction_total": 0.012155591572123177,
+          "top_source_uuid": "d3f15ea3-64ab-4aad-a15c-fed5ff982ec1",
+          "top_source_degree": 1,
+          "top_target_uuid": "b40a097a-1f34-4b93-be4e-27f6826aff62",
+          "top_target_degree": 14
+        },
+        {
+          "size_total": 9,
+          "size_source": 8,
+          "size_target": 1,
+          "fraction_total": 0.007293354943273906,
+          "top_source_uuid": "bac6889a-0677-47ae-bd81-c95d1f4c620c",
+          "top_source_degree": 1,
+          "top_target_uuid": "86dfe46c-2d82-43c5-ad2f-906b1d4991b8",
+          "top_target_degree": 8
+        },
+        {
+          "size_total": 8,
+          "size_source": 7,
+          "size_target": 1,
+          "fraction_total": 0.006482982171799027,
+          "top_source_uuid": "c60650a7-1d59-4909-af9a-1ff2d7da8a43",
+          "top_source_degree": 1,
+          "top_target_uuid": "0c8e647f-d9b1-47c5-85d8-c1d8560c7cac",
+          "top_target_degree": 7
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.005672609400324149,
+          "top_source_uuid": "b94470e1-7d9a-4f26-a578-e2d754c5437b",
+          "top_source_degree": 1,
+          "top_target_uuid": "93033058-627d-4c27-877d-5297e0215df4",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.004051863857374392,
+          "top_source_uuid": "7bb663bd-8e48-4776-a376-3ffe07e745a7",
+          "top_source_degree": 1,
+          "top_target_uuid": "4cb1f95f-90a6-4a8b-a3f1-792573cec9e2",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.004051863857374392,
+          "top_source_uuid": "2acb38e7-0f36-48ba-adf5-08644e215d6e",
+          "top_source_degree": 1,
+          "top_target_uuid": "024351f4-14de-4e17-83b7-3e76687bd1fa",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.004051863857374392,
+          "top_source_uuid": "3d1fbcd2-21cc-4656-acb8-91535dd82c31",
+          "top_source_degree": 1,
+          "top_target_uuid": "e3e83f40-757b-43c0-82da-c704d94067b0",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.004051863857374392,
+          "top_source_uuid": "b299eb3e-9ea7-4103-b6e3-f1db9ca2b50f",
+          "top_source_degree": 1,
+          "top_target_uuid": "1a878bed-9a2d-4ba4-8163-66a5b9e78aec",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "c0efb92a-9740-48c7-9f94-bfb50e5687f8",
+          "top_source_degree": 1,
+          "top_target_uuid": "787225a6-40cf-49b4-b02f-5fe0f22392e1",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "ac7b209f-3068-479f-bb0d-977a59b6437e",
+          "top_source_degree": 1,
+          "top_target_uuid": "e36fc07f-56d1-4a67-9cb2-b0b2a5724dc2",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "c0c967c0-81f8-4b59-b310-3d0b78c3443a",
+          "top_source_degree": 1,
+          "top_target_uuid": "82fe40da-b756-4f07-ad6a-a2d49b2be077",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "5d371ca2-b2b6-4038-8ebc-60a63eb1a720",
+          "top_source_degree": 1,
+          "top_target_uuid": "54221a56-4d72-4042-84ab-d162ac07a6bc",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "af146d1d-7a8a-4123-8f2a-3131972e14f6",
+          "top_source_degree": 1,
+          "top_target_uuid": "f4d14256-d2a4-4fba-a5ca-5846643fac18",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "ec50526d-ea92-49c2-84e7-2b0c3a993cfe",
+          "top_source_degree": 1,
+          "top_target_uuid": "9e7da980-8274-4db4-8c06-8a2f12184433",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 2,
+          "size_target": 2,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "9ea1d31e-bee8-4629-9835-e0e71d57d3a3",
+          "top_source_degree": 2,
+          "top_target_uuid": "fefd5b37-f721-4ec1-b61d-0e23263db509",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "d2b4d7f2-2997-4cb4-ba31-dbbf5883c8b6",
+          "top_source_degree": 1,
+          "top_target_uuid": "ea395966-9a71-4147-8f0f-d7db5890ae8d",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0032414910858995136,
+          "top_source_uuid": "7bf653c9-8743-4ee7-93f6-41ef12861259",
+          "top_source_degree": 1,
+          "top_target_uuid": "c991553e-da74-43a0-a85c-1d4ffa3179ae",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "8067f142-ada2-4295-88a7-99e5fe05e413",
+          "top_source_degree": 1,
+          "top_target_uuid": "d3f15ea3-64ab-4aad-a15c-fed5ff982ec1",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "8f5b4ce4-9f32-4d40-828d-07a5f760cb5d",
+          "top_source_degree": 1,
+          "top_target_uuid": "8f0fd7c0-f99a-445c-bdcf-7e9bde752a35",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "7557ea33-15a0-43d9-92af-fe268bb29b79",
+          "top_source_degree": 1,
+          "top_target_uuid": "84c70d22-2c57-44b2-93e7-da78c99674ab",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "859c560d-60d6-4bee-b239-d6ee56ebb6d3",
+          "top_source_degree": 1,
+          "top_target_uuid": "d7437860-9a01-469a-bb4e-14e33f1f8c3a",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "06e7bd67-f6da-4a07-8e33-8a060ec0dd5c",
+          "top_source_degree": 1,
+          "top_target_uuid": "5d12205c-23ba-4783-88de-5b794b24c5a4",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "e2f888d0-f3e4-46e3-8465-b8a0bffaed1c",
+          "top_source_degree": 1,
+          "top_target_uuid": "f685828c-6bbb-489d-abb6-61f2a1dd4136",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "45f3aeec-732c-4c1b-b65a-2b21a5ffc0ed",
+          "top_source_degree": 1,
+          "top_target_uuid": "429491b1-f39f-4d5b-a124-2ae6e0b094ea",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "f4959b9b-5f5e-4156-8b89-7cc9a25801ce",
+          "top_source_degree": 2,
+          "top_target_uuid": "c98d052d-b0f8-41c8-b776-e1ad19341f01",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "9f89f646-836a-4ed4-be34-f94713c18f85",
+          "top_source_degree": 1,
+          "top_target_uuid": "e27436a6-3714-42c6-8b02-541f5dba66a4",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "92718f47-b919-407e-8148-e16a9082e3aa",
+          "top_source_degree": 1,
+          "top_target_uuid": "f97a4d08-a210-43fd-8323-433f7226a77f",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0024311183144246355,
+          "top_source_uuid": "05d21712-b871-4c9f-99a5-c3f1202cf1f1",
+          "top_source_degree": 1,
+          "top_target_uuid": "71eabbf7-f0b3-4c9e-9c50-49744cdbefbc",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "fea420d3-e3f8-4cd2-95a4-272a43fd89f9",
+          "top_source_degree": 1,
+          "top_target_uuid": "4496680e-a6c0-48e9-9586-81602f242092",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "14100c90-ed25-479e-8cf6-6f25a17d09f7",
+          "top_source_degree": 1,
+          "top_target_uuid": "98a6bb26-6eea-4462-aba2-737c1acecaf6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "055a35d3-af0a-4c69-856d-de5028c1d077",
+          "top_source_degree": 1,
+          "top_target_uuid": "79018691-d57d-4a60-a5b6-c18c5aae1dc0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "70783975-6ccf-4257-a7af-cd40ae0c68f4",
+          "top_source_degree": 1,
+          "top_target_uuid": "7983223d-0b4b-4a36-891c-d5d524ebe8d0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "a3d83f73-639a-4c40-9fb5-db28d0d14d67",
+          "top_source_degree": 1,
+          "top_target_uuid": "dae26f48-60f2-4d5f-ac76-21bb919ad0b4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "e5cf7887-8637-48fd-9c83-81566b8461b6",
+          "top_source_degree": 1,
+          "top_target_uuid": "617bbe66-061d-461d-b4f4-9e445a9b8cf1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "0b91f3cb-c10e-4d89-aa98-261165b8debb",
+          "top_source_degree": 1,
+          "top_target_uuid": "f77f719d-0ffc-40b5-b0e5-91d7f857a022",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "9e36d827-4fec-4e4a-93b5-b5c01902f354",
+          "top_source_degree": 1,
+          "top_target_uuid": "7dca650d-d023-4233-851d-62768da84f88",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 617,
+        "total_islands": 494,
+        "singleton_islands": 464,
+        "multi_islands": [
+          {
+            "size": 29,
+            "fraction": 0.04700162074554295,
+            "size_total": 32,
+            "top_uuid": "86dfe46c-2d82-43c5-ad2f-906b1d4991b8",
+            "top_degree": 2
+          },
+          {
+            "size": 14,
+            "fraction": 0.022690437601296597,
+            "size_total": 15,
+            "top_uuid": "ac5b2533-3575-4248-8283-ad6663759386",
+            "top_degree": 1
+          },
+          {
+            "size": 14,
+            "fraction": 0.022690437601296597,
+            "size_total": 15,
+            "top_uuid": "d3f15ea3-64ab-4aad-a15c-fed5ff982ec1",
+            "top_degree": 1
+          },
+          {
+            "size": 13,
+            "fraction": 0.02106969205834684,
+            "size_total": 16,
+            "top_uuid": "b2d55810-04b5-40fc-a361-1a3096ce5d6d",
+            "top_degree": 3
+          },
+          {
+            "size": 8,
+            "fraction": 0.012965964343598054,
+            "size_total": 9,
+            "top_uuid": "bac6889a-0677-47ae-bd81-c95d1f4c620c",
+            "top_degree": 1
+          },
+          {
+            "size": 7,
+            "fraction": 0.011345218800648298,
+            "size_total": 8,
+            "top_uuid": "c60650a7-1d59-4909-af9a-1ff2d7da8a43",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.009724473257698542,
+            "size_total": 7,
+            "top_uuid": "b94470e1-7d9a-4f26-a578-e2d754c5437b",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.006482982171799027,
+            "size_total": 5,
+            "top_uuid": "7bb663bd-8e48-4776-a376-3ffe07e745a7",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.006482982171799027,
+            "size_total": 5,
+            "top_uuid": "2acb38e7-0f36-48ba-adf5-08644e215d6e",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.006482982171799027,
+            "size_total": 5,
+            "top_uuid": "3d1fbcd2-21cc-4656-acb8-91535dd82c31",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.006482982171799027,
+            "size_total": 5,
+            "top_uuid": "b299eb3e-9ea7-4103-b6e3-f1db9ca2b50f",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 4,
+            "top_uuid": "c0efb92a-9740-48c7-9f94-bfb50e5687f8",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 4,
+            "top_uuid": "ac7b209f-3068-479f-bb0d-977a59b6437e",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 4,
+            "top_uuid": "c0c967c0-81f8-4b59-b310-3d0b78c3443a",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 4,
+            "top_uuid": "5d371ca2-b2b6-4038-8ebc-60a63eb1a720",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 4,
+            "top_uuid": "af146d1d-7a8a-4123-8f2a-3131972e14f6",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 4,
+            "top_uuid": "ec50526d-ea92-49c2-84e7-2b0c3a993cfe",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 4,
+            "top_uuid": "d2b4d7f2-2997-4cb4-ba31-dbbf5883c8b6",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 4,
+            "top_uuid": "7bf653c9-8743-4ee7-93f6-41ef12861259",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "8067f142-ada2-4295-88a7-99e5fe05e413",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "8f5b4ce4-9f32-4d40-828d-07a5f760cb5d",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "7557ea33-15a0-43d9-92af-fe268bb29b79",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "859c560d-60d6-4bee-b239-d6ee56ebb6d3",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "06e7bd67-f6da-4a07-8e33-8a060ec0dd5c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "e2f888d0-f3e4-46e3-8465-b8a0bffaed1c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "45f3aeec-732c-4c1b-b65a-2b21a5ffc0ed",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 4,
+            "top_uuid": "9ea1d31e-bee8-4629-9835-e0e71d57d3a3",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "9f89f646-836a-4ed4-be34-f94713c18f85",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "92718f47-b919-407e-8148-e16a9082e3aa",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "05d21712-b871-4c9f-99a5-c3f1202cf1f1",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 617,
+        "total_islands": 611,
+        "singleton_islands": 607,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 32,
+            "top_uuid": "7557ea33-15a0-43d9-92af-fe268bb29b79",
+            "top_degree": 15
+          },
+          {
+            "size": 3,
+            "fraction": 0.004862236628849271,
+            "size_total": 16,
+            "top_uuid": "ed3d39b6-5349-45ca-9000-18f218882075",
+            "top_degree": 7
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 3,
+            "top_uuid": "c98d052d-b0f8-41c8-b776-e1ad19341f01",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0032414910858995136,
+            "size_total": 4,
+            "top_uuid": "fefd5b37-f721-4ec1-b61d-0e23263db509",
+            "top_degree": 2
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

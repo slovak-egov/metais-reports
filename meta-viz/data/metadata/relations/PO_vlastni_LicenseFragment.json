@@ -1,0 +1,78 @@
+{
+  "id": 105,
+  "name": "PO vlastní fragment licencie",
+  "technicalName": "PO_vlastni_LicenseFragment",
+  "description": "PO vlastní fragment licencie.",
+  "roleList": [
+    "LIC_LMMF",
+    "LIC_ZLPO",
+    "LIC_LM_UPVII",
+    "EA_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Public authority owns license fragment",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 37,
+      "name": "Povinná osoba",
+      "technicalName": "PO",
+      "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Public authority",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 76,
+      "name": "Žiadosť o licenciu fragment",
+      "technicalName": "LicenseFragment",
+      "description": "Žiadosť o licenciu fragment.",
+      "roleList": [
+        "LIC_LMMF",
+        "LIC_ZLPO",
+        "LIC_LM_UPVII"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Fragment license request",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_LMMF;LIC_ZLPO;LIC_LM_UPVII;",
+      "labels": []
+    }
+  ],
+  "engDescription": "PA owns license fragment.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

@@ -1,0 +1,232 @@
+{
+  "relation_name": "PO_je_gestor_Ontologia",
+  "name": "PO je gestorom ontológie",
+  "description": "Výber gestora zo zoznamu",
+  "engDescription": "Selection of authority from the list",
+  "type": "application",
+  "source_type": "PO",
+  "source_name": "Povinná osoba",
+  "target_type": "Ontologia",
+  "target_name": "Ontológia",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 16,
+    "unique_pairs": 16,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 5792,
+    "target_total": 16,
+    "source_connected": 2,
+    "target_connected": 16,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 3,
+      "max": 13,
+      "avg": 8.0,
+      "median": 8.0,
+      "p90": 13,
+      "p99": 13
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+        "degree": 13,
+        "name": "Ministerstvo financií Slovenskej republiky",
+        "code": "00151742"
+      },
+      {
+        "uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+        "degree": 3,
+        "name": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
+        "code": "50349287"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "ace14d5f-3170-41c5-9969-b735941ed412",
+        "degree": 1,
+        "name": "Ontológia egovernment entít",
+        "code": "ontologia_9"
+      },
+      {
+        "uuid": "57ef9690-b750-4ba7-b7c2-be37e2edd95f",
+        "degree": 1,
+        "name": "Ontológia fyzickej osoby",
+        "code": "ontologia_78"
+      },
+      {
+        "uuid": "a6d8c691-6a4b-4c74-9598-b293ba777cda",
+        "degree": 1,
+        "name": "Ontológia právnickej osoby",
+        "code": "ontologia_81"
+      },
+      {
+        "uuid": "f1f4c46d-b72f-4551-9ef5-dab89ef4db48",
+        "degree": 1,
+        "name": "Ontológia fyzickej osoby - podnikateľa",
+        "code": "ontologia_82"
+      },
+      {
+        "uuid": "9e08aa4a-e325-4b4d-8d99-81c8584ecce6",
+        "degree": 1,
+        "name": "Ontológia identifikátora",
+        "code": "ontologia_83"
+      },
+      {
+        "uuid": "41dfb9a3-064f-4dea-b55f-eedbab50c4b7",
+        "degree": 1,
+        "name": "Ontológia zdroja",
+        "code": "ontologia_102"
+      },
+      {
+        "uuid": "3cd1498b-38bb-4d1c-acb9-361d78426568",
+        "degree": 1,
+        "name": "Ontológia právnych entít",
+        "code": "ontologia_109"
+      },
+      {
+        "uuid": "1cc9a2a2-1bd5-4b27-9b6b-1b51b9e43def",
+        "degree": 1,
+        "name": "Ontológia Infokomunikačných entít",
+        "code": "ontologia_146"
+      },
+      {
+        "uuid": "d33427f9-96b3-4bec-982e-91601af0c14d",
+        "degree": 1,
+        "name": "Ontológia entít lokácie",
+        "code": "ontologia_176"
+      },
+      {
+        "uuid": "7ec18cef-eed9-479a-b54e-b419e3cb3a71",
+        "degree": 1,
+        "name": "Ontológia finančných entít",
+        "code": "ontologia_226"
+      },
+      {
+        "uuid": "14831cc8-b10a-4029-b893-48ff887a4ee2",
+        "degree": 1,
+        "name": "Ontológia právnickej osoby",
+        "code": "ontologia_585"
+      },
+      {
+        "uuid": "2ea8453f-1496-4675-a816-dab56c549b78",
+        "degree": 1,
+        "name": "Ontológia právneho subjektu",
+        "code": "ontologia_683"
+      },
+      {
+        "uuid": "6ba887bb-882c-46fb-8fb8-0f49a5b06826",
+        "degree": 1,
+        "name": "Ontológia katalógu dátových prvkov",
+        "code": "ontologia_791"
+      },
+      {
+        "uuid": "3a3d3dc6-7bb8-4bf7-877e-f828cdebf92a",
+        "degree": 1,
+        "name": "Ontológia legislatívy",
+        "code": "ontologia_1081"
+      },
+      {
+        "uuid": "82f1625e-cd39-4c0a-8658-80aa4141e33f",
+        "degree": 1,
+        "name": "Ontológia legislatívy",
+        "code": "ontologia_1128"
+      },
+      {
+        "uuid": "de79a0c6-7983-4713-b3d5-18bf34330062",
+        "degree": 1,
+        "name": "Ontológia legislatívy",
+        "code": "ontologia_1132"
+      }
+    ],
+    "islands": {
+      "total_nodes": 5808,
+      "total_islands": 5792,
+      "singleton_islands": 5790,
+      "multi_islands": [
+        {
+          "size_total": 14,
+          "size_source": 1,
+          "size_target": 13,
+          "fraction_total": 0.0024104683195592287,
+          "top_source_uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+          "top_source_degree": 13,
+          "top_target_uuid": "d33427f9-96b3-4bec-982e-91601af0c14d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006887052341597796,
+          "top_source_uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+          "top_source_degree": 3,
+          "top_target_uuid": "de79a0c6-7983-4713-b3d5-18bf34330062",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 5792,
+        "total_islands": 5792,
+        "singleton_islands": 5792,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 16,
+        "total_islands": 2,
+        "singleton_islands": 0,
+        "multi_islands": [
+          {
+            "size": 13,
+            "fraction": 0.8125,
+            "size_total": 14,
+            "top_uuid": "d33427f9-96b3-4bec-982e-91601af0c14d",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.1875,
+            "size_total": 4,
+            "top_uuid": "de79a0c6-7983-4713-b3d5-18bf34330062",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

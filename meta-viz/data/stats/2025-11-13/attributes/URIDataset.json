@@ -1,0 +1,76 @@
+{
+  "type": "URIDataset",
+  "count": 50,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 50,
+      "pct": 100.0,
+      "unique_count": 50,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_URIDataset_uri_datasetu",
+      "count": 50,
+      "pct": 100.0,
+      "unique_count": 49,
+      "unique_pct": 98.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 50,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 2.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 50,
+      "pct": 100.0,
+      "unique_count": 50,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 31,
+      "pct": 62.0,
+      "unique_count": 28,
+      "unique_pct": 90.32258064516128
+    },
+    {
+      "name": "Profil_URIDataset_historicky_kod",
+      "count": 31,
+      "pct": 62.0,
+      "unique_count": 3,
+      "unique_pct": 9.67741935483871
+    },
+    {
+      "name": "Gen_Profil_RefID_stav_registracie",
+      "count": 31,
+      "pct": 62.0,
+      "unique_count": 4,
+      "unique_pct": 12.903225806451612
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 31,
+      "pct": 62.0,
+      "unique_count": 1,
+      "unique_pct": 3.225806451612903
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 31,
+      "pct": 62.0,
+      "unique_count": 31,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_RefID_dovod_zamietnutia",
+      "count": 2,
+      "pct": 4.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    }
+  ]
+}

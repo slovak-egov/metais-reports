@@ -1,0 +1,62 @@
+{
+  "type": "BP",
+  "count": 392,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 392,
+      "pct": 100.0,
+      "unique_count": 392,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 392,
+      "pct": 100.0,
+      "unique_count": 388,
+      "unique_pct": 98.9795918367347
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 392,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.25510204081632654
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 392,
+      "pct": 100.0,
+      "unique_count": 392,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 364,
+      "pct": 92.85714285714286,
+      "unique_count": 1,
+      "unique_pct": 0.27472527472527475
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 326,
+      "pct": 83.16326530612244,
+      "unique_count": 312,
+      "unique_pct": 95.70552147239265
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 96,
+      "pct": 24.489795918367346,
+      "unique_count": 94,
+      "unique_pct": 97.91666666666666
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 1,
+      "pct": 0.25510204081632654,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

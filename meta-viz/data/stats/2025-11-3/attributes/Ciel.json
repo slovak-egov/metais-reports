@@ -1,0 +1,69 @@
+{
+  "type": "Ciel",
+  "count": 12,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 12,
+      "pct": 100.0,
+      "unique_count": 12,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 12,
+      "pct": 100.0,
+      "unique_count": 12,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 12,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 16.666666666666664
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 12,
+      "pct": 100.0,
+      "unique_count": 12,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Ciel_kategoria",
+      "count": 12,
+      "pct": 100.0,
+      "unique_count": 8,
+      "unique_pct": 66.66666666666666
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 12,
+      "pct": 100.0,
+      "unique_count": 12,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 1,
+      "pct": 8.333333333333332,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 1,
+      "pct": 8.333333333333332,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 1,
+      "pct": 8.333333333333332,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

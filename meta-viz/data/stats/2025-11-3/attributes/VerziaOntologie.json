@@ -1,0 +1,76 @@
+{
+  "type": "VerziaOntologie",
+  "count": 4,
+  "attributes": [
+    {
+      "name": "Profil_VerziaOntologie_download_url",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_RefID_stav_registracie",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 25.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 25.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 75.0
+    },
+    {
+      "name": "Profil_VerziaOntologie_uri_distribucie",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_VerziaOntologie_verzia",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 75.0
+    },
+    {
+      "name": "Profil_VerziaOntologie_typ_media",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 25.0
+    },
+    {
+      "name": "Profil_VerziaOntologie_platne_od",
+      "count": 4,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 75.0
+    }
+  ]
+}

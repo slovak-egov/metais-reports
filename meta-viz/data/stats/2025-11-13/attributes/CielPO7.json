@@ -1,0 +1,41 @@
+{
+  "type": "CielPO7",
+  "count": 9,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 11.11111111111111
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    }
+  ]
+}

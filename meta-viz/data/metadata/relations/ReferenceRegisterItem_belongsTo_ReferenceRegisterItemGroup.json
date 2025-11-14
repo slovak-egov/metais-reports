@@ -1,0 +1,73 @@
+{
+  "id": 119,
+  "name": "Skupina referečných údajov",
+  "technicalName": "ReferenceRegisterItem_belongsTo_ReferenceRegisterItemGroup",
+  "description": "Použije sa v prípade, ak je potrebné zaradiť referenčný údaj do skupiny referenčných údajov. Napríklad k fyzickej osobe \"údaje o pobyte\".",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Reference register item belongs to Group",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 36,
+      "name": "Polozka referencneho registra",
+      "technicalName": "ReferenceRegisterItem",
+      "description": "Polozka referencneho registra.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register item",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 48,
+      "name": "Skupina poloziek referencneho registra",
+      "technicalName": "ReferenceRegisterItemGroup",
+      "description": "Skupina poloziek referencneho registra",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register item group",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Reference register item belongs to Group.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

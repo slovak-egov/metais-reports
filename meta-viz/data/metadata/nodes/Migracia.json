@@ -1,0 +1,867 @@
+{
+  "id": 26,
+  "name": "Migrácia",
+  "technicalName": "Migracia",
+  "description": "Detaily týkajúce sa migrácie.",
+  "roleList": [
+    "IKT_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#dfdfdf",
+  "engName": "Migration",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 31,
+      "name": "IKT profil pre migráciu",
+      "description": "IKT profil špecifický pre migráciu",
+      "technicalName": "IKT_Profil_Migracia",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special ICT profile for migration",
+      "attributes": [
+        {
+          "id": 575,
+          "name": "Výdavky na migráciu",
+          "description": "Sumárna informácia z prílohy Časový harmonogram.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Migracia_vydavky_na_migraciu",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Migration costs",
+          "engDescription": "Summary information from attachment Timeframe.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 578,
+          "name": "Výdavky na zriadenie",
+          "description": "Sumárna informácia z prílohy Zoznam zvolených služieb.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Migracia_vydavky_na_zriadenie",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Set up costs",
+          "engDescription": "Summary information from attachment List of selected services.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 593,
+          "name": "Výsledok migrácie",
+          "description": "Hodnoty podľa excelu (4.2.16 - Zoznam migrovaných prostriedkov): Uskutočnená Uskutočnená v náhradnom termíne Preplánovaná do ďalšieho obdobia Neuskutočnená, bol vykonaný plán obnovy Neuskutočnená vôbec",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Migracia_vysledok_migracie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "VYSLEDOK_MIGRACIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Migration result",
+          "engDescription": "Values according to excel (4.2.16 - List of migrated resources): Executed Executed on alternative date Planned in next period Not executed, recovery plan performed Not executed at all",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "IKT profil pre schválenie",
+      "description": "IKT profil špecifický pre schválenie migrácie",
+      "technicalName": "IKT_Profil_Schvalenie",
+      "roleList": [
+        "IKT_GARPO",
+        "IKT_MIGR_SCHVAL"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special ICT profile for migration authorization",
+      "attributes": [
+        {
+          "id": 446,
+          "name": "Stav migrácie",
+          "description": "Stav migrácie je atribút hovoriaci o tom, či je migrácia rozpracovaná, vrátená na dopracovanie, schválená, alebo zamietnutá schvaľovateľom.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "c_stav_mig.1",
+          "technicalName": "IKT_Profil_Schvalenie_stav_migracie",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "STAV_MIGRACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Migration status",
+          "engDescription": "Migration status providing information if migration is rejected or approved etc.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 410,
+          "name": "Schvalené vo fáze analýzy",
+          "description": "Atribút migrácie pre schválenie vo fáze analýzy.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Schvalenie_schvalenie_vo_faze_analyzy",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Approved in analysis phase",
+          "engDescription": "Attribute of migration approval in analysis phase.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 343,
+          "name": "Poznámka ku schváleniu vo fáze analýzy",
+          "description": "Poznámka k príznaku schválenia migrácie vo fáze analýzy.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Schvalenie_poznamka_ku_schvaleniu_vo_faze_analyzy",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Note to approval in analysis phase",
+          "engDescription": "Note to attribute of migration approval in analysis phase.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 411,
+          "name": "Schvalené vo fáze plánovania",
+          "description": "Atribút migrácie pre schválenie vo fáze plánovania.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Schvalenie_schvalenie_vo_faze_planovania",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Approved in planning phase",
+          "engDescription": "Attribute of migration approval in planning phase.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 344,
+          "name": "Poznámka ku schváleniu vo fáze plánovania",
+          "description": "Poznámka k príznaku migrácie vo fáze plánovania.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_Schvalenie_poznamka_ku_schvaleniu_vo_faze_planovania",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Note to approval in planning phase",
+          "engDescription": "Note to attribute of migration in planning phase.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "migracia_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/migration",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 65,
+        "name": "Migrácia migruje ISVS",
+        "engName": "Migration migrates ISVS",
+        "technicalName": "Migracia_migruje_ISVS",
+        "description": "ISVS môže byť migrovaný",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "ISVS may be migrated",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 66,
+        "name": "Migrácia migruje zvolenú cloudovú službu",
+        "engName": "Migration migrates selected cloud service",
+        "technicalName": "Migracia_migruje_MigSluzba",
+        "description": "Identifikuje  služby určené pre migráciu. Obsahuje zoznam zvolených služieb z katalógu služieb, s vybranými parametrami a úrovňami poskytovania. Je odkazovaná zo zoznamu migrovaných prostriedkov. A taktiež tvorí prílohu zmluvy s poskytovateľom služieb.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "It identifies services designated for migration. It includes list of selected services from service catalogue with selected parameters and levels of providing. It is referenced from list of migrated resources. And it also forms attachment of Contract with service provider.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 67,
+        "name": "Migrácia migruje systémový softvér",
+        "engName": "Migration migrates system software",
+        "technicalName": "Migracia_migruje_SystemovySW",
+        "description": "Systémový softvér môže byť migrovaný.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "System software may be migrated.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 68,
+        "name": "Migrácia migruje sieťový prvok",
+        "engName": "Migration migrates network element",
+        "technicalName": "Migracia_migruje_TP_SietovyPrvok",
+        "description": "Sieťový prvok môže byť migrovaný.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Network element may be migrated.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 69,
+        "name": "Migrácia migruje špeciálnu technológiu",
+        "engName": "Migration migrates special technology",
+        "technicalName": "Migracia_migruje_TP_SpecTechnologia",
+        "description": "Špeciálna technológia môže byť migrovaná.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Special technology may be migrated.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 70,
+        "name": "Migrácia migruje úložisko",
+        "engName": "Migration migrates storage",
+        "technicalName": "Migracia_migruje_TP_Ulozisko",
+        "description": "Úložisko môže byť migrované.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Storage may be migrated.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 71,
+        "name": "Migrácia migruje výpočtový zdroj",
+        "engName": "Migration migrates computing resource",
+        "technicalName": "Migracia_migruje_TP_VypoctovyZdroj",
+        "description": "Výpočtový zdroj môže byť migrovaný.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Computing resource may be migrated.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 72,
+        "name": "Migrácia migruje zálohovacie zariadenie",
+        "engName": "Migration migrates backup device",
+        "technicalName": "Migracia_migruje_TP_Zalohovanie",
+        "description": "Zálohovacie zariadenie môže byť migrované.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Backup device may be migrated.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 73,
+        "name": "Migrácia obsahuje prínos migrácie",
+        "engName": "Migration consists of contribution of migration",
+        "technicalName": "Migracia_obsahuje_MigPrinos",
+        "description": "Pre migrované prostriedky evidujeme prínosy.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Contributions are recorded for migrated resources.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 74,
+        "name": "Migrácia obsahuje požiadavku na súčinnosť",
+        "engName": "Migration consists of compliance request",
+        "technicalName": "Migracia_obsahuje_MigSucinnost",
+        "description": "Migrácia obsahuje požiadavky na súčinnosť.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Migration consists of compliance request.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 75,
+        "name": "Migrácia obsahuje úsporu migrácie",
+        "engName": "Migration consists migration reduction",
+        "technicalName": "Migracia_obsahuje_MigUspora",
+        "description": "Pre migrované prostriedky evidujeme úspory.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Reductions are recorded for migrated resources.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 76,
+        "name": "Migrácia obsahuje riziko",
+        "engName": "Migration consists of risk",
+        "technicalName": "Migracia_obsahuje_Riziko",
+        "description": "Pre migrované prostriedky evidujeme riziká.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Risks are recorded for migrated resources.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 77,
+        "name": "Migrácia vyžaduje legislatívnu zmenu",
+        "engName": "Migration requires legislation change",
+        "technicalName": "Migracia_vyzaduje_LegZmena",
+        "description": "Pre migrované prostriedky evidujeme požadované legislatívne zmeny.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Requested legislation changes are recorded for migrated resources.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 21,
+        "name": "Dotazník spokojnosti hodnotí migráciu",
+        "engName": "Satisfaction survey assesses migration",
+        "technicalName": "DotaznikSpokojnosti_hodnoti_Migracia",
+        "description": "Pre migrované prostriedky evidujeme dotazník spokojnosti.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Satisfaction survey is carried out for migrated resources.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 64,
+        "name": "Harmonogram migrácie riadi migráciu",
+        "engName": "Migration schedule manages migration",
+        "technicalName": "MigHarmonogram_riadi_Migracia",
+        "description": "Migrácia prostriedkov sa riadi harmonogramom.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Resources migration is managed by schedule.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

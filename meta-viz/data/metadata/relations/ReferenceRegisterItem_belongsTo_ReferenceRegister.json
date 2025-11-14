@@ -1,0 +1,73 @@
+{
+  "id": 118,
+  "name": "Polozka referencneho registra prislucha Referencnemu registru",
+  "technicalName": "ReferenceRegisterItem_belongsTo_ReferenceRegister",
+  "description": "Polozka referencneho registra prislucha Referencnemu registru.",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Reference register item belongs to Reference register",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 36,
+      "name": "Polozka referencneho registra",
+      "technicalName": "ReferenceRegisterItem",
+      "description": "Polozka referencneho registra.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register item",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 44,
+      "name": "Referencny register",
+      "technicalName": "ReferenceRegister",
+      "description": "Referencny register.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Reference register item belongs to Reference register.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

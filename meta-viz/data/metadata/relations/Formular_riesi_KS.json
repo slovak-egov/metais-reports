@@ -1,0 +1,539 @@
+{
+  "id": 149,
+  "name": "Formulár rieši koncovú službu",
+  "technicalName": "Formular_riesi_KS",
+  "description": "Formulár rieši koncovú službu.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Form handles eGov service",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 146,
+      "name": "Profil KS - Formulár",
+      "description": "Profil KS - Formulár",
+      "technicalName": "KS_profil_formular",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile for KS - Form",
+      "attributes": []
+    },
+    {
+      "id": 124,
+      "name": "Špecifický profil pre Formulár rieši KS",
+      "description": "Špecifický profil pre Formulár rieši KS",
+      "technicalName": "Profil_Rel_FormularKS",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special profile for Formular handles eGov service",
+      "attributes": [
+        {
+          "id": 1177,
+          "name": "Používateľ formulára",
+          "description": "Používateľom formulára je podnikateľ G2B, občan G2C, inštitúcia verejnej správy G2G, zahraničná inštitúcia verejnej správy G2A",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "Profil_Rel_FormularKS_Profil_Rel_FormularKS_skupina_pouzivatelov_new",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "POUZIVATEL_KS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Form User",
+          "engDescription": "",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1205,
+          "name": "Povoliť prílohy",
+          "description": "Ak sú povolené prílohy k formuláru, prednastavená hodnota je áno.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "true",
+          "technicalName": "Profil_Rel_FormularKS_Profil_Rel_FormularKS_povolit_prilohy",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": " Allow Attachments",
+          "engDescription": "If form attachments are allowed, the default value is yes.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 658,
+          "name": "Typ formulára",
+          "description": "Výber zo zoznamu – podanie (vstup), rozhodnutie (výstup)",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "Profil_Rel_FormularKS_typ_formulara_upvs",
+          "order": 2,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_FORMULARA_UPVS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "UPVS form type",
+          "engDescription": "It is UPVS form type. Possible values of form type are service and resolution.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1163,
+          "name": "Typ prílohy",
+          "description": "Typy príloh",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Rel_FormularKS_typy_priloh",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Priloha_typ"
+            },
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Priloha_typ"
+            },
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Priloha_typ"
+            },
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Priloha_typ"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Attachemnt's type",
+          "engDescription": "Attachemnt's type",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1206,
+          "name": "Spôsob autorizácie",
+          "description": "Spôsob autorizácie zaevidujte výberom položiek z číselníka pre koncovú službu, inštanciu alebo typ prílohy. 1. Zaevidovaný spôsob autorizácie umožní autorizovať všetkými spôsobmi, ktoré sú zaevidované. 2. Spôsob autorizácie KEPom je možný vždy, aj keď nie je zaevidovaný. 3. Ak je zaevidovaný okrem iného aj atribút „bez autorizácie“, umožnené bude aj podanie bez autorizácie. 4. Ak je zaevidovaný výlučne spôsob „bez autorizácie“, bude umožnené podanie bez autorizácie. Atribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "Profil_Rel_FormularKS_Profil_Rel_FormularKS_sposob_autorizacie",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "AUTHORIZATION_LEVEL"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Method of authorization",
+          "engDescription": "Register the authorization method by selecting items from the code list for the end service, instance or attachment type. 1. A registered authorization method will allow authorization using all methods that are registered. 2. The KEP authorization method is always possible, even if it is not registered. 3. If the \"without authorization\" attribute is registered, among other things, submission without authorization will also be allowed. 4. If only the \"without authorization\" method is registered, submission without authorization will be allowed. The attribute is mandatory in the \"deployment into live operation\" phase.",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1207,
+          "name": "Požiadavky na kontrolu časovej pečiatky",
+          "description": "Tento atribút sa týka príloh podania, ktoré boli podpísané inými podpisovými aplikáciami. Ak nie je atribút vyplnený,  časovú pečiatku netreba kontrolovať.  Ak treba časovú pečiatku kontrolovať, vyberte druh časovej pečiatky, ktorý má byť kontrolovaný. \nAtribút je povinný vo fáze \"nasadenie do ostrej prevádzky\". ",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "c_kontrola_casovej_peciatky.4",
+          "technicalName": "Profil_Rel_FormularKS_Profil_Rel_FormularKS_poziadavka_na_kontrolu_casovej_peciatky",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "KONTROLA_CASOVEJ_PECIATKY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Timestamp Verification Requirements",
+          "engDescription": "This attribute applies to submission attachments that have been signed by other signature applications. If the attribute is not filled in, the timestamp does not need to be checked. If the timestamp needs to be checked, select the type of timestamp to be checked. \nThe attribute is mandatory in the \"deployment to production\" phase.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1208,
+          "name": "Typ spoplatnenia",
+          "description": "Uveďte akým spôsobom bude služba spoplatnená.  Atribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "Profil_Rel_FormularKS_Profil_Rel_FormularKS_typ_spoplatnenia",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_SPOPLATNENIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Charging Type",
+          "engDescription": "Specify how the service will be charged. The attribute is required in the \"go live\" phase.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 666,
+          "name": "Vyžaduje KEP",
+          "description": "Formulár pred odoslaním vyžaduje podpísanie KEPom.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Rel_FormularKS_vyzaduje_zep",
+          "order": 6,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "It requires ZEP",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1209,
+          "name": "Kód spoplatnenia",
+          "description": "Kód elektronického kolku, ktorý slúži na úhradu správnych a súdnych poplatkov. Atribút je povinný  pre všetky položky v číselníku \"Typ spoplatnenia\", okrem \"Bez poplatku\" a \"Poplatky zúčtované inak \".\nAtribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "Profil_Rel_FormularKS_Profil_Rel_FormularKS_kod_spoplatnenia",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Charging Code",
+          "engDescription": "Electronic stamp code used for payment of administrative and court fees. The attribute is mandatory for all items in the \"Type of fee\" code list, except for \"No fee\" and \"Fees billed differently\".\nThe attribute is mandatory in the \"deployment into live operation\" phase.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 662,
+          "name": "Používateľ formulára_old",
+          "description": "Interný číselník s hodnotami PO, FO, FO- podnikateľ, OVM. Viacnásobný výber je možný.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Rel_FormularKS_skupina_pouzivatelov",
+          "order": 10,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "SKUPINA_POUZIVATELOV"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "SKUPINA_POUZIVATELOV"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "SKUPINA_POUZIVATELOV"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "SKUPINA_POUZIVATELOV"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "User form group",
+          "engDescription": "",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 667,
+          "name": "Úroveň autentifikácie",
+          "description": "Výber zo zoznamu – aká úroveň autentifikácie používateľa je vyžadovaná na vyplnenie formulára. Obsahuje úrovne od 1 do 4 podľa § 47 výnosu č. 55/2014, doplnené o úroveň 0 - anonymná. \n Vybraná úroveň znamená minimálnu úroveň autentifikácie, teda môže byť aj vyššia.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Rel_FormularKS_autentifikacia",
+          "order": 11,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "AUTENTIFIKACIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Required level of authentication",
+          "engDescription": "Value in range of 1 to 4 representing level of authentication security. Level 1 \"with minimum security\" means that possible damages that could occur by misuse of identity in real world would have insignificant or very little influence. There is no registration request. Or during registration there is no request for identification. There is no specific request to deliver authentication details. Level 2 \"with low security\" means that possible damages that could occur by misuse of identity in real world would have moderate influence. Requirements: Personal contact is not necessary. Registration may run online based on details set forth by applicant that would allow a clear identification. Data set forth has to undergo basic verification, directly by applicant using link, that was sent to email address. Level 3 \"with high security\" means that possible damages that could occur by misuse of identity in real world would have high influence. Requirements: Personal contact is required during registration. Applicant sets forth official identification document or at least two certificates from neutral and trustworthy sources. Or registration will run online based on details set forth by applicant that are signed by advanced electronic signature. Delivery: Authentication details have to be sent by certified mail into own hands to address Level 4 \"with the highest security\" means that damages that could occur by misuse of identity in real world would have great influence. Requirements: Identity information of applicant has to be verified and checked. Personal contact during registration is required. Applicant sets forth official identification document that includes a photo and signature. Alternative: Registration will run online based on details set forth by applicant that are signed by advanced electronic...",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 664,
+          "name": "Vyžaduje autentifikáciu",
+          "description": "Určuje, či služba vyžaduje autentifikáciu.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "Profil_Rel_FormularKS_vyzaduje_autentifikaciu",
+          "order": 15,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Needs authentication",
+          "engDescription": "Determines, if the service needs authentication.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 59,
+      "name": "Formulár",
+      "technicalName": "Formular",
+      "description": "Formulár.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Form",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 31,
+      "name": "Koncová služba",
+      "technicalName": "KS",
+      "description": "Koncová služba je z hľadiska používateľa jeden pracovný výsledok určitej organizačnej jednotky realizujúcej konkrétny procesný úkon pri vybavovaní veci v rámci konkrétnej agendy. Každá služba spadá pod určitú agendu. Koncová služba predstavuje nadmnožinu eGovernment služieb. Napríklad: nahlásenie zmeny adresy Dopravnému inšpektorátu je konkrétna služba.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "eGov service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_gestor_KS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Form handles eGov service.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

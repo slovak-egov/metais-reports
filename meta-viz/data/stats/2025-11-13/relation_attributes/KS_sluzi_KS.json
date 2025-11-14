@@ -1,0 +1,1477 @@
+{
+  "relation_name": "KS_sluzi_KS",
+  "name": "Koncová služba slúži Koncovej službe",
+  "description": "Jedna koncová služba môže byť procesne závislá od ďalších koncových služieb.",
+  "engDescription": "One eGov service may be procedurally dependent of other eGov services.",
+  "type": "application",
+  "source_type": "KS",
+  "source_name": "Koncová služba",
+  "target_type": "KS",
+  "target_name": "Koncová služba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 66,
+    "unique_pairs": 66,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 9003,
+    "target_total": 9003,
+    "source_connected": 64,
+    "target_connected": 63,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 3,
+      "avg": 1.03125,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 4,
+      "avg": 1.0476190476190477,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "39074c09-18d2-41f7-b582-7d6dbd1854bd",
+        "degree": 3,
+        "name": "Publikovanie otvorených údajov",
+        "code": "ks_364426"
+      },
+      {
+        "uuid": "7c8c2d6b-cfa4-41a8-892a-3006377932f3",
+        "degree": 1,
+        "name": "Poskytovanie konsolidovaných údajov o subjekte",
+        "code": "sluzba_egov_7816"
+      },
+      {
+        "uuid": "0aca6595-7a65-430d-844f-d662bfff857b",
+        "degree": 1,
+        "name": "Poskytnutie dotácie na podporu opatrení sociálnoprávnej ochrany detí a sociálnej kurately",
+        "code": "ks_334139"
+      },
+      {
+        "uuid": "5482cb2e-a2f3-4e52-8858-5958e68b8131",
+        "degree": 1,
+        "name": "Poskytovanie dotácie na podporu implementácie Stratégií CLLD miestnych akčných skupín na území Nitrianskeho kraja – Opatrenia 1., 2., 3.",
+        "code": "ks_334140"
+      },
+      {
+        "uuid": "759d8989-5b3e-4cad-9a96-02fda8e1a7db",
+        "degree": 1,
+        "name": "Poskytovanie dotácie na podporu implementácie Stratégií CLLD miestnych akčných skupín na území Nitrianskeho kraja – Opatrenie 4.",
+        "code": "ks_334141"
+      },
+      {
+        "uuid": "f2d3ba1e-e3dc-4cc1-b78a-be9820175cd4",
+        "degree": 1,
+        "name": "Poskytovanie dotácií typu iné",
+        "code": "ks_334356"
+      },
+      {
+        "uuid": "92ba6eaf-9903-431d-a1b3-a9929d259852",
+        "degree": 1,
+        "name": "Poskytovanie dotácie typu iné",
+        "code": "ks_334506"
+      },
+      {
+        "uuid": "bb82ebd4-804a-4126-b8a7-6a3ef2b05aeb",
+        "degree": 1,
+        "name": "Vzdanie sa odvolania",
+        "code": "ks_351972"
+      },
+      {
+        "uuid": "e8933b16-d62e-4607-94e9-90f92a13fba3",
+        "degree": 1,
+        "name": "Informovanie o miestnom poplatku za rozvoj",
+        "code": "ks_352467"
+      },
+      {
+        "uuid": "ce25c186-e885-4cb8-bd65-391b6349cd5e",
+        "degree": 1,
+        "name": "Informovanie o miestnom poplatku za rozvoj",
+        "code": "ks_380663"
+      },
+      {
+        "uuid": "7d55d53a-5213-4b57-bef8-891414ec399a",
+        "degree": 1,
+        "name": "Pripomienkovanie návrhov nariadení",
+        "code": "sluzba_egov_296"
+      },
+      {
+        "uuid": "ece6f220-f8d1-4f9c-b7d3-171564dd3b66",
+        "degree": 1,
+        "name": "Poskytovanie informácií podľa zákona o slobodnom prístupe k informáciám",
+        "code": "sluzba_egov_233"
+      },
+      {
+        "uuid": "78457257-715b-4db7-993f-d3e36c067bc4",
+        "degree": 1,
+        "name": "Oznamovanie o konaní verejných telovýchovných, športových a turistických podujatí",
+        "code": "sluzba_egov_186"
+      },
+      {
+        "uuid": "385abb4d-e3b7-448b-b42d-b7dc3f84620c",
+        "degree": 1,
+        "name": "Oznamovanie o konaní verejného kultúrneho podujatia",
+        "code": "sluzba_egov_185"
+      },
+      {
+        "uuid": "f8505155-bc08-4357-9499-08ceab5bd456",
+        "degree": 1,
+        "name": "Vydávanie hlasovacieho preukazu",
+        "code": "ks_380667"
+      },
+      {
+        "uuid": "d816447f-8ddc-46b6-a541-b0512b4ac649",
+        "degree": 1,
+        "name": "Potvrdzovanie výšky záväzkov voči obci",
+        "code": "sluzba_egov_257"
+      },
+      {
+        "uuid": "b8cc7337-c7a7-414c-b893-433f13da7419",
+        "degree": 1,
+        "name": "Informovanie o sociálnych službách v obci",
+        "code": "ks_380668"
+      },
+      {
+        "uuid": "bdfb80c6-41a9-4b73-902c-5edc7699fb42",
+        "degree": 1,
+        "name": "Pripomienkovanie cestovného poriadku mestskej autobusovej dopravy",
+        "code": "ks_380669"
+      },
+      {
+        "uuid": "59a88d58-5fcb-445c-a872-fb43e733ef84",
+        "degree": 1,
+        "name": "Oznamovanie o vzniku, zániku alebo zmene daňovej povinnosti k dani za užívanie verejného priestranstva",
+        "code": "sluzba_egov_194"
+      },
+      {
+        "uuid": "1b178454-5f59-4bb2-9188-62cb3aff5da3",
+        "degree": 1,
+        "name": "Informovanie o dani za užívanie verejného priestranstva",
+        "code": "ks_380672"
+      },
+      {
+        "uuid": "8dd4541c-0017-4530-8629-443b50c5339d",
+        "degree": 1,
+        "name": "Informovanie o odpadovom hospodárstve",
+        "code": "ks_380673"
+      },
+      {
+        "uuid": "aaac2fe7-5c96-420f-b864-0e104d9c0993",
+        "degree": 1,
+        "name": "Predaj hnuteľného majetku obce",
+        "code": "ks_380674"
+      },
+      {
+        "uuid": "f26737ed-6d04-4942-91ee-3e54d3840b5a",
+        "degree": 1,
+        "name": "Prenájom ostatného nehnuteľného majetku obce",
+        "code": "ks_380675"
+      },
+      {
+        "uuid": "fdde46aa-d469-459d-9a2e-2be7da662c80",
+        "degree": 1,
+        "name": "Zriaďovanie vecného bremena na majetok obce",
+        "code": "ks_380676"
+      },
+      {
+        "uuid": "29c89af1-8b13-4d7f-affb-28399dc2657b",
+        "degree": 1,
+        "name": "Informovanie o sociálnych zariadeniach v obci",
+        "code": "ks_380677"
+      },
+      {
+        "uuid": "1d80e7b5-3fc8-4e41-adbe-22506d02140c",
+        "degree": 1,
+        "name": "Ohlasovanie umiestnenia včelstiev",
+        "code": "ks_380678"
+      },
+      {
+        "uuid": "5a375e83-ac4b-45ea-acd0-295bb038639f",
+        "degree": 1,
+        "name": "Informovanie o útulkoch a karanténach pre zvieratá",
+        "code": "ks_380679"
+      },
+      {
+        "uuid": "0ff99e86-ad1e-42c0-9ae2-585266f18ccc",
+        "degree": 1,
+        "name": "Ohlasovanie činnosti samostatne hospodáriaceho roľníka",
+        "code": "ks_380680"
+      },
+      {
+        "uuid": "9055dc66-a291-497d-9db5-cb885ea9155e",
+        "degree": 1,
+        "name": "Oznamovanie o zvolaní zhromaždenia občanov",
+        "code": "ks_380681"
+      },
+      {
+        "uuid": "e10797ca-f8eb-424d-b7c5-7ee400c1195e",
+        "degree": 1,
+        "name": "Poskytovanie finančného príspevku na prevádzku sociálnej služby",
+        "code": "sluzba_egov_229"
+      },
+      {
+        "uuid": "0110d29a-373d-4523-9b2b-ffbb48e376e9",
+        "degree": 1,
+        "name": "Poskytovanie sociálnej služby v zariadení pre seniorov",
+        "code": "sluzba_egov_161"
+      },
+      {
+        "uuid": "4e78ee21-bba9-47d8-8288-58a0d65faa1e",
+        "degree": 1,
+        "name": "Poskytovanie jednorazovej dávky v hmotnej núdzi",
+        "code": "sluzba_egov_235"
+      },
+      {
+        "uuid": "f103b2d2-1665-41c8-8492-419d0d8f984e",
+        "degree": 1,
+        "name": "Poskytovanie sociálnej služby v dennom stacionári",
+        "code": "sluzba_egov_246"
+      },
+      {
+        "uuid": "f2400ac8-254f-4096-aa4f-a9a83874bb02",
+        "degree": 1,
+        "name": "Vrátenie pomernej časti dane",
+        "code": "sluzba_egov_376"
+      },
+      {
+        "uuid": "cbdf246a-7b95-474d-b202-4c7c9fb70027",
+        "degree": 1,
+        "name": "Určovanie trvalého alebo prenosného dopravného značenia",
+        "code": "sluzba_egov_2027"
+      },
+      {
+        "uuid": "a4d4c4b4-d7fd-4e2e-8f9c-7fb40ac7b972",
+        "degree": 1,
+        "name": "Informovanie o mestskej hromadnej/autobusovej doprave",
+        "code": "sluzba_egov_91"
+      },
+      {
+        "uuid": "6e3cd85c-94ed-4885-b4bd-eb66445fb7f7",
+        "degree": 1,
+        "name": "Vydávanie rozhodnutí o uzávierke miestnej komunikácie",
+        "code": "sluzba_egov_2019"
+      },
+      {
+        "uuid": "81217415-18dd-4740-a013-1aee44fa3e14",
+        "degree": 1,
+        "name": "Povoľovanie vjazdu do historickej časti mesta alebo pešej zóny",
+        "code": "sluzba_egov_271"
+      },
+      {
+        "uuid": "26d73824-7f1c-4bd1-9fb6-936d7a93c855",
+        "degree": 1,
+        "name": "Poskytovanie úľavy zo sankcií alebo odpustenie sankcií pre daňový subjekt",
+        "code": "sluzba_egov_250"
+      },
+      {
+        "uuid": "a9b5bff7-233e-43d5-9fd4-8347d176677f",
+        "degree": 1,
+        "name": "Povoľovanie odkladu platenia dane a povoľovanie splátok",
+        "code": "sluzba_egov_260"
+      },
+      {
+        "uuid": "ddb6b4df-30a5-4093-809b-2cbbddf64237",
+        "degree": 1,
+        "name": "Poskytovanie úľav alebo odpustenie daňového nedoplatku",
+        "code": "sluzba_egov_249"
+      },
+      {
+        "uuid": "16d5b03e-ac72-465d-a72f-65bd41b19ab0",
+        "degree": 1,
+        "name": "Povoľovanie predaja výrobkov a poskytovania služieb na trhovom mieste",
+        "code": "sluzba_egov_264"
+      },
+      {
+        "uuid": "41065fba-1d72-44f1-a6fe-16e4a946a74a",
+        "degree": 1,
+        "name": "Povoľovanie prístupu k archívnym dokumentom a registratúrnym záznamom",
+        "code": "sluzba_egov_267"
+      },
+      {
+        "uuid": "caae1770-9793-43fb-8ca6-0301afc7ebfe",
+        "degree": 1,
+        "name": "Podávanie daňového priznania k dani z nehnuteľností",
+        "code": "sluzba_egov_212"
+      },
+      {
+        "uuid": "f4d0a944-6b51-4126-9152-d0e7b563ad68",
+        "degree": 1,
+        "name": "Ohlasovanie nelegálnych skládok, znečisťovania vodných tokov a životného prostredia. Vyzvanie majiteľa pozemku na odstránenie odpadu.",
+        "code": "sluzba_egov_2006"
+      },
+      {
+        "uuid": "60ee069c-4767-415e-96fc-3744e72eae0e",
+        "degree": 1,
+        "name": "Informovanie o uzávierke miestnych komunikácií",
+        "code": "sluzba_egov_121"
+      },
+      {
+        "uuid": "ea05df98-9d59-43a9-9e1e-de0b5f9faeea",
+        "degree": 1,
+        "name": "Informovanie o miestnom poplatku za komunálne odpady a drobné stavebné odpady",
+        "code": "sluzba_egov_95"
+      },
+      {
+        "uuid": "ade0a545-face-4128-85e4-5f169d49ef44",
+        "degree": 1,
+        "name": "Informovanie o materských školách v obci",
+        "code": "sluzba_egov_90"
+      },
+      {
+        "uuid": "1f5a51ab-d73d-4973-a343-6bb0045112b5",
+        "degree": 1,
+        "name": "Podávanie daňového priznania k dani za predajné automaty",
+        "code": "sluzba_egov_191"
+      },
+      {
+        "uuid": "a66594cb-e98f-45a0-ab51-ef9f9383e733",
+        "degree": 1,
+        "name": "Podávanie daňového priznania k dani za nevýherné hracie prístroje",
+        "code": "sluzba_egov_190"
+      },
+      {
+        "uuid": "75bde66c-8487-4e4b-8bb8-e5c37dbf97ce",
+        "degree": 1,
+        "name": "Oznamovanie malého zdroja znečisťovania ovzdušia",
+        "code": "sluzba_egov_183"
+      },
+      {
+        "uuid": "ecbde21c-3788-4dfe-a4b9-d9dfb9071314",
+        "degree": 1,
+        "name": "Vybavovanie sťažností a podnetov",
+        "code": "sluzba_egov_382"
+      },
+      {
+        "uuid": "af77e60e-8227-4821-bdcc-b64b97bf9335",
+        "degree": 1,
+        "name": "Určovanie, zmena alebo zrušenie súpisného a orientačného čísla",
+        "code": "sluzba_egov_369"
+      },
+      {
+        "uuid": "bd9a56ee-dd48-4c99-b36d-78acf3d47782",
+        "degree": 1,
+        "name": "Povoľovanie výrubu drevín",
+        "code": "sluzba_egov_2005"
+      },
+      {
+        "uuid": "da336882-e20f-47e2-9fce-ab7a23f8a17b",
+        "degree": 1,
+        "name": "Povoľovanie užívania a zabratia verejného priestranstva",
+        "code": "sluzba_egov_270"
+      },
+      {
+        "uuid": "7428aff7-d150-4371-98af-e7c03da18c02",
+        "degree": 1,
+        "name": "Podávanie daňového priznania k dani za psa",
+        "code": "sluzba_egov_192"
+      },
+      {
+        "uuid": "3130d728-f274-4b48-90b0-bf4027373f0d",
+        "degree": 1,
+        "name": "Oznamovanie o vzniku, zániku alebo zmene daňovej povinnosti k dani za ubytovanie",
+        "code": "sluzba_egov_193"
+      },
+      {
+        "uuid": "4c6f86a8-c838-4277-9a0c-a419bfc6c22c",
+        "degree": 1,
+        "name": "Ohlasovanie závad na chodníkoch a priechodoch pre chodcov",
+        "code": "sluzba_egov_168"
+      },
+      {
+        "uuid": "4eb46f06-4605-4dbb-bf2d-94a6053eea49",
+        "degree": 1,
+        "name": "Ohlasovanie vzniku, zániku alebo zmeny poplatkovej povinnosti za komunálne odpady a drobné stavebné odpady",
+        "code": "sluzba_egov_159"
+      },
+      {
+        "uuid": "c7ec537f-4f17-4a7f-b566-9212912b678f",
+        "degree": 1,
+        "name": "Ohlasovanie porúch verejného osvetlenia a cestnej svetelnej signalizácie",
+        "code": "sluzba_egov_157"
+      },
+      {
+        "uuid": "a12c89e1-2101-4b3d-8e5f-6bac3e9b1bb1",
+        "degree": 1,
+        "name": "Moje údaje v Evidencii cudzincov",
+        "code": "ks_380840"
+      },
+      {
+        "uuid": "f572868e-f40c-4583-8a55-a4f071f2c8d4",
+        "degree": 1,
+        "name": "Povoľovanie realizácie podnikateľského plánu na území obce",
+        "code": "sluzba_egov_268"
+      },
+      {
+        "uuid": "e9110680-9e9a-4a0b-980f-6552ca8d6b64",
+        "degree": 1,
+        "name": "Oznamovanie otváracích hodín prevádzkarne alebo ich zmeny",
+        "code": "sluzba_egov_197"
+      },
+      {
+        "uuid": "5626feec-14b6-40f9-ba19-42157074e8e8",
+        "degree": 1,
+        "name": "Pripomienkovanie návrhov nariadení",
+        "code": "ks_350774"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "92ba6eaf-9903-431d-a1b3-a9929d259852",
+        "degree": 4,
+        "name": "Poskytovanie dotácie typu iné",
+        "code": "ks_334506"
+      },
+      {
+        "uuid": "8175247f-61bc-4504-be25-e822a99e4c91",
+        "degree": 1,
+        "name": "Podanie žiadosti o poskytnutie konsolidovaných údajov o subjekte",
+        "code": "sluzba_is_49247"
+      },
+      {
+        "uuid": "9caeae08-ce1f-4d2a-930d-e43cc61da9fa",
+        "degree": 1,
+        "name": "Poskytovanie dotácií na podporu držiteľov regionálnej značky kvality a činnosti združení a spolkov na vidieku Nitrianskeho kraja - Nástroj 1 LEADER NSK",
+        "code": "ks_334878"
+      },
+      {
+        "uuid": "28c51ce2-29bc-4066-ac6b-3edb17f9faf7",
+        "degree": 1,
+        "name": "Podávanie žiadosti pre vykonanie dohľadu alebo dozoru pri rekonštrukcii pamiatky",
+        "code": "ks_336316"
+      },
+      {
+        "uuid": "45610a45-0afa-4c17-ac5d-7027afc4b712",
+        "degree": 1,
+        "name": "Vyhradzovanie parkovacieho miesta za poplatok",
+        "code": "ks_318720"
+      },
+      {
+        "uuid": "2b9e07be-9da3-46f6-ab99-8ca8788feef6",
+        "degree": 1,
+        "name": "Publikovanie otvorených údajov",
+        "code": "ks_351391"
+      },
+      {
+        "uuid": "8e755d2e-be8d-451a-81f5-4eb419d0fb23",
+        "degree": 1,
+        "name": "Publikovanie otvorených údajov",
+        "code": "ks_351370"
+      },
+      {
+        "uuid": "d823b3f8-8979-48a8-aa07-5190e3c78b85",
+        "degree": 1,
+        "name": "Publikovanie otvorených údajov",
+        "code": "ks_351388"
+      },
+      {
+        "uuid": "34f81e4a-1ec7-4ab4-b88b-2e0fdb5cd6e4",
+        "degree": 1,
+        "name": "Informovanie o miestnom poplatku za rozvoj",
+        "code": "ks_235808"
+      },
+      {
+        "uuid": "5626feec-14b6-40f9-ba19-42157074e8e8",
+        "degree": 1,
+        "name": "Pripomienkovanie návrhov nariadení",
+        "code": "ks_350774"
+      },
+      {
+        "uuid": "3eca3e39-fc2c-4fe3-a0b4-d2b821f8bf44",
+        "degree": 1,
+        "name": "Poskytovanie informácií podľa zákona o slobodnom prístupe k informáciám",
+        "code": "ks_350773"
+      },
+      {
+        "uuid": "bf217352-e911-4cf8-88a3-89358de80f2d",
+        "degree": 1,
+        "name": "Oznamovanie o konaní verejných telovýchovných, športových a turistických podujatí",
+        "code": "ks_350772"
+      },
+      {
+        "uuid": "084cbb64-c675-4c4d-a0ab-8bcf8690621c",
+        "degree": 1,
+        "name": "Oznamovanie o konaní verejného kultúrneho podujatia",
+        "code": "ks_350771"
+      },
+      {
+        "uuid": "c8e56187-83d9-4965-896d-3f4333b7710f",
+        "degree": 1,
+        "name": "Vydávanie hlasovacieho preukazu",
+        "code": "sluzba_egov_386"
+      },
+      {
+        "uuid": "b7aaf385-9dbc-4f26-9d5c-72bd336fce7e",
+        "degree": 1,
+        "name": "Potvrdzovanie výšky záväzkov voči obci",
+        "code": "ks_350770"
+      },
+      {
+        "uuid": "15f56b60-339b-482e-924b-1c6dd6170baf",
+        "degree": 1,
+        "name": "Informovanie o sociálnych službách v obci",
+        "code": "sluzba_egov_112"
+      },
+      {
+        "uuid": "7143f201-2fc3-4ea8-ab9d-efcead9b08c2",
+        "degree": 1,
+        "name": "Pripomienkovanie cestovného poriadku mestskej autobusovej dopravy",
+        "code": "sluzba_egov_295"
+      },
+      {
+        "uuid": "4ea6abf7-bbae-4d57-85f4-30f3f95825ca",
+        "degree": 1,
+        "name": "Oznamovanie o vzniku, zániku alebo zmene daňovej povinnosti k dani za užívanie verejného priestranstva",
+        "code": "ks_380671"
+      },
+      {
+        "uuid": "00790d69-484d-49b7-bef7-916d4f762ee5",
+        "degree": 1,
+        "name": "Informovanie o dani za užívanie verejného priestranstva",
+        "code": "sluzba_egov_83"
+      },
+      {
+        "uuid": "29f67628-9811-4c36-aa21-10e5326b20b6",
+        "degree": 1,
+        "name": "Informovanie o odpadovom hospodárstve",
+        "code": "sluzba_egov_101"
+      },
+      {
+        "uuid": "f6889db8-7110-496c-a063-fd793f52ef2c",
+        "degree": 1,
+        "name": "Predaj hnuteľného majetku obce",
+        "code": "sluzba_egov_276"
+      },
+      {
+        "uuid": "aecf6c27-0651-44ef-9b22-87fd492b00a6",
+        "degree": 1,
+        "name": "Predaj ostatného nehnuteľného majetku obce",
+        "code": "sluzba_egov_278"
+      },
+      {
+        "uuid": "79682c19-1ae3-4927-83d7-5e7cb758f052",
+        "degree": 1,
+        "name": "Zriaďovanie vecného bremena na majetok obce",
+        "code": "sluzba_egov_419"
+      },
+      {
+        "uuid": "54a139c1-e9df-4d32-a4e7-edbdc940cb0d",
+        "degree": 1,
+        "name": "Informovanie o sociálnych zariadeniach v obci",
+        "code": "sluzba_egov_113"
+      },
+      {
+        "uuid": "af1c7986-3f05-4473-b244-9dd0402a442e",
+        "degree": 1,
+        "name": "Ohlasovanie umiestnenia včelstiev",
+        "code": "sluzba_egov_2118"
+      },
+      {
+        "uuid": "0c526d41-1b5d-4fc6-8912-e2d482efb7af",
+        "degree": 1,
+        "name": "Informovanie o útulkoch a karanténach pre zvieratá",
+        "code": "sluzba_egov_120"
+      },
+      {
+        "uuid": "b28cd436-c934-4026-958e-ff5ccd9a4c92",
+        "degree": 1,
+        "name": "Ohlasovanie činnosti samostatne hospodáriaceho roľníka",
+        "code": "sluzba_egov_2136"
+      },
+      {
+        "uuid": "4ba8726f-1814-40e4-8f06-753fe9ab31b2",
+        "degree": 1,
+        "name": "Oznamovanie o zvolaní zhromaždenia občanov",
+        "code": "sluzba_egov_196"
+      },
+      {
+        "uuid": "1a9dcf7a-fbbd-4cfa-9c7a-1c1a57f62cba",
+        "degree": 1,
+        "name": "Poskytovanie finančného príspevku na prevádzku sociálnej služby",
+        "code": "ks_350769"
+      },
+      {
+        "uuid": "145c60e7-9fdd-4cef-b21d-a3091e179fdf",
+        "degree": 1,
+        "name": "Poskytovanie sociálnej služby v zariadení pre seniorov",
+        "code": "ks_350767"
+      },
+      {
+        "uuid": "02c3f74b-fb97-4463-9c57-c6bc49028f24",
+        "degree": 1,
+        "name": "Poskytovanie jednorazovej dávky v hmotnej núdzi a mimoriadnej dávky na pomoc občanovi",
+        "code": "ks_350766"
+      },
+      {
+        "uuid": "f2d7b0bf-79e5-4b4f-ac22-baa17613d3e7",
+        "degree": 1,
+        "name": "Poskytovanie sociálnej služby v dennom stacionári",
+        "code": "ks_350765"
+      },
+      {
+        "uuid": "9ac4c436-9dfb-46e8-9bfe-d275f92daeb5",
+        "degree": 1,
+        "name": "Vrátenie pomernej časti dane",
+        "code": "ks_350763"
+      },
+      {
+        "uuid": "3d153862-191f-432b-979b-29a9ad61dc28",
+        "degree": 1,
+        "name": "Určovanie trvalého alebo prenosného dopravného značenia",
+        "code": "ks_350755"
+      },
+      {
+        "uuid": "0897b6a9-ff8c-41c4-8984-767d8b398e0e",
+        "degree": 1,
+        "name": "Informovanie o mestskej hromadnej/autobusovej doprave",
+        "code": "ks_350754"
+      },
+      {
+        "uuid": "9b200390-724c-4536-9f78-f6a93ef51600",
+        "degree": 1,
+        "name": "Vydávanie rozhodnutí o uzávierke miestnej komunikácie",
+        "code": "ks_350752"
+      },
+      {
+        "uuid": "c21d248c-fdfc-4c2d-bd6d-a0005d6c6745",
+        "degree": 1,
+        "name": "Povoľovanie vjazdu do historickej časti mesta alebo pešej zóny",
+        "code": "ks_350750"
+      },
+      {
+        "uuid": "dc297317-f908-4eed-8b01-1fcbf970917d",
+        "degree": 1,
+        "name": "Poskytovanie úľavy zo sankcií alebo odpustenie sankcií pre daňový subjekt",
+        "code": "ks_350749"
+      },
+      {
+        "uuid": "26cf6c9e-3c89-4613-9ff8-0673afcc331a",
+        "degree": 1,
+        "name": "Povoľovanie odkladu platenia dane a povoľovanie splátok",
+        "code": "ks_350747"
+      },
+      {
+        "uuid": "432be190-abe0-450c-9e39-9df9b00a38e2",
+        "degree": 1,
+        "name": "Poskytovanie úľav alebo odpustenie daňového nedoplatku",
+        "code": "ks_350744"
+      },
+      {
+        "uuid": "654e64f4-a5c3-44aa-8253-650b9083b363",
+        "degree": 1,
+        "name": "Povoľovanie predaja výrobkov a poskytovania služieb na trhovom mieste",
+        "code": "ks_350743"
+      },
+      {
+        "uuid": "8f97e243-26e3-45c5-b010-75dc4d4d0a5a",
+        "degree": 1,
+        "name": "Povoľovanie prístupu k archívnym dokumentom a registratúrnym záznamom",
+        "code": "ks_350742"
+      },
+      {
+        "uuid": "5789e748-e3ea-401b-ba7b-f9beb9826a5a",
+        "degree": 1,
+        "name": "Podávanie daňového priznania k dani z nehnuteľností",
+        "code": "ks_350724"
+      },
+      {
+        "uuid": "0cc1b505-11db-4269-ae00-96914f8c31d5",
+        "degree": 1,
+        "name": "Ohlasovanie nelegálnych skládok, znečisťovania vodných tokov a životného prostredia",
+        "code": "ks_350740"
+      },
+      {
+        "uuid": "84929242-e273-42ca-a70a-df72d15fe7f1",
+        "degree": 1,
+        "name": "Informovanie o uzávierke miestnych komunikácií",
+        "code": "ks_350738"
+      },
+      {
+        "uuid": "2fcc4fef-64da-4332-b2b4-2dbdbaad5f4e",
+        "degree": 1,
+        "name": "Informovanie o miestnom poplatku za komunálne odpady a drobné stavebné odpady",
+        "code": "ks_350737"
+      },
+      {
+        "uuid": "b92b6638-dc2e-4ac7-85b5-f6a4d0bc3a82",
+        "degree": 1,
+        "name": "Informovanie o materských školách v obci",
+        "code": "ks_350736"
+      },
+      {
+        "uuid": "d0fcc9b6-eb12-4591-8f4f-d26a7881a643",
+        "degree": 1,
+        "name": "Podávanie daňového priznania k dani za predajné automaty",
+        "code": "ks_350735"
+      },
+      {
+        "uuid": "cec7d644-916a-4b70-883c-dc93d37a8c96",
+        "degree": 1,
+        "name": "Podávanie daňového priznania k dani za nevýherné hracie prístroje",
+        "code": "ks_350734"
+      },
+      {
+        "uuid": "da3ff782-a1e8-4fa7-9815-fba8514249b8",
+        "degree": 1,
+        "name": "Oznamovanie malého zdroja znečisťovania ovzdušia",
+        "code": "ks_350733"
+      },
+      {
+        "uuid": "c608ef46-f8b2-43c6-89ee-5097e0f70dcf",
+        "degree": 1,
+        "name": "Vybavovanie sťažností a podnetov",
+        "code": "ks_350732"
+      },
+      {
+        "uuid": "ce5ecf76-a4a9-4e1d-9e9d-684d869209d5",
+        "degree": 1,
+        "name": "Určovanie, zmena alebo zrušenie súpisného a orientačného čísla",
+        "code": "ks_350729"
+      },
+      {
+        "uuid": "abc150e5-46ca-49a4-9df1-045f41805ebc",
+        "degree": 1,
+        "name": "Povoľovanie výrubu drevín",
+        "code": "ks_350728"
+      },
+      {
+        "uuid": "7693e165-2c67-401f-9b4a-3f2edd1af7f2",
+        "degree": 1,
+        "name": "Povoľovanie užívania a zabratia verejného priestranstva",
+        "code": "ks_350726"
+      },
+      {
+        "uuid": "f7e244b8-28a6-4dd5-afae-2d5570fefd97",
+        "degree": 1,
+        "name": "Podávanie daňového priznania k dani za psa",
+        "code": "ks_350725"
+      },
+      {
+        "uuid": "ee5449aa-5716-4336-9c94-354f3d562862",
+        "degree": 1,
+        "name": "Oznamovanie o vzniku, zániku alebo zmene daňovej povinnosti k dani za ubytovanie",
+        "code": "ks_350719"
+      },
+      {
+        "uuid": "5b041217-385c-4721-9d0e-70837d1f37c3",
+        "degree": 1,
+        "name": "Ohlasovanie závad na chodníkoch a priechodoch pre chodcov",
+        "code": "ks_350718"
+      },
+      {
+        "uuid": "d140c30b-0f60-48e4-a824-84c38672c3f0",
+        "degree": 1,
+        "name": "Ohlasovanie vzniku, zániku alebo zmeny poplatkovej povinnosti za komunálne odpady a drobné stavebné odpady",
+        "code": "ks_350717"
+      },
+      {
+        "uuid": "ec2cb43f-586c-42ba-ac6e-33cbef14f02a",
+        "degree": 1,
+        "name": "Ohlasovanie porúch verejného osvetlenia a cestnej svetelnej signalizácie",
+        "code": "ks_350716"
+      },
+      {
+        "uuid": "a12c89e1-2101-4b3d-8e5f-6bac3e9b1bb1",
+        "degree": 1,
+        "name": "Moje údaje v Evidencii cudzincov",
+        "code": "ks_380840"
+      },
+      {
+        "uuid": "a717c7d6-f820-4342-83e2-6a44ad6e0cf7",
+        "degree": 1,
+        "name": "Vydávanie záväzného stanoviska k podnikateľskej činnosti",
+        "code": "ks_350760"
+      },
+      {
+        "uuid": "30d47dd7-b0f6-4129-9de7-bfb9ab03a54b",
+        "degree": 1,
+        "name": "Oznamovanie prevádzkovej doby novej prevádzky",
+        "code": "ks_350721"
+      },
+      {
+        "uuid": "ed238a9c-6415-4aed-bb85-c4a930e6a2bc",
+        "degree": 1,
+        "name": "Pripomienkovanie návrhov nariadení",
+        "code": "sluzba_egov_2017"
+      }
+    ],
+    "islands": {
+      "total_nodes": 18006,
+      "total_islands": 17940,
+      "singleton_islands": 17879,
+      "multi_islands": [
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0002776852160390981,
+          "top_source_uuid": "f2d3ba1e-e3dc-4cc1-b78a-be9820175cd4",
+          "top_source_degree": 1,
+          "top_target_uuid": "92ba6eaf-9903-431d-a1b3-a9929d259852",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.00022214817283127845,
+          "top_source_uuid": "39074c09-18d2-41f7-b582-7d6dbd1854bd",
+          "top_source_degree": 3,
+          "top_target_uuid": "2b9e07be-9da3-46f6-ab99-8ca8788feef6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "e8933b16-d62e-4607-94e9-90f92a13fba3",
+          "top_source_degree": 1,
+          "top_target_uuid": "45610a45-0afa-4c17-ac5d-7027afc4b712",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "5626feec-14b6-40f9-ba19-42157074e8e8",
+          "top_source_degree": 1,
+          "top_target_uuid": "ed238a9c-6415-4aed-bb85-c4a930e6a2bc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "a66594cb-e98f-45a0-ab51-ef9f9383e733",
+          "top_source_degree": 1,
+          "top_target_uuid": "cec7d644-916a-4b70-883c-dc93d37a8c96",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "7d55d53a-5213-4b57-bef8-891414ec399a",
+          "top_source_degree": 1,
+          "top_target_uuid": "5626feec-14b6-40f9-ba19-42157074e8e8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "ecbde21c-3788-4dfe-a4b9-d9dfb9071314",
+          "top_source_degree": 1,
+          "top_target_uuid": "c608ef46-f8b2-43c6-89ee-5097e0f70dcf",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "41065fba-1d72-44f1-a6fe-16e4a946a74a",
+          "top_source_degree": 1,
+          "top_target_uuid": "8f97e243-26e3-45c5-b010-75dc4d4d0a5a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "d816447f-8ddc-46b6-a541-b0512b4ac649",
+          "top_source_degree": 1,
+          "top_target_uuid": "b7aaf385-9dbc-4f26-9d5c-72bd336fce7e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "cbdf246a-7b95-474d-b202-4c7c9fb70027",
+          "top_source_degree": 1,
+          "top_target_uuid": "3d153862-191f-432b-979b-29a9ad61dc28",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "78457257-715b-4db7-993f-d3e36c067bc4",
+          "top_source_degree": 1,
+          "top_target_uuid": "bf217352-e911-4cf8-88a3-89358de80f2d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "1b178454-5f59-4bb2-9188-62cb3aff5da3",
+          "top_source_degree": 1,
+          "top_target_uuid": "00790d69-484d-49b7-bef7-916d4f762ee5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "4eb46f06-4605-4dbb-bf2d-94a6053eea49",
+          "top_source_degree": 1,
+          "top_target_uuid": "d140c30b-0f60-48e4-a824-84c38672c3f0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "ece6f220-f8d1-4f9c-b7d3-171564dd3b66",
+          "top_source_degree": 1,
+          "top_target_uuid": "3eca3e39-fc2c-4fe3-a0b4-d2b821f8bf44",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "f2400ac8-254f-4096-aa4f-a9a83874bb02",
+          "top_source_degree": 1,
+          "top_target_uuid": "9ac4c436-9dfb-46e8-9bfe-d275f92daeb5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "ade0a545-face-4128-85e4-5f169d49ef44",
+          "top_source_degree": 1,
+          "top_target_uuid": "b92b6638-dc2e-4ac7-85b5-f6a4d0bc3a82",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "caae1770-9793-43fb-8ca6-0301afc7ebfe",
+          "top_source_degree": 1,
+          "top_target_uuid": "5789e748-e3ea-401b-ba7b-f9beb9826a5a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "fdde46aa-d469-459d-9a2e-2be7da662c80",
+          "top_source_degree": 1,
+          "top_target_uuid": "79682c19-1ae3-4927-83d7-5e7cb758f052",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "f103b2d2-1665-41c8-8492-419d0d8f984e",
+          "top_source_degree": 1,
+          "top_target_uuid": "f2d7b0bf-79e5-4b4f-ac22-baa17613d3e7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "da336882-e20f-47e2-9fce-ab7a23f8a17b",
+          "top_source_degree": 1,
+          "top_target_uuid": "7693e165-2c67-401f-9b4a-3f2edd1af7f2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "e10797ca-f8eb-424d-b7c5-7ee400c1195e",
+          "top_source_degree": 1,
+          "top_target_uuid": "1a9dcf7a-fbbd-4cfa-9c7a-1c1a57f62cba",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "60ee069c-4767-415e-96fc-3744e72eae0e",
+          "top_source_degree": 1,
+          "top_target_uuid": "84929242-e273-42ca-a70a-df72d15fe7f1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "af77e60e-8227-4821-bdcc-b64b97bf9335",
+          "top_source_degree": 1,
+          "top_target_uuid": "ce5ecf76-a4a9-4e1d-9e9d-684d869209d5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "c7ec537f-4f17-4a7f-b566-9212912b678f",
+          "top_source_degree": 1,
+          "top_target_uuid": "ec2cb43f-586c-42ba-ac6e-33cbef14f02a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "f26737ed-6d04-4942-91ee-3e54d3840b5a",
+          "top_source_degree": 1,
+          "top_target_uuid": "aecf6c27-0651-44ef-9b22-87fd492b00a6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "a9b5bff7-233e-43d5-9fd4-8347d176677f",
+          "top_source_degree": 1,
+          "top_target_uuid": "26cf6c9e-3c89-4613-9ff8-0673afcc331a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "16d5b03e-ac72-465d-a72f-65bd41b19ab0",
+          "top_source_degree": 1,
+          "top_target_uuid": "654e64f4-a5c3-44aa-8253-650b9083b363",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "f572868e-f40c-4583-8a55-a4f071f2c8d4",
+          "top_source_degree": 1,
+          "top_target_uuid": "a717c7d6-f820-4342-83e2-6a44ad6e0cf7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "3130d728-f274-4b48-90b0-bf4027373f0d",
+          "top_source_degree": 1,
+          "top_target_uuid": "ee5449aa-5716-4336-9c94-354f3d562862",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "f8505155-bc08-4357-9499-08ceab5bd456",
+          "top_source_degree": 1,
+          "top_target_uuid": "c8e56187-83d9-4965-896d-3f4333b7710f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "0110d29a-373d-4523-9b2b-ffbb48e376e9",
+          "top_source_degree": 1,
+          "top_target_uuid": "145c60e7-9fdd-4cef-b21d-a3091e179fdf",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "5a375e83-ac4b-45ea-acd0-295bb038639f",
+          "top_source_degree": 1,
+          "top_target_uuid": "0c526d41-1b5d-4fc6-8912-e2d482efb7af",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "ddb6b4df-30a5-4093-809b-2cbbddf64237",
+          "top_source_degree": 1,
+          "top_target_uuid": "432be190-abe0-450c-9e39-9df9b00a38e2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "59a88d58-5fcb-445c-a872-fb43e733ef84",
+          "top_source_degree": 1,
+          "top_target_uuid": "4ea6abf7-bbae-4d57-85f4-30f3f95825ca",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "81217415-18dd-4740-a013-1aee44fa3e14",
+          "top_source_degree": 1,
+          "top_target_uuid": "c21d248c-fdfc-4c2d-bd6d-a0005d6c6745",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "0ff99e86-ad1e-42c0-9ae2-585266f18ccc",
+          "top_source_degree": 1,
+          "top_target_uuid": "b28cd436-c934-4026-958e-ff5ccd9a4c92",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "bdfb80c6-41a9-4b73-902c-5edc7699fb42",
+          "top_source_degree": 1,
+          "top_target_uuid": "7143f201-2fc3-4ea8-ab9d-efcead9b08c2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "26d73824-7f1c-4bd1-9fb6-936d7a93c855",
+          "top_source_degree": 1,
+          "top_target_uuid": "dc297317-f908-4eed-8b01-1fcbf970917d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "f4d0a944-6b51-4126-9152-d0e7b563ad68",
+          "top_source_degree": 1,
+          "top_target_uuid": "0cc1b505-11db-4269-ae00-96914f8c31d5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "92ba6eaf-9903-431d-a1b3-a9929d259852",
+          "top_source_degree": 1,
+          "top_target_uuid": "9caeae08-ce1f-4d2a-930d-e43cc61da9fa",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "b8cc7337-c7a7-414c-b893-433f13da7419",
+          "top_source_degree": 1,
+          "top_target_uuid": "15f56b60-339b-482e-924b-1c6dd6170baf",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "ea05df98-9d59-43a9-9e1e-de0b5f9faeea",
+          "top_source_degree": 1,
+          "top_target_uuid": "2fcc4fef-64da-4332-b2b4-2dbdbaad5f4e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "a4d4c4b4-d7fd-4e2e-8f9c-7fb40ac7b972",
+          "top_source_degree": 1,
+          "top_target_uuid": "0897b6a9-ff8c-41c4-8984-767d8b398e0e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "6e3cd85c-94ed-4885-b4bd-eb66445fb7f7",
+          "top_source_degree": 1,
+          "top_target_uuid": "9b200390-724c-4536-9f78-f6a93ef51600",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "29c89af1-8b13-4d7f-affb-28399dc2657b",
+          "top_source_degree": 1,
+          "top_target_uuid": "54a139c1-e9df-4d32-a4e7-edbdc940cb0d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "7c8c2d6b-cfa4-41a8-892a-3006377932f3",
+          "top_source_degree": 1,
+          "top_target_uuid": "8175247f-61bc-4504-be25-e822a99e4c91",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "aaac2fe7-5c96-420f-b864-0e104d9c0993",
+          "top_source_degree": 1,
+          "top_target_uuid": "f6889db8-7110-496c-a063-fd793f52ef2c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "8dd4541c-0017-4530-8629-443b50c5339d",
+          "top_source_degree": 1,
+          "top_target_uuid": "29f67628-9811-4c36-aa21-10e5326b20b6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "4c6f86a8-c838-4277-9a0c-a419bfc6c22c",
+          "top_source_degree": 1,
+          "top_target_uuid": "5b041217-385c-4721-9d0e-70837d1f37c3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "bb82ebd4-804a-4126-b8a7-6a3ef2b05aeb",
+          "top_source_degree": 1,
+          "top_target_uuid": "28c51ce2-29bc-4066-ac6b-3edb17f9faf7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "9055dc66-a291-497d-9db5-cb885ea9155e",
+          "top_source_degree": 1,
+          "top_target_uuid": "4ba8726f-1814-40e4-8f06-753fe9ab31b2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "75bde66c-8487-4e4b-8bb8-e5c37dbf97ce",
+          "top_source_degree": 1,
+          "top_target_uuid": "da3ff782-a1e8-4fa7-9815-fba8514249b8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "bd9a56ee-dd48-4c99-b36d-78acf3d47782",
+          "top_source_degree": 1,
+          "top_target_uuid": "abc150e5-46ca-49a4-9df1-045f41805ebc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "1f5a51ab-d73d-4973-a343-6bb0045112b5",
+          "top_source_degree": 1,
+          "top_target_uuid": "d0fcc9b6-eb12-4591-8f4f-d26a7881a643",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "385abb4d-e3b7-448b-b42d-b7dc3f84620c",
+          "top_source_degree": 1,
+          "top_target_uuid": "084cbb64-c675-4c4d-a0ab-8bcf8690621c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "ce25c186-e885-4cb8-bd65-391b6349cd5e",
+          "top_source_degree": 1,
+          "top_target_uuid": "34f81e4a-1ec7-4ab4-b88b-2e0fdb5cd6e4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "1d80e7b5-3fc8-4e41-adbe-22506d02140c",
+          "top_source_degree": 1,
+          "top_target_uuid": "af1c7986-3f05-4473-b244-9dd0402a442e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "4e78ee21-bba9-47d8-8288-58a0d65faa1e",
+          "top_source_degree": 1,
+          "top_target_uuid": "02c3f74b-fb97-4463-9c57-c6bc49028f24",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "e9110680-9e9a-4a0b-980f-6552ca8d6b64",
+          "top_source_degree": 1,
+          "top_target_uuid": "30d47dd7-b0f6-4129-9de7-bfb9ab03a54b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "7428aff7-d150-4371-98af-e7c03da18c02",
+          "top_source_degree": 1,
+          "top_target_uuid": "f7e244b8-28a6-4dd5-afae-2d5570fefd97",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011107408641563923,
+          "top_source_uuid": "a12c89e1-2101-4b3d-8e5f-6bac3e9b1bb1",
+          "top_source_degree": 1,
+          "top_target_uuid": "a12c89e1-2101-4b3d-8e5f-6bac3e9b1bb1",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 9003,
+        "total_islands": 9000,
+        "singleton_islands": 8999,
+        "multi_islands": [
+          {
+            "size": 4,
+            "fraction": 0.0004442963456625569,
+            "size_total": 5,
+            "top_uuid": "f2d3ba1e-e3dc-4cc1-b78a-be9820175cd4",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 9003,
+        "total_islands": 9001,
+        "singleton_islands": 9000,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.0003332222592469177,
+            "size_total": 4,
+            "top_uuid": "2b9e07be-9da3-46f6-ab99-8ca8788feef6",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

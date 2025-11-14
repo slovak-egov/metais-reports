@@ -1,0 +1,554 @@
+{
+  "id": 5,
+  "name": "Báza dát",
+  "technicalName": "BazaDat",
+  "description": "Obsahuje zoznamy údajov, uložené v databáze, úložisku, alebo v nejakej forme content managementu.",
+  "roleList": [
+    "IKT_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#afffff",
+  "engName": "Data base",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 45,
+      "name": "IKT profil pre bázu dát",
+      "description": "IKT profil špecifický pre entitu bázu dát",
+      "technicalName": "IKT_Profil_BazaDat",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special ICT profile for data base entity",
+      "attributes": [
+        {
+          "id": 483,
+          "name": "Typ",
+          "description": "Typové označenie zariadenia.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_BazaDat_typ",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_BAZA_DAT"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Type",
+          "engDescription": "Type designation of device.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 551,
+          "name": "Veľkosť v GB",
+          "description": "Veľkosť v GB. Hodnota môže byť uvedená ako celé, alebo aj desatiné číslo.",
+          "type": "DOUBLE",
+          "displayAs": null,
+          "units": "c_merna_jednotka.5",
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_BazaDat_velkost_v_gb",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "regex",
+              "id": null,
+              "regex": "^([0-9]*)(\\,[0-9]{2})?$"
+            }
+          ],
+          "attributeTypeEnum": "DOUBLE",
+          "engName": "Volume in GB",
+          "engDescription": "Volume in GB. Value may be set out as integer or decimal number.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "name": "IKTProfil pre migráciu bázy dát",
+      "description": "IKT profil pre migráciu bázy dát.",
+      "technicalName": "IKT_Migracia_BazaDat",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "ICT profile for data base migration",
+      "attributes": [
+        {
+          "id": 118,
+          "name": "ID Baza dat",
+          "description": "Jednoznacny identifikator bazy dat.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_BazaDat_id_baza_dat",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Data base ID",
+          "engDescription": "         Unambiguous identification of data base.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 136,
+          "name": "Informačný systém",
+          "description": "Identifikátor IS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_BazaDat_informacny_system",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Information system",
+          "engDescription": "IS identifier.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 265,
+          "name": "Platforma",
+          "description": "Referencia na platformu kde je báza dát v prevádzke .",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_BazaDat_platforma",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Platform",
+          "engDescription": "Reference on platform hosting a data base in service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 494,
+          "name": "Typ informácií",
+          "description": "Typ spracovávaných informácií: Osobné údaje v zmysle Zákona č. 122/2013 Z. z. o ochrane osobných údajov Dáta v zmysle zákona č. 215/2004 Z.z. o ochrane utajovaných skutočností Konštrukčné údaje.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_BazaDat_typ_informacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Information type",
+          "engDescription": "Type of processed information: Personal data pursuant to Act no. 122/2013 on protection of personal data Data pursuant to Act no. 215/2004 on protection of classified information Construction data.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 550,
+          "name": "Veľkosť",
+          "description": "Veľkosť bázy dát.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_BazaDat_velkost",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Volume",
+          "engDescription": "Volume of data base.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 6,
+          "name": "Aktuálny stav",
+          "description": "Aktuálny stav životného cyklu. Napríklad: Pr - prevádzka, Vv - vo výstavbe, Pl - plánované.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_BazaDat_aktualny_stav",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Current status",
+          "engDescription": "Current status of life cycle. E.g.: Op - in operation, Uc - under construction, Pl - planned.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "baza_dat_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/database",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 33,
+        "name": "ISVS vytvára bázu dát",
+        "engName": "ISVS is making data base.",
+        "technicalName": "ISVS_vytvara_BazaDat",
+        "description": "Vybraný ISVS vytvára danú Bázu Dát.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Selected ISVS makes particular Data Base.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 88,
+        "name": "Platforma podporuje bázu dát",
+        "engName": "Platform supports data base",
+        "technicalName": "Platforma_podporuje_BazaDat",
+        "description": "Platforma podporuje danú Bázu Dát.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Platform supports particular Data Base.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

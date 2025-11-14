@@ -1,0 +1,90 @@
+{
+  "type": "LicenseFragment",
+  "count": 16,
+  "attributes": [
+    {
+      "name": "Profile_LicenseFragment_supportType",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 6.25
+    },
+    {
+      "name": "Profile_LicenseFragment_supportValidTo",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 43.75
+    },
+    {
+      "name": "Profile_LicenseFragment_contractType",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 6.25
+    },
+    {
+      "name": "Profile_LicenseFragment_unitOfMeassure",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 31.25
+    },
+    {
+      "name": "Profile_LicenseFragment_state",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 6.25
+    },
+    {
+      "name": "Profile_LicenseFragment_numberOfLicenses",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 43.75
+    },
+    {
+      "name": "Profile_LicenseFragment_supportValidFrom",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 31.25
+    },
+    {
+      "name": "Profile_LicenseFragment_supportPrice",
+      "count": 13,
+      "pct": 81.25,
+      "unique_count": 13,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_LicenseFragment_price",
+      "count": 11,
+      "pct": 68.75,
+      "unique_count": 7,
+      "unique_pct": 63.63636363636363
+    },
+    {
+      "name": "Profile_LicenseFragment_dateOfOrder",
+      "count": 9,
+      "pct": 56.25,
+      "unique_count": 4,
+      "unique_pct": 44.44444444444444
+    },
+    {
+      "name": "Profile_LicenseFragment_siCode",
+      "count": 3,
+      "pct": 18.75,
+      "unique_count": 2,
+      "unique_pct": 66.66666666666666
+    },
+    {
+      "name": "Profile_LicenseFragment_licenseUuid",
+      "count": 1,
+      "pct": 6.25,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

@@ -1,0 +1,1068 @@
+{
+  "id": 25,
+  "name": "Miesto prevádzky",
+  "technicalName": "MiestoPrevadzky",
+  "description": "Lokalita umožňuje modelovanie polohy rôznych konštrukčných prvkov, akými sú aplikačné komponenty a zariadenia.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#ffffaf",
+  "engName": "Operation site",
+  "category": "RWCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 87,
+      "name": "Generický profil EA",
+      "description": "Informácie z architektonického modelu",
+      "technicalName": "Gen_Profil_EA",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Additional information",
+      "attributes": [
+        {
+          "id": 418,
+          "name": "Skratený názov",
+          "description": "Skratený názov položky prenášaný z názvu položky architektonického modelu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_skrateny_nazov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Abbreviated name",
+          "engDescription": "Abbreviated item name transfered from name of architecture model item.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 310,
+          "name": "Popis referencie",
+          "description": "Popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_popis_referencie",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference description",
+          "engDescription": "Description of document, picture, model describing reference detail.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 620,
+          "name": "Zoznam referencií",
+          "description": "Zoznam referencií. Odkaz a popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING_PAIR",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_zoznam_referencii",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING_PAIR",
+          "engName": "Reference list",
+          "engDescription": "Reference list. Link and description of document, picture, model where is detail of reference described.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 245,
+          "name": "Odkaz na referenciu",
+          "description": "Samotný odkaz (URL) na referenciu (napr. v DMS).",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_odkaz_na_referenciu",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Link to reference",
+          "engDescription": "Particular link (URL) to reference (e.g. in DMS).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 508,
+          "name": "Typ replikácie",
+          "description": "Hovorí o tom, či je daná položka v modeli replikovaná alebo nie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_typ_replikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_REPLIKACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Replication type",
+          "engDescription": "Determines if particular item in model is replicated or no.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 297,
+          "name": "Počet replikácií",
+          "description": "Hovorí o početnosti objektu, napr 500 PC s windows, optimalizuje repozitár (aby nemusel obsahovať 500 položiek). Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_pocet_replikacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "interval",
+              "id": null,
+              "minValue": 0.0,
+              "maxValue": 1000000000.0
+            }
+          ],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of replications",
+          "engDescription": "Deals with quantity of object. e.g. 500 PCs with Windows, optimized by repository (not to include 500 items). Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "IKT profil pre miesto prevádzky",
+      "description": "IKT profil špecifický pre entitu miesto prevádzky",
+      "technicalName": "IKT_Profil_MiestoPrevadzky",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special ICT profile for operation site entity",
+      "attributes": [
+        {
+          "id": 869,
+          "name": "Obec",
+          "description": "zadajte názov obce",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_City",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "City",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 870,
+          "name": "Ulica",
+          "description": "zadajte ulicu",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_street",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Street",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 871,
+          "name": "Číslo",
+          "description": "zadajte popisné číslo budovy",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_number",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Number",
+          "engDescription": "",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 868,
+          "name": "Emailový kontakt",
+          "description": "zadajte emailový kontakt pre účely komunikáci",
+          "type": "EMAIL",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_email_contact",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "EMAIL",
+          "engName": "Email Contact",
+          "engDescription": "email contact",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 45,
+          "name": "Dátové centrum",
+          "description": "Príznak, že sa jedná o dátové centrum.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_datove_centrum",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Data center",
+          "engDescription": "Attribute that it is a data center.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 168,
+          "name": "Kontakt",
+          "description": "Telefónne číslo, e-mail...",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_kontaktna_osoba",
+          "order": 12,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Contact",
+          "engDescription": "Phone number,e-mail...",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 295,
+          "name": "Počet rackov obsadených",
+          "description": "Počet obsadených rackov v dátovom centre. Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_pocet_rackov_obsadenych",
+          "order": 12,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of occupied racks",
+          "engDescription": "Number of occupied racks in data center. Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 296,
+          "name": "Počet rackov voľných",
+          "description": "Počet voľných rackov dátového centra. Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_pocet_rackov_volnych",
+          "order": 13,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of free racks",
+          "engDescription": "Number of free racks in data center. Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1,
+          "name": "Adresa",
+          "description": "Adresa miesta prevádzky.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_MiestoPrevadzky_adresa",
+          "order": 14,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Address",
+          "engDescription": "Location adress.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "IKT Profil pre migráciu miesta prevádzky",
+      "description": "Špecifický profil pre migráciu miesta prevádzky",
+      "technicalName": "IKT_Migracia_MiestoPrevadzky",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special profile for operation migration",
+      "attributes": [
+        {
+          "id": 119,
+          "name": "ID Lokalita",
+          "description": "Identifikátor zadávaný vyplňovateľom excelu ( 4.2.5 - Dátové centrum - sála).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_MiestoPrevadzky_id_lokalita",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "ID Location",
+          "engDescription": "Identifier submitted by person completing excel ( 4.2.5 - Data center - hall).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 212,
+          "name": "Názov",
+          "description": "Názov miesta prevádzky",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_MiestoPrevadzky_nazov",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Name",
+          "engDescription": "Location name.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 169,
+          "name": "Kontaktná osoba",
+          "description": "Kontaktná osoba alebo osoba zodpovedná za danú lokalitu. Kontakt obsahuje titul, meno a priezvisko, telefón, e-mail.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_MiestoPrevadzky_kontaktna_osoba",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Contact person",
+          "engDescription": "Contact person or person responsible for particular location. Contact includes title, name and surname, telephone, email.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 292,
+          "name": "Počet obsadených rackov",
+          "description": "Počet obsadených rackov v dátovom centre.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_MiestoPrevadzky_pocet_obsadenych_rackov",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Number of occupied racks",
+          "engDescription": "Number of occupied racks in data center.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 298,
+          "name": "Počet volných rackov",
+          "description": "Počet voľných rackov dátového centra.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_MiestoPrevadzky_pocet_volnych_rackov",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Number of free racks",
+          "engDescription": "Number of free racks in data center.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 181,
+          "name": "Lokalita",
+          "description": "Fyzická adresa lokality.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_MiestoPrevadzky_lokalita",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Location",
+          "engDescription": "Physical address of the location.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 9,
+          "name": "Aktuálny stav",
+          "description": "Aktuálny stav životného cyklu. Napríklad: Pr - prevádzka, Vv - vo výstavbe, Pl - plánované.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_MiestoPrevadzky_aktualny_stav",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Current status",
+          "engDescription": "Current status of life cycle. E.g.: Op - in operation, Uc - under construction, Pl - planned.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "mp_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/operation-site",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 57,
+        "name": "Miesto prevádzky umiesňuje ISVS",
+        "engName": "Operation site positions ISVS",
+        "technicalName": "MiestoPrevadzky_umiestnuje_ISVS",
+        "description": "ISVS je umiestnené v danej lokalite.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "ISVS is located in particular location.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 58,
+        "name": "Miesto prevádzky umiestňuje sieťový prvok",
+        "engName": "Operation site positions network element",
+        "technicalName": "MiestoPrevadzky_umiestnuje_TP_SietovyPrvok",
+        "description": "Sieťový prvok je umiestnený v danej lokalite.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Network element is located in particular location.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 59,
+        "name": "Miesto prevádzky umiestňuje špeciálnu technológiu",
+        "engName": "Operation site positions special technology",
+        "technicalName": "MiestoPrevadzky_umiestnuje_TP_SpecTechnologia",
+        "description": "Špeciálne technológia je umiestnená v danej lokalite.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Special technology is located in particular location.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 60,
+        "name": "Miesto prevádzky umiestňuje úložisko",
+        "engName": "Operation site positions storage",
+        "technicalName": "MiestoPrevadzky_umiestnuje_TP_Ulozisko",
+        "description": "Úložisko je umiestnený v danej lokalite.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Storage is located in particular location.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 61,
+        "name": "Miesto prevádzky umiestňuje výpočtový zdroj",
+        "engName": "Operation site positions computing resource",
+        "technicalName": "MiestoPrevadzky_umiestnuje_TP_VypoctovyZdroj",
+        "description": "Výpočtový zdroj je umiestnený v danej lokalite.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Computing resource is located in particular location.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 62,
+        "name": "Miesto prevádzky umiestňuje zálohovacie zariadenie",
+        "engName": "Operation site positions backup device",
+        "technicalName": "MiestoPrevadzky_umiestnuje_TP_Zalohovanie",
+        "description": "Zálohovacie zariadenie je umiestnené v danej lokalite.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Backup device is located in particular location.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1203,
+        "name": "Miesto prevádzky realizuje infraštruktúrnu službu",
+        "engName": "Operation site realizes infra service",
+        "technicalName": "MiestoPrevadzky_realizuje_InfraSluzbu",
+        "description": null,
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO",
+          "EA_GARPO"
+        ],
+        "engDescription": "",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 1202,
+        "name": "Projekt rozvíja Miesto prevádzky",
+        "engName": "Project develops Operation site",
+        "technicalName": "Projekt_rozvija_miesto_prevadzky",
+        "description": "Projekt môže súčasne rozvíjať viaceré Miesta prevádzky",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO",
+          "EA_GARPO"
+        ],
+        "engDescription": "Project may at the same time develop more operation sites.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

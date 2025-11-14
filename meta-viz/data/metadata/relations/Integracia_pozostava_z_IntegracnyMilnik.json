@@ -1,0 +1,75 @@
+{
+  "id": 28,
+  "name": "Integrácia pozostáva z integračných míľnikov",
+  "technicalName": "Integracia_pozostava_z_IntegracnyMilnik",
+  "description": "Integrácia pozostáva z integračných míľnikov.",
+  "roleList": [
+    "INT_SPRAVA",
+    "INT_PODPIS"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Integration consists of integration milestones",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 16,
+      "name": "Integrácia",
+      "technicalName": "Integracia",
+      "description": "Entita ktorá reprezentuje technickú integráciu a umožňuje proces tvorby a uzatvorenia integračného zámeru medzi projektmi.",
+      "roleList": [
+        "INT_SPRAVA",
+        "INT_PODPIS"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Integration",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";INT_SPRAVA;INT_PODPIS;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 17,
+      "name": "Integračný míľnik",
+      "technicalName": "IntegracnyMilnik",
+      "description": "Integrácia sa realizuje po etapách ktoré vymedzujú míľniky životného cyklu integrácie.",
+      "roleList": [
+        "INT_SPRAVA"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Integration milestone",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";INT_SPRAVA;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Integration consists of integration milestones.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

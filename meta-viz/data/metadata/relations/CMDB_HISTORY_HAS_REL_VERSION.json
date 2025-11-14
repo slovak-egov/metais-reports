@@ -1,0 +1,161 @@
+{
+  "id": 13,
+  "name": "HasRelVersion",
+  "technicalName": "CMDB_HISTORY_HAS_REL_VERSION",
+  "description": "HasRelVersion.",
+  "roleList": [],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "HasRelVersion",
+  "category": "RWNCB",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 2,
+      "name": "CMDB_HISTORY_REL_PROFIL",
+      "description": "Systemovy profil pre relacie v historickej CMDB",
+      "technicalName": "CMDB_HISTORY_REL_PROFIL",
+      "roleList": null,
+      "type": "system",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "CMDB history relation system profile",
+      "attributes": [
+        {
+          "id": 37,
+          "name": "CMDB_HISTORY_REL_PROFIL_ACTION_BY",
+          "description": "CMDB_HISTORY_REL_PROFIL_ACTION_BY",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "CMDB_HISTORY_REL_PROFIL_ACTION_BY",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "CMDB_HISTORY_REL_PROFIL_ACTION_BY",
+          "engDescription": "CMDB_HISTORY_REL_PROFIL_ACTION_BY",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 38,
+          "name": "CMDB_HISTORY_REL_PROFIL_ACTIONS",
+          "description": "CMDB_HISTORY_REL_PROFIL_ACTIONS",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "CMDB_HISTORY_REL_PROFIL_ACTIONS",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "CMDB_HISTORY_REL_PROFIL_ACTIONS",
+          "engDescription": "CMDB_HISTORY_REL_PROFIL_ACTIONS",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 39,
+          "name": "CMDB_HISTORY_REL_PROFIL_VALID_FROM",
+          "description": "CMDB_HISTORY_REL_PROFIL_VALID_FROM",
+          "type": "LONG",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "CMDB_HISTORY_REL_PROFIL_VALID_FROM",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "LONG",
+          "engName": "CMDB_HISTORY_REL_PROFIL_VALID_FROM",
+          "engDescription": "CMDB_HISTORY_REL_PROFIL_VALID_FROM",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 40,
+          "name": "CMDB_HISTORY_REL_PROFIL_VALID_TO",
+          "description": "CMDB_HISTORY_REL_PROFIL_VALID_TO",
+          "type": "LONG",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "CMDB_HISTORY_REL_PROFIL_VALID_TO",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "LONG",
+          "engName": "CMDB_HISTORY_REL_PROFIL_VALID_TO",
+          "engDescription": "CMDB_HISTORY_REL_PROFIL_VALID_TO",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 45,
+      "name": "RelIdentityNode",
+      "technicalName": "CMDB_HISTORY_REL_IDENTITY_NODE",
+      "description": "RelIdentityNode.",
+      "roleList": null,
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "RelIdentityNode",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": null,
+      "labels": []
+    }
+  ],
+  "targets": [],
+  "engDescription": "HasRelVersion.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

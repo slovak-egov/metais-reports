@@ -1,0 +1,129 @@
+{
+  "id": 24,
+  "name": "Endpoint sprístupňuje aplikačnú službu",
+  "technicalName": "Endpoint_spristupnuje_AS",
+  "description": "Aplikačná služba je dostupná cez jednu alebo viacero operácií. Tie su zoskupené pod svojími prístupovými bodmi (endpoints).",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": false,
+  "color": null,
+  "engName": "Endpoint makes application service available",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 19,
+      "name": "Endpoint",
+      "technicalName": "Endpoint",
+      "description": "Endpoint je cieľová URL aplikačnej služby. Na aplikačnú službu možno naviazať viacero edpointov, pričom rozlišujeme tieto zoskupenia : aktuálne platné endpointy > z nich odvodené endpointy umiestnené na iných prostrediach > a každá táto množina môže mať verzie. Informáciu o prostredí drží priamo entita Endpoint, verzia by mala byť v relácii, alebo prepojovacej tabuľke.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Endpoint",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 18,
+      "name": "Aplikačná služba",
+      "technicalName": "AS",
+      "description": "Aplikačná služba je aktivita vykonávaná v rámci poskytovania koncovej služby informačným systémom verejnej správy podporujúca spravidla jeden procesný krok vykonávania koncovej služby.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Application service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_spravca_AS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Application service is available through one or more operations. They aggregate under their access points (endpoints).",
+  "codePrefix": null,
+  "uriPrefix": null
+}

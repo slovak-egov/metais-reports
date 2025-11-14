@@ -1,0 +1,74 @@
+{
+  "id": 81,
+  "name": "Ovladana PO pre vendora",
+  "technicalName": "OvladanaPO_RelatesTo_LicenseVendor",
+  "description": "Ovladana PO pre vendora.",
+  "roleList": [
+    "LIC_LMMF",
+    "LIC_LM_UPVII"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Controlled PA for vendor",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 77,
+      "name": "Ovladana osoba",
+      "technicalName": "OvladanaPO",
+      "description": "Ovladana osoba.",
+      "roleList": [
+        "LIC_LMMF"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Controlled person",
+      "category": "RONCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_LMMF;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 85,
+      "name": "Vendor licencie",
+      "technicalName": "LicenseVendor",
+      "description": "Vendor licencie.",
+      "roleList": [
+        "LIC_LMMF"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "License vendor",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_LMMF;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Controlled PA for vendor.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

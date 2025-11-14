@@ -1,0 +1,55 @@
+{
+  "type": "ZS",
+  "count": 175,
+  "attributes": [
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 175,
+      "pct": 100.0,
+      "unique_count": 170,
+      "unique_pct": 97.14285714285714
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 175,
+      "pct": 100.0,
+      "unique_count": 175,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 175,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 1.1428571428571428
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 175,
+      "pct": 100.0,
+      "unique_count": 170,
+      "unique_pct": 97.14285714285714
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 175,
+      "pct": 100.0,
+      "unique_count": 175,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Platnost_platnost_od",
+      "count": 174,
+      "pct": 99.42857142857143,
+      "unique_count": 1,
+      "unique_pct": 0.5747126436781609
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 173,
+      "pct": 98.85714285714286,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "type": "OLA_Kontrakt",
+  "count": 295,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 295,
+      "pct": 100.0,
+      "unique_count": 295,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_OLA_Kontrakt_platnost_od",
+      "count": 295,
+      "pct": 100.0,
+      "unique_count": 231,
+      "unique_pct": 78.30508474576271
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 295,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.3389830508474576
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 295,
+      "pct": 100.0,
+      "unique_count": 254,
+      "unique_pct": 86.10169491525423
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 295,
+      "pct": 100.0,
+      "unique_count": 295,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_OLA_Kontrakt_status",
+      "count": 295,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.3389830508474576
+    },
+    {
+      "name": "Profil_OLA_Kontrakt_linka_crz",
+      "count": 275,
+      "pct": 93.22033898305084,
+      "unique_count": 242,
+      "unique_pct": 88.0
+    },
+    {
+      "name": "Profil_OLA_Kontrakt_kod_kontraktu",
+      "count": 220,
+      "pct": 74.57627118644068,
+      "unique_count": 190,
+      "unique_pct": 86.36363636363636
+    },
+    {
+      "name": "Profil_OLA_Kontrakt_platnost_do",
+      "count": 205,
+      "pct": 69.49152542372882,
+      "unique_count": 121,
+      "unique_pct": 59.02439024390244
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 188,
+      "pct": 63.72881355932203,
+      "unique_count": 160,
+      "unique_pct": 85.1063829787234
+    },
+    {
+      "name": "Profil_OLA_Kontrakt_vendor_lock",
+      "count": 67,
+      "pct": 22.71186440677966,
+      "unique_count": 2,
+      "unique_pct": 2.9850746268656714
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 22,
+      "pct": 7.457627118644068,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 22,
+      "pct": 7.457627118644068,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Profil_OLA_Kontrakt_meno_dokumentu",
+      "count": 19,
+      "pct": 6.440677966101695,
+      "unique_count": 18,
+      "unique_pct": 94.73684210526315
+    }
+  ]
+}

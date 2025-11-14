@@ -1,0 +1,327 @@
+{
+  "id": 32,
+  "name": "Parameter kontraktu",
+  "technicalName": "ParameterKontraktu",
+  "description": "Kvantifikovateľné parametre kontraktu.",
+  "roleList": [
+    "SLA_SPRAVA"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#ffffaf",
+  "engName": "Contract parameter",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 17,
+      "name": "Profil parametra",
+      "description": "Profil parametra",
+      "technicalName": "Profil_Parameter",
+      "roleList": [
+        "SLA_SPRAVA",
+        "INT_PODPIS"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Parameter profile",
+      "attributes": [
+        {
+          "id": 4,
+          "name": "Aktívny",
+          "description": "Parameter je aktívny a zobrazuje sa na GUI.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "TRUE",
+          "technicalName": "Profil_Parameter_is_active",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Active",
+          "engDescription": "Parameter is active and shown to a user.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 109,
+          "name": "Hodnota",
+          "description": "Minimálne dohodnuté úrovne parametrov služby (konkrétne požiadavky merané v príslušných jednotkách).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "0",
+          "technicalName": "Profil_Parameter_hodnota",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Value",
+          "engDescription": "Minimum agreed service parameter levels (specific requirements measured in corresponding units).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 304,
+          "name": "Popis",
+          "description": "Voľný popis k parametru.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Parameter_popis",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Description",
+          "engDescription": "Free description of parameter.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 408,
+          "name": "Sankcie",
+          "description": "Sankcie v prípade nedodržania dohodnutých minimálnych úrovní parametrov služby. Môže ísť o dokument alebo voľne písaný text.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Parameter_sankcie",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Penalties",
+          "engDescription": "Penalties are are imposed in case of breaching agreed minimum service parameter levels. These may involve document or free text.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 425,
+          "name": "Spôsob hodnotenia",
+          "description": "Špecifikácia spôsobu hodnotenia či boli, v danom meranom období, dosiahnuté požadované minimálne úrovne parametrov služby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Parameter_sposob_hodnotenia",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Assessment method",
+          "engDescription": "Specification of assessment method if during the assessed period were reached required minimum service parameter levels.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 426,
+          "name": "Spôsob merania",
+          "description": "Špecifikácia spôsobu merania výkonov služby v prevádzke.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Parameter_sposob_merania",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Measurement method",
+          "engDescription": "Specification of measurement method for services in operation.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 493,
+          "name": "Typ hodnoty",
+          "description": "Typ hodnoty parametra služby podľa číselníka. Napríklad aktuálna alebo plánovaná.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Parameter_typ_hodnoty",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_HODNOTY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Value type",
+          "engDescription": "Value of service parameter type based on counter. For example current or planned.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 500,
+          "name": "Typ parametra",
+          "description": "Typ parametra služby podľa číselníka. Napríklad: Nefunkcionálne parametre: plánovaná doba dostupnosti, úroveň dostupnosti, maximálna kumulatívna doba plánovaných odstávok za 1 mesiac, maximálny počet simultánnych pripojení, doba obnovenia služby. Bezpečnostné parametre: dostupnosť, integrita, dôvernosť, nepopierateľnosť služby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Parameter_typ_parametra",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Parameter type",
+          "engDescription": "Service parameter type based on counter. E.g.: Non-functional parameters: planned period of availability, level of availability, maximum cumulative period of planned shutdowns in 1 month, maximum amount of simultaneous connections, time of service recovery. Security parameters: availability, integrity, confidentiality, non-repudiation of service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "parameter_kontraktu_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/contract-parameter",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 36,
+        "name": "Kontrakt má parameter",
+        "engName": "Contract has a parameter",
+        "technicalName": "Kontrakt_ma_Parameter",
+        "description": "Kontrakt má parameter.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "Contract has a parameter.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 124,
+        "name": "Služba má parameter",
+        "engName": "Service has parameter",
+        "technicalName": "Sluzba_ma_Parameter",
+        "description": "Služba má parameter.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "Service has parameter.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,740 @@
+{
+  "relation_name": "URIDataset_obsahuje_DatovyPrvok",
+  "name": "Dataset obsahuje položky typu dátový prvok",
+  "description": "Dataset obsahuje položky definovanej triedy",
+  "engDescription": "Dataset contains items of defined class",
+  "type": "application",
+  "source_type": "URIDataset",
+  "source_name": "URI pre dataset",
+  "target_type": "DatovyPrvok",
+  "target_name": "Dátový prvok",
+  "sourceCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 30,
+    "unique_pairs": 30,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 50,
+    "target_total": 617,
+    "source_connected": 30,
+    "target_connected": 29,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.0344827586206897,
+      "median": 1,
+      "p90": 1,
+      "p99": 2
+    },
+    "top_source": [
+      {
+        "uuid": "c6109b03-7733-47a0-bf5b-231679ac03b5",
+        "degree": 1,
+        "name": "Číselník titul za menom",
+        "code": "uri_dataset_76"
+      },
+      {
+        "uuid": "20c23e9b-17c5-4e7c-aa16-21ce872b4767",
+        "degree": 1,
+        "name": "Číselník príbuzenský vzťah",
+        "code": "uri_dataset_73"
+      },
+      {
+        "uuid": "920e7738-fb61-4863-b960-1785c4e6619f",
+        "degree": 1,
+        "name": "Číselník typ zainteresovanej osoby",
+        "code": "uri_dataset_68"
+      },
+      {
+        "uuid": "f4cff852-91e3-469a-8d53-de784903056a",
+        "degree": 1,
+        "name": "číselník formát elektronického dokumentu",
+        "code": "uri_dataset_49"
+      },
+      {
+        "uuid": "55996423-b409-4a31-8058-2793caf68b6e",
+        "degree": 1,
+        "name": "Číselník druh akcie",
+        "code": "uri_dataset_65"
+      },
+      {
+        "uuid": "6af0277d-8fa1-4efe-868e-f73842f9b82a",
+        "degree": 1,
+        "name": "Číselník identifikátor",
+        "code": "uri_dataset_35"
+      },
+      {
+        "uuid": "cf75b031-ee5a-49fc-a84f-008e69e8939a",
+        "degree": 1,
+        "name": "Číselník regionálna štatistická územná jednotka - kraj",
+        "code": "uri_dataset_56"
+      },
+      {
+        "uuid": "72ea3d36-6410-4ed4-b4a6-99329f183033",
+        "degree": 1,
+        "name": "Číselník úseky verejnej správy",
+        "code": "uri_dataset_43"
+      },
+      {
+        "uuid": "ce2021e4-0f99-4e5e-84a8-3a28afad33f0",
+        "degree": 1,
+        "name": "Číselník typ adresy",
+        "code": "uri_dataset_47"
+      },
+      {
+        "uuid": "41f5f709-25d9-4ad1-89dc-ba193831be63",
+        "degree": 1,
+        "name": "Číselník lokálnej štatistickej územnej jednotky 1",
+        "code": "uri_dataset_54"
+      },
+      {
+        "uuid": "cb482489-4116-4c7a-b47d-69ecddc77872",
+        "degree": 1,
+        "name": "Číselník ekonomická činnosť",
+        "code": "uri_dataset_71"
+      },
+      {
+        "uuid": "e1e1ccd5-b3d1-4e2a-94c9-0f88f02a811b",
+        "degree": 1,
+        "name": "Číselník titul pred menom",
+        "code": "uri_dataset_77"
+      },
+      {
+        "uuid": "7b3ca033-a5eb-4c36-81fe-2e8993c82530",
+        "degree": 1,
+        "name": "Číselník právny stav organizácie",
+        "code": "uri_dataset_69"
+      },
+      {
+        "uuid": "bb9c182b-b890-4970-a7c0-4c9a15b1e243",
+        "degree": 1,
+        "name": "Číselník agendy verejnej správy",
+        "code": "uri_dataset_46"
+      },
+      {
+        "uuid": "3bbae3c5-5ee9-4642-b5cb-1a3b32a4ac62",
+        "degree": 1,
+        "name": "Číselník časť obce",
+        "code": "uri_dataset_63"
+      },
+      {
+        "uuid": "3acf75bc-1b3c-4adb-a9bf-a4354a1a1722",
+        "degree": 1,
+        "name": "Číselník lokálnej štatistickej územnej jednotky 2",
+        "code": "uri_dataset_55"
+      },
+      {
+        "uuid": "27d5bab0-1181-44db-a383-5d9699e7a6ea",
+        "degree": 1,
+        "name": "Číselník pohlavie",
+        "code": "uri_dataset_75"
+      },
+      {
+        "uuid": "80715701-7095-4868-a51d-17f980cd6207",
+        "degree": 1,
+        "name": "Dataset ISVS",
+        "code": "uri_dataset_19"
+      },
+      {
+        "uuid": "728ee273-7978-44dd-9e00-511c3ec2b849",
+        "degree": 1,
+        "name": "Číselník rodinný stav",
+        "code": "uri_dataset_74"
+      },
+      {
+        "uuid": "356d3508-44ed-4fe6-b440-2976a8e94712",
+        "degree": 1,
+        "name": "Kód druhu stavby",
+        "code": "uri_dataset_5"
+      },
+      {
+        "uuid": "0158eb90-ace5-47fa-8d55-e5e4e5dccf6e",
+        "degree": 1,
+        "name": "Číselník krajina OSN",
+        "code": "uri_dataset_79"
+      },
+      {
+        "uuid": "ec3ac4df-8ca9-4f57-97a9-274c9c6c95c6",
+        "degree": 1,
+        "name": "Regionálna štatistická územná jednotka 3 - kraj",
+        "code": "uri_dataset_2"
+      },
+      {
+        "uuid": "529cef74-e18d-4395-9121-575fb6d2ee2e",
+        "degree": 1,
+        "name": "Číselník životné situácie",
+        "code": "uri_dataset_32"
+      },
+      {
+        "uuid": "4c682821-962a-43b3-9d66-ce20597214d0",
+        "degree": 1,
+        "name": "Číselník právna forma organizácie",
+        "code": "uri_dataset_78"
+      },
+      {
+        "uuid": "de04b1c1-337e-4101-9745-40e4019e91bb",
+        "degree": 1,
+        "name": "Číselník právnej formy organizácie",
+        "code": "uri_dataset_80"
+      },
+      {
+        "uuid": "1e47b775-7c77-45e9-bd1f-61dc99f155e4",
+        "degree": 1,
+        "name": "Číselník existenčný stav",
+        "code": "uri_dataset_61"
+      },
+      {
+        "uuid": "f3f1bdef-17dd-46eb-acca-98e7167e571a",
+        "degree": 1,
+        "name": "Číselník okruh životných situácií",
+        "code": "uri_dataset_53"
+      },
+      {
+        "uuid": "58ddcce7-e193-468d-af4a-f207472fe0ab",
+        "degree": 1,
+        "name": "Číselník jednotka meny",
+        "code": "uri_dataset_36"
+      },
+      {
+        "uuid": "4c3e950c-2da6-4a97-91d5-8ddeb41e0e30",
+        "degree": 1,
+        "name": "Číselník typ organizačnej jednotky",
+        "code": "uri_dataset_66"
+      },
+      {
+        "uuid": "5a5fc7a6-f17a-4484-9101-b0a3e11f63b0",
+        "degree": 1,
+        "name": "Číselník typ štatutárneho orgánu",
+        "code": "uri_dataset_64"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "d43acd16-bb4f-41f3-9bb8-635ac18809f6",
+        "degree": 2,
+        "name": "Právna forma",
+        "code": "datovy_prvok_605"
+      },
+      {
+        "uuid": "0afd759c-1ca2-4a48-b6a2-074f3631ed90",
+        "degree": 1,
+        "name": "Titul za menom",
+        "code": "datovy_prvok_266"
+      },
+      {
+        "uuid": "113ab0a7-5390-439c-a63c-1eb7b57f8880",
+        "degree": 1,
+        "name": "Typ príbuzenstva",
+        "code": "datovy_prvok_301"
+      },
+      {
+        "uuid": "14100c90-ed25-479e-8cf6-6f25a17d09f7",
+        "degree": 1,
+        "name": "Typ zainteresovanej osoby",
+        "code": "datovy_prvok_630"
+      },
+      {
+        "uuid": "208bd164-ef19-4005-bfd0-8505fc4f99f8",
+        "degree": 1,
+        "name": "Elektronický formulár",
+        "code": "datovy_prvok_30"
+      },
+      {
+        "uuid": "2bb70e9a-e534-47ba-b2ed-48c35fced8de",
+        "degree": 1,
+        "name": "Typ akcie",
+        "code": "datovy_prvok_643"
+      },
+      {
+        "uuid": "35c86758-c077-444c-8aa3-7ed2027b7be7",
+        "degree": 1,
+        "name": "Typ identifikátora",
+        "code": "datovy_prvok_250"
+      },
+      {
+        "uuid": "37c95040-4362-43d1-9e31-d26693354e27",
+        "degree": 1,
+        "name": "Regionálna štatistická územná jednotka 3",
+        "code": "datovy_prvok_754"
+      },
+      {
+        "uuid": "3b99e72c-c6ff-4d36-a157-e1cfa85a51ed",
+        "degree": 1,
+        "name": "Úsek verejnej správy",
+        "code": "datovy_prvok_169"
+      },
+      {
+        "uuid": "4e4890d6-c47a-4b6a-ab1e-d6c89ba08fe6",
+        "degree": 1,
+        "name": "Typ adresy",
+        "code": "datovy_prvok_760"
+      },
+      {
+        "uuid": "643a803f-863d-4078-ae7a-6a01482c9efb",
+        "degree": 1,
+        "name": "Lokálna štatistická územná jednotka 1",
+        "code": "datovy_prvok_756"
+      },
+      {
+        "uuid": "661b6298-c04a-4e97-9acc-e285e1e8c2b4",
+        "degree": 1,
+        "name": "Ekonomická činnosť",
+        "code": "datovy_prvok_617"
+      },
+      {
+        "uuid": "6952d772-dfdc-4ff9-91c5-9a0aecd2f8b3",
+        "degree": 1,
+        "name": "Titul pred menom",
+        "code": "datovy_prvok_265"
+      },
+      {
+        "uuid": "6bfdc55f-ff0e-406c-a716-c24f0b09757a",
+        "degree": 1,
+        "name": "Právny stav",
+        "code": "datovy_prvok_654"
+      },
+      {
+        "uuid": "6c07ad6f-274e-420a-b952-09805153f12e",
+        "degree": 1,
+        "name": "Agenda",
+        "code": "datovy_prvok_34"
+      },
+      {
+        "uuid": "774a8532-51ef-4970-80da-d0280dab8675",
+        "degree": 1,
+        "name": "Časť obce",
+        "code": "datovy_prvok_416"
+      },
+      {
+        "uuid": "83f764e4-0c12-4604-8efb-b0d5e8b67ff0",
+        "degree": 1,
+        "name": "Lokálna štatistická územná jednotka 2",
+        "code": "datovy_prvok_757"
+      },
+      {
+        "uuid": "89f14aed-ca1e-4f8f-a47e-a61e93881df4",
+        "degree": 1,
+        "name": "Pohlavie",
+        "code": "datovy_prvok_276"
+      },
+      {
+        "uuid": "a2cf7aec-b917-4e20-9876-23b66078d20e",
+        "degree": 1,
+        "name": "Informačný systém verejnej správy",
+        "code": "datovy_prvok_31"
+      },
+      {
+        "uuid": "a89d0ef3-5799-443d-b8fa-fd156e9f1ef6",
+        "degree": 1,
+        "name": "Rodinný stav",
+        "code": "datovy_prvok_274"
+      },
+      {
+        "uuid": "a9e1bdd4-c7c8-42fb-afd8-c332e95459a8",
+        "degree": 1,
+        "name": "Kód druhu stavby",
+        "code": "datovy_prvok_29"
+      },
+      {
+        "uuid": "b2534289-d224-48ac-8ac6-0f22df51f92e",
+        "degree": 1,
+        "name": "Krajina OSN",
+        "code": "datovy_prvok_408"
+      },
+      {
+        "uuid": "cad0825c-0d2b-4600-a6b3-02545a0273d7",
+        "degree": 1,
+        "name": "Región",
+        "code": "datovy_prvok_22"
+      },
+      {
+        "uuid": "cdd9c705-ee26-4ff7-becf-12fc71e47a65",
+        "degree": 1,
+        "name": "životná situácia",
+        "code": "datovy_prvok_504"
+      },
+      {
+        "uuid": "e4d7ede0-e0ba-4fb0-9294-ac86612bf5b0",
+        "degree": 1,
+        "name": "Stav Fyzickej Osoby",
+        "code": "datovy_prvok_287"
+      },
+      {
+        "uuid": "efa76872-550f-4630-aaac-0db4d1ed08ce",
+        "degree": 1,
+        "name": "Okruh životnej situácie",
+        "code": "datovy_prvok_501"
+      },
+      {
+        "uuid": "f7f80e82-c4c9-4523-9a22-3d25662bbe88",
+        "degree": 1,
+        "name": "Mena",
+        "code": "datovy_prvok_373"
+      },
+      {
+        "uuid": "f8ff1b7c-c80c-49e6-97c9-95c868f5d344",
+        "degree": 1,
+        "name": "Typ organizačnej jednotky",
+        "code": "datovy_prvok_608"
+      },
+      {
+        "uuid": "fff95b07-4770-4270-9063-9de66e510b34",
+        "degree": 1,
+        "name": "Typ štatutárneho orgánu",
+        "code": "datovy_prvok_656"
+      }
+    ],
+    "islands": {
+      "total_nodes": 667,
+      "total_islands": 637,
+      "singleton_islands": 608,
+      "multi_islands": [
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "4c682821-962a-43b3-9d66-ce20597214d0",
+          "top_source_degree": 1,
+          "top_target_uuid": "d43acd16-bb4f-41f3-9bb8-635ac18809f6",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "c6109b03-7733-47a0-bf5b-231679ac03b5",
+          "top_source_degree": 1,
+          "top_target_uuid": "0afd759c-1ca2-4a48-b6a2-074f3631ed90",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "3acf75bc-1b3c-4adb-a9bf-a4354a1a1722",
+          "top_source_degree": 1,
+          "top_target_uuid": "83f764e4-0c12-4604-8efb-b0d5e8b67ff0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "41f5f709-25d9-4ad1-89dc-ba193831be63",
+          "top_source_degree": 1,
+          "top_target_uuid": "643a803f-863d-4078-ae7a-6a01482c9efb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "f4cff852-91e3-469a-8d53-de784903056a",
+          "top_source_degree": 1,
+          "top_target_uuid": "208bd164-ef19-4005-bfd0-8505fc4f99f8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "529cef74-e18d-4395-9121-575fb6d2ee2e",
+          "top_source_degree": 1,
+          "top_target_uuid": "cdd9c705-ee26-4ff7-becf-12fc71e47a65",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "0158eb90-ace5-47fa-8d55-e5e4e5dccf6e",
+          "top_source_degree": 1,
+          "top_target_uuid": "b2534289-d224-48ac-8ac6-0f22df51f92e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "1e47b775-7c77-45e9-bd1f-61dc99f155e4",
+          "top_source_degree": 1,
+          "top_target_uuid": "e4d7ede0-e0ba-4fb0-9294-ac86612bf5b0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "4c3e950c-2da6-4a97-91d5-8ddeb41e0e30",
+          "top_source_degree": 1,
+          "top_target_uuid": "f8ff1b7c-c80c-49e6-97c9-95c868f5d344",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "920e7738-fb61-4863-b960-1785c4e6619f",
+          "top_source_degree": 1,
+          "top_target_uuid": "14100c90-ed25-479e-8cf6-6f25a17d09f7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "58ddcce7-e193-468d-af4a-f207472fe0ab",
+          "top_source_degree": 1,
+          "top_target_uuid": "f7f80e82-c4c9-4523-9a22-3d25662bbe88",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "20c23e9b-17c5-4e7c-aa16-21ce872b4767",
+          "top_source_degree": 1,
+          "top_target_uuid": "113ab0a7-5390-439c-a63c-1eb7b57f8880",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "cf75b031-ee5a-49fc-a84f-008e69e8939a",
+          "top_source_degree": 1,
+          "top_target_uuid": "37c95040-4362-43d1-9e31-d26693354e27",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "27d5bab0-1181-44db-a383-5d9699e7a6ea",
+          "top_source_degree": 1,
+          "top_target_uuid": "89f14aed-ca1e-4f8f-a47e-a61e93881df4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "e1e1ccd5-b3d1-4e2a-94c9-0f88f02a811b",
+          "top_source_degree": 1,
+          "top_target_uuid": "6952d772-dfdc-4ff9-91c5-9a0aecd2f8b3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "72ea3d36-6410-4ed4-b4a6-99329f183033",
+          "top_source_degree": 1,
+          "top_target_uuid": "3b99e72c-c6ff-4d36-a157-e1cfa85a51ed",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "55996423-b409-4a31-8058-2793caf68b6e",
+          "top_source_degree": 1,
+          "top_target_uuid": "2bb70e9a-e534-47ba-b2ed-48c35fced8de",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "3bbae3c5-5ee9-4642-b5cb-1a3b32a4ac62",
+          "top_source_degree": 1,
+          "top_target_uuid": "774a8532-51ef-4970-80da-d0280dab8675",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "ce2021e4-0f99-4e5e-84a8-3a28afad33f0",
+          "top_source_degree": 1,
+          "top_target_uuid": "4e4890d6-c47a-4b6a-ab1e-d6c89ba08fe6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "356d3508-44ed-4fe6-b440-2976a8e94712",
+          "top_source_degree": 1,
+          "top_target_uuid": "a9e1bdd4-c7c8-42fb-afd8-c332e95459a8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "80715701-7095-4868-a51d-17f980cd6207",
+          "top_source_degree": 1,
+          "top_target_uuid": "a2cf7aec-b917-4e20-9876-23b66078d20e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "7b3ca033-a5eb-4c36-81fe-2e8993c82530",
+          "top_source_degree": 1,
+          "top_target_uuid": "6bfdc55f-ff0e-406c-a716-c24f0b09757a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "cb482489-4116-4c7a-b47d-69ecddc77872",
+          "top_source_degree": 1,
+          "top_target_uuid": "661b6298-c04a-4e97-9acc-e285e1e8c2b4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "ec3ac4df-8ca9-4f57-97a9-274c9c6c95c6",
+          "top_source_degree": 1,
+          "top_target_uuid": "cad0825c-0d2b-4600-a6b3-02545a0273d7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "5a5fc7a6-f17a-4484-9101-b0a3e11f63b0",
+          "top_source_degree": 1,
+          "top_target_uuid": "fff95b07-4770-4270-9063-9de66e510b34",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "f3f1bdef-17dd-46eb-acca-98e7167e571a",
+          "top_source_degree": 1,
+          "top_target_uuid": "efa76872-550f-4630-aaac-0db4d1ed08ce",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "bb9c182b-b890-4970-a7c0-4c9a15b1e243",
+          "top_source_degree": 1,
+          "top_target_uuid": "6c07ad6f-274e-420a-b952-09805153f12e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "728ee273-7978-44dd-9e00-511c3ec2b849",
+          "top_source_degree": 1,
+          "top_target_uuid": "a89d0ef3-5799-443d-b8fa-fd156e9f1ef6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "6af0277d-8fa1-4efe-868e-f73842f9b82a",
+          "top_source_degree": 1,
+          "top_target_uuid": "35c86758-c077-444c-8aa3-7ed2027b7be7",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 50,
+        "total_islands": 49,
+        "singleton_islands": 48,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.04,
+            "size_total": 3,
+            "top_uuid": "4c682821-962a-43b3-9d66-ce20597214d0",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 617,
+        "total_islands": 617,
+        "singleton_islands": 617,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

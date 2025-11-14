@@ -1,0 +1,178 @@
+{
+  "id": 9,
+  "name": "Proces realizuje Agenda",
+  "technicalName": "BP_realizuje_Agenda",
+  "description": "Súčasťou každej agendy je súbor služieb. Každá služba môže byť súčasťou iba jednej agendy. Agenda môže byť riešená viacerými procesmi. Každý proces rieši jednu, alebo žiadnu agendu.",
+  "roleList": [
+    "EA_GARPO",
+    "R_EGOV",
+    "SZC_HLGES"
+  ],
+  "type": "application",
+  "valid": false,
+  "color": null,
+  "engName": "Process is executed by Agenda",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 89,
+      "name": "EA profil pre reláciu",
+      "description": "Architektonický profil pre relácie",
+      "technicalName": "EA_Profil_Rel",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Architecture profile for relations",
+      "attributes": [
+        {
+          "id": 515,
+          "name": "Typ väzby",
+          "description": "Príslušný typ Archimate vzťahu z BDA. Hodnota je vyplnená, len keď sa daná relácia nachádza aj v BDA.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Rel_typ_vazby",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_VAZBY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Relation type",
+          "engDescription": "Corresponding type of Archimate relation with BDA. Value is filled in only when is particular relation also located in BDA.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 43,
+      "name": "Proces",
+      "technicalName": "BP",
+      "description": "Biznis proces realizuje koncové služby použitím aplikačných služieb. Rieši životné situácie vykonávaním agendy verejnéj správy.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Process",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 1,
+      "name": "Agenda",
+      "technicalName": "Agenda",
+      "description": "Konkrétna vecná oblasť príslušného úseku správy, ktorú vybavuje povinná osoba v súlade s kompetenciami, podmienkami a postupmi, ustanovenými osobitnými predpismi. Agenda predstavuje pohľad na služby z hľadiska ich legislatívneho pokrytia a kompetenčnej príslušnosti.",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Agenda",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    }
+  ],
+  "engDescription": "Part of every agenda is package of services. Every service may be part of only one agenda. Agenda may be handled by more processes. Every process handles one or no agenda.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

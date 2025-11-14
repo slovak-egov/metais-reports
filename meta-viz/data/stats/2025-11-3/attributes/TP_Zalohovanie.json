@@ -1,0 +1,202 @@
+{
+  "type": "TP_Zalohovanie",
+  "count": 7,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 14.285714285714285
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 14.285714285714285
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_priznak_schvalenia",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 14.285714285714285
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_vyrobca",
+      "count": 5,
+      "pct": 71.42857142857143,
+      "unique_count": 3,
+      "unique_pct": 60.0
+    },
+    {
+      "name": "IKT_Profil_TP_Zalohovanie_typ_zalohovania",
+      "count": 4,
+      "pct": 57.14285714285714,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_Zalohovanie_sposob_pripojenia",
+      "count": 4,
+      "pct": 57.14285714285714,
+      "unique_count": 3,
+      "unique_pct": 75.0
+    },
+    {
+      "name": "IKT_Profil_TP_Zalohovanie_vykon",
+      "count": 4,
+      "pct": 57.14285714285714,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_Zalohovanie_celkova_kapacita",
+      "count": 4,
+      "pct": 57.14285714285714,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_Zalohovanie_rocny_prirastok",
+      "count": 3,
+      "pct": 42.857142857142854,
+      "unique_count": 2,
+      "unique_pct": 66.66666666666666
+    },
+    {
+      "name": "IKT_Profil_TP_pocet",
+      "count": 3,
+      "pct": 42.857142857142854,
+      "unique_count": 2,
+      "unique_pct": 66.66666666666666
+    },
+    {
+      "name": "IKT_Profil_TP_Zalohovanie_spotrebovana_kapacita",
+      "count": 3,
+      "pct": 42.857142857142854,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 3,
+      "pct": 42.857142857142854,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_celkova_pouzitelna_kapacita",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_aktualny_stav",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_vyrobca",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_prirastok_za_rok",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_typ",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_pocet",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_kapacita_spotrebovana",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_platforma",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_vyuzivany_sposob_pripojenia",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_nazov",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Zalohovanie_vykon_GBH",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

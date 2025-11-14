@@ -1,0 +1,132 @@
+{
+  "id": 84,
+  "name": "Plán kontroly kontroluje ISVS",
+  "technicalName": "PlanKontroly_kontroluje_ISVS",
+  "description": "Plán kontroly kontroluje jedno ISVS.",
+  "roleList": [
+    "IKT_GARPO",
+    "KONT_PLAN",
+    "KONT_VYKON",
+    "EA_GARPO",
+    "R_EGOV",
+    "KONT_MANAZ"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Control plan controls ISVS",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 61,
+      "name": "Plán kontroly",
+      "technicalName": "PlanKontroly",
+      "description": "Detaily týkajce sa plánovania kontroly",
+      "roleList": [
+        "KONT_PLAN",
+        "KONT_MANAZ"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Control plan",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";KONT_PLAN;KONT_MANAZ;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 20,
+      "name": "ISVS",
+      "technicalName": "ISVS",
+      "description": "Informačný systém v pôsobnosti povinnej osoby ako správcu, ktorý slúži na výkon správy. Rozoznávame tri časti tohto informačného systému - vecnú (úseky správy – agendy a s nimi súvisiace procesy), inštitucionálnu (kompetencie inštitúcií verejnej správy, resp. povinných osôb vo vzťahu k agendám a procesom) a technologickú (nástroje a metódy; materiálne a technické prostriedky realizácie procesov). Správca určuje účel a prostriedky spracúvania informácií informačného systému. Z kompetenčného hľadiska ho definujeme ako „Informačný systém úradu, ktorý pozostáva z častí agend úsekov správy, ktoré vykonáva povinná osoba v súlade s kompetenciami ustanovenými osobitnými predpismi“. Z vecného hľadiska ho definujeme ako „Informačný systém úseku správy, ktorý pozostáva z častí agend úseku správy, ktoré vykonávajú povinné osoby, v súlade s ich kompetenciami ustanovenými osobitným predpisom.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "ISVS",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_spravca_ISVS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Control plan controls one ISVS.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

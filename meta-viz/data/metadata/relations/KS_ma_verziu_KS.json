@@ -1,0 +1,78 @@
+{
+  "id": 160,
+  "name": "Koncová služba má verziu koncovej služby",
+  "technicalName": "KS_ma_verziu_KS",
+  "description": "Koncová služba má verziu koncovej služby.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO",
+    "R_EGOV",
+    "SZC_HLGES"
+  ],
+  "type": "system",
+  "valid": false,
+  "color": null,
+  "engName": "eGov service has version of eGov service",
+  "category": "RWNCB",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 31,
+      "name": "Koncová služba",
+      "technicalName": "KS",
+      "description": "Koncová služba je z hľadiska používateľa jeden pracovný výsledok určitej organizačnej jednotky realizujúcej konkrétny procesný úkon pri vybavovaní veci v rámci konkrétnej agendy. Každá služba spadá pod určitú agendu. Koncová služba predstavuje nadmnožinu eGovernment služieb. Napríklad: nahlásenie zmeny adresy Dopravnému inšpektorátu je konkrétna služba.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "eGov service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_gestor_KS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 31,
+      "name": "Koncová služba",
+      "technicalName": "KS",
+      "description": "Koncová služba je z hľadiska používateľa jeden pracovný výsledok určitej organizačnej jednotky realizujúcej konkrétny procesný úkon pri vybavovaní veci v rámci konkrétnej agendy. Každá služba spadá pod určitú agendu. Koncová služba predstavuje nadmnožinu eGovernment služieb. Napríklad: nahlásenie zmeny adresy Dopravnému inšpektorátu je konkrétna služba.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "eGov service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_gestor_KS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "eGov service has version of target service.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

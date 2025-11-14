@@ -1,0 +1,69 @@
+{
+  "type": "ReferenceRegister",
+  "count": 7,
+  "attributes": [
+    {
+      "name": "ReferenceRegister_Profile_effectiveFrom",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 6,
+      "unique_pct": 85.71428571428571
+    },
+    {
+      "name": "ReferenceRegister_Profile_MUK",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 42.857142857142854
+    },
+    {
+      "name": "ReferenceRegister_Profile_accessDataDescription",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "ReferenceRegister_Profile_state",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 28.57142857142857
+    },
+    {
+      "name": "ReferenceRegister_Profile_name",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "ReferenceRegister_Profile_validFrom",
+      "count": 6,
+      "pct": 85.71428571428571,
+      "unique_count": 5,
+      "unique_pct": 83.33333333333334
+    },
+    {
+      "name": "ReferenceRegister_Profile_contactLastName",
+      "count": 6,
+      "pct": 85.71428571428571,
+      "unique_count": 6,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "ReferenceRegister_Profile_contactRegistratorLastName",
+      "count": 5,
+      "pct": 71.42857142857143,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "ReferenceRegister_Profile_name_en",
+      "count": 2,
+      "pct": 28.57142857142857,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "id": 6,
+  "name": "Aplikačná služba slúži Koncovej službe",
+  "technicalName": "AS_sluzi_KS",
+  "description": "Aplikačná služba reprezentuje časť vykonania koncovej služby, ktorá je typicky elektronizovaná v ISVS.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Application service executes eGov service",
+  "category": "RWCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 89,
+      "name": "EA profil pre reláciu",
+      "description": "Architektonický profil pre relácie",
+      "technicalName": "EA_Profil_Rel",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Architecture profile for relations",
+      "attributes": [
+        {
+          "id": 515,
+          "name": "Typ vzťahu",
+          "description": "Príslušný typ Archimate vzťahu z BES. Hodnota je vyplnená, len keď sa daná relácia nachádza aj v BES.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Rel_typ_vazby",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_VAZBY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Relation type",
+          "engDescription": "Corresponding type of Archimate relation with BDA. Value is filled in only when is particular relation also located in BDA.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 18,
+      "name": "Aplikačná služba",
+      "technicalName": "AS",
+      "description": "Aplikačná služba je aktivita vykonávaná v rámci poskytovania koncovej služby informačným systémom verejnej správy podporujúca spravidla jeden procesný krok vykonávania koncovej služby.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Application service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_spravca_AS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 31,
+      "name": "Koncová služba",
+      "technicalName": "KS",
+      "description": "Koncová služba je z hľadiska používateľa jeden pracovný výsledok určitej organizačnej jednotky realizujúcej konkrétny procesný úkon pri vybavovaní veci v rámci konkrétnej agendy. Každá služba spadá pod určitú agendu. Koncová služba predstavuje nadmnožinu eGovernment služieb. Napríklad: nahlásenie zmeny adresy Dopravnému inšpektorátu je konkrétna služba.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "eGov service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_gestor_KS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Application service represents part of eGov service performance that is typically electronised in ISVS.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

@@ -1,0 +1,72 @@
+{
+  "relation_name": "DistribuciaDatasetu_meni_DistribuciaDatasetu",
+  "name": "Distribúcia datasetu mení Distribúciu datasetu",
+  "description": "Distribúcia datasetu mení pôvodnú Distribúciu datasetu",
+  "engDescription": "Dataset distribution modifies original Dataset distribution",
+  "type": "application",
+  "source_type": "DistribuciaDatasetu",
+  "source_name": "Distribúcia datasetu",
+  "target_type": "DistribuciaDatasetu",
+  "target_name": "Distribúcia datasetu",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 1,
+    "target_total": 1,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 2,
+      "total_islands": 2,
+      "singleton_islands": 2,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 1,
+        "total_islands": 1,
+        "singleton_islands": 1,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 1,
+        "total_islands": 1,
+        "singleton_islands": 1,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

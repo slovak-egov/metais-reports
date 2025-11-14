@@ -1,0 +1,13 @@
+{
+  "type": "ReferenceRegisterItemGroup",
+  "count": 17,
+  "attributes": [
+    {
+      "name": "ReferenceRegisterItemGroup_Profile_name",
+      "count": 17,
+      "pct": 100.0,
+      "unique_count": 14,
+      "unique_pct": 82.35294117647058
+    }
+  ]
+}

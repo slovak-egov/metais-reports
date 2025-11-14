@@ -1,0 +1,97 @@
+{
+  "type": "LicenseVendorProduct",
+  "count": 314,
+  "attributes": [
+    {
+      "name": "Oracle_Product_Profile_moznosti",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 60,
+      "unique_pct": 19.10828025477707
+    },
+    {
+      "name": "Oracle_Product_Profile_aktivna",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.3184713375796179
+    },
+    {
+      "name": "Oracle_Product_Profile_crd",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.3184713375796179
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 314,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Oracle_Product_Profile_nazov",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 101,
+      "unique_pct": 32.1656050955414
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.3184713375796179
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 314,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Oracle_Product_Profile_kategoria",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 21,
+      "unique_pct": 6.687898089171974
+    },
+    {
+      "name": "Oracle_Product_Profile_platnost",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.3184713375796179
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 314,
+      "pct": 100.0,
+      "unique_count": 314,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Oracle_Product_Profile_oracleId",
+      "count": 302,
+      "pct": 96.17834394904459,
+      "unique_count": 302,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Oracle_Product_Profile_podnazov",
+      "count": 262,
+      "pct": 83.43949044585987,
+      "unique_count": 194,
+      "unique_pct": 74.04580152671755
+    },
+    {
+      "name": "Oracle_Product_Profile_partNumber",
+      "count": 4,
+      "pct": 1.2738853503184715,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    }
+  ]
+}

@@ -1,0 +1,765 @@
+{
+  "relation_name": "ZC_ma_gestora_PO",
+  "name": "Základný číselník má gestora Povinnú osobu",
+  "description": "Základný číselník má práve jedného gestora - povinnú osobu.",
+  "engDescription": "Codelist has one authority - public authority.",
+  "type": "application",
+  "source_type": "ZC",
+  "source_name": "Základný číselník",
+  "target_type": "PO",
+  "target_name": "Povinná osoba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 79,
+    "unique_pairs": 79,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 80,
+    "target_total": 5788,
+    "source_connected": 79,
+    "target_connected": 10,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 30,
+      "avg": 7.9,
+      "median": 3.0,
+      "p90": 16,
+      "p99": 30
+    },
+    "top_source": [
+      {
+        "uuid": "e48223dd-2be2-420b-ac17-90c8acdb95e3",
+        "degree": 1,
+        "name": "Časť obce",
+        "code": "CL010141"
+      },
+      {
+        "uuid": "e314c8eb-64cb-447f-ac3e-e2e2becc7bde",
+        "degree": 1,
+        "name": "Stupeň zverejnenia",
+        "code": "CL000007"
+      },
+      {
+        "uuid": "4e3f2699-6bac-4fda-96f6-801d75a987e4",
+        "degree": 1,
+        "name": "Typ rodinného vzťahu",
+        "code": "CL000010"
+      },
+      {
+        "uuid": "372ffc3e-7ff9-4782-b85a-6c9af7d7f334",
+        "degree": 1,
+        "name": "Typ údajov",
+        "code": "CL000013"
+      },
+      {
+        "uuid": "3c0c4b19-20e3-4eed-b190-743d5bb46354",
+        "degree": 1,
+        "name": "Súd",
+        "code": "CL000014"
+      },
+      {
+        "uuid": "2be0f37c-fb2e-488b-bf7b-04cf6180a610",
+        "degree": 1,
+        "name": "Pracovisko matričného úradu",
+        "code": "CL000015"
+      },
+      {
+        "uuid": "bd6b02bf-bc15-493d-9ca3-52c1bb34dbce",
+        "degree": 1,
+        "name": "Stupeň zverejnenia",
+        "code": "CL000008"
+      },
+      {
+        "uuid": "e39838a2-4c72-4586-8d2d-5a40d1541d02",
+        "degree": 1,
+        "name": "Typ osoby",
+        "code": "CL000009"
+      },
+      {
+        "uuid": "50edc5f4-80ae-4135-990f-1bcfc924f4cb",
+        "degree": 1,
+        "name": "Národnosť",
+        "code": "CL010131"
+      },
+      {
+        "uuid": "0cd03a8a-8b13-4360-ba97-f24dd349b0d1",
+        "degree": 1,
+        "name": "Druh stavby",
+        "code": "CL010143"
+      },
+      {
+        "uuid": "d6a81d7b-416c-4198-9454-6658e7441ce8",
+        "degree": 1,
+        "name": "Druh pozemku",
+        "code": "CL010120"
+      },
+      {
+        "uuid": "1a42ed55-c4d7-4edb-8201-f0a3d8f5f520",
+        "degree": 1,
+        "name": "Spôsob využívania pozemku",
+        "code": "CL010121"
+      },
+      {
+        "uuid": "6b4e7ce5-8ba9-4a0d-9ed0-32e0366b2593",
+        "degree": 1,
+        "name": "Druh chránenej nehnuteľnosti",
+        "code": "CL010122"
+      },
+      {
+        "uuid": "6ccdf563-5013-4522-8d67-26de204e92f7",
+        "degree": 1,
+        "name": "Právny vzťah kpozemku",
+        "code": "CL010123"
+      },
+      {
+        "uuid": "0fe8b70f-7c7e-4bc6-bf97-82860165bb4a",
+        "degree": 1,
+        "name": "Umiestnenie pozemku",
+        "code": "CL010124"
+      },
+      {
+        "uuid": "878c0141-fd3f-4b9c-b0b3-6b3d1f625948",
+        "degree": 1,
+        "name": "Spoločná nehnuteľnosť",
+        "code": "CL010125"
+      },
+      {
+        "uuid": "589ce190-a5a4-4b2b-b0f0-a3792e02db73",
+        "degree": 1,
+        "name": "Druh stavby",
+        "code": "CL010126"
+      },
+      {
+        "uuid": "028b5b9c-e054-4342-8627-80f801e53594",
+        "degree": 1,
+        "name": "Umiestnenie stavby",
+        "code": "CL010127"
+      },
+      {
+        "uuid": "9ba389a2-ad96-4f48-bd07-fce6df9d200c",
+        "degree": 1,
+        "name": "Druh priestoru v budove",
+        "code": "CL010128"
+      },
+      {
+        "uuid": "63a8ebaa-3a08-4712-9dfe-cda061bee197",
+        "degree": 1,
+        "name": "Druh nebytového priestoru",
+        "code": "CL010129"
+      },
+      {
+        "uuid": "b2c8f492-3390-4d29-ae65-0f7ed2122292",
+        "degree": 1,
+        "name": "Účastník právneho vzťahu k nehnuteľnostiam",
+        "code": "CL010130"
+      },
+      {
+        "uuid": "e3fec514-350e-49e5-9a87-0180cf894b14",
+        "degree": 1,
+        "name": "Katastrálne územia",
+        "code": "CL000026"
+      },
+      {
+        "uuid": "82d40486-9d3a-4c93-a90f-85e6cb91d686",
+        "degree": 1,
+        "name": "Kategória geografického názvu",
+        "code": "CL030001"
+      },
+      {
+        "uuid": "0ce41184-656d-48b6-8984-3ce3526689a6",
+        "degree": 1,
+        "name": "Jazyky",
+        "code": "CL010076"
+      },
+      {
+        "uuid": "59664b05-a5aa-4a21-ad78-6fe27b174ff0",
+        "degree": 1,
+        "name": "Typ organizačnej jednotky",
+        "code": "CL010110"
+      },
+      {
+        "uuid": "2eba14b6-819b-41dc-ab1c-7781d08cde87",
+        "degree": 1,
+        "name": "Krajina OSN",
+        "code": "CL000086"
+      },
+      {
+        "uuid": "ef6bebf5-f398-4231-9e56-638699e2319b",
+        "degree": 1,
+        "name": "Ekonomická činnosť",
+        "code": "CL005205"
+      },
+      {
+        "uuid": "bb8b376a-ff3d-408f-b260-274a1a9de08f",
+        "degree": 1,
+        "name": "Pohlavie",
+        "code": "CL003003"
+      },
+      {
+        "uuid": "a95964f1-90a9-4c28-bc73-39ec124fd544",
+        "degree": 1,
+        "name": "Právna forma organizácie",
+        "code": "CL000056"
+      },
+      {
+        "uuid": "5301e194-2b23-4d3a-b606-22c0196f7465",
+        "degree": 1,
+        "name": "Existenčný stav",
+        "code": "CL004003"
+      },
+      {
+        "uuid": "f78804b3-58f8-4354-861b-378000f05620",
+        "degree": 1,
+        "name": "Rodinný stav",
+        "code": "CL004002"
+      },
+      {
+        "uuid": "c9c38c90-d58f-4fff-ba7c-63e842f7c235",
+        "degree": 1,
+        "name": "Druh akcie",
+        "code": "CL010111"
+      },
+      {
+        "uuid": "587be871-548c-49d3-b4ef-3152317971f2",
+        "degree": 1,
+        "name": "Regionálna štatistická územná jednotka 3 - kraj",
+        "code": "CL000023"
+      },
+      {
+        "uuid": "cd5594c4-e036-4fc0-af6b-0ea91bed98b0",
+        "degree": 1,
+        "name": "Právny stav organizácie",
+        "code": "CL010108"
+      },
+      {
+        "uuid": "ef129b86-dc89-4d6c-a08e-aaaae8636777",
+        "degree": 1,
+        "name": "Lokálna štatistická územná jednotka 2 – obec",
+        "code": "CL000025"
+      },
+      {
+        "uuid": "3243c7f6-5d92-4fc7-a58f-19bfadce1d33",
+        "degree": 1,
+        "name": "Lokálna štatistická územná jednotka 1 – okres",
+        "code": "CL000024"
+      },
+      {
+        "uuid": "88575da6-4a22-42b7-bab7-9bdb26e22ef0",
+        "degree": 1,
+        "name": "Príbuzenský stav",
+        "code": "CL004004"
+      },
+      {
+        "uuid": "7439a3d6-991a-4de7-80ca-ef7d4fccb142",
+        "degree": 1,
+        "name": "Typ štatutárneho orgánu",
+        "code": "CL010113"
+      },
+      {
+        "uuid": "44fdedb7-325a-44f9-9600-95dffbd3592c",
+        "degree": 1,
+        "name": "Typ zainteresovanej osoby",
+        "code": "CL010109"
+      },
+      {
+        "uuid": "1173fc54-aae8-4d50-9fb7-30af040b1433",
+        "degree": 1,
+        "name": "Zdrojový register",
+        "code": "CL010112"
+      },
+      {
+        "uuid": "04909d2f-5aac-48e2-8362-d012e56918ab",
+        "degree": 1,
+        "name": "Titul za menom",
+        "code": "CL000063"
+      },
+      {
+        "uuid": "3fdbf097-228a-419e-8063-4bf9648206d0",
+        "degree": 1,
+        "name": "Titul pred menom",
+        "code": "CL000062"
+      },
+      {
+        "uuid": "1607a01f-f59f-4316-9e79-68c45afbeea1",
+        "degree": 1,
+        "name": "Jednotka meny",
+        "code": "CL010138"
+      },
+      {
+        "uuid": "29bd4792-5e34-44f4-b4f3-5aaf2b954a20",
+        "degree": 1,
+        "name": "Identifikátor",
+        "code": "CL004001"
+      },
+      {
+        "uuid": "57298933-370e-411d-b90d-aa14cf505e62",
+        "degree": 1,
+        "name": "Agendy verejnej správy",
+        "code": "CL000645"
+      },
+      {
+        "uuid": "e5a9e1e5-1c54-4c61-b5f9-d5de62852a02",
+        "degree": 1,
+        "name": "Životné situácie",
+        "code": "CL000646"
+      },
+      {
+        "uuid": "e6986bdc-9cc6-4e26-b815-f3d16a8eaa32",
+        "degree": 1,
+        "name": "Okruhy životných situácií",
+        "code": "CL000647"
+      },
+      {
+        "uuid": "afa26472-e8f1-4c4c-a110-b6d6bce5d06a",
+        "degree": 1,
+        "name": "Druh adresy",
+        "code": "CL010139"
+      },
+      {
+        "uuid": "792a9800-feed-4717-8d11-0db1fc47e006",
+        "degree": 1,
+        "name": "Typ certifikátu",
+        "code": "CL009001"
+      },
+      {
+        "uuid": "a46aaf65-a912-41a2-8bd4-823411d8c77b",
+        "degree": 1,
+        "name": "typ autorizácie",
+        "code": "CL009002"
+      },
+      {
+        "uuid": "100a18b1-7d47-4112-ad6b-47cf759afcde",
+        "degree": 1,
+        "name": "Typ elektronickej časovej pečiatky",
+        "code": "CL009003"
+      },
+      {
+        "uuid": "24b3dd8c-bd96-4c62-b74d-def7d6f49447",
+        "degree": 1,
+        "name": "Umiestnenie podpisu na listine",
+        "code": "CL009004"
+      },
+      {
+        "uuid": "daa4ba72-9b2b-4b70-8d2a-977512d1b86d",
+        "degree": 1,
+        "name": "Hašovacia funkcia",
+        "code": "CL009005"
+      },
+      {
+        "uuid": "15f8bbe6-4a7f-48c1-b870-40621ff0c7f9",
+        "degree": 1,
+        "name": "Slovný opis bezpečnostného prvku",
+        "code": "CL009006"
+      },
+      {
+        "uuid": "e4323b1f-a3f5-4e9a-a20a-601e54b45aae",
+        "degree": 1,
+        "name": "Formát papiera listinného dokumentu",
+        "code": "CL009007"
+      },
+      {
+        "uuid": "c54f96ab-1166-4e50-a439-f48545975457",
+        "degree": 1,
+        "name": "Použitie kvalifikovaného zariadenia pri podpisovaní",
+        "code": "CL009009"
+      },
+      {
+        "uuid": "10cbeedd-3475-4d37-afd7-182ae529a57a",
+        "degree": 1,
+        "name": "Platnosť podpisu alebo časovej pečiatky",
+        "code": "CL009010"
+      },
+      {
+        "uuid": "5e57e7da-04b0-4d4e-a82f-c3cca6244da8",
+        "degree": 1,
+        "name": "Formát  pôvodného elektronického dokumentu",
+        "code": "CL009008"
+      },
+      {
+        "uuid": "b3fe1486-f53f-4d05-9c49-7d45d85cb09f",
+        "degree": 1,
+        "name": "Účel prezentačnej schémy elektronického formulára",
+        "code": "CL000001"
+      },
+      {
+        "uuid": "965f6c33-b998-4ad2-b758-37107424da5b",
+        "degree": 1,
+        "name": "Spôsoby autorizácie elektronického úradného dokumentu alebo príloh k elektronickému úradnému dokumentu",
+        "code": "CL009011"
+      },
+      {
+        "uuid": "858b9c9f-1971-44d6-8cee-219cb0d2c67b",
+        "degree": 1,
+        "name": "Spôsob sprístupnenia informácií",
+        "code": "CL000003"
+      },
+      {
+        "uuid": "ec913b40-2aa6-4f5b-abbb-a87ae9feec91",
+        "degree": 1,
+        "name": "Typ výsledku spracovania infoziadosti",
+        "code": "CL000002"
+      },
+      {
+        "uuid": "3e366c97-0e45-4b55-808a-e3f36a1ca879",
+        "degree": 1,
+        "name": "Zdroj financovania pri dotačnej schéme",
+        "code": "CL000004"
+      },
+      {
+        "uuid": "c7bd2aad-e0e8-4d6e-a450-007b8da65c4b",
+        "degree": 1,
+        "name": "Typ elektronického úradného dokumentu",
+        "code": "CL009025"
+      },
+      {
+        "uuid": "01abf7ae-3a6b-479b-aaf8-87c36965bd56",
+        "degree": 1,
+        "name": "Podtyp elektronického úradného dokumentu",
+        "code": "CL009026"
+      },
+      {
+        "uuid": "7a16502e-69b7-4311-8a44-df8f9ea5fbc5",
+        "degree": 1,
+        "name": "Typ autentifikačného prostriedku",
+        "code": "CL009021"
+      },
+      {
+        "uuid": "ae690168-5ced-4210-a900-1d0f901fdd29",
+        "degree": 1,
+        "name": "Podtyp autentifikačného prostriedku",
+        "code": "CL009022"
+      },
+      {
+        "uuid": "41411a02-3e23-4f52-ab8c-754e9f60bfed",
+        "degree": 1,
+        "name": "Úroveň autentifikácie v potvrdení z autentifikačného modulu ÚPVS (QAALevel)",
+        "code": "CL009024"
+      },
+      {
+        "uuid": "9796cdd8-3a1f-4f46-9b71-e19372b2d1e8",
+        "degree": 1,
+        "name": "Úroveň autentifikácie podľa nariadenia EIDAS (Level of Assurance)",
+        "code": "CL009023"
+      },
+      {
+        "uuid": "670fd308-692a-4721-b793-515419a28b4f",
+        "degree": 1,
+        "name": "Prioritné životné situácie",
+        "code": "CL000006"
+      },
+      {
+        "uuid": "66988426-05a1-450c-b312-d070879cafdf",
+        "degree": 1,
+        "name": "test",
+        "code": "CL000012"
+      },
+      {
+        "uuid": "1a307411-9dd7-4185-97f0-54c019d60d61",
+        "degree": 1,
+        "name": "test",
+        "code": "CL000011"
+      },
+      {
+        "uuid": "26de4e47-181a-4746-8d8c-917c46be403e",
+        "degree": 1,
+        "name": "Typ telefónneho čísla",
+        "code": "CL004005"
+      },
+      {
+        "uuid": "2c2567e1-9ae4-45cc-867b-19ac0541561b",
+        "degree": 1,
+        "name": "Úseky  verejnej správy",
+        "code": "CL000644"
+      },
+      {
+        "uuid": "175d943f-e1dc-4ace-ad39-730e82683a9d",
+        "degree": 1,
+        "name": "Paragraf porušenia nelegálneho zamestnávania",
+        "code": "CL000005"
+      },
+      {
+        "uuid": "20f16298-818f-40ae-8f50-c61c84059296",
+        "degree": 1,
+        "name": "CL050000",
+        "code": "CL050000"
+      },
+      {
+        "uuid": "008d4855-539e-46f1-9567-2b41f87f6cc9",
+        "degree": 1,
+        "name": "Podskupiny katalógu odpadov",
+        "code": "CL010481"
+      },
+      {
+        "uuid": "4c15cb46-4c41-4d69-b171-20a61eab2f4a",
+        "degree": 1,
+        "name": "Skupiny katalógu odpadov",
+        "code": "CL010480"
+      },
+      {
+        "uuid": "b768c80c-f324-4302-ad63-eed27b6a84b5",
+        "degree": 1,
+        "name": "Druh a poddruh katalógu odpadov",
+        "code": "CL010482"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+        "degree": 30,
+        "name": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
+        "code": "50349287"
+      },
+      {
+        "uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+        "degree": 16,
+        "name": "Štatistický úrad Slovenskej republiky",
+        "code": "00166197"
+      },
+      {
+        "uuid": "3da4edd2-e1c8-4862-bd23-fc9167ec536e",
+        "degree": 14,
+        "name": "Úrad geodézie, kartografie a katastra Slovenskej republiky",
+        "code": "00166260"
+      },
+      {
+        "uuid": "0303d336-d570-47f5-846d-7f2d95b1d40b",
+        "degree": 9,
+        "name": "Ministerstvo vnútra Slovenskej republiky",
+        "code": "00151866"
+      },
+      {
+        "uuid": "f069547e-bf00-4bbf-aa07-631be84ea36c",
+        "degree": 4,
+        "name": "Ministerstvo životného prostredia Slovenskej republiky",
+        "code": "42181810"
+      },
+      {
+        "uuid": "a067167e-7851-4cf9-bdcb-09dcec21a723",
+        "degree": 2,
+        "name": "Ministerstvo školstva, výskumu, vývoja a mládeže Slovenskej republiky",
+        "code": "00164381"
+      },
+      {
+        "uuid": "40ed1f67-d112-4e29-86bc-5b5e69b4520f",
+        "degree": 1,
+        "name": "Ministerstvo kultúry Slovenskej republiky",
+        "code": "00165182"
+      },
+      {
+        "uuid": "b9525626-338b-410e-b82d-e3fe4c95d31f",
+        "degree": 1,
+        "name": "Ministerstvo dopravy Slovenskej republiky",
+        "code": "30416094"
+      },
+      {
+        "uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+        "degree": 1,
+        "name": "Ministerstvo financií Slovenskej republiky",
+        "code": "00151742"
+      },
+      {
+        "uuid": "efc1cb80-bbf1-4311-ad68-d418aa63f6ff",
+        "degree": 1,
+        "name": "Ministerstvo práce, sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "00681156"
+      }
+    ],
+    "islands": {
+      "total_nodes": 5868,
+      "total_islands": 5789,
+      "singleton_islands": 5779,
+      "multi_islands": [
+        {
+          "size_total": 31,
+          "size_source": 30,
+          "size_target": 1,
+          "fraction_total": 0.005282890252215406,
+          "top_source_uuid": "9796cdd8-3a1f-4f46-9b71-e19372b2d1e8",
+          "top_source_degree": 1,
+          "top_target_uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+          "top_target_degree": 30
+        },
+        {
+          "size_total": 17,
+          "size_source": 16,
+          "size_target": 1,
+          "fraction_total": 0.0028970688479890935,
+          "top_source_uuid": "2eba14b6-819b-41dc-ab1c-7781d08cde87",
+          "top_source_degree": 1,
+          "top_target_uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+          "top_target_degree": 16
+        },
+        {
+          "size_total": 15,
+          "size_source": 14,
+          "size_target": 1,
+          "fraction_total": 0.002556237218813906,
+          "top_source_uuid": "9ba389a2-ad96-4f48-bd07-fce6df9d200c",
+          "top_source_degree": 1,
+          "top_target_uuid": "3da4edd2-e1c8-4862-bd23-fc9167ec536e",
+          "top_target_degree": 14
+        },
+        {
+          "size_total": 10,
+          "size_source": 9,
+          "size_target": 1,
+          "fraction_total": 0.0017041581458759373,
+          "top_source_uuid": "4e3f2699-6bac-4fda-96f6-801d75a987e4",
+          "top_source_degree": 1,
+          "top_target_uuid": "0303d336-d570-47f5-846d-7f2d95b1d40b",
+          "top_target_degree": 9
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0008520790729379687,
+          "top_source_uuid": "b768c80c-f324-4302-ad63-eed27b6a84b5",
+          "top_source_degree": 1,
+          "top_target_uuid": "f069547e-bf00-4bbf-aa07-631be84ea36c",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0005112474437627812,
+          "top_source_uuid": "04909d2f-5aac-48e2-8362-d012e56918ab",
+          "top_source_degree": 1,
+          "top_target_uuid": "a067167e-7851-4cf9-bdcb-09dcec21a723",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00034083162917518747,
+          "top_source_uuid": "2c2567e1-9ae4-45cc-867b-19ac0541561b",
+          "top_source_degree": 1,
+          "top_target_uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00034083162917518747,
+          "top_source_uuid": "26de4e47-181a-4746-8d8c-917c46be403e",
+          "top_source_degree": 1,
+          "top_target_uuid": "b9525626-338b-410e-b82d-e3fe4c95d31f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00034083162917518747,
+          "top_source_uuid": "0ce41184-656d-48b6-8984-3ce3526689a6",
+          "top_source_degree": 1,
+          "top_target_uuid": "40ed1f67-d112-4e29-86bc-5b5e69b4520f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00034083162917518747,
+          "top_source_uuid": "175d943f-e1dc-4ace-ad39-730e82683a9d",
+          "top_source_degree": 1,
+          "top_target_uuid": "efc1cb80-bbf1-4311-ad68-d418aa63f6ff",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 80,
+        "total_islands": 11,
+        "singleton_islands": 5,
+        "multi_islands": [
+          {
+            "size": 30,
+            "fraction": 0.375,
+            "size_total": 31,
+            "top_uuid": "9796cdd8-3a1f-4f46-9b71-e19372b2d1e8",
+            "top_degree": 1
+          },
+          {
+            "size": 16,
+            "fraction": 0.2,
+            "size_total": 17,
+            "top_uuid": "2eba14b6-819b-41dc-ab1c-7781d08cde87",
+            "top_degree": 1
+          },
+          {
+            "size": 14,
+            "fraction": 0.175,
+            "size_total": 15,
+            "top_uuid": "9ba389a2-ad96-4f48-bd07-fce6df9d200c",
+            "top_degree": 1
+          },
+          {
+            "size": 9,
+            "fraction": 0.1125,
+            "size_total": 10,
+            "top_uuid": "4e3f2699-6bac-4fda-96f6-801d75a987e4",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.05,
+            "size_total": 5,
+            "top_uuid": "b768c80c-f324-4302-ad63-eed27b6a84b5",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.025,
+            "size_total": 3,
+            "top_uuid": "04909d2f-5aac-48e2-8362-d012e56918ab",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 5788,
+        "total_islands": 5788,
+        "singleton_islands": 5788,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

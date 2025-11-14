@@ -1,0 +1,245 @@
+{
+  "id": 1234,
+  "name": "Entita je prepojená na číselník",
+  "technicalName": "je_prepojena_Ciselnik",
+  "description": "Určuje príslušnosť entity ako položky číselníka.",
+  "roleList": [
+    "SZC_SZZC",
+    "R_EGOV",
+    "SZC_HLGES"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Entity is connected to codelist",
+  "category": "RONCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 1,
+      "name": "Agenda",
+      "technicalName": "Agenda",
+      "description": "Konkrétna vecná oblasť príslušného úseku správy, ktorú vybavuje povinná osoba v súlade s kompetenciami, podmienkami a postupmi, ustanovenými osobitnými predpismi. Agenda predstavuje pohľad na služby z hľadiska ich legislatívneho pokrytia a kompetenčnej príslušnosti.",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Agenda",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Úsek verejnej správy",
+      "technicalName": "UVS",
+      "description": "Úsekom verejnej správy je vecná oblasť, v ktorej právomoci, práva a povinnosti povinných osôb, ako aj spôsob ich výkonu ustanovujú osobitné predpisy. Úseky verejnej správy sú taxatívne vymenované vo Výnose Ministerstva financií Slovenskej republiky 478/2010 o základnom číselníku úsekov verejnej správy a agend verejnej správy.",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Section of public administration",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Životná situácia",
+      "technicalName": "ZS",
+      "description": "Životná situácia je pojem definujúci problém alebo potrebu používateľa vo vzťahu k verejnej správe. Životná situácia predstavuje pohľad na služby z hľadiska používateľa. Jedna Koncová služba však môže byť súčasťou viacerých Životných situácií.",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Life situation",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Okruh životnej situácie",
+      "technicalName": "OkruhZS",
+      "description": "Okruh životnej situácie.",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Life situation cycle",
+      "category": "RONCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Prioritná životná situácia",
+      "technicalName": "PZS",
+      "description": "prioritná životná situácia",
+      "roleList": [
+        "SZC_SZZC",
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Priority Life Event",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_SZZC;SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    },
+    {
+      "id": 104,
+      "name": " Lokálna štatistická územná jednotka 1 – okres",
+      "technicalName": "local_statistical_territorial_unit_1_district",
+      "description": "",
+      "roleList": [
+        "R_EGOV",
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Local statistical territorial unit 1 - district",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";R_EGOV;SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    }
+  ],
+  "targets": [
+    {
+      "id": 4,
+      "name": "Základný číselník",
+      "technicalName": "ZC",
+      "description": "Podľa 275/2006 Z. z. § 2 Vymedzenie základných pojmov f) základným číselníkom číselník vedený centrálne prostredníctvom informačného systému verejnej správy,",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Codelist",
+      "category": "RONCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": []
+    }
+  ],
+  "engDescription": "It determines affiliation of entity to codelist.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

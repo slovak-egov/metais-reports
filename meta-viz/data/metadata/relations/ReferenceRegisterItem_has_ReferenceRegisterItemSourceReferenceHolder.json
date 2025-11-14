@@ -1,0 +1,73 @@
+{
+  "id": 185,
+  "name": "Referenčný údaj má zdrojovú informáciu",
+  "technicalName": "ReferenceRegisterItem_has_ReferenceRegisterItemSourceReferenceHolder",
+  "description": "Definuje prepojenie referenčného údaja s ISVS a PO ako zdrojovým registrom a jeho registrátorom.",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Reference data has source information",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 36,
+      "name": "Polozka referencneho registra",
+      "technicalName": "ReferenceRegisterItem",
+      "description": "Polozka referencneho registra.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register item",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 91,
+      "name": "Zdrojový register a registrátor",
+      "technicalName": "ReferenceRegisterItemSourceReferenceHolder",
+      "description": "Zdrojový register a registrátor.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Source register and registrar",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Defines connection between reference item and source register and its registrar.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

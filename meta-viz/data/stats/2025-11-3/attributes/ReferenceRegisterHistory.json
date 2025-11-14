@@ -1,0 +1,27 @@
+{
+  "type": "ReferenceRegisterHistory",
+  "count": 6,
+  "attributes": [
+    {
+      "name": "ReferenceRegisterHistory_Profile_popis",
+      "count": 6,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "ReferenceRegisterHistory_Profile_stav",
+      "count": 6,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 16.666666666666664
+    },
+    {
+      "name": "ReferenceRegisterHistory_Profile_prilohy",
+      "count": 6,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 16.666666666666664
+    }
+  ]
+}

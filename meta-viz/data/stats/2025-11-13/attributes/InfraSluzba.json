@@ -1,0 +1,118 @@
+{
+  "type": "InfraSluzba",
+  "count": 477,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 477,
+      "pct": 100.0,
+      "unique_count": 477,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 477,
+      "pct": 100.0,
+      "unique_count": 454,
+      "unique_pct": 95.17819706498952
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 477,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.41928721174004197
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 477,
+      "pct": 100.0,
+      "unique_count": 477,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "EA_Profil_InfraSluzba_typ_cloudovej_sluzby",
+      "count": 467,
+      "pct": 97.9035639412998,
+      "unique_count": 3,
+      "unique_pct": 0.6423982869379015
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 461,
+      "pct": 96.64570230607966,
+      "unique_count": 433,
+      "unique_pct": 93.92624728850325
+    },
+    {
+      "name": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_akreditacie_cloudovych_sluzieb",
+      "count": 424,
+      "pct": 88.88888888888889,
+      "unique_count": 3,
+      "unique_pct": 0.7075471698113208
+    },
+    {
+      "name": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_bezpecnostna_uroven_integrita",
+      "count": 424,
+      "pct": 88.88888888888889,
+      "unique_count": 4,
+      "unique_pct": 0.9433962264150944
+    },
+    {
+      "name": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_bezpecnostna_uroven_dovernost",
+      "count": 424,
+      "pct": 88.88888888888889,
+      "unique_count": 4,
+      "unique_pct": 0.9433962264150944
+    },
+    {
+      "name": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_bezpecnostna_uroven_dostupnost",
+      "count": 424,
+      "pct": 88.88888888888889,
+      "unique_count": 4,
+      "unique_pct": 0.9433962264150944
+    },
+    {
+      "name": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_datum_zaradenia_do_katalogu_KVCS",
+      "count": 79,
+      "pct": 16.561844863731658,
+      "unique_count": 14,
+      "unique_pct": 17.72151898734177
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 22,
+      "pct": 4.612159329140461,
+      "unique_count": 1,
+      "unique_pct": 4.545454545454546
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 18,
+      "pct": 3.7735849056603774,
+      "unique_count": 15,
+      "unique_pct": 83.33333333333334
+    },
+    {
+      "name": "Gen_Profil_EA_typ_replikacie",
+      "count": 6,
+      "pct": 1.257861635220126,
+      "unique_count": 1,
+      "unique_pct": 16.666666666666664
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 2,
+      "pct": 0.41928721174004197,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 1,
+      "pct": 0.20964360587002098,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

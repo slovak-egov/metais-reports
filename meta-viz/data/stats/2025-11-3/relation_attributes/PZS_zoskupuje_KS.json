@@ -1,0 +1,240 @@
+{
+  "relation_name": "PZS_zoskupuje_KS",
+  "name": "Prioritná životná situácia zoskupuje Koncovú službu",
+  "description": "",
+  "engDescription": "",
+  "type": "application",
+  "source_type": "PZS",
+  "source_name": "Prioritná životná situácia",
+  "target_type": "KS",
+  "target_name": "Koncová služba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 22,
+    "unique_pairs": 22,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 16,
+    "target_total": 8549,
+    "source_connected": 16,
+    "target_connected": 5,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 3,
+      "avg": 1.375,
+      "median": 1.0,
+      "p90": 2,
+      "p99": 3
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 16,
+      "avg": 4.4,
+      "median": 1,
+      "p90": 16,
+      "p99": 16
+    },
+    "top_source": [
+      {
+        "uuid": "d0ffdc10-a0aa-4d35-ae8e-cb270cfef834",
+        "degree": 3,
+        "name": "Stredná škola",
+        "code": "pzs_13"
+      },
+      {
+        "uuid": "699fd417-eb52-44f1-8722-79f6d22535b4",
+        "degree": 2,
+        "name": "Kúpa nehnuteľnosti na bývanie",
+        "code": "pzs_02"
+      },
+      {
+        "uuid": "70fa5846-13ff-4269-9419-74dd8c0452ef",
+        "degree": 2,
+        "name": "Kúpa a vlastníctvo motorového vozidla",
+        "code": "pzs_04"
+      },
+      {
+        "uuid": "262254ee-c454-4da9-a985-e530dec889b0",
+        "degree": 2,
+        "name": "Narodenie dieťaťa",
+        "code": "pzs_07"
+      },
+      {
+        "uuid": "ebab35b7-e9b3-460e-a295-06fc8dce569e",
+        "degree": 2,
+        "name": "Administratívny chod podniku",
+        "code": "pzs_05"
+      },
+      {
+        "uuid": "72879b3d-5639-4cf3-961c-6b3746efd916",
+        "degree": 1,
+        "name": "Hmotná núdza",
+        "code": "pzs_10"
+      },
+      {
+        "uuid": "f3a89cb1-aeb8-4245-a9d6-1b1950a91cc6",
+        "degree": 1,
+        "name": "Som odkázaný, mám odkázaného člena rodiny",
+        "code": "pzs_09"
+      },
+      {
+        "uuid": "c97517aa-bcfa-4e2e-ac4f-c773edee731e",
+        "degree": 1,
+        "name": "Začatie podnikania",
+        "code": "pzs_03"
+      },
+      {
+        "uuid": "941840bb-5432-41eb-af05-95c10cdb67ee",
+        "degree": 1,
+        "name": "Strata a hľadanie zamestnania",
+        "code": "pzs_01"
+      },
+      {
+        "uuid": "7aeae075-a42b-4768-92c8-b37bc3e3cac1",
+        "degree": 1,
+        "name": "Som chorý, mám chorého člena rodiny",
+        "code": "pzs_08"
+      },
+      {
+        "uuid": "947849cc-2d49-4190-8460-84a73d5a52e7",
+        "degree": 1,
+        "name": "Základná škola",
+        "code": "pzs_12"
+      },
+      {
+        "uuid": "e9e6eab9-57b9-4700-bd66-b4080c3c4864",
+        "degree": 1,
+        "name": "Materská škola",
+        "code": "pzs_11"
+      },
+      {
+        "uuid": "8c07ca2f-04c6-4ea6-b969-a5823214a620",
+        "degree": 1,
+        "name": "Úmrtie a dedičské konanie",
+        "code": "pzs_16"
+      },
+      {
+        "uuid": "2af59990-df90-4903-b66b-b865beab416c",
+        "degree": 1,
+        "name": "Odchod do dôchodku",
+        "code": "pzs_14"
+      },
+      {
+        "uuid": "ac22b206-1514-44d2-98f2-4f72cf61317f",
+        "degree": 1,
+        "name": "Presťahovanie",
+        "code": "pzs_06"
+      },
+      {
+        "uuid": "8cb85ee0-b9d4-41a5-a29e-43cf996a338d",
+        "degree": 1,
+        "name": "Uzavretie manželstva",
+        "code": "pzs_15"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "a3cb38e9-0c5c-43f5-8d7d-aa937de00d8c",
+        "degree": 16,
+        "name": "KS na testovanie CPK/MetaIS ciselniky",
+        "code": "ks_381421"
+      },
+      {
+        "uuid": "10b93fc4-6d39-4545-886c-658e3c31cbf5",
+        "degree": 3,
+        "name": "Hlásenie o stave zásob vína a muštu",
+        "code": "ks_381088"
+      },
+      {
+        "uuid": "06c4661d-c988-4352-b565-2d354c02fb8a",
+        "degree": 1,
+        "name": "Testovacia služba LB",
+        "code": "ks_381420"
+      },
+      {
+        "uuid": "0c7bb2e2-ba7d-4727-a634-457d657ed4cf",
+        "degree": 1,
+        "name": "Hlásenie o stave zásob vína a muštu obchodníka s vinárskymi produktmi",
+        "code": "ks_381362"
+      },
+      {
+        "uuid": "e90e46a3-1e60-4e2f-a649-33eb36615f0e",
+        "degree": 1,
+        "name": "Hlásenie o výrobe vína a muštu",
+        "code": "ks_381087"
+      }
+    ],
+    "islands": {
+      "total_nodes": 8565,
+      "total_islands": 8545,
+      "singleton_islands": 8544,
+      "multi_islands": [
+        {
+          "size_total": 21,
+          "size_source": 16,
+          "size_target": 5,
+          "fraction_total": 0.0024518388791593695,
+          "top_source_uuid": "d0ffdc10-a0aa-4d35-ae8e-cb270cfef834",
+          "top_source_degree": 3,
+          "top_target_uuid": "a3cb38e9-0c5c-43f5-8d7d-aa937de00d8c",
+          "top_target_degree": 16
+        }
+      ],
+      "source": {
+        "total_nodes": 16,
+        "total_islands": 1,
+        "singleton_islands": 0,
+        "multi_islands": [
+          {
+            "size": 16,
+            "fraction": 1.0,
+            "size_total": 21,
+            "top_uuid": "d0ffdc10-a0aa-4d35-ae8e-cb270cfef834",
+            "top_degree": 3
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 8549,
+        "total_islands": 8545,
+        "singleton_islands": 8544,
+        "multi_islands": [
+          {
+            "size": 5,
+            "fraction": 0.0005848637267516669,
+            "size_total": 21,
+            "top_uuid": "a3cb38e9-0c5c-43f5-8d7d-aa937de00d8c",
+            "top_degree": 16
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

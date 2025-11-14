@@ -1,0 +1,62 @@
+{
+  "type": "Dokument",
+  "count": 15439,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 15439,
+      "pct": 100.0,
+      "unique_count": 15438,
+      "unique_pct": 99.99352289656066
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 15439,
+      "pct": 100.0,
+      "unique_count": 9686,
+      "unique_pct": 62.7372239134659
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 15439,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.012954206878683852
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 15439,
+      "pct": 100.0,
+      "unique_count": 15439,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Dokument_Projekt_typ_dokumentu",
+      "count": 7029,
+      "pct": 45.527560075134396,
+      "unique_count": 149,
+      "unique_pct": 2.1197894437331057
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 5385,
+      "pct": 34.87920202085627,
+      "unique_count": 3104,
+      "unique_pct": 57.64159702878365
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 363,
+      "pct": 2.3511885484811192,
+      "unique_count": 284,
+      "unique_pct": 78.23691460055096
+    },
+    {
+      "name": "Profil_Dokument_SU_typ_dokumentu",
+      "count": 254,
+      "pct": 1.6451842735928492,
+      "unique_count": 2,
+      "unique_pct": 0.7874015748031495
+    }
+  ]
+}

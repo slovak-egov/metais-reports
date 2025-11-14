@@ -1,0 +1,748 @@
+{
+  "id": 44,
+  "name": "Referencny register",
+  "technicalName": "ReferenceRegister",
+  "description": "Referencny register.",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": "#ffe0af",
+  "engName": "Reference register",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 913,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov profilu referenčného registra v anglickom jazyku",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_name_en",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of reference register profile in English",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 52,
+      "name": "Dátum platnosti do",
+      "description": "Dátum, dokedy má referenčný register účinnosť.",
+      "type": "DATE",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_effectiveTo",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "DATE",
+      "engName": "Valid to",
+      "engDescription": "Date until which is reference register effective.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 53,
+      "name": "Dátum účinnosti od",
+      "description": "Dátum, odkedy má referenčný register účinnosť.",
+      "type": "DATE",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_effectiveFrom",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "DATE",
+      "engName": "Valid from",
+      "engDescription": "Date until which is reference register effective.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 916,
+      "name": "Emailová adresa",
+      "description": "Emailová adresa správcu referenčného registra",
+      "type": "EMAIL",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactEmail",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "EMAIL",
+      "engName": "Email Address",
+      "engDescription": "Reference register administrator email address",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 920,
+      "name": "Emailová adresa",
+      "description": "Emailová adresa registrátora referenčného registra",
+      "type": "EMAIL",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactRegistratorEmail",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "EMAIL",
+      "engName": "Email Address",
+      "engDescription": "Reference register registrator email address",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 654,
+      "name": "Kontakt na registrátora referenčného registra",
+      "description": "Kontaktné údaje na registrátora referenčného registra. Odporúčané zadanie v tvare Meno Priezvisko, mail, telefónne číslo.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactRegistrator",
+      "order": 1,
+      "valid": false,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference register registrator contact",
+      "engDescription": "Contact details of reference register registrator. Recommended to enter Name Surname, email, phone number.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 171,
+      "name": "Kontaktné údaje",
+      "description": "Kontaktné údaje k referenčnému registru. Odporúčané zadanie v tvare Meno Priezvisko, mail, telefónne číslo.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contact",
+      "order": 1,
+      "valid": false,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Contact details",
+      "engDescription": "Contact details of reference register. Recommended to enter Name Surname, email, phone number.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 914,
+      "name": "Meno",
+      "description": "Meno správcu referenčného registra",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactFirstName",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "First Name",
+      "engDescription": "Reference register administrator first name",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 918,
+      "name": "Meno",
+      "description": "Meno registrátora referenčného registra",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactRegistratorFirstName",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "First Name",
+      "engDescription": "Reference register registrator first name",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 206,
+      "name": "MUK",
+      "description": "Modul úradnej komunikácie pre referenčný register.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_MUK",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MUK",
+      "engDescription": "Module of administration communication for reference register.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 912,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov profilu referenčného registra",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_name",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of reference register profile",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 282,
+      "name": "Platnosť od",
+      "description": "Dátum, odkedy je referenčný register platný - dátum schválenia.",
+      "type": "DATE",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_validFrom",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "DATE",
+      "engName": "Valid from",
+      "engDescription": "Date as of which is reference register effective - date of approval.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 339,
+      "name": "Poznámka",
+      "description": "Poznámka k referenčnému registru.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_note",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note to record of selected application service.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 915,
+      "name": "Priezvisko",
+      "description": "Priezvisko správcu referenčného registra",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactLastName",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Last Name",
+      "engDescription": "Reference register administrator last name",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 919,
+      "name": "Priezvisko",
+      "description": "Priezvisko registrátora referenčného registra",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactRegistratorLastName",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Last Name",
+      "engDescription": "Reference register registrator last name",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 439,
+      "name": "Stav",
+      "description": "Stav referenčného registra.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_state",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Status",
+      "engDescription": "Reference register status",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 917,
+      "name": "Telefónne číslo",
+      "description": "Telefónne číslo správcu referenčného registra",
+      "type": "PHONE",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactPhone",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "PHONE",
+      "engName": "Phone Number",
+      "engDescription": "Reference register administrator phone number",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 921,
+      "name": "Telefónne číslo",
+      "description": "Telefónne číslo registrátora referenčného registra",
+      "type": "PHONE",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_contactRegistratorPhone",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "PHONE",
+      "engName": "Phone Number",
+      "engDescription": "Reference register registrator phone number",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 529,
+      "name": "Údaje o oprávnení",
+      "description": "Údaje o oprávnení orgánu verejnej moci pristupovať k referenčným údajom",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_Profile_accessDataDescription",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Information about authorization",
+      "engDescription": "Information about authorization of public authorities to access reference data",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "codePrefix": "reference_register",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/egov/register",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 1,
+        "name": "Register referencuje ISVS",
+        "engName": "Register references ISVS",
+        "technicalName": "ReferenceRegister_reference_ISVS",
+        "description": "Register referencuje ISVS.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register references ISVS.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 112,
+        "name": "Register spristupneny pre PO",
+        "engName": "Register available for PA",
+        "technicalName": "ReferenceRegister_accessedFor_PO",
+        "description": "Register spristupneny pre PO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register available for PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 113,
+        "name": "Register managuje PO",
+        "engName": "Register managed by PA",
+        "technicalName": "ReferenceRegister_managedBy_PO",
+        "description": "Register managuje PO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register managed by PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 116,
+        "name": "Register registrovala PO",
+        "engName": "Register registered by PA",
+        "technicalName": "ReferenceRegister_registratedBy_PO",
+        "description": "Register registrovala PO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register registered by PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 117,
+        "name": "Register puziva AS",
+        "engName": "Register is used by AS",
+        "technicalName": "ReferenceRegister_usedBy_AS",
+        "description": "Register puziva AS.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register is used by AS.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 163,
+        "name": "Stav referenčného registra má históriu",
+        "engName": "Reference register status has history",
+        "technicalName": "ReferenceRegister_has_ReferenceRegisterHistory",
+        "description": "Stav referenčného registra má históriu",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register status has history",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1219,
+        "name": "Referenčný register má objekt evidencie",
+        "engName": "Reference register has a registry object",
+        "technicalName": "Referencny_register_ma_objekt_evidencie",
+        "description": "Referenčný register má objekt evidencie",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register has a registry object",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1233,
+        "name": "Referenčný register má referenčný údaj",
+        "engName": "Reference register has Reference object attribute",
+        "technicalName": "Referencny_register_ma_referencny_udaj",
+        "description": "Referenčný register má referenčný údaj",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register has Reference object attribute",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 118,
+        "name": "Polozka referencneho registra prislucha Referencnemu registru",
+        "engName": "Reference register item belongs to Reference register",
+        "technicalName": "ReferenceRegisterItem_belongsTo_ReferenceRegister",
+        "description": "Polozka referencneho registra prislucha Referencnemu registru.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register item belongs to Reference register.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

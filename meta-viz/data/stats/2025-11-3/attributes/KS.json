@@ -1,0 +1,545 @@
+{
+  "type": "KS",
+  "count": 8549,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 8549,
+      "pct": 100.0,
+      "unique_count": 8531,
+      "unique_pct": 99.7894490583694
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 8549,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 0.05848637267516669
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 8549,
+      "pct": 100.0,
+      "unique_count": 4986,
+      "unique_pct": 58.32261083167622
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 8549,
+      "pct": 100.0,
+      "unique_count": 8531,
+      "unique_pct": 99.7894490583694
+    },
+    {
+      "name": "EA_Profil_KS_typ_ks",
+      "count": 8548,
+      "pct": 99.98830272546496,
+      "unique_count": 5,
+      "unique_pct": 0.0584932147870847
+    },
+    {
+      "name": "EA_Profil_KS_sofistikovanost",
+      "count": 8488,
+      "pct": 99.28646625336297,
+      "unique_count": 6,
+      "unique_pct": 0.0706880301602262
+    },
+    {
+      "name": "EA_Profil_KS_notifikacia",
+      "count": 8488,
+      "pct": 99.28646625336297,
+      "unique_count": 4,
+      "unique_pct": 0.0471253534401508
+    },
+    {
+      "name": "EA_Profil_KS_pouzivatel_ks",
+      "count": 8417,
+      "pct": 98.4559597613756,
+      "unique_count": 62,
+      "unique_pct": 0.736604490911251
+    },
+    {
+      "name": "EA_Profil_KS_autentifikacia",
+      "count": 8316,
+      "pct": 97.27453503333723,
+      "unique_count": 5,
+      "unique_pct": 0.06012506012506013
+    },
+    {
+      "name": "EA_Profil_KS_pristupove_miesto",
+      "count": 8177,
+      "pct": 95.6486138729676,
+      "unique_count": 111,
+      "unique_pct": 1.3574660633484164
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 8129,
+      "pct": 95.087144695286,
+      "unique_count": 5401,
+      "unique_pct": 66.44113667117728
+    },
+    {
+      "name": "EA_Profil_KS_verzia",
+      "count": 8034,
+      "pct": 93.97590361445783,
+      "unique_count": 10,
+      "unique_pct": 0.12447099825740601
+    },
+    {
+      "name": "KS_Profil_UPVS_je_genericka",
+      "count": 7906,
+      "pct": 92.47865247397357,
+      "unique_count": 2,
+      "unique_pct": 0.025297242600556536
+    },
+    {
+      "name": "Profil_UPVS_je_informativna",
+      "count": 7553,
+      "pct": 88.3495145631068,
+      "unique_count": 2,
+      "unique_pct": 0.026479544551833708
+    },
+    {
+      "name": "Profil_UPVS_je_genericka",
+      "count": 7389,
+      "pct": 86.43116153936134,
+      "unique_count": 2,
+      "unique_pct": 0.027067262146433888
+    },
+    {
+      "name": "KS_Profil_UPVS_typ_spoplatnenia",
+      "count": 5428,
+      "pct": 63.492806176160954,
+      "unique_count": 6,
+      "unique_pct": 0.1105379513633014
+    },
+    {
+      "name": "Profil_UPVS_typ_spoplatnenia",
+      "count": 5218,
+      "pct": 61.03637852380396,
+      "unique_count": 8,
+      "unique_pct": 0.15331544653123802
+    },
+    {
+      "name": "Profil_UPVS_mod_zobrazenia_upvs",
+      "count": 5210,
+      "pct": 60.942800327523685,
+      "unique_count": 3,
+      "unique_pct": 0.05758157389635317
+    },
+    {
+      "name": "KS_Profil_UPVS_url_info",
+      "count": 5187,
+      "pct": 60.67376301321792,
+      "unique_count": 4554,
+      "unique_pct": 87.79641411220359
+    },
+    {
+      "name": "EA_Profil_KS_cloud",
+      "count": 5163,
+      "pct": 60.393028424377114,
+      "unique_count": 2,
+      "unique_pct": 0.03873716831299632
+    },
+    {
+      "name": "Profil_UPVS_url_info",
+      "count": 5006,
+      "pct": 58.556556322376885,
+      "unique_count": 4394,
+      "unique_pct": 87.77467039552536
+    },
+    {
+      "name": "KS_Profil_UPVS_od",
+      "count": 4834,
+      "pct": 56.544625102351155,
+      "unique_count": 412,
+      "unique_pct": 8.522962350020686
+    },
+    {
+      "name": "KS_Profil_UPVS_url",
+      "count": 4747,
+      "pct": 55.52696221780325,
+      "unique_count": 4405,
+      "unique_pct": 92.79544975774174
+    },
+    {
+      "name": "Profil_UPVS_url",
+      "count": 4633,
+      "pct": 54.19347292080945,
+      "unique_count": 4299,
+      "unique_pct": 92.79084826246492
+    },
+    {
+      "name": "Profil_UPVS_od",
+      "count": 4630,
+      "pct": 54.158381097204355,
+      "unique_count": 383,
+      "unique_pct": 8.272138228941685
+    },
+    {
+      "name": "EA_Profil_KS_platba",
+      "count": 4160,
+      "pct": 48.66066206573868,
+      "unique_count": 2,
+      "unique_pct": 0.04807692307692308
+    },
+    {
+      "name": "EA_Profil_KS_vstup",
+      "count": 4022,
+      "pct": 47.04643817990408,
+      "unique_count": 1223,
+      "unique_pct": 30.407757334659376
+    },
+    {
+      "name": "EA_Profil_KS_vystup",
+      "count": 3382,
+      "pct": 39.56018247748275,
+      "unique_count": 1029,
+      "unique_pct": 30.425783560023657
+    },
+    {
+      "name": "EA_Profil_KS_typ_vstupu",
+      "count": 3287,
+      "pct": 38.448941396654575,
+      "unique_count": 8,
+      "unique_pct": 0.2433830240340736
+    },
+    {
+      "name": "KS_Profil_UPVS_schranka_ovm",
+      "count": 3240,
+      "pct": 37.89916949350801,
+      "unique_count": 133,
+      "unique_pct": 4.104938271604938
+    },
+    {
+      "name": "Profil_UPVS_schranka_upvs",
+      "count": 3126,
+      "pct": 36.56568019651421,
+      "unique_count": 127,
+      "unique_pct": 4.062699936020473
+    },
+    {
+      "name": "EA_Profil_KS_typ_vystupu",
+      "count": 3077,
+      "pct": 35.992513744297575,
+      "unique_count": 8,
+      "unique_pct": 0.25999350016249595
+    },
+    {
+      "name": "Profil_UPVS_je_anonymna",
+      "count": 3034,
+      "pct": 35.48953093929115,
+      "unique_count": 2,
+      "unique_pct": 0.06591957811470006
+    },
+    {
+      "name": "Profil_UPVS_vyzaduje_zep",
+      "count": 3001,
+      "pct": 35.10352087963505,
+      "unique_count": 2,
+      "unique_pct": 0.06664445184938354
+    },
+    {
+      "name": "EA_Profil_KS_datum_spustenia",
+      "count": 2947,
+      "pct": 34.47186805474324,
+      "unique_count": 106,
+      "unique_pct": 3.5968781812012214
+    },
+    {
+      "name": "Profil_UPVS_povolit_prilohy",
+      "count": 2920,
+      "pct": 34.156041642297346,
+      "unique_count": 2,
+      "unique_pct": 0.0684931506849315
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 2904,
+      "pct": 33.968885249736815,
+      "unique_count": 748,
+      "unique_pct": 25.757575757575758
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 2899,
+      "pct": 33.910398877061645,
+      "unique_count": 2,
+      "unique_pct": 0.0689893066574681
+    },
+    {
+      "name": "EA_Profil_KS_sluzba_mimo_vyzvy",
+      "count": 2758,
+      "pct": 32.26108316762195,
+      "unique_count": 2,
+      "unique_pct": 0.0725163161711385
+    },
+    {
+      "name": "Profil_UPVS_externy_kod",
+      "count": 2247,
+      "pct": 26.283775880219906,
+      "unique_count": 326,
+      "unique_pct": 14.508233199821985
+    },
+    {
+      "name": "EA_Profil_KS_url",
+      "count": 2244,
+      "pct": 26.248684056614806,
+      "unique_count": 527,
+      "unique_pct": 23.484848484848484
+    },
+    {
+      "name": "Profil_UPVS_interne_id",
+      "count": 2199,
+      "pct": 25.72230670253831,
+      "unique_count": 317,
+      "unique_pct": 14.415643474306503
+    },
+    {
+      "name": "KS_Profil_UPVS_stav_publikovania",
+      "count": 1347,
+      "pct": 15.756228798689905,
+      "unique_count": 5,
+      "unique_pct": 0.3711952487008166
+    },
+    {
+      "name": "Profil_ArchKancelaria_schvalene_publikovanie",
+      "count": 1006,
+      "pct": 11.767458182243537,
+      "unique_count": 2,
+      "unique_pct": 0.19880715705765406
+    },
+    {
+      "name": "KS_Profil_UPVS_je_informativna",
+      "count": 848,
+      "pct": 9.91928880570827,
+      "unique_count": 2,
+      "unique_pct": 0.2358490566037736
+    },
+    {
+      "name": "EA_Profil_KS_oots",
+      "count": 848,
+      "pct": 9.91928880570827,
+      "unique_count": 2,
+      "unique_pct": 0.2358490566037736
+    },
+    {
+      "name": "KS_Profil_UPVS_je_anonymna",
+      "count": 848,
+      "pct": 9.91928880570827,
+      "unique_count": 2,
+      "unique_pct": 0.2358490566037736
+    },
+    {
+      "name": "EA_Profil_KS_moznost_odpovede",
+      "count": 840,
+      "pct": 9.825710609428004,
+      "unique_count": 1,
+      "unique_pct": 0.11904761904761905
+    },
+    {
+      "name": "EA_Profil_KS_vyzaduje_zep",
+      "count": 840,
+      "pct": 9.825710609428004,
+      "unique_count": 2,
+      "unique_pct": 0.2380952380952381
+    },
+    {
+      "name": "Profil_UPVS_vyzaduje_autentifikaciu",
+      "count": 809,
+      "pct": 9.46309509884197,
+      "unique_count": 2,
+      "unique_pct": 0.2472187886279357
+    },
+    {
+      "name": "KS_Profil_UPVS_typy_sluzby_upvs",
+      "count": 726,
+      "pct": 8.492221312434204,
+      "unique_count": 4,
+      "unique_pct": 0.5509641873278237
+    },
+    {
+      "name": "Profil_UPVS_typ_konzumenta",
+      "count": 691,
+      "pct": 8.082816703708035,
+      "unique_count": 2,
+      "unique_pct": 0.2894356005788712
+    },
+    {
+      "name": "Profil_UPVS_url_navod",
+      "count": 486,
+      "pct": 5.684875424026202,
+      "unique_count": 40,
+      "unique_pct": 8.23045267489712
+    },
+    {
+      "name": "EA_Profil_KS_level_of_assurance",
+      "count": 453,
+      "pct": 5.298865364370102,
+      "unique_count": 3,
+      "unique_pct": 0.6622516556291391
+    },
+    {
+      "name": "Profil_UPVS_typy_sluzby_upvs",
+      "count": 367,
+      "pct": 4.292899754357235,
+      "unique_count": 2,
+      "unique_pct": 0.544959128065395
+    },
+    {
+      "name": "KS_Profil_UPVS_do",
+      "count": 337,
+      "pct": 3.9419815183062346,
+      "unique_count": 37,
+      "unique_pct": 10.979228486646884
+    },
+    {
+      "name": "Profil_UPVS_do",
+      "count": 320,
+      "pct": 3.743127851210668,
+      "unique_count": 28,
+      "unique_pct": 8.75
+    },
+    {
+      "name": "KS_Profil_UPVS_kod_spoplatnenia",
+      "count": 306,
+      "pct": 3.579366007720201,
+      "unique_count": 187,
+      "unique_pct": 61.111111111111114
+    },
+    {
+      "name": "Profil_UPVS_kod_sluzby_ekolk",
+      "count": 299,
+      "pct": 3.4974850859749678,
+      "unique_count": 180,
+      "unique_pct": 60.200668896321076
+    },
+    {
+      "name": "EA_Profil_KS_autentification_type",
+      "count": 299,
+      "pct": 3.4974850859749678,
+      "unique_count": 13,
+      "unique_pct": 4.3478260869565215
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 262,
+      "pct": 3.064685928178734,
+      "unique_count": 243,
+      "unique_pct": 92.74809160305344
+    },
+    {
+      "name": "EA_Profil_KS_vyzadovana_uroven_autorizacie",
+      "count": 258,
+      "pct": 3.0178968300386013,
+      "unique_count": 12,
+      "unique_pct": 4.651162790697675
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 246,
+      "pct": 2.877529535618201,
+      "unique_count": 240,
+      "unique_pct": 97.5609756097561
+    },
+    {
+      "name": "EA_Profil_KS_EA_Profil_KS_kontaktne_udaje_na_gestora_koncovej_sluzby",
+      "count": 92,
+      "pct": 1.076149257223067,
+      "unique_count": 3,
+      "unique_pct": 3.260869565217391
+    },
+    {
+      "name": "Profil_UPVS_IBAN",
+      "count": 83,
+      "pct": 0.9708737864077669,
+      "unique_count": 24,
+      "unique_pct": 28.915662650602407
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 34,
+      "pct": 0.39770733419113347,
+      "unique_count": 34,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_typ_replikacie",
+      "count": 29,
+      "pct": 0.33922096151596676,
+      "unique_count": 2,
+      "unique_pct": 6.896551724137931
+    },
+    {
+      "name": "EA_Profil_KS_additional_personal_data",
+      "count": 14,
+      "pct": 0.1637618434904667,
+      "unique_count": 3,
+      "unique_pct": 21.428571428571427
+    },
+    {
+      "name": "EA_Profil_KS_webove_sidlo",
+      "count": 7,
+      "pct": 0.08188092174523336,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "EA_Profil_KS_dorucenka",
+      "count": 4,
+      "pct": 0.04678909814013335,
+      "unique_count": 3,
+      "unique_pct": 75.0
+    },
+    {
+      "name": "EA_Profil_KS_EA_Profil_KS_Grafana_BarGauge",
+      "count": 3,
+      "pct": 0.03509182360510001,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "EA_Profil_KS_EA_Profil_KS_Grafana_Graph",
+      "count": 3,
+      "pct": 0.03509182360510001,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "EA_Profil_KS_EA_Profil_KS_odkazy_na_dalsie_informacie",
+      "count": 2,
+      "pct": 0.023394549070066675,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Service_Heartbeat_Status",
+      "count": 1,
+      "pct": 0.011697274535033338,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Service_Heartbeat_Last_Update",
+      "count": 1,
+      "pct": 0.011697274535033338,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_pocet_replikacii",
+      "count": 1,
+      "pct": 0.011697274535033338,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "KS_Profil_UPVS_KS_Profil_UPVS_podporovany_operacny_system",
+      "count": 1,
+      "pct": 0.011697274535033338,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

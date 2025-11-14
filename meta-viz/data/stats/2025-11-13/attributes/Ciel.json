@@ -1,0 +1,48 @@
+{
+  "type": "Ciel",
+  "count": 11,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 11,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 11,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 9.090909090909092
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 11,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Ciel_kategoria",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 63.63636363636363
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 11,
+      "unique_pct": 100.0
+    }
+  ]
+}

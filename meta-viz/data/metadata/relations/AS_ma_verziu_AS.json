@@ -1,0 +1,80 @@
+{
+  "id": 159,
+  "name": "Aplikačná služba má verziu aplikačnej služby",
+  "technicalName": "AS_ma_verziu_AS",
+  "description": "Aplikačná služba má verziu aplikačnej služby.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO",
+    "R_EGOV",
+    "SZC_HLGES"
+  ],
+  "type": "application",
+  "valid": false,
+  "color": null,
+  "engName": "Application service has version of application service",
+  "category": "RWNCB",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 18,
+      "name": "Aplikačná služba",
+      "technicalName": "AS",
+      "description": "Aplikačná služba je aktivita vykonávaná v rámci poskytovania koncovej služby informačným systémom verejnej správy podporujúca spravidla jeden procesný krok vykonávania koncovej služby.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Application service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_spravca_AS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 18,
+      "name": "Aplikačná služba",
+      "technicalName": "AS",
+      "description": "Aplikačná služba je aktivita vykonávaná v rámci poskytovania koncovej služby informačným systémom verejnej správy podporujúca spravidla jeden procesný krok vykonávania koncovej služby.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Application service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_spravca_AS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Application service has version of application service.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

@@ -1,0 +1,13 @@
+{
+  "type": "ReferenceRegisterItemSubGroup",
+  "count": 43,
+  "attributes": [
+    {
+      "name": "ReferenceRegisterItemSubGroup_Profile_name",
+      "count": 43,
+      "pct": 100.0,
+      "unique_count": 32,
+      "unique_pct": 74.4186046511628
+    }
+  ]
+}

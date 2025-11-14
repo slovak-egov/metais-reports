@@ -1,0 +1,2140 @@
+{
+  "id": 1230,
+  "name": "Osoba je poskytovateľom koncovej služby",
+  "technicalName": "PO_je_poskytovatelom_KS",
+  "description": "Osoba je poskytovateľom koncovej služby",
+  "roleList": [
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Person is a provider of the end service",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 150,
+      "name": "Profil KS - osoba",
+      "description": "Profil KS - osoba",
+      "technicalName": "KS_profil_PO",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile for Service - Person relationship",
+      "attributes": [
+        {
+          "id": 1051,
+          "name": "AllowedSendEndOrg",
+          "description": "AllowedSendEndOrg",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_allowed_send_end_org",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "AllowedSendEndOrg",
+          "engDescription": "AllowedSendEndOrg",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1048,
+          "name": "Bankový účet inštitúcie",
+          "description": "Bankový účet inštitúcie",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_iban",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Bankový účet inštitúcie",
+          "engDescription": "Bankový účet inštitúcie",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1053,
+          "name": "Hromadný import služieb",
+          "description": "Hromadný import služieb",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_hromadny_import_sluzieb",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Hromadný import služieb",
+          "engDescription": "Hromadný import služieb",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1049,
+          "name": "Kód spoplatnenia",
+          "description": "Kód spoplatnenia",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_kod_sluzby_eKolok",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Kód spoplatnenia",
+          "engDescription": "Kód spoplatnenia",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1054,
+          "name": "Kontakt na adresáta",
+          "description": "Kontakt na adresáta",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_kontakt_na_adresata",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Kontakt na adresáta",
+          "engDescription": "Kontakt na adresáta",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1055,
+          "name": "Listinné tlačivo",
+          "description": "Uveďte, link na listinné tlačivo, ktoré si používateľ môže stiahnuť v prípade, že nechce službu využiť elektronicky.\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_listinne_tlacivo",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Listinné tlačivo",
+          "engDescription": "Listinné tlačivo",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1050,
+          "name": "Vyžadovanie platby",
+          "description": "Vyžadovanie platby",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_platba",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Vyžadovanie platby",
+          "engDescription": "Vyžadovanie platby",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1052,
+          "name": "Dostupnosť služby",
+          "description": "Dostupnosť služby",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_dostupnost_sluzby",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Service availability",
+          "engDescription": "Service availability",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1148,
+          "name": "Prístupové miesto",
+          "description": "Prístupové miesto na elektronickú komunikáciu podľa zákona o e-Governmente",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_pristupove_miesto",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PRISTUPOVE_MIESTO"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Access point",
+          "engDescription": "Specify where the service will be available.",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1058,
+          "name": "Alternatívny názov koncovej služby",
+          "description": "Pole slúži pre zjednodušenie názvu služby zo strany MIRRI / NASES.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_alt_nazov",
+          "order": 3,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Alternative name of the end service",
+          "engDescription": "This field serves to simplify the name of the service from MIRRI / NASES.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1128,
+          "name": "Alternatívny popis koncovej služby",
+          "description": "Pole slúži pre zjednodušenie názvu služby zo strany MIRRI / NASES.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_alt_popis",
+          "order": 4,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Alternate description of the end service",
+          "engDescription": "This field serves to simplify the name of the service from MIRRI / NASES.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1056,
+          "name": "Špecifická evidencia",
+          "description": "Špecifická evidencia",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_specificka_evidencia",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Specific registry",
+          "engDescription": "Specific registry",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 151,
+      "name": "Profil UPVS POKS",
+      "description": "Profil UPVS POKS",
+      "technicalName": "Profil_UPVS_POKS",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Profil UPVS POKS",
+      "attributes": [
+        {
+          "id": 1059,
+          "name": "Alternatívny popis koncovej služby",
+          "description": "Alternatívny popis koncovej služby",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_UPVS_POKS_alt_popis",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Alternatívny popis koncovej služby",
+          "engDescription": "Alternatívny popis koncovej služby",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1061,
+          "name": "Publikovaná do",
+          "description": "Publikovaná do",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_UPVS_POKS_do",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Publikovaná do",
+          "engDescription": "Publikovaná do",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1060,
+          "name": "Publikovaná od",
+          "description": "Publikovaná od",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_UPVS_POKS_od",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Publikovaná od",
+          "engDescription": "Publikovaná od",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1062,
+          "name": "Typ_spoplatnenia",
+          "description": "Typ_spoplatnenia",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_UPVS_POKS_typ_spoplatnenia",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_PAYMENT_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Typ_spoplatnenia",
+          "engDescription": "Typ_spoplatnenia",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1063,
+          "name": "URL informácie o službe",
+          "description": "Uveďte url link na stránku, kde sa nachádzajú informácie o službe mimo ÚPVS.\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_UPVS_POKS_url_info",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "URL informácie o službe",
+          "engDescription": "URL informácie o službe",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "name": "Profil UPVS údajov na úrovni formulára",
+      "description": "Profil UPVS údajov na úrovni formulára",
+      "technicalName": "KS_profil_UPVS2",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Profile of UPVS data for form",
+      "attributes": [
+        {
+          "id": 998,
+          "name": "Typ identity",
+          "description": "Identity_type_detail",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_identity_type_detail",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_IDENTITY_TYPE_DETAIL"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Identity_type_detail",
+          "engDescription": "Identity_type_detail",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 993,
+          "name": "Kód spoplatnenia",
+          "description": "Kód spoplatnenia",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_kod_spoplatnenia",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Charge code",
+          "engDescription": "Charge code",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 999,
+          "name": "NativeMobileApplication",
+          "description": "NativeMobileApplication",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_native_mobile_application",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "NativeMobileApplication",
+          "engDescription": "NativeMobileApplication",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1000,
+          "name": "Typ osoby",
+          "description": "PartnerType  (odosielateľ)",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_partner_type",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_PARTNER_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "PartnerType  (odosielateľ)",
+          "engDescription": "PartnerType  (odosielateľ)",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 994,
+          "name": "Podporovaný operačný systém",
+          "description": "Uveďte zoznam podporovaných operačných systémov, na ktorých je služba využiteľná (dostupná) v danom časovom období.\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_supported_os",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SUPPORTED_OS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Supported operating system",
+          "engDescription": "Supported operating system",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 995,
+          "name": "Prístupové miesto",
+          "description": "Prístupové miesto",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_ks_pristupove_miesto",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PRISTUPOVE_MIESTO"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Access point",
+          "engDescription": "Access point",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1001,
+          "name": "Responzívne zobrazenie aplikácie",
+          "description": "Uveďte, či daná služba bude dostupná z mobilného zariadenia v responzívnom zobrazení.\n",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_responsive_application",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "ResponsiveApplication",
+          "engDescription": "ResponsiveApplication",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 996,
+          "name": "Schránka OVM",
+          "description": "Schránka OVM",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_ks_schranka_ovm",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "OVM ",
+          "engDescription": "OVM ",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1002,
+          "name": "Typ podpisu",
+          "description": "Uveďte typy podpisov alebo pečatí (autorizácie), ktoré sú vyžadované pre formulár elektronického podania.\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_sign_types",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "SignTypes",
+          "engDescription": "SignTypes",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1003,
+          "name": "Späťvzatie",
+          "description": "Späťvzatie",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_spatvzatie",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Späťvzatie",
+          "engDescription": "Späťvzatie",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 997,
+          "name": "Typ identity",
+          "description": "Typ identity",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_identity_type",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_PARTNER_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Identity type",
+          "engDescription": "Identity type",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1004,
+          "name": "URL volania služby",
+          "description": "URL volania služby",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_UPVS2_url",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "URL volania služby",
+          "engDescription": "URL volania služby",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "name": "UPVS profil inštancie koncovej služby",
+      "description": "UPVS profil inštancie koncovej služby",
+      "technicalName": "KS_Profil_PO_UPVS",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "UPVS profile for Service instance",
+      "attributes": [
+        {
+          "id": 1133,
+          "name": "Kód spoplatnenia",
+          "description": "Kód spoplatnenia",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_kod_spoplatnenia",
+          "order": 0,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Kód spoplatnenia",
+          "engDescription": "Kód spoplatnenia",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1195,
+          "name": "Typ služby UPVS",
+          "description": "Typ služby UPVS",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_typ_sluzby_UPVS",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_SLUZBY_UPVS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "UPVS service type",
+          "engDescription": "UPVS service type",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1123,
+          "name": "Vyžadovanie platby",
+          "description": "Príznak („áno“ alebo „nie“) či služba vyžaduje funkcie zabezpečujúce platby.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_platba",
+          "order": 0,
+          "valid": false,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Requesting payment",
+          "engDescription": "Attribute (\"yes\" or \"no\") if service requires functions providing payments.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1132,
+          "name": "URL informácie o službe",
+          "description": "URL informácie o službe, ktorá má obsahovať relevantné informácie o službe a návod pre používateľa, ako má službu iniciovať. Informácia o KS sa zverejňuje a aktualizuje vždy na špecializovanom portáli. URL  nemá odkazovať na PDF/word/rtf dokument, ale na webovú stránku. Informácia o službe musí byť dostupná voľne bez akejkoľvek autentifikácie. URL informácie, ktoré gestor zaeviduje do MetaIS, sa preklopia do lokátora ÚPVS. Atribút je povinný vo fáze \"nasadenie do ostrej prevádzky.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_url_info",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "URL of the information about service",
+          "engDescription": "URL of the information about service",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1181,
+          "name": "URL informácie o službe v angličtine",
+          "description": "URL informácie o službe v angličtine, ktorá má obsahovať relevantné informácie o službe a návod pre používateľa, ako má službu iniciovať. Informácia o KS sa zverejňuje a aktualizuje vždy na špecializovanom portáli. URL  nemá odkazovať na PDF/word/rtf dokument, ale na webovú stránku. Informácia o službe musí byť dostupná voľne bez akejkoľvek autentifikácie. URL informácie, ktoré gestor zaeviduje do MetaIS, sa preklopia do lokátora ÚPVS. Atribút je povinný vo fáze \"nasadenie do ostrej prevádzky.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_url_info_eng",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "URL of the information about service in english language",
+          "engDescription": "URL of the information about service in english language ",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1144,
+          "name": "URL volania služby",
+          "description": "URL volania služby v prípade, ak sa služba aktivuje na špecializovanom portáli (typ \"externá služba\"). URL volania služby má smerovať priamo na konkrétnu službu tak, aby používateľ nemusel ďalej klikať a hľadať, prípadne URL rozcestníka, ktorý vedie k formulárom na špecializovanom portáli.  URL volania prezentačnej koncovej služby môže byť zhodné s URL informácie o službe.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_url",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "URL of the service call",
+          "engDescription": "Enter an external link if this is an external service.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1129,
+          "name": "Publikovaná od",
+          "description": "Dátum od ktorého bude služba dostupná a vyhľadateľná na portáli ÚPVS. Atribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_od",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Published from",
+          "engDescription": "The date from which the service will be available and searchable on the UPVS portal.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1182,
+          "name": "Dočasná nefunkčnosť služby od",
+          "description": "Dátum začatia odstávky služby.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_nefunkcnost_od",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Temporary service outage from",
+          "engDescription": "The date the service outage began.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1183,
+          "name": "Dočasná nefunkčnosť služby do",
+          "description": "Dátum skončenia odstávky služby.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_nefunkcnost_do",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Temporary service outage until",
+          "engDescription": "End date of service outage.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1130,
+          "name": "Publikovaná do",
+          "description": "Dátum do ktorého bude služba dostupná a vyhľadateľná na portáli ÚPVS.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_do",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Published to",
+          "engDescription": "The date to which the service will be available and searchable on the ÚPVS portal.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1131,
+          "name": "Typ spoplatnenia",
+          "description": "Uveďte akým spôsobom bude služba spoplatnená.  Atribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_typ_spoplatnenia",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_PAYMENT_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Payment type",
+          "engDescription": "Specify how the service will be charged.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1122,
+          "name": "Kód spoplatnenia (Kód služby eKolok)",
+          "description": "Kód elektronického kolku, ktorý slúži na úhradu správnych a súdnych poplatkov. Atribút je povinný  pre všetky položky v číselníku \"Typ spoplatnenia\", okrem \"Bez poplatku\" a \"Poplatky zúčtované inak \".\n Atribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_kod_sluzby_eKolok",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Payment code",
+          "engDescription": "Payment code",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1121,
+          "name": "Bankový účet inštitúcie",
+          "description": "Bankový účet naviazaný na službu danej inštitúcie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_iban",
+          "order": 7,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Organization bank account",
+          "engDescription": "Bank account linked to the service of the given institution.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1136,
+          "name": "Schránka OVM pre službu",
+          "description": "URI identifikátor špecializovanej elektronickej schránky zriadenej poskytovateľapre službuy, do ktorej má byť podanie zasielané. Schránka pre službu má tvar tvare ico://sk/00123456_10001, pritom nejde o pracovisko OVM. Atribút sa zaeviduje vo fáze \"Pripravená na publikovanie\", a len v prípade, ak existuje špecializovaná elektronická schránka pre danú službu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_ks_schranka_ovm",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "OVM message box",
+          "engDescription": "Enter the URI identifier of the electronic mailbox of the electronic service provider to which the submission should be sent.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1126,
+          "name": "Kontaktné údaje na gestora elektronickej služby ",
+          "description": "Uveďte kontaktný údaj, ktorý sa zobrazí odosieľateľovi po odoslaní podania. Podľa prílohy č. 12 vyhlášky č. 78/2020 Z. z. o štandardoch.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_UPVS_kontakt_na_adresata",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Recipient's contact",
+          "engDescription": "Enter the contact information that will be displayed to the sender after the submission is submitted. According to Annex no. 12 of Decree No. 78/2020 on Standards.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1174,
+          "name": "Odkazy na ďalšie informácie alebo elektronické služby",
+          "description": "Odkazy na ďalšie informácie alebo elektronické služby pre zobrazovanie statických informácií na stránke zobrazovanej po odoslaní správy / podania podľa prílohy č. 12 vyhlášky č. 78/2020 Z.z. ",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "KS_Profil_PO_UPVS_KS_profil_UPVS_odkazy_na_dalsie_informacie",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Links to further information or electronic services",
+          "engDescription": "Links to additional information or electronic services for displaying static information on the page displayed after sending a message / submission according to Annex No. 12 of Decree No. 78/2020 Coll.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1137,
+          "name": "Typ identity",
+          "description": "Uveďte typy povolených adresátov správy v rámci danej služby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_identity_type",
+          "order": 10,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_PARTNER_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_PARTNER_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "IdentityType (recipient)",
+          "engDescription": "List the types of allowed message recipients within the given service.",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1138,
+          "name": "Detail typu indentity",
+          "description": "Uveďte typy osôb, ktorú môžú využívať danú službu v danom časovom období.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_identity_type_detail",
+          "order": 11,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_IDENTITY_TYPE_DETAIL"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Identity type detail",
+          "engDescription": "List the types of people who can use the given service in the given time period.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1175,
+          "name": "Neakceptovaný typ osoby",
+          "description": "Uveďte typ osoby výberom z číselníka CL000009, ktorej služba výnimočne nemôže byť poskytovaná.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profiil_UPVS_neakceptovatelny_typ_osoby",
+          "order": 11,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_OSOBY_CL"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Unacceptable type of person",
+          "engDescription": "Indicate the type of person by selecting from the code list CL000009, whose service exceptionally cannot be provided.",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1140,
+          "name": "Typ osoby",
+          "description": "Uveďte typy povolených odosielateľov, ktorí môžú využívať danú službu v danom časovom období.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_partner_type",
+          "order": 12,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_PARTNER_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_PARTNER_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "PartnerType (sender)",
+          "engDescription": "List the types of allowed senders that can use given service in the given time period.",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1127,
+          "name": "Listinné tlačivo",
+          "description": "Uveďte, link na listinné tlačivo, ktoré si používateľ môže stiahnuť v prípade, že nechce službu využiť elektronicky.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_UPVS_listinne_tlacivo",
+          "order": 13,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Paper form",
+          "engDescription": "Paper form",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1184,
+          "name": "Opis ďalších krokov po odoslaní podania",
+          "description": "Opis ďalších krokov po odoslaní podania, napr. zaslanie doručenky, podľa bodu 15 prílohy č. 12 Vyhlášky č. 78/2020 Z.z.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_KS_profil_UPVS_opis_dalsich_krokov",
+          "order": 14,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Description of next steps after submitting the submission",
+          "engDescription": "Description of further steps after sending the submission, e.g. sending a delivery note, according to point 15 of Annex No. 12 of Decree No. 78/2020 Coll.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1179,
+          "name": "Spôsob autorizácie",
+          "description": "Spôsob autorizácie zaevidujte výberom položiek z číselníka pre koncovú službu, inštanciu alebo typ prílohy.\n1.\tZaevidovaný spôsob autorizácie umožní autorizovať všetkými spôsobmi, ktoré sú zaevidované.\n2.\tSpôsob autorizácie KEPom je možný vždy, aj keď nie je zaevidovaný.\n3.\tAk je zaevidovaný okrem iného aj atribút „bez autorizácie“, umožnené bude aj podanie bez autorizácie. \n4.\tAk je zaevidovaný výlučne spôsob „bez autorizácie“, bude umožnené  podanie bez autorizácie. \nAtribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "",
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_sign_types_new",
+          "order": 14,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "AUTHORIZATION_LEVEL"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "AUTHORIZATION_LEVEL"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Signature type",
+          "engDescription": "List the types of signatures or seals (authorization) required for the electronic submission form.",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1143,
+          "name": "Späťvzatie",
+          "description": "Uveďte, či na danej elektronickej službe, bude povolená funkcionalita späťvzatia odoslaného elektronického podania.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_spatvzatie",
+          "order": 15,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Withdrawal",
+          "engDescription": "State whether the functionality of withdrawing the submitted electronic submission will be enabled on the given electronic service.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1124,
+          "name": "Používanie služby zaniknutou identitou",
+          "description": "Uveďte či službu môže využiť aj osoba, ktorá zanikla.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_UPVS_allowed_send_end_org",
+          "order": 16,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Using the service with a defunct authority",
+          "engDescription": "State whether the service can also be used by a person who has demised.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1134,
+          "name": "Podporovaný operačný systém",
+          "description": "Uveďte operačné systémy, v ktorých je možné plnohodnotne použiť službu.\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_supported_os",
+          "order": 17,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SUPPORTED_OS"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SUPPORTED_OS"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SUPPORTED_OS"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SUPPORTED_OS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Supported operating system",
+          "engDescription": "Supported operating system",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1141,
+          "name": "Responzívne zobrazenie aplikácie",
+          "description": "Uveďte, či daná služba bude dostupná z mobilného zariadenia v responzívnom zobrazení.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_responsive_application",
+          "order": 18,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Responsive display of the application",
+          "engDescription": "State whether the given service will be available from a mobile device in a responsive view.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1139,
+          "name": "Prístupnosť v natívnej mobilnej aplikácií",
+          "description": "Uveďte, či daná služba bude dostupná v natívnej mobilnej aplikácií.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_native_mobile_application",
+          "order": 19,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Accessibility in the native mobile application",
+          "engDescription": "State whether the service will be available as the native mobile application.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1125,
+          "name": "Hromadný import služieb",
+          "description": "Hromadný import služieb",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_UPVS_hromadny_import_sluzieb",
+          "order": 20,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Mass import of services",
+          "engDescription": "Mass import of services",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1145,
+          "name": "Stav publikovania služby",
+          "description": "Stav určujúci, či je služba pripravená na publikovanie. Atribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_stav_publikovania",
+          "order": 21,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "STAV_PUBLIKOVANIA_SLUZBY"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "STAV_PUBLIKOVANIA_SLUZBY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Service publish state",
+          "engDescription": "Status determining whether the service is ready or approved for publication by MIRRI",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1135,
+          "name": "Prístupové miesto",
+          "description": "Prístupové miesto",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_ks_pristupove_miesto",
+          "order": 22,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "PRISTUPOVE_MIESTO"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Access point",
+          "engDescription": "Access point",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1161,
+          "name": "Formulár",
+          "description": "Identifikátor formulára z MEF výberom z komboboxu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_UPVS_Formular_ID",
+          "order": 23,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Formular"
+            },
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Formular"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Form",
+          "engDescription": "Identifier of form",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1162,
+          "name": "Koncová služba",
+          "description": "Identifikátor koncovej služby",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_profil_PO_UPVS_Koncova_sluzba_ID",
+          "order": 24,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "KS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "eGov service",
+          "engDescription": "Identifier of eGov service",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1164,
+          "name": "Typy príloh",
+          "description": "Typ prílohy MIRRI zadefinuje v internom číselníku \"Typ prílohy\" v ľavom menu a správca vyberie zadefinovaný typ prílohy zo zoznamu. Ak je potrebné do číselníka pridať novú položku, správca požiada MIRRI o pridanie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_typy_priloh",
+          "order": 25,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Priloha_typ"
+            },
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Priloha_typ"
+            },
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Priloha_typ"
+            },
+            {
+              "type": "ciType",
+              "id": null,
+              "ciType": "Priloha_typ"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Attachemnt's types",
+          "engDescription": "Attachemnt's types",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1142,
+          "name": "Spôsob autorizácie",
+          "description": "Spôsob autorizácie zaevidujte výberom položiek z číselníka pre koncovú službu, inštanciu alebo typ prílohy.\n1.\tZaevidovaný spôsob autorizácie umožní autorizovať všetkými spôsobmi, ktoré sú zaevidované.\n2.\tSpôsob autorizácie KEPom je možný vždy, aj keď nie je zaevidovaný.\n3.\tAk je zaevidovaný okrem iného aj atribút „bez autorizácie“, umožnené bude aj podanie bez autorizácie. \n4.\tAk je zaevidovaný výlučne spôsob „bez autorizácie“, bude umožnené  podanie bez autorizácie. \nAtribút je povinný vo fáze \"nasadenie do ostrej prevádzky\".\n",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "KS_Profil_PO_UPVS_sign_types",
+          "order": 28,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            },
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "LV_SIGNATURE_TYPE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Signature type",
+          "engDescription": "List the types of signatures or seals (authorization) required for the electronic submission form.",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 1185,
+          "name": "Referenčné číslo podania",
+          "description": "Ak sa nezaklikne, predvolené je \"messageID\". Ak sa zaklikne, hodnota áno znamená \"žiadne\" referenčné číslo podania.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "false",
+          "technicalName": "KS_Profil_PO_UPVS_KS_profil_PO_UPVS_referencne_cislo_podania",
+          "order": 29,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Submission reference number",
+          "engDescription": "If not checked, the default is \"messageID\". If checked, a value of yes means \"no\" submission reference number.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1194,
+          "name": "Referenčné číslo podania",
+          "description": "Defaultná hodnota je nastavená na \"žiadne\", v prípade, že existuje referenčné číslo podania, z comboboxu vyberte možnosť \"MessageID\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "c_referencne_cislo_podania.1",
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_KS_profil_PO_UPVS_referencne_cislo_podania_new",
+          "order": 31,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "REFERENCNE_CISLO_PODANIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Submission reference number",
+          "engDescription": "The default value is set to \"none\", if there is a submission reference number, select the \"MessageID\" option from the combobox.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1196,
+          "name": "Referenčné číslo podania",
+          "description": "Defaultná hodnota je nastavená na \"žiadne\", v prípade, že existuje referenčné číslo podania, z comboboxu vyberte možnosť \"MessageID\".",
+          "type": "STRING",
+          "displayAs": null,
+          "units": "",
+          "defaultValue": "c_referencne_cislo_podania.1",
+          "technicalName": "KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_KS_Profil_PO_UPVS_KS_profil_PO_UPVS_referencne_cislo_podania_v2",
+          "order": 32,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "REFERENCNE_CISLO_PODANIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Submission reference number",
+          "engDescription": "The default value is set to \"none\", if there is a submission reference number, select the \"MessageID\" option from the combobox.",
+          "opendata": null,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 37,
+      "name": "Povinná osoba",
+      "technicalName": "PO",
+      "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Public authority",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 31,
+      "name": "Koncová služba",
+      "technicalName": "KS",
+      "description": "Koncová služba je z hľadiska používateľa jeden pracovný výsledok určitej organizačnej jednotky realizujúcej konkrétny procesný úkon pri vybavovaní veci v rámci konkrétnej agendy. Každá služba spadá pod určitú agendu. Koncová služba predstavuje nadmnožinu eGovernment služieb. Napríklad: nahlásenie zmeny adresy Dopravnému inšpektorátu je konkrétna služba.",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "eGov service",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_gestor_KS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Person is a provider of the end service",
+  "codePrefix": null,
+  "uriPrefix": null
+}

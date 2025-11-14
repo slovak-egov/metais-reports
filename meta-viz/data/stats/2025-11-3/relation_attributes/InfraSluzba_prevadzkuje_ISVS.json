@@ -1,0 +1,385 @@
+{
+  "relation_name": "InfraSluzba_prevadzkuje_ISVS",
+  "name": "Infraštruktúrna služba prevádzkuje ISVS",
+  "description": "Infraštruktúrna služba prevádzkuje daný ISVS",
+  "engDescription": "Infrastructure service operates particular ISVS",
+  "type": "application",
+  "source_type": "InfraSluzba",
+  "source_name": "Infraštruktúrna služba",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 32,
+    "unique_pairs": 32,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 483,
+    "target_total": 6492,
+    "source_connected": 21,
+    "target_connected": 10,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.5238095238095237,
+      "median": 2,
+      "p90": 2,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 7,
+      "avg": 3.2,
+      "median": 2.5,
+      "p90": 6,
+      "p99": 7
+    },
+    "top_source": [
+      {
+        "uuid": "a02c9f85-d7f4-4837-9549-7efdfcdacb6f",
+        "degree": 2,
+        "name": "Komunikačno-technická infraštruktúra 2 DataCentra",
+        "code": "infra_sluzba_203"
+      },
+      {
+        "uuid": "98bd407c-73bf-4231-925b-702c1a7ed824",
+        "degree": 2,
+        "name": "PaaS služby cloud natívnej platformy",
+        "code": "infra_sluzba_52"
+      },
+      {
+        "uuid": "0906885e-e3d6-47ee-8775-2a0186fcb09c",
+        "degree": 2,
+        "name": "Služby prezentačnej vrstvy vo vládnom cloude",
+        "code": "infra_sluzba_53"
+      },
+      {
+        "uuid": "fd57325c-633d-47df-a029-2b9b63b0292d",
+        "degree": 2,
+        "name": "Služby databázovej vrstvy vo vládnom cloude",
+        "code": "infra_sluzba_62"
+      },
+      {
+        "uuid": "97e70b28-39f9-41fc-921d-87f582c3a924",
+        "degree": 2,
+        "name": "Integračné služby vo vládnom cloude",
+        "code": "infra_sluzba_60"
+      },
+      {
+        "uuid": "a88ec4d1-3d64-42f8-a880-3534d5952c77",
+        "degree": 2,
+        "name": "Služby aplikačnej vrstvy vo vládnom cloude",
+        "code": "infra_sluzba_61"
+      },
+      {
+        "uuid": "47b20475-db3a-49d2-a8e3-5c1b24ae55c4",
+        "degree": 2,
+        "name": "Sieťové služby",
+        "code": "infra_sluzba_39"
+      },
+      {
+        "uuid": "e91755b1-25a1-47c7-be37-a5a3630370f2",
+        "degree": 2,
+        "name": "Virtuálny server",
+        "code": "infra_sluzba_6"
+      },
+      {
+        "uuid": "e3a0a1b4-d166-4d2e-b4fe-a0c6ed4df9b3",
+        "degree": 2,
+        "name": "Diskový priestor",
+        "code": "infra_sluzba_22"
+      },
+      {
+        "uuid": "fd520089-34d5-4329-b387-5003f03819ac",
+        "degree": 2,
+        "name": "Služba pripojenia do špecifickej siete",
+        "code": "infra_sluzba_37"
+      },
+      {
+        "uuid": "78ae6104-a7be-455f-aaa4-99cf83742b1a",
+        "degree": 2,
+        "name": "Infraštruktúrne služby DataCentrum (Bratislava, Cintorínska)",
+        "code": "infra_sluzba_67"
+      },
+      {
+        "uuid": "bbd2cad7-597e-4010-8d2f-672738c2422c",
+        "degree": 1,
+        "name": "Manažment virtuálnych serverov (RISC)",
+        "code": "infra_sluzba_33"
+      },
+      {
+        "uuid": "7d4f1f2d-3dc5-4640-88df-8f6309498e32",
+        "degree": 1,
+        "name": "Manažment virtuálnych serverov (INTEL)",
+        "code": "infra_sluzba_34"
+      },
+      {
+        "uuid": "05defdd0-8d13-4000-9633-900975797ec5",
+        "degree": 1,
+        "name": "Manažment bezpečnosti",
+        "code": "infra_sluzba_36"
+      },
+      {
+        "uuid": "9cf63822-39d1-45c2-af86-e8f5e055e09c",
+        "degree": 1,
+        "name": "IaaS eSKa Cloud",
+        "code": "infra_sluzba_515"
+      },
+      {
+        "uuid": "a693716e-8be9-409a-a707-c8718601583b",
+        "degree": 1,
+        "name": "Manažment virtuálnych serverov (INTEL)",
+        "code": "infra_sluzba_11"
+      },
+      {
+        "uuid": "e3dde203-7241-4326-9f97-b30a088d9780",
+        "degree": 1,
+        "name": "Manažment požiadaviek",
+        "code": "infra_sluzba_10"
+      },
+      {
+        "uuid": "4daf2142-6cd2-46a6-b8aa-8a69f7e5d362",
+        "degree": 1,
+        "name": "Manažment diskového priestoru",
+        "code": "infra_sluzba_15"
+      },
+      {
+        "uuid": "e56d649c-4d6b-4639-a233-27fea8c66ff1",
+        "degree": 1,
+        "name": "Manažment bezpečnosti",
+        "code": "infra_sluzba_16"
+      },
+      {
+        "uuid": "0a3c2eb1-1474-49e7-a1b0-9a04c55ba2f7",
+        "degree": 1,
+        "name": "Manažment virtuálnych serverov (RISC)",
+        "code": "infra_sluzba_12"
+      },
+      {
+        "uuid": "afd911c2-bf79-44c8-ac6e-f971869883c9",
+        "degree": 1,
+        "name": "Manažment sieťovej infraštruktúry",
+        "code": "infra_sluzba_14"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "400aa10b-8887-41c0-83a3-65e1c097dbd9",
+        "degree": 7,
+        "name": "Správa pre IaaS infraštruktúru",
+        "code": "isvs_5837"
+      },
+      {
+        "uuid": "d93e2cde-ef3b-4c49-b547-8f9983cb9d7e",
+        "degree": 6,
+        "name": "IS Vládneho Cloudu",
+        "code": "isvs_6141"
+      },
+      {
+        "uuid": "1daa411e-f2f5-42d7-a376-a6632aabf516",
+        "degree": 5,
+        "name": "Intranet Úradu verejného zdravotníctva Slovenskej republiky",
+        "code": "isvs_6814"
+      },
+      {
+        "uuid": "1f970ccb-a504-45c5-ab02-f070e97ba012",
+        "degree": 5,
+        "name": "Webové sídlo Úradu verejného zdravotníctva Slovenskej republiky",
+        "code": "isvs_6812"
+      },
+      {
+        "uuid": "c7042564-1c92-4c76-a5d7-f719de8804e3",
+        "degree": 4,
+        "name": "Centrálny informačný systém štátnej služby",
+        "code": "isvs_6140"
+      },
+      {
+        "uuid": "1960e09e-b28a-472d-96b8-d81871847c73",
+        "degree": 1,
+        "name": "Cenový informačný systém",
+        "code": "isvs_14494"
+      },
+      {
+        "uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+        "degree": 1,
+        "name": "Informačný systém pre evidenciu a monitorovanie pomoci „IS SEMP“",
+        "code": "isvs_47"
+      },
+      {
+        "uuid": "63ee8b43-96c3-4a0f-b906-315548050987",
+        "degree": 1,
+        "name": "Testovací ekonomický systém (prevádzkovaný a neplánujem rozvoj)",
+        "code": "isvs_15138"
+      },
+      {
+        "uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+        "degree": 1,
+        "name": "Ekonomický informačný systém (EIS)",
+        "code": "isvs_48"
+      },
+      {
+        "uuid": "a6848df5-cd8e-4570-ac98-88b96420e743",
+        "degree": 1,
+        "name": "Modul OOTS - Evidence Finder (SK)",
+        "code": "isvs_11113"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6975,
+      "total_islands": 6950,
+      "singleton_islands": 6944,
+      "multi_islands": [
+        {
+          "size_total": 9,
+          "size_source": 7,
+          "size_target": 2,
+          "fraction_total": 0.0012903225806451613,
+          "top_source_uuid": "e91755b1-25a1-47c7-be37-a5a3630370f2",
+          "top_source_degree": 2,
+          "top_target_uuid": "400aa10b-8887-41c0-83a3-65e1c097dbd9",
+          "top_target_degree": 7
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.001003584229390681,
+          "top_source_uuid": "4daf2142-6cd2-46a6-b8aa-8a69f7e5d362",
+          "top_source_degree": 1,
+          "top_target_uuid": "d93e2cde-ef3b-4c49-b547-8f9983cb9d7e",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 5,
+          "size_target": 2,
+          "fraction_total": 0.001003584229390681,
+          "top_source_uuid": "0906885e-e3d6-47ee-8775-2a0186fcb09c",
+          "top_source_degree": 2,
+          "top_target_uuid": "1daa411e-f2f5-42d7-a376-a6632aabf516",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.00043010752688172043,
+          "top_source_uuid": "78ae6104-a7be-455f-aaa4-99cf83742b1a",
+          "top_source_degree": 2,
+          "top_target_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.00043010752688172043,
+          "top_source_uuid": "a02c9f85-d7f4-4837-9549-7efdfcdacb6f",
+          "top_source_degree": 2,
+          "top_target_uuid": "1960e09e-b28a-472d-96b8-d81871847c73",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002867383512544803,
+          "top_source_uuid": "9cf63822-39d1-45c2-af86-e8f5e055e09c",
+          "top_source_degree": 1,
+          "top_target_uuid": "a6848df5-cd8e-4570-ac98-88b96420e743",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 483,
+        "total_islands": 468,
+        "singleton_islands": 465,
+        "multi_islands": [
+          {
+            "size": 7,
+            "fraction": 0.014492753623188406,
+            "size_total": 9,
+            "top_uuid": "e91755b1-25a1-47c7-be37-a5a3630370f2",
+            "top_degree": 2
+          },
+          {
+            "size": 6,
+            "fraction": 0.012422360248447204,
+            "size_total": 7,
+            "top_uuid": "4daf2142-6cd2-46a6-b8aa-8a69f7e5d362",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.010351966873706004,
+            "size_total": 7,
+            "top_uuid": "0906885e-e3d6-47ee-8775-2a0186fcb09c",
+            "top_degree": 2
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 6492,
+        "total_islands": 6488,
+        "singleton_islands": 6484,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.00030807147258163895,
+            "size_total": 9,
+            "top_uuid": "400aa10b-8887-41c0-83a3-65e1c097dbd9",
+            "top_degree": 7
+          },
+          {
+            "size": 2,
+            "fraction": 0.00030807147258163895,
+            "size_total": 7,
+            "top_uuid": "1daa411e-f2f5-42d7-a376-a6632aabf516",
+            "top_degree": 5
+          },
+          {
+            "size": 2,
+            "fraction": 0.00030807147258163895,
+            "size_total": 3,
+            "top_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.00030807147258163895,
+            "size_total": 3,
+            "top_uuid": "1960e09e-b28a-472d-96b8-d81871847c73",
+            "top_degree": 1
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

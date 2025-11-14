@@ -1,0 +1,167 @@
+{
+  "type": "AS",
+  "count": 16825,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 16825,
+      "pct": 100.0,
+      "unique_count": 16814,
+      "unique_pct": 99.93462109955424
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 16825,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 0.017830609212481426
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 16825,
+      "pct": 100.0,
+      "unique_count": 10292,
+      "unique_pct": 61.17087667161961
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 16825,
+      "pct": 100.0,
+      "unique_count": 16814,
+      "unique_pct": 99.93462109955424
+    },
+    {
+      "name": "EA_Profil_AS_verzia",
+      "count": 15946,
+      "pct": 94.77563150074295,
+      "unique_count": 9,
+      "unique_pct": 0.056440486642418165
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 14252,
+      "pct": 84.7072808320951,
+      "unique_count": 8273,
+      "unique_pct": 58.04799326410328
+    },
+    {
+      "name": "EA_Profil_AS_dostupnost_pre_externu_integraciu",
+      "count": 10928,
+      "pct": 64.95096582466567,
+      "unique_count": 2,
+      "unique_pct": 0.018301610541727673
+    },
+    {
+      "name": "EA_Profil_AS_typ_cloudovej_sluzby",
+      "count": 8108,
+      "pct": 48.190193164933135,
+      "unique_count": 2,
+      "unique_pct": 0.024666995559940803
+    },
+    {
+      "name": "EA_Profil_AS_typ_as",
+      "count": 7084,
+      "pct": 42.10401188707281,
+      "unique_count": 5,
+      "unique_pct": 0.07058159232072275
+    },
+    {
+      "name": "EA_Profil_AS_charakter_as",
+      "count": 7079,
+      "pct": 42.074294205052006,
+      "unique_count": 3,
+      "unique_pct": 0.04237886707162029
+    },
+    {
+      "name": "EA_Profil_AS_pouzivatel_ks",
+      "count": 6741,
+      "pct": 40.065378900445765,
+      "unique_count": 82,
+      "unique_pct": 1.216436730455422
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 4680,
+      "pct": 27.815750371471026,
+      "unique_count": 2,
+      "unique_pct": 0.042735042735042736
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 846,
+      "pct": 5.028231797919762,
+      "unique_count": 570,
+      "unique_pct": 67.37588652482269
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 463,
+      "pct": 2.7518573551263,
+      "unique_count": 440,
+      "unique_pct": 95.03239740820734
+    },
+    {
+      "name": "IKT_Migracia_AS_aktualny_stav",
+      "count": 314,
+      "pct": 1.8662704309063896,
+      "unique_count": 11,
+      "unique_pct": 3.5031847133757963
+    },
+    {
+      "name": "EA_Profil_AS_webove_sidlo",
+      "count": 288,
+      "pct": 1.7117384843982169,
+      "unique_count": 125,
+      "unique_pct": 43.40277777777778
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 105,
+      "pct": 0.6240713224368499,
+      "unique_count": 99,
+      "unique_pct": 94.28571428571428
+    },
+    {
+      "name": "Gen_Profil_EA_typ_replikacie",
+      "count": 56,
+      "pct": 0.3328380386329866,
+      "unique_count": 2,
+      "unique_pct": 3.571428571428571
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 50,
+      "pct": 0.2971768202080238,
+      "unique_count": 50,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_AS_informacny_system",
+      "count": 21,
+      "pct": 0.12481426448736999,
+      "unique_count": 5,
+      "unique_pct": 23.809523809523807
+    },
+    {
+      "name": "Gen_Profil_EA_pocet_replikacii",
+      "count": 7,
+      "pct": 0.041604754829123326,
+      "unique_count": 4,
+      "unique_pct": 57.14285714285714
+    },
+    {
+      "name": "IKT_Migracia_AS_id",
+      "count": 4,
+      "pct": 0.0237741456166419,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_AS_popis_sluzby",
+      "count": 1,
+      "pct": 0.005943536404160475,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

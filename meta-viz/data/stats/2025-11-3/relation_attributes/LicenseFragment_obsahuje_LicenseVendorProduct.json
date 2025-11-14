@@ -1,0 +1,408 @@
+{
+  "relation_name": "LicenseFragment_obsahuje_LicenseVendorProduct",
+  "name": "Fragment licencie obsahuje produkt",
+  "description": "Fragment licencie obsahuje produkt.",
+  "engDescription": "License fragment contains product.",
+  "type": "application",
+  "source_type": "LicenseFragment",
+  "source_name": "Žiadosť o licenciu fragment",
+  "target_type": "LicenseVendorProduct",
+  "target_name": "Produkt vendora",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 16,
+    "unique_pairs": 16,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 16,
+    "target_total": 314,
+    "source_connected": 16,
+    "target_connected": 14,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.1428571428571428,
+      "median": 1.0,
+      "p90": 2,
+      "p99": 2
+    },
+    "top_source": [
+      {
+        "uuid": "bbb2941d-ee1c-4f3c-8e89-3acd5643470f",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "8868339f-da77-4e38-91a3-93077284041c",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "17f27e09-0403-4a42-aff4-3a065dac0ba0",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "04816f02-2be4-485c-834e-79343854733a",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "c6a4d3bf-e678-461c-9735-d5932a85f986",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "479a1fe3-6bad-4134-9e97-c325526671f0",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "e6783ea3-db9f-47f1-849d-548475c4fd4c",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "31e77e6c-c92f-46bc-ba6d-88ba6cd52b64",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": "19859732"
+      },
+      {
+        "uuid": "38a0e7b2-eeea-49a7-952d-da737cf70620",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "cae32ab3-c4f8-4981-ad58-356be719d36c",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "82844eb4-8dc7-4655-930c-e68528a2baa3",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": "19859732"
+      },
+      {
+        "uuid": "7f0740f8-ba16-4604-9123-aa842c7964c0",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "07016cbe-78a6-499d-877c-ce1bf0c66e2c",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "edad1c35-30c0-4c9d-976c-9bf468b83b15",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      },
+      {
+        "uuid": "3f468910-6f46-411d-a939-6e108a6b3a08",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": "20389001"
+      },
+      {
+        "uuid": "0479ea98-0258-403d-af60-585d85a8876d",
+        "degree": 1,
+        "name": "STANDARD",
+        "code": null
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "ba7a2622-0bae-41fd-ac5a-a6604361bbd1",
+        "degree": 2,
+        "name": "ba7a2622-0bae-41fd-ac5a-a6604361bbd1",
+        "code": "licencny_produkt_298"
+      },
+      {
+        "uuid": "cbb5582c-e489-411f-9c9b-988027d7d661",
+        "degree": 2,
+        "name": "cbb5582c-e489-411f-9c9b-988027d7d661",
+        "code": "licencny_produkt_582"
+      },
+      {
+        "uuid": "06582a36-d04f-400c-ae46-fbba797d9f32",
+        "degree": 1,
+        "name": "06582a36-d04f-400c-ae46-fbba797d9f32",
+        "code": "licencny_produkt_585"
+      },
+      {
+        "uuid": "247ebf1a-c39b-4317-af91-96c6e60002da",
+        "degree": 1,
+        "name": "247ebf1a-c39b-4317-af91-96c6e60002da",
+        "code": "licencny_produkt_511"
+      },
+      {
+        "uuid": "28d9cc4d-d8e0-4997-bb35-1e108d6ababd",
+        "degree": 1,
+        "name": "28d9cc4d-d8e0-4997-bb35-1e108d6ababd",
+        "code": "licencny_produkt_586"
+      },
+      {
+        "uuid": "2aa2e6d8-e7da-448b-a22c-41ae0f3dfa66",
+        "degree": 1,
+        "name": "2aa2e6d8-e7da-448b-a22c-41ae0f3dfa66",
+        "code": "licencny_produkt_587"
+      },
+      {
+        "uuid": "2e922225-1112-481b-8ff9-17ee5670adb5",
+        "degree": 1,
+        "name": "2e922225-1112-481b-8ff9-17ee5670adb5",
+        "code": "licencny_produkt_577"
+      },
+      {
+        "uuid": "549692ba-fc3d-4e27-a1d6-953d279b591f",
+        "degree": 1,
+        "name": "549692ba-fc3d-4e27-a1d6-953d279b591f",
+        "code": "licencny_produkt_583"
+      },
+      {
+        "uuid": "5dc36367-ef57-4999-83ee-11d7c54fe7e6",
+        "degree": 1,
+        "name": "5dc36367-ef57-4999-83ee-11d7c54fe7e6",
+        "code": "licencny_produkt_588"
+      },
+      {
+        "uuid": "978b6f1d-7d08-4a48-8caf-d06b15973797",
+        "degree": 1,
+        "name": "978b6f1d-7d08-4a48-8caf-d06b15973797",
+        "code": "licencny_produkt_282"
+      },
+      {
+        "uuid": "9ff36067-6233-434a-bc9f-a04cbe2dc8c3",
+        "degree": 1,
+        "name": "9ff36067-6233-434a-bc9f-a04cbe2dc8c3",
+        "code": "licencny_produkt_584"
+      },
+      {
+        "uuid": "c5642808-43c7-4c88-aeb7-59f0a0e97e5f",
+        "degree": 1,
+        "name": "c5642808-43c7-4c88-aeb7-59f0a0e97e5f",
+        "code": "licencny_produkt_580"
+      },
+      {
+        "uuid": "d80959f1-2a8f-4549-89bf-c42149243a09",
+        "degree": 1,
+        "name": "d80959f1-2a8f-4549-89bf-c42149243a09",
+        "code": "licencny_produkt_276"
+      },
+      {
+        "uuid": "e1b15232-8e84-4c78-be4b-0eeecf1bd0ec",
+        "degree": 1,
+        "name": "e1b15232-8e84-4c78-be4b-0eeecf1bd0ec",
+        "code": "licencny_produkt_581"
+      }
+    ],
+    "islands": {
+      "total_nodes": 330,
+      "total_islands": 314,
+      "singleton_islands": 300,
+      "multi_islands": [
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.00909090909090909,
+          "top_source_uuid": "cae32ab3-c4f8-4981-ad58-356be719d36c",
+          "top_source_degree": 1,
+          "top_target_uuid": "ba7a2622-0bae-41fd-ac5a-a6604361bbd1",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.00909090909090909,
+          "top_source_uuid": "edad1c35-30c0-4c9d-976c-9bf468b83b15",
+          "top_source_degree": 1,
+          "top_target_uuid": "cbb5582c-e489-411f-9c9b-988027d7d661",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "31e77e6c-c92f-46bc-ba6d-88ba6cd52b64",
+          "top_source_degree": 1,
+          "top_target_uuid": "978b6f1d-7d08-4a48-8caf-d06b15973797",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "38a0e7b2-eeea-49a7-952d-da737cf70620",
+          "top_source_degree": 1,
+          "top_target_uuid": "9ff36067-6233-434a-bc9f-a04cbe2dc8c3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "7f0740f8-ba16-4604-9123-aa842c7964c0",
+          "top_source_degree": 1,
+          "top_target_uuid": "c5642808-43c7-4c88-aeb7-59f0a0e97e5f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "8868339f-da77-4e38-91a3-93077284041c",
+          "top_source_degree": 1,
+          "top_target_uuid": "247ebf1a-c39b-4317-af91-96c6e60002da",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "c6a4d3bf-e678-461c-9735-d5932a85f986",
+          "top_source_degree": 1,
+          "top_target_uuid": "2e922225-1112-481b-8ff9-17ee5670adb5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "3f468910-6f46-411d-a939-6e108a6b3a08",
+          "top_source_degree": 1,
+          "top_target_uuid": "d80959f1-2a8f-4549-89bf-c42149243a09",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "0479ea98-0258-403d-af60-585d85a8876d",
+          "top_source_degree": 1,
+          "top_target_uuid": "e1b15232-8e84-4c78-be4b-0eeecf1bd0ec",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "479a1fe3-6bad-4134-9e97-c325526671f0",
+          "top_source_degree": 1,
+          "top_target_uuid": "549692ba-fc3d-4e27-a1d6-953d279b591f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "e6783ea3-db9f-47f1-849d-548475c4fd4c",
+          "top_source_degree": 1,
+          "top_target_uuid": "5dc36367-ef57-4999-83ee-11d7c54fe7e6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "17f27e09-0403-4a42-aff4-3a065dac0ba0",
+          "top_source_degree": 1,
+          "top_target_uuid": "28d9cc4d-d8e0-4997-bb35-1e108d6ababd",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "04816f02-2be4-485c-834e-79343854733a",
+          "top_source_degree": 1,
+          "top_target_uuid": "2aa2e6d8-e7da-448b-a22c-41ae0f3dfa66",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.006060606060606061,
+          "top_source_uuid": "bbb2941d-ee1c-4f3c-8e89-3acd5643470f",
+          "top_source_degree": 1,
+          "top_target_uuid": "06582a36-d04f-400c-ae46-fbba797d9f32",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 16,
+        "total_islands": 14,
+        "singleton_islands": 12,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.125,
+            "size_total": 3,
+            "top_uuid": "cae32ab3-c4f8-4981-ad58-356be719d36c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.125,
+            "size_total": 3,
+            "top_uuid": "edad1c35-30c0-4c9d-976c-9bf468b83b15",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 314,
+        "total_islands": 314,
+        "singleton_islands": 314,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": []
+}

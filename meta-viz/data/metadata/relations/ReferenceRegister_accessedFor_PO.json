@@ -1,0 +1,100 @@
+{
+  "id": 112,
+  "name": "Register spristupneny pre PO",
+  "technicalName": "ReferenceRegister_accessedFor_PO",
+  "description": "Register spristupneny pre PO.",
+  "roleList": [
+    "RR_MANAGER",
+    "EA_GARPO"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Register available for PA",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 333,
+      "name": "Poznamka",
+      "description": "Poznámka k evidencii prístupov k referenčnému registru všeobecne.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegister_accessedFor_PO_Profile_note",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note to logbook of reference register in general.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 44,
+      "name": "Referencny register",
+      "technicalName": "ReferenceRegister",
+      "description": "Referencny register.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Reference register",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 37,
+      "name": "Povinná osoba",
+      "technicalName": "PO",
+      "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Public authority",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Register available for PA.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

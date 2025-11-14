@@ -1,0 +1,129 @@
+{
+  "id": 1212,
+  "name": "Aktivita napĺňa cieľ",
+  "technicalName": "Aktivita_naplna_ciel",
+  "description": "Aktivita napĺňa cieľ",
+  "roleList": [
+    "KRIS_SCHVAL",
+    "EA_GARPO",
+    "R_EGOV",
+    "SU_SCHVAL"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Activity fulfills the objective",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 99,
+      "name": "Aktivita",
+      "technicalName": "Aktivita",
+      "description": "Aktivita",
+      "roleList": [
+        "R_EGOV",
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Activity",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";R_EGOV;EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 7,
+      "name": "Cieľ",
+      "technicalName": "Ciel",
+      "description": "Ciele pre KRIS a SU",
+      "roleList": [
+        "KRIS_SCHVAL",
+        "SU_SCHVAL"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Objective",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";KRIS_SCHVAL;SU_SCHVAL;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Activity fulfills the objective",
+  "codePrefix": null,
+  "uriPrefix": null
+}

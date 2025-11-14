@@ -1,0 +1,34 @@
+{
+  "type": "LicenseVendor",
+  "count": 5,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    }
+  ]
+}

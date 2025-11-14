@@ -1,0 +1,5111 @@
+{
+  "relation_name": "OLA_Kontrakt_dodavatela_ISVS",
+  "name": "SLA dodávateľa ISVS",
+  "description": "SLA je pre dodávateľa ISVS",
+  "engDescription": "SLA is for ISVS supplier",
+  "type": "application",
+  "source_type": "OLA_Kontrakt",
+  "source_name": "SLA",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 292,
+    "unique_pairs": 292,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 295,
+    "target_total": 6665,
+    "source_connected": 276,
+    "target_connected": 198,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 7,
+      "avg": 1.0579710144927537,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 8,
+      "avg": 1.4747474747474747,
+      "median": 1.0,
+      "p90": 3,
+      "p99": 6
+    },
+    "top_source": [
+      {
+        "uuid": "c160c62c-0774-45c2-bd07-6959f7ad30fd",
+        "degree": 7,
+        "name": "Zabezpečenie podpory a rozvoja informačného systému účtovníctva fondov (ISUF)",
+        "code": "ola_kontrakt_419"
+      },
+      {
+        "uuid": "4d3f0b75-5507-cf14-d3af-8b33a7fbb78f",
+        "degree": 5,
+        "name": "Zmluva o poskytovaní služieb, Dodatok č. 1",
+        "code": "ola_kontrakt_303"
+      },
+      {
+        "uuid": "695d579d-f41a-b6b3-deb1-e8a88cc42c08",
+        "degree": 2,
+        "name": "Zmluvy o zabezpečení prevádzky",
+        "code": "ola_kontrakt_299"
+      },
+      {
+        "uuid": "1bc91c15-f53f-80a2-8df8-96c099641413",
+        "degree": 2,
+        "name": "Zmluvy o zabezpečení prevádzky IS ITMS 2014+, Dodatok č.1",
+        "code": "ola_kontrakt_300"
+      },
+      {
+        "uuid": "ee0e2097-5a7b-dc9c-bdd7-f6bfb715d7e0",
+        "degree": 2,
+        "name": "Vykonávacia zmluva č. 1, Dodatok č. 26",
+        "code": "ola_kontrakt_304"
+      },
+      {
+        "uuid": "33b78a3c-a3ce-7e26-73d7-29895d078a4f",
+        "degree": 2,
+        "name": "Rámcová zmluva Telekomunikačné služby, Dodatok č. 2",
+        "code": "ola_kontrakt_305"
+      },
+      {
+        "uuid": "51e44460-cea9-43cb-12b4-d8895932fbc8",
+        "degree": 2,
+        "name": "Zmluva o podpore prevádzky, údržbe a rozvoji informačného systému bezpečnostného monitorovacieho pracoviska MZVEZ SR",
+        "code": "ola_kontrakt_384"
+      },
+      {
+        "uuid": "39faa3ce-8afd-4486-9644-752e851d763e",
+        "degree": 2,
+        "name": "Realizačná zmluva č. SVO-RVO2-2024/000695-006 uzatvorená podľa čl. III Rámcovej dohody o poskytovaní poradenských služieb v oblasti auditu č. OVO2-2020/000354 6 zo 6 zo dňa 14. 07. 2020",
+        "code": "ola_kontrakt_436"
+      },
+      {
+        "uuid": "38ff4c79-f917-a68f-6b74-062640f390d7",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb - Service Level Agreement (SLA)",
+        "code": "ola_kontrakt_11"
+      },
+      {
+        "uuid": "4688069d-77d6-1f43-fef8-fe17b333aaeb",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní servisných služieb - Service Level Agreement (SLA) č. MS/66/2015-95",
+        "code": "ola_kontrakt_12"
+      },
+      {
+        "uuid": "abe972cc-50df-e763-ad5f-ec8ea4d1981d",
+        "degree": 1,
+        "name": "Integračný SLA kontrakt Elektronické služby spoločných modulov ÚPVS a prístupových komponentov a Elektronické služby Štatistického úradu SR",
+        "code": "ola_kontrakt_14"
+      },
+      {
+        "uuid": "eb97d57f-006a-1b74-c3f0-3301f9fcc07c",
+        "degree": 1,
+        "name": "Integračný SLA kontrakt Register adries a Register a identifikátor právnických osôb a podnikateľov",
+        "code": "ola_kontrakt_15"
+      },
+      {
+        "uuid": "9947c551-baa7-591e-b6d8-955e55ced0c2",
+        "degree": 1,
+        "name": "Integračný SLA kontrakt Register fyzických osôb a Register a identifikátor právnických osôb a podnikateľov",
+        "code": "ola_kontrakt_16"
+      },
+      {
+        "uuid": "d07c957c-81db-a746-6206-5e0aa20f60ca",
+        "degree": 1,
+        "name": "Integračný SLA kontrakt Elektronické služby spoločných modulov ÚPVS a prístupových komponentov a Register a identifikátor právnických osôb a podnikateľov",
+        "code": "ola_kontrakt_17"
+      },
+      {
+        "uuid": "d21a280b-4108-9746-1693-a180bfc77fb8",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní systémovej a aplikačnej podpory Informačnému systému Registra úpadcov (IS RÚ)",
+        "code": "ola_kontrakt_31"
+      },
+      {
+        "uuid": "ff26b4ef-d071-9e58-7df3-779a3cf1a7ca",
+        "degree": 1,
+        "name": "Zmluva o servise softwarových aplikácií",
+        "code": "ola_kontrakt_32"
+      },
+      {
+        "uuid": "59ee6101-847e-0758-487a-85d475bb40b0",
+        "degree": 1,
+        "name": "Dodatok č. 3 k Zmluve o servise softwarových aplikácií",
+        "code": "ola_kontrakt_33"
+      },
+      {
+        "uuid": "9c8da2d4-5f76-5c99-c794-af342868d7d3",
+        "degree": 1,
+        "name": "Dodatok č. 3 k Zmluve o servise softwarových aplikácií",
+        "code": "ola_kontrakt_34"
+      },
+      {
+        "uuid": "03d5bd09-ff41-ca34-eef0-6131aa22b197",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní systémovej a aplikačnej podpory Informačného systému aplikačnej architektúry a bezpečnostnej infraštruktúry (IS BAI)",
+        "code": "ola_kontrakt_35"
+      },
+      {
+        "uuid": "7a71d68d-11b3-b5a9-ef88-77e018b04c7c",
+        "degree": 1,
+        "name": "Zmluva na poskytovanie podporných služieb",
+        "code": "ola_kontrakt_38"
+      },
+      {
+        "uuid": "2e9af6eb-158f-9940-5b67-bc76785ed740",
+        "degree": 1,
+        "name": "Dodatok č. 4 k Zmluve na poskytovanie podporných služieb",
+        "code": "ola_kontrakt_39"
+      },
+      {
+        "uuid": "4a5b4a0c-c4df-9348-2d19-5bba3c82df24",
+        "degree": 1,
+        "name": "Dodatok č. 3 k Zmluve o poskytovaní servisných služieb - Service Level Agreement (SLA) č. MS/66/2015-95",
+        "code": "ola_kontrakt_40"
+      },
+      {
+        "uuid": "eeaa14dd-5023-f4ae-7d7d-5c1517fcb07f",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní systémovej a aplikačnej podpory Informačného systému Portál MS SR a eBox (IS PeB)",
+        "code": "ola_kontrakt_41"
+      },
+      {
+        "uuid": "8945332d-7735-14bc-8e11-97c57f85b185",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní systémovej a aplikačnej podpory Informačného systému Portál MS SR a eBox (IS PeB)",
+        "code": "ola_kontrakt_42"
+      },
+      {
+        "uuid": "4094058c-18b0-1dc6-69c2-6e6bb32d69da",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní systémovej a aplikačnej podpory Informačného systému Rozvoj elektronických služieb súdnictva (IS RESS)",
+        "code": "ola_kontrakt_44"
+      },
+      {
+        "uuid": "54341886-93b0-a489-3871-ca124f2a5d1f",
+        "degree": 1,
+        "name": "Dodatok č. 4 ku zmluve č. 3029060 uzavretej dňa 18.6.2009",
+        "code": "ola_kontrakt_46"
+      },
+      {
+        "uuid": "4fb4110c-0c5f-296b-68e3-7fd038b7b85f",
+        "degree": 1,
+        "name": "Zmluva o poskytnutí užívacích práv k službe systému ASPI",
+        "code": "ola_kontrakt_47"
+      },
+      {
+        "uuid": "55abd1ac-35aa-9bd5-a0ad-0432f2946297",
+        "degree": 1,
+        "name": "ZMLUVA č. IU/2019/70181 o poskytovaní podporných služieb v oblasti IKT",
+        "code": "ola_kontrakt_48"
+      },
+      {
+        "uuid": "5f85d371-6712-4118-387a-9b395b0199f1",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ VEREJNÝCH SLUŽIEB",
+        "code": "ola_kontrakt_49"
+      },
+      {
+        "uuid": "e2959515-f5f0-b375-b9fb-c0046315ba1c",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb na zabezpečenie udržateľnosti Informačného systému Elektronizácie vzdelávacieho systému regionálneho školstva č. 0399/2017",
+        "code": "ola_kontrakt_51"
+      },
+      {
+        "uuid": "f0ae1c7b-7b46-0e3f-ee31-c5ad0b29e46e",
+        "degree": 1,
+        "name": "Dohoda o výkone správy a údržby Ekonomického informačného systému",
+        "code": "ola_kontrakt_52"
+      },
+      {
+        "uuid": "ddf33eb6-c4b1-8789-ac0e-4d5560795e5f",
+        "degree": 1,
+        "name": "Zmluva o službách a licenčná zmluva č. 1030/2015",
+        "code": "ola_kontrakt_53"
+      },
+      {
+        "uuid": "3442a793-c73a-15f2-171b-0c7e7a31de9a",
+        "degree": 1,
+        "name": "Dodatok č. 5 k Zmluve o poskytovaní servisných služieb na zabezpečenie prevádzky, údržby a aktualizácie rezortného informačného systému č. 0396/2015",
+        "code": "ola_kontrakt_54"
+      },
+      {
+        "uuid": "b82086ca-0281-09e1-fc0e-5bb9caa9c63b",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb na zabezpečenie prevádzky, údržby a aktualizácie Rezortného informačného systému",
+        "code": "ola_kontrakt_55"
+      },
+      {
+        "uuid": "a98f72d1-7858-1d0b-4474-b3e0609d7ad2",
+        "degree": 1,
+        "name": "Servisná zmluva o poskytovaní systémovej, aplikačnej podpory a rozvoja Centrálneho finančného informačného systému pre verejné vysoké školy (IS SOFIA)",
+        "code": "ola_kontrakt_56"
+      },
+      {
+        "uuid": "9a5c07ed-772d-4f49-bd93-48153ba6c8d5",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb spojených s prevádzkou aplikácií č. 0846/2016",
+        "code": "ola_kontrakt_57"
+      },
+      {
+        "uuid": "d3b67d29-1231-0456-10fd-6ee3cac3c61c",
+        "degree": 1,
+        "name": "Zmluva o dielo č. P_13/2010",
+        "code": "ola_kontrakt_58"
+      },
+      {
+        "uuid": "4514a98f-cb56-7b5a-1862-324c950087c1",
+        "degree": 1,
+        "name": "Zmluva o dielo č. 175/2008/ZODH/ZA",
+        "code": "ola_kontrakt_60"
+      },
+      {
+        "uuid": "33e7c634-2b08-e1dd-c970-92441f1a77e3",
+        "degree": 1,
+        "name": "Zmluva o dielo č. 8/2017",
+        "code": "ola_kontrakt_62"
+      },
+      {
+        "uuid": "73f104c6-b1a7-cc96-3738-781fe81d2688",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní aplikačnej podpory pre IS pre SŠP",
+        "code": "ola_kontrakt_69"
+      },
+      {
+        "uuid": "9af7c605-614d-8b51-48b6-54689eb5dd54",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb aplikačnej podpory a rozvoja informačného systému účtovníctva fondov (ISUF)",
+        "code": "ola_kontrakt_71"
+      },
+      {
+        "uuid": "5bd5d4b7-6d12-4f04-505a-d318d88db556",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb aplikačnej podpory a rozvoja Rozpočtového informačného systému (RIS)",
+        "code": "ola_kontrakt_72"
+      },
+      {
+        "uuid": "9349cb43-66d3-d7ab-563b-dbe0851d7468",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb podpory a rozvoja Dokumentačného systému (DKS)",
+        "code": "ola_kontrakt_73"
+      },
+      {
+        "uuid": "2a027262-6116-9105-2fd7-4e6ae6ce6edf",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní podporných služieb- \"Underpinning Contract\" pre zabezpečenie prevádzky informačných systémov ISZI a MIS NCZI",
+        "code": "ola_kontrakt_161"
+      },
+      {
+        "uuid": "be5c3dd4-23f6-3dc8-82d9-0961b9e502c0",
+        "degree": 1,
+        "name": "Zmluva č. 347/OMIS/2019 o poskytovaní servisných služieb – Service Level Agreement (SLA)",
+        "code": "ola_kontrakt_164"
+      },
+      {
+        "uuid": "2821f1a4-4ecc-f204-2175-dac92ba9a0c9",
+        "degree": 1,
+        "name": "Zmluva o podpore prevádzky, údržbe a rozvoji informačného systému „Národný vízový  informačný systém“",
+        "code": "ola_kontrakt_80"
+      },
+      {
+        "uuid": "f14cf193-3fd4-ae3c-b5b7-373cb700fadf",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb č. 55/2018/1.16.2",
+        "code": "ola_kontrakt_82"
+      },
+      {
+        "uuid": "6d0ae46e-e537-9876-13c3-14be269a475f",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní technicko-prevádzkovej podpory a služieb",
+        "code": "ola_kontrakt_84"
+      },
+      {
+        "uuid": "746620bb-df84-ab7a-5735-fe3fcb6c5c21",
+        "degree": 1,
+        "name": "Licenčná zmluva č. 40280008",
+        "code": "ola_kontrakt_85"
+      },
+      {
+        "uuid": "fabcd1c4-d8cb-c171-82b1-4dd45a634c63",
+        "degree": 1,
+        "name": "Servisní smlouva",
+        "code": "ola_kontrakt_120"
+      },
+      {
+        "uuid": "2ad5c3cd-4f86-0ba9-913e-71268f9de233",
+        "degree": 1,
+        "name": "Licenčná zmluva a Zmluva o poskytnutí služieb",
+        "code": "ola_kontrakt_122"
+      },
+      {
+        "uuid": "2f26e641-2236-b8e4-6e99-053f16c33ea1",
+        "degree": 1,
+        "name": "Zmluva o nájme aplikačného vybavenia",
+        "code": "ola_kontrakt_86"
+      },
+      {
+        "uuid": "9bd45674-7ed3-f59d-97c1-511a3d157019",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb digitálnej kancelárie",
+        "code": "ola_kontrakt_87"
+      },
+      {
+        "uuid": "16fd4ec5-4077-5419-2d3e-6b038956dd33",
+        "degree": 1,
+        "name": "Implementácia informačného systému SOFTIP PROFIT",
+        "code": "ola_kontrakt_88"
+      },
+      {
+        "uuid": "91ccbd15-4979-b04e-7217-ddce47275534",
+        "degree": 1,
+        "name": "Kúpna zmluva na dodávku multilicencie programového vybavenia",
+        "code": "ola_kontrakt_89"
+      },
+      {
+        "uuid": "1845d075-238a-9562-d3c6-3037c236c7b5",
+        "degree": 1,
+        "name": "Servisná zmluva č. 1/2019 na zabezpečenie servisnej podpory informačného systému SREP",
+        "code": "ola_kontrakt_90"
+      },
+      {
+        "uuid": "474e96a8-dc88-94b4-f764-b7cd2e649fdc",
+        "degree": 1,
+        "name": "Dodatok č. 2 k licenčnej zmluve č. 40281101 uzavretej dňa 25.06.2008",
+        "code": "ola_kontrakt_91"
+      },
+      {
+        "uuid": "54152256-5e74-10b2-0e0e-027380623c79",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní vývojovej podpory APV a servisných služieb",
+        "code": "ola_kontrakt_92"
+      },
+      {
+        "uuid": "4b77c5b6-6df4-6d89-13bd-87166a63b788",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb",
+        "code": "ola_kontrakt_93"
+      },
+      {
+        "uuid": "c0a0be41-aca4-1ed5-7eed-06b830e74129",
+        "degree": 1,
+        "name": "Servisná údržba HIS v DB - systéme Ingres",
+        "code": "ola_kontrakt_94"
+      },
+      {
+        "uuid": "d33484ed-80ce-2241-0429-3858592f696e",
+        "degree": 1,
+        "name": "Zmluva na zabezpečenie podpory prevádzky Národného Emisného Informačného Systému",
+        "code": "ola_kontrakt_95"
+      },
+      {
+        "uuid": "e3a823f5-8e22-786e-01c2-8a2ea9af9216",
+        "degree": 1,
+        "name": "Zmluva o údržbe, servise a podpore preádzky systému NUNTIO",
+        "code": "ola_kontrakt_96"
+      },
+      {
+        "uuid": "cf97890e-de6e-70e9-e2c7-4e3a96f252e6",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb",
+        "code": "ola_kontrakt_97"
+      },
+      {
+        "uuid": "c1353f57-63f5-271b-6ac0-2a89a1996714",
+        "degree": 1,
+        "name": "Zmluva: Dodávka aktualizácií softvéru a podpora a údržba",
+        "code": "ola_kontrakt_98"
+      },
+      {
+        "uuid": "2988f445-c15e-6a1f-9e0a-707f4f8f5c82",
+        "degree": 1,
+        "name": "Zmluva: Dodávka aktualizácií softvéru a podpora a údržba",
+        "code": "ola_kontrakt_99"
+      },
+      {
+        "uuid": "d31012f6-03e4-4691-8872-c4ecf3118bbc",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb servisu a prevádzky operatívneho informačného systému HIPS v odbore Hydrologické predpovede a výstrahy a strediskách HIPS SHMÚ",
+        "code": "ola_kontrakt_100"
+      },
+      {
+        "uuid": "1b471f66-47c9-94e5-4242-049dfec8992d",
+        "degree": 1,
+        "name": "Servis - KMIS",
+        "code": "ola_kontrakt_101"
+      },
+      {
+        "uuid": "a6144475-6e7a-afeb-2bf2-1f8ad3daa712",
+        "degree": 1,
+        "name": "Dodatok č.1/2015 k Zmluve o dielo zo dňa 25.10.2015",
+        "code": "ola_kontrakt_102"
+      },
+      {
+        "uuid": "f4e53e6b-bbb6-2efa-a8e7-908fe727836d",
+        "degree": 1,
+        "name": "Zákaznícka zmluva č. 55/2018 o poskytovaní produktov a služieb elektronických systémov",
+        "code": "ola_kontrakt_103"
+      },
+      {
+        "uuid": "2871e69f-5b6e-0623-b483-f1e72fc0b1a5",
+        "degree": 1,
+        "name": "Dohoda č. 29/2019 o ukončení Prevádzkovej servisnej zmluvy č. 1/2008/SIŽP zo dňa 25.09.2008 v znení neskorších dodatkov",
+        "code": "ola_kontrakt_104"
+      },
+      {
+        "uuid": "faba98e9-bbbd-6ae3-5735-3418712cce6a",
+        "degree": 1,
+        "name": "Zmluva o dielo č.157/2019",
+        "code": "ola_kontrakt_105"
+      },
+      {
+        "uuid": "dda0a36e-2695-df20-f0bb-a92c7b61a0ae",
+        "degree": 1,
+        "name": "Zmluva o vytvorení diela č:SAŽP CEI/2012/130",
+        "code": "ola_kontrakt_106"
+      },
+      {
+        "uuid": "a28eb8f6-754e-6478-09bc-e6a5d147a62a",
+        "degree": 1,
+        "name": "Zmluva o poskytnutí služieb v rámci programu Microsoft CSP",
+        "code": "ola_kontrakt_107"
+      },
+      {
+        "uuid": "62e935a7-d8e6-7d70-645c-408b722c54b1",
+        "degree": 1,
+        "name": "Kúpna zmluva",
+        "code": "ola_kontrakt_108"
+      },
+      {
+        "uuid": "dcfb4ae3-0381-ef67-f694-e911ef58809b",
+        "degree": 1,
+        "name": "Zmluva o dielo - Monitorovanie biotopov a druhov európskeho významu",
+        "code": "ola_kontrakt_109"
+      },
+      {
+        "uuid": "5f3505c8-1abc-92a1-9587-4a0257cf18e3",
+        "degree": 1,
+        "name": "Zmluva o servisných činnostiach - kamerový systém, zabezpečovací systém",
+        "code": "ola_kontrakt_110"
+      },
+      {
+        "uuid": "3be80da1-5742-0b25-6f70-569420e4bdd7",
+        "degree": 1,
+        "name": "Zmluva o dielo - Dochádzkový systém",
+        "code": "ola_kontrakt_111"
+      },
+      {
+        "uuid": "6c998e38-ec50-a9f8-dc64-0b91837a09e4",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb - Služby pre podporu a rozvoj produktu E-spis s príslušnými modulmi (e SCAN, ÚPVS adaptér, Outlook konektor)",
+        "code": "ola_kontrakt_112"
+      },
+      {
+        "uuid": "e19dda89-8f26-1f7b-dc6c-bd9edeeb53c5",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb - Služby pre podporu a rozvoj produktu E-spis s príslušnými modulmi (e SCAN, ÚPVS adaptér, Outlook konektor)",
+        "code": "ola_kontrakt_113"
+      },
+      {
+        "uuid": "458e3b70-63b6-73c9-9a09-7be4baa980c8",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb -Údržba, podpora a rozvoj informačného systému KIS SVP",
+        "code": "ola_kontrakt_114"
+      },
+      {
+        "uuid": "6daeadb6-6d77-d87f-5482-984c26861f2d",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb - údržba, podpora a rozvoj informačného systému TIS",
+        "code": "ola_kontrakt_115"
+      },
+      {
+        "uuid": "322e104c-bb19-a911-1add-dc7546053626",
+        "degree": 1,
+        "name": "Zmluva o poskytnutí služieb",
+        "code": "ola_kontrakt_116"
+      },
+      {
+        "uuid": "633efd27-f399-a4a0-4334-ad6ef3d42903",
+        "degree": 1,
+        "name": "Zmluva č. 12026033",
+        "code": "ola_kontrakt_117"
+      },
+      {
+        "uuid": "94e18af5-9a7c-b57b-b9f1-447061fe27c4",
+        "degree": 1,
+        "name": "Dodávka a inštalácia systému kontroly vstupov a evidencie dochádzky",
+        "code": "ola_kontrakt_118"
+      },
+      {
+        "uuid": "10fad0d1-be8a-e632-4101-30985343f011",
+        "degree": 1,
+        "name": "Servisná zmluva",
+        "code": "ola_kontrakt_119"
+      },
+      {
+        "uuid": "c4b44e90-ce1c-c3da-70ac-f6c4a2669b73",
+        "degree": 1,
+        "name": "Licenčná zmluva a Zmluva o poskytnutí služieb",
+        "code": "ola_kontrakt_121"
+      },
+      {
+        "uuid": "292ea391-e325-995d-21ed-44ec4586554e",
+        "degree": 1,
+        "name": "Licenčná zmluva a Zmluva o poskytnutí služieb",
+        "code": "ola_kontrakt_123"
+      },
+      {
+        "uuid": "492147b4-c293-3b4d-5305-01701b53fb38",
+        "degree": 1,
+        "name": "Dodatok č.2 k Zmluve o údržbe, servise a podpore systému NUNTIO č.15/2007 u predávajúceho a č. 148/2007/1.4 u kupujúceho",
+        "code": "ola_kontrakt_126"
+      },
+      {
+        "uuid": "d491d9f6-1f69-f6f0-a737-1c7fba3f240c",
+        "degree": 1,
+        "name": "Dodatok č. 4 k zmluve o údržbe a nových verziách informačného systému č. 104/2009/1.7 zo dňa 28.1.2009 v znení dodatkov č. 1,2,3",
+        "code": "ola_kontrakt_127"
+      },
+      {
+        "uuid": "bb42a80e-8599-c1a0-4cce-ccb3f9aa310a",
+        "degree": 1,
+        "name": "Sublicenčná zmluva",
+        "code": "ola_kontrakt_128"
+      },
+      {
+        "uuid": "ae76178c-5558-b1c0-6a3e-3a84fcb8aec5",
+        "degree": 1,
+        "name": "Zmluva o poskytnutí servisu a vzájomnej spolupráci",
+        "code": "ola_kontrakt_124"
+      },
+      {
+        "uuid": "d845499a-0aa4-a861-5dce-81cfd2132b9e",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb - ekonomický softver IS SOFTIP PROFIIT",
+        "code": "ola_kontrakt_125"
+      },
+      {
+        "uuid": "975cae8f-be7e-5b02-2356-38657b83f5d8",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ TECHNICKEJ PODPORY A ÚDRŽBY INFORMAČNÉHO SYSTÉMU REGISTER ADRIES",
+        "code": "ola_kontrakt_134"
+      },
+      {
+        "uuid": "c5064bdc-7e0e-f583-4eb5-2bbab556cf2a",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb aplikačnej podpory pre Centrálny konsolidačný systém (CKS)",
+        "code": "ola_kontrakt_136"
+      },
+      {
+        "uuid": "94a9eb26-9f78-2447-16b4-7d4f7ad91bc0",
+        "degree": 1,
+        "name": "Zmluva o technickej podpore prevádzky a rozvoja APV Portálu finančnej správy (APV PFS)",
+        "code": "ola_kontrakt_135"
+      },
+      {
+        "uuid": "3565d7cb-136c-ded2-ac76-ca724b6afc41",
+        "degree": 1,
+        "name": "Zmluva o zabezpečení údržby a SLA parametrov systému Centrálneho elektronického priečinka (IS CEP)",
+        "code": "ola_kontrakt_137"
+      },
+      {
+        "uuid": "cc60e9a5-9abe-e3e0-1491-e2df75eaf83f",
+        "degree": 1,
+        "name": "Zmluva o technickej podpore prevádzky a údržbe APV SYSNED a súvisiacich modulov",
+        "code": "ola_kontrakt_138"
+      },
+      {
+        "uuid": "807219bd-191f-951f-bec6-872a3db28578",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní podporných služieb-Underpinning contract pre zabezpečenie prevádzky Informačného systému ESZaESZaRFaRS",
+        "code": "ola_kontrakt_162"
+      },
+      {
+        "uuid": "004afd41-caaa-8890-632f-ffa108b3cc15",
+        "degree": 1,
+        "name": "Zmluva na vytvorenie informačného systému Register a identifikátor právnických osôb a podnikateľov",
+        "code": "ola_kontrakt_167"
+      },
+      {
+        "uuid": "8d79dc24-56d9-9840-a6cc-f8070f10f960",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní Servisných služieb jednotného informačného systému",
+        "code": "ola_kontrakt_143"
+      },
+      {
+        "uuid": "fb4dee11-0d3c-e58d-1557-e050424eebfb",
+        "degree": 1,
+        "name": "Dodatok č. 3 k Zmluve o dielo č. 201/D140/2014",
+        "code": "ola_kontrakt_147"
+      },
+      {
+        "uuid": "df2ae067-e2f6-b514-05ae-ba698fa8a5eb",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SLUŽBY ŠTANDARDNEJ PODPORY A ÚDRŽBY PROSTREDIA IKT INFRAŠTRUKTÚRY PRE IAAS, ČASŤ 1",
+        "code": "ola_kontrakt_148"
+      },
+      {
+        "uuid": "2d6c64aa-0203-18d0-8f67-71ed54e92fc1",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb systémovej a aplikačnej podpory informačného systému Centrálnej Správy Referenčných Údajov (IS CSRÚ)",
+        "code": "ola_kontrakt_189"
+      },
+      {
+        "uuid": "ec1fcb64-73d7-fb7b-76fb-382dff508590",
+        "degree": 1,
+        "name": "Dodatok č. 2 k Rámcovej dohode na poskytovanie služieb systémovej a aplikačnej podpory informačného systému Centrálnej Správy Referenčných Údajov (IS CSRÚ)",
+        "code": "ola_kontrakt_191"
+      },
+      {
+        "uuid": "f6499d58-c1c5-b206-3ca4-69e269b63498",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SLUŽBY ŠTANDARDNEJ PODPORY A ÚDRŽBY PROSTREDIA IKT INFRAŠTRUKTÚRY PRE IAAS, ČASŤ 2",
+        "code": "ola_kontrakt_150"
+      },
+      {
+        "uuid": "38fed277-e2cb-7e97-80b4-dbffdfbe2ded",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní technickej podpory",
+        "code": "ola_kontrakt_151"
+      },
+      {
+        "uuid": "69c8e922-6a41-ab35-1f0c-a78ba1b54fea",
+        "degree": 1,
+        "name": "Servisná zmluva č. 39/2016/110 na zabezpečenie servisnej podpory informačného systému IACS",
+        "code": "ola_kontrakt_166"
+      },
+      {
+        "uuid": "3ee93cb8-748c-28b9-e809-b5f220cb9076",
+        "degree": 1,
+        "name": "Zmluva na vytvorenie informačného systému Register a identifikátor právnických osôb a podnikateľov-duplicita",
+        "code": "ola_kontrakt_170"
+      },
+      {
+        "uuid": "ef1c306d-89f9-2d6a-8410-1fb210112920",
+        "degree": 1,
+        "name": "Dodatok č. 1 K Zmluve o poskytovaní servisných služieb – Service Level Agreement (SLA)",
+        "code": "ola_kontrakt_171"
+      },
+      {
+        "uuid": "6653fc0a-ee99-ea6b-5960-3f4df4a702d1",
+        "degree": 1,
+        "name": "Zmluva o elektronickom informačnom systéme pre prípravu, zber, štatistické spracovanie a disemináciu cenzových dát sčítania obyvateľov, domov a bytov 2021",
+        "code": "ola_kontrakt_172"
+      },
+      {
+        "uuid": "2adb98ca-6347-00e3-ff19-6897a0ef84ea",
+        "degree": 1,
+        "name": "Zmluva o poskytnutí služieb systémovej a aplikačnej podpory a rozvoja Informačného systému elektronického spracovania spisov a administratívnych procesov",
+        "code": "ola_kontrakt_207"
+      },
+      {
+        "uuid": "91e881b2-39bf-3ca1-1ae5-48fcf3b104bc",
+        "degree": 1,
+        "name": "Predmetom plnenia zmluvy je poskytovať podporné služby k IS INFOREG",
+        "code": "ola_kontrakt_173"
+      },
+      {
+        "uuid": "9a356edb-a1b9-93ed-6445-44c743f82cf0",
+        "degree": 1,
+        "name": "Zmluva k informačnému systému INFOREG",
+        "code": "ola_kontrakt_174"
+      },
+      {
+        "uuid": "54b099f5-40eb-d20a-42ef-a3e6510c0f82",
+        "degree": 1,
+        "name": "Dodatok č. 7 K Zmluve na úpravu informačných systémov a zabezpečenie služieb prevádzky zo dňa 27.04.2017",
+        "code": "ola_kontrakt_175"
+      },
+      {
+        "uuid": "d57f3ec4-89da-eafb-58d7-a29fb7c91031",
+        "degree": 1,
+        "name": "Dodatok č. 6 K Zmluve na úpravu informačných systémov a zabezpečenie služieb prevádzky zo dňa 27.04.2017",
+        "code": "ola_kontrakt_176"
+      },
+      {
+        "uuid": "49459c7f-53c4-71c0-77ed-bb65bb77281e",
+        "degree": 1,
+        "name": "Dodatok č. 5 k Zmluve na úpravu informačných systémov a zabezpečenie služieb ich prevádzky zo dňa 27.04.2017",
+        "code": "ola_kontrakt_177"
+      },
+      {
+        "uuid": "e414fdfa-03d3-dff0-0f1c-c937327240ef",
+        "degree": 1,
+        "name": "Dodatok č. 4 K Zmluve na úpravu informačných systémov a zabezpečenie služieb prevádzky zo dňa 27.04.2017",
+        "code": "ola_kontrakt_178"
+      },
+      {
+        "uuid": "97274d7e-12df-299c-60ed-d3dd4b8f72b4",
+        "degree": 1,
+        "name": "Dodatok č. 3 k Zmluve na úpravu informačných systémov a zabezpečenie služieb ich prevádzky zo dňa 27.04.2018",
+        "code": "ola_kontrakt_179"
+      },
+      {
+        "uuid": "ee882a08-ba77-d9b7-b05a-fff88a9e95fe",
+        "degree": 1,
+        "name": "Dodatok č. 2 k Zmluve na úpravu informačných systémov a zabezpečenie služieb ich prevádzky zo dňa 27.04.2017",
+        "code": "ola_kontrakt_180"
+      },
+      {
+        "uuid": "f4299644-7017-5a66-f546-9d526238e341",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve na úpravu informačných systémov a zabezpečenie služieb ich prevádzky zo dňa 27.04.2017",
+        "code": "ola_kontrakt_181"
+      },
+      {
+        "uuid": "ea325d17-d548-b21c-8fdd-941794c903a0",
+        "degree": 1,
+        "name": "Zmluva na úpravu informačných systémov a zabezpečenie služieb ich prevádzky",
+        "code": "ola_kontrakt_182"
+      },
+      {
+        "uuid": "f160d5c9-6f7e-eec9-b122-da197184189d",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní Servisných služieb jednotného informačného systému",
+        "code": "ola_kontrakt_186"
+      },
+      {
+        "uuid": "0d52454e-b251-db29-fc28-79aa538fbb94",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní Servisných služieb jednotného informačného systému",
+        "code": "ola_kontrakt_188"
+      },
+      {
+        "uuid": "9b606cba-e726-4627-42c1-beae7a97dbaa",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Rámcovej dohode na poskytovanie služieb systémovej a aplikačnej podpory informačného systému Centrálnej Správy Referenčných Údajov (IS CSRÚ)",
+        "code": "ola_kontrakt_193"
+      },
+      {
+        "uuid": "4896fd31-542b-1f5b-75f0-0039a0ee69b2",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb systémovej a aplikačnej podpory pre Metainformačný systém (MetaIS)",
+        "code": "ola_kontrakt_194"
+      },
+      {
+        "uuid": "43603f49-85e8-b4f0-c7fd-fdd6e430ca09",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Rámcovej dohode na poskytovanie služieb systémovej a aplikačnej podpory pre Metainformačný systém (MetaIS) č. 163/2018 zo dňa 27.4.2018",
+        "code": "ola_kontrakt_195"
+      },
+      {
+        "uuid": "87417af6-1dbc-241c-da2e-ea08fd2e40ff",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb systémovej a aplikačnej podpory informačného systému Integrovaných obslužných miest (IOM)",
+        "code": "ola_kontrakt_198"
+      },
+      {
+        "uuid": "076f301f-ceb6-157c-55bd-59d86a34ff17",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Rámcovej dohode na poskytovanie služieb systémovej a aplikačnej podpory informačného systému Integrovaných obslužných miest (IOM)",
+        "code": "ola_kontrakt_199"
+      },
+      {
+        "uuid": "df5afb52-4f77-9ccc-1507-2a2fb0f7c2a5",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní podporných služieb – Underpinningcontract pre zabezpečenie prevádzky Informačného systému ESZ a ESZ RF a RS na základe dohodnutých cieľových úrovní podporných služieb – ServiceLevelTarget zo dňa 16.11.2017",
+        "code": "ola_kontrakt_201"
+      },
+      {
+        "uuid": "dd270fb3-00a0-ec44-d963-b40346795fbe",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní servisných služieb-Service Level Agreement",
+        "code": "ola_kontrakt_202"
+      },
+      {
+        "uuid": "740fc3d8-0646-12be-3d5d-35e12e3722c5",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní podporných služieb pre zabezpečenie prevádzky informačného systému JRUZ",
+        "code": "ola_kontrakt_203"
+      },
+      {
+        "uuid": "35eaf23b-81d5-41cf-1fbc-8f5d96d66b4e",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní podpory k Asseco SPIN Health",
+        "code": "ola_kontrakt_204"
+      },
+      {
+        "uuid": "a5930fd0-457c-b7bc-e45c-0f78f539bae0",
+        "degree": 1,
+        "name": "Zhotoviť dielo Jednotný informačný systém v cestnej doprave - vykonávať údržbu diela a zabezpečovať podporu prevádzky - poskytnúť expertov podľa požiadaviek objednávateľa - poskytnúť školenia na vytvorené dielo",
+        "code": "ola_kontrakt_205"
+      },
+      {
+        "uuid": "07fcfd94-0f18-3f62-5d33-380918bc0df3",
+        "degree": 1,
+        "name": "ZMLUVA O DIELO a O POSKYTOVANÍ SLUŽIEB",
+        "code": "ola_kontrakt_211"
+      },
+      {
+        "uuid": "f5fbe7ea-05e7-c5ef-82b1-07b2b523e195",
+        "degree": 1,
+        "name": "Prevádzka informačného systému \"Digitálny tachograf\", dodávka a personalizácia čípových kariet do digitálnych tachografov",
+        "code": "ola_kontrakt_210"
+      },
+      {
+        "uuid": "38590fde-733b-dc4c-d25b-dd6af1c9f663",
+        "degree": 1,
+        "name": "Servisná zmluva č. 38/2016/110 na zabezpečenie servisnej podpory informačného systému AGIS",
+        "code": "ola_kontrakt_213"
+      },
+      {
+        "uuid": "6cef83d8-cd1c-dc89-21bf-923aa4a579c7",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb MK-25/2017/M",
+        "code": "ola_kontrakt_218"
+      },
+      {
+        "uuid": "c9826a7d-e7fb-7baa-b98e-a50aa40d2481",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb 223/2017",
+        "code": "ola_kontrakt_216"
+      },
+      {
+        "uuid": "7bf24a0b-4468-dd06-eef6-60b69021c8ad",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní servisných služieb 1-223/2017",
+        "code": "ola_kontrakt_217"
+      },
+      {
+        "uuid": "e0dccf5d-804d-bfe8-3730-6594c9c9e6d6",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb 22/ZOD/2016",
+        "code": "ola_kontrakt_219"
+      },
+      {
+        "uuid": "70de59ba-0a80-37d1-88b2-1a013c6f4f43",
+        "degree": 1,
+        "name": "Dodatok č. 1 k zmluve o dielo č. 201/D140/2014",
+        "code": "ola_kontrakt_220"
+      },
+      {
+        "uuid": "94ff8bcb-8057-4d91-6d2a-6e6c92990923",
+        "degree": 1,
+        "name": "Dodatok č. 2 k Zmluve o dielo č. 201/D140/2014",
+        "code": "ola_kontrakt_221"
+      },
+      {
+        "uuid": "265c830e-da67-3187-5d32-3f4b7c23e67a",
+        "degree": 1,
+        "name": "Úprava informačného systému \"digitálny tachograf\", prevádzka a údržba systému",
+        "code": "ola_kontrakt_225"
+      },
+      {
+        "uuid": "db2100c8-08e5-31da-ce0a-333c78cd69ba",
+        "degree": 1,
+        "name": "Dohoda o výkone správy a údržby Ekonomického informačného systému",
+        "code": "ola_kontrakt_234"
+      },
+      {
+        "uuid": "cb541128-59bb-8938-4a9b-8008e19365b2",
+        "degree": 1,
+        "name": "Zmluva o službách technickej podpory a údržby a službách aplikačného rozvoja pre Iné druhy dotačných schém",
+        "code": "ola_kontrakt_235"
+      },
+      {
+        "uuid": "ee477a79-0adc-d51e-2d3f-c56a393c2d4c",
+        "degree": 1,
+        "name": "Dodatok č. 39 k Zmluve o poskytovaní servisu a údržby na programové vybavenie DWH a o technickej podpore na SW produkty pre DWH číslo ZD 20020007",
+        "code": "ola_kontrakt_228"
+      },
+      {
+        "uuid": "4db84acd-269e-23bc-0cdf-8202be112d6e",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní aplikačnej podpory IS ESO",
+        "code": "ola_kontrakt_229"
+      },
+      {
+        "uuid": "166c6040-a661-613f-f123-b14c4b2b5e7e",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb infraštruktúry verejných kľúčov pre IS e - kasa",
+        "code": "ola_kontrakt_230"
+      },
+      {
+        "uuid": "2a9e2287-bb2d-e243-cd50-c70d0f31c1de",
+        "degree": 1,
+        "name": "Dodatok č.12 uzavretý v zmysle Zmluvy č.915/34001_04 zo dňa 1.12.2004",
+        "code": "ola_kontrakt_231"
+      },
+      {
+        "uuid": "d6346506-a052-95a6-6402-d40d1261eabc",
+        "degree": 1,
+        "name": "Dodatok č.32 k Zmluve o poskytovaní servisu a údržby na programové vybavenie DWH a o technickej podpore na SW produkty pre DWH číslo ZD20020007",
+        "code": "ola_kontrakt_232"
+      },
+      {
+        "uuid": "aafbe661-9254-1b99-db0c-e5c72b4b69c5",
+        "degree": 1,
+        "name": "podpora prevádzky IS pre kontrolorov",
+        "code": "ola_kontrakt_233"
+      },
+      {
+        "uuid": "38bcc8fe-b169-6c35-3f12-611905420fdf",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb aplikačnej podpory a rozvoja informačného systému účtovníctva fondov (ISUF)",
+        "code": "ola_kontrakt_237"
+      },
+      {
+        "uuid": "8fa82d95-d9b3-59bb-39d0-5c53b87d4ad6",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb - Service Level Agreement (SLA)",
+        "code": "ola_kontrakt_244"
+      },
+      {
+        "uuid": "1c8f7d35-62fe-a5c0-4d44-3901c132dfe6",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb – APP1",
+        "code": "ola_kontrakt_240"
+      },
+      {
+        "uuid": "b51c43d7-2b4a-7501-d060-c48e834835f9",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb – APP2",
+        "code": "ola_kontrakt_241"
+      },
+      {
+        "uuid": "96648902-97d0-e9f5-7e11-484e6ac1d858",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb – APP2",
+        "code": "ola_kontrakt_243"
+      },
+      {
+        "uuid": "92eacbfa-5443-e455-55d2-c22d815e89f3",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb – APP1",
+        "code": "ola_kontrakt_239"
+      },
+      {
+        "uuid": "cd3b1835-3fd6-d988-d5dc-89f67865eb14",
+        "degree": 1,
+        "name": "Integrovaný informačný systém MH SR - Zmluva o poskytovaní servisných služieb – Service-Level Agreement",
+        "code": "ola_kontrakt_247"
+      },
+      {
+        "uuid": "d7c589e3-aeae-a358-a7f0-57b708b261b4",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb technickej podpory a rozvoja pre AIS DP",
+        "code": "ola_kontrakt_249"
+      },
+      {
+        "uuid": "43cf4537-e605-3b5a-2b4f-a4ccfdda1061",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb pri údržbe, technickej podpore, implementácii zmien a realizácii rozvoja APV podporujúceho výber poistného na sociálne poistenie",
+        "code": "ola_kontrakt_250"
+      },
+      {
+        "uuid": "4ae693d5-ba70-375e-8b10-2f3358dc7149",
+        "degree": 1,
+        "name": "Zmluva o dielo na úpravu systémov na spracovanie agendy PvN a GP, ich integrovanie do architektúry IS SP a poskytovanie technickej podpory.",
+        "code": "ola_kontrakt_254"
+      },
+      {
+        "uuid": "55f72703-1954-4ae2-7320-22eff9281c45",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb pri podpore, údržbe a rozvoji APV pre ASSR.",
+        "code": "ola_kontrakt_251"
+      },
+      {
+        "uuid": "8d00e6d7-6acf-fc6b-ddb7-13d4eb3fc4d6",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb technickej podpory pre aplikačné programové vybavenie Centrálny dochádzkový systém",
+        "code": "ola_kontrakt_252"
+      },
+      {
+        "uuid": "2726e83c-238a-fa43-87aa-22a9803323d7",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb technickej podpory a rozvoja pre Informačný systém nemocenského poistenia a lekárskej posudkovej činnosti a poskytovaní služieb technickej podpory pre licenčné softvérové vybavenie SYRIUS",
+        "code": "ola_kontrakt_253"
+      },
+      {
+        "uuid": "0c95c970-7980-ca49-89f2-2bdb8d26c04b",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb technickej podpory a rozvoja informačného systému Elektronického komunikačného prostredia.",
+        "code": "ola_kontrakt_260"
+      },
+      {
+        "uuid": "9f9b2ad6-0e7a-e0ca-d02d-a5ebdb20c10c",
+        "degree": 1,
+        "name": "Zmluva na údržbu, podporu, zmeny a rozvoj aplikačného programového vybavenia podporujúceho úrazové poistenie.",
+        "code": "ola_kontrakt_261"
+      },
+      {
+        "uuid": "b3615748-833c-87f1-a6ba-748aaba33fee",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb uzatvorená podľa § 269 ods. 2 Obchodného zákonníka - (Operačný program informatizácia spoločnosti)",
+        "code": "ola_kontrakt_257"
+      },
+      {
+        "uuid": "1253ece8-5e13-51f8-00d9-8b3261c749b5",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb uzatvorená podľa § 269 ods. 2 Obchodného zákonníka - (Operačný program informatizácia spoločnosti)",
+        "code": "ola_kontrakt_258"
+      },
+      {
+        "uuid": "6ce58deb-6aea-914a-d626-6c8a35dfdd9a",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb uzatvorená podľa § 269 ods. 2 Obchodného zákonníka - (Operačný program informatizácia spoločnosti)",
+        "code": "ola_kontrakt_259"
+      },
+      {
+        "uuid": "ce865ee5-b3e8-b275-4537-735716636e1c",
+        "degree": 1,
+        "name": "Zmluva o službách č. 330/OMIS/2015 poskytovaných pri prevádzke, údržbe, metodicko-technickej podpore a vývoji aplikačného programového vybavenia Informačného systému Integrovaného systému typových pozícií",
+        "code": "ola_kontrakt_263"
+      },
+      {
+        "uuid": "a0ea404b-ca5a-2ead-d878-03d9f6d88631",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní telekomunikačných služieb a využití dátovej siete SWAN uzavretá v zmysle § 43 zák. č. 610/2003 Z.z. o elektronických komunikáciách a v zmysle § 269, ods. 2 Obch. zákonníka",
+        "code": "ola_kontrakt_264"
+      },
+      {
+        "uuid": "f9006d17-1a75-ddea-1d05-4dcbc9950ef3",
+        "degree": 1,
+        "name": "Servisná zmluva č. 111/2015/ZODH/ZA uzatvorená podľa § 269 ods. 2 Obchodného zákonníka č. 513/1991 Zb.",
+        "code": "ola_kontrakt_270"
+      },
+      {
+        "uuid": "900a4bb4-277f-6a73-c3b1-284902a56c44",
+        "degree": 1,
+        "name": "Dodatok č. 2 k Servisnej zmluve č. 111/2015/ZODH/ZA uzatvorená podľa § 269 ods. 2 Obchodného zákonníka č. 513/1991 Zb.",
+        "code": "ola_kontrakt_272"
+      },
+      {
+        "uuid": "cb23e2d9-1c7a-386d-58e6-cbfe4895f912",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní vývojovej podpory a servisných služieb na aplikačné programové vybavenie v rámci informačného systému Zboru väzenskej a justičnej stráže uzatvorená medzi zmluvnými stranami podľa § 536 a nasl. Obchodného zákonníka v znení neskorších predpisov",
+        "code": "ola_kontrakt_273"
+      },
+      {
+        "uuid": "114c12fd-4607-2e8c-6c44-da824d953490",
+        "degree": 1,
+        "name": "Dodatok č. 1 Zmluvy o poskytovaní vývojovej podpory a servisných služieb na aplikačné programové vybavenie v rámci informačného systému Zboru väzenskej a justičnej stráže uzatvorená medzi zmluvnými stranami podľa § 536 a nasl. Obchodného zákonníka v znení neskorších predpisov",
+        "code": "ola_kontrakt_274"
+      },
+      {
+        "uuid": "c9d538cb-ac5f-0e8a-fd97-1783b000068b",
+        "degree": 1,
+        "name": "Dodatok č. 4 k Zmluve o dielo číslo 201/D140/2014",
+        "code": "ola_kontrakt_268"
+      },
+      {
+        "uuid": "2a345bdc-9a1e-3904-d0bd-ba5bef8bf486",
+        "degree": 1,
+        "name": "Zmluva na poskytnutie služieb",
+        "code": "ola_kontrakt_280"
+      },
+      {
+        "uuid": "d7fbf957-ea33-6e0f-d601-19cebc65368f",
+        "degree": 1,
+        "name": "Zmluva o dielo na Kontrolórsky informačný systém NKÚ SR  (KIS NKÚ SR) a poskytovanie služieb podpory jeho prevádzky",
+        "code": "ola_kontrakt_282"
+      },
+      {
+        "uuid": "61fba492-1b10-63d5-59a7-d67294bdb94c",
+        "degree": 1,
+        "name": "Zmluva o dielo na Rozvoj Kontrolórskeho informačného systému NKÚ SR (KIS NKÚ SR) a poskytovanie služieb podpory jeho prevádzky",
+        "code": "ola_kontrakt_283"
+      },
+      {
+        "uuid": "9858c3fe-4e22-74a0-a31b-ddc9ee329d23",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb systémovej a aplikačnej podpory, rozvoja a údržby Informačného systému elektronickej správy registratúry (IS ASR)",
+        "code": "ola_kontrakt_285"
+      },
+      {
+        "uuid": "b89b2088-caec-8c86-160f-18a7d762ffb0",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní podpory webového sídla",
+        "code": "ola_kontrakt_287"
+      },
+      {
+        "uuid": "acf2d767-95d4-d71d-d980-3f277ed1a980",
+        "degree": 1,
+        "name": "Čiastková zmluva č. 5 - Zmluva o poskytovaní služieb",
+        "code": "ola_kontrakt_289"
+      },
+      {
+        "uuid": "6b48f2f1-42ca-d5c3-6456-893487762906",
+        "degree": 1,
+        "name": "ZMLUVA O SLUŽBÁCH ZÁKAZNÍKOVI, DODATOK 13",
+        "code": "ola_kontrakt_293"
+      },
+      {
+        "uuid": "a04762a1-1421-194b-be50-4ada63a36724",
+        "degree": 1,
+        "name": "ZMLUVA O ZABEZPEČOVANÍ  PREVÁDZKY, DODATOK 12",
+        "code": "ola_kontrakt_294"
+      },
+      {
+        "uuid": "a76cf973-1424-9864-8a7a-362e20ba0905",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb, Dodatok č.7",
+        "code": "ola_kontrakt_295"
+      },
+      {
+        "uuid": "16bdc337-3404-ea61-95b6-c5dad578bf56",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SLUŽIEB podpory prevádzky",
+        "code": "ola_kontrakt_296"
+      },
+      {
+        "uuid": "8cfee0da-f1aa-e464-f520-6638dcd06504",
+        "degree": 1,
+        "name": "Zmluva o dielo pre projekt RIS v súvislosti s prevádzkou a rozvojom centra KTI a CPU, Dodatok č. 10",
+        "code": "ola_kontrakt_297"
+      },
+      {
+        "uuid": "9f3ee871-3f2d-c3c8-bb2b-5451932d0bd9",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SLUŽIEB, Dodatok č. 1",
+        "code": "ola_kontrakt_298"
+      },
+      {
+        "uuid": "cd4561aa-7003-9122-78db-e039213fb0cb",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb",
+        "code": "ola_kontrakt_301"
+      },
+      {
+        "uuid": "22e3f450-3b30-72eb-15ca-7d2da6b82f22",
+        "degree": 1,
+        "name": "ZMLUVA NA DODÁVKU PROGRAMOVÉHO VYBAVENIA, SLUŽIEB PODPORY A PREVÁDZKY",
+        "code": "ola_kontrakt_302"
+      },
+      {
+        "uuid": "7ec8e42b-8fa3-5b14-7db6-6388ed84b4ca",
+        "degree": 1,
+        "name": "zmluva č. 915/34002_03 - dodatok č. 20",
+        "code": "ola_kontrakt_306"
+      },
+      {
+        "uuid": "42515001-f784-1ed5-8a1d-4a2c60053f12",
+        "degree": 1,
+        "name": "Zmluva ZD20020007 Dodatokč. 41",
+        "code": "ola_kontrakt_307"
+      },
+      {
+        "uuid": "81caae28-c080-5d8f-cecc-55ee8b4dba2c",
+        "degree": 1,
+        "name": "Zmluva  o dielo zo dňa 30.08.2010 dodatok č. 5",
+        "code": "ola_kontrakt_308"
+      },
+      {
+        "uuid": "847236f8-9e8b-d326-8564-09a8f0cc144e",
+        "degree": 1,
+        "name": "Zmluva o spolupráci a technickej podpore",
+        "code": "ola_kontrakt_309"
+      },
+      {
+        "uuid": "a8a0e6ff-baa6-0cda-996a-71122bb0669e",
+        "degree": 1,
+        "name": "zmluva č. 915/34001_04 - dodatok č. 12  2",
+        "code": "ola_kontrakt_310"
+      },
+      {
+        "uuid": "2b071c72-b904-4e77-053d-24477c15a2f1",
+        "degree": 1,
+        "name": "Zmluva o technickej podpore prevádzky a údržbe APV SYSNED a súvisiacich modulov",
+        "code": "ola_kontrakt_311"
+      },
+      {
+        "uuid": "184083dc-5cad-4779-a0c1-c1abadb950e1",
+        "degree": 1,
+        "name": "Zmluva o technickej podpore prevádzky a údržbe APV SYSNED a súvisiacich modulov",
+        "code": "ola_kontrakt_312"
+      },
+      {
+        "uuid": "876801e9-4351-67a3-6ebc-d7e82f9d6ae3",
+        "degree": 1,
+        "name": "Zmluva o technickej podpore prevádzky a údržbe APV SYSNED a súvisiacich modulov",
+        "code": "ola_kontrakt_314"
+      },
+      {
+        "uuid": "f7dde39e-5777-017c-6e81-b937a243869f",
+        "degree": 1,
+        "name": "Zmluva o technickej podpore prevádzky a údržbe APV SYSNED a súvisiacich modulov",
+        "code": "ola_kontrakt_315"
+      },
+      {
+        "uuid": "8e8bbe2b-a74a-d893-2fc2-42321abce13f",
+        "degree": 1,
+        "name": "Zmluva o technickej podpore prevádzky a údržbe APV SYSNED a súvisiacich modulov",
+        "code": "ola_kontrakt_316"
+      },
+      {
+        "uuid": "3e7f5302-7ae3-e12e-3d33-71efa8044c41",
+        "degree": 1,
+        "name": "Zmluva ZD20020007 dodatok č.41",
+        "code": "ola_kontrakt_317"
+      },
+      {
+        "uuid": "82faa056-4d68-f76b-3eb3-67fa504c5d4a",
+        "degree": 1,
+        "name": "Zmluva č. kZč.10/DIT/2003 dodatok č.16",
+        "code": "ola_kontrakt_318"
+      },
+      {
+        "uuid": "907e1f6a-f1e7-1130-60ed-d5e2ad750962",
+        "degree": 1,
+        "name": "dodatok č. 9  Zmluva o technickej podpore prevádzky a rozvoja APV Portálu finančnej správy (APV PFS)",
+        "code": "ola_kontrakt_319"
+      },
+      {
+        "uuid": "1af3e051-60b0-8fec-5345-c014d0607bef",
+        "degree": 1,
+        "name": "Zmluva ZD20020007 Dodatok č. 42",
+        "code": "ola_kontrakt_321"
+      },
+      {
+        "uuid": "b89b419e-cc54-0f58-d8d7-61612da1a5ba",
+        "degree": 1,
+        "name": "Dodatok č.66 k Zmluve o Dielo č. 003621 zo dňa 15.01.2003",
+        "code": "ola_kontrakt_322"
+      },
+      {
+        "uuid": "272feb4f-77de-1375-4e47-b298c4760ec8",
+        "degree": 1,
+        "name": "Zmluva ZD20020007 dodatok č.41",
+        "code": "ola_kontrakt_323"
+      },
+      {
+        "uuid": "b709efd1-0661-7734-e16a-45d8676a8dfb",
+        "degree": 1,
+        "name": "Dodatok č.66 k Zmluve o Dielo č. 003621 zo dňa 15.01.2003",
+        "code": "ola_kontrakt_324"
+      },
+      {
+        "uuid": "3289fbb0-edca-e311-ac2f-c1ac4663c219",
+        "degree": 1,
+        "name": "Zmluva ZD20020007 dodatok č.41",
+        "code": "ola_kontrakt_325"
+      },
+      {
+        "uuid": "b1a74214-3359-1031-6cc9-5700d1431d6e",
+        "degree": 1,
+        "name": "Dodatok č.66 k Zmluve o Dielo č. 003621 zo dňa 15.01.2003",
+        "code": "ola_kontrakt_326"
+      },
+      {
+        "uuid": "56f85651-ba76-b181-fcb0-8edb18d0ff19",
+        "degree": 1,
+        "name": "Dodatok č.66 k Zmluve o Dielo č. 003621 zo dňa 15.01.2003",
+        "code": "ola_kontrakt_327"
+      },
+      {
+        "uuid": "bddf873f-2244-7b42-591b-6683eb2bbec9",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní aplikačnej podpory pre systémy Administratívnych centier",
+        "code": "ola_kontrakt_328"
+      },
+      {
+        "uuid": "c784aca6-3cc9-6f90-d948-23a042a78e1d",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb štandardnej podpory a údržby SW produktov",
+        "code": "ola_kontrakt_329"
+      },
+      {
+        "uuid": "08c8ed92-e187-fb1f-2c25-8b0f0c155585",
+        "degree": 1,
+        "name": "Servisná zmluva MS SOFT - Knižničný systém Clavius",
+        "code": "ola_kontrakt_330"
+      },
+      {
+        "uuid": "500d688f-9a83-ec7e-3c72-301e915b053e",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb podpory prevádzky a rozvoja RPO",
+        "code": "ola_kontrakt_332"
+      },
+      {
+        "uuid": "2f38864e-4aa3-174e-8c1f-0caa0e5a0333",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných služieb",
+        "code": "ola_kontrakt_334"
+      },
+      {
+        "uuid": "306476a7-d58b-16dc-4f2d-ded3f7ad318c",
+        "degree": 1,
+        "name": "Zmluva o elektronickom informačnom systéme pre prípravu, zber, štatistické spracovanie a disemináciu cenzových dát sčítania obyvateľov, domov a bytov 2021",
+        "code": "ola_kontrakt_335"
+      },
+      {
+        "uuid": "9d9be9fb-7b63-e11f-1096-a8b656976f87",
+        "degree": 1,
+        "name": "Dodatok č.1 k ZML1-2/2019-500",
+        "code": "ola_kontrakt_336"
+      },
+      {
+        "uuid": "7bd584fd-3e22-1adf-36fc-059c906a503f",
+        "degree": 1,
+        "name": "Zmluva o zabezpečení a poskytnutí prác a služieb k systému SlovRIS",
+        "code": "ola_kontrakt_337"
+      },
+      {
+        "uuid": "8e2568f7-f7d4-a66b-909c-99d530708729",
+        "degree": 1,
+        "name": "Zmluva o údržbe - údržba systému LS telcom",
+        "code": "ola_kontrakt_339"
+      },
+      {
+        "uuid": "af1f1a64-c001-99c8-ceff-8691f830e3ad",
+        "degree": 1,
+        "name": "ZMLUVA O DODANÍ A IMPLEMENTÁCII SOFTVÉRU A SLA (SERVICE LEVEL AGREEMENT)",
+        "code": "ola_kontrakt_340"
+      },
+      {
+        "uuid": "32fcf82f-7a28-917a-feae-e65f659bade9",
+        "degree": 1,
+        "name": "ZMLUVA O DODANÍ A IMPLEMENTÁCII SOFTVÉRU A SLA (SERVICE LEVEL AGREEMENT)",
+        "code": "ola_kontrakt_341"
+      },
+      {
+        "uuid": "869cd078-a283-195f-c72c-4338dc4e8f6f",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SLUŽIEB č. SZ/SNAS/2021/1",
+        "code": "ola_kontrakt_343"
+      },
+      {
+        "uuid": "26e91b84-5131-eea6-8112-dc9f70388460",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní systémovej a aplikačnej podpory Informačného systému Elektronický súdny spis",
+        "code": "ola_kontrakt_347"
+      },
+      {
+        "uuid": "da309478-cb19-a871-6e66-cd798b83b9e1",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní systémovej a aplikačnej podpory IS ESS č. MS/119/2020-95",
+        "code": "ola_kontrakt_348"
+      },
+      {
+        "uuid": "c29622c4-5eb5-06a8-0f68-c736861a88d5",
+        "degree": 1,
+        "name": "Integrácia Fabasoft na ÚPVS, servis, rozvoj a údržba IS Fabasoft",
+        "code": "ola_kontrakt_349"
+      },
+      {
+        "uuid": "b12f4949-6ff9-4654-3df4-2d370fa61714",
+        "degree": 1,
+        "name": "WINIBEU",
+        "code": "ola_kontrakt_350"
+      },
+      {
+        "uuid": "2e9b7671-09c1-c8f1-939e-15e618db60c4",
+        "degree": 1,
+        "name": "SOFTIP",
+        "code": "ola_kontrakt_351"
+      },
+      {
+        "uuid": "c367dbdd-109e-9c4d-8a3c-cfbc4b19f662",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní servisných a rozvojových služieb Kontrolórskeho informačného systému NKÚ SR",
+        "code": "ola_kontrakt_354"
+      },
+      {
+        "uuid": "25813260-2412-b9d4-cdb4-35ac80bbf2c2",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SLUŽIEB - JISCD",
+        "code": "ola_kontrakt_355"
+      },
+      {
+        "uuid": "5e620dae-f65e-d8d0-8b6e-33083e675ab9",
+        "degree": 1,
+        "name": "Zmluva o podpore prevádzky a rozvoji informačného systému",
+        "code": "ola_kontrakt_357"
+      },
+      {
+        "uuid": "3331c686-b8d4-c781-71f3-ef1b09b3d231",
+        "degree": 1,
+        "name": "Zmluva o podpore prevádzky a rozvoji informačného systému",
+        "code": "ola_kontrakt_358"
+      },
+      {
+        "uuid": "3619e7bd-83c2-69cd-e6d2-47462706fa59",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní podpory pre softvér Trimble Pivot platform",
+        "code": "ola_kontrakt_360"
+      },
+      {
+        "uuid": "fb522dcf-22e4-8211-2414-b1dd08558f71",
+        "degree": 1,
+        "name": "Údržba a podpora centrálneho registratúrneho systému rezortu kultúry",
+        "code": "ola_kontrakt_371"
+      },
+      {
+        "uuid": "377ef78b-4757-e4ad-9b26-c3534afa06d8",
+        "degree": 1,
+        "name": "Poskytovanie a prevádzkovanie telekomunikačných a komunikačných služieb siete WAN",
+        "code": "ola_kontrakt_362"
+      },
+      {
+        "uuid": "cba41dd0-4e24-adbb-fefb-054b720c4c27",
+        "degree": 1,
+        "name": "Poskytovanie a prevádzkovanie telekomunikačných služieb VoIP",
+        "code": "ola_kontrakt_363"
+      },
+      {
+        "uuid": "95271be4-de35-252b-8b7c-fc461c149a16",
+        "degree": 1,
+        "name": "Poskytovanie servisných služieb kompnentov QSign Automatic Services",
+        "code": "ola_kontrakt_366"
+      },
+      {
+        "uuid": "ff4e67af-64b4-d101-e178-2e2b047718bc",
+        "degree": 1,
+        "name": "Popdpora prevádzky, rozvoja a údržby informačného systému",
+        "code": "ola_kontrakt_367"
+      },
+      {
+        "uuid": "a2ea5abd-dda9-2c68-c5e3-9ca5cbd5f089",
+        "degree": 1,
+        "name": "Údržba a podpora prevádzky CJES Softip Profit",
+        "code": "ola_kontrakt_368"
+      },
+      {
+        "uuid": "9678f7d5-e8ea-8bff-2f25-9015c093e9ee",
+        "degree": 1,
+        "name": "Servisná zmluva o poskytovaní služieb údržby a rozvoja informačného systému  ES MZVEZ SR",
+        "code": "ola_kontrakt_376"
+      },
+      {
+        "uuid": "ed4f7833-6b50-904a-412b-66c750cf629f",
+        "degree": 1,
+        "name": "Zmluva o podpore prevádzky, údržbe, rozvoji a rozšírení informačného  systému Konsolidačná platforma údajov",
+        "code": "ola_kontrakt_377"
+      },
+      {
+        "uuid": "1ef77e9a-ad9d-4e40-5a7a-187db1a5ef0f",
+        "degree": 1,
+        "name": "Zmluva o úprave a podpore IS Doklady",
+        "code": "ola_kontrakt_378"
+      },
+      {
+        "uuid": "f3269a09-6e76-d4b5-c227-ef6fc1f486e8",
+        "degree": 1,
+        "name": "Dodatok č.2 k Zmluve o poskytovaní systémovej a aplikačnej podpory informačného systému Rozvoj elektronických služieb súdnictva (IS RESS)",
+        "code": "ola_kontrakt_382"
+      },
+      {
+        "uuid": "5fb2addc-edcc-8e1a-ea44-d3f781a6b067",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní systémovej a aplikačnej podpory Informačného systému Portál MS SR eBOX (IS PeB)",
+        "code": "ola_kontrakt_383"
+      },
+      {
+        "uuid": "74c5f40b-0759-b4d3-5fde-7a53aeaa3a68",
+        "degree": 1,
+        "name": "Servisná zmluva o poskytovaní systémovej, aplikačnej podpory a rozvoja Centrálneho finančného informačného systému pre verejné vysoké školy (IS SOFIA)",
+        "code": "ola_kontrakt_386"
+      },
+      {
+        "uuid": "586829cb-8c95-df6b-b083-341e95d2157a",
+        "degree": 1,
+        "name": "Zmluva o dodávke, podpore a rozvoji informačného systému pôžičky z FNPV",
+        "code": "ola_kontrakt_389"
+      },
+      {
+        "uuid": "15a155d8-0e63-9172-daa8-f95c6dbd649d",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb UXUI pre projekt elektronické služby regionálneho a vysokého školstva",
+        "code": "ola_kontrakt_390"
+      },
+      {
+        "uuid": "51c75103-c83d-1ddd-26a0-7a385da80138",
+        "degree": 1,
+        "name": "Zmluva o dodávke, podpore a rozvoji informačného systému elektronické služby regionálneho a vysokého školstva",
+        "code": "ola_kontrakt_391"
+      },
+      {
+        "uuid": "b163c3b4-e637-c129-1012-1911214ddc71",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní služieb UXUI pre projekt Elektronické služby regionálneho a vysokého školstva zo dňa 29.12.2022",
+        "code": "ola_kontrakt_392"
+      },
+      {
+        "uuid": "accef726-aed7-8687-02b3-f688e8666774",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o dodávke, podpore a rozvoji informačného systému Pôžičky z FnPV zo dňa 29.12.2022",
+        "code": "ola_kontrakt_393"
+      },
+      {
+        "uuid": "f467fb15-fb5a-1450-2f03-52865bd19ca8",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o dodávke, podpore a rozvoji informačného systému Elektronické služby regionálneho a vysokého školstva zo dňa 29.12.2022",
+        "code": "ola_kontrakt_394"
+      },
+      {
+        "uuid": "0fa96c17-3ccd-ba88-3691-bdb74a75db60",
+        "degree": 1,
+        "name": "DODATOK Č. 2 K SERVISNEJ ZMLUVE o poskytovaní systémovej, aplikačnej podpory a rozvoja Centrálneho finančného informačného systému pre verejné vysoké školy",
+        "code": "ola_kontrakt_395"
+      },
+      {
+        "uuid": "840564fc-56ee-5c4f-2e45-10d3cbf3e6c6",
+        "degree": 1,
+        "name": "Dodatok č.1 k servisnej zmluve o poskytovaní systémovej, aplikačnej podpory a rozvoja Centrálneho finančného informačného systému pre verejné vysoké školy (IS SOFIA)",
+        "code": "ola_kontrakt_396"
+      },
+      {
+        "uuid": "b24e8db3-eea4-a450-85fe-87f45ed48169",
+        "degree": 1,
+        "name": "Rámcová zmluva o poskytovaní služieb ZL-2023-044",
+        "code": "ola_kontrakt_401"
+      },
+      {
+        "uuid": "5c76c14a-da96-62cc-079a-33d45d8dc619",
+        "degree": 1,
+        "name": "Zmluva o údržbe IS MCS",
+        "code": "ola_kontrakt_404"
+      },
+      {
+        "uuid": "5159a89d-5380-7651-3a92-4d8b6976b148",
+        "degree": 1,
+        "name": "Servisná zmluva na zabezpečenie podpory informačného systému Centrálny konsolidačný systém (CKS)",
+        "code": "ola_kontrakt_406"
+      },
+      {
+        "uuid": "c77b59bc-70c0-8f1e-d898-5290eefd1256",
+        "degree": 1,
+        "name": "Dodatok č. 2 k Zmluve o zabezpečení údržby a SLA parametrov systému Centrálneho elektronického priečinka (IS CEP)",
+        "code": "ola_kontrakt_407"
+      },
+      {
+        "uuid": "cc935ac8-5c7b-32fe-ba83-379a0871ab4b",
+        "degree": 1,
+        "name": "ZMLUVA O DIELO - Monitorovací systém pre reguláciu a štátny dohľad",
+        "code": "ola_kontrakt_410"
+      },
+      {
+        "uuid": "317febbe-3f97-cf59-099d-7c106a1cd45b",
+        "degree": 1,
+        "name": "Zmluva o dielo - Monitorovací systém pre reguláciu a štátny dohľad ČASŤ 2",
+        "code": "ola_kontrakt_411"
+      },
+      {
+        "uuid": "36aa0d82-dff4-4620-ac1b-955311791169",
+        "degree": 1,
+        "name": "Zmluva o dielo na dodávku/vývoj softvérového diela a podporu prevádzky softvérového diela",
+        "code": "ola_kontrakt_413"
+      },
+      {
+        "uuid": "e945e871-7b11-45ef-a172-6c85e204df14",
+        "degree": 1,
+        "name": "Zmluva o podpore prevádzky, údržbe, rozvoji a rozšírení informačného  systému Elektronický systém pre správu registratúry",
+        "code": "ola_kontrakt_415"
+      },
+      {
+        "uuid": "7d41eea0-4ac3-4935-b9e6-5421abdd6239",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o podpore prevádzky, údržbe a rozvoji informačného systému „Národný vízový informačný systém“",
+        "code": "ola_kontrakt_416"
+      },
+      {
+        "uuid": "e8504dc3-d8d7-478c-bb68-54e28e19ace0",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Servisnej zmluve o poskytovaní služieb údržby a rozvoja informačného systému ES MZVEZ SR",
+        "code": "ola_kontrakt_417"
+      },
+      {
+        "uuid": "37987e48-c1e1-4d42-adea-b15d85fc9941",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SERVISNÝCH SLUŽIEB NA ZABEZPEČENIE PREVÁDZKY, ÚDRŽBY A AKTUALIZÁCIE REZORTNÉHO INFORMAČNÉHO SYSTÉMU",
+        "code": "ola_kontrakt_422"
+      },
+      {
+        "uuid": "3791fb3a-f31f-464c-a5b6-a5efa267b469",
+        "degree": 1,
+        "name": "Zmluva o dodávke, podpore a rozvoji informačného systému pôžičky z FNPV",
+        "code": "ola_kontrakt_423"
+      },
+      {
+        "uuid": "f9cc45f0-960d-4993-b3ba-b0e83940f35f",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb systémovej a aplikačnej podpory, správy, údržby a rozvoja informačného systému Centrálneho registra účtov",
+        "code": "ola_kontrakt_425"
+      },
+      {
+        "uuid": "07924f86-8fd4-488c-90ac-73f345ba6fd4",
+        "degree": 1,
+        "name": "Dodatok č. 3 k Zmluve o implementácii Centrálneho ekonomického systému a o poskytovaní aplikačnej podpory",
+        "code": "ola_kontrakt_427"
+      },
+      {
+        "uuid": "943b1b36-52c5-40d9-a42b-247979ddb7b6",
+        "degree": 1,
+        "name": "Servisná zmluva na zabezpečenie podpory informačného systému Centrálny konsolidačný systém (CKS)",
+        "code": "ola_kontrakt_428"
+      },
+      {
+        "uuid": "5b45a7b0-92a1-4095-a478-8a7c74a9e172",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SLUŽIEB č. 1028/C200/2020 zo dňa 29.10.2020",
+        "code": "ola_kontrakt_431"
+      },
+      {
+        "uuid": "ea8fcb5f-fd43-4d50-b42d-66e2bf410460",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní služieb č. 1028/C200/2020 zo dňa 29.10.2020",
+        "code": "ola_kontrakt_432"
+      },
+      {
+        "uuid": "e1db38bf-6dc1-4fd4-a29f-d4ce9c3756d3",
+        "degree": 1,
+        "name": "Dodatok č. 2 k Zmluve o poskytovaní služieb č. 1028/C200/2020 zo dňa 29.10.2020 v znení Dodatku č. 1 zo dňa 28.08.2023",
+        "code": "ola_kontrakt_433"
+      },
+      {
+        "uuid": "d4dfb012-37e4-4b22-ac2d-d6e16d01277f",
+        "degree": 1,
+        "name": "Rámcová dohoda na poskytovanie služieb podpory a rozvoja Dokumentačného systému (DKS)",
+        "code": "ola_kontrakt_434"
+      },
+      {
+        "uuid": "52ad7a31-18ce-44eb-b567-568c9e7b490f",
+        "degree": 1,
+        "name": "Zmluva o implementácii Centrálneho ekonomického systému a o poskytovaní aplikačnej podpory",
+        "code": "ola_kontrakt_435"
+      },
+      {
+        "uuid": "be3835f5-0baf-4187-9496-21e6327d38be",
+        "degree": 1,
+        "name": "ZMLUVA NA NÁKUP MICROSOFT PRODUKTOV A SLUŽIEB V PROGRAME ENTERPRISE",
+        "code": "ola_kontrakt_438"
+      },
+      {
+        "uuid": "f393091c-e5dd-45c4-8e0e-4e49122dd433",
+        "degree": 1,
+        "name": "Zmluva o poskytovaní služieb mimozáručného servisu pre výpočtovú techniku",
+        "code": "ola_kontrakt_439"
+      },
+      {
+        "uuid": "27abd4d2-bc89-4d1f-b049-c0d696f5a497",
+        "degree": 1,
+        "name": "Dodatok č. 1 k Zmluve o poskytovaní služieb č. 654/DE00/2021 zo dňa 16.11.2021",
+        "code": "ola_kontrakt_443"
+      },
+      {
+        "uuid": "04625958-0eb4-472d-a24e-aa0f720e7547",
+        "degree": 1,
+        "name": "ZMLUVA O POSKYTOVANÍ SLUŽIEB eVUC",
+        "code": "ola_kontrakt_447"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "56fb4575-7034-41c8-bf51-c4c97c50bcf4",
+        "degree": 8,
+        "name": "Ústredný portál verejnej správy",
+        "code": "isvs_62"
+      },
+      {
+        "uuid": "413fc24f-b67b-45b6-876a-c3493b43fa55",
+        "degree": 7,
+        "name": "JISCD - Jednotný informačný systém v cestnej doprave",
+        "code": "isvs_4867"
+      },
+      {
+        "uuid": "8b58848f-5daa-4167-a720-ac7b958c0d39",
+        "degree": 6,
+        "name": "Rozpočtový informačný systém (RIS)",
+        "code": "isvs_45"
+      },
+      {
+        "uuid": "1bba5fdf-0d28-4eb7-8bc1-69c4b750912d",
+        "degree": 6,
+        "name": "IS elektronických služieb regionálneho a vysokého školstva SR (IS ESRVŠ)",
+        "code": "isvs_9557"
+      },
+      {
+        "uuid": "9ea995af-93da-46b2-8281-892dfd5e7b9b",
+        "degree": 5,
+        "name": "Integrovaný štatistický informačný systém",
+        "code": "isvs_411"
+      },
+      {
+        "uuid": "0281f528-0045-4fa8-91bc-f5672a40f0f5",
+        "degree": 5,
+        "name": "Informačný systém účtovníctva fondov (ISUF)",
+        "code": "isvs_49"
+      },
+      {
+        "uuid": "07700f40-8878-4401-be93-bdd1aa5c3e72",
+        "degree": 5,
+        "name": "TACHONET - Digitálny tachograf",
+        "code": "isvs_74"
+      },
+      {
+        "uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+        "degree": 5,
+        "name": "Ekonomický informačný systém (EIS)",
+        "code": "isvs_48"
+      },
+      {
+        "uuid": "719a52de-8567-4d40-bd51-585c56d43ded",
+        "degree": 4,
+        "name": "Evidencia grantov v grantovom programe Erasmus+",
+        "code": "isvs_8300"
+      },
+      {
+        "uuid": "da785548-5338-43d4-b568-fc7fe49600d1",
+        "degree": 4,
+        "name": "Centrálny finančný informačný systém pre verejné vysoké školy (SOFIA)",
+        "code": "isvs_396"
+      },
+      {
+        "uuid": "dfbe85a1-fcce-47f4-b6b9-1f3065ff36cc",
+        "degree": 4,
+        "name": "Informačný systém štátnej pokladnice (ISŠP)",
+        "code": "isvs_46"
+      },
+      {
+        "uuid": "20416464-2bf1-47ba-8890-6487d850e446",
+        "degree": 4,
+        "name": "Centrálna aplikačná infraštruktúra a registratúra (CAIR)",
+        "code": "isvs_331"
+      },
+      {
+        "uuid": "3b288ea8-57cc-40b2-b5f2-342a136714c3",
+        "degree": 3,
+        "name": "Elektronické služby monitoringu obvinených a odsúdených osôb (ESMO)",
+        "code": "isvs_5346"
+      },
+      {
+        "uuid": "8064e47f-496b-4b02-a1e1-faac81abb1b9",
+        "degree": 3,
+        "name": "Centrálny konsolidačný systém (CKS)",
+        "code": "isvs_52"
+      },
+      {
+        "uuid": "36337485-ab51-4eee-9405-c95b9a4153d8",
+        "degree": 3,
+        "name": "Register právnických osôb, podnikateľov a orgánov verejnej moci",
+        "code": "isvs_420"
+      },
+      {
+        "uuid": "ac011014-fb54-4257-9b77-ec47fe0b24e3",
+        "degree": 3,
+        "name": "IS Centrálna platforma dátovej integrácie (IS CPDI)",
+        "code": "isvs_5836"
+      },
+      {
+        "uuid": "eeb604ff-4893-47ad-b2f8-1e28479f0550",
+        "degree": 3,
+        "name": "Sčítanie obyvateľov, domov a bytov",
+        "code": "isvs_8688"
+      },
+      {
+        "uuid": "2555aa2f-175e-4c73-87a7-5401a5bd14d9",
+        "degree": 3,
+        "name": "Centrálny metainformačný systém verejnej správy",
+        "code": "isvs_63"
+      },
+      {
+        "uuid": "93f48df3-45d1-4657-a003-804d36f583dc",
+        "degree": 3,
+        "name": "Kontrolórsky informačný systém NKÚ SR",
+        "code": "isvs_539"
+      },
+      {
+        "uuid": "bd23d587-6f8c-4c44-ae15-2052d507d31f",
+        "degree": 3,
+        "name": "Spectra - LS telcom",
+        "code": "isvs_9464"
+      },
+      {
+        "uuid": "cfc6d4b6-1920-46a7-ae30-7c1b920f05fb",
+        "degree": 3,
+        "name": "Centrálny ekonomický systém (CES MFSR)",
+        "code": "isvs_6252"
+      },
+      {
+        "uuid": "53571df1-a036-4d66-874d-88f7dfd4d7dc",
+        "degree": 2,
+        "name": "Obchodný register",
+        "code": "isvs_6117"
+      },
+      {
+        "uuid": "92371d94-c510-4b5a-91f8-b1e30c86b34a",
+        "degree": 2,
+        "name": "Informačný systém súdov - Súdny manažment",
+        "code": "isvs_255"
+      },
+      {
+        "uuid": "03e952e7-89bb-41f1-b2c1-4216c1ba2c57",
+        "degree": 2,
+        "name": "Informačný systém Portál MS SR a eBox (IS PeB)",
+        "code": "isvs_239"
+      },
+      {
+        "uuid": "9a2f5325-ea5e-420a-bbdf-12dd285c27ae",
+        "degree": 2,
+        "name": "Elektronické služby súdnictva - RESS",
+        "code": "isvs_8351"
+      },
+      {
+        "uuid": "203d4d58-5465-4f09-a2e1-b18dfc1de957",
+        "degree": 2,
+        "name": "IS Viki (CUDEO - Centrálne úložisko digitálneho edukačného obsahu)",
+        "code": "isvs_6201"
+      },
+      {
+        "uuid": "6615c366-9708-4137-b7ed-34777d3f0b2f",
+        "degree": 2,
+        "name": "RIS - Rezortný informačný systém",
+        "code": "isvs_6092"
+      },
+      {
+        "uuid": "8139a9f8-03b5-40e1-8ee8-0e885750a67e",
+        "degree": 2,
+        "name": "Dokumentačný systém MFSR (IS DKS MFSR)",
+        "code": "isvs_6470"
+      },
+      {
+        "uuid": "823e8bdb-f485-4675-8f34-56f6de27f019",
+        "degree": 2,
+        "name": "Národný vízový informačný systém (NVIS)",
+        "code": "isvs_270"
+      },
+      {
+        "uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+        "degree": 2,
+        "name": "Centrálny elektronický priečinok (CEP)",
+        "code": "isvs_66"
+      },
+      {
+        "uuid": "eb4c5d94-7aa2-4070-9035-28b3c5e6ed79",
+        "degree": 2,
+        "name": "Národný zdravotnícky informačný systém (NZIS)",
+        "code": "isvs_400"
+      },
+      {
+        "uuid": "9073fb65-6c82-405b-8dbd-69285e522b3b",
+        "degree": 2,
+        "name": "IS Elektronického verejného obstarávania (EVO)",
+        "code": "isvs_450"
+      },
+      {
+        "uuid": "f1392e88-45f0-4c07-9847-2010af6eb012",
+        "degree": 2,
+        "name": "IS na podporu rozvoja regiónov SR - INFOREG",
+        "code": "isvs_9301"
+      },
+      {
+        "uuid": "ca43d147-2383-42db-92c8-c4db79ef1bce",
+        "degree": 2,
+        "name": "Integrované obslužné miesto",
+        "code": "isvs_61"
+      },
+      {
+        "uuid": "94954549-cc5f-48ba-8167-af5db8427cd7",
+        "degree": 2,
+        "name": "Data Warehouse (DWH)",
+        "code": "isvs_7146"
+      },
+      {
+        "uuid": "ad6fd40b-082f-4baa-bc64-4211d90bc179",
+        "degree": 2,
+        "name": "Informačný systém pre kontrolórov (ISK)",
+        "code": "isvs_8674"
+      },
+      {
+        "uuid": "c5739286-da78-47ac-8afb-2ab0af389224",
+        "degree": 2,
+        "name": "Informačný systém Zboru väzenskej a justičnej stráže",
+        "code": "isvs_6810"
+      },
+      {
+        "uuid": "06809f38-de44-4f0e-9a88-6d1fca2f3996",
+        "degree": 2,
+        "name": "Evidencia obvinených a odsúdených Zboru väzenskej a justičnej stráže",
+        "code": "isvs_256"
+      },
+      {
+        "uuid": "c670d8a6-94ab-48ee-aec2-d241795227f9",
+        "degree": 2,
+        "name": "Rozšírené riadenie prístupov (RRP)",
+        "code": "isvs_9275"
+      },
+      {
+        "uuid": "043bb6af-00f2-4968-85ea-e0d64c469849",
+        "degree": 2,
+        "name": "ITMS",
+        "code": "isvs_135"
+      },
+      {
+        "uuid": "e59c8453-b6fc-4d07-aa8c-4cb0a1e0e4e6",
+        "degree": 2,
+        "name": "Elektronický súdny spis - RTIS",
+        "code": "isvs_242"
+      },
+      {
+        "uuid": "f567f721-3bd6-4789-abd6-b7a3ce33ffc1",
+        "degree": 2,
+        "name": "Centrálna správa registratúry",
+        "code": "isvs_369"
+      },
+      {
+        "uuid": "7b9bcbc4-c8f9-46c1-80dd-b8f9712a064d",
+        "degree": 2,
+        "name": "Informačný systém MK SR",
+        "code": "isvs_372"
+      },
+      {
+        "uuid": "1f42b2de-2517-44b7-9fdd-428082028a68",
+        "degree": 2,
+        "name": "Elektronické služby  MZVEZ SR (IS ES MZVEZ SR)",
+        "code": "isvs_6102"
+      },
+      {
+        "uuid": "34868257-ce70-4627-91d4-05ace69ee148",
+        "degree": 2,
+        "name": "GigaOffice - Monitorovací systém pre reguláciu a štátny dohľad (MSRŠD)",
+        "code": "isvs_483"
+      },
+      {
+        "uuid": "8e3c644d-336d-4e9e-932e-d871f98ac066",
+        "degree": 2,
+        "name": "Intranet MF SR",
+        "code": "isvs_14901"
+      },
+      {
+        "uuid": "254da198-c0c0-42d0-9f5d-c0a97e572936",
+        "degree": 1,
+        "name": "Informačný systém registra úpadcov",
+        "code": "isvs_5840"
+      },
+      {
+        "uuid": "775ad12b-8cd5-4dd4-afd7-21ae21e22cc1",
+        "degree": 1,
+        "name": "Register partnerov verejného sektora",
+        "code": "isvs_6376"
+      },
+      {
+        "uuid": "829f8e73-008a-438f-b136-45f14e1aa3e2",
+        "degree": 1,
+        "name": "Identifikačný a autentifikačný modul - IAM",
+        "code": "isvs_6021"
+      },
+      {
+        "uuid": "49247501-0a08-45bf-a2d8-0cd763338778",
+        "degree": 1,
+        "name": "Informačný systém Obchodného vestníka",
+        "code": "isvs_9771"
+      },
+      {
+        "uuid": "d29f8467-8dba-44bf-9c8e-5f520280caae",
+        "degree": 1,
+        "name": "Informačný systém Elektronických služieb vzdelávacieho systému regionálneho školstva",
+        "code": "isvs_5788"
+      },
+      {
+        "uuid": "e5e994a9-aeb9-4517-a3ee-0a16228ce01e",
+        "degree": 1,
+        "name": "Ekonomický informačný systém rezortu školstva",
+        "code": "isvs_395"
+      },
+      {
+        "uuid": "c98a04e8-e674-456b-8091-07799ef80fa0",
+        "degree": 1,
+        "name": "Portál Ministerstva školstva, výskumu, vývoja a mládeže SR",
+        "code": "isvs_6301"
+      },
+      {
+        "uuid": "900c07ff-cc2d-40cd-b3e7-74d0c7954383",
+        "degree": 1,
+        "name": "Systém pre finančné účtovníctvo a majetok",
+        "code": "isvs_9052"
+      },
+      {
+        "uuid": "540cc490-a541-431b-9cb8-250f76dfd76e",
+        "degree": 1,
+        "name": "HOUR - systém pre mzdy a personalistiku",
+        "code": "isvs_8319"
+      },
+      {
+        "uuid": "d7ae8306-921e-425e-8800-ff33fc29d282",
+        "degree": 1,
+        "name": "Portál Národného ústavu certifikovaných meraní vzdelávania",
+        "code": "isvs_5823"
+      },
+      {
+        "uuid": "26a4295f-0206-4eb6-b36e-bd44cd6427f7",
+        "degree": 1,
+        "name": "Informačný Systém Zdravotníckych Indikátorov (ISZI)",
+        "code": "isvs_7755"
+      },
+      {
+        "uuid": "7eb77306-5e1f-4fa0-be1f-3b68fbfc5771",
+        "degree": 1,
+        "name": "Softip Profit plus",
+        "code": "isvs_7963"
+      },
+      {
+        "uuid": "a34ff924-edbd-437f-8466-c8e37df8d13d",
+        "degree": 1,
+        "name": "Register priestorových informácií",
+        "code": "isvs_319"
+      },
+      {
+        "uuid": "9b1d41f6-b959-42d5-a964-d722f1d16b2a",
+        "degree": 1,
+        "name": "Informačný systém pre správu registratúr - BACH systems",
+        "code": "isvs_9107"
+      },
+      {
+        "uuid": "1b493742-7f19-487a-b5d6-9cdab88aef3a",
+        "degree": 1,
+        "name": "Informačný systém SOFTIP HUMAN RESOURCES",
+        "code": "isvs_9106"
+      },
+      {
+        "uuid": "af53509a-9fe7-4a14-8038-b718f12f290e",
+        "degree": 1,
+        "name": "Dochádzkový systém RON software",
+        "code": "isvs_10505"
+      },
+      {
+        "uuid": "d5fe7e2b-0822-41a0-a0cc-04c47c2483bf",
+        "degree": 1,
+        "name": "SOFTTIP - Logistika",
+        "code": "isvs_10507"
+      },
+      {
+        "uuid": "866d4ea8-3c9e-4ede-963e-217f2b023cc9",
+        "degree": 1,
+        "name": "Informačný systém SOFTIP - PROFIT",
+        "code": "isvs_9105"
+      },
+      {
+        "uuid": "e12c46b2-12a7-456b-98d3-b712635608fc",
+        "degree": 1,
+        "name": "Elektronická registratúra IIS MIS",
+        "code": "isvs_9109"
+      },
+      {
+        "uuid": "6e1ae7de-06f7-4db5-b59e-927a5cefcf81",
+        "degree": 1,
+        "name": "Informačný systém SOFTIP",
+        "code": "isvs_7178"
+      },
+      {
+        "uuid": "b99505e0-1c57-4bdd-99c5-e38aae35cc70",
+        "degree": 1,
+        "name": "BACH - fotoarchív",
+        "code": "isvs_315"
+      },
+      {
+        "uuid": "f66599d0-8fd9-4580-86cb-43db97eb4b96",
+        "degree": 1,
+        "name": "Systém pre realizáciu environmentálnych projektov, informačný systém IS SREP",
+        "code": "isvs_7160"
+      },
+      {
+        "uuid": "ba2dc31e-b1da-4646-8f83-ad9aac29ed37",
+        "degree": 1,
+        "name": "Ekonomický informačný systém Softip Profit",
+        "code": "isvs_7152"
+      },
+      {
+        "uuid": "d70f123c-ef70-4768-a292-75aed4c2d43b",
+        "degree": 1,
+        "name": "Podnikový informačný systém Štátneho geologického ústavu D.Štúra - GARIS",
+        "code": "isvs_326"
+      },
+      {
+        "uuid": "aab810e5-ac0e-429d-9c69-f2953f37ce95",
+        "degree": 1,
+        "name": "Geologický informačný systém",
+        "code": "isvs_314"
+      },
+      {
+        "uuid": "d64c467c-41b7-457b-a1e5-813a155d26ca",
+        "degree": 1,
+        "name": "Hydrologický informačný systém",
+        "code": "isvs_9526"
+      },
+      {
+        "uuid": "1d2d9928-9cdf-4d24-b75b-c9160019e4ad",
+        "degree": 1,
+        "name": "Národný Emisný Informačný Systém",
+        "code": "isvs_9525"
+      },
+      {
+        "uuid": "232d1841-b885-47e5-b670-3b699cd582d1",
+        "degree": 1,
+        "name": "Registratúrny systém SHMÚ Nuntio",
+        "code": "isvs_7300"
+      },
+      {
+        "uuid": "5dc0a1a1-b4b9-46df-ae89-1acdc7104433",
+        "degree": 1,
+        "name": "Ekonomický systém SHMÚ SOFTIP",
+        "code": "isvs_7299"
+      },
+      {
+        "uuid": "f3fd4ea3-3eb9-4a99-8d51-01320b59d077",
+        "degree": 1,
+        "name": "Dochádzkový systém SHMÚ ID.EST Sense",
+        "code": "isvs_7298"
+      },
+      {
+        "uuid": "b8884c83-8434-473a-8ac0-9aa1d15404b9",
+        "degree": 1,
+        "name": "Mzdový a personálny systém SHMÚ Magma HCM",
+        "code": "isvs_7297"
+      },
+      {
+        "uuid": "73b24607-77ab-48f6-9b39-ef12d9836e32",
+        "degree": 1,
+        "name": "Informačný systém Hydrologická informačná a predpovedná služba",
+        "code": "isvs_308"
+      },
+      {
+        "uuid": "4ffa4fc1-795a-4bce-b8d8-c4235b31cb7f",
+        "degree": 1,
+        "name": "Klimatologický a Meteorologický informačný Systém",
+        "code": "isvs_309"
+      },
+      {
+        "uuid": "23ddb005-5259-440b-a3f7-bbdb11871bdb",
+        "degree": 1,
+        "name": "GARBIS",
+        "code": "isvs_7410"
+      },
+      {
+        "uuid": "1304e548-2a56-467f-b49a-3a9136d99bd8",
+        "degree": 1,
+        "name": "Dochádzkový informačný systém AKTION",
+        "code": "isvs_7138"
+      },
+      {
+        "uuid": "5caef0a7-1a14-4de4-bf4d-0c12551926cc",
+        "degree": 1,
+        "name": "PlusComp spol. s r.o. – MAGIC, Mzdy a personalistika",
+        "code": "isvs_7135"
+      },
+      {
+        "uuid": "80f11bd3-5a43-4ba7-92bf-7060be2cb550",
+        "degree": 1,
+        "name": "IIS MIS - A.V.I.S. - International Software Distribution & Servis, Elektronický informačný systém na správu registratúry",
+        "code": "isvs_6934"
+      },
+      {
+        "uuid": "3032db84-dec1-4cf0-9459-c0a9f0446ea2",
+        "degree": 1,
+        "name": "Informačný systém Mimoriadne zhoršenie kvality vôd",
+        "code": "isvs_318"
+      },
+      {
+        "uuid": "f78e9a90-9a44-476d-8255-075f143de67d",
+        "degree": 1,
+        "name": "Systém elektronickej pošty Štátnej ochrany prírody SR",
+        "code": "isvs_10029"
+      },
+      {
+        "uuid": "d7076f2e-79d9-43f1-a6cb-94f625c820bc",
+        "degree": 1,
+        "name": "Systém správy podaní a registratúry",
+        "code": "isvs_9717"
+      },
+      {
+        "uuid": "184d7a6f-124c-4734-bac9-1c5c84f2f07c",
+        "degree": 1,
+        "name": "Komplexný informačný a monitorovací systém Štátnej ochrany prírody SR (KIMS)",
+        "code": "isvs_7480"
+      },
+      {
+        "uuid": "207950bd-8e20-4477-ba0e-6e37a8dd7dd0",
+        "degree": 1,
+        "name": "Kamerový systém – Geovision GV-650",
+        "code": "isvs_7309"
+      },
+      {
+        "uuid": "679031f3-9ee4-4e61-af06-deb7db6edbc1",
+        "degree": 1,
+        "name": "Dochádzkový systém Visitor",
+        "code": "isvs_7307"
+      },
+      {
+        "uuid": "1efbda7d-dc9d-44e0-97a2-0a731ddbb08a",
+        "degree": 1,
+        "name": "Správa registratúry SVP s.p.",
+        "code": "isvs_9171"
+      },
+      {
+        "uuid": "489417bb-adb4-4914-ac00-c1ef7b9ba886",
+        "degree": 1,
+        "name": "SVP-ÚPVS adaptér pre e-spis",
+        "code": "isvs_8479"
+      },
+      {
+        "uuid": "fd8fd33f-0134-43fb-a507-e26b97df0467",
+        "degree": 1,
+        "name": "Komplexný informačný systém Softip Profit",
+        "code": "isvs_6924"
+      },
+      {
+        "uuid": "8d181716-2516-4620-b9b1-8a61a7b59197",
+        "degree": 1,
+        "name": "Technický informačný systém SLOVENSKÉHO VODOHOSPODÁRSKEHO PODNIKU, štátneho podniku",
+        "code": "isvs_317"
+      },
+      {
+        "uuid": "8500c211-1a29-4381-aa47-d77525f73152",
+        "degree": 1,
+        "name": "Informačný systém VODA Výskumného ústavu vodného hospodárstva",
+        "code": "isvs_316"
+      },
+      {
+        "uuid": "326d01be-a5e7-4cad-b392-7cf585e019bc",
+        "degree": 1,
+        "name": "Informačný systém SOFTIP PROFIT",
+        "code": "isvs_327"
+      },
+      {
+        "uuid": "d3343739-257e-4764-817b-654ab7ead710",
+        "degree": 1,
+        "name": "Dochádzkový systém Kriváň",
+        "code": "isvs_9098"
+      },
+      {
+        "uuid": "1a2f3c6a-350d-43b4-b309-5c93a6401888",
+        "degree": 1,
+        "name": "Podnikový informačný systém SAP",
+        "code": "isvs_7216"
+      },
+      {
+        "uuid": "a3b57f93-0696-455e-b88f-e6a3e78f2912",
+        "degree": 1,
+        "name": "SOFTTIP - Ekonomika",
+        "code": "isvs_10506"
+      },
+      {
+        "uuid": "f6ebb249-c5ac-448f-977e-c8b94facbc67",
+        "degree": 1,
+        "name": "SOFTIP - Mzdy a personalistika",
+        "code": "isvs_10534"
+      },
+      {
+        "uuid": "f6327549-60aa-49f7-a36a-8940a4228f3f",
+        "degree": 1,
+        "name": "IS Nuntio MŽP SR",
+        "code": "isvs_9163"
+      },
+      {
+        "uuid": "5917b948-fd0c-4986-aa24-8120ce699f93",
+        "degree": 1,
+        "name": "Informačný systém Ministrerstva životného prostredia SR – Id.est",
+        "code": "isvs_7190"
+      },
+      {
+        "uuid": "357b170d-624a-4415-81ce-2ce7e7c32bd7",
+        "degree": 1,
+        "name": "Informačný systém Ministerstvo životného prostredia Slovenskej republiky - SAP",
+        "code": "isvs_7188"
+      },
+      {
+        "uuid": "239a0d0a-3f4e-452a-a191-850bf7492903",
+        "degree": 1,
+        "name": "Epos - Slovenská agentúra životného prostredia",
+        "code": "isvs_7361"
+      },
+      {
+        "uuid": "acb0e211-c28d-4a31-8e0f-e30fa54193ba",
+        "degree": 1,
+        "name": "Softip PROFIT - Slovenská agentúra životného prostredia",
+        "code": "isvs_7357"
+      },
+      {
+        "uuid": "5456ec43-963d-4ecc-b870-8ae438401fb0",
+        "degree": 1,
+        "name": "Register adries",
+        "code": "isvs_192"
+      },
+      {
+        "uuid": "f0c546eb-b3fe-4460-aad2-e4bd02abcd57",
+        "degree": 1,
+        "name": "Portál Finančnej správy (PFS)",
+        "code": "isvs_7213"
+      },
+      {
+        "uuid": "544d694c-60e1-4a9a-8c95-4a48a7244c20",
+        "degree": 1,
+        "name": "Colný informačný systém (CIS)",
+        "code": "isvs_53"
+      },
+      {
+        "uuid": "3a7dc627-a258-4cb3-8ebf-54b3120af7a9",
+        "degree": 1,
+        "name": "Fabasoft eGov-Suite",
+        "code": "isvs_7483"
+      },
+      {
+        "uuid": "400aa10b-8887-41c0-83a3-65e1c097dbd9",
+        "degree": 1,
+        "name": "Správa pre IaaS infraštruktúru",
+        "code": "isvs_5837"
+      },
+      {
+        "uuid": "d93e2cde-ef3b-4c49-b547-8f9983cb9d7e",
+        "degree": 1,
+        "name": "IS Vládneho Cloudu",
+        "code": "isvs_6141"
+      },
+      {
+        "uuid": "b21aa7f3-c315-404d-acd7-f8a4eccc4e71",
+        "degree": 1,
+        "name": "Informačný systém služieb zamestnanosti  (ISSZ)",
+        "code": "isvs_278"
+      },
+      {
+        "uuid": "a8aa6c3d-56df-4bc8-86a7-43a0458a026f",
+        "degree": 1,
+        "name": "Integrovaný administratívny a kontrolný systém PPA (IS IACS PPA)",
+        "code": "isvs_102"
+      },
+      {
+        "uuid": "46f6ef9a-96e4-4241-8dee-502a87533503",
+        "degree": 1,
+        "name": "Dokumentačný informačný systém zabezpečujúci elektronické spracovanie spisov a administratívnych procesov",
+        "code": "isvs_9108"
+      },
+      {
+        "uuid": "75e34e46-63ed-43b4-9959-d1ebd46abc88",
+        "degree": 1,
+        "name": "Webregistre ÚPV SR",
+        "code": "isvs_7482"
+      },
+      {
+        "uuid": "776e48b6-e113-4c45-87fe-4a2184eded85",
+        "degree": 1,
+        "name": "Portál elektronických služieb ÚPV SR",
+        "code": "isvs_456"
+      },
+      {
+        "uuid": "96942287-60d0-4f07-9472-ae62adfe18e6",
+        "degree": 1,
+        "name": "CSM",
+        "code": "isvs_7752"
+      },
+      {
+        "uuid": "5caee721-d988-4692-b8e2-dde67b29e147",
+        "degree": 1,
+        "name": "Jednotná referenčná údajová základňa (JRÚZ)",
+        "code": "isvs_7756"
+      },
+      {
+        "uuid": "0b61a7c2-da87-47b8-86ff-e495afbe426b",
+        "degree": 1,
+        "name": "Mzdový systém NCZI",
+        "code": "isvs_7742"
+      },
+      {
+        "uuid": "e69ae354-95ab-47ce-8c0f-77c1854b9365",
+        "degree": 1,
+        "name": "IS Register vylúčených osôb (IS RVO) - Register fyzických osôb vylúčených z hrania hazardných hier",
+        "code": "isvs_6254"
+      },
+      {
+        "uuid": "5b2f1928-1aec-48e5-8cc0-fbbd7a7f3fed",
+        "degree": 1,
+        "name": "Agrárny informačný systém PPA (IS AGIS PPA)",
+        "code": "isvs_103"
+      },
+      {
+        "uuid": "22ed8e78-b313-47d0-be53-ab884fe152b0",
+        "degree": 1,
+        "name": "Informačno technologický monitorovací systém 2014+ (ITMS2014+)",
+        "code": "isvs_6378"
+      },
+      {
+        "uuid": "249f6078-0aa0-44a2-8e65-e34da96012c4",
+        "degree": 1,
+        "name": "Informačný systém hazardných hier",
+        "code": "isvs_9682"
+      },
+      {
+        "uuid": "85763bf5-bab7-4c02-a7bb-7359c930da7a",
+        "degree": 1,
+        "name": "Virtuálna registračná pokladnica (VRP)",
+        "code": "isvs_7156"
+      },
+      {
+        "uuid": "7160834a-aa6b-433f-a0c4-309cd9c933ce",
+        "degree": 1,
+        "name": "Analytický Informačný Systém Rizík (AIS-R)",
+        "code": "isvs_9226"
+      },
+      {
+        "uuid": "dc97ae13-d837-4dcc-a405-2c007e35bf50",
+        "degree": 1,
+        "name": "IS centrálneho spracovania údajov",
+        "code": "isvs_449"
+      },
+      {
+        "uuid": "c94113df-e6c7-4966-b9dd-3d4900dd504b",
+        "degree": 1,
+        "name": "Spoločné podporné moduly",
+        "code": "isvs_452"
+      },
+      {
+        "uuid": "02b0429b-3584-4ab0-b51e-4ed474e83ae0",
+        "degree": 1,
+        "name": "Webové sídlo ÚVO - Publikačný portál ÚVO www.uvo.gov.sk",
+        "code": "isvs_453"
+      },
+      {
+        "uuid": "b4bccad5-3a36-41c4-abf9-a3eb9f336b07",
+        "degree": 1,
+        "name": "IS Systém zberu údajov",
+        "code": "isvs_451"
+      },
+      {
+        "uuid": "3417809e-a757-4691-9b2d-81eb0e45604b",
+        "degree": 1,
+        "name": "Integrovaný informačný systém MH SR",
+        "code": "isvs_4681"
+      },
+      {
+        "uuid": "c3c49953-3e2c-415f-a967-cc202d41bdc7",
+        "degree": 1,
+        "name": "Administratívny informačný systém dôchodkového poistenia (AIS DP)",
+        "code": "isvs_8214"
+      },
+      {
+        "uuid": "bd01895c-fac9-45c1-98a8-653eba92a294",
+        "degree": 1,
+        "name": "Informačný systém Jednotného výberu poistného (IS JVP)",
+        "code": "isvs_8213"
+      },
+      {
+        "uuid": "d9683cd3-6eb8-4346-9403-d737d607527e",
+        "degree": 1,
+        "name": "IS poistenia v nezamestnanosti a garančného poistenia (PvN a GP)",
+        "code": "isvs_550"
+      },
+      {
+        "uuid": "0afb4c9c-36ad-44ad-93e5-c7759b7b1b44",
+        "degree": 1,
+        "name": "Automatizovaný systém správy registratúry (ASSR)",
+        "code": "isvs_8124"
+      },
+      {
+        "uuid": "e170396e-9b97-4749-8343-d6b38f1d419f",
+        "degree": 1,
+        "name": "Centrálny dochádzkový systém (CDS)",
+        "code": "isvs_8122"
+      },
+      {
+        "uuid": "cc5a7fb9-5dce-48c1-bc6d-a38a69cb31ac",
+        "degree": 1,
+        "name": "IS nemocenského poistenia a lekárskej posudkovej činnosti (IS NPaLPČ)",
+        "code": "isvs_547"
+      },
+      {
+        "uuid": "0831ff04-e174-4127-a2d0-661227d80c25",
+        "degree": 1,
+        "name": "Systém elektronických služieb (SES)",
+        "code": "isvs_551"
+      },
+      {
+        "uuid": "33eef206-7f99-4f0e-bb35-3f3e544e39b8",
+        "degree": 1,
+        "name": "IS úrazového poistenia (UP)",
+        "code": "isvs_549"
+      },
+      {
+        "uuid": "21ad9c0e-6768-4e23-b2ea-f50419db0369",
+        "degree": 1,
+        "name": "Informačný systém riadenia sociálnych dávok (RSD)",
+        "code": "isvs_279"
+      },
+      {
+        "uuid": "e7bd9856-cb32-4d00-82e6-8a65dab7ecb8",
+        "degree": 1,
+        "name": "Informačný systém sociálnoprávnej ochrany detí a sociálnej kurately (KIDS)",
+        "code": "isvs_8033"
+      },
+      {
+        "uuid": "24d469a6-743a-4114-a940-ca40e9eca197",
+        "degree": 1,
+        "name": "Informačný systém Dokument management system (DMS)",
+        "code": "isvs_274"
+      },
+      {
+        "uuid": "f72d3d93-7cc1-4b8c-8b6e-1f665867de96",
+        "degree": 1,
+        "name": "Internetový sprievodca trhom práce (ISTP)",
+        "code": "isvs_7962"
+      },
+      {
+        "uuid": "8628dc99-48b9-4e36-9dfb-9b8ada75c41d",
+        "degree": 1,
+        "name": "SAP ERP 6.0",
+        "code": "isvs_273"
+      },
+      {
+        "uuid": "1b75617f-a336-4f49-a546-c658675b41ac",
+        "degree": 1,
+        "name": "A.V.I.S.",
+        "code": "isvs_9095"
+      },
+      {
+        "uuid": "d4c580da-b029-4e8b-ac40-fc08b284a1e7",
+        "degree": 1,
+        "name": "Správa registratúry",
+        "code": "isvs_9996"
+      },
+      {
+        "uuid": "600625f5-999e-4186-bee8-9829512bc53d",
+        "degree": 1,
+        "name": "Systémy všeobecnej správy",
+        "code": "isvs_10722"
+      },
+      {
+        "uuid": "16963de7-9121-4753-afe5-00b81b67b192",
+        "degree": 1,
+        "name": "Kvalifikované dôveryhodné služby",
+        "code": "isvs_471"
+      },
+      {
+        "uuid": "1ecfa97b-3621-4ab3-954d-7442837aac18",
+        "degree": 1,
+        "name": "CES M05 HR-VZD - Talent manažment",
+        "code": "isvs_8602"
+      },
+      {
+        "uuid": "0c97e310-fe0c-4481-8ab3-f177754607fb",
+        "degree": 1,
+        "name": "SAP BOBJ (CKS)",
+        "code": "isvs_9646"
+      },
+      {
+        "uuid": "874cb503-341a-4f01-91dd-b5b8a0a66394",
+        "degree": 1,
+        "name": "SW pre ID issuer",
+        "code": "isvs_9789"
+      },
+      {
+        "uuid": "0ff28622-e343-4f4b-aef9-45a106ed0c49",
+        "degree": 1,
+        "name": "IaaS infraštruktúra",
+        "code": "isvs_10742"
+      },
+      {
+        "uuid": "2ba1e292-fbca-4ccb-9f0d-e0100e1c5fda",
+        "degree": 1,
+        "name": "„Portál vzdelávania zdravotníckych pracovníkov – komplexná analýza pre tvorbu portálu“",
+        "code": "isvs_9429"
+      },
+      {
+        "uuid": "912db8d1-6066-492b-98b0-5f4a441064e5",
+        "degree": 1,
+        "name": "Alimenta (RÚVZ Prešov)",
+        "code": "isvs_7129"
+      },
+      {
+        "uuid": "4b742651-cf4c-4aa5-aa53-f80d8fe65c51",
+        "degree": 1,
+        "name": "Národný systém analýzy rizík (NSAR)",
+        "code": "isvs_7170"
+      },
+      {
+        "uuid": "795e385c-d05e-4643-a7e5-352041e7b193",
+        "degree": 1,
+        "name": "Elektronická komunikácia s bankami (EKB)",
+        "code": "isvs_9247"
+      },
+      {
+        "uuid": "74aff0fb-d453-4657-8ecf-709e56dc5381",
+        "degree": 1,
+        "name": "Kontrolný výkaz DPH (KV DPH)",
+        "code": "isvs_7148"
+      },
+      {
+        "uuid": "15fd8d87-6b70-404f-ad0f-6b008f5dca53",
+        "degree": 1,
+        "name": "Deklaračný systém (DS)",
+        "code": "isvs_7174"
+      },
+      {
+        "uuid": "136895e8-c590-476d-a795-0d775f8de9a4",
+        "degree": 1,
+        "name": "Garančný systém  (GMS)",
+        "code": "isvs_8662"
+      },
+      {
+        "uuid": "9f9e6e98-b395-4659-9549-8d82bd2d9d1b",
+        "degree": 1,
+        "name": "Systém správy nepriamych daní (SySNeD)",
+        "code": "isvs_7205"
+      },
+      {
+        "uuid": "82f730eb-4c5b-447f-9314-4464843f38bd",
+        "degree": 1,
+        "name": "Tranzitný informačný systém (TIS)",
+        "code": "isvs_8668"
+      },
+      {
+        "uuid": "b8715a70-4feb-4634-a98e-ea86a205a9a3",
+        "degree": 1,
+        "name": "Taric-Kvóta-Dohľad (TKD)",
+        "code": "isvs_8663"
+      },
+      {
+        "uuid": "989e340f-4caf-4a37-9d4f-26c9c3d015ee",
+        "degree": 1,
+        "name": "Administratívny informačný systém (ADMIS)",
+        "code": "isvs_7145"
+      },
+      {
+        "uuid": "b4664d6d-9f84-4bc3-ad4e-9503d431068f",
+        "degree": 1,
+        "name": "DRSCAN",
+        "code": "isvs_7149"
+      },
+      {
+        "uuid": "bb0bba9d-e390-42ea-befc-072469f9b08d",
+        "degree": 1,
+        "name": "Centrálny register finančnej správy (CRFS)",
+        "code": "isvs_8375"
+      },
+      {
+        "uuid": "d1c6386b-e90c-41a5-b4f1-303f1d06c2a4",
+        "degree": 1,
+        "name": "Integrovaný systém Finančnej správy - správa daní (ISFS-SD)",
+        "code": "isvs_7714"
+      },
+      {
+        "uuid": "565a1f3b-c42f-4bda-abd3-99ebfa8e9361",
+        "degree": 1,
+        "name": "Reformný daňový systém (RDS)",
+        "code": "isvs_7810"
+      },
+      {
+        "uuid": "92067e54-faa9-4e88-8623-71738260fe35",
+        "degree": 1,
+        "name": "Automatická výmena informácií (AVI)",
+        "code": "isvs_6993"
+      },
+      {
+        "uuid": "fea861c3-b2e0-4942-844a-697cbff56313",
+        "degree": 1,
+        "name": "Konsolidovaný register účtovných zavierok (KRUZ)",
+        "code": "isvs_7139"
+      },
+      {
+        "uuid": "466284bf-c648-40cc-8af2-abaeecf6f950",
+        "degree": 1,
+        "name": "Mini One Stop Shop (MOSS)",
+        "code": "isvs_7116"
+      },
+      {
+        "uuid": "43ad7bca-094d-4e00-a7e3-6dcf88024e06",
+        "degree": 1,
+        "name": "VAT Information Exchange System (VIES)",
+        "code": "isvs_7136"
+      },
+      {
+        "uuid": "276e524c-d36c-4c75-aed5-202c79e83934",
+        "degree": 1,
+        "name": "Value-added tax refund (VREF)",
+        "code": "isvs_7088"
+      },
+      {
+        "uuid": "5026f360-a17a-4276-92a3-d134cd6acb92",
+        "degree": 1,
+        "name": "Knižničný informačný systém",
+        "code": "isvs_10800"
+      },
+      {
+        "uuid": "c6f982c7-119b-4b54-84d8-5d9d0de32651",
+        "degree": 1,
+        "name": "IS RIS - Riečne informačné služby",
+        "code": "isvs_8106"
+      },
+      {
+        "uuid": "85c26d12-2342-4ae5-b0a4-9d522a475644",
+        "degree": 1,
+        "name": "Webové sídlo SNAS",
+        "code": "isvs_10893"
+      },
+      {
+        "uuid": "ae39e141-d2a2-4606-bb5a-92d2b1e1e7b7",
+        "degree": 1,
+        "name": "Fabasoft",
+        "code": "isvs_11157"
+      },
+      {
+        "uuid": "ea934806-6075-4223-981c-76cf399bd9bb",
+        "degree": 1,
+        "name": "WinIBEU - účtovnístvo a majetok",
+        "code": "isvs_8337"
+      },
+      {
+        "uuid": "44438a7d-8e43-4231-b264-7b6aaadc3fa6",
+        "degree": 1,
+        "name": "Softip - Personalistika a mzdy",
+        "code": "isvs_8338"
+      },
+      {
+        "uuid": "58b35911-beb5-4bfb-9bf4-baa5c3faab3d",
+        "degree": 1,
+        "name": "Základná báza údajov pre geografický informačný systém",
+        "code": "isvs_423"
+      },
+      {
+        "uuid": "46e8dade-fabc-404d-bbb5-2f14738f7323",
+        "degree": 1,
+        "name": "Informačný systém katastra nehnuteľností",
+        "code": "isvs_421"
+      },
+      {
+        "uuid": "7473efbe-fb9a-4b85-9141-ae000822310e",
+        "degree": 1,
+        "name": "Informačný systém geodetických základov",
+        "code": "isvs_422"
+      },
+      {
+        "uuid": "0f6b044e-b2c8-4340-a19a-ee32b33073a4",
+        "degree": 1,
+        "name": "HERMES pre kultúru",
+        "code": "isvs_9422"
+      },
+      {
+        "uuid": "b8a36c87-1b6d-449d-aa62-fe5b4ce1e12f",
+        "degree": 1,
+        "name": "Centrálny jednotný ekonomický systém SOFTIP PROFIT",
+        "code": "isvs_367"
+      },
+      {
+        "uuid": "64ff85dc-37e6-48ee-a16c-eef43aafa8c7",
+        "degree": 1,
+        "name": "Konsolidačná platforma údajov MZVEZ SR (OpenData Portál)",
+        "code": "isvs_9438"
+      },
+      {
+        "uuid": "399cc1d1-07bc-4b04-8b17-69b029b596f9",
+        "degree": 1,
+        "name": "Informačný systém Doklady (IS Doklady)",
+        "code": "isvs_4862"
+      },
+      {
+        "uuid": "744955de-d6b9-43f9-a4c9-a7e55495b53a",
+        "degree": 1,
+        "name": "Bezpečnostné systémy MZVEZ SR",
+        "code": "isvs_10743"
+      },
+      {
+        "uuid": "38a23626-961a-4c80-97d1-4247e3a2603c",
+        "degree": 1,
+        "name": "Security operation center (SOC) - MZVEZ SR",
+        "code": "isvs_13925"
+      },
+      {
+        "uuid": "acb878eb-4e54-4f0e-b973-cf8d1f8f9890",
+        "degree": 1,
+        "name": "Dátové centrum obcí a miest (DCOM)",
+        "code": "isvs_6391"
+      },
+      {
+        "uuid": "03fecd5d-4aad-4eb5-9699-d6883abb2784",
+        "degree": 1,
+        "name": "IS MCS - Informačný systém modelu cestnej siete",
+        "code": "isvs_5806"
+      },
+      {
+        "uuid": "3a86f8cc-aff0-4599-be04-b4294b647b26",
+        "degree": 1,
+        "name": "Elektronický informačný  systém pre správu registratúry - ESSR",
+        "code": "isvs_6106"
+      },
+      {
+        "uuid": "03f45466-126f-44f8-94f5-a56c3f637451",
+        "degree": 1,
+        "name": "IM - investičný manažment (ISUF)",
+        "code": "isvs_7193"
+      },
+      {
+        "uuid": "714d02bd-7ef2-4656-9576-b5ea4b48e60a",
+        "degree": 1,
+        "name": "Informačný systém účtovníctva fondov (ISUF) - modul PPA",
+        "code": "isvs_10561"
+      },
+      {
+        "uuid": "3519c5e4-0197-446f-9e56-7fc5c974ab73",
+        "degree": 1,
+        "name": "FM - riadenie rozpočtu (ISUF)",
+        "code": "isvs_7195"
+      },
+      {
+        "uuid": "8795086f-34d3-43c8-8e2a-a4816619f01e",
+        "degree": 1,
+        "name": "BOBJ - Business Objects (ISUF)",
+        "code": "isvs_7197"
+      },
+      {
+        "uuid": "e284bc24-e1cf-42ab-8620-8c31958aec44",
+        "degree": 1,
+        "name": "PS - systém riadenia projektov (ISUF)",
+        "code": "isvs_7165"
+      },
+      {
+        "uuid": "b82fb0f5-b2b4-4bcb-a0bd-6c010f17edf5",
+        "degree": 1,
+        "name": "Informačný systém účtovníctva fondov (ISUF) - klient POO",
+        "code": "isvs_10807"
+      },
+      {
+        "uuid": "f3f76b29-c90a-472a-a1c2-48b188552baf",
+        "degree": 1,
+        "name": "IS Fondu na podporu vzdelávania",
+        "code": "isvs_9558"
+      },
+      {
+        "uuid": "fbf01275-72b7-4702-b76c-afed72ec882d",
+        "degree": 1,
+        "name": "Centrálny register účtov",
+        "code": "isvs_11006"
+      },
+      {
+        "uuid": "a47ec44b-b17e-4466-986e-ab562fa920d7",
+        "degree": 1,
+        "name": "Rezortná platforma manažmentu údajov MF SR",
+        "code": "isvs_14728"
+      },
+      {
+        "uuid": "36faf794-516a-4314-99b2-55430bf043aa",
+        "degree": 1,
+        "name": "eVUC",
+        "code": "isvs_15390"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6960,
+      "total_islands": 6670,
+      "singleton_islands": 6486,
+      "multi_islands": [
+        {
+          "size_total": 15,
+          "size_source": 6,
+          "size_target": 9,
+          "fraction_total": 0.0021551724137931034,
+          "top_source_uuid": "c160c62c-0774-45c2-bd07-6959f7ad30fd",
+          "top_source_degree": 7,
+          "top_target_uuid": "0281f528-0045-4fa8-91bc-f5672a40f0f5",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 13,
+          "size_source": 8,
+          "size_target": 5,
+          "fraction_total": 0.001867816091954023,
+          "top_source_uuid": "4d3f0b75-5507-cf14-d3af-8b33a7fbb78f",
+          "top_source_degree": 5,
+          "top_target_uuid": "8b58848f-5daa-4167-a720-ac7b958c0d39",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 9,
+          "size_source": 8,
+          "size_target": 1,
+          "fraction_total": 0.001293103448275862,
+          "top_source_uuid": "e414fdfa-03d3-dff0-0f1c-c937327240ef",
+          "top_source_degree": 1,
+          "top_target_uuid": "56fb4575-7034-41c8-bf51-c4c97c50bcf4",
+          "top_target_degree": 8
+        },
+        {
+          "size_total": 8,
+          "size_source": 7,
+          "size_target": 1,
+          "fraction_total": 0.0011494252873563218,
+          "top_source_uuid": "c9d538cb-ac5f-0e8a-fd97-1783b000068b",
+          "top_source_degree": 1,
+          "top_target_uuid": "413fc24f-b67b-45b6-876a-c3493b43fa55",
+          "top_target_degree": 7
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0010057471264367816,
+          "top_source_uuid": "15a155d8-0e63-9172-daa8-f95c6dbd649d",
+          "top_source_degree": 1,
+          "top_target_uuid": "1bba5fdf-0d28-4eb7-8bc1-69c4b750912d",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.0008620689655172414,
+          "top_source_uuid": "5b45a7b0-92a1-4095-a478-8a7c74a9e172",
+          "top_source_degree": 1,
+          "top_target_uuid": "07700f40-8878-4401-be93-bdd1aa5c3e72",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.0008620689655172414,
+          "top_source_uuid": "abe972cc-50df-e763-ad5f-ec8ea4d1981d",
+          "top_source_degree": 1,
+          "top_target_uuid": "9ea995af-93da-46b2-8281-892dfd5e7b9b",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 5,
+          "size_source": 3,
+          "size_target": 2,
+          "fraction_total": 0.0007183908045977011,
+          "top_source_uuid": "39faa3ce-8afd-4486-9644-752e851d763e",
+          "top_source_degree": 2,
+          "top_target_uuid": "cfc6d4b6-1920-46a7-ae30-7c1b920f05fb",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0007183908045977011,
+          "top_source_uuid": "a98f72d1-7858-1d0b-4474-b3e0609d7ad2",
+          "top_source_degree": 1,
+          "top_target_uuid": "da785548-5338-43d4-b568-fc7fe49600d1",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0007183908045977011,
+          "top_source_uuid": "55abd1ac-35aa-9bd5-a0ad-0432f2946297",
+          "top_source_degree": 1,
+          "top_target_uuid": "719a52de-8567-4d40-bd51-585c56d43ded",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0007183908045977011,
+          "top_source_uuid": "73f104c6-b1a7-cc96-3738-781fe81d2688",
+          "top_source_degree": 1,
+          "top_target_uuid": "dfbe85a1-fcce-47f4-b6b9-1f3065ff36cc",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0007183908045977011,
+          "top_source_uuid": "7bf24a0b-4468-dd06-eef6-60b69021c8ad",
+          "top_source_degree": 1,
+          "top_target_uuid": "20416464-2bf1-47ba-8890-6487d850e446",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005747126436781609,
+          "top_source_uuid": "43603f49-85e8-b4f0-c7fd-fdd6e430ca09",
+          "top_source_degree": 1,
+          "top_target_uuid": "2555aa2f-175e-4c73-87a7-5401a5bd14d9",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005747126436781609,
+          "top_source_uuid": "943b1b36-52c5-40d9-a42b-247979ddb7b6",
+          "top_source_degree": 1,
+          "top_target_uuid": "8064e47f-496b-4b02-a1e1-faac81abb1b9",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005747126436781609,
+          "top_source_uuid": "2d6c64aa-0203-18d0-8f67-71ed54e92fc1",
+          "top_source_degree": 1,
+          "top_target_uuid": "ac011014-fb54-4257-9b77-ec47fe0b24e3",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005747126436781609,
+          "top_source_uuid": "8e2568f7-f7d4-a66b-909c-99d530708729",
+          "top_source_degree": 1,
+          "top_target_uuid": "bd23d587-6f8c-4c44-ae15-2052d507d31f",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005747126436781609,
+          "top_source_uuid": "3ee93cb8-748c-28b9-e809-b5f220cb9076",
+          "top_source_degree": 1,
+          "top_target_uuid": "36337485-ab51-4eee-9405-c95b9a4153d8",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005747126436781609,
+          "top_source_uuid": "4688069d-77d6-1f43-fef8-fe17b333aaeb",
+          "top_source_degree": 1,
+          "top_target_uuid": "3b288ea8-57cc-40b2-b5f2-342a136714c3",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005747126436781609,
+          "top_source_uuid": "6653fc0a-ee99-ea6b-5960-3f4df4a702d1",
+          "top_source_degree": 1,
+          "top_target_uuid": "eeb604ff-4893-47ad-b2f8-1e28479f0550",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005747126436781609,
+          "top_source_uuid": "61fba492-1b10-63d5-59a7-d67294bdb94c",
+          "top_source_degree": 1,
+          "top_target_uuid": "93f48df3-45d1-4657-a003-804d36f583dc",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "59ee6101-847e-0758-487a-85d475bb40b0",
+          "top_source_degree": 1,
+          "top_target_uuid": "53571df1-a036-4d66-874d-88f7dfd4d7dc",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "9678f7d5-e8ea-8bff-2f25-9015c093e9ee",
+          "top_source_degree": 1,
+          "top_target_uuid": "1f42b2de-2517-44b7-9fdd-428082028a68",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "cb23e2d9-1c7a-386d-58e6-cbfe4895f912",
+          "top_source_degree": 1,
+          "top_target_uuid": "06809f38-de44-4f0e-9a88-6d1fca2f3996",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "aafbe661-9254-1b99-db0c-e5c72b4b69c5",
+          "top_source_degree": 1,
+          "top_target_uuid": "ad6fd40b-082f-4baa-bc64-4211d90bc179",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "f393091c-e5dd-45c4-8e0e-4e49122dd433",
+          "top_source_degree": 1,
+          "top_target_uuid": "8e3c644d-336d-4e9e-932e-d871f98ac066",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "42515001-f784-1ed5-8a1d-4a2c60053f12",
+          "top_source_degree": 1,
+          "top_target_uuid": "94954549-cc5f-48ba-8167-af5db8427cd7",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "da309478-cb19-a871-6e66-cd798b83b9e1",
+          "top_source_degree": 1,
+          "top_target_uuid": "e59c8453-b6fc-4d07-aa8c-4cb0a1e0e4e6",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "8fa82d95-d9b3-59bb-39d0-5c53b87d4ad6",
+          "top_source_degree": 1,
+          "top_target_uuid": "9073fb65-6c82-405b-8dbd-69285e522b3b",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "3565d7cb-136c-ded2-ac76-ca724b6afc41",
+          "top_source_degree": 1,
+          "top_target_uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "2821f1a4-4ecc-f204-2175-dac92ba9a0c9",
+          "top_source_degree": 1,
+          "top_target_uuid": "823e8bdb-f485-4675-8f34-56f6de27f019",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "87417af6-1dbc-241c-da2e-ea08fd2e40ff",
+          "top_source_degree": 1,
+          "top_target_uuid": "ca43d147-2383-42db-92c8-c4db79ef1bce",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "3442a793-c73a-15f2-171b-0c7e7a31de9a",
+          "top_source_degree": 1,
+          "top_target_uuid": "203d4d58-5465-4f09-a2e1-b18dfc1de957",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "cba41dd0-4e24-adbb-fefb-054b720c4c27",
+          "top_source_degree": 1,
+          "top_target_uuid": "7b9bcbc4-c8f9-46c1-80dd-b8f9712a064d",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "317febbe-3f97-cf59-099d-7c106a1cd45b",
+          "top_source_degree": 1,
+          "top_target_uuid": "34868257-ce70-4627-91d4-05ace69ee148",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "37987e48-c1e1-4d42-adea-b15d85fc9941",
+          "top_source_degree": 1,
+          "top_target_uuid": "6615c366-9708-4137-b7ed-34777d3f0b2f",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "eeaa14dd-5023-f4ae-7d7d-5c1517fcb07f",
+          "top_source_degree": 1,
+          "top_target_uuid": "03e952e7-89bb-41f1-b2c1-4216c1ba2c57",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "807219bd-191f-951f-bec6-872a3db28578",
+          "top_source_degree": 1,
+          "top_target_uuid": "eb4c5d94-7aa2-4070-9035-28b3c5e6ed79",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "fb522dcf-22e4-8211-2414-b1dd08558f71",
+          "top_source_degree": 1,
+          "top_target_uuid": "f567f721-3bd6-4789-abd6-b7a3ce33ffc1",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "2e9af6eb-158f-9940-5b67-bc76785ed740",
+          "top_source_degree": 1,
+          "top_target_uuid": "92371d94-c510-4b5a-91f8-b1e30c86b34a",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "91e881b2-39bf-3ca1-1ae5-48fcf3b104bc",
+          "top_source_degree": 1,
+          "top_target_uuid": "f1392e88-45f0-4c07-9847-2010af6eb012",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "9349cb43-66d3-d7ab-563b-dbe0851d7468",
+          "top_source_degree": 1,
+          "top_target_uuid": "8139a9f8-03b5-40e1-8ee8-0e885750a67e",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "f3269a09-6e76-d4b5-c227-ef6fc1f486e8",
+          "top_source_degree": 1,
+          "top_target_uuid": "9a2f5325-ea5e-420a-bbdf-12dd285c27ae",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "f9006d17-1a75-ddea-1d05-4dcbc9950ef3",
+          "top_source_degree": 1,
+          "top_target_uuid": "c5739286-da78-47ac-8afb-2ab0af389224",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "16bdc337-3404-ea61-95b6-c5dad578bf56",
+          "top_source_degree": 1,
+          "top_target_uuid": "c670d8a6-94ab-48ee-aec2-d241795227f9",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004310344827586207,
+          "top_source_uuid": "51e44460-cea9-43cb-12b4-d8895932fbc8",
+          "top_source_degree": 2,
+          "top_target_uuid": "38a23626-961a-4c80-97d1-4247e3a2603c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "d3b67d29-1231-0456-10fd-6ee3cac3c61c",
+          "top_source_degree": 1,
+          "top_target_uuid": "900c07ff-cc2d-40cd-b3e7-74d0c7954383",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "e945e871-7b11-45ef-a172-6c85e204df14",
+          "top_source_degree": 1,
+          "top_target_uuid": "3a86f8cc-aff0-4599-be04-b4294b647b26",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "bb42a80e-8599-c1a0-4cce-ccb3f9aa310a",
+          "top_source_degree": 1,
+          "top_target_uuid": "357b170d-624a-4415-81ce-2ce7e7c32bd7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "0c95c970-7980-ca49-89f2-2bdb8d26c04b",
+          "top_source_degree": 1,
+          "top_target_uuid": "0831ff04-e174-4127-a2d0-661227d80c25",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "81caae28-c080-5d8f-cecc-55ee8b4dba2c",
+          "top_source_degree": 1,
+          "top_target_uuid": "4b742651-cf4c-4aa5-aa53-f80d8fe65c51",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "3619e7bd-83c2-69cd-e6d2-47462706fa59",
+          "top_source_degree": 1,
+          "top_target_uuid": "7473efbe-fb9a-4b85-9141-ae000822310e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "1af3e051-60b0-8fec-5345-c014d0607bef",
+          "top_source_degree": 1,
+          "top_target_uuid": "d1c6386b-e90c-41a5-b4f1-303f1d06c2a4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "55f72703-1954-4ae2-7320-22eff9281c45",
+          "top_source_degree": 1,
+          "top_target_uuid": "0afb4c9c-36ad-44ad-93e5-c7759b7b1b44",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "8e8bbe2b-a74a-d893-2fc2-42321abce13f",
+          "top_source_degree": 1,
+          "top_target_uuid": "b8715a70-4feb-4634-a98e-ea86a205a9a3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "94e18af5-9a7c-b57b-b9f1-447061fe27c4",
+          "top_source_degree": 1,
+          "top_target_uuid": "d3343739-257e-4764-817b-654ab7ead710",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "dda0a36e-2695-df20-f0bb-a92c7b61a0ae",
+          "top_source_degree": 1,
+          "top_target_uuid": "3032db84-dec1-4cf0-9459-c0a9f0446ea2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "d31012f6-03e4-4691-8872-c4ecf3118bbc",
+          "top_source_degree": 1,
+          "top_target_uuid": "73b24607-77ab-48f6-9b39-ef12d9836e32",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "6d0ae46e-e537-9876-13c3-14be269a475f",
+          "top_source_degree": 1,
+          "top_target_uuid": "9b1d41f6-b959-42d5-a964-d722f1d16b2a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "b1a74214-3359-1031-6cc9-5700d1431d6e",
+          "top_source_degree": 1,
+          "top_target_uuid": "43ad7bca-094d-4e00-a7e3-6dcf88024e06",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "a6144475-6e7a-afeb-2bf2-1f8ad3daa712",
+          "top_source_degree": 1,
+          "top_target_uuid": "23ddb005-5259-440b-a3f7-bbdb11871bdb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "35eaf23b-81d5-41cf-1fbc-8f5d96d66b4e",
+          "top_source_degree": 1,
+          "top_target_uuid": "0b61a7c2-da87-47b8-86ff-e495afbe426b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "94a9eb26-9f78-2447-16b4-7d4f7ad91bc0",
+          "top_source_degree": 1,
+          "top_target_uuid": "f0c546eb-b3fe-4460-aad2-e4bd02abcd57",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2a345bdc-9a1e-3904-d0bd-ba5bef8bf486",
+          "top_source_degree": 1,
+          "top_target_uuid": "1b75617f-a336-4f49-a546-c658675b41ac",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "9858c3fe-4e22-74a0-a31b-ddc9ee329d23",
+          "top_source_degree": 1,
+          "top_target_uuid": "d4c580da-b029-4e8b-ac40-fc08b284a1e7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "847236f8-9e8b-d326-8564-09a8f0cc144e",
+          "top_source_degree": 1,
+          "top_target_uuid": "795e385c-d05e-4643-a7e5-352041e7b193",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "38fed277-e2cb-7e97-80b4-dbffdfbe2ded",
+          "top_source_degree": 1,
+          "top_target_uuid": "b21aa7f3-c315-404d-acd7-f8a4eccc4e71",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "22e3f450-3b30-72eb-15ca-7d2da6b82f22",
+          "top_source_degree": 1,
+          "top_target_uuid": "874cb503-341a-4f01-91dd-b5b8a0a66394",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "8d79dc24-56d9-9840-a6cc-f8070f10f960",
+          "top_source_degree": 1,
+          "top_target_uuid": "3a7dc627-a258-4cb3-8ebf-54b3120af7a9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "907e1f6a-f1e7-1130-60ed-d5e2ad750962",
+          "top_source_degree": 1,
+          "top_target_uuid": "bb0bba9d-e390-42ea-befc-072469f9b08d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "a28eb8f6-754e-6478-09bc-e6a5d147a62a",
+          "top_source_degree": 1,
+          "top_target_uuid": "f78e9a90-9a44-476d-8255-075f143de67d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "5c76c14a-da96-62cc-079a-33d45d8dc619",
+          "top_source_degree": 1,
+          "top_target_uuid": "03fecd5d-4aad-4eb5-9699-d6883abb2784",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "e3a823f5-8e22-786e-01c2-8a2ea9af9216",
+          "top_source_degree": 1,
+          "top_target_uuid": "232d1841-b885-47e5-b670-3b699cd582d1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "1c8f7d35-62fe-a5c0-4d44-3901c132dfe6",
+          "top_source_degree": 1,
+          "top_target_uuid": "dc97ae13-d837-4dcc-a405-2c007e35bf50",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "faba98e9-bbbd-6ae3-5735-3418712cce6a",
+          "top_source_degree": 1,
+          "top_target_uuid": "80f11bd3-5a43-4ba7-92bf-7060be2cb550",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "f160d5c9-6f7e-eec9-b122-da197184189d",
+          "top_source_degree": 1,
+          "top_target_uuid": "75e34e46-63ed-43b4-9959-d1ebd46abc88",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "b89b419e-cc54-0f58-d8d7-61612da1a5ba",
+          "top_source_degree": 1,
+          "top_target_uuid": "565a1f3b-c42f-4bda-abd3-99ebfa8e9361",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "c29622c4-5eb5-06a8-0f68-c736861a88d5",
+          "top_source_degree": 1,
+          "top_target_uuid": "ae39e141-d2a2-4606-bb5a-92d2b1e1e7b7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "a8a0e6ff-baa6-0cda-996a-71122bb0669e",
+          "top_source_degree": 1,
+          "top_target_uuid": "74aff0fb-d453-4657-8ecf-709e56dc5381",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "292ea391-e325-995d-21ed-44ec4586554e",
+          "top_source_degree": 1,
+          "top_target_uuid": "f6ebb249-c5ac-448f-977e-c8b94facbc67",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "92eacbfa-5443-e455-55d2-c22d815e89f3",
+          "top_source_degree": 1,
+          "top_target_uuid": "b4bccad5-3a36-41c4-abf9-a3eb9f336b07",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "43cf4537-e605-3b5a-2b4f-a4ccfdda1061",
+          "top_source_degree": 1,
+          "top_target_uuid": "bd01895c-fac9-45c1-98a8-653eba92a294",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2988f445-c15e-6a1f-9e0a-707f4f8f5c82",
+          "top_source_degree": 1,
+          "top_target_uuid": "b8884c83-8434-473a-8ac0-9aa1d15404b9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "492147b4-c293-3b4d-5305-01701b53fb38",
+          "top_source_degree": 1,
+          "top_target_uuid": "f6327549-60aa-49f7-a36a-8940a4228f3f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "458e3b70-63b6-73c9-9a09-7be4baa980c8",
+          "top_source_degree": 1,
+          "top_target_uuid": "fd8fd33f-0134-43fb-a507-e26b97df0467",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "d21a280b-4108-9746-1693-a180bfc77fb8",
+          "top_source_degree": 1,
+          "top_target_uuid": "254da198-c0c0-42d0-9f5d-c0a97e572936",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "c0a0be41-aca4-1ed5-7eed-06b830e74129",
+          "top_source_degree": 1,
+          "top_target_uuid": "d64c467c-41b7-457b-a1e5-813a155d26ca",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "ae76178c-5558-b1c0-6a3e-3a84fcb8aec5",
+          "top_source_degree": 1,
+          "top_target_uuid": "239a0d0a-3f4e-452a-a191-850bf7492903",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "d491d9f6-1f69-f6f0-a737-1c7fba3f240c",
+          "top_source_degree": 1,
+          "top_target_uuid": "5917b948-fd0c-4986-aa24-8120ce699f93",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "ff4e67af-64b4-d101-e178-2e2b047718bc",
+          "top_source_degree": 1,
+          "top_target_uuid": "0f6b044e-b2c8-4340-a19a-ee32b33073a4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "e19dda89-8f26-1f7b-dc6c-bd9edeeb53c5",
+          "top_source_degree": 1,
+          "top_target_uuid": "489417bb-adb4-4914-ac00-c1ef7b9ba886",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "10fad0d1-be8a-e632-4101-30985343f011",
+          "top_source_degree": 1,
+          "top_target_uuid": "1a2f3c6a-350d-43b4-b309-5c93a6401888",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "96648902-97d0-e9f5-7e11-484e6ac1d858",
+          "top_source_degree": 1,
+          "top_target_uuid": "02b0429b-3584-4ab0-b51e-4ed474e83ae0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "ee477a79-0adc-d51e-2d3f-c56a393c2d4c",
+          "top_source_degree": 1,
+          "top_target_uuid": "249f6078-0aa0-44a2-8e65-e34da96012c4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "f7dde39e-5777-017c-6e81-b937a243869f",
+          "top_source_degree": 1,
+          "top_target_uuid": "82f730eb-4c5b-447f-9314-4464843f38bd",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "1845d075-238a-9562-d3c6-3037c236c7b5",
+          "top_source_degree": 1,
+          "top_target_uuid": "f66599d0-8fd9-4580-86cb-43db97eb4b96",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "cf97890e-de6e-70e9-e2c7-4e3a96f252e6",
+          "top_source_degree": 1,
+          "top_target_uuid": "5dc0a1a1-b4b9-46df-ae89-1acdc7104433",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "16fd4ec5-4077-5419-2d3e-6b038956dd33",
+          "top_source_degree": 1,
+          "top_target_uuid": "6e1ae7de-06f7-4db5-b59e-927a5cefcf81",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "cd4561aa-7003-9122-78db-e039213fb0cb",
+          "top_source_degree": 1,
+          "top_target_uuid": "0c97e310-fe0c-4481-8ab3-f177754607fb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "dcfb4ae3-0381-ef67-f694-e911ef58809b",
+          "top_source_degree": 1,
+          "top_target_uuid": "184d7a6f-124c-4734-bac9-1c5c84f2f07c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "54152256-5e74-10b2-0e0e-027380623c79",
+          "top_source_degree": 1,
+          "top_target_uuid": "d70f123c-ef70-4768-a292-75aed4c2d43b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "fabcd1c4-d8cb-c171-82b1-4dd45a634c63",
+          "top_source_degree": 1,
+          "top_target_uuid": "af53509a-9fe7-4a14-8038-b718f12f290e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "869cd078-a283-195f-c72c-4338dc4e8f6f",
+          "top_source_degree": 1,
+          "top_target_uuid": "85c26d12-2342-4ae5-b0a4-9d522a475644",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "e2959515-f5f0-b375-b9fb-c0046315ba1c",
+          "top_source_degree": 1,
+          "top_target_uuid": "d29f8467-8dba-44bf-9c8e-5f520280caae",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "d33484ed-80ce-2241-0429-3858592f696e",
+          "top_source_degree": 1,
+          "top_target_uuid": "1d2d9928-9cdf-4d24-b75b-c9160019e4ad",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "4514a98f-cb56-7b5a-1862-324c950087c1",
+          "top_source_degree": 1,
+          "top_target_uuid": "540cc490-a541-431b-9cb8-250f76dfd76e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "1b471f66-47c9-94e5-4242-049dfec8992d",
+          "top_source_degree": 1,
+          "top_target_uuid": "4ffa4fc1-795a-4bce-b8d8-c4235b31cb7f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "6c998e38-ec50-a9f8-dc64-0b91837a09e4",
+          "top_source_degree": 1,
+          "top_target_uuid": "1efbda7d-dc9d-44e0-97a2-0a731ddbb08a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "ed4f7833-6b50-904a-412b-66c750cf629f",
+          "top_source_degree": 1,
+          "top_target_uuid": "64ff85dc-37e6-48ee-a16c-eef43aafa8c7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "38590fde-733b-dc4c-d25b-dd6af1c9f663",
+          "top_source_degree": 1,
+          "top_target_uuid": "5b2f1928-1aec-48e5-8cc0-fbbd7a7f3fed",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2ad5c3cd-4f86-0ba9-913e-71268f9de233",
+          "top_source_degree": 1,
+          "top_target_uuid": "d5fe7e2b-0822-41a0-a0cc-04c47c2483bf",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "9c8da2d4-5f76-5c99-c794-af342868d7d3",
+          "top_source_degree": 1,
+          "top_target_uuid": "775ad12b-8cd5-4dd4-afd7-21ae21e22cc1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "166c6040-a661-613f-f123-b14c4b2b5e7e",
+          "top_source_degree": 1,
+          "top_target_uuid": "85763bf5-bab7-4c02-a7bb-7359c930da7a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "3e7f5302-7ae3-e12e-3d33-71efa8044c41",
+          "top_source_degree": 1,
+          "top_target_uuid": "989e340f-4caf-4a37-9d4f-26c9c3d015ee",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "f4e53e6b-bbb6-2efa-a8e7-908fe727836d",
+          "top_source_degree": 1,
+          "top_target_uuid": "1304e548-2a56-467f-b49a-3a9136d99bd8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "04625958-0eb4-472d-a24e-aa0f720e7547",
+          "top_source_degree": 1,
+          "top_target_uuid": "36faf794-516a-4314-99b2-55430bf043aa",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "4b77c5b6-6df4-6d89-13bd-87166a63b788",
+          "top_source_degree": 1,
+          "top_target_uuid": "aab810e5-ac0e-429d-9c69-f2953f37ce95",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "f0ae1c7b-7b46-0e3f-ee31-c5ad0b29e46e",
+          "top_source_degree": 1,
+          "top_target_uuid": "e5e994a9-aeb9-4517-a3ee-0a16228ce01e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "82faa056-4d68-f76b-3eb3-67fa504c5d4a",
+          "top_source_degree": 1,
+          "top_target_uuid": "b4664d6d-9f84-4bc3-ad4e-9503d431068f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "62e935a7-d8e6-7d70-645c-408b722c54b1",
+          "top_source_degree": 1,
+          "top_target_uuid": "d7076f2e-79d9-43f1-a6cb-94f625c820bc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "d7c589e3-aeae-a358-a7f0-57b708b261b4",
+          "top_source_degree": 1,
+          "top_target_uuid": "c3c49953-3e2c-415f-a967-cc202d41bdc7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "3289fbb0-edca-e311-ac2f-c1ac4663c219",
+          "top_source_degree": 1,
+          "top_target_uuid": "466284bf-c648-40cc-8af2-abaeecf6f950",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "b89b2088-caec-8c86-160f-18a7d762ffb0",
+          "top_source_degree": 1,
+          "top_target_uuid": "600625f5-999e-4186-bee8-9829512bc53d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "c4b44e90-ce1c-c3da-70ac-f6c4a2669b73",
+          "top_source_degree": 1,
+          "top_target_uuid": "a3b57f93-0696-455e-b88f-e6a3e78f2912",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "746620bb-df84-ab7a-5735-fe3fcb6c5c21",
+          "top_source_degree": 1,
+          "top_target_uuid": "1b493742-7f19-487a-b5d6-9cdab88aef3a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2726e83c-238a-fa43-87aa-22a9803323d7",
+          "top_source_degree": 1,
+          "top_target_uuid": "cc5a7fb9-5dce-48c1-bc6d-a38a69cb31ac",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "d845499a-0aa4-a861-5dce-81cfd2132b9e",
+          "top_source_degree": 1,
+          "top_target_uuid": "acb0e211-c28d-4a31-8e0f-e30fa54193ba",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "8d00e6d7-6acf-fc6b-ddb7-13d4eb3fc4d6",
+          "top_source_degree": 1,
+          "top_target_uuid": "e170396e-9b97-4749-8343-d6b38f1d419f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2adb98ca-6347-00e3-ff19-6897a0ef84ea",
+          "top_source_degree": 1,
+          "top_target_uuid": "46f6ef9a-96e4-4241-8dee-502a87533503",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "a0ea404b-ca5a-2ead-d878-03d9f6d88631",
+          "top_source_degree": 1,
+          "top_target_uuid": "8628dc99-48b9-4e36-9dfb-9b8ada75c41d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "cc60e9a5-9abe-e3e0-1491-e2df75eaf83f",
+          "top_source_degree": 1,
+          "top_target_uuid": "544d694c-60e1-4a9a-8c95-4a48a7244c20",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "f9cc45f0-960d-4993-b3ba-b0e83940f35f",
+          "top_source_degree": 1,
+          "top_target_uuid": "fbf01275-72b7-4702-b76c-afed72ec882d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "a2ea5abd-dda9-2c68-c5e3-9ca5cbd5f089",
+          "top_source_degree": 1,
+          "top_target_uuid": "b8a36c87-1b6d-449d-aa62-fe5b4ce1e12f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2a027262-6116-9105-2fd7-4e6ae6ce6edf",
+          "top_source_degree": 1,
+          "top_target_uuid": "26a4295f-0206-4eb6-b36e-bd44cd6427f7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "184083dc-5cad-4779-a0c1-c1abadb950e1",
+          "top_source_degree": 1,
+          "top_target_uuid": "136895e8-c590-476d-a795-0d775f8de9a4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "8945332d-7735-14bc-8e11-97c57f85b185",
+          "top_source_degree": 1,
+          "top_target_uuid": "49247501-0a08-45bf-a2d8-0cd763338778",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "5e620dae-f65e-d8d0-8b6e-33083e675ab9",
+          "top_source_degree": 1,
+          "top_target_uuid": "58b35911-beb5-4bfb-9bf4-baa5c3faab3d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "4ae693d5-ba70-375e-8b10-2f3358dc7149",
+          "top_source_degree": 1,
+          "top_target_uuid": "d9683cd3-6eb8-4346-9403-d737d607527e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "df2ae067-e2f6-b514-05ae-ba698fa8a5eb",
+          "top_source_degree": 1,
+          "top_target_uuid": "400aa10b-8887-41c0-83a3-65e1c097dbd9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "9f9b2ad6-0e7a-e0ca-d02d-a5ebdb20c10c",
+          "top_source_degree": 1,
+          "top_target_uuid": "33eef206-7f99-4f0e-bb35-3f3e544e39b8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "c1353f57-63f5-271b-6ac0-2a89a1996714",
+          "top_source_degree": 1,
+          "top_target_uuid": "f3fd4ea3-3eb9-4a99-8d51-01320b59d077",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "03d5bd09-ff41-ca34-eef0-6131aa22b197",
+          "top_source_degree": 1,
+          "top_target_uuid": "829f8e73-008a-438f-b136-45f14e1aa3e2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "3331c686-b8d4-c781-71f3-ef1b09b3d231",
+          "top_source_degree": 1,
+          "top_target_uuid": "46e8dade-fabc-404d-bbb5-2f14738f7323",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "69c8e922-6a41-ab35-1f0c-a78ba1b54fea",
+          "top_source_degree": 1,
+          "top_target_uuid": "a8aa6c3d-56df-4bc8-86a7-43a0458a026f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "633efd27-f399-a4a0-4334-ad6ef3d42903",
+          "top_source_degree": 1,
+          "top_target_uuid": "326d01be-a5e7-4cad-b392-7cf585e019bc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "9a5c07ed-772d-4f49-bd93-48153ba6c8d5",
+          "top_source_degree": 1,
+          "top_target_uuid": "c98a04e8-e674-456b-8091-07799ef80fa0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "f6499d58-c1c5-b206-3ca4-69e269b63498",
+          "top_source_degree": 1,
+          "top_target_uuid": "d93e2cde-ef3b-4c49-b547-8f9983cb9d7e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "0d52454e-b251-db29-fc28-79aa538fbb94",
+          "top_source_degree": 1,
+          "top_target_uuid": "776e48b6-e113-4c45-87fe-4a2184eded85",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "b709efd1-0661-7734-e16a-45d8676a8dfb",
+          "top_source_degree": 1,
+          "top_target_uuid": "fea861c3-b2e0-4942-844a-697cbff56313",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "9bd45674-7ed3-f59d-97c1-511a3d157019",
+          "top_source_degree": 1,
+          "top_target_uuid": "e12c46b2-12a7-456b-98d3-b712635608fc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "3be80da1-5742-0b25-6f70-569420e4bdd7",
+          "top_source_degree": 1,
+          "top_target_uuid": "679031f3-9ee4-4e61-af06-deb7db6edbc1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "b51c43d7-2b4a-7501-d060-c48e834835f9",
+          "top_source_degree": 1,
+          "top_target_uuid": "c94113df-e6c7-4966-b9dd-3d4900dd504b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "33e7c634-2b08-e1dd-c970-92441f1a77e3",
+          "top_source_degree": 1,
+          "top_target_uuid": "d7ae8306-921e-425e-8800-ff33fc29d282",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "1ef77e9a-ad9d-4e40-5a7a-187db1a5ef0f",
+          "top_source_degree": 1,
+          "top_target_uuid": "399cc1d1-07bc-4b04-8b17-69b029b596f9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "cd3b1835-3fd6-d988-d5dc-89f67865eb14",
+          "top_source_degree": 1,
+          "top_target_uuid": "3417809e-a757-4691-9b2d-81eb0e45604b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "b24e8db3-eea4-a450-85fe-87f45ed48169",
+          "top_source_degree": 1,
+          "top_target_uuid": "acb878eb-4e54-4f0e-b973-cf8d1f8f9890",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "6daeadb6-6d77-d87f-5482-984c26861f2d",
+          "top_source_degree": 1,
+          "top_target_uuid": "8d181716-2516-4620-b9b1-8a61a7b59197",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "ce865ee5-b3e8-b275-4537-735716636e1c",
+          "top_source_degree": 1,
+          "top_target_uuid": "f72d3d93-7cc1-4b8c-8b6e-1f665867de96",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "1253ece8-5e13-51f8-00d9-8b3261c749b5",
+          "top_source_degree": 1,
+          "top_target_uuid": "e7bd9856-cb32-4d00-82e6-8a65dab7ecb8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "f14cf193-3fd4-ae3c-b5b7-373cb700fadf",
+          "top_source_degree": 1,
+          "top_target_uuid": "a34ff924-edbd-437f-8466-c8e37df8d13d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "acf2d767-95d4-d71d-d980-3f277ed1a980",
+          "top_source_degree": 1,
+          "top_target_uuid": "16963de7-9121-4753-afe5-00b81b67b192",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "07fcfd94-0f18-3f62-5d33-380918bc0df3",
+          "top_source_degree": 1,
+          "top_target_uuid": "e69ae354-95ab-47ce-8c0f-77c1854b9365",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "876801e9-4351-67a3-6ebc-d7e82f9d6ae3",
+          "top_source_degree": 1,
+          "top_target_uuid": "9f9e6e98-b395-4659-9549-8d82bd2d9d1b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "3791fb3a-f31f-464c-a5b6-a5efa267b469",
+          "top_source_degree": 1,
+          "top_target_uuid": "f3f76b29-c90a-472a-a1c2-48b188552baf",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "91ccbd15-4979-b04e-7217-ddce47275534",
+          "top_source_degree": 1,
+          "top_target_uuid": "b99505e0-1c57-4bdd-99c5-e38aae35cc70",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "975cae8f-be7e-5b02-2356-38657b83f5d8",
+          "top_source_degree": 1,
+          "top_target_uuid": "5456ec43-963d-4ecc-b870-8ae438401fb0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "474e96a8-dc88-94b4-f764-b7cd2e649fdc",
+          "top_source_degree": 1,
+          "top_target_uuid": "ba2dc31e-b1da-4646-8f83-ad9aac29ed37",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2b071c72-b904-4e77-053d-24477c15a2f1",
+          "top_source_degree": 1,
+          "top_target_uuid": "15fd8d87-6b70-404f-ad0f-6b008f5dca53",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "7bd584fd-3e22-1adf-36fc-059c906a503f",
+          "top_source_degree": 1,
+          "top_target_uuid": "c6f982c7-119b-4b54-84d8-5d9d0de32651",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "b12f4949-6ff9-4654-3df4-2d370fa61714",
+          "top_source_degree": 1,
+          "top_target_uuid": "ea934806-6075-4223-981c-76cf399bd9bb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "cb541128-59bb-8938-4a9b-8008e19365b2",
+          "top_source_degree": 1,
+          "top_target_uuid": "22ed8e78-b313-47d0-be53-ab884fe152b0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2e9b7671-09c1-c8f1-939e-15e618db60c4",
+          "top_source_degree": 1,
+          "top_target_uuid": "44438a7d-8e43-4231-b264-7b6aaadc3fa6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2a9e2287-bb2d-e243-cd50-c70d0f31c1de",
+          "top_source_degree": 1,
+          "top_target_uuid": "7160834a-aa6b-433f-a0c4-309cd9c933ce",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "6ce58deb-6aea-914a-d626-6c8a35dfdd9a",
+          "top_source_degree": 1,
+          "top_target_uuid": "24d469a6-743a-4114-a940-ca40e9eca197",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "272feb4f-77de-1375-4e47-b298c4760ec8",
+          "top_source_degree": 1,
+          "top_target_uuid": "92067e54-faa9-4e88-8623-71738260fe35",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "08c8ed92-e187-fb1f-2c25-8b0f0c155585",
+          "top_source_degree": 1,
+          "top_target_uuid": "5026f360-a17a-4276-92a3-d134cd6acb92",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "be5c3dd4-23f6-3dc8-82d9-0961b9e502c0",
+          "top_source_degree": 1,
+          "top_target_uuid": "7eb77306-5e1f-4fa0-be1f-3b68fbfc5771",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "dd270fb3-00a0-ec44-d963-b40346795fbe",
+          "top_source_degree": 1,
+          "top_target_uuid": "96942287-60d0-4f07-9472-ae62adfe18e6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "56f85651-ba76-b181-fcb0-8edb18d0ff19",
+          "top_source_degree": 1,
+          "top_target_uuid": "276e524c-d36c-4c75-aed5-202c79e83934",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "b3615748-833c-87f1-a6ba-748aaba33fee",
+          "top_source_degree": 1,
+          "top_target_uuid": "21ad9c0e-6768-4e23-b2ea-f50419db0369",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2871e69f-5b6e-0623-b483-f1e72fc0b1a5",
+          "top_source_degree": 1,
+          "top_target_uuid": "5caef0a7-1a14-4de4-bf4d-0c12551926cc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "5f3505c8-1abc-92a1-9587-4a0257cf18e3",
+          "top_source_degree": 1,
+          "top_target_uuid": "207950bd-8e20-4477-ba0e-6e37a8dd7dd0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "2f26e641-2236-b8e4-6e99-053f16c33ea1",
+          "top_source_degree": 1,
+          "top_target_uuid": "866d4ea8-3c9e-4ede-963e-217f2b023cc9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "322e104c-bb19-a911-1add-dc7546053626",
+          "top_source_degree": 1,
+          "top_target_uuid": "8500c211-1a29-4381-aa47-d77525f73152",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00028735632183908046,
+          "top_source_uuid": "740fc3d8-0646-12be-3d5d-35e12e3722c5",
+          "top_source_degree": 1,
+          "top_target_uuid": "5caee721-d988-4692-b8e2-dde67b29e147",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 295,
+        "total_islands": 203,
+        "singleton_islands": 159,
+        "multi_islands": [
+          {
+            "size": 8,
+            "fraction": 0.02711864406779661,
+            "size_total": 9,
+            "top_uuid": "e414fdfa-03d3-dff0-0f1c-c937327240ef",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.02711864406779661,
+            "size_total": 13,
+            "top_uuid": "4d3f0b75-5507-cf14-d3af-8b33a7fbb78f",
+            "top_degree": 5
+          },
+          {
+            "size": 7,
+            "fraction": 0.023728813559322035,
+            "size_total": 8,
+            "top_uuid": "c9d538cb-ac5f-0e8a-fd97-1783b000068b",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.020338983050847456,
+            "size_total": 7,
+            "top_uuid": "15a155d8-0e63-9172-daa8-f95c6dbd649d",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.020338983050847456,
+            "size_total": 15,
+            "top_uuid": "c160c62c-0774-45c2-bd07-6959f7ad30fd",
+            "top_degree": 7
+          },
+          {
+            "size": 5,
+            "fraction": 0.01694915254237288,
+            "size_total": 6,
+            "top_uuid": "5b45a7b0-92a1-4095-a478-8a7c74a9e172",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.01694915254237288,
+            "size_total": 6,
+            "top_uuid": "abe972cc-50df-e763-ad5f-ec8ea4d1981d",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.013559322033898305,
+            "size_total": 5,
+            "top_uuid": "a98f72d1-7858-1d0b-4474-b3e0609d7ad2",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.013559322033898305,
+            "size_total": 5,
+            "top_uuid": "55abd1ac-35aa-9bd5-a0ad-0432f2946297",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.013559322033898305,
+            "size_total": 5,
+            "top_uuid": "73f104c6-b1a7-cc96-3738-781fe81d2688",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.013559322033898305,
+            "size_total": 5,
+            "top_uuid": "7bf24a0b-4468-dd06-eef6-60b69021c8ad",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 4,
+            "top_uuid": "43603f49-85e8-b4f0-c7fd-fdd6e430ca09",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 5,
+            "top_uuid": "39faa3ce-8afd-4486-9644-752e851d763e",
+            "top_degree": 2
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 4,
+            "top_uuid": "943b1b36-52c5-40d9-a42b-247979ddb7b6",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 4,
+            "top_uuid": "2d6c64aa-0203-18d0-8f67-71ed54e92fc1",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 4,
+            "top_uuid": "8e2568f7-f7d4-a66b-909c-99d530708729",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 4,
+            "top_uuid": "3ee93cb8-748c-28b9-e809-b5f220cb9076",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 4,
+            "top_uuid": "4688069d-77d6-1f43-fef8-fe17b333aaeb",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 4,
+            "top_uuid": "6653fc0a-ee99-ea6b-5960-3f4df4a702d1",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010169491525423728,
+            "size_total": 4,
+            "top_uuid": "61fba492-1b10-63d5-59a7-d67294bdb94c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "59ee6101-847e-0758-487a-85d475bb40b0",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "9678f7d5-e8ea-8bff-2f25-9015c093e9ee",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "cb23e2d9-1c7a-386d-58e6-cbfe4895f912",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "aafbe661-9254-1b99-db0c-e5c72b4b69c5",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "f393091c-e5dd-45c4-8e0e-4e49122dd433",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "42515001-f784-1ed5-8a1d-4a2c60053f12",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "da309478-cb19-a871-6e66-cd798b83b9e1",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "8fa82d95-d9b3-59bb-39d0-5c53b87d4ad6",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "3565d7cb-136c-ded2-ac76-ca724b6afc41",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "2821f1a4-4ecc-f204-2175-dac92ba9a0c9",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "87417af6-1dbc-241c-da2e-ea08fd2e40ff",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "3442a793-c73a-15f2-171b-0c7e7a31de9a",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "cba41dd0-4e24-adbb-fefb-054b720c4c27",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "317febbe-3f97-cf59-099d-7c106a1cd45b",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "37987e48-c1e1-4d42-adea-b15d85fc9941",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "eeaa14dd-5023-f4ae-7d7d-5c1517fcb07f",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "807219bd-191f-951f-bec6-872a3db28578",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "fb522dcf-22e4-8211-2414-b1dd08558f71",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "2e9af6eb-158f-9940-5b67-bc76785ed740",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "91e881b2-39bf-3ca1-1ae5-48fcf3b104bc",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "9349cb43-66d3-d7ab-563b-dbe0851d7468",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "f3269a09-6e76-d4b5-c227-ef6fc1f486e8",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "f9006d17-1a75-ddea-1d05-4dcbc9950ef3",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.006779661016949152,
+            "size_total": 3,
+            "top_uuid": "16bdc337-3404-ea61-95b6-c5dad578bf56",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 6665,
+        "total_islands": 6651,
+        "singleton_islands": 6647,
+        "multi_islands": [
+          {
+            "size": 9,
+            "fraction": 0.001350337584396099,
+            "size_total": 15,
+            "top_uuid": "0281f528-0045-4fa8-91bc-f5672a40f0f5",
+            "top_degree": 5
+          },
+          {
+            "size": 5,
+            "fraction": 0.0007501875468867217,
+            "size_total": 13,
+            "top_uuid": "8b58848f-5daa-4167-a720-ac7b958c0d39",
+            "top_degree": 6
+          },
+          {
+            "size": 2,
+            "fraction": 0.0003000750187546887,
+            "size_total": 5,
+            "top_uuid": "cfc6d4b6-1920-46a7-ae30-7c1b920f05fb",
+            "top_degree": 3
+          },
+          {
+            "size": 2,
+            "fraction": 0.0003000750187546887,
+            "size_total": 3,
+            "top_uuid": "38a23626-961a-4c80-97d1-4247e3a2603c",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

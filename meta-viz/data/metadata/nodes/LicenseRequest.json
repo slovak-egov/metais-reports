@@ -1,0 +1,635 @@
+{
+  "id": 68,
+  "name": "Žiadosť o licenciu",
+  "technicalName": "LicenseRequest",
+  "description": "Žiadosť o licenciu.",
+  "roleList": [
+    "LIC_LMMF",
+    "LIC_ZLPO",
+    "LIC_LM_UPVII"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#dfdfdf",
+  "engName": "License request",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 79,
+      "name": "Profil ORACLE Ziadost o licenciu",
+      "description": "Profil ORACLE Ziadost o licenciu",
+      "technicalName": "Profil_LicenseRequest_Oracle",
+      "roleList": [
+        "LIC_LMMF",
+        "LIC_ZLPO",
+        "LIC_LM_UPVII"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "ORACLE Profile License request",
+      "attributes": [
+        {
+          "id": 71,
+          "name": "Dodávateľ",
+          "description": "Dodávateľ.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_vendor",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Supplier",
+          "engDescription": "Supplier",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 617,
+          "name": "Žiadateľ",
+          "description": "Identifikátor žiadateľa",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_requestedBy",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Applicant",
+          "engDescription": "Requestor identifier",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 525,
+          "name": "Typ zmluvy",
+          "description": "Typ zmluvy.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_contractType",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Type of contract",
+          "engDescription": "Type of contract.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 170,
+          "name": "Kontaktná osoba",
+          "description": "Kontaktná osoba.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_contactPerson",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Contact person",
+          "engDescription": "Contact person.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 78,
+          "name": "Dôvod žiadosti",
+          "description": "Dôvod žiadosti.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_reason",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reason of request",
+          "engDescription": "Reason of request",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 338,
+          "name": "Poznámka",
+          "description": "Poznámka.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_note",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Note",
+          "engDescription": "Note to record of selected public authority.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 370,
+          "name": "Príloha",
+          "description": "Príloha.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_attachment",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Attachment",
+          "engDescription": "Attachment.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 452,
+          "name": "Stav žiadosti",
+          "description": "Stav žiadosti.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_state",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Request status",
+          "engDescription": "Request status.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 618,
+          "name": "Žiadateľ názov",
+          "description": "Názov organizácie žiadateľa",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_requestedByName",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Applicant name",
+          "engDescription": "Name of requestor",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 830,
+          "name": "Dátum vybavenia žiadosti",
+          "description": "Dátum vybavenia žiadosti.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_dateOfResolved",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Resolve date",
+          "engDescription": "Resolve date.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 833,
+          "name": "Je vytvorená z existujúcej licencie",
+          "description": "Príznak o tom či žiadosť je vytvorená z existujúcej licencie",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseRequest_fromExistingSupport",
+          "order": 11,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Created from existing license",
+          "engDescription": "Created from existing license",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "ziadost_o_licenciu_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/licence-request",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 55,
+        "name": "Žiadosť obsahuje fragment licencie",
+        "engName": "Request contains license fragment",
+        "technicalName": "LicenseRequest_obsahuje_LicenseFragment",
+        "description": "Žiadosť obsahuje fragment licencie",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "Request contains license fragment",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1196,
+        "name": "Žiadosť o licenciu je používana ISVS",
+        "engName": "LicenseRequest used by ISVS.",
+        "technicalName": "LicenseRequest_usedby_ISVS",
+        "description": "Žiadosť o licenciu  je používana ISVS",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "LicenseRequest used by ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1197,
+        "name": "Žiadosť o licenciu je používana SW",
+        "engName": "LicenseRequest used by SW.",
+        "technicalName": "LicenseRequest_usedby_SW",
+        "description": "Žiadosť o licenciu  je používana SW",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "LicenseRequest used by SW",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": []
+  }
+}

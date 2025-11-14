@@ -1,0 +1,173 @@
+{
+  "relation_name": "Osobitny_postup_je_spravovany_PO",
+  "name": "Osobitný postup je spravovaný PO",
+  "description": "Osobitný postup je spravovaný PO",
+  "engDescription": "Special procedure is administered by Obliged person",
+  "type": "application",
+  "source_type": "OsobitnyPostup",
+  "source_name": "Osobitný postup podľa zákona o ITVS",
+  "target_type": "PO",
+  "target_name": "Povinná osoba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 10,
+    "unique_pairs": 10,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 10,
+    "target_total": 5792,
+    "source_connected": 10,
+    "target_connected": 1,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 10,
+      "max": 10,
+      "avg": 10.0,
+      "median": 10,
+      "p90": 10,
+      "p99": 10
+    },
+    "top_source": [
+      {
+        "uuid": "442f3065-a9c3-49dc-a66d-829a7f434dd8",
+        "degree": 1,
+        "name": "www.ropka.sk",
+        "code": "osobitny_postup_2"
+      },
+      {
+        "uuid": "d7ef73b9-edd9-4361-afc8-1e2a2952f34c",
+        "degree": 1,
+        "name": "www.opbk.sk",
+        "code": "osobitny_postup_3"
+      },
+      {
+        "uuid": "1574ded6-783f-4864-9953-fd776120f0cb",
+        "degree": 1,
+        "name": "www.opis.gov.sk",
+        "code": "osobitny_postup_4"
+      },
+      {
+        "uuid": "8e2978ee-cb03-40a1-a694-c28e6852b0be",
+        "degree": 1,
+        "name": "www.swiss-contribution.sk",
+        "code": "osobitny_postup_5"
+      },
+      {
+        "uuid": "4eb42f87-93f8-40a8-83a8-55417a57a3bf",
+        "degree": 1,
+        "name": "www.trnava.sk",
+        "code": "osobitny_postup_6"
+      },
+      {
+        "uuid": "ff707817-ceaa-415d-88e1-c843d66cb976",
+        "degree": 1,
+        "name": "www.minv.sk",
+        "code": "osobitny_postup_7"
+      },
+      {
+        "uuid": "938c9871-3ea1-4911-a57d-cb62ebaba2f5",
+        "degree": 1,
+        "name": "predloženie koncepcie rozvoja informačných technológií verejnej správy",
+        "code": "osobitny_postup_8"
+      },
+      {
+        "uuid": "836de1b3-65c2-4168-8a1a-8b03dd0e4931",
+        "degree": 1,
+        "name": "zrušenie rozhodnutia o osobitnom postupe",
+        "code": "osobitny_postup_11"
+      },
+      {
+        "uuid": "185ad263-2993-427d-ae40-f718399abcb9",
+        "degree": 1,
+        "name": "odloženie povinnosti predložiť koncepciu rozvoja informačných technológií verejnej správy",
+        "code": "osobitny_postup_12"
+      },
+      {
+        "uuid": "04af8a15-0be6-4b50-af53-d62223abd057",
+        "degree": 1,
+        "name": "www.nssud.sk",
+        "code": "osobitny_postup_14"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "67d48d04-321e-426e-a321-e0bc6fa40437",
+        "degree": 10,
+        "name": "Garant eGovernmentu",
+        "code": "000000003001"
+      }
+    ],
+    "islands": {
+      "total_nodes": 5802,
+      "total_islands": 5792,
+      "singleton_islands": 5791,
+      "multi_islands": [
+        {
+          "size_total": 11,
+          "size_source": 10,
+          "size_target": 1,
+          "fraction_total": 0.0018958979662185454,
+          "top_source_uuid": "8e2978ee-cb03-40a1-a694-c28e6852b0be",
+          "top_source_degree": 1,
+          "top_target_uuid": "67d48d04-321e-426e-a321-e0bc6fa40437",
+          "top_target_degree": 10
+        }
+      ],
+      "source": {
+        "total_nodes": 10,
+        "total_islands": 1,
+        "singleton_islands": 0,
+        "multi_islands": [
+          {
+            "size": 10,
+            "fraction": 1.0,
+            "size_total": 11,
+            "top_uuid": "8e2978ee-cb03-40a1-a694-c28e6852b0be",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 5792,
+        "total_islands": 5792,
+        "singleton_islands": 5792,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

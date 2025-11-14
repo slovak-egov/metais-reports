@@ -1,0 +1,172 @@
+{
+  "id": 86,
+  "name": "História zmeny stavu referenčného registra",
+  "technicalName": "ReferenceRegisterHistory",
+  "description": "História zmeny stavu referenčného registra.",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": "#ffe0af",
+  "engName": "History of reference register status change",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 106,
+      "name": "Profil zmeny stavu referencneho registra",
+      "description": "Profil zmeny stavu referencneho registra.",
+      "technicalName": "ReferenceRegisterHistory_Profile",
+      "roleList": [
+        "RR_MANAGER",
+        "RR_ADMIN_MFSR"
+      ],
+      "type": "system",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Reference register status change profile",
+      "attributes": [
+        {
+          "id": 448,
+          "name": "Stav referenčného registra",
+          "description": "Stav referenčného registra.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "ReferenceRegisterHistory_Profile_stav",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference register status",
+          "engDescription": "Reference register status.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 319,
+          "name": "Popis zmeny stavu referenčného registra",
+          "description": "Popis zmeny stavu referenčného registra.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "ReferenceRegisterHistory_Profile_popis",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Description of reference register status change",
+          "engDescription": "Description of reference register status change.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 371,
+          "name": "Prílohy Referenčného registra",
+          "description": "Identifikátory príloh referenčného registra",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "ReferenceRegisterHistory_Profile_prilohy",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference register attachments",
+          "engDescription": "Reference register attachments IDs",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        }
+      ]
+    }
+  ],
+  "codePrefix": "reference_register_history",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt-reference-register-history",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 163,
+        "name": "Stav referenčného registra má históriu",
+        "engName": "Reference register status has history",
+        "technicalName": "ReferenceRegister_has_ReferenceRegisterHistory",
+        "description": "Stav referenčného registra má históriu",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register status has history",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

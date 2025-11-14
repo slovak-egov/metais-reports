@@ -1,0 +1,110 @@
+{
+  "relation_name": "DatovyPrvok_meni_DatovyPrvok",
+  "name": "Dátový prvok mení Dátový prvok",
+  "description": "Dátový prvok mení pôvodný Dátový prvok",
+  "engDescription": "Data element modifies original Data element",
+  "type": "application",
+  "source_type": "DatovyPrvok",
+  "source_name": "Dátový prvok",
+  "target_type": "DatovyPrvok",
+  "target_name": "Dátový prvok",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 1,
+    "unique_pairs": 1,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 617,
+    "target_total": 617,
+    "source_connected": 1,
+    "target_connected": 1,
+    "cardinality": "one-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "c98d052d-b0f8-41c8-b776-e1ad19341f01",
+        "degree": 1,
+        "name": "relácie doložky",
+        "code": "datovy_prvok_844"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "64e95436-136d-4908-bd58-0a326374a5d6",
+        "degree": 1,
+        "name": "relácie doložky",
+        "code": "datovy_prvok_862"
+      }
+    ],
+    "islands": {
+      "total_nodes": 1234,
+      "total_islands": 1233,
+      "singleton_islands": 1232,
+      "multi_islands": [
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0016207455429497568,
+          "top_source_uuid": "c98d052d-b0f8-41c8-b776-e1ad19341f01",
+          "top_source_degree": 1,
+          "top_target_uuid": "64e95436-136d-4908-bd58-0a326374a5d6",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 617,
+        "total_islands": 617,
+        "singleton_islands": 617,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 617,
+        "total_islands": 617,
+        "singleton_islands": 617,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

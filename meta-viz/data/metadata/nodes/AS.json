@@ -1,0 +1,1601 @@
+{
+  "id": 18,
+  "name": "Aplikačná služba",
+  "technicalName": "AS",
+  "description": "Aplikačná služba je aktivita vykonávaná v rámci poskytovania koncovej služby informačným systémom verejnej správy podporujúca spravidla jeden procesný krok vykonávania koncovej služby.",
+  "roleList": [
+    "EA_GARPO",
+    "IKT_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#afffff",
+  "engName": "Application service",
+  "category": "RWCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov aplikačnej služby",
+      "description": "Stručný, výstižný a podľa možnosti jednoznačný názov služby, ktorý\n1. sa tvorí spojením\na. pomenovanie aktivity, napríklad „Podanie žiadosti o“, „Podanie hlásenia o“, „Podanie podnetu na preskúmanie“, „Odvolanie sa“, „Informovanie sa o“, „Zmena“, „Podanie doplňujúcich informácií“, „Publikovanie informácií o“, „Podanie námietok“, „Vydanie rozhodnutia o“, „Vydanie“ a\nb. bližšieho popisu predmetu aktivity, napríklad „rybársky lístok“, „petícia“, „stavebné povolenie“, „kvality poskytovanej zdravotnej starostlivosti“,\n2. popisuje aktivitu z pohľadu iniciátora, napr. Podanie žiadosti o &lt;Predmet aktivity&gt; a nie „ Prijatie žiadosti o &lt;Predmet aktivity&gt;“.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name of application service",
+      "engDescription": "Brief, clear and if possible accurate name of service that 1. is coined by combining a. naming activity, for example \"\"Filing application for\"\", \"\"Filing report on\"\", \"\"Initiating review\"\", \"\"Appealing\"\", \"\"Getting informed\"\", \"\"Modifying\"\", \"\"Submitting additional information\"\", \"\"Publishing information about\"\", \"\"Raising objections\"\", \"\"Issuing decision on\"\", \"\"Issuing\"\" and b. detailed description of activity subject, for example, \"\"fishing permit\"\", \"\"petition\"\", \"\"construction permit\"\", \"\"levels of health care provided\"\", 2. determines activity from the point of view of initiator, e.g. Filing application o &lt; Activity subject&gt; and not \"\" Accepting application for &lt;Activity subject&gt;\"\".",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Výstižný text popisujúci kľúčové vlastnosti služby.\n 1. Pri prevádzkovanej službe sa uvedie súčasný popis služby.\n 2. Pri plánovanej novej službe sa uvedie cieľový popis služby.\n 3. Pri plánovanom rozvoji už prevádzkovanej služby sa uvedie dôvod zmeny voči pôvodnej službe nižšej verzie a popis skutočností, ktoré nastanú po skončení vývoja služby vyššej verzie, napr., že pôvodná služba nižšej verzie bude uzatvorená po nasadení služby vyššej verzie do prevádzky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Clear text describing key features of service. 1. Description of current service shall be used. 2. Description of new service shall be used. 3. Planned development of service in operation will stipulate a reason for change of original service of lower version and description of matters, that will occur after completing service development of higher version, e.g. original service of lower version will be discontinued after launching service of higher version.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 98,
+      "name": "EA profil pre Aplikačnú službu",
+      "description": "Špecifické informácie",
+      "technicalName": "EA_Profil_AS",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special information",
+      "attributes": [
+        {
+          "id": 28,
+          "name": "Charakter služby",
+          "description": "Charakter z číselníka Charakter aplikačnej služby. Ide o triedenie na vstupné, výstupné a podporné služby.    1. vstupnou službou IS verejnej správy je služba, ktorou občan alebo podnikateľ  a) iniciuje zápis nových údajov do IS, vrátane zmeny a vymazania údajov,  b) požaduje výpis, odpis alebo potvrdenie o údajoch IS,  c) vyhľadáva informácie,  d) pripomienkuje materiál,    2. výstupnou službou IS verejnej správy je služba, ktorou orgán verejnej správy alebo verejnej moci poskytuje  a) výsledok svojho konania,  b) výpis, odpis alebo potvrdenie o údajoch IS,  c) dokumenty, údaje a informácie,  d) prehľad pripomienkového konania a dokumenty v pripomienkovom konaní,    3. podpornou službou IS verejnej správy je služba  a) spoločného modulu, najmä identifikačného modulu schválených elektronických formulárov, platobného modulu, modulu elektronických osobných schránok, centrálnej elektronickej podateľne  b) administratívneho systému, najmä IS správy registratúry, IS správy dokumentov, IS elektronickej podateľne,  c) podporného systému, najmä IS účtovníctva, IS miezd, IS správy majetku, dochádzkový IS knižničný IS, integračný IS.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_AS_charakter_as",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "CHARAKTER_AS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Nature of service",
+          "engDescription": "Nature from counter Nature of Service IS. It features classification to input, output and support services IS. 1. input service IS of public administration is a service by which citizen or entrepreneur a) initiates registration of new data into IS including changing and deleting data, b) requests extract, copy or certificate of IS data, c) searches for information, d) marks up material, 2. output service IS of public administration is a service by which the body of public or administrative authority provides a) result of its procedure, b) extract, copy or certificate of IS data, c) documents, data and information, d) consultation summary and documents in consultation procedure, 3. support service IS of public administration is a service a) of common module, especially identification module of approved electronic forms, payment module, electronic personal mailboxes, central electronic registry b) of administrative system, especially IS of registry management, IS of document management, IS of electronic registry, c) of support system, especially IS of accounting, IS of wages, IS of asset management, attendance IS, library IS, integration IS.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 74,
+          "name": "Poskytovaná na externú integráciu",
+          "description": "AS poskytovaná na externú integráciu. V prípade, že je poskytovaná na externú integráciu, musí byť k ISVS uložený Integračný manuál.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_AS_dostupnost_pre_externu_integraciu",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "DOSTUPNOST_PRE_EXTERNU_INTEGRACIU"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Provided for external migration",
+          "engDescription": "Application service provided for external integration",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 326,
+          "name": "Používateľ koncovej služby",
+          "description": "Používateľ koncovej služby. Vychádza z interného číselníka.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_AS_pouzivatel_ks",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "POUZIVATEL_KS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "User of eGov service",
+          "engDescription": "User of eGov service. Stems from internal codelist.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 488,
+          "name": "Typ aplikačnej služby",
+          "description": "Typ služby z číselníka Typy aplikačných služieb.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_AS_typ_as",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_AS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Application service type",
+          "engDescription": "Service type from counter IS services type.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 490,
+          "name": "Typ cloudovej služby",
+          "description": "Typ cloudovej služby pre aplikačnú službu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_AS_typ_cloudovej_sluzby",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_CLOUD_SLUZBA_AS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Cloud services type",
+          "engDescription": "Cloud services type for infrastructure service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 600,
+          "name": "Webové sídlo",
+          "description": "Úplná URL adresa webového sídla aplikačnej služby pre príslušný komunikačný kanál.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_AS_webove_sidlo",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Web site",
+          "engDescription": "Full URL address of application service web site for corresponding communication channel.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 553,
+          "name": "Verzia",
+          "description": "Verzia pre aplikačnú službu. Verzia musí byt vo formáte XX.XX.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "1.0",
+          "technicalName": "EA_Profil_AS_verzia",
+          "order": 16,
+          "valid": false,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "regex",
+              "id": null,
+              "regex": "^[0-9]{1,2}\\.[0-9]{1,2}$"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Version",
+          "engDescription": "Version for application service. Version must be in format XX.XX.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Generický profil EA",
+      "description": "Informácie z architektonického modelu",
+      "technicalName": "Gen_Profil_EA",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Additional information",
+      "attributes": [
+        {
+          "id": 418,
+          "name": "Skratený názov",
+          "description": "Skratený názov položky prenášaný z názvu položky architektonického modelu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_skrateny_nazov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Abbreviated name",
+          "engDescription": "Abbreviated item name transfered from name of architecture model item.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 310,
+          "name": "Popis referencie",
+          "description": "Popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_popis_referencie",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference description",
+          "engDescription": "Description of document, picture, model describing reference detail.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 620,
+          "name": "Zoznam referencií",
+          "description": "Zoznam referencií. Odkaz a popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING_PAIR",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_zoznam_referencii",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING_PAIR",
+          "engName": "Reference list",
+          "engDescription": "Reference list. Link and description of document, picture, model where is detail of reference described.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 245,
+          "name": "Odkaz na referenciu",
+          "description": "URL odkaz týkajúci sa danej aplikačnej služby (napr. URL odkaz na API samotnej aplikačnej služby alebo dostupnú dokumentáciu)",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_odkaz_na_referenciu",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Link to reference",
+          "engDescription": "URL link referring to a particular application service (e.g. URL link to API of particular application service or documentation available)",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 508,
+          "name": "Typ replikácie",
+          "description": "Hovorí o tom, či je daná položka v modeli replikovaná alebo nie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_typ_replikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_REPLIKACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Replication type",
+          "engDescription": "Determines if particular item in model is replicated or no.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 297,
+          "name": "Počet replikácií",
+          "description": "Hovorí o početnosti objektu, napr 500 PC s windows, optimalizuje repozitár (aby nemusel obsahovať 500 položiek). Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_pocet_replikacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "interval",
+              "id": null,
+              "minValue": 0.0,
+              "maxValue": 1000000000.0
+            }
+          ],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of replications",
+          "engDescription": "Deals with quantity of object. e.g. 500 PCs with Windows, optimized by repository (not to include 500 items). Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 70,
+      "name": "IKT profil pre AS",
+      "description": "IKT profil pre AS",
+      "technicalName": "IKT_Migracia_AS",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "ICT profile for AS",
+      "attributes": [
+        {
+          "id": 115,
+          "name": "ID",
+          "description": "ID migrovanej aplikačnej služby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_AS_id",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "ID",
+          "engDescription": "ID of migrated application service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 235,
+          "name": "Názov služby",
+          "description": "Názov migrovanej aplikačnej služby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_AS_nazov_sluzby",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Service name",
+          "engDescription": "Name of migrated application service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 311,
+          "name": "Popis služby",
+          "description": "Popis migrovanej aplikačnej služby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_AS_popis_sluzby",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Service description",
+          "engDescription": "Description of migrated application service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 160,
+          "name": "Kód z MetaIS",
+          "description": "Kód z MetaIS pre danú migrovanú aplikačnú službu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_AS_kod_z_metais",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Code from MetaIS",
+          "engDescription": "Code from MetaIS for particular migrated application service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 135,
+          "name": "Informačný systém",
+          "description": "Informačný systém, na ktorom je realizovaná daná migrovaná aplikačná služba.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_AS_informacny_system",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Information system",
+          "engDescription": "Information system on which is particular migrated application service carried out.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 5,
+          "name": "Aktuálny stav",
+          "description": "Aktuálny stav danej migrovanej aplikačnej služby.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_AS_aktualny_stav",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Current status",
+          "engDescription": "Current status of particular migrated application service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "name": "Monitoring Heartbeat Profil",
+      "description": "Monitoring heartbeat profil",
+      "technicalName": "Monitoring_Heartbeat_Profil",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Monitoring heartbeat profil",
+      "attributes": [
+        {
+          "id": 911,
+          "name": "Posledná aktualizácia",
+          "description": "Čas poslednej aktualizácie stavu dostupnosti služby",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Service_Heartbeat_Last_Update",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Service heartbeat last update",
+          "engDescription": "The time of the last update of the service availability status",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 910,
+          "name": "Stav dostupnosti služby",
+          "description": "Stav dostupnosti služby",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Service_Heartbeat_Status",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Service heartbeat status",
+          "engDescription": "Service heartbeat status",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "as_",
+  "ownerRelation": "PO_je_spravca_AS",
+  "uriPrefix": "https://data.gov.sk/id/egov/app-service",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 2,
+        "name": "Aplikačná služba aktualizuje ISVS",
+        "engName": "Application service updates ISVS",
+        "technicalName": "AS_aktualizuje_ISVS",
+        "description": "Aplikačná služba aktualizuje ISVS.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service updates ISVS.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 3,
+        "name": "AS poskytovaná na externú integráciu slúži AS",
+        "engName": "Application service is used by application service",
+        "technicalName": "AS_sluzi_AS",
+        "description": "Aplikačná služba je používaná viacerými aplikačnými službami.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service is used by several application services.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 4,
+        "name": "Aplikačná služba má fázu životného cyklu",
+        "engName": "Application service has a life cycle phase",
+        "technicalName": "AS_ma_FazaZivotnehoCyklu",
+        "description": "Vzťah určuje, v akých fázach životného cyklu sa aplikačná služba nachádza.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Relation determines in which phases of life cycle is application service.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 5,
+        "name": "Aplikačná služba slúži procesu",
+        "engName": "Application service is used by process",
+        "technicalName": "AS_sluzi_BP",
+        "description": "Aplikačná služba je používaná procesom.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service is used by process.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 6,
+        "name": "Aplikačná služba slúži Koncovej službe",
+        "engName": "Application service executes eGov service",
+        "technicalName": "AS_sluzi_KS",
+        "description": "Aplikačná služba reprezentuje časť vykonania koncovej služby, ktorá je typicky elektronizovaná v ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service represents part of eGov service performance that is typically electronised in ISVS.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 7,
+        "name": "Aplikačná služba je asociovaná s agendou",
+        "engName": "Application service is handling agenda",
+        "technicalName": "AS_asociuje_Agenda",
+        "description": "Aplikačná služba rieši danú agendu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "SZC_HLGES",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service is handling particular agenda.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 10,
+        "name": "Aplikačná služba sprístupňuje ISVS",
+        "engName": "Application service makes ISVS available",
+        "technicalName": "AS_spristupnuje_ISVS",
+        "description": "Aplikačná služba sprístupňuje obsah referenčného a zdrojového registra.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service makes content of reference and source register available.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 124,
+        "name": "Služba má parameter",
+        "engName": "Service has parameter",
+        "technicalName": "Sluzba_ma_Parameter",
+        "description": "Služba má parameter.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "Service has parameter.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 145,
+        "name": "Aplikačná služba realizuje cloud koncovú službu",
+        "engName": "Application service performs cloud eGov service",
+        "technicalName": "AS_realizuje_cloud_KS",
+        "description": "Aplikačná služba realizuje cloud koncovú službu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service performs cloud eGov service.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 159,
+        "name": "Aplikačná služba má verziu aplikačnej služby",
+        "engName": "Application service has version of application service",
+        "technicalName": "AS_ma_verziu_AS",
+        "description": "Aplikačná služba má verziu aplikačnej služby.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "SZC_HLGES",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service has version of application service.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 181,
+        "name": "Aplikačná služba prenajíma aplikačnú službu",
+        "engName": "Application service hires application service",
+        "technicalName": "AS_prenajima_AS",
+        "description": "Aplikačná služba prenajíma aplikačnú službu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service hires application service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 182,
+        "name": "Aplikačná služba realizuje aplikačnú službu",
+        "engName": "Application service realises application service",
+        "technicalName": "AS_realizuje_AS",
+        "description": "Aplikačná služba realizuje aplikačnú službu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service realises application service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 183,
+        "name": "Aplikačná služba rozširuje aplikačnú službu",
+        "engName": "Application service extends application service",
+        "technicalName": "AS_rozsiruje_AS",
+        "description": "Aplikačná služba rozširuje aplikačnú službu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service extends application service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1221,
+        "name": "Aplikačná služba slúži ISVS",
+        "engName": "Application service serves to ISVS",
+        "technicalName": "AS_sluzi_ISVS",
+        "description": "Aplikačná služba slúži ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service serves to ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 3,
+        "name": "AS poskytovaná na externú integráciu slúži AS",
+        "engName": "Application service is used by application service",
+        "technicalName": "AS_sluzi_AS",
+        "description": "Aplikačná služba je používaná viacerými aplikačnými službami.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service is used by several application services.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 24,
+        "name": "Endpoint sprístupňuje aplikačnú službu",
+        "engName": "Endpoint makes application service available",
+        "technicalName": "Endpoint_spristupnuje_AS",
+        "description": "Aplikačná služba je dostupná cez jednu alebo viacero operácií. Tie su zoskupené pod svojími prístupovými bodmi (endpoints).",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Application service is available through one or more operations. They aggregate under their access points (endpoints).",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 34,
+        "name": "ISVS realizuje aplikačnú službu",
+        "engName": "ISVS performs application service",
+        "technicalName": "ISVS_realizuje_AS",
+        "description": "ISVS realizuje aplikačnú službu. Vzťah určuje ISVS, ktorý vykonáva aplikačnú službu. Aplikačná služba je implementovaná (je súčasťou API rozhrania) ISVS.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "ISVS performs application service. Relations is defined by ISVS that performs application service. Application service is implemented (is a part of API interface) by ISVS.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 95,
+        "name": "Povinná osoba je prevádzkovateľom aplikačnej služby",
+        "engName": "Public authority is operator of application service",
+        "technicalName": "PO_je_prevadzkovatel_AS",
+        "description": "Organizácia, ktorá je prevádzkovateľom služby. Prevádzkovateľ zodpovedá za realizáciu služby. Prevádzkovateľa ustanovuje správca.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Organization that is operator of service. Operator is responsible for service performance. Operator is appointed by manager.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 97,
+        "name": "Povinná osoba je správcom aplikačnej služby",
+        "engName": "Public authority is manager of application service",
+        "technicalName": "PO_je_spravca_AS",
+        "description": "Každá aplikačná služba má jedného správcu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Every application service has one manager.",
+        "category": "RONCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 109,
+        "name": "Projekt realizuje aplikačnú službu",
+        "engName": "Project performs application service",
+        "technicalName": "Projekt_realizuje_AS",
+        "description": "Určuje projekt v rámci ktorého je služba realizovaná.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "It determines project under which is service performed.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 117,
+        "name": "Register puziva AS",
+        "engName": "Register is used by AS",
+        "technicalName": "ReferenceRegister_usedBy_AS",
+        "description": "Register puziva AS.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Register is used by AS.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 154,
+        "name": "Kanál sprístupňuje aplikačnú službu",
+        "engName": "Channel makes application service available",
+        "technicalName": "Kanal_spristupnuje_AS",
+        "description": "Kanál sprístupňuje aplikačnú službu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Channel makes application service available.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 159,
+        "name": "Aplikačná služba má verziu aplikačnej služby",
+        "engName": "Application service has version of application service",
+        "technicalName": "AS_ma_verziu_AS",
+        "description": "Aplikačná služba má verziu aplikačnej služby.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "SZC_HLGES",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service has version of application service.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 181,
+        "name": "Aplikačná služba prenajíma aplikačnú službu",
+        "engName": "Application service hires application service",
+        "technicalName": "AS_prenajima_AS",
+        "description": "Aplikačná služba prenajíma aplikačnú službu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service hires application service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 182,
+        "name": "Aplikačná služba realizuje aplikačnú službu",
+        "engName": "Application service realises application service",
+        "technicalName": "AS_realizuje_AS",
+        "description": "Aplikačná služba realizuje aplikačnú službu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service realises application service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 183,
+        "name": "Aplikačná služba rozširuje aplikačnú službu",
+        "engName": "Application service extends application service",
+        "technicalName": "AS_rozsiruje_AS",
+        "description": "Aplikačná služba rozširuje aplikačnú službu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Application service extends application service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1220,
+        "name": "Infraštruktúrna služba realizuje aplikačnú službu",
+        "engName": "Infrastructure service realizes Application service",
+        "technicalName": "InfraSluzba_realizuje_AS",
+        "description": "Infraštruktúrna služba realizuje aplikačnú službu",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Infrastructure service realizes Application service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

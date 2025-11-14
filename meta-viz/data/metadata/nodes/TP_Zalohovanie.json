@@ -1,0 +1,1166 @@
+{
+  "id": 60,
+  "name": "Zálohovacie zariadenie",
+  "technicalName": "TP_Zalohovanie",
+  "description": "Detaily týkajúce sa zálohovacieho zariadenia.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#afffaf",
+  "engName": "Backup device",
+  "category": "RWCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 87,
+      "name": "Generický profil EA",
+      "description": "Informácie z architektonického modelu",
+      "technicalName": "Gen_Profil_EA",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Additional information",
+      "attributes": [
+        {
+          "id": 418,
+          "name": "Skratený názov",
+          "description": "Skratený názov položky prenášaný z názvu položky architektonického modelu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_skrateny_nazov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Abbreviated name",
+          "engDescription": "Abbreviated item name transfered from name of architecture model item.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 310,
+          "name": "Popis referencie",
+          "description": "Popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_popis_referencie",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference description",
+          "engDescription": "Description of document, picture, model describing reference detail.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 620,
+          "name": "Zoznam referencií",
+          "description": "Zoznam referencií. Odkaz a popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING_PAIR",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_zoznam_referencii",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING_PAIR",
+          "engName": "Reference list",
+          "engDescription": "Reference list. Link and description of document, picture, model where is detail of reference described.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 245,
+          "name": "Odkaz na referenciu",
+          "description": "Samotný odkaz (URL) na referenciu (napr. v DMS).",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_odkaz_na_referenciu",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Link to reference",
+          "engDescription": "Particular link (URL) to reference (e.g. in DMS).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 508,
+          "name": "Typ replikácie",
+          "description": "Hovorí o tom, či je daná položka v modeli replikovaná alebo nie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_typ_replikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_REPLIKACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Replication type",
+          "engDescription": "Determines if particular item in model is replicated or no.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 297,
+          "name": "Počet replikácií",
+          "description": "Hovorí o početnosti objektu, napr 500 PC s windows, optimalizuje repozitár (aby nemusel obsahovať 500 položiek). Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_pocet_replikacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "interval",
+              "id": null,
+              "minValue": 0.0,
+              "maxValue": 1000000000.0
+            }
+          ],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of replications",
+          "engDescription": "Deals with quantity of object. e.g. 500 PCs with Windows, optimized by repository (not to include 500 items). Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "name": "IKT profil pre migráciu zálohovacieho zariadenia",
+      "description": "IKT profil pre migráciu zálohovacieho zariadenia",
+      "technicalName": "IKT_Migracia_TP_Zalohovanie",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "ICT profile for backup device migration",
+      "attributes": [
+        {
+          "id": 126,
+          "name": "ID ZZ",
+          "description": "Identifikátor zadávaný vyplňovateľom excelu ( 4.2.12 - Zálohovanie).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_id_zz",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "ID ZZ",
+          "engDescription": "Identifier submitted by person completing excel ( 4.2.12 - Backup).",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 217,
+          "name": "Názov",
+          "description": "Označenie ktoré je pridelené prostriedku.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_nazov",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Name",
+          "engDescription": "Designation assigned to instrument.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 591,
+          "name": "Výrobca",
+          "description": "Výrobca zálohovacieho zariadenia.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_vyrobca",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Manufacturer",
+          "engDescription": "Backup device manufacturer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 289,
+          "name": "Počet",
+          "description": "Počet zálohovacích zariadení.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_pocet",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Number",
+          "engDescription": "Number of backup devices.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 486,
+          "name": "Typ",
+          "description": "Páska, disky, ..",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_typ",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Type",
+          "engDescription": "Tape, HDDs, ..",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 585,
+          "name": "Výkon-GBh",
+          "description": "GBh",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_vykon_GBH",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Performance-GBh",
+          "engDescription": "GBh",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 596,
+          "name": "Využívaný spôsob pripojenia",
+          "description": "iSCSI,FC,FCoE,... Využívaný spôsob pripojenia (Nie vymenované všetky spôsoby pripojenia udávané výrobcom)",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_vyuzivany_sposob_pripojenia",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Used connection type",
+          "engDescription": "iSCSI,FC,FCoE,... Used type of connection (Not detailed list of all types of connection as declared by manufacturer)",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 24,
+          "name": "Celková použiteľná kapacita",
+          "description": "Celková použiteľná kapacita v GB.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_celkova_pouzitelna_kapacita",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Total capacity available",
+          "engDescription": "Total capacity available in GB.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 147,
+          "name": "Kapacita spotrebovaná",
+          "description": "Spotrebovaná kapacita v GB.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_kapacita_spotrebovana",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Used capacity",
+          "engDescription": "Occupied capacity in GB.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 374,
+          "name": "Prírastok za rok",
+          "description": "Údaj v GB.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_prirastok_za_rok",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Annual growth",
+          "engDescription": "Reading in GB.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 405,
+          "name": "Rok ukončenia životnosti",
+          "description": "Rok ukončenia životnosti zálohovacieho zariadenia",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_rok_ukoncenia_zivotnosti",
+          "order": 11,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Year of service life termination",
+          "engDescription": "Backup device year of service life termination.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 270,
+          "name": "Platforma",
+          "description": "ID platformy.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_platforma",
+          "order": 12,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Platform",
+          "engDescription": "Platform ID.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 15,
+          "name": "Aktuálny stav",
+          "description": "Aktuálny stav životného cyklu. Napríklad: Pr - prevádzka, Vv - vo výstavbe, Pl - plánované.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Migracia_TP_Zalohovanie_aktualny_stav",
+          "order": 13,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Current status",
+          "engDescription": "Current status of life cycle. E.g.: Op - in operation, Uc - under construction, Pl - planned.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "IKT profil pre technologický prostriedok",
+      "description": "IKT profil pre technologický prostriedok",
+      "technicalName": "IKT_Profil_TP",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "ICT profile for technology instrument",
+      "attributes": [
+        {
+          "id": 592,
+          "name": "Výrobca",
+          "description": "Výrobca zariadenia.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_vyrobca",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Manufacturer",
+          "engDescription": "Device manufacturer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 406,
+          "name": "Rok ukončenia životnosti",
+          "description": "Rok ukončenia životnosti technologického prostriedku.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_rok_ukoncenia_zivotnosti",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Year of service life termination",
+          "engDescription": "Technology instrument year of service life termination.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 290,
+          "name": "Počet",
+          "description": "Počet kusov zariadenia, zadaný vyplňovateľom excelu. Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_pocet",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number",
+          "engDescription": "Number of devices, entered by person completing excel. Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 377,
+          "name": "Príznak schválenia",
+          "description": "Príznak schválenia technologického prostriedku.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_priznak_schvalenia",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Attribute of approval",
+          "engDescription": "Technology instrument attribute of approval.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "IKT profil pre zálohovacie zariadenie",
+      "description": "IKT profil špecifický pre entitu zálohovacie zariadenie",
+      "technicalName": "IKT_Profil_TP_Zalohovanie",
+      "roleList": [
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special ICT profile for backup device entity",
+      "attributes": [
+        {
+          "id": 518,
+          "name": "Typ zálohovania",
+          "description": "Typ zálohovacieho prostriedku - Páska, disky, ..",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_Zalohovanie_typ_zalohovania",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Backup type",
+          "engDescription": "Backup instrument type - Tape, HDD, ..",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 583,
+          "name": "Výkon",
+          "description": "Udáva sa v GB/h. Hodnota môže byť uvedená ako celé, alebo aj desatiné číslo.",
+          "type": "DOUBLE",
+          "displayAs": null,
+          "units": "c_merna_jednotka.7",
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_Zalohovanie_vykon",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "regex",
+              "id": null,
+              "regex": "^([0-9]*)(\\,[0-9]{2})?$"
+            }
+          ],
+          "attributeTypeEnum": "DOUBLE",
+          "engName": "Service",
+          "engDescription": "Measured in GB/h. Value may be set out as integer or decimal number.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 431,
+          "name": "Spôsob pripojenia",
+          "description": "iSCSI,FC,FCoE,... Využívaný spôsob pripojenia (Nie vymenované všetky spôsoby pripojenia udávané výrobcom)",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_Zalohovanie_sposob_pripojenia",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Type of connection",
+          "engDescription": "iSCSI,FC,FCoE,... Used type of connection (Not detailed list of all types of connection as declared by manufacturer)",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 21,
+          "name": "Celková kapacita",
+          "description": "Celková kapacita. Hodnota môže byť uvedená ako celé, alebo aj desatiné číslo.",
+          "type": "DOUBLE",
+          "displayAs": null,
+          "units": "c_merna_jednotka.5",
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_Zalohovanie_celkova_kapacita",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DOUBLE",
+          "engName": "Total capacity",
+          "engDescription": "Total capacity. Value may be set out as integer or decimal number.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 433,
+          "name": "Spotrebovaná kapacita",
+          "description": "Spotrebovaná kapacita. Hodnota môže byť uvedená ako celé, alebo aj desatiné číslo.",
+          "type": "DOUBLE",
+          "displayAs": null,
+          "units": "c_merna_jednotka.5",
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_Zalohovanie_spotrebovana_kapacita",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DOUBLE",
+          "engName": "Used capacity",
+          "engDescription": "Used capacity. Value may be set out as integer or decimal number.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 397,
+          "name": "Ročný prírastok",
+          "description": "Ročný prírastok. Hodnota môže byť uvedená ako celé, alebo aj desatiné číslo.",
+          "type": "DOUBLE",
+          "displayAs": null,
+          "units": "c_merna_jednotka.5",
+          "defaultValue": null,
+          "technicalName": "IKT_Profil_TP_Zalohovanie_rocny_prirastok",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DOUBLE",
+          "engName": "Annual growth",
+          "engDescription": "Annual growth. Value may be set out as integer or decimal number.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "tp_zalohovanie_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/backup-device",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 138,
+        "name": "Zálohovacie zariadenie je používané ISVS",
+        "engName": "Backup device is used by ISVS",
+        "technicalName": "TP_Zalohovanie_je_pouzivane_ISVS",
+        "description": "Vybrané ISVS používa dané zálohovacie zariadenia.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Selected ISVS uses particular backup devices.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 139,
+        "name": "Zálohovacie zariadenie je používané platformou",
+        "engName": "Backup device is used by platform",
+        "technicalName": "TP_Zalohovanie_je_pouzivane_Platforma",
+        "description": "Vybraná platforma používa dané zálohovacie zariadenia.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Selected platform uses particular backup devices.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 62,
+        "name": "Miesto prevádzky umiestňuje zálohovacie zariadenie",
+        "engName": "Operation site positions backup device",
+        "technicalName": "MiestoPrevadzky_umiestnuje_TP_Zalohovanie",
+        "description": "Zálohovacie zariadenie je umiestnené v danej lokalite.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Backup device is located in particular location.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 72,
+        "name": "Migrácia migruje zálohovacie zariadenie",
+        "engName": "Migration migrates backup device",
+        "technicalName": "Migracia_migruje_TP_Zalohovanie",
+        "description": "Zálohovacie zariadenie môže byť migrované.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Backup device may be migrated.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

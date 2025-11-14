@@ -1,0 +1,62 @@
+{
+  "type": "ParameterSluzby",
+  "count": 22121,
+  "attributes": [
+    {
+      "name": "Profil_Parameter_hodnota",
+      "count": 22121,
+      "pct": 100.0,
+      "unique_count": 692,
+      "unique_pct": 3.128249174992089
+    },
+    {
+      "name": "Profil_Parameter_typ_hodnoty",
+      "count": 22121,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 0.013561773880023506
+    },
+    {
+      "name": "Profil_Parameter_typ_parametra",
+      "count": 22121,
+      "pct": 100.0,
+      "unique_count": 14,
+      "unique_pct": 0.06328827810677636
+    },
+    {
+      "name": "Profil_Parameter_is_active",
+      "count": 22121,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.009041182586682338
+    },
+    {
+      "name": "Profil_Parameter_sposob_merania",
+      "count": 8352,
+      "pct": 37.755978481985444,
+      "unique_count": 526,
+      "unique_pct": 6.297892720306514
+    },
+    {
+      "name": "Profil_Parameter_sposob_hodnotenia",
+      "count": 2274,
+      "pct": 10.279824601057818,
+      "unique_count": 49,
+      "unique_pct": 2.154793315743184
+    },
+    {
+      "name": "Profil_Parameter_sankcie",
+      "count": 685,
+      "pct": 3.0966050359387007,
+      "unique_count": 15,
+      "unique_pct": 2.18978102189781
+    },
+    {
+      "name": "Profil_Parameter_popis",
+      "count": 317,
+      "pct": 1.4330274399891505,
+      "unique_count": 110,
+      "unique_pct": 34.70031545741325
+    }
+  ]
+}

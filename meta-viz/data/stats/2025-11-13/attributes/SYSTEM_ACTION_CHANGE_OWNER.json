@@ -1,0 +1,34 @@
+{
+  "type": "SYSTEM_ACTION_CHANGE_OWNER",
+  "count": 4666,
+  "attributes": [
+    {
+      "name": "genprof_SYSTEM_ACTION_CHANGE_OWNER_change_type",
+      "count": 4666,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 0.06429489927132448
+    },
+    {
+      "name": "genprof_SYSTEM_ACTION_CHANGE_OWNER_change_reason",
+      "count": 4666,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 0.19288469781397344
+    },
+    {
+      "name": "genprof_SYSTEM_ACTION_CHANGE_OWNER_new_owner",
+      "count": 4666,
+      "pct": 100.0,
+      "unique_count": 360,
+      "unique_pct": 7.715387912558937
+    },
+    {
+      "name": "genprof_SYSTEM_ACTION_CHANGE_OWNER_change_description",
+      "count": 4659,
+      "pct": 99.84997856836692,
+      "unique_count": 300,
+      "unique_pct": 6.439150032195751
+    }
+  ]
+}

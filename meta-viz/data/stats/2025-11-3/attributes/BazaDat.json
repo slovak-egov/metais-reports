@@ -1,0 +1,111 @@
+{
+  "type": "BazaDat",
+  "count": 275,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 275,
+      "pct": 100.0,
+      "unique_count": 275,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 275,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.36363636363636365
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 275,
+      "pct": 100.0,
+      "unique_count": 267,
+      "unique_pct": 97.0909090909091
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 275,
+      "pct": 100.0,
+      "unique_count": 275,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 231,
+      "pct": 84.0,
+      "unique_count": 221,
+      "unique_pct": 95.67099567099568
+    },
+    {
+      "name": "IKT_Profil_BazaDat_typ",
+      "count": 228,
+      "pct": 82.9090909090909,
+      "unique_count": 6,
+      "unique_pct": 2.631578947368421
+    },
+    {
+      "name": "IKT_Profil_BazaDat_velkost_v_gb",
+      "count": 209,
+      "pct": 76.0,
+      "unique_count": 53,
+      "unique_pct": 25.358851674641148
+    },
+    {
+      "name": "IKT_Migracia_BazaDat_typ_informacii",
+      "count": 198,
+      "pct": 72.0,
+      "unique_count": 14,
+      "unique_pct": 7.07070707070707
+    },
+    {
+      "name": "IKT_Migracia_BazaDat_aktualny_stav",
+      "count": 198,
+      "pct": 72.0,
+      "unique_count": 7,
+      "unique_pct": 3.535353535353535
+    },
+    {
+      "name": "IKT_Migracia_BazaDat_informacny_system",
+      "count": 192,
+      "pct": 69.81818181818183,
+      "unique_count": 59,
+      "unique_pct": 30.729166666666668
+    },
+    {
+      "name": "IKT_Migracia_BazaDat_platforma",
+      "count": 192,
+      "pct": 69.81818181818183,
+      "unique_count": 24,
+      "unique_pct": 12.5
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 188,
+      "pct": 68.36363636363636,
+      "unique_count": 186,
+      "unique_pct": 98.93617021276596
+    },
+    {
+      "name": "IKT_Migracia_BazaDat_velkost",
+      "count": 172,
+      "pct": 62.54545454545455,
+      "unique_count": 36,
+      "unique_pct": 20.930232558139537
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 13,
+      "pct": 4.7272727272727275,
+      "unique_count": 13,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 1,
+      "pct": 0.36363636363636365,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

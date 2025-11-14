@@ -1,0 +1,76 @@
+{
+  "type": "Ontologia",
+  "count": 16,
+  "attributes": [
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 14,
+      "unique_pct": 87.5
+    },
+    {
+      "name": "Profil_Ontologia_historicky_kod",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 6.25
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 16,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_RefID_stav_registracie",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 18.75
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 62.5
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 6.25
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 13,
+      "unique_pct": 81.25
+    },
+    {
+      "name": "Profil_Ontologia_uri_pre_ontologiu",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 14,
+      "unique_pct": 87.5
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 16,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_RefID_dovod_zamietnutia",
+      "count": 2,
+      "pct": 12.5,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    }
+  ]
+}

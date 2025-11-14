@@ -1,0 +1,76 @@
+{
+  "type": "OsobitnyPostup",
+  "count": 9,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Osobitny_Postup_typ_rozhodnutia",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 22.22222222222222
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 11.11111111111111
+    },
+    {
+      "name": "Profil_Osobitny_Postup_datum_ucinnosti_od",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 55.55555555555556
+    },
+    {
+      "name": "Profil_Osobitny_Postup_vyrok_rozhodnutia",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Osobitny_Postup_povinnosti_podla_ustanovenia",
+      "count": 9,
+      "pct": 100.0,
+      "unique_count": 6,
+      "unique_pct": 66.66666666666666
+    },
+    {
+      "name": "Profil_Osobitny_Postup_datum_ucinnosti_do",
+      "count": 7,
+      "pct": 77.77777777777779,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_OsobitnyPostup_suvisiace_PO_text",
+      "count": 3,
+      "pct": 33.33333333333333,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    }
+  ]
+}

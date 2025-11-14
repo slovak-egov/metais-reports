@@ -1,0 +1,130 @@
+{
+  "id": 48,
+  "name": "Skupina poloziek referencneho registra",
+  "technicalName": "ReferenceRegisterItemGroup",
+  "description": "Skupina poloziek referencneho registra",
+  "roleList": [
+    "RR_MANAGER"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": "#ffe0af",
+  "engName": "Reference register item group",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 223,
+      "name": "Názov",
+      "description": "Názov skupiny referenčných údajov. Ak sa vám pri písaní v comboboxe ponúkne požadovaný názov, kliknite naň.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "ReferenceRegisterItemGroup_Profile_name",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Name reference data group. If you are offered desired name while writing in combobox, click on it.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "codePrefix": "reference_register_group",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt-reference-register-group",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 119,
+        "name": "Skupina referečných údajov",
+        "engName": "Reference register item belongs to Group",
+        "technicalName": "ReferenceRegisterItem_belongsTo_ReferenceRegisterItemGroup",
+        "description": "Použije sa v prípade, ak je potrebné zaradiť referenčný údaj do skupiny referenčných údajov. Napríklad k fyzickej osobe \"údaje o pobyte\".",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "Reference register item belongs to Group.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 123,
+        "name": "Groupa patri pod Grupu",
+        "engName": "Group belongs under Group",
+        "technicalName": "ReferenceRegisterItemSubGroup_belongsTo_ReferenceRegisterItemGroup",
+        "description": "SubGroupa patri pod Grupu.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "RR_MANAGER"
+        ],
+        "engDescription": "SubGroup belongs under Group.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

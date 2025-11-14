@@ -1,0 +1,47 @@
+{
+  "id": 8,
+  "name": "Priradene do skupiny CI",
+  "technicalName": "BELONGS_TO_CI_GROUP",
+  "description": "Priradene do skupiny CI.",
+  "roleList": [],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Assignment to group CI",
+  "category": "RWNCB",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [],
+  "targets": [
+    {
+      "id": 6,
+      "name": "CI_GROUP",
+      "technicalName": "CI_GROUP",
+      "description": "Interne - skupina CI",
+      "roleList": null,
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "CI_GROUP",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": null,
+      "labels": []
+    }
+  ],
+  "engDescription": "Assignment to group CI.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

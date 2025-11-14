@@ -1,0 +1,129 @@
+{
+  "id": 1237,
+  "name": "Objekt evidencie patrí agende",
+  "technicalName": "OE_patri_Agenda",
+  "description": "Objekt evidencie patrí agende",
+  "roleList": [
+    "EA_GARPO",
+    "R_EGOV",
+    "SZC_HLGES"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Registry object belongs to the agenda",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 100,
+      "name": "Objekt Evidencie",
+      "technicalName": "ObjektEvidencie",
+      "description": "Objekt Evidencie",
+      "roleList": [
+        "R_EGOV",
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Registry object",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_poskytovatelom_OE",
+      "uriPrefix": null,
+      "roles": ";R_EGOV;EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 1,
+      "name": "Agenda",
+      "technicalName": "Agenda",
+      "description": "Konkrétna vecná oblasť príslušného úseku správy, ktorú vybavuje povinná osoba v súlade s kompetenciami, podmienkami a postupmi, ustanovenými osobitnými predpismi. Agenda predstavuje pohľad na služby z hľadiska ich legislatívneho pokrytia a kompetenčnej príslušnosti.",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Agenda",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    }
+  ],
+  "engDescription": "Registry object belongs to the agenda",
+  "codePrefix": null,
+  "uriPrefix": null
+}

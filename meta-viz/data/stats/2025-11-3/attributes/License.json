@@ -1,0 +1,104 @@
+{
+  "type": "License",
+  "count": 353,
+  "attributes": [
+    {
+      "name": "Profile_License_contractType",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.56657223796034
+    },
+    {
+      "name": "Profile_License_unitOfMeassure",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 8,
+      "unique_pct": 2.26628895184136
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 353,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_License_licenseNumber",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 0.84985835694051
+    },
+    {
+      "name": "Profile_License_state",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.28328611898017
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.28328611898017
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 353,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_License_owner",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 2.8328611898017
+    },
+    {
+      "name": "Profile_License_numberOfUsed",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 51,
+      "unique_pct": 14.44759206798867
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 353,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_License_siCode",
+      "count": 353,
+      "pct": 100.0,
+      "unique_count": 94,
+      "unique_pct": 26.628895184135974
+    },
+    {
+      "name": "Profile_License_price",
+      "count": 61,
+      "pct": 17.280453257790366,
+      "unique_count": 50,
+      "unique_pct": 81.9672131147541
+    },
+    {
+      "name": "Profile_License_note",
+      "count": 33,
+      "pct": 9.34844192634561,
+      "unique_count": 6,
+      "unique_pct": 18.181818181818183
+    },
+    {
+      "name": "Profile_License_location",
+      "count": 1,
+      "pct": 0.28328611898017,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

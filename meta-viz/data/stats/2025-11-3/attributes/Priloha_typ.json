@@ -1,0 +1,83 @@
+{
+  "type": "Priloha_typ",
+  "count": 1,
+  "attributes": [
+    {
+      "name": "Profil_typ_prilohy_attachment_sign_type",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_attachment_multiplicity",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_required",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_signatureRequired",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_Profil_typ_prilohy_attachment_authorization",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_allowedForm",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_attachment_sign_mass",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

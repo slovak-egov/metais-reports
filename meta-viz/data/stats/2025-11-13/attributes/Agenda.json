@@ -1,0 +1,62 @@
+{
+  "type": "Agenda",
+  "count": 3212,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 3212,
+      "pct": 100.0,
+      "unique_count": 3212,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 3212,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.062266500622665005
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 3212,
+      "pct": 100.0,
+      "unique_count": 3196,
+      "unique_pct": 99.50186799501867
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 3212,
+      "pct": 100.0,
+      "unique_count": 3212,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Platnost_platnost_od",
+      "count": 3212,
+      "pct": 100.0,
+      "unique_count": 6,
+      "unique_pct": 0.18679950186799502
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 3210,
+      "pct": 99.93773349937733,
+      "unique_count": 516,
+      "unique_pct": 16.074766355140188
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 3200,
+      "pct": 99.62640099626401,
+      "unique_count": 3181,
+      "unique_pct": 99.40625
+    },
+    {
+      "name": "Profil_Agenda_typ_osoby",
+      "count": 676,
+      "pct": 21.046077210460773,
+      "unique_count": 16,
+      "unique_pct": 2.366863905325444
+    }
+  ]
+}

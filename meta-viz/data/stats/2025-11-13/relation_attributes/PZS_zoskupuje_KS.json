@@ -1,0 +1,2245 @@
+{
+  "relation_name": "PZS_zoskupuje_KS",
+  "name": "Prioritná životná situácia zoskupuje Koncovú službu",
+  "description": "",
+  "engDescription": "",
+  "type": "application",
+  "source_type": "PZS",
+  "source_name": "Prioritná životná situácia",
+  "target_type": "KS",
+  "target_name": "Koncová služba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 233,
+    "unique_pairs": 163,
+    "duplicate_edges": 70,
+    "pairs_with_duplicates": 69,
+    "parallel_edges": 70,
+    "parallel_max": 3,
+    "source_total": 16,
+    "target_total": 9003,
+    "source_connected": 15,
+    "target_connected": 158,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 2,
+      "max": 80,
+      "avg": 15.533333333333333,
+      "median": 7,
+      "p90": 35,
+      "p99": 80
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 5,
+      "avg": 1.4746835443037976,
+      "median": 1.0,
+      "p90": 2,
+      "p99": 3
+    },
+    "top_source": [
+      {
+        "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+        "degree": 80,
+        "name": "Administratívny chod podniku",
+        "code": "pzs_05"
+      },
+      {
+        "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+        "degree": 35,
+        "name": "Presťahovanie",
+        "code": "pzs_06"
+      },
+      {
+        "uuid": "51542009-b5ed-4fa1-a8c2-be31ff68e3e4",
+        "degree": 35,
+        "name": "Kúpa a vlastníctvo motorového vozidla",
+        "code": "pzs_04"
+      },
+      {
+        "uuid": "1fa1b916-1013-4bac-b47e-bdf1b8d39215",
+        "degree": 17,
+        "name": "Strata a hľadanie zamestnania",
+        "code": "pzs_01"
+      },
+      {
+        "uuid": "679db03c-4a52-44c5-b623-243a4f151aad",
+        "degree": 12,
+        "name": "Narodenie dieťaťa",
+        "code": "pzs_07"
+      },
+      {
+        "uuid": "dca3bf19-1730-4d87-9efe-d409df850ca1",
+        "degree": 9,
+        "name": "Som odkázaný, mám odkázaného člena rodiny",
+        "code": "pzs_09"
+      },
+      {
+        "uuid": "fcddc264-7f83-4137-81a9-cac6c95826a6",
+        "degree": 8,
+        "name": "Začatie podnikania",
+        "code": "pzs_03"
+      },
+      {
+        "uuid": "925966f9-05f3-42fa-a70a-93315b88fbd7",
+        "degree": 7,
+        "name": "Som chorý, mám chorého člena rodiny",
+        "code": "pzs_08"
+      },
+      {
+        "uuid": "b80393b3-7dec-4cee-940e-31d50b95971e",
+        "degree": 6,
+        "name": "Hmotná núdza",
+        "code": "pzs_10"
+      },
+      {
+        "uuid": "7edbd218-637c-4cfd-95ec-62bd179c7bf5",
+        "degree": 6,
+        "name": "Úmrtie a dedičské konanie",
+        "code": "pzs_16"
+      },
+      {
+        "uuid": "70365f5e-a3bd-4265-b996-d15031973bc2",
+        "degree": 4,
+        "name": "Základná škola",
+        "code": "pzs_12"
+      },
+      {
+        "uuid": "ecd01d40-7c85-44ab-846e-795b1421dcf4",
+        "degree": 4,
+        "name": "Uzavretie manželstva",
+        "code": "pzs_15"
+      },
+      {
+        "uuid": "cbf45430-dd19-40d1-b495-177d9c5134aa",
+        "degree": 4,
+        "name": "Materská škola",
+        "code": "pzs_11"
+      },
+      {
+        "uuid": "b2deb0d1-cb25-4510-a825-eec34de09bc3",
+        "degree": 4,
+        "name": "Stredná škola",
+        "code": "pzs_13"
+      },
+      {
+        "uuid": "38d889ee-c303-4d1b-a1f7-51a539e4108e",
+        "degree": 2,
+        "name": "Kúpa nehnuteľnosti na bývanie",
+        "code": "pzs_02"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "24c3d7d4-6b7b-4c82-806d-40484e34af82",
+        "degree": 5,
+        "name": "Publikovanie informácií Úradu geodézie, kartografie a katastra Slovenskej republiky",
+        "code": "ks_337848"
+      },
+      {
+        "uuid": "5f1b169c-343c-48f1-a20c-d6e118cf6708",
+        "degree": 3,
+        "name": "Zapisovanie a čítanie fyzikálnych a fyziologických údajov do eZdravie",
+        "code": "ks_336890"
+      },
+      {
+        "uuid": "2831adf1-f604-4805-bb6d-32e245407d46",
+        "degree": 3,
+        "name": "Ohlasovanie voľnej, remeselnej a viazanej živnosti – právnická osoba",
+        "code": "ks_338769"
+      },
+      {
+        "uuid": "5f77e4eb-2fdf-4ef7-ac84-e0db9a27cd25",
+        "degree": 2,
+        "name": "Podávanie žiadosti o náhradné výživné",
+        "code": "ks_351508"
+      },
+      {
+        "uuid": "02c3f74b-fb97-4463-9c57-c6bc49028f24",
+        "degree": 2,
+        "name": "Poskytovanie jednorazovej dávky v hmotnej núdzi a mimoriadnej dávky na pomoc občanovi",
+        "code": "ks_350766"
+      },
+      {
+        "uuid": "7c42d550-95dc-4126-818d-eda7c8293b53",
+        "degree": 2,
+        "name": "Podávanie žiadosti o pomoc v hmotnej núdzi",
+        "code": "ks_351898"
+      },
+      {
+        "uuid": "1c323919-6e60-4d39-9e14-1914fa70296d",
+        "degree": 2,
+        "name": "Odvolanie voči rozhodnutiu o prijatí na základnú školu",
+        "code": "ks_381672"
+      },
+      {
+        "uuid": "01f5abf7-ef20-418d-969b-c69e0964572b",
+        "degree": 2,
+        "name": "Prihláška na základnú školu",
+        "code": "ks_381671"
+      },
+      {
+        "uuid": "821b6ae5-37c0-4bc1-a12d-e346195d1fa6",
+        "degree": 2,
+        "name": "Prezeranie a zneplatňovanie existujúcich splnomocnení a súhlasov súvisiacich s pobytmi",
+        "code": "ks_380922"
+      },
+      {
+        "uuid": "0d6af934-a95c-4017-9d5c-bf5c349d5e56",
+        "degree": 2,
+        "name": "Získavanie údajov o spoluvlastníkoch na liste vlastníctva",
+        "code": "ks_380923"
+      },
+      {
+        "uuid": "41daf803-0fc6-4999-9df2-7c9f2752ded2",
+        "degree": 2,
+        "name": "Overovanie možnosti hlásenia pobytu elektronicky",
+        "code": "ks_380925"
+      },
+      {
+        "uuid": "d8b7b99d-7c0c-4e89-bde4-31ead69dc6e2",
+        "degree": 2,
+        "name": "Zadávanie súhlasu druhého rodiča s prihlásením/odhlásením dieťaťa na pobyt",
+        "code": "ks_380930"
+      },
+      {
+        "uuid": "41386603-3a40-45cf-81a3-5c213ce0f662",
+        "degree": 2,
+        "name": "Podávanie žiadosti o vytvorenie splnomocnenia k úkonu hlásenia pobytu",
+        "code": "ks_380921"
+      },
+      {
+        "uuid": "09ce6b17-0240-40cd-ab35-dd3d572635fe",
+        "degree": 2,
+        "name": "Podávanie prihlásenia na trvalý pobyt za celú rodinu",
+        "code": "ks_380927"
+      },
+      {
+        "uuid": "43968ccc-4502-4008-ac03-810dcc794304",
+        "degree": 2,
+        "name": "Zadávanie splnomocnenia pre manžela/manželku k úkonu hlásenia pobytu",
+        "code": "ks_380929"
+      },
+      {
+        "uuid": "573091c7-de87-43e4-b927-7bb28df57f4e",
+        "degree": 2,
+        "name": "Podávanie prihlásenia na trvalý pobyt za celú rodinu",
+        "code": "ks_380928"
+      },
+      {
+        "uuid": "54f4b475-f1f9-4a63-a64a-a87c21b2acac",
+        "degree": 2,
+        "name": "Overovanie súhlasov všetkých spoluvlastníkov nehnuteľnosti k žiadosti o hláseniu pobytu",
+        "code": "ks_380924"
+      },
+      {
+        "uuid": "c6f9721b-d56a-42fc-925b-6966b251d4db",
+        "degree": 2,
+        "name": "Podávanie návrhu na doplnenie údajov na list vlastníctva do katastra nehnuteľností",
+        "code": "ks_336462"
+      },
+      {
+        "uuid": "d099a757-6aa5-49d6-ad74-3d606e387c15",
+        "degree": 2,
+        "name": "Podávanie žiadosti o úrazovú dávku",
+        "code": "ks_337622"
+      },
+      {
+        "uuid": "03a2140b-a717-441b-b841-00e1db87451f",
+        "degree": 2,
+        "name": "Oznámenie o poistnej udalosti  v rámci úrazového poistenia",
+        "code": "ks_337623"
+      },
+      {
+        "uuid": "52b419b3-6cc3-4fe0-96ac-662b19fcd7d7",
+        "degree": 2,
+        "name": "Žiadosť o trvalé alebo dočasné vyradenie vozidla z evidencie",
+        "code": "ks_339397"
+      },
+      {
+        "uuid": "e3fac608-5c96-4fb6-adfd-152b5393e2e0",
+        "degree": 2,
+        "name": "Podávanie žiadosti o tehotenské",
+        "code": "ks_340574"
+      },
+      {
+        "uuid": "8b4d90a2-ede0-4d02-8d36-035a90e24c9e",
+        "degree": 2,
+        "name": "Zápisnica o určení otcovstva súhlasným vyhlásením rodičov k nenarodenému dieťaťu",
+        "code": "ks_351341"
+      },
+      {
+        "uuid": "d95a2aaf-1212-454a-8862-82e3d96048d2",
+        "degree": 2,
+        "name": "Podávanie žiadosti o materské - iný poistenec/otcovské",
+        "code": "ks_337616"
+      },
+      {
+        "uuid": "6c6a1368-830a-4373-81df-3e2d16702c3c",
+        "degree": 2,
+        "name": "Zápisnica o určení otcovstva súhlasným vyhlásením rodičov k narodenému dieťaťu",
+        "code": "ks_351340"
+      },
+      {
+        "uuid": "8b2faf18-6b4d-4250-ba28-5e1934af4590",
+        "degree": 2,
+        "name": "Dokumenty na účely nároku na dávku garančného poistenia cez EKP",
+        "code": "ks_379601"
+      },
+      {
+        "uuid": "2bff3d49-a47a-405b-a45e-31cea7326a54",
+        "degree": 2,
+        "name": "Ohlasovanie voľnej, remeselnej a viazanej živnosti - fyzická osoba",
+        "code": "sluzba_egov_1097"
+      },
+      {
+        "uuid": "53a60286-82a1-422b-a4c7-c47a81d855e9",
+        "degree": 2,
+        "name": "Oznamovanie zmeny povolenia na výrobu veterinárnych autogénnych vakcín",
+        "code": "ks_380498"
+      },
+      {
+        "uuid": "5b529fa3-4ff8-4c78-b6e7-01790659d084",
+        "degree": 2,
+        "name": "Podávanie žiadosti o výrobu veterinárnych autogénnych vakcín",
+        "code": "ks_380484"
+      },
+      {
+        "uuid": "1cce6f38-6018-4324-9526-aa55942facdf",
+        "degree": 2,
+        "name": "Podávanie žiadosti o povolenie veterinárneho klinického skúšania",
+        "code": "ks_380488"
+      },
+      {
+        "uuid": "88a38945-e8ff-4168-9f59-b6f85659571f",
+        "degree": 2,
+        "name": "Podávanie žiadosti o vydaní duplikátu pasu hospodárskeho zvieraťa",
+        "code": "ks_380482"
+      },
+      {
+        "uuid": "a7e681e7-d7a1-42e2-9df6-7b1f3ad28e41",
+        "degree": 2,
+        "name": "Ohlasovanie zmien v chove hospodárskych zvierat",
+        "code": "ks_380480"
+      },
+      {
+        "uuid": "e1311736-a153-44b8-acb6-f82fdcd4bb0b",
+        "degree": 2,
+        "name": "Podávanie žiadosti o registráciu chovu hospodárskych zvierat",
+        "code": "ks_380479"
+      },
+      {
+        "uuid": "e4b36c5a-c0e5-4aa7-bfcf-c128d654b1b3",
+        "degree": 2,
+        "name": "Ohlasovanie spotreby z predaja veterinárnych liekov veľkodistribútormi",
+        "code": "ks_380489"
+      },
+      {
+        "uuid": "a7772870-d4a2-492e-83a1-858b155a3187",
+        "degree": 2,
+        "name": "Podávanie žiadosti o povolenie výroby skúšaných veterinárnych produktov alebo skúšaných veterinárnych liekov",
+        "code": "ks_380485"
+      },
+      {
+        "uuid": "2a3071d2-bc8c-412c-951b-1e2d29e4de02",
+        "degree": 2,
+        "name": "Oznamovanie zmeny povolenia na veľkodistribúciu veterinárnych liekov",
+        "code": "ks_380500"
+      },
+      {
+        "uuid": "006a7ca9-a395-44b7-93e6-459e6f2f8564",
+        "degree": 2,
+        "name": "Ohlasovanie premiestnenia hospodárskeho zvieraťa",
+        "code": "ks_380481"
+      },
+      {
+        "uuid": "36e7bbb9-0e69-4b85-818f-b70b005d99d2",
+        "degree": 2,
+        "name": "Podávanie žiadosti o registráciu výrobcu zdravotníckych pomôcok",
+        "code": "ks_380487"
+      },
+      {
+        "uuid": "87e1f718-12a3-45bb-9bb5-49074796672c",
+        "degree": 2,
+        "name": "Publikovanie informácií z Registra veterinárnych liekov, prípravkov a pomôcok",
+        "code": "ks_380477"
+      },
+      {
+        "uuid": "0d08ce7e-07a1-40b2-9e85-8720a631fb6d",
+        "degree": 2,
+        "name": "Oznamovanie zmeny povolenia na veterinárne klinické skúšanie",
+        "code": "ks_380501"
+      },
+      {
+        "uuid": "9200688d-2ce0-43b5-9ef4-1820526b8034",
+        "degree": 2,
+        "name": "Oznamovanie zmeny povolenia na výrobu veterinárnych liekov",
+        "code": "ks_380497"
+      },
+      {
+        "uuid": "f327cfcb-537a-4589-a2b3-be87e0a53603",
+        "degree": 2,
+        "name": "Podávanie žiadosti o veľkodistribúciu veterinárnych liekov",
+        "code": "ks_380486"
+      },
+      {
+        "uuid": "cb84b0c1-0415-4033-bb08-9207dac9eaa1",
+        "degree": 2,
+        "name": "Oznamovanie zmeny povolenia na výrobu zdravotníckych pomôcok",
+        "code": "ks_380502"
+      },
+      {
+        "uuid": "08deba08-58ff-4283-81fb-48b7877eca5e",
+        "degree": 2,
+        "name": "Oznamovanie zmeny povolenia na výrobu skúšaných veterinárnych produktov alebo skúšaných veterinárnych liekov",
+        "code": "ks_380499"
+      },
+      {
+        "uuid": "680596ef-cc2c-4015-a934-0219f61faf7f",
+        "degree": 2,
+        "name": "Podávanie žiadosti o povolenie prípravy medikovaných krmív",
+        "code": "ks_380493"
+      },
+      {
+        "uuid": "02d4acf8-f30b-4a5f-accf-7895c11cf2a4",
+        "degree": 2,
+        "name": "Podávanie žiadosti o výrobu veterinárnych liekov",
+        "code": "ks_380483"
+      },
+      {
+        "uuid": "c51f892d-e72d-469d-a75d-3a8ab5eabffa",
+        "degree": 2,
+        "name": "Žiadosť o vydanie potvrdenia o nedoplatku na sociálnom poistení",
+        "code": "ks_379600"
+      },
+      {
+        "uuid": "84280429-2cc9-4f40-a65e-cadac7482fe0",
+        "degree": 2,
+        "name": "Návody a sprievodca koncovými službami ŠVPS SR",
+        "code": "ks_380478"
+      },
+      {
+        "uuid": "12354729-184f-4560-8989-5d8f5864ec02",
+        "degree": 2,
+        "name": "Publikovanie informácií z Centrálneho registra hospodárskych zvierat (CRHZ)",
+        "code": "ks_380475"
+      },
+      {
+        "uuid": "108b893f-eec8-4ed4-bb45-8171847a2a73",
+        "degree": 2,
+        "name": "Podávanie žiadosti o zmenu hlavnej ekonomickej činnosti podľa SK NACE a/alebo zatriedenia podľa ESA2010",
+        "code": "ks_343827"
+      },
+      {
+        "uuid": "4cf39800-d32e-4210-8aee-d72f13f0e8e1",
+        "degree": 2,
+        "name": "Poskytovanie oprávnenia na podnikanie podľa osobitných predpisov-Fyzická osoba tuzemská",
+        "code": "ks_338774"
+      },
+      {
+        "uuid": "d9e524aa-9a6a-42c3-9855-5c1dc5370182",
+        "degree": 2,
+        "name": "Poskytovanie oprávnenia na podnikanie podľa osobitných predpisov-Fyzická osoba zahraničná",
+        "code": "ks_338773"
+      },
+      {
+        "uuid": "be422a3d-f33a-4df1-9e82-d01b889b3b16",
+        "degree": 2,
+        "name": "Poskytovanie výpisu z neverejnej časti živnostenského registra",
+        "code": "ks_338808"
+      },
+      {
+        "uuid": "ad4e8a52-ac29-43c3-85e0-cbb645bcafe9",
+        "degree": 2,
+        "name": "Publikovanie informácii o schválených a registrovaných subjektoch a činnostiach",
+        "code": "ks_338617"
+      },
+      {
+        "uuid": "8cd5b4f3-4cb1-45c5-990d-3f59986aaf75",
+        "degree": 2,
+        "name": "Poskytovanie oprávnenia na podnikanie podľa osobitných predpisov-Právnická osoba zahraničná",
+        "code": "ks_338771"
+      },
+      {
+        "uuid": "5a8e978e-d3a1-4ba2-a92e-6bb53c44c6e9",
+        "degree": 2,
+        "name": "Podávanie oznámení o začatí,  zmene a ukončení prevádzky priestorov na úrady verejného zdravotníctva v Slovenskej republike",
+        "code": "ks_340894"
+      },
+      {
+        "uuid": "032bc0f6-f94c-4465-b513-65c12bec4538",
+        "degree": 2,
+        "name": "Poskytovanie oprávnenia na podnikanie podľa osobitných predpisov-Právnická osoba tuzemská",
+        "code": "ks_338770"
+      },
+      {
+        "uuid": "0227e58a-8238-4b0c-b744-a738695e0331",
+        "degree": 2,
+        "name": "Podávanie žiadosti o vydanie potvrdenia o tom, že poskytovanie služieb na základe živnostenského oprávnenia nie je obmedzené alebo zakázané",
+        "code": "ks_338768"
+      },
+      {
+        "uuid": "b37817c8-df9c-429c-8e65-747a32dde5f1",
+        "degree": 2,
+        "name": "Doplnenie odoslaného podania pre služby živnostenského registra",
+        "code": "ks_338859"
+      },
+      {
+        "uuid": "1424c967-2256-4b3e-9544-c58ffb26ce1d",
+        "degree": 2,
+        "name": "Poskytnutie spätnej väzby s využívaním služieb ŠU",
+        "code": "ks_351550"
+      },
+      {
+        "uuid": "b9364952-e848-45f8-a5ef-5ce519217cfe",
+        "degree": 2,
+        "name": "Podávanie návrhu na uvedenie priestorov do prevádzky, na zmenu v ich prevádzkovaní alebo na uvedenie priestorov do skúšobnej prevádzky a návrhu na schválenie prevádzkového poriadku alebo jeho zmeny na úrady verejného zdravotníctva v Slovenskej republike",
+        "code": "ks_340860"
+      },
+      {
+        "uuid": "719c351b-9f24-4eaf-bbc1-ee8046819ead",
+        "degree": 2,
+        "name": "Podávanie žiadosti o  príspevok na pohreb",
+        "code": "ks_350922"
+      },
+      {
+        "uuid": "9b267526-3562-4670-b665-577134fc2be9",
+        "degree": 2,
+        "name": "Prihláška na materskú školu",
+        "code": "ks_381673"
+      },
+      {
+        "uuid": "1e09fc8c-5d2c-4266-8743-1bcd21d2a3eb",
+        "degree": 2,
+        "name": "Odvolanie voči rozhodnutiu o prijatí na materskú školu",
+        "code": "ks_381674"
+      },
+      {
+        "uuid": "a49811c8-c661-4289-8edd-341196eeba6f",
+        "degree": 2,
+        "name": "Podávanie žiadosti o príspevok na starostlivosť o dieťa",
+        "code": "ks_351429"
+      },
+      {
+        "uuid": "ed926905-3e28-45cb-9b2d-c4403317bb08",
+        "degree": 2,
+        "name": "Podávanie žiadosti o rodičovský príspevok",
+        "code": "ks_350836"
+      },
+      {
+        "uuid": "9ff40a37-e67e-420a-bbd9-4ced276ed7e3",
+        "degree": 2,
+        "name": "Podávanie žiadosti o vyhotovenie preukazu fyzickej osoby s ťažkým zdravotným postihnutím",
+        "code": "ks_351900"
+      },
+      {
+        "uuid": "56b92885-c7dd-4723-97d7-0d906c76565b",
+        "degree": 2,
+        "name": "Podávanie žiadosti o vyhotovenie parkovacieho preukazu pre fyzickú osobu so zdravotným postihnutím",
+        "code": "ks_351899"
+      },
+      {
+        "uuid": "764ecb49-cdc7-4ccc-be8d-c556f2fc4c65",
+        "degree": 2,
+        "name": "Prihláška na strednú školu",
+        "code": "ks_381675"
+      },
+      {
+        "uuid": "0631132f-6b81-40d6-a279-209a5d448f76",
+        "degree": 2,
+        "name": "Odvolanie voči rozhodnutiu o prijatí na strednú školu",
+        "code": "ks_381676"
+      },
+      {
+        "uuid": "1e346c3d-5ba4-498a-bd34-c6fd7f583035",
+        "degree": 1,
+        "name": "Podávanie žiadosti o dávku v nezamestnanosti",
+        "code": "ks_337610"
+      },
+      {
+        "uuid": "72fd400a-45d8-4e96-81b3-7fa308435d5a",
+        "degree": 1,
+        "name": "Vyhľadávanie a zverejňovanie pracovných ponúk  Internetového sprievodcu trhom práce",
+        "code": "ks_336024"
+      },
+      {
+        "uuid": "9a9588ec-a667-4804-be94-b7ac12b142e7",
+        "degree": 1,
+        "name": "Zverejňovanie údajov a informácií na webovom sídle ÚPSVaR",
+        "code": "ks_338805"
+      },
+      {
+        "uuid": "f3f0ded8-0ae5-4027-9db4-e0802cd41662",
+        "degree": 1,
+        "name": "Podávanie žiadosti o poskytnutie príspevku na podporu vzdelávania záujemcu o zamestnanie",
+        "code": "ks_378631"
+      },
+      {
+        "uuid": "c27e3ce7-ee55-4d5e-aeba-e269ddf7fd94",
+        "degree": 1,
+        "name": "Podávanie žiadosti uchádzača o zamestnanie o zaradenie na prax a o poskytnutie finančného príspevku na vykonávanie praxe",
+        "code": "ks_362413"
+      },
+      {
+        "uuid": "cfe72cc1-8676-4578-9d09-ccee8ab62ab2",
+        "degree": 1,
+        "name": "Podávanie žiadosti záujemcu o zamestnanie o poskytnutie odborných poradenských služieb",
+        "code": "ks_378581"
+      },
+      {
+        "uuid": "12090eb0-a329-44fc-8717-01e42a8b0a24",
+        "degree": 1,
+        "name": "Podávanie žiadosti uchádzača o zamestnanie (UoZ) o poskytnutie odborných poradenských služieb",
+        "code": "ks_378582"
+      },
+      {
+        "uuid": "04b7c346-cd32-47e7-929d-27242a38db99",
+        "degree": 1,
+        "name": "Podávanie žiadosti uchádzača o zamestnanie o profesijné poradenstvo  pred začatím vykonávania samostatnej zárobkovej činnosti",
+        "code": "ks_378580"
+      },
+      {
+        "uuid": "ffb8743c-c2ee-421a-ab59-29fabc23761e",
+        "degree": 1,
+        "name": "Podávanie žiadosti o poskytnutie príspevku na podporu rekvalifikácie uchádzača o zamestnanie",
+        "code": "ks_378584"
+      },
+      {
+        "uuid": "3a22a87c-33f9-4031-8955-7469778b6e5e",
+        "degree": 1,
+        "name": "Podávanie žiadosti o poskytnutie motivačného príspevku",
+        "code": "ks_362411"
+      },
+      {
+        "uuid": "edfeacf9-69a0-4b18-b341-65485b6ac4ef",
+        "degree": 1,
+        "name": "Podávanie žiadosti uchádzača o zamestnanie o náhradu časti cestovných výdavkov",
+        "code": "ks_360162"
+      },
+      {
+        "uuid": "f11112cb-5532-4d0d-9a6a-8d3a023c79c9",
+        "degree": 1,
+        "name": "Podávanie žiadosti o poskytnutie príspevku na podporu mobility za prácou",
+        "code": "ks_360160"
+      },
+      {
+        "uuid": "db79d4eb-f9dd-48b5-b21b-1438c461d5c1",
+        "degree": 1,
+        "name": "Podávanie žiadosti o poskytnutie príspevku na dochádzku za prácou",
+        "code": "ks_352442"
+      },
+      {
+        "uuid": "887aa26a-3f3c-4e3d-a409-bf60b3ce0e51",
+        "degree": 1,
+        "name": "Podávanie žiadosti o vyradenie z evidencie záujemcov o zamestnanie",
+        "code": "ks_362410"
+      },
+      {
+        "uuid": "4dc7c061-74f4-40ce-a949-c7270bb04f63",
+        "degree": 1,
+        "name": "Podávanie žiadosti záujemcu o zamestnanie o sprostredkovanie vhodného zamestnania",
+        "code": "ks_353030"
+      },
+      {
+        "uuid": "c24401bc-7472-48cd-b23b-89410aeb9dd8",
+        "degree": 1,
+        "name": "Podávanie žiadosti o vyradenie z evidencie uchádzačov o zamestnanie",
+        "code": "ks_362409"
+      },
+      {
+        "uuid": "c119171c-c7de-4e0d-902f-3dc7540981a1",
+        "degree": 1,
+        "name": "Podávanie žiadosti o zaradenie do evidencie uchádzačov o zamestnanie",
+        "code": "ks_334397"
+      },
+      {
+        "uuid": "e1390939-ad6a-4516-88c4-65a6c3c6b785",
+        "degree": 1,
+        "name": "Poskytovanie informácie z katastra nehnuteľností o nehnuteľnostiach",
+        "code": "ks_336479"
+      },
+      {
+        "uuid": "db02ac18-8970-40a3-934c-22848fe7b1ee",
+        "degree": 1,
+        "name": "Poskytovanie výpisu z listu vlastníctva z katastra nehnuteľností",
+        "code": "ks_336484"
+      },
+      {
+        "uuid": "55f535d4-e1a7-448f-bfbf-545857e66d94",
+        "degree": 1,
+        "name": "Poskytovanie informácie z katastra nehnuteľností o právach k nehnuteľnostiam",
+        "code": "ks_336480"
+      },
+      {
+        "uuid": "3b32eaf6-81e2-48bc-965e-dd511980435c",
+        "degree": 1,
+        "name": "Podanie odhlásenia z trvalého pobytu z dôvodu presťahovania do zahraničia",
+        "code": "ks_334114"
+      },
+      {
+        "uuid": "8f0d8444-fc6b-491b-911b-0a5e8b37a5a3",
+        "degree": 1,
+        "name": "Podanie prihlásenia inej osoby na trvalý pobyt",
+        "code": "ks_334080"
+      },
+      {
+        "uuid": "0593c4a9-7f67-4a91-81da-b2fd747b7f52",
+        "degree": 1,
+        "name": "Podanie návrhu k zrušeniu prechodného pobytu",
+        "code": "ks_334111"
+      },
+      {
+        "uuid": "5c9b620e-82cc-485b-bf5d-f2f52423722b",
+        "degree": 1,
+        "name": "Podanie odhlásenia z prechodného pobytu",
+        "code": "ks_334109"
+      },
+      {
+        "uuid": "b8d110b1-e374-4e76-a486-3a1824e2f763",
+        "degree": 1,
+        "name": "Podanie prihlásenia na prechodný pobyt",
+        "code": "ks_334112"
+      },
+      {
+        "uuid": "c2a3d23b-daf2-48b5-a01f-5e2a1f200b90",
+        "degree": 1,
+        "name": "Podanie prihlásenia na trvalý pobyt",
+        "code": "ks_334103"
+      },
+      {
+        "uuid": "4151b2ce-2437-41b3-9e21-af10b384bd55",
+        "degree": 1,
+        "name": "Podanie návrhu k zrušeniu trvalého pobytu",
+        "code": "ks_334110"
+      },
+      {
+        "uuid": "c56c981a-bd47-49f4-a3d1-f7d2e382e7fe",
+        "degree": 1,
+        "name": "Vydanie oznámenia o zrušení trvalého pobytu a prihlásení na obec",
+        "code": "ks_334108"
+      },
+      {
+        "uuid": "8d40029d-b6a3-45a5-aead-075a31ca3c9f",
+        "degree": 1,
+        "name": "Podanie prihlásenia inej osoby na prechodný pobyt",
+        "code": "ks_334113"
+      },
+      {
+        "uuid": "049810b7-41ea-4781-b5e7-f2282d180530",
+        "degree": 1,
+        "name": "Získanie potvrdenia o trvalom pobyte",
+        "code": "ks_334100"
+      },
+      {
+        "uuid": "8f2808b8-2e8e-47bb-8c91-1a250d82343e",
+        "degree": 1,
+        "name": "Získanie potvrdenia o prechodnom pobyte",
+        "code": "ks_334102"
+      },
+      {
+        "uuid": "e94b08fb-2f2b-4823-8bb3-1dd9ce7ef7a1",
+        "degree": 1,
+        "name": "Poskytnutie informácií o tabuľkách s evidenčným číslom a dokladoch od vozidla",
+        "code": "sluzba_egov_1042"
+      },
+      {
+        "uuid": "3d55df05-10fd-4d23-9866-760f7a22d963",
+        "degree": 1,
+        "name": "Žiadosť o výmenu osvedčenia, osvedčení o evidencii vozidla",
+        "code": "sluzba_egov_8029"
+      },
+      {
+        "uuid": "d4d23f9e-4750-4554-8061-4ecbafeff0e7",
+        "degree": 1,
+        "name": "Žiadosť o zmenu údajov po prisťahovaní držiteľa z iného okresu",
+        "code": "sluzba_egov_1047"
+      },
+      {
+        "uuid": "e426eec1-0fd7-4e92-99cb-e338f65cb33a",
+        "degree": 1,
+        "name": "Overenie stratených a odcudzených osvedčení o evidencii vozidla",
+        "code": "sluzba_egov_8032"
+      },
+      {
+        "uuid": "42c5b0a8-29a5-4746-af6b-f7ff23e4c57f",
+        "degree": 1,
+        "name": "Žiadosť o zápis vlastníka vozidla po oznámení ukončenia predchádzajúceho vlastníctva",
+        "code": "sluzba_egov_7272"
+      },
+      {
+        "uuid": "5e120c3f-51e8-4cd5-b38f-42a219483153",
+        "degree": 1,
+        "name": "Poskytnutie informácií o držiteľovi vozidla",
+        "code": "sluzba_egov_1053"
+      },
+      {
+        "uuid": "da62119b-e709-4f17-9d47-0e29de0bf8f4",
+        "degree": 1,
+        "name": "Žiadosť o prvé prihlásenie vozidla do evidencie",
+        "code": "sluzba_egov_640"
+      },
+      {
+        "uuid": "f26d761f-bd22-4f19-b502-307e7e1dd137",
+        "degree": 1,
+        "name": "Žiadosť o zrušenie oznámenia ukončenia vlastníctva vozidla",
+        "code": "sluzba_egov_7271"
+      },
+      {
+        "uuid": "78f14e71-e548-4306-a365-1137ef6dd837",
+        "degree": 1,
+        "name": "Žiadosť o zápis nového držiteľa vozidla",
+        "code": "sluzba_egov_1966"
+      },
+      {
+        "uuid": "38268236-47ec-4da0-9665-770be31aec53",
+        "degree": 1,
+        "name": "Žiadosť o zmenu vlastníctva vozidla po ukončení leasingu vozidla",
+        "code": "sluzba_egov_411"
+      },
+      {
+        "uuid": "9d55aa22-e7a3-40ad-8801-3ef40b354e3b",
+        "degree": 1,
+        "name": "Poskytnutie informácií o stave podanej žiadosti s vozidlom",
+        "code": "sluzba_egov_1054"
+      },
+      {
+        "uuid": "a10749ce-4376-4f0d-8e5c-3d41cae6ec24",
+        "degree": 1,
+        "name": "Podanie potvrdenia o zaplatení DPH v tuzemsku pri dovoze vozidla",
+        "code": "sluzba_egov_709"
+      },
+      {
+        "uuid": "4d150e48-6f0f-4e9f-b05f-054e3310f96e",
+        "degree": 1,
+        "name": "Nahlásenie nálezu osvedčenia o evidencii vozidla",
+        "code": "sluzba_egov_8030"
+      },
+      {
+        "uuid": "5876b10a-3f03-473b-8d2c-570564a1dd8d",
+        "degree": 1,
+        "name": "Žiadosť o obnovenie osvedčenia o evidencii vozidla po strate alebo odcudzení",
+        "code": "sluzba_egov_8028"
+      },
+      {
+        "uuid": "8f1f3fe9-78de-404f-89bd-233897094556",
+        "degree": 1,
+        "name": "Dohodnutie termínu cez rezervačný systém Ministerstva vnútra SR",
+        "code": "sluzba_egov_1046"
+      },
+      {
+        "uuid": "ad797bee-9113-429e-83c2-29a5bcf5a1a8",
+        "degree": 1,
+        "name": "Žiadosť o nahlásenie straty alebo odcudzenia tabuliek s evidenčným číslom vozidla",
+        "code": "sluzba_egov_643"
+      },
+      {
+        "uuid": "d900df51-3759-4aa2-a450-8af2b66154bb",
+        "degree": 1,
+        "name": "Žiadosť o zapísanie splnomocnenia k evidenčnému úkonu s vozidlom",
+        "code": "sluzba_egov_1040"
+      },
+      {
+        "uuid": "34d31910-db3b-44bf-9a9e-598963e95285",
+        "degree": 1,
+        "name": "Žiadosť o vykonanie zmeny v dokladoch vozidla",
+        "code": "sluzba_egov_1043"
+      },
+      {
+        "uuid": "8dabec3d-8714-49ab-a70d-499c80da4e2f",
+        "degree": 1,
+        "name": "Poskytnutie informácií o súdnych, daňových a colných blokáciách vozidla",
+        "code": "sluzba_egov_1055"
+      },
+      {
+        "uuid": "2ef9a9d1-946d-40c1-b917-071206f2cb1b",
+        "degree": 1,
+        "name": "Poskytnutie údajov z elektronického osvedčenia o evidencii vozidla",
+        "code": "sluzba_egov_8033"
+      },
+      {
+        "uuid": "b9ee3594-9e5a-4eca-8cbb-e1fe3b28d39c",
+        "degree": 1,
+        "name": "Nahlásenie straty alebo odcudzenia osvedčenia o evidencii vozidla",
+        "code": "sluzba_egov_8027"
+      },
+      {
+        "uuid": "b93f7111-0fe5-4176-b4f4-a6f8ad808a0d",
+        "degree": 1,
+        "name": "Poskytnutie informácií o exekútorských blokáciách vozidla",
+        "code": "sluzba_egov_1049"
+      },
+      {
+        "uuid": "d0eeec06-ba38-4305-bad6-50f6780a4610",
+        "degree": 1,
+        "name": "Žiadosť o odhlásenie vozidla do cudziny",
+        "code": "sluzba_egov_746"
+      },
+      {
+        "uuid": "9c61d0a1-ed9c-4bd3-a62e-380463eeb286",
+        "degree": 1,
+        "name": "Žiadosť o zrušenie prevodu držby vozidla na inú osobu",
+        "code": "sluzba_egov_408"
+      },
+      {
+        "uuid": "ab96561f-98d7-4f61-acfb-9a1069a399a8",
+        "degree": 1,
+        "name": "Žiadosť o oznámenie ukončenia vlastníctva vozidla",
+        "code": "ks_336205"
+      },
+      {
+        "uuid": "96eaea72-9cca-4f60-9ee1-fabebb2d802f",
+        "degree": 1,
+        "name": "Poskytnutie informácie o technických údajoch vozidla",
+        "code": "ks_333595"
+      },
+      {
+        "uuid": "c0b53375-4b30-4b62-b36c-cb2d8dbedc79",
+        "degree": 1,
+        "name": "Žiadosť o objednanie tabuľky s evidenčným číslom na nosič bicyklov",
+        "code": "ks_235407"
+      },
+      {
+        "uuid": "ed662198-a16e-4060-a337-3b9d985821f5",
+        "degree": 1,
+        "name": "Poskytnutie informácií o kontrole originality vozidla",
+        "code": "ks_235406"
+      },
+      {
+        "uuid": "0fdc207a-9cde-410e-a62d-ca8d1636f0ed",
+        "degree": 1,
+        "name": "Poskytnutie informácie o technickej a emisnej kontrole vozidla",
+        "code": "ks_333597"
+      },
+      {
+        "uuid": "4580820a-8a7b-4363-bad3-9faa349eb45d",
+        "degree": 1,
+        "name": "Žiadosť o zmenu držby alebo vlastníctva vozidla",
+        "code": "ks_235405"
+      },
+      {
+        "uuid": "a4030804-5aea-483d-a15f-b6cef60e3b37",
+        "degree": 1,
+        "name": "Poskytnutie informácie o povinnom zmluvnom poistení vozidla",
+        "code": "ks_333596"
+      },
+      {
+        "uuid": "27f83f9c-893a-4805-9490-b5f0b572e683",
+        "degree": 1,
+        "name": "Poskytnutie informácie o histórii vozidla",
+        "code": "ks_333598"
+      },
+      {
+        "uuid": "a093c52d-a8af-4445-967d-297177a73e9b",
+        "degree": 1,
+        "name": "Overenie vozidla",
+        "code": "ks_364266"
+      },
+      {
+        "uuid": "7b85e6d3-9e0b-47d0-af37-905b6470ffda",
+        "degree": 1,
+        "name": "Vykonávanie zdravotných vyšetrení",
+        "code": "sluzba_egov_1899"
+      },
+      {
+        "uuid": "7ee69670-1df0-4ab8-9d8f-33c444026fed",
+        "degree": 1,
+        "name": "Podanie žiadosti o určenie mena, určenie rodného priezviska",
+        "code": "ks_336252"
+      },
+      {
+        "uuid": "7a4a03bf-ef57-4020-bbbf-124fdf3927ce",
+        "degree": 1,
+        "name": "Vydanie úradného výpisu (duplikátu) matričného dokladu",
+        "code": "ks_336242"
+      },
+      {
+        "uuid": "254f7ef5-12ac-4dd1-8aeb-8a24e1f4fea2",
+        "degree": 1,
+        "name": "Zápis hlásenia o narodení",
+        "code": "ks_336199"
+      },
+      {
+        "uuid": "b15c00a1-71f7-4bc6-9a50-f7370546b400",
+        "degree": 1,
+        "name": "Podávanie návrhu na vklad do katastra nehnuteľností",
+        "code": "ks_336456"
+      },
+      {
+        "uuid": "1f8a8620-e164-4bdb-988b-10d510ad47bc",
+        "degree": 1,
+        "name": "Oznamovanie pozastavenia prevádzkovania živnosti",
+        "code": "sluzba_egov_1942"
+      },
+      {
+        "uuid": "2fdb5f8d-5762-460e-b94e-f088acd5e18d",
+        "degree": 1,
+        "name": "Oznamovanie zmien údajov zapísaných v živnostenskom registri a uvádzaných na doklade o živnostenskom oprávnení",
+        "code": "sluzba_egov_1096"
+      },
+      {
+        "uuid": "f2f0cc28-fab2-4729-bb43-48b850840b86",
+        "degree": 1,
+        "name": "Poskytovanie výpisu z verejnej časti živnostenského registra",
+        "code": "sluzba_egov_1098"
+      },
+      {
+        "uuid": "2053b1d3-d961-4fc7-b1a3-71c93801c0af",
+        "degree": 1,
+        "name": "Oznamovanie ukončenia podnikania",
+        "code": "sluzba_egov_1943"
+      },
+      {
+        "uuid": "3a12f095-1336-492f-80c8-de9cd9df581c",
+        "degree": 1,
+        "name": "Podávanie štatistických výkazov",
+        "code": "ks_330259"
+      },
+      {
+        "uuid": "3535cbcd-e14a-4cee-b8e7-c7e374a6e24e",
+        "degree": 1,
+        "name": "Zmena údajov štatutárneho orgánu alebo členov štatutárneho orgánu združenia občanov",
+        "code": "ks_336215"
+      },
+      {
+        "uuid": "d8f56312-2c8d-4a66-bcce-b8c2e548a6f2",
+        "degree": 1,
+        "name": "Výmaz organizácie s medzinárodným prvkom z registra mimovládnych neziskových organizácií",
+        "code": "ks_336220"
+      },
+      {
+        "uuid": "758ef5a8-8c57-4130-ae68-1c269c7ca842",
+        "degree": 1,
+        "name": "Zápis o uzavretí manželstva",
+        "code": "ks_336175"
+      },
+      {
+        "uuid": "2851aeda-f93a-4261-847f-c1f0a4cde43b",
+        "degree": 1,
+        "name": "Zápis úmrtia na základe listu o prehliadke mŕtveho",
+        "code": "ks_336198"
+      },
+      {
+        "uuid": "962e3a2d-2e51-4beb-8b0c-4de1cbdb7053",
+        "degree": 1,
+        "name": "Vyhotovenie potvrdenia o údajoch zapísaných v matričnej knihe",
+        "code": "ks_336241"
+      },
+      {
+        "uuid": "f8dcc969-91fd-4e57-8344-d3e4acff68a9",
+        "degree": 1,
+        "name": "Podanie žiadosti o vydanie úmrtného listu s pôvodným menom",
+        "code": "ks_336243"
+      },
+      {
+        "uuid": "9539a3c7-fa93-47d4-ba2d-58c0b645787f",
+        "degree": 1,
+        "name": "Podanie žiadosti o opravy, zmeny zápisov a dodatočných zápisov matričných udalostí",
+        "code": "ks_336174"
+      },
+      {
+        "uuid": "5aeb73da-fb2d-48a7-a26f-acfacb3ce99e",
+        "degree": 1,
+        "name": "Oznamovanie o cezhraničnom poskytovaní služieb na území Slovenskej republiky",
+        "code": "ks_338861"
+      },
+      {
+        "uuid": "73a5852d-59bc-4507-bf7f-323485211b6f",
+        "degree": 1,
+        "name": "Podávanie žiadosti o zápis organizácie s medzinárodným prvkom do registra mimovládnych neziskových organizácií",
+        "code": "ks_336219"
+      },
+      {
+        "uuid": "703e4f52-9d73-47b6-addd-17e20a4b3fbc",
+        "degree": 1,
+        "name": "Podávanie žiadosti o zápis neziskovej organizácie poskytujúcej všeobecne prospešné služby do registra mimovládnych neziskových organizácií",
+        "code": "ks_336207"
+      },
+      {
+        "uuid": "ad75f66f-bf61-42f2-ba2d-c60f4bbb9d05",
+        "degree": 1,
+        "name": "Podávanie žiadosti o zápis neinvestičného fondu do registra mimovládnych neziskových organizácií",
+        "code": "ks_336209"
+      },
+      {
+        "uuid": "8225e524-66c3-4803-9710-44454620f258",
+        "degree": 1,
+        "name": "Podávanie žiadosti o zápis nadácie do registra mimovládnych neziskových organizácií",
+        "code": "ks_336211"
+      },
+      {
+        "uuid": "f0309db6-c649-46c6-a922-ddb911273099",
+        "degree": 1,
+        "name": "Podávanie žiadosti o zápis združenia občanov do registra mimovládnych neziskových organizácií",
+        "code": "ks_336217"
+      },
+      {
+        "uuid": "3b1b0fb3-5aac-4ca5-83f7-72d3bdd9d3a5",
+        "degree": 1,
+        "name": "Poskytovanie sociálnej služby v zariadení sociálnej starostlivosti",
+        "code": "sluzba_egov_162"
+      }
+    ],
+    "islands": {
+      "total_nodes": 9019,
+      "total_islands": 8858,
+      "singleton_islands": 8846,
+      "multi_islands": [
+        {
+          "size_total": 52,
+          "size_source": 2,
+          "size_target": 50,
+          "fraction_total": 0.005765605943009203,
+          "top_source_uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "top_source_degree": 80,
+          "top_target_uuid": "2831adf1-f604-4805-bb6d-32e245407d46",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 35,
+          "size_source": 1,
+          "size_target": 34,
+          "fraction_total": 0.0038806963077946555,
+          "top_source_uuid": "51542009-b5ed-4fa1-a8c2-be31ff68e3e4",
+          "top_source_degree": 35,
+          "top_target_uuid": "52b419b3-6cc3-4fe0-96ac-662b19fcd7d7",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 30,
+          "size_source": 3,
+          "size_target": 27,
+          "fraction_total": 0.003326311120966848,
+          "top_source_uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "top_source_degree": 35,
+          "top_target_uuid": "24c3d7d4-6b7b-4c82-806d-40484e34af82",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 18,
+          "size_source": 1,
+          "size_target": 17,
+          "fraction_total": 0.0019957866725801086,
+          "top_source_uuid": "1fa1b916-1013-4bac-b47e-bdf1b8d39215",
+          "top_source_degree": 17,
+          "top_target_uuid": "edfeacf9-69a0-4b18-b341-65485b6ac4ef",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 9,
+          "size_source": 1,
+          "size_target": 8,
+          "fraction_total": 0.0009978933362900543,
+          "top_source_uuid": "679db03c-4a52-44c5-b623-243a4f151aad",
+          "top_source_degree": 12,
+          "top_target_uuid": "6c6a1368-830a-4373-81df-3e2d16702c3c",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 6,
+          "size_source": 1,
+          "size_target": 5,
+          "fraction_total": 0.0006652622241933695,
+          "top_source_uuid": "7edbd218-637c-4cfd-95ec-62bd179c7bf5",
+          "top_source_degree": 6,
+          "top_target_uuid": "719c351b-9f24-4eaf-bbc1-ee8046819ead",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 6,
+          "size_source": 1,
+          "size_target": 5,
+          "fraction_total": 0.0006652622241933695,
+          "top_source_uuid": "dca3bf19-1730-4d87-9efe-d409df850ca1",
+          "top_source_degree": 9,
+          "top_target_uuid": "56b92885-c7dd-4723-97d7-0d906c76565b",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.00044350814946224635,
+          "top_source_uuid": "b80393b3-7dec-4cee-940e-31d50b95971e",
+          "top_source_degree": 6,
+          "top_target_uuid": "5f77e4eb-2fdf-4ef7-ac84-e0db9a27cd25",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.00044350814946224635,
+          "top_source_uuid": "925966f9-05f3-42fa-a70a-93315b88fbd7",
+          "top_source_degree": 7,
+          "top_target_uuid": "5f1b169c-343c-48f1-a20c-d6e118cf6708",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.00033263111209668475,
+          "top_source_uuid": "b2deb0d1-cb25-4510-a825-eec34de09bc3",
+          "top_source_degree": 4,
+          "top_target_uuid": "764ecb49-cdc7-4ccc-be8d-c556f2fc4c65",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.00033263111209668475,
+          "top_source_uuid": "70365f5e-a3bd-4265-b996-d15031973bc2",
+          "top_source_degree": 4,
+          "top_target_uuid": "01f5abf7-ef20-418d-969b-c69e0964572b",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.00033263111209668475,
+          "top_source_uuid": "cbf45430-dd19-40d1-b495-177d9c5134aa",
+          "top_source_degree": 4,
+          "top_target_uuid": "9b267526-3562-4670-b665-577134fc2be9",
+          "top_target_degree": 2
+        }
+      ],
+      "source": {
+        "total_nodes": 16,
+        "total_islands": 13,
+        "singleton_islands": 11,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.1875,
+            "size_total": 30,
+            "top_uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+            "top_degree": 35
+          },
+          {
+            "size": 2,
+            "fraction": 0.125,
+            "size_total": 52,
+            "top_uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+            "top_degree": 80
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 9003,
+        "total_islands": 8857,
+        "singleton_islands": 8845,
+        "multi_islands": [
+          {
+            "size": 50,
+            "fraction": 0.005553704320781961,
+            "size_total": 52,
+            "top_uuid": "2831adf1-f604-4805-bb6d-32e245407d46",
+            "top_degree": 3
+          },
+          {
+            "size": 34,
+            "fraction": 0.0037765189381317337,
+            "size_total": 35,
+            "top_uuid": "52b419b3-6cc3-4fe0-96ac-662b19fcd7d7",
+            "top_degree": 2
+          },
+          {
+            "size": 27,
+            "fraction": 0.002999000333222259,
+            "size_total": 30,
+            "top_uuid": "24c3d7d4-6b7b-4c82-806d-40484e34af82",
+            "top_degree": 5
+          },
+          {
+            "size": 17,
+            "fraction": 0.0018882594690658669,
+            "size_total": 18,
+            "top_uuid": "edfeacf9-69a0-4b18-b341-65485b6ac4ef",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.0008885926913251138,
+            "size_total": 9,
+            "top_uuid": "6c6a1368-830a-4373-81df-3e2d16702c3c",
+            "top_degree": 2
+          },
+          {
+            "size": 5,
+            "fraction": 0.0005553704320781962,
+            "size_total": 6,
+            "top_uuid": "719c351b-9f24-4eaf-bbc1-ee8046819ead",
+            "top_degree": 2
+          },
+          {
+            "size": 5,
+            "fraction": 0.0005553704320781962,
+            "size_total": 6,
+            "top_uuid": "56b92885-c7dd-4723-97d7-0d906c76565b",
+            "top_degree": 2
+          },
+          {
+            "size": 3,
+            "fraction": 0.0003332222592469177,
+            "size_total": 4,
+            "top_uuid": "5f77e4eb-2fdf-4ef7-ac84-e0db9a27cd25",
+            "top_degree": 2
+          },
+          {
+            "size": 3,
+            "fraction": 0.0003332222592469177,
+            "size_total": 4,
+            "top_uuid": "5f1b169c-343c-48f1-a20c-d6e118cf6708",
+            "top_degree": 3
+          },
+          {
+            "size": 2,
+            "fraction": 0.00022214817283127845,
+            "size_total": 3,
+            "top_uuid": "764ecb49-cdc7-4ccc-be8d-c556f2fc4c65",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.00022214817283127845,
+            "size_total": 3,
+            "top_uuid": "01f5abf7-ef20-418d-969b-c69e0964572b",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.00022214817283127845,
+            "size_total": 3,
+            "top_uuid": "9b267526-3562-4670-b665-577134fc2be9",
+            "top_degree": 2
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": [
+      {
+        "count": 2,
+        "source": {
+          "uuid": "b80393b3-7dec-4cee-940e-31d50b95971e",
+          "code": "pzs_10",
+          "name": "Hmotná núdza"
+        },
+        "target": {
+          "uuid": "5f77e4eb-2fdf-4ef7-ac84-e0db9a27cd25",
+          "code": "ks_351508",
+          "name": "Podávanie žiadosti o náhradné výživné"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "b80393b3-7dec-4cee-940e-31d50b95971e",
+          "code": "pzs_10",
+          "name": "Hmotná núdza"
+        },
+        "target": {
+          "uuid": "02c3f74b-fb97-4463-9c57-c6bc49028f24",
+          "code": "ks_350766",
+          "name": "Poskytovanie jednorazovej dávky v hmotnej núdzi a mimoriadnej dávky na pomoc občanovi"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "b80393b3-7dec-4cee-940e-31d50b95971e",
+          "code": "pzs_10",
+          "name": "Hmotná núdza"
+        },
+        "target": {
+          "uuid": "7c42d550-95dc-4126-818d-eda7c8293b53",
+          "code": "ks_351898",
+          "name": "Podávanie žiadosti o pomoc v hmotnej núdzi"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "70365f5e-a3bd-4265-b996-d15031973bc2",
+          "code": "pzs_12",
+          "name": "Základná škola"
+        },
+        "target": {
+          "uuid": "1c323919-6e60-4d39-9e14-1914fa70296d",
+          "code": "ks_381672",
+          "name": "Odvolanie voči rozhodnutiu o prijatí na základnú školu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "70365f5e-a3bd-4265-b996-d15031973bc2",
+          "code": "pzs_12",
+          "name": "Základná škola"
+        },
+        "target": {
+          "uuid": "01f5abf7-ef20-418d-969b-c69e0964572b",
+          "code": "ks_381671",
+          "name": "Prihláška na základnú školu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "821b6ae5-37c0-4bc1-a12d-e346195d1fa6",
+          "code": "ks_380922",
+          "name": "Prezeranie a zneplatňovanie existujúcich splnomocnení a súhlasov súvisiacich s pobytmi"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "0d6af934-a95c-4017-9d5c-bf5c349d5e56",
+          "code": "ks_380923",
+          "name": "Získavanie údajov o spoluvlastníkoch na liste vlastníctva"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "41daf803-0fc6-4999-9df2-7c9f2752ded2",
+          "code": "ks_380925",
+          "name": "Overovanie možnosti hlásenia pobytu elektronicky"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "d8b7b99d-7c0c-4e89-bde4-31ead69dc6e2",
+          "code": "ks_380930",
+          "name": "Zadávanie súhlasu druhého rodiča s prihlásením/odhlásením dieťaťa na pobyt"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "41386603-3a40-45cf-81a3-5c213ce0f662",
+          "code": "ks_380921",
+          "name": "Podávanie žiadosti o vytvorenie splnomocnenia k úkonu hlásenia pobytu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "09ce6b17-0240-40cd-ab35-dd3d572635fe",
+          "code": "ks_380927",
+          "name": "Podávanie prihlásenia na trvalý pobyt za celú rodinu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "43968ccc-4502-4008-ac03-810dcc794304",
+          "code": "ks_380929",
+          "name": "Zadávanie splnomocnenia pre manžela/manželku k úkonu hlásenia pobytu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "573091c7-de87-43e4-b927-7bb28df57f4e",
+          "code": "ks_380928",
+          "name": "Podávanie prihlásenia na trvalý pobyt za celú rodinu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "54f4b475-f1f9-4a63-a64a-a87c21b2acac",
+          "code": "ks_380924",
+          "name": "Overovanie súhlasov všetkých spoluvlastníkov nehnuteľnosti k žiadosti o hláseniu pobytu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "c4a7b689-6936-497a-82e0-dd3bd61ea4e4",
+          "code": "pzs_06",
+          "name": "Presťahovanie"
+        },
+        "target": {
+          "uuid": "24c3d7d4-6b7b-4c82-806d-40484e34af82",
+          "code": "ks_337848",
+          "name": "Publikovanie informácií Úradu geodézie, kartografie a katastra Slovenskej republiky"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "925966f9-05f3-42fa-a70a-93315b88fbd7",
+          "code": "pzs_08",
+          "name": "Som chorý, mám chorého člena rodiny"
+        },
+        "target": {
+          "uuid": "d099a757-6aa5-49d6-ad74-3d606e387c15",
+          "code": "ks_337622",
+          "name": "Podávanie žiadosti o úrazovú dávku"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "925966f9-05f3-42fa-a70a-93315b88fbd7",
+          "code": "pzs_08",
+          "name": "Som chorý, mám chorého člena rodiny"
+        },
+        "target": {
+          "uuid": "03a2140b-a717-441b-b841-00e1db87451f",
+          "code": "ks_337623",
+          "name": "Oznámenie o poistnej udalosti  v rámci úrazového poistenia"
+        }
+      },
+      {
+        "count": 3,
+        "source": {
+          "uuid": "925966f9-05f3-42fa-a70a-93315b88fbd7",
+          "code": "pzs_08",
+          "name": "Som chorý, mám chorého člena rodiny"
+        },
+        "target": {
+          "uuid": "5f1b169c-343c-48f1-a20c-d6e118cf6708",
+          "code": "ks_336890",
+          "name": "Zapisovanie a čítanie fyzikálnych a fyziologických údajov do eZdravie"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "51542009-b5ed-4fa1-a8c2-be31ff68e3e4",
+          "code": "pzs_04",
+          "name": "Kúpa a vlastníctvo motorového vozidla"
+        },
+        "target": {
+          "uuid": "52b419b3-6cc3-4fe0-96ac-662b19fcd7d7",
+          "code": "ks_339397",
+          "name": "Žiadosť o trvalé alebo dočasné vyradenie vozidla z evidencie"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "679db03c-4a52-44c5-b623-243a4f151aad",
+          "code": "pzs_07",
+          "name": "Narodenie dieťaťa"
+        },
+        "target": {
+          "uuid": "e3fac608-5c96-4fb6-adfd-152b5393e2e0",
+          "code": "ks_340574",
+          "name": "Podávanie žiadosti o tehotenské"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "679db03c-4a52-44c5-b623-243a4f151aad",
+          "code": "pzs_07",
+          "name": "Narodenie dieťaťa"
+        },
+        "target": {
+          "uuid": "8b4d90a2-ede0-4d02-8d36-035a90e24c9e",
+          "code": "ks_351341",
+          "name": "Zápisnica o určení otcovstva súhlasným vyhlásením rodičov k nenarodenému dieťaťu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "679db03c-4a52-44c5-b623-243a4f151aad",
+          "code": "pzs_07",
+          "name": "Narodenie dieťaťa"
+        },
+        "target": {
+          "uuid": "d95a2aaf-1212-454a-8862-82e3d96048d2",
+          "code": "ks_337616",
+          "name": "Podávanie žiadosti o materské - iný poistenec/otcovské"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "679db03c-4a52-44c5-b623-243a4f151aad",
+          "code": "pzs_07",
+          "name": "Narodenie dieťaťa"
+        },
+        "target": {
+          "uuid": "6c6a1368-830a-4373-81df-3e2d16702c3c",
+          "code": "ks_351340",
+          "name": "Zápisnica o určení otcovstva súhlasným vyhlásením rodičov k narodenému dieťaťu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "8b2faf18-6b4d-4250-ba28-5e1934af4590",
+          "code": "ks_379601",
+          "name": "Dokumenty na účely nároku na dávku garančného poistenia cez EKP"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "53a60286-82a1-422b-a4c7-c47a81d855e9",
+          "code": "ks_380498",
+          "name": "Oznamovanie zmeny povolenia na výrobu veterinárnych autogénnych vakcín"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "5b529fa3-4ff8-4c78-b6e7-01790659d084",
+          "code": "ks_380484",
+          "name": "Podávanie žiadosti o výrobu veterinárnych autogénnych vakcín"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "1cce6f38-6018-4324-9526-aa55942facdf",
+          "code": "ks_380488",
+          "name": "Podávanie žiadosti o povolenie veterinárneho klinického skúšania"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "88a38945-e8ff-4168-9f59-b6f85659571f",
+          "code": "ks_380482",
+          "name": "Podávanie žiadosti o vydaní duplikátu pasu hospodárskeho zvieraťa"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "a7e681e7-d7a1-42e2-9df6-7b1f3ad28e41",
+          "code": "ks_380480",
+          "name": "Ohlasovanie zmien v chove hospodárskych zvierat"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "e1311736-a153-44b8-acb6-f82fdcd4bb0b",
+          "code": "ks_380479",
+          "name": "Podávanie žiadosti o registráciu chovu hospodárskych zvierat"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "e4b36c5a-c0e5-4aa7-bfcf-c128d654b1b3",
+          "code": "ks_380489",
+          "name": "Ohlasovanie spotreby z predaja veterinárnych liekov veľkodistribútormi"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "a7772870-d4a2-492e-83a1-858b155a3187",
+          "code": "ks_380485",
+          "name": "Podávanie žiadosti o povolenie výroby skúšaných veterinárnych produktov alebo skúšaných veterinárnych liekov"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "2a3071d2-bc8c-412c-951b-1e2d29e4de02",
+          "code": "ks_380500",
+          "name": "Oznamovanie zmeny povolenia na veľkodistribúciu veterinárnych liekov"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "006a7ca9-a395-44b7-93e6-459e6f2f8564",
+          "code": "ks_380481",
+          "name": "Ohlasovanie premiestnenia hospodárskeho zvieraťa"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "36e7bbb9-0e69-4b85-818f-b70b005d99d2",
+          "code": "ks_380487",
+          "name": "Podávanie žiadosti o registráciu výrobcu zdravotníckych pomôcok"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "87e1f718-12a3-45bb-9bb5-49074796672c",
+          "code": "ks_380477",
+          "name": "Publikovanie informácií z Registra veterinárnych liekov, prípravkov a pomôcok"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "0d08ce7e-07a1-40b2-9e85-8720a631fb6d",
+          "code": "ks_380501",
+          "name": "Oznamovanie zmeny povolenia na veterinárne klinické skúšanie"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "9200688d-2ce0-43b5-9ef4-1820526b8034",
+          "code": "ks_380497",
+          "name": "Oznamovanie zmeny povolenia na výrobu veterinárnych liekov"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "f327cfcb-537a-4589-a2b3-be87e0a53603",
+          "code": "ks_380486",
+          "name": "Podávanie žiadosti o veľkodistribúciu veterinárnych liekov"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "cb84b0c1-0415-4033-bb08-9207dac9eaa1",
+          "code": "ks_380502",
+          "name": "Oznamovanie zmeny povolenia na výrobu zdravotníckych pomôcok"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "08deba08-58ff-4283-81fb-48b7877eca5e",
+          "code": "ks_380499",
+          "name": "Oznamovanie zmeny povolenia na výrobu skúšaných veterinárnych produktov alebo skúšaných veterinárnych liekov"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "680596ef-cc2c-4015-a934-0219f61faf7f",
+          "code": "ks_380493",
+          "name": "Podávanie žiadosti o povolenie prípravy medikovaných krmív"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "02d4acf8-f30b-4a5f-accf-7895c11cf2a4",
+          "code": "ks_380483",
+          "name": "Podávanie žiadosti o výrobu veterinárnych liekov"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "c51f892d-e72d-469d-a75d-3a8ab5eabffa",
+          "code": "ks_379600",
+          "name": "Žiadosť o vydanie potvrdenia o nedoplatku na sociálnom poistení"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "84280429-2cc9-4f40-a65e-cadac7482fe0",
+          "code": "ks_380478",
+          "name": "Návody a sprievodca koncovými službami ŠVPS SR"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "12354729-184f-4560-8989-5d8f5864ec02",
+          "code": "ks_380475",
+          "name": "Publikovanie informácií z Centrálneho registra hospodárskych zvierat (CRHZ)"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "2831adf1-f604-4805-bb6d-32e245407d46",
+          "code": "ks_338769",
+          "name": "Ohlasovanie voľnej, remeselnej a viazanej živnosti – právnická osoba"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "108b893f-eec8-4ed4-bb45-8171847a2a73",
+          "code": "ks_343827",
+          "name": "Podávanie žiadosti o zmenu hlavnej ekonomickej činnosti podľa SK NACE a/alebo zatriedenia podľa ESA2010"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "4cf39800-d32e-4210-8aee-d72f13f0e8e1",
+          "code": "ks_338774",
+          "name": "Poskytovanie oprávnenia na podnikanie podľa osobitných predpisov-Fyzická osoba tuzemská"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "d9e524aa-9a6a-42c3-9855-5c1dc5370182",
+          "code": "ks_338773",
+          "name": "Poskytovanie oprávnenia na podnikanie podľa osobitných predpisov-Fyzická osoba zahraničná"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "be422a3d-f33a-4df1-9e82-d01b889b3b16",
+          "code": "ks_338808",
+          "name": "Poskytovanie výpisu z neverejnej časti živnostenského registra"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "ad4e8a52-ac29-43c3-85e0-cbb645bcafe9",
+          "code": "ks_338617",
+          "name": "Publikovanie informácii o schválených a registrovaných subjektoch a činnostiach"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "8cd5b4f3-4cb1-45c5-990d-3f59986aaf75",
+          "code": "ks_338771",
+          "name": "Poskytovanie oprávnenia na podnikanie podľa osobitných predpisov-Právnická osoba zahraničná"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "5a8e978e-d3a1-4ba2-a92e-6bb53c44c6e9",
+          "code": "ks_340894",
+          "name": "Podávanie oznámení o začatí,  zmene a ukončení prevádzky priestorov na úrady verejného zdravotníctva v Slovenskej republike"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "032bc0f6-f94c-4465-b513-65c12bec4538",
+          "code": "ks_338770",
+          "name": "Poskytovanie oprávnenia na podnikanie podľa osobitných predpisov-Právnická osoba tuzemská"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "0227e58a-8238-4b0c-b744-a738695e0331",
+          "code": "ks_338768",
+          "name": "Podávanie žiadosti o vydanie potvrdenia o tom, že poskytovanie služieb na základe živnostenského oprávnenia nie je obmedzené alebo zakázané"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "b37817c8-df9c-429c-8e65-747a32dde5f1",
+          "code": "ks_338859",
+          "name": "Doplnenie odoslaného podania pre služby živnostenského registra"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "1424c967-2256-4b3e-9544-c58ffb26ce1d",
+          "code": "ks_351550",
+          "name": "Poskytnutie spätnej väzby s využívaním služieb ŠU"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "50108abb-0361-4496-b2dc-1a08e017854b",
+          "code": "pzs_05",
+          "name": "Administratívny chod podniku"
+        },
+        "target": {
+          "uuid": "b9364952-e848-45f8-a5ef-5ce519217cfe",
+          "code": "ks_340860",
+          "name": "Podávanie návrhu na uvedenie priestorov do prevádzky, na zmenu v ich prevádzkovaní alebo na uvedenie priestorov do skúšobnej prevádzky a návrhu na schválenie prevádzkového poriadku alebo jeho zmeny na úrady verejného zdravotníctva v Slovenskej republike"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "ecd01d40-7c85-44ab-846e-795b1421dcf4",
+          "code": "pzs_15",
+          "name": "Uzavretie manželstva"
+        },
+        "target": {
+          "uuid": "24c3d7d4-6b7b-4c82-806d-40484e34af82",
+          "code": "ks_337848",
+          "name": "Publikovanie informácií Úradu geodézie, kartografie a katastra Slovenskej republiky"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "7edbd218-637c-4cfd-95ec-62bd179c7bf5",
+          "code": "pzs_16",
+          "name": "Úmrtie a dedičské konanie"
+        },
+        "target": {
+          "uuid": "719c351b-9f24-4eaf-bbc1-ee8046819ead",
+          "code": "ks_350922",
+          "name": "Podávanie žiadosti o  príspevok na pohreb"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "cbf45430-dd19-40d1-b495-177d9c5134aa",
+          "code": "pzs_11",
+          "name": "Materská škola"
+        },
+        "target": {
+          "uuid": "9b267526-3562-4670-b665-577134fc2be9",
+          "code": "ks_381673",
+          "name": "Prihláška na materskú školu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "cbf45430-dd19-40d1-b495-177d9c5134aa",
+          "code": "pzs_11",
+          "name": "Materská škola"
+        },
+        "target": {
+          "uuid": "1e09fc8c-5d2c-4266-8743-1bcd21d2a3eb",
+          "code": "ks_381674",
+          "name": "Odvolanie voči rozhodnutiu o prijatí na materskú školu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "dca3bf19-1730-4d87-9efe-d409df850ca1",
+          "code": "pzs_09",
+          "name": "Som odkázaný, mám odkázaného člena rodiny"
+        },
+        "target": {
+          "uuid": "a49811c8-c661-4289-8edd-341196eeba6f",
+          "code": "ks_351429",
+          "name": "Podávanie žiadosti o príspevok na starostlivosť o dieťa"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "dca3bf19-1730-4d87-9efe-d409df850ca1",
+          "code": "pzs_09",
+          "name": "Som odkázaný, mám odkázaného člena rodiny"
+        },
+        "target": {
+          "uuid": "ed926905-3e28-45cb-9b2d-c4403317bb08",
+          "code": "ks_350836",
+          "name": "Podávanie žiadosti o rodičovský príspevok"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "dca3bf19-1730-4d87-9efe-d409df850ca1",
+          "code": "pzs_09",
+          "name": "Som odkázaný, mám odkázaného člena rodiny"
+        },
+        "target": {
+          "uuid": "9ff40a37-e67e-420a-bbd9-4ced276ed7e3",
+          "code": "ks_351900",
+          "name": "Podávanie žiadosti o vyhotovenie preukazu fyzickej osoby s ťažkým zdravotným postihnutím"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "dca3bf19-1730-4d87-9efe-d409df850ca1",
+          "code": "pzs_09",
+          "name": "Som odkázaný, mám odkázaného člena rodiny"
+        },
+        "target": {
+          "uuid": "56b92885-c7dd-4723-97d7-0d906c76565b",
+          "code": "ks_351899",
+          "name": "Podávanie žiadosti o vyhotovenie parkovacieho preukazu pre fyzickú osobu so zdravotným postihnutím"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "b2deb0d1-cb25-4510-a825-eec34de09bc3",
+          "code": "pzs_13",
+          "name": "Stredná škola"
+        },
+        "target": {
+          "uuid": "764ecb49-cdc7-4ccc-be8d-c556f2fc4c65",
+          "code": "ks_381675",
+          "name": "Prihláška na strednú školu"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "b2deb0d1-cb25-4510-a825-eec34de09bc3",
+          "code": "pzs_13",
+          "name": "Stredná škola"
+        },
+        "target": {
+          "uuid": "0631132f-6b81-40d6-a279-209a5d448f76",
+          "code": "ks_381676",
+          "name": "Odvolanie voči rozhodnutiu o prijatí na strednú školu"
+        }
+      }
+    ]
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

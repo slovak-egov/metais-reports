@@ -1,0 +1,216 @@
+{
+  "type": "TP_Ulozisko",
+  "count": 11,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 11,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 9.090909090909092
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 9.090909090909092
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 11,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_priznak_schvalenia",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 9.090909090909092
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 11,
+      "pct": 100.0,
+      "unique_count": 11,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_Ulozisko_spotrebovana_kapacita",
+      "count": 7,
+      "pct": 63.63636363636363,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_Ulozisko_celkova_kapacita",
+      "count": 7,
+      "pct": 63.63636363636363,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_vyrobca",
+      "count": 7,
+      "pct": 63.63636363636363,
+      "unique_count": 5,
+      "unique_pct": 71.42857142857143
+    },
+    {
+      "name": "IKT_Profil_TP_Ulozisko_redundancia",
+      "count": 6,
+      "pct": 54.54545454545454,
+      "unique_count": 6,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_Ulozisko_sposob_pripojenia",
+      "count": 6,
+      "pct": 54.54545454545454,
+      "unique_count": 5,
+      "unique_pct": 83.33333333333334
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 6,
+      "pct": 54.54545454545454,
+      "unique_count": 6,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_pocet",
+      "count": 5,
+      "pct": 45.45454545454545,
+      "unique_count": 2,
+      "unique_pct": 40.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_vyrobca",
+      "count": 4,
+      "pct": 36.36363636363637,
+      "unique_count": 2,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 3,
+      "pct": 27.27272727272727,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_Ulozisko_rocny_prirastok",
+      "count": 3,
+      "pct": 27.27272727272727,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_kapacita_spotrebovana",
+      "count": 3,
+      "pct": 27.27272727272727,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_celkova_pouzitelna_kapacita",
+      "count": 3,
+      "pct": 27.27272727272727,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_rok_ukoncenia_zivotnosti",
+      "count": 2,
+      "pct": 18.181818181818183,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_vyuzivany_sposob_pripojenia",
+      "count": 2,
+      "pct": 18.181818181818183,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_raid_level",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_pocet",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_typ_replikacie",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_aktualny_stav",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_pocet_replikacii",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_rok_ukoncenia_zivotnosti",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_prirastok_za_rok",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_Ulozisko_nazov",
+      "count": 1,
+      "pct": 9.090909090909092,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "type": "PO",
+  "count": 5792,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 5792,
+      "pct": 100.0,
+      "unique_count": 5771,
+      "unique_pct": 99.63743093922652
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 5792,
+      "pct": 100.0,
+      "unique_count": 5521,
+      "unique_pct": 95.32113259668509
+    },
+    {
+      "name": "EA_Profil_PO_kategoria_osoby",
+      "count": 5792,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 0.06906077348066297
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 5792,
+      "pct": 100.0,
+      "unique_count": 5771,
+      "unique_pct": 99.63743093922652
+    },
+    {
+      "name": "EA_Profil_PO_ico",
+      "count": 5792,
+      "pct": 100.0,
+      "unique_count": 5752,
+      "unique_pct": 99.30939226519338
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 5790,
+      "pct": 99.96546961325967,
+      "unique_count": 9,
+      "unique_pct": 0.15544041450777202
+    },
+    {
+      "name": "EA_Profil_PO_obec",
+      "count": 5773,
+      "pct": 99.67196132596685,
+      "unique_count": 2843,
+      "unique_pct": 49.24649229170275
+    },
+    {
+      "name": "EA_Profil_PO_je_kapitola",
+      "count": 5588,
+      "pct": 96.47790055248619,
+      "unique_count": 2,
+      "unique_pct": 0.03579098067287043
+    },
+    {
+      "name": "EA_Profil_PO_typ_osoby",
+      "count": 5290,
+      "pct": 91.3328729281768,
+      "unique_count": 12,
+      "unique_pct": 0.2268431001890359
+    },
+    {
+      "name": "EA_Profil_PO_ulica",
+      "count": 4975,
+      "pct": 85.89433701657458,
+      "unique_count": 3086,
+      "unique_pct": 62.030150753768844
+    },
+    {
+      "name": "EA_Profil_PO_cislo",
+      "count": 4704,
+      "pct": 81.21546961325967,
+      "unique_count": 699,
+      "unique_pct": 14.85969387755102
+    },
+    {
+      "name": "EA_Profil_PO_schranka_ovm_uri",
+      "count": 4700,
+      "pct": 81.146408839779,
+      "unique_count": 4695,
+      "unique_pct": 99.8936170212766
+    },
+    {
+      "name": "EA_Profil_PO_schranka_upvs_name",
+      "count": 4648,
+      "pct": 80.2486187845304,
+      "unique_count": 4165,
+      "unique_pct": 89.60843373493977
+    },
+    {
+      "name": "Profil_PO_statutar_meno",
+      "count": 4586,
+      "pct": 79.17817679558011,
+      "unique_count": 424,
+      "unique_pct": 9.24552987352813
+    },
+    {
+      "name": "Profil_PO_statutar_priezvisko",
+      "count": 4586,
+      "pct": 79.17817679558011,
+      "unique_count": 3771,
+      "unique_pct": 82.22852158744004
+    },
+    {
+      "name": "EA_Profil_PO_psc",
+      "count": 4442,
+      "pct": 76.69198895027624,
+      "unique_count": 1766,
+      "unique_pct": 39.756866276452044
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 2953,
+      "pct": 50.98411602209944,
+      "unique_count": 2951,
+      "unique_pct": 99.93227226549271
+    },
+    {
+      "name": "Profil_PO_statutar_titul_pred_menom",
+      "count": 2647,
+      "pct": 45.70096685082873,
+      "unique_count": 55,
+      "unique_pct": 2.07782395164337
+    },
+    {
+      "name": "EA_Profil_PO_okres",
+      "count": 2190,
+      "pct": 37.81077348066299,
+      "unique_count": 176,
+      "unique_pct": 8.036529680365296
+    },
+    {
+      "name": "EA_Profil_PO_webove_sidlo",
+      "count": 1947,
+      "pct": 33.61533149171271,
+      "unique_count": 1846,
+      "unique_pct": 94.8125321006677
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 226,
+      "pct": 3.9019337016574585,
+      "unique_count": 226,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_PO_statutar_titul_za_menom",
+      "count": 173,
+      "pct": 2.986878453038674,
+      "unique_count": 11,
+      "unique_pct": 6.358381502890173
+    },
+    {
+      "name": "Gen_Profil_EA_typ_replikacie",
+      "count": 20,
+      "pct": 0.3453038674033149,
+      "unique_count": 2,
+      "unique_pct": 10.0
+    },
+    {
+      "name": "Gen_Profil_EA_popis_referencie",
+      "count": 1,
+      "pct": 0.017265193370165743,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 1,
+      "pct": 0.017265193370165743,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 1,
+      "pct": 0.017265193370165743,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

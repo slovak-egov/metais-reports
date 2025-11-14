@@ -1,0 +1,83 @@
+{
+  "type": "DistribuciaDatasetu",
+  "count": 1,
+  "attributes": [
+    {
+      "name": "Profil_DistribuciaDatasetu_download_url",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_DistribuciaDatasetu_verzia",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_DistribuciaDatasetu_uri_distribucie",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_DistribuciaDatasetu_platne_od",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_RefID_stav_registracie",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_DistribuciaDatasetu_typ_media",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_DistribuciaDatasetu_xsd_url",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 1,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

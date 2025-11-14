@@ -1,0 +1,41 @@
+{
+  "type": "FazaZivotnehoCyklu",
+  "count": 7,
+  "attributes": [
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 14.285714285714285
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    }
+  ]
+}

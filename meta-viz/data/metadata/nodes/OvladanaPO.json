@@ -1,0 +1,171 @@
+{
+  "id": 77,
+  "name": "Ovladana osoba",
+  "technicalName": "OvladanaPO",
+  "description": "Ovladana osoba.",
+  "roleList": [
+    "LIC_LMMF"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#dfdfdf",
+  "engName": "Controlled person",
+  "category": "RONCB",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 81,
+      "name": "Profil ovladana osoba",
+      "description": "Profil ovladana osoba",
+      "technicalName": "OvladanaPO_Profile",
+      "roleList": [
+        "LIC_LMMF",
+        "LIC_LM_UPVII"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile controlled person",
+      "attributes": [
+        {
+          "id": 221,
+          "name": "Názov",
+          "description": "Názov povinnej osoby zaraďenej do množiny Ovládaných osôb.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "OvladanaPO_Profile_nazov",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Name",
+          "engDescription": "Name of public authority assigned to the set of Controlled persons.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 220,
+          "name": "Názov",
+          "description": "Prepojenie organizácie na štátny rozpočet.",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "OvladanaPO_Profile_prepojena_na_SR",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Name",
+          "engDescription": "Organization linked to state budget.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "ovladana_osoba_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/controlled-person",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 81,
+        "name": "Ovladana PO pre vendora",
+        "engName": "Controlled PA for vendor",
+        "technicalName": "OvladanaPO_RelatesTo_LicenseVendor",
+        "description": "Ovladana PO pre vendora.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "Controlled PA for vendor.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 82,
+        "name": "Ovládaná PO predstavuje PO",
+        "engName": "Controlled PA represents PA",
+        "technicalName": "OvladanaPO_RelatesTo_PO",
+        "description": "Ovládaná PO predstavuje PO.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF"
+        ],
+        "engDescription": "Controlled PA represents PA.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": []
+  }
+}

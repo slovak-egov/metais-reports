@@ -1,0 +1,83 @@
+{
+  "type": "Endpoint",
+  "count": 3759,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 3759,
+      "pct": 100.0,
+      "unique_count": 3755,
+      "unique_pct": 99.89358872040435
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 3759,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.053205639797818574
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 3759,
+      "pct": 100.0,
+      "unique_count": 3751,
+      "unique_pct": 99.78717744080873
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 3759,
+      "pct": 100.0,
+      "unique_count": 3755,
+      "unique_pct": 99.89358872040435
+    },
+    {
+      "name": "Profil_Endpoint_verzia",
+      "count": 3759,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 0.13301409949454643
+    },
+    {
+      "name": "Profil_Endpoint_url",
+      "count": 3717,
+      "pct": 98.88268156424581,
+      "unique_count": 1178,
+      "unique_pct": 31.692224912563894
+    },
+    {
+      "name": "Profil_Endpoint_prostredie",
+      "count": 3693,
+      "pct": 98.24421388667199,
+      "unique_count": 2,
+      "unique_pct": 0.05415651232060655
+    },
+    {
+      "name": "Profil_Endpoint_wsdl",
+      "count": 3597,
+      "pct": 95.69034317637669,
+      "unique_count": 551,
+      "unique_pct": 15.31832082290798
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 44,
+      "pct": 1.1705240755520085,
+      "unique_count": 42,
+      "unique_pct": 95.45454545454545
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 30,
+      "pct": 0.7980845969672785,
+      "unique_count": 30,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 6,
+      "pct": 0.1596169193934557,
+      "unique_count": 2,
+      "unique_pct": 33.33333333333333
+    }
+  ]
+}

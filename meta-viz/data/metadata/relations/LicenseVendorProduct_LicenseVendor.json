@@ -1,0 +1,75 @@
+{
+  "id": 56,
+  "name": "Produkt patri vendorovi",
+  "technicalName": "LicenseVendorProduct_LicenseVendor",
+  "description": "Produkt patri vendorovi.",
+  "roleList": [
+    "LIC_LMMF",
+    "LIC_LM_UPVII"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Vendor owns product",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 78,
+      "name": "Produkt vendora",
+      "technicalName": "LicenseVendorProduct",
+      "description": "Produkt vendora.",
+      "roleList": [
+        "LIC_LMMF",
+        "LIC_LM_UPVII"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Vendor product",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_LMMF;LIC_LM_UPVII;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 85,
+      "name": "Vendor licencie",
+      "technicalName": "LicenseVendor",
+      "description": "Vendor licencie.",
+      "roleList": [
+        "LIC_LMMF"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "License vendor",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_LMMF;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Vendor owns product.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

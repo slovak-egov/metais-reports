@@ -1,0 +1,4641 @@
+{
+  "relation_name": "Projekt_rozvija_miesto_prevadzky",
+  "name": "Projekt rozvíja Miesto prevádzky",
+  "description": "Projekt môže súčasne rozvíjať viaceré Miesta prevádzky",
+  "engDescription": "Project may at the same time develop more operation sites.",
+  "type": "application",
+  "source_type": "Projekt",
+  "source_name": "Projekt rozvoja IT",
+  "target_type": "MiestoPrevadzky",
+  "target_name": "Miesto prevádzky",
+  "sourceCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 506,
+    "unique_pairs": 504,
+    "duplicate_edges": 2,
+    "pairs_with_duplicates": 2,
+    "parallel_edges": 2,
+    "parallel_max": 2,
+    "source_total": 1604,
+    "target_total": 190,
+    "source_connected": 376,
+    "target_connected": 152,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 19,
+      "avg": 1.3457446808510638,
+      "median": 1.0,
+      "p90": 2,
+      "p99": 10
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 51,
+      "avg": 3.3289473684210527,
+      "median": 1.0,
+      "p90": 6,
+      "p99": 29
+    },
+    "top_source": [
+      {
+        "uuid": "b5a5847d-afcd-4dd1-8813-5964ef26706b",
+        "degree": 19,
+        "name": "Modernizácia  sieťovej infraštruktúry Zboru väzenskej a justičnej stráže",
+        "code": "projekt_1517"
+      },
+      {
+        "uuid": "622e234d-ba33-48d0-94cb-3a4a99066ed8",
+        "degree": 19,
+        "name": "Poskytovanie elektronických komunikačných služieb – IP telefónia a video konferenčné zariadenia",
+        "code": "projekt_1820"
+      },
+      {
+        "uuid": "8b327b29-7bc6-4d24-a8ec-c84508aabc6f",
+        "degree": 19,
+        "name": "Poskytovanie elektronických komunikačných služieb – MPLS",
+        "code": "projekt_1818"
+      },
+      {
+        "uuid": "b5a8579b-27d9-4acb-ad7a-a4fe154e9173",
+        "degree": 10,
+        "name": "Servis informačnej infraštruktúry DÚ",
+        "code": "projekt_1036"
+      },
+      {
+        "uuid": "ddb8062a-4ca7-4cbd-a252-b82b5b3990df",
+        "degree": 10,
+        "name": "Obnova počítačov DÚ",
+        "code": "projekt_1044"
+      },
+      {
+        "uuid": "2a9d3a34-5eb2-468c-9210-346b7b2d2f81",
+        "degree": 4,
+        "name": "Rozšírenie služieb poskytovaných vládnou sieťou GOVNET o nové funkcionality",
+        "code": "projekt_3032"
+      },
+      {
+        "uuid": "596e488f-379c-44c3-ad15-315e9c474e91",
+        "degree": 3,
+        "name": "Modernizácia Platformy pre rozvoj a riešenie prioritných životných situácií",
+        "code": "projekt_3067"
+      },
+      {
+        "uuid": "1f14a105-ba9d-4fc2-9184-7f7517fff2c8",
+        "degree": 2,
+        "name": "Podpora kybernetickej bezpečnosti ÚKSÚP",
+        "code": "projekt_2915"
+      },
+      {
+        "uuid": "b71faaa8-f0cf-40ee-8544-f36b45719464",
+        "degree": 2,
+        "name": "Výcvikové a školiace stredisko pre bezpečnosť prevádzky a správy IT pre sektor VS",
+        "code": "projekt_1450"
+      },
+      {
+        "uuid": "525c6669-e4dd-47b6-963f-2dcd6606f3d0",
+        "degree": 2,
+        "name": "Posilnenie priepustnosti a zvýšenie úrovne bezpečnosti IS GP SR ako predpoklad prepojenia na IS Európskej prokuratúry",
+        "code": "projekt_1167"
+      },
+      {
+        "uuid": "a0e7608c-fce8-466d-abd1-f0b8fd4d0239",
+        "degree": 2,
+        "name": "Upgrade eDovoz-CCK (2.fáza)",
+        "code": "projekt_2446"
+      },
+      {
+        "uuid": "8fceb05f-e56a-4b97-a751-9b9256a84252",
+        "degree": 2,
+        "name": "EMCS fáza 4.2",
+        "code": "projekt_2249"
+      },
+      {
+        "uuid": "fb8739f2-d0ef-418f-b6b8-e8336dd89988",
+        "degree": 2,
+        "name": "Havarijné postupy vo vývoze",
+        "code": "projekt_2624"
+      },
+      {
+        "uuid": "4d769dfe-836e-474d-b9da-071a28fed36d",
+        "degree": 2,
+        "name": "Doplnenie a úprava CV vo vývoze",
+        "code": "projekt_2468"
+      },
+      {
+        "uuid": "4ea13706-a47a-410f-a951-662a00dac4cf",
+        "degree": 2,
+        "name": "Riadenie záruk podľa CKÚ",
+        "code": "projekt_2235"
+      },
+      {
+        "uuid": "32c7df38-6618-4468-ab83-2e2fa1afd7fa",
+        "degree": 2,
+        "name": "Automatizovaný systém vývozu (AES) podľa CKÚ",
+        "code": "projekt_1099"
+      },
+      {
+        "uuid": "a70f3190-4223-426e-ad4e-da90055fa1c4",
+        "degree": 2,
+        "name": "Rozvoj colných informačných systémov - ICS2 - release 1",
+        "code": "projekt_965"
+      },
+      {
+        "uuid": "26315ad1-59f6-441e-9ac8-79b8613ae81e",
+        "degree": 2,
+        "name": "eCommerce - Zásielky nízkej hodnoty",
+        "code": "projekt_969"
+      },
+      {
+        "uuid": "5a898282-17bf-4f09-be56-0c86ed97e033",
+        "degree": 2,
+        "name": "Zmenová požiadavka - Integrácie ICS2 na colné systémy - I. Etapa.",
+        "code": "projekt_1003"
+      },
+      {
+        "uuid": "479cf47d-6099-40a7-ae98-9e555cbeae1c",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS AVI - rozšírenie modulu pre stotožnenie o príjem dát z inej AVI.",
+        "code": "projekt_1006"
+      },
+      {
+        "uuid": "c79c8770-1f4f-45d0-9150-eb8837b2352e",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS DWH - Integrácie na ostatné systémy FRSR.",
+        "code": "projekt_1007"
+      },
+      {
+        "uuid": "5a036924-7a9a-41df-8292-8525783d85bf",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS SYSNED - zmeny vyplývajúce zo zákona o spotrebnej dani z minerálneho oleja.",
+        "code": "projekt_1004"
+      },
+      {
+        "uuid": "113c20cf-3dec-4c6d-b8fa-54e469f61582",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS ISFS-SD  - zmeny vyplývajúce zo zákona o eGovernmente.",
+        "code": "projekt_1008"
+      },
+      {
+        "uuid": "3f8616ee-3ed4-49aa-86c2-951ebe39c3ad",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS AIS-R - porušenia pri podávaní účtovných uávierok.",
+        "code": "projekt_1009"
+      },
+      {
+        "uuid": "fe11fc1a-dd2c-409a-9728-a52bd1c3c698",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS DRSCAN  - zmeny vyplývajúce zo zákona o dani z príjmov.",
+        "code": "projekt_1010"
+      },
+      {
+        "uuid": "9edec41a-8b78-4cdb-83b9-4cea3fe9d061",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS AVI - zmeny vyplývajúce zo Smernice Rady (EÚ) 2018/822.",
+        "code": "projekt_1013"
+      },
+      {
+        "uuid": "c89cfb38-20c3-42e3-8fb1-409c44e364b9",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS SYSNED - zmeny legislatívy v oblasti nepriamych spotrebných daní.",
+        "code": "projekt_1005"
+      },
+      {
+        "uuid": "9ef9846c-e63b-4c8a-b650-9336e1f072a6",
+        "degree": 2,
+        "name": "Obnova výpočtovej techniky Dátového centra pre zabezpečenie bezpečnej a plynulej prevádzky  IS FRSR.",
+        "code": "projekt_1011"
+      },
+      {
+        "uuid": "bb3103dd-e040-47bd-9d3e-fc345174c65b",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS SySNed - technologický a funkčný upgrade národných systémov automatizujúcich procesy aplikácie spoločných pravidiel EK pri dovoze, vývoze a tranzite tovaru.",
+        "code": "projekt_1014"
+      },
+      {
+        "uuid": "94ea3796-f32f-4091-bc8c-2e60b18ffdcd",
+        "degree": 2,
+        "name": "Modernizácia nového počítačového tranzitného systému (NCTS F5) podľa CKÚ",
+        "code": "projekt_1100"
+      },
+      {
+        "uuid": "56ed8321-7082-4c37-9227-36f1504d4c5b",
+        "degree": 2,
+        "name": "Dohľad 3 podľa CKÚ",
+        "code": "projekt_1111"
+      },
+      {
+        "uuid": "ce9d4134-84b0-4c8f-803f-5320d1f83d0f",
+        "degree": 2,
+        "name": "Zmenová požiadavka IS Admis - zmeny vyplývajúce zo zákona o eGovernmente.",
+        "code": "projekt_1012"
+      },
+      {
+        "uuid": "d92fe10f-2e93-40fc-a0b8-0166da1f7f8a",
+        "degree": 2,
+        "name": "FS - PFS - D9/II.h) - Agenda OSS na PFS",
+        "code": "projekt_1202"
+      },
+      {
+        "uuid": "9a449449-3f9b-4009-9abe-fa859ac4cbe9",
+        "degree": 2,
+        "name": "FS - PFS - D9/II.c) - Formuláre pre rok 2020 (nové)",
+        "code": "projekt_1200"
+      },
+      {
+        "uuid": "26f97028-abb1-401e-ba07-2e4c775c263f",
+        "degree": 2,
+        "name": "FS - PFS - D9/I.c) - eIDAS prihlasovanie na WebSSO portáli",
+        "code": "projekt_1201"
+      },
+      {
+        "uuid": "61cdc231-cc91-4a56-90d5-70b3af5d2d9e",
+        "degree": 2,
+        "name": "FS - PFS - D9/I.a) - Koncepčné riešenie informačných zoznamov",
+        "code": "projekt_1199"
+      },
+      {
+        "uuid": "c59bf3e5-dd3c-48f2-8d71-cdb4b30a7f0e",
+        "degree": 2,
+        "name": "FS - PFS/CRFS - D5/65 - Úprava UDR rozhrania - zisťovanie stavu aktualizácie dát UDR objektov (PZ-939)",
+        "code": "projekt_1198"
+      },
+      {
+        "uuid": "889c7ef7-c957-425c-97e9-d54d0f35d726",
+        "degree": 2,
+        "name": "Finančná správa - Modernizácia a rekonštrukcia HW a SW infraštruktúry Finančnej správy SR pre rok 2022 - 2.časť",
+        "code": "projekt_1542"
+      },
+      {
+        "uuid": "9398613a-b8bf-4a37-b7a6-87c0422f1787",
+        "degree": 2,
+        "name": "Finančná správa - Modernizácia a rekonštrukcia HW a SW infraštruktúry Finančnej správy SR pre rok 2022 - 1.časť",
+        "code": "projekt_1539"
+      },
+      {
+        "uuid": "cd16dc53-f596-43e5-bbe8-11ab7c155f92",
+        "degree": 2,
+        "name": "Obnova a posilnenie technologickej a sieťovej infraštruktúry DataCentra",
+        "code": "projekt_3704"
+      },
+      {
+        "uuid": "80bfb269-0130-435f-9528-86b71a99d6fb",
+        "degree": 2,
+        "name": "Poskytovanie aplikačnej podpory pre systémy Administratívnych centier samosprávnych krajov",
+        "code": "projekt_3272"
+      },
+      {
+        "uuid": "dc2ae081-98be-4a30-8622-9c03206f0de5",
+        "degree": 2,
+        "name": "Kybernetická bezpečnosť pre informačný systému DCOM",
+        "code": "projekt_2348"
+      },
+      {
+        "uuid": "2db064e2-ae5e-4220-8a0c-165937aa158a",
+        "degree": 2,
+        "name": "Projekt implementácie HW/SW ŽS pre MPSVR SR",
+        "code": "projekt_3167"
+      },
+      {
+        "uuid": "8dcd268c-f4bb-46ae-86bd-09988ce15eb7",
+        "degree": 2,
+        "name": "Obnova pracovných staníc",
+        "code": "projekt_1906"
+      },
+      {
+        "uuid": "afeb3b66-9c63-4200-ae80-16f9914521d6",
+        "degree": 2,
+        "name": "Upgrade HW/SW pre vybrané lokality (VYSYS) - etapa 2",
+        "code": "projekt_2224"
+      },
+      {
+        "uuid": "b77d5c17-538b-439b-a06f-bc42cda17717",
+        "degree": 2,
+        "name": "Prevádzka služby eKolok v rokoch 2024-2034",
+        "code": "projekt_2358"
+      },
+      {
+        "uuid": "fb8ba278-beb2-4d23-bd87-fd42899466b2",
+        "degree": 2,
+        "name": "JISCD – CR093 Kúpa/predaj vozidla",
+        "code": "projekt_3385"
+      },
+      {
+        "uuid": "54b6584e-5ad8-4353-828d-ed42164aec71",
+        "degree": 2,
+        "name": "JISCD CR098 - EUCARIS Modul AVI a modul IVI/COC",
+        "code": "projekt_3286"
+      },
+      {
+        "uuid": "e9efa9b2-2064-4404-8ff4-a035091c7afa",
+        "degree": 2,
+        "name": "JISCD-ESD CR094 ERRU3",
+        "code": "projekt_3062"
+      },
+      {
+        "uuid": "a0fbb0ef-21eb-480d-a9c5-4db3f4de3da8",
+        "degree": 2,
+        "name": "JISCD – CR089 Úprava agendy v JISCD pre ŠDU",
+        "code": "projekt_2440"
+      },
+      {
+        "uuid": "66c53d83-4872-4334-9a2c-e081f65ab299",
+        "degree": 2,
+        "name": "JISCD CR092 Liberalizácia eLeraningu a nové osnovy",
+        "code": "projekt_2438"
+      },
+      {
+        "uuid": "22997fba-5983-4774-8ddb-82a799f08f70",
+        "degree": 2,
+        "name": "JISCD - CR049 CÚD",
+        "code": "projekt_1588"
+      },
+      {
+        "uuid": "635bd7af-173d-48f4-a2bf-7f928d1606f0",
+        "degree": 2,
+        "name": "JISCD – ESD CR080 Sankcionovanie za delikty podľa zákona 135/1961 Z.z.",
+        "code": "projekt_2310"
+      },
+      {
+        "uuid": "f62c2935-f1ca-4312-8c62-4b084ebab715",
+        "degree": 2,
+        "name": "Komunitný Cloud Ministerstva dopravy a výstavby Slovenskej republiky",
+        "code": "projekt_1797"
+      },
+      {
+        "uuid": "5a847d63-8bda-4826-8513-5b1fad14970d",
+        "degree": 2,
+        "name": "CR076 KKV Hub - ProDriveNet",
+        "code": "projekt_1177"
+      },
+      {
+        "uuid": "b1ee280f-69e2-42ee-ad71-edf01f4d06a3",
+        "degree": 2,
+        "name": "JISCD – ESD CR070 Balík mobility",
+        "code": "projekt_1564"
+      },
+      {
+        "uuid": "86c4a771-e076-4c09-9866-c742f5cbb80f",
+        "degree": 2,
+        "name": "Zvýšenie bezpečnosti a obnova zariadení  katastra nehnuteľností v správe MV SR",
+        "code": "projekt_3708"
+      },
+      {
+        "uuid": "f98ad625-800d-4619-be69-de48f0e73c00",
+        "degree": 2,
+        "name": "Modernizácia ústredného kontaktného centra",
+        "code": "projekt_1534"
+      },
+      {
+        "uuid": "c9c1cb4a-1142-4ffc-9dc4-8cc0d925943d",
+        "degree": 2,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti UMB",
+        "code": "projekt_2623"
+      },
+      {
+        "uuid": "776479b8-b665-4cec-a361-1530d0088032",
+        "degree": 2,
+        "name": "Geografický informačný systém mesta Tisovec a obce Klenovec",
+        "code": "projekt_3712"
+      },
+      {
+        "uuid": "bbe6e9fb-0ab9-4ec9-a825-65a88babb1e8",
+        "degree": 1,
+        "name": "Manažment údajov RESS",
+        "code": "projekt_1603"
+      },
+      {
+        "uuid": "fb6715b4-6298-4b3c-8b29-6b361fde9495",
+        "degree": 1,
+        "name": "Centrálny informačný systém štátnej služby",
+        "code": "projekt_130"
+      },
+      {
+        "uuid": "69175220-9f80-414f-8d7d-cd9ac4ac6979",
+        "degree": 1,
+        "name": "Rozvoj SODB - Vybudovanie Štatistického registra budov, domov a bytov",
+        "code": "projekt_1998"
+      },
+      {
+        "uuid": "1b4b4300-6615-4306-9689-00f1cad53002",
+        "degree": 1,
+        "name": "Budovanie registrov",
+        "code": "projekt_1977"
+      },
+      {
+        "uuid": "7fb0d6cf-cdd4-4a97-8cbd-c41c19d97de3",
+        "degree": 1,
+        "name": "Obmena komponentov Datacentra BA - Sieťové moduly pre datacentrové prepínače",
+        "code": "projekt_1557"
+      },
+      {
+        "uuid": "b14ef5da-e3c2-4c31-8f21-eff17418caef",
+        "degree": 1,
+        "name": "Posilnenie výkonu, kapacity a bezpečnosti IKT v dátových centrách pre evidencie odsúdení občanov tretích štátov (ECRIS-TCN)",
+        "code": "projekt_1275"
+      },
+      {
+        "uuid": "de360bc1-a023-4dff-8bd8-d9865708ee3d",
+        "degree": 1,
+        "name": "Rozšírenie IS EOO pre ECRIS-TCN",
+        "code": "projekt_1160"
+      },
+      {
+        "uuid": "2269c0c3-449f-4352-adb6-f8d0ca4c7b96",
+        "degree": 1,
+        "name": "Zabezpečenie vysokej dostupnosti a kapacity IKT v dátových centrách a optimalizácia zálohovej stratégie ako predpoklad prepojenia na IS Európskej prokuratúry",
+        "code": "projekt_1168"
+      },
+      {
+        "uuid": "6b6bd4da-5ceb-450e-8c04-545eee26fb3a",
+        "degree": 1,
+        "name": "Rozšírenie IS PATRICIA a prepojenie s IS Európskej prokuratúry",
+        "code": "projekt_1166"
+      },
+      {
+        "uuid": "107dfe7a-092c-4277-8688-515538898490",
+        "degree": 1,
+        "name": "Náhrada nepodporovaných operačných systémov backendových systémov",
+        "code": "projekt_1146"
+      },
+      {
+        "uuid": "67c222bd-e586-4333-919d-9fa90d39afe6",
+        "degree": 1,
+        "name": "Vybudovanie virtualizácie s klaster prevedením",
+        "code": "projekt_1147"
+      },
+      {
+        "uuid": "303a12d6-a331-4242-a28c-b766844c3e1c",
+        "degree": 1,
+        "name": "Obnova sieťovej infraštruktúry DataCentra pre zariadenia, ktorým končí podpora od výrobcu",
+        "code": "projekt_1148"
+      },
+      {
+        "uuid": "6512b918-ea1c-48c3-8fea-46cffa37ae91",
+        "degree": 1,
+        "name": "Vybudovanie intranetového portálu",
+        "code": "projekt_1262"
+      },
+      {
+        "uuid": "a40eb4bf-fcbf-41ff-9fb0-a7d583efb7b5",
+        "degree": 1,
+        "name": "Diskové pole a SAN prepínače",
+        "code": "projekt_1681"
+      },
+      {
+        "uuid": "771cc371-4466-4ad6-b500-3f874587fc91",
+        "degree": 1,
+        "name": "HyperV cluster – serverovská farma",
+        "code": "projekt_1707"
+      },
+      {
+        "uuid": "76ed9bdf-aa56-4a44-81eb-f4090d39bfa9",
+        "degree": 1,
+        "name": "SK CSW-CERTEX",
+        "code": "projekt_2485"
+      },
+      {
+        "uuid": "f2dbb011-da1a-4abd-91b1-edbbb2fb7994",
+        "degree": 1,
+        "name": "Nákup serverov pre virtualizačnú platformu Vmware (ďalej len „SVPV“)",
+        "code": "projekt_2679"
+      },
+      {
+        "uuid": "a7cafc7c-47c0-4b79-a53d-e032735bb244",
+        "degree": 1,
+        "name": "EMCS portál",
+        "code": "projekt_2240"
+      },
+      {
+        "uuid": "630fdf1d-6ff7-4223-94fd-f27b027bda0c",
+        "degree": 1,
+        "name": "Upgrade Informačné systému Centrálny elektronický priečinok",
+        "code": "projekt_2326"
+      },
+      {
+        "uuid": "f772d354-adbd-4d32-868b-32a246a83ad5",
+        "degree": 1,
+        "name": "Doplnenie a úprava dátovej a elektrickej kabeláže FS",
+        "code": "projekt_2260"
+      },
+      {
+        "uuid": "1327c691-8910-4fd7-8f33-c3904e08218f",
+        "degree": 1,
+        "name": "Modernizácia CIS podľa CKÚ - NCTS P6 a ICS2",
+        "code": "projekt_2236"
+      },
+      {
+        "uuid": "7ca96e5f-d94e-4b15-a53a-e4b3f37ed9a4",
+        "degree": 1,
+        "name": "EMCS fáza 4.1",
+        "code": "projekt_2195"
+      },
+      {
+        "uuid": "0a4a6147-0507-4195-b7c6-f0787918f0a6",
+        "degree": 1,
+        "name": "Infraštruktúra Dátového centra Finančného riaditeľstva SR - 2023 - časť 2",
+        "code": "projekt_2108"
+      },
+      {
+        "uuid": "bb6863ce-35fd-477f-9c83-d93bf3a4b7c0",
+        "degree": 1,
+        "name": "Infraštruktúra Dátového centra Finančného riaditeľstva SR - 2023 - časť 1",
+        "code": "projekt_2107"
+      },
+      {
+        "uuid": "c1bf93c6-d40d-4c96-a2ee-f127e579fd00",
+        "degree": 1,
+        "name": "Obnova pracovných staníc zamestnancov FR SR",
+        "code": "projekt_2019"
+      },
+      {
+        "uuid": "26ab215d-5748-4304-b826-a5068f3eaef3",
+        "degree": 1,
+        "name": "EMCS fáza 4.0",
+        "code": "projekt_1805"
+      },
+      {
+        "uuid": "19d124a0-e40e-4c5e-9a8a-ee12d06a6d8a",
+        "degree": 1,
+        "name": "Finančná správa - Generačná výmena hlavných datacentrových SAN switchov",
+        "code": "projekt_1378"
+      },
+      {
+        "uuid": "2d29918a-5d39-451b-a01e-a6b55fec41a8",
+        "degree": 1,
+        "name": "FS - ISFS-SD - PZ-1057 / Legislatíva / ZL5/2021, ZL10/2021",
+        "code": "projekt_1324"
+      },
+      {
+        "uuid": "ea9669eb-93bf-418d-b6f1-1bc5422e4a52",
+        "degree": 1,
+        "name": "Úpravy v systéme ADMIS a integračných rozhraniach na dotknuté systémy v rámci implementácie OBK Fáza 3.1.",
+        "code": "projekt_1321"
+      },
+      {
+        "uuid": "e98526e1-c9ac-432c-9787-c66dfaa84c6d",
+        "degree": 1,
+        "name": "Rozvoj colných informačných systémov - ICS2 - release 2",
+        "code": "projekt_1265"
+      },
+      {
+        "uuid": "3979c866-fcc1-42fb-b2b5-ea37c81cc4f0",
+        "degree": 1,
+        "name": "FS - Legislatíva 2021-3 - SYSNED - SPD-alkohol",
+        "code": "projekt_1192"
+      },
+      {
+        "uuid": "f92e2bd9-360b-4a32-a95b-f0fe1afcf357",
+        "degree": 1,
+        "name": "FS - Legislatíva 2021-1 - SYSNED - SPD-tabak",
+        "code": "projekt_1189"
+      },
+      {
+        "uuid": "bf237fd1-d836-4897-a6ab-e5d7a4e197f8",
+        "degree": 1,
+        "name": "Finančná správa - licencie pre systém virtualizácie diskových priestorov",
+        "code": "projekt_1456"
+      },
+      {
+        "uuid": "d9bcd286-6266-485c-a207-88da8d1a617d",
+        "degree": 1,
+        "name": "Služby systémovej a aplikačnej podpory, správy, údržby a rozvoja informačného systému Centrálneho registra účtov",
+        "code": "projekt_3327"
+      },
+      {
+        "uuid": "01ff8e43-3c46-4f38-9217-1a7877fba2b9",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej bezpečnosti DataCentra",
+        "code": "projekt_3310"
+      },
+      {
+        "uuid": "cdb80277-3c33-4b36-824a-d8c860863dfd",
+        "degree": 1,
+        "name": "Implementácia rozpočtového informačného systému",
+        "code": "projekt_267"
+      },
+      {
+        "uuid": "72c49686-c50b-4aa6-af89-08ab4dafce15",
+        "degree": 1,
+        "name": "Migrácia APP prostredí na novú infraštruktúru",
+        "code": "projekt_1410"
+      },
+      {
+        "uuid": "655943b6-cd37-4fc1-847b-2ff9ca7d1faa",
+        "degree": 1,
+        "name": "Lepšie využívanie údajov MF SR",
+        "code": "projekt_3153"
+      },
+      {
+        "uuid": "b4af1c86-9c45-4a83-a477-6f09e7aa9932",
+        "degree": 1,
+        "name": "Rozšírenie CITRIX farmy, publikovanie APP pre CES",
+        "code": "projekt_2970"
+      },
+      {
+        "uuid": "23840ce5-68ee-42f1-be76-f92f5e42e52f",
+        "degree": 1,
+        "name": "Záložné riešenie CES",
+        "code": "projekt_2968"
+      },
+      {
+        "uuid": "bc070145-e3bf-71ef-faba-356d406f4284",
+        "degree": 1,
+        "name": "Digitálna transformácia úsekov verejnej správy pre Ministerstvo financií Slovenskej republiky",
+        "code": "projekt_2545"
+      },
+      {
+        "uuid": "50e81e78-0a59-408a-91a6-5966028bc94d",
+        "degree": 1,
+        "name": "Informačný systém eForms",
+        "code": "projekt_1247"
+      },
+      {
+        "uuid": "2bc68adc-bd10-434a-9572-d31559408eec",
+        "degree": 1,
+        "name": "Centrálny ekonomický systém - stabilizačná fáza",
+        "code": "projekt_2327"
+      },
+      {
+        "uuid": "efbfc742-bcc4-4116-96fc-86b44c68ec15",
+        "degree": 1,
+        "name": "CES - Implementácia Novej súdnej mapy pre Ministerstvo spravodlivosti SR",
+        "code": "projekt_2286"
+      },
+      {
+        "uuid": "f8c2d738-1329-4c52-a75a-3302f26b7c2e",
+        "degree": 1,
+        "name": "Implementácia Centrálneho ekonomického systému",
+        "code": "projekt_211"
+      },
+      {
+        "uuid": "4038c28e-abf6-4630-b234-c1cf8816e422",
+        "degree": 1,
+        "name": "Rozvoj Rezortného privátneho cloudu MF SR - 2023",
+        "code": "projekt_2102"
+      },
+      {
+        "uuid": "82406a5f-cb30-4842-af15-58b40f04dfc9",
+        "degree": 1,
+        "name": "Upgrade centrálneho konsolidačného systému",
+        "code": "projekt_2325"
+      },
+      {
+        "uuid": "f45a0e1b-0314-4331-b41f-e73639a69fe4",
+        "degree": 1,
+        "name": "Centrálny ekonomický systém - HW a SW infraštruktúra - 4.fáza",
+        "code": "projekt_1926"
+      },
+      {
+        "uuid": "7cecca3a-e7aa-47b1-80dc-20d87f5b3338",
+        "degree": 1,
+        "name": "Centrálny ekonomický systém – Zálohovanie a obnova dát – 1.fáza",
+        "code": "projekt_1904"
+      },
+      {
+        "uuid": "0a4f7fbf-d4b0-41a0-96ec-00a1ce26b8ed",
+        "degree": 1,
+        "name": "Centrálny ekonomický systém – Zálohovanie a obnova dát – 2.fáza (ZVS)",
+        "code": "projekt_1905"
+      },
+      {
+        "uuid": "bb0e72c6-f73b-4df4-b014-2b25f13f57c3",
+        "degree": 1,
+        "name": "Rozpočtový informačný systém - C121254 - Rozšírenie RIS.RR - RKR o publikovanie údajov a podporu činnosti protikorupčných koordinátorov",
+        "code": "projekt_1841"
+      },
+      {
+        "uuid": "c99801b0-077c-40b5-b00f-d137b3cdf062",
+        "degree": 1,
+        "name": "Obnova komunikačno-technickej infraštruktúry DataCentra - diskové pole",
+        "code": "projekt_1801"
+      },
+      {
+        "uuid": "0793e1a3-18fa-4067-a4e3-9a8c01171e3c",
+        "degree": 1,
+        "name": "Rozšírenie EIS MŠVVŠ v správe MF SR o osem nových účtovných okruhov pre RÚŠS",
+        "code": "projekt_1783"
+      },
+      {
+        "uuid": "42f542b8-b125-49e0-8b0d-a330a7637b95",
+        "degree": 1,
+        "name": "Rozšírenie EIS MŽP v správe MF SR o deväť nových účtovných okruhov pre SNP",
+        "code": "projekt_1782"
+      },
+      {
+        "uuid": "c72acc19-43bc-424d-ad50-1602387aff79",
+        "degree": 1,
+        "name": "Rezortný privátny cloud",
+        "code": "projekt_1760"
+      },
+      {
+        "uuid": "98cdfb64-1662-440b-a016-6ca18fa5554d",
+        "degree": 1,
+        "name": "Obnova komunikačno-technickej infraštruktúry 2 DataCentra",
+        "code": "projekt_1700"
+      },
+      {
+        "uuid": "ee81a8c1-7b71-4a2b-b0de-7a8f8015cba4",
+        "degree": 1,
+        "name": "Modernizácia infraštruktúrnych služieb DataCentra",
+        "code": "projekt_1574"
+      },
+      {
+        "uuid": "1dfab42b-1898-4540-bfe6-6ca4d501314b",
+        "degree": 1,
+        "name": "Centrálny register účtov",
+        "code": "projekt_1605"
+      },
+      {
+        "uuid": "fae4c6c2-572a-44ba-bb0a-48dfdac051eb",
+        "degree": 1,
+        "name": "Úprava informačných systémov ÚVO po novelizácii ZVO",
+        "code": "projekt_1365"
+      },
+      {
+        "uuid": "ff0599d0-fb29-464e-ac79-b4f3459fd1bb",
+        "degree": 1,
+        "name": "Úprava informačných systémov ÚVO po delimitácii EVO",
+        "code": "projekt_1367"
+      },
+      {
+        "uuid": "03c51f71-d318-405c-8ffd-b3a3732805de",
+        "degree": 1,
+        "name": "Migrácia DB prostredí na novú infraštruktúru",
+        "code": "projekt_1353"
+      },
+      {
+        "uuid": "9c7109bd-21a0-4426-927c-747d76e3c58d",
+        "degree": 1,
+        "name": "Softvérové riešenie pre ochranu, riadenie a správu mobility",
+        "code": "projekt_1257"
+      },
+      {
+        "uuid": "6e8b12e3-74db-4992-b2dd-ba74f0071fa3",
+        "degree": 1,
+        "name": "Softvérové riešenie pre správu záznamov",
+        "code": "projekt_1252"
+      },
+      {
+        "uuid": "7db623f7-9084-4690-af22-be4953a599ca",
+        "degree": 1,
+        "name": "Softvérové riešenie SIEM",
+        "code": "projekt_1249"
+      },
+      {
+        "uuid": "5c01c3af-554f-423d-95ec-a0ea84cde912",
+        "degree": 1,
+        "name": "Softvérové riešenie Service Desk",
+        "code": "projekt_1255"
+      },
+      {
+        "uuid": "fe2597ba-4fc1-4c81-814d-f5c57d2d5c0a",
+        "degree": 1,
+        "name": "BEZPEČNOSTNÝ UPGRADE VEREJNÉHO PORTÁLU",
+        "code": "projekt_1054"
+      },
+      {
+        "uuid": "e26a490c-68e1-4a4e-ad60-697747e5622e",
+        "degree": 1,
+        "name": "MSSR-C120045 - Archívny systém AZU-EIS",
+        "code": "projekt_1553"
+      },
+      {
+        "uuid": "6482ab90-eaae-452e-970e-80d3f9d33017",
+        "degree": 1,
+        "name": "Modernizácia Informačného systému účtovníctva fondov",
+        "code": "projekt_2076"
+      },
+      {
+        "uuid": "4c70bec7-38c8-4989-8438-b5670518f5df",
+        "degree": 1,
+        "name": "C115632 - eCommerce (ACIS)",
+        "code": "projekt_983"
+      },
+      {
+        "uuid": "d16e2a42-fea2-4c86-9970-8915951f71b9",
+        "degree": 1,
+        "name": "C119767 - štúdia realizovateľnosti a analýza dopadov - RIS - KaA.MZ – proces povoľovania prístupov do aplikácie odborným garantom modulu",
+        "code": "projekt_1494"
+      },
+      {
+        "uuid": "a9dbdf8c-b69b-468c-b481-8c88cd9dd68a",
+        "degree": 1,
+        "name": "Elektronické služby verejného obstarávania",
+        "code": "projekt_20"
+      },
+      {
+        "uuid": "a5bff04e-81c6-493b-a11a-aa606bb0bf3f",
+        "degree": 1,
+        "name": "Upgrade centrálneho konsolidačného systému - rok 2022 - C118725 – Zber výkazov zo ŠP do CKS.",
+        "code": "projekt_1646"
+      },
+      {
+        "uuid": "4765bd26-56df-4d15-be20-8b3fadc3addd",
+        "degree": 1,
+        "name": "Modernizácia a rozšírenie riadenia používateľských prístupov",
+        "code": "projekt_1575"
+      },
+      {
+        "uuid": "721a8ea6-39fb-4245-be43-5403e147d166",
+        "degree": 1,
+        "name": "Rozvoj a rozširovanie funkcionality ISUF - rok 2022",
+        "code": "projekt_1645"
+      },
+      {
+        "uuid": "12ef7895-b599-4050-aa7d-3d67fb44625d",
+        "degree": 1,
+        "name": "Rozpočtový informačný systém - C119767 Proces povoľovania prístupov do AP odborným garantom –  2. Fáza: riadenie oprávnení",
+        "code": "projekt_1643"
+      },
+      {
+        "uuid": "fcce0e30-fbbb-4b3c-8c45-48020e52e48c",
+        "degree": 1,
+        "name": "Rozpočtový informačný systém - C119767 Proces povoľovania prístupov do AP odborným garantom –  1. Fáza: riadenie prístupov",
+        "code": "projekt_1642"
+      },
+      {
+        "uuid": "7b518855-da41-4265-b3ba-db6076a90a1d",
+        "degree": 1,
+        "name": "Rozpočtový informačný systém - C120731 Úpravy modulu KaA.MZ – Evidovanie výsledkov VLA",
+        "code": "projekt_1640"
+      },
+      {
+        "uuid": "9c714773-8d10-433e-ae76-27412c29c6b4",
+        "degree": 1,
+        "name": "Centrálny ekonomický systém - HW a SW infraštruktúra - 1.fáza",
+        "code": "projekt_1731"
+      },
+      {
+        "uuid": "6f9283e7-0c95-462a-91e0-0a5aec863ea6",
+        "degree": 1,
+        "name": "C122229_2 RISSAM.výkazy KUZ",
+        "code": "projekt_2354"
+      },
+      {
+        "uuid": "bffd3175-0919-4d98-964d-7c6449b0dee0",
+        "degree": 1,
+        "name": "Technologická obnova prevádzkového infraštruktúrneho prostredia.",
+        "code": "projekt_1457"
+      },
+      {
+        "uuid": "e31e0da1-6449-4349-9e93-7623ffd47546",
+        "degree": 1,
+        "name": "Posilnenie kybernetickej a informačnej bezpečnosti MF SR",
+        "code": "projekt_3024"
+      },
+      {
+        "uuid": "03c644e0-9343-4356-a9ad-631c44311bdc",
+        "degree": 1,
+        "name": "Zvýšenie úrovne informačnej a kybernetickej bezpečnosti MF SR",
+        "code": "projekt_1497"
+      },
+      {
+        "uuid": "5261dbcb-16c6-4b0a-96ff-58ea93f1753b",
+        "degree": 1,
+        "name": "Modernizácia a rekonštrukcia zastaranej hardwarovej infraštruktúry v rámci ministerstva financií.",
+        "code": "projekt_1639"
+      },
+      {
+        "uuid": "45330c92-0a9c-4c73-a955-0f67413934ee",
+        "degree": 1,
+        "name": "Manažment údajov dátových balíčkov ÚRHH",
+        "code": "projekt_2009"
+      },
+      {
+        "uuid": "575a0117-711e-4a60-9773-0a352076ea56",
+        "degree": 1,
+        "name": "Vybudovanie dohľadového pracoviska kybernetickej bezpečnosti rezortu Ministerstva práce,  sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "projekt_2382"
+      },
+      {
+        "uuid": "fb735a52-1435-4fca-aec0-b0f862e15c60",
+        "degree": 1,
+        "name": "Rozvoj a zvýšenie informačnej a kybernetickej  bezpečnosti MPSVR SR",
+        "code": "projekt_2281"
+      },
+      {
+        "uuid": "fc17d2e7-869c-4084-bbdc-18ff0b1afc93",
+        "degree": 1,
+        "name": "Modernizácia informačného systému Dokument management systém (DMS)",
+        "code": "projekt_2091"
+      },
+      {
+        "uuid": "f036e6b8-10ee-4827-b9c6-c0eee127c688",
+        "degree": 1,
+        "name": "Podporná infraštruktúra 2020",
+        "code": "projekt_1016"
+      },
+      {
+        "uuid": "aa32f982-43f5-4eb3-94e1-600ae0760e42",
+        "degree": 1,
+        "name": "Centralizovaný systém súdneho riadenia V2",
+        "code": "projekt_2043"
+      },
+      {
+        "uuid": "a69af5ea-57e1-426b-b4a5-33207958cdb5",
+        "degree": 1,
+        "name": "Modernizácia informačného systému DCOM",
+        "code": "projekt_1945"
+      },
+      {
+        "uuid": "838e1923-9a2e-4fce-8765-3c9875694a62",
+        "degree": 1,
+        "name": "Register zbraní",
+        "code": "projekt_2088"
+      },
+      {
+        "uuid": "4be64fb2-245b-4fab-bf4e-5061a1f2e4e1",
+        "degree": 1,
+        "name": "Centralizovaný systém súdneho riadenia",
+        "code": "projekt_1616"
+      },
+      {
+        "uuid": "f9cbdc46-4a6e-740d-ef87-7257cda29921",
+        "degree": 1,
+        "name": "Informačný systém obchodného registra",
+        "code": "projekt_1552"
+      },
+      {
+        "uuid": "243f41dc-fdd0-4ac8-9909-3399d744498e",
+        "degree": 1,
+        "name": "Vybudovanie IT nástroja na manažment výziev SAŽP",
+        "code": "projekt_1172"
+      },
+      {
+        "uuid": "7d446b85-b191-46fa-b7bf-d2d23702d127",
+        "degree": 1,
+        "name": "Technické opatrenia pre zvýšenie úrovne kybernetickej a informačnej bezpečnosti",
+        "code": "projekt_3187"
+      },
+      {
+        "uuid": "721c8726-d08c-4aa5-b692-48002e1bd78b",
+        "degree": 1,
+        "name": "Zvýšenie dostupnosti HRIS",
+        "code": "projekt_2466"
+      },
+      {
+        "uuid": "85188317-c3e5-4603-8be8-47621c46bc50",
+        "degree": 1,
+        "name": "Modernizácia informačného systému elektronického spracovania spisov a administratívnych procesov",
+        "code": "projekt_2081"
+      },
+      {
+        "uuid": "500201bf-3e07-43de-aa51-818ff0e9e5f7",
+        "degree": 1,
+        "name": "KONCEPCIA INFORMATIZÁCIE A DIGITALIZÁCIE MPRV SR",
+        "code": "projekt_1240"
+      },
+      {
+        "uuid": "4c776e99-c534-4cf0-912c-d2329a5c37a4",
+        "degree": 1,
+        "name": "Konsolidácia zálohovacieho riešenia",
+        "code": "projekt_3684"
+      },
+      {
+        "uuid": "fc92a317-6a7b-4740-8d26-c0faccdd06e1",
+        "degree": 1,
+        "name": "Projekt ŽS7 + ŽS8",
+        "code": "projekt_2460"
+      },
+      {
+        "uuid": "17f6564b-71e1-47dc-ac40-b25d9704365a",
+        "degree": 1,
+        "name": "Projekt ŽS14 + ŽS16",
+        "code": "projekt_2463"
+      },
+      {
+        "uuid": "3fb78d8d-6345-4feb-949c-c743f383c396",
+        "degree": 1,
+        "name": "Projekt ŽS5",
+        "code": "projekt_2459"
+      },
+      {
+        "uuid": "b884c137-9c70-4b7d-9bc0-a505052641a3",
+        "degree": 1,
+        "name": "Projekt ŽS1",
+        "code": "projekt_2458"
+      },
+      {
+        "uuid": "fd1324c5-2c09-4fa0-8353-61efebb4c31b",
+        "degree": 1,
+        "name": "Elektronická práceneschopnosť (ePN)",
+        "code": "projekt_2044"
+      },
+      {
+        "uuid": "713e8b7b-d7a9-4ad0-ad77-9f73c5b71508",
+        "degree": 1,
+        "name": "Vybudovanie informačného systému registratúry (IS REG)",
+        "code": "projekt_1724"
+      },
+      {
+        "uuid": "f4fda7b1-c4a0-4080-a1e9-5d9f39cd3652",
+        "degree": 1,
+        "name": "Vybudovanie nástrojov na riadenie výkonnosti a hodnotenia zamestnancov",
+        "code": "projekt_2013"
+      },
+      {
+        "uuid": "08f2799a-2aea-408a-bee5-a6062f5a34cd",
+        "degree": 1,
+        "name": "Rozvoj IS elektronická výmena dát sociálneho zabezpečenia (IS EESSI)",
+        "code": "projekt_1957"
+      },
+      {
+        "uuid": "d38256f4-e4b0-420a-a0de-55854e43e9b1",
+        "degree": 1,
+        "name": "Zmenová požiadavka na IS NP a LPČ",
+        "code": "projekt_1272"
+      },
+      {
+        "uuid": "0abff8f8-30ff-4987-b9b1-05113977b825",
+        "degree": 1,
+        "name": "Zmenova požiadavka NASP",
+        "code": "projekt_1266"
+      },
+      {
+        "uuid": "a0b3333c-f7bf-4cb3-bec9-f6b5cfe6bf70",
+        "degree": 1,
+        "name": "Efektívny manažment údajov v prostredí Sociálnej poisťovne (MUSP)",
+        "code": "projekt_318"
+      },
+      {
+        "uuid": "3189d726-4d7c-4f03-99d6-3b343e99d56e",
+        "degree": 1,
+        "name": "Modernizácia dávkových agend Sociálnej poisťovne",
+        "code": "projekt_320"
+      },
+      {
+        "uuid": "aa341ede-e769-422c-9a74-01e7b5378dde",
+        "degree": 1,
+        "name": "Budovanie analytických služieb pre podporu kontroly a rozhodovania v SP",
+        "code": "projekt_324"
+      },
+      {
+        "uuid": "7df8fae4-12ac-46d1-9c54-ec4604fd18ac",
+        "degree": 1,
+        "name": "Zavedenie pro-klientsky orientovaných procesov a služieb pre podporu klientov SP (EZK)",
+        "code": "projekt_636"
+      },
+      {
+        "uuid": "14abbb69-b36b-4237-b190-a8eb31e8ed3a",
+        "degree": 1,
+        "name": "Zmenová požiadavka na IS JVP",
+        "code": "projekt_940"
+      },
+      {
+        "uuid": "487705d4-1fd0-409d-9af1-a285142ca7ff",
+        "degree": 1,
+        "name": "Zmenová požiadavka na APV ASSR",
+        "code": "projekt_943"
+      },
+      {
+        "uuid": "1bae1a5d-9a06-4eda-9416-4673c92c1693",
+        "degree": 1,
+        "name": "Zmenová požiadavka v IS AIS DP",
+        "code": "projekt_942"
+      },
+      {
+        "uuid": "313dc254-4ada-473c-8966-d67f3b122c6e",
+        "degree": 1,
+        "name": "Zmenová požiadavka v IS JVP",
+        "code": "projekt_944"
+      },
+      {
+        "uuid": "2dd06909-e6ba-4fc0-9769-2d91bf76472d",
+        "degree": 1,
+        "name": "Dodávka spotrebného materiálu",
+        "code": "projekt_947"
+      },
+      {
+        "uuid": "d5c57f24-0ce8-494a-8039-0f0308f95f08",
+        "degree": 1,
+        "name": "Implementácia Jednotnej digitálnej brány v podmienkach Sociálnej poisťovne -  Určenie uplatniteľných právnych predpisov",
+        "code": "projekt_1537"
+      },
+      {
+        "uuid": "54048c40-2514-47fb-af44-86a8dd83d2a9",
+        "degree": 1,
+        "name": "Zmenová požiadavka v IS JVP",
+        "code": "projekt_1465"
+      },
+      {
+        "uuid": "178ae2dd-1cb9-4e70-bb7e-eb882bd44fe4",
+        "degree": 1,
+        "name": "Rozvoj governance a úrovne informačnej a kybernetickej bezpečnosti UGKK SR",
+        "code": "projekt_1676"
+      },
+      {
+        "uuid": "8366a5c7-d594-4c24-8953-a14f0fced29d",
+        "degree": 1,
+        "name": "Obnova HW pre nevizuálne služby",
+        "code": "projekt_2245"
+      },
+      {
+        "uuid": "33c9d1e5-cf8b-4e35-be54-36d3955d89c5",
+        "degree": 1,
+        "name": "Rozšírenie zariadení UPS - Vetva B",
+        "code": "projekt_2209"
+      },
+      {
+        "uuid": "f087b4d4-d643-45b6-a0fa-ac3cffca84ee",
+        "degree": 1,
+        "name": "Služby programovej podpory ESRI",
+        "code": "projekt_1345"
+      },
+      {
+        "uuid": "5523051b-1c1f-47dd-a7d9-84392ddaf5aa",
+        "degree": 1,
+        "name": "Vybudovanie záložného DC - HW a SW prostriedky privátneho cloudu",
+        "code": "projekt_2112"
+      },
+      {
+        "uuid": "017b223d-e681-4197-a057-897ddf22ee76",
+        "degree": 1,
+        "name": "Hybridné dátové úložisko",
+        "code": "projekt_1765"
+      },
+      {
+        "uuid": "037d9cc1-3103-4bb2-ab3a-fbf1af9a2b90",
+        "degree": 1,
+        "name": "Elektronické služby katastra nehnuteľností - Základná báza údajov pre geografický informačný systém",
+        "code": "projekt_23"
+      },
+      {
+        "uuid": "c54d37df-18e1-471b-96e0-23e58626cd1d",
+        "degree": 1,
+        "name": "Konvergovaná infraštruktúra pre hybridný cloud",
+        "code": "projekt_1763"
+      },
+      {
+        "uuid": "6ad42544-50b0-4e0d-beba-7bed47046a87",
+        "degree": 1,
+        "name": "Elektronické služby katastra nehnuteľností",
+        "code": "projekt_19"
+      },
+      {
+        "uuid": "9cf4dbac-c49a-4aad-8ad8-3e9df1b494d6",
+        "degree": 1,
+        "name": "Konsolidácia údajov SPI – pilot na 20 katastrálnych území  (súčasťou je vyčistenie dát v písomných databázach KN)",
+        "code": "projekt_1220"
+      },
+      {
+        "uuid": "add29a1b-5741-4dac-9aa1-0e35eee24e8f",
+        "degree": 1,
+        "name": "Aplikácia pre správu údajov SPI – pilot na 20 katastrálnych území",
+        "code": "projekt_1221"
+      },
+      {
+        "uuid": "f197fe7d-6d0b-46b5-b43d-9f3e51405228",
+        "degree": 1,
+        "name": "Migrácia publikačnej časti ZBGIS do cloudu",
+        "code": "projekt_1884"
+      },
+      {
+        "uuid": "9e1ecb93-0da2-4cef-a195-2477770d7385",
+        "degree": 1,
+        "name": "Služba komunikačnej infraštruktúry SKPOS",
+        "code": "projekt_1815"
+      },
+      {
+        "uuid": "7b5c7ace-5b4d-4cc6-b50e-8c9327e6030f",
+        "degree": 1,
+        "name": "Aktualizácia digitálneho modelu reliéfu",
+        "code": "projekt_1658"
+      },
+      {
+        "uuid": "68fb762c-8f3b-4c28-a926-272afe2e5dee",
+        "degree": 1,
+        "name": "Aplikácia pre správu údajov SGI – pilot na 20 katastrálnych území ( súčasťou je aj vyčistenie dát v grafických databázach KN)",
+        "code": "projekt_1222"
+      },
+      {
+        "uuid": "527cd8cc-076d-43ed-9d87-13358dc54f95",
+        "degree": 1,
+        "name": "Digitálna transformácia úsekov verejnej správy pre Ministerstvo zahraničných vecí a európskych záležitostí Slovenskej republiky",
+        "code": "projekt_3288"
+      },
+      {
+        "uuid": "ffb45df0-c74c-41c4-a891-20546914610c",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej a informačnej bezpečnosti MZVEZ SR, 2. etapa",
+        "code": "projekt_3171"
+      },
+      {
+        "uuid": "52afe10f-52c5-4d64-b99e-d8c515c485cf",
+        "degree": 1,
+        "name": "Technologický upgrade portálového riešenia, redizajn, inovácia prezentačných a bezpečnostných prvkov",
+        "code": "projekt_1406"
+      },
+      {
+        "uuid": "669fb055-ec8d-4c02-8eaa-228662a9d302",
+        "degree": 1,
+        "name": "Obnova IKT infraštruktúry MZVEZ SR",
+        "code": "projekt_1152"
+      },
+      {
+        "uuid": "11976829-b854-4dcc-bb32-31683731132e",
+        "degree": 1,
+        "name": "Systém na správu a vzdialený prístup mobilných zariadení MZVEZ SR",
+        "code": "projekt_1073"
+      },
+      {
+        "uuid": "2582da0b-7ed5-4ba3-8d95-6ff3eb32be03",
+        "degree": 1,
+        "name": "Zvýšenie úrovne informačnej a kybernetickej bezpečnosti MZVEZ",
+        "code": "projekt_1030"
+      },
+      {
+        "uuid": "8bf31767-4dfa-440d-8ee4-4263aab4b720",
+        "degree": 1,
+        "name": "Vybudovanie Evidencie prístavných polôh a ich polygónov",
+        "code": "projekt_1606"
+      },
+      {
+        "uuid": "c6550845-75ca-4058-806c-3c983cd52858",
+        "degree": 1,
+        "name": "Zavedenie nových technologických riešení pre systém SlovRIS",
+        "code": "projekt_1607"
+      },
+      {
+        "uuid": "20a1b04c-23f2-4153-aaae-9b9a24e39e44",
+        "degree": 1,
+        "name": "Vybudovanie Registra odborných spôsobilostí posádok plavidiel",
+        "code": "projekt_1040"
+      },
+      {
+        "uuid": "4cc6a5c2-011b-40c2-b13e-61b16791a4a1",
+        "degree": 1,
+        "name": "Systém RIS Comex",
+        "code": "projekt_1042"
+      },
+      {
+        "uuid": "26963818-bbb8-429f-a164-12f332b8e48f",
+        "degree": 1,
+        "name": "Štúdia rozvoja IS RIS",
+        "code": "projekt_1043"
+      },
+      {
+        "uuid": "09cb72a2-e93e-4b94-af39-9b74f9b5f77a",
+        "degree": 1,
+        "name": "IS RIS",
+        "code": "projekt_1038"
+      },
+      {
+        "uuid": "64456727-df2a-4a08-a7f4-136e37fcddf5",
+        "degree": 1,
+        "name": "IS UAS",
+        "code": "projekt_1039"
+      },
+      {
+        "uuid": "190f369a-ca65-4059-a959-68bc6093df36",
+        "degree": 1,
+        "name": "Manažment údajov Dopravného úradu",
+        "code": "projekt_655"
+      },
+      {
+        "uuid": "ca106655-1a6c-4c98-bfa0-0d3cee6c2fac",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej a informačnej bezpečnosti prevádzky IT na MIRRI SR",
+        "code": "projekt_2949"
+      },
+      {
+        "uuid": "5e3a4cb3-d396-40b2-b36c-1339e672b8f9",
+        "degree": 1,
+        "name": "Zvýšenie spôsobilostí VJ CSIRT",
+        "code": "projekt_2056"
+      },
+      {
+        "uuid": "1e5c4680-3d0d-4023-af56-e3eb9158e090",
+        "degree": 1,
+        "name": "eSKa Cloud",
+        "code": "projekt_1928"
+      },
+      {
+        "uuid": "1ee7ab77-cc98-441e-827f-872698386460",
+        "degree": 1,
+        "name": "Rozvoj governance  a úrovne informačnej a kybernetickej bezpečnosti v podsektore VS",
+        "code": "projekt_1154"
+      },
+      {
+        "uuid": "f87b7153-6d8a-45ef-b5ab-cbef60c0cba3",
+        "degree": 1,
+        "name": "Obnova sieťovej infraštruktúry",
+        "code": "projekt_1570"
+      },
+      {
+        "uuid": "a0d913cf-d23f-42a1-b597-c6c42bbf4f62",
+        "degree": 1,
+        "name": "Systém kamier na uniformy príslušníkov ZVJS",
+        "code": "projekt_2251"
+      },
+      {
+        "uuid": "10df8339-73ca-40a9-bfba-fd2dfe06343d",
+        "degree": 1,
+        "name": "Systémová údržba programového vybavenia informačného systému Personálne a finančné náležitosti a hardvérového vybavenia registračných zariadení",
+        "code": "projekt_1264"
+      },
+      {
+        "uuid": "fa3a5fb8-dc1c-4a6f-8721-8c6ce7837c83",
+        "degree": 1,
+        "name": "Podpora realizácie opatrení v oblasti KB pre MŽP SR",
+        "code": "projekt_2515"
+      },
+      {
+        "uuid": "a9d7b10d-cd93-426e-a1c0-48dae3e717b2",
+        "degree": 1,
+        "name": "Centrálne obstarávanie zariadení IKT s nízkym negatívnym vplyvom na životné prostredie",
+        "code": "projekt_1344"
+      },
+      {
+        "uuid": "805a7b6f-5b90-41f1-85ca-ffde085ded66",
+        "degree": 1,
+        "name": "Modernizácia IS Evidencia požiadaviek zákazníkov ŠUSR",
+        "code": "projekt_2077"
+      },
+      {
+        "uuid": "4a231d36-353d-48ef-ba68-b5cd741d52eb",
+        "degree": 1,
+        "name": "Modernizácia DATAcube. a OPEN DATA platformy",
+        "code": "projekt_2078"
+      },
+      {
+        "uuid": "19a23ed5-b521-4f4b-81e6-b0cd1dc5cedf",
+        "degree": 1,
+        "name": "Sanácia kritickej infraštruktúry pre IS NZIS a IS eZdravie",
+        "code": "projekt_2359"
+      },
+      {
+        "uuid": "5aa80f83-e60d-4d9e-89e2-639a5080eaf7",
+        "degree": 1,
+        "name": "Centrálny manažment identít vrátane podpory a rozvoja",
+        "code": "projekt_2040"
+      },
+      {
+        "uuid": "ad75aca9-b084-47ab-ad79-06ea1a32effb",
+        "degree": 1,
+        "name": "CSIRT 2. a 3. etapa",
+        "code": "projekt_2038"
+      },
+      {
+        "uuid": "9fd6915d-cf76-4c50-8a2e-2b688103a763",
+        "degree": 1,
+        "name": "Privátny Komunitný zdravotnícky cloud",
+        "code": "projekt_1790"
+      },
+      {
+        "uuid": "14b465e2-4f90-4c62-a2db-ebf48b8d0a2b",
+        "degree": 1,
+        "name": "NCZI CSIRT 1. Etapa",
+        "code": "projekt_1496"
+      },
+      {
+        "uuid": "dbec24a1-4862-4254-807a-15db543a1d10",
+        "degree": 1,
+        "name": "Modernizácia infraštruktúry pre kľúčové interné systémy MV SR – Etapa 2",
+        "code": "projekt_2947"
+      },
+      {
+        "uuid": "f0804c0b-8467-4352-a2bd-9c28368e1eb7",
+        "degree": 1,
+        "name": "SK-Alert etapa č. 1",
+        "code": "projekt_2758"
+      },
+      {
+        "uuid": "104aedbc-3d43-415d-bf2a-034a90ff4d7d",
+        "degree": 1,
+        "name": "Monitorovanie, riadenie a prevádzka IT služieb",
+        "code": "projekt_2279"
+      },
+      {
+        "uuid": "7d19281c-7b1e-4461-a970-cd622ea0733a",
+        "degree": 1,
+        "name": "Elektronická identifikačná karta 2.0",
+        "code": "projekt_1592"
+      },
+      {
+        "uuid": "57c28e53-b38d-43f5-bac7-185e05f8ab70",
+        "degree": 1,
+        "name": "Register kandidátov a kandidátnych listín",
+        "code": "projekt_1792"
+      },
+      {
+        "uuid": "e3c98309-46e8-43c4-8ec4-5e242121b63b",
+        "degree": 1,
+        "name": "Európsky systém pre cestovné informácie a povolenia (ETIAS)",
+        "code": "projekt_1895"
+      },
+      {
+        "uuid": "d6fd29f5-0419-4f96-a325-a33ecba1b56b",
+        "degree": 1,
+        "name": "Digitalizácie a modernizácie elektronických služieb  štátnych archívov v európskom kontexte",
+        "code": "projekt_1840"
+      },
+      {
+        "uuid": "a9f304b9-a072-a8bb-e7df-d3cc9af5483e",
+        "degree": 1,
+        "name": "Rozvoj NG SIS II v dôsledku nových potrieb a zmien (etapa III)",
+        "code": "projekt_2061"
+      },
+      {
+        "uuid": "61e96f0e-f3dd-4e16-b8f2-32136797b6f1",
+        "degree": 1,
+        "name": "Modernizácia infraštruktúry pre kľúčové interné systémy MV SR",
+        "code": "projekt_2187"
+      },
+      {
+        "uuid": "dbfc461a-bdb6-4db1-b11c-57285600cce9",
+        "degree": 1,
+        "name": "Bezpečnostné, monitorovacie a certifikačné centrum - projekt PFA",
+        "code": "projekt_1774"
+      },
+      {
+        "uuid": "948e0028-cb70-4380-90e6-d6b806357f5b",
+        "degree": 1,
+        "name": "Ponechanie TEČ",
+        "code": "projekt_1843"
+      },
+      {
+        "uuid": "099ee185-3a93-4744-88e2-886be47ae3af",
+        "degree": 1,
+        "name": "Implementácia nástroja goAML",
+        "code": "projekt_1794"
+      },
+      {
+        "uuid": "1e77c7f0-b552-4277-a334-0c5b00335f9a",
+        "degree": 1,
+        "name": "Poskytovanie elektronických služieb MV SR v súlade so zákonom o e-Governmente",
+        "code": "projekt_1558"
+      },
+      {
+        "uuid": "38416f8d-e7d6-4bc4-906c-ddbe1ca14a7b",
+        "degree": 1,
+        "name": "Projekt profesionalizácie verejného obstarávania",
+        "code": "projekt_1363"
+      },
+      {
+        "uuid": "359c43e4-a3e3-4cf5-a00d-b306fe53595f",
+        "degree": 1,
+        "name": "Rozvoj komunikačnej infraštruktúry a aplikácia počítačovej bezpečnosti.",
+        "code": "projekt_1233"
+      },
+      {
+        "uuid": "932f4d04-0299-4c4f-aa8c-bf3060262617",
+        "degree": 1,
+        "name": "Participácia verejnosti pri ochrane lesa",
+        "code": "projekt_696"
+      },
+      {
+        "uuid": "da7b397b-4bb3-4bf9-ad07-30698e1c00fc",
+        "degree": 1,
+        "name": "Rozvoj a obnova videokonferenčného riešenia v pôsobnosti  Ministerstva spravodlivosti SR",
+        "code": "projekt_3505"
+      },
+      {
+        "uuid": "c6207bb6-528a-47d0-b264-3a3ed26817c3",
+        "degree": 1,
+        "name": "Obnova Tlačového HW na súdoch",
+        "code": "projekt_2301"
+      },
+      {
+        "uuid": "7c21e3be-c8cc-4db9-95d6-ebf7b68c9b4f",
+        "degree": 1,
+        "name": "Obnova serverov  na súdoch",
+        "code": "projekt_1261"
+      },
+      {
+        "uuid": "5ab27475-dd2d-4733-8158-e225e2a38875",
+        "degree": 1,
+        "name": "Licencie pre Klientské aplikácie/systémy",
+        "code": "projekt_1259"
+      },
+      {
+        "uuid": "587c087a-b51d-4c57-a70e-a87fd18f6b46",
+        "degree": 1,
+        "name": "Obmena stávajúceho HW vybavenia koncových užívateľov súdov",
+        "code": "projekt_1582"
+      },
+      {
+        "uuid": "b7b1a687-2dd3-465e-9dc6-f279db4ca2f5",
+        "degree": 1,
+        "name": "Manažment údajov mesta Trenčín",
+        "code": "projekt_1709"
+      },
+      {
+        "uuid": "d76a7b49-e99e-403c-8502-b965ba17e792",
+        "degree": 1,
+        "name": "Manažment údajov mesta Zvolen",
+        "code": "projekt_1498"
+      },
+      {
+        "uuid": "6059a5ce-78c8-4236-9701-6a409d15c746",
+        "degree": 1,
+        "name": "Zlepšenie plánovania rádioterapie za podpory umelej inteligencie",
+        "code": "projekt_1807"
+      },
+      {
+        "uuid": "f182d8d7-d765-40bf-a2b9-24115e540e3f",
+        "degree": 1,
+        "name": "Vybavenie a obnova IKT MZ SR",
+        "code": "projekt_1561"
+      },
+      {
+        "uuid": "abb385a9-020e-4892-b16e-ba315a6beb3f",
+        "degree": 1,
+        "name": "Manažment údajov mesta Liptovský Mikuláš",
+        "code": "projekt_1578"
+      },
+      {
+        "uuid": "2fddbe79-c7fa-4385-ab56-b11a58ab1305",
+        "degree": 1,
+        "name": "Firewally",
+        "code": "projekt_3393"
+      },
+      {
+        "uuid": "1db7a282-bea4-4937-a519-df031e4e34a0",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej a informačnej bezpečnosti na Ministerstve dopravy SR",
+        "code": "projekt_2978"
+      },
+      {
+        "uuid": "f7eebc5e-1f64-46de-87e9-8bb63cb8f9af",
+        "degree": 1,
+        "name": "Obnova infraštruktúry IKT",
+        "code": "projekt_1591"
+      },
+      {
+        "uuid": "ee8474fb-920b-4ea4-8f04-9794462d0f9b",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej a informačnej bezpečnosti Mesta Banská Bystrica",
+        "code": "projekt_2508"
+      },
+      {
+        "uuid": "e1de753f-e9b3-47d5-be2d-3e599597163a",
+        "degree": 1,
+        "name": "IoT smart riešenia v prevádzke Mesta Banská Bystrica",
+        "code": "projekt_1663"
+      },
+      {
+        "uuid": "881a8f99-a5dc-4910-b17e-e9ba65a0d4e4",
+        "degree": 1,
+        "name": "VOiP ústredňa + prísl. Infraštruktúra (LAN+server)",
+        "code": "projekt_1133"
+      },
+      {
+        "uuid": "389b9e87-383b-4081-bd76-dd0d2eebcc51",
+        "degree": 1,
+        "name": "Digitálna infraštruktúra škôl",
+        "code": "projekt_2055"
+      },
+      {
+        "uuid": "72199430-9704-4e8f-a45c-40321b9ef8ff",
+        "degree": 1,
+        "name": "Digitálne vybavenie škôl",
+        "code": "projekt_2054"
+      },
+      {
+        "uuid": "877d2099-7a89-45f9-99db-51fe2c3c1efc",
+        "degree": 1,
+        "name": "Poskytnutie telekomunikačných a dátových služieb, služieb centrálneho manažmentu virtuálnej privátnej siete so zadefinovanou úrovňou servisných služieb a zadefinovanými bezpečnostnými štandardami pripojenia pre školy (EDUNET_SK)",
+        "code": "projekt_1704"
+      },
+      {
+        "uuid": "d95083ef-acbf-4c75-a66f-f5232a49dac9",
+        "degree": 1,
+        "name": "Manazment udajov mesta Tvrdošín",
+        "code": "projekt_1712"
+      },
+      {
+        "uuid": "4d73f4b5-b323-459a-85a0-653dc4619852",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej bezpečnosti - Mesto Žilina",
+        "code": "projekt_2500"
+      },
+      {
+        "uuid": "5ec348f5-fbb7-4c54-a3af-180c22a2e094",
+        "degree": 1,
+        "name": "Malé zlepšenia eGov služieb mesta Žilina",
+        "code": "projekt_1711"
+      },
+      {
+        "uuid": "d80e6f3b-d5b6-4a63-be67-ff22f68efb5c",
+        "degree": 1,
+        "name": "Budovanie hlások na obciach so zriadeným dobrovoľným hasičským zborom",
+        "code": "projekt_3185"
+      },
+      {
+        "uuid": "9bcce1e2-41ea-40f8-9109-0d1ce9905f6f",
+        "degree": 1,
+        "name": "IKT Rámcová zmluva - Zabezpečenie výpočtovej techniky na lokalitách v rámci celého územia SR",
+        "code": "projekt_2943"
+      },
+      {
+        "uuid": "3b998334-25d6-425a-afd8-5d9303a2efe7",
+        "degree": 1,
+        "name": "Modernizácia technického vybavenia zásahových jednotiek HaZZ a objektov HS - výjazdové tablety",
+        "code": "projekt_3182"
+      },
+      {
+        "uuid": "acc6249b-4b65-455b-9237-beb900aad73f",
+        "degree": 1,
+        "name": "Rozšírenie pilotného projektu SmartHUB na ďalšie pracoviská MV SR",
+        "code": "projekt_2269"
+      },
+      {
+        "uuid": "0b475228-18b3-4611-aa2b-2cce2851b7c8",
+        "degree": 1,
+        "name": "Obmena IKT KEÚ MVSR",
+        "code": "projekt_2057"
+      },
+      {
+        "uuid": "f373a6ba-7850-4f80-bf40-558a09a6b0f2",
+        "degree": 1,
+        "name": "Bezpečnostné, monitorovacie a certifikačné centrum - projekt MDR",
+        "code": "projekt_1764"
+      },
+      {
+        "uuid": "0d1cfe09-889a-4ccf-9cff-84e95e5b3ec6",
+        "degree": 1,
+        "name": "PROJEKT",
+        "code": "projekt_1990"
+      },
+      {
+        "uuid": "05ad8f1d-aeeb-420a-a53c-6c945293fbe0",
+        "degree": 1,
+        "name": "SecuComm",
+        "code": "projekt_1767"
+      },
+      {
+        "uuid": "17e1ad12-80cf-4318-aef6-defc014dd3e5",
+        "degree": 1,
+        "name": "Upgrade HW/SW pre vybrané lokality (VYSYS)",
+        "code": "projekt_1719"
+      },
+      {
+        "uuid": "31dbbed3-23d6-46b4-b046-c1a7eb80a316",
+        "degree": 1,
+        "name": "Nákup a obmena IKT zariadení.",
+        "code": "projekt_1714"
+      },
+      {
+        "uuid": "23b86b2b-83ec-4620-97a3-fca599229e19",
+        "degree": 1,
+        "name": "Sanácia havarijného stavu a obnova HW pre knižnično-informačný systém 3. generácie (KIS3G)",
+        "code": "projekt_1528"
+      },
+      {
+        "uuid": "b19a50de-cdaa-4ecd-a841-ec5917c2556a",
+        "degree": 1,
+        "name": "Vybudovanie Dátového centra",
+        "code": "projekt_1798"
+      },
+      {
+        "uuid": "55e5fcb2-afcf-4007-a568-3c89dce11b2c",
+        "degree": 1,
+        "name": "Inteligentné riešenia Senica - Smart plán II",
+        "code": "projekt_3647"
+      },
+      {
+        "uuid": "e13b76ff-5435-4c53-bd2f-e9b95bd94806",
+        "degree": 1,
+        "name": "Manažment údajov mesta Senica",
+        "code": "projekt_1814"
+      },
+      {
+        "uuid": "c5c664c4-e765-466e-bb0d-5d74b7d8180c",
+        "degree": 1,
+        "name": "Manažment údajov mesta Nové Mesto nad Váhom",
+        "code": "projekt_1833"
+      },
+      {
+        "uuid": "a260c0ad-9b5b-4bee-a7eb-74a32a3e3c3c",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti v meste Ružomberok",
+        "code": "projekt_2738"
+      },
+      {
+        "uuid": "7d14d728-b5c2-470a-ae52-22dcd80ff957",
+        "degree": 1,
+        "name": "Malé zlepšenia služieb v meste Ružomberok",
+        "code": "projekt_1835"
+      },
+      {
+        "uuid": "8c8b2f9c-fbf2-48f6-a827-777a49d4336d",
+        "degree": 1,
+        "name": "Mobilná aplikácia pre kvalifikované vzdialené elektronické podpisovanie",
+        "code": "projekt_3603"
+      },
+      {
+        "uuid": "c15e39db-0b3f-4c6f-ba59-f7be98a18ebf",
+        "degree": 1,
+        "name": "Serverová platforma pre vzdialené kvalifikované elektronické podpisovanie",
+        "code": "projekt_3604"
+      },
+      {
+        "uuid": "ce34e277-f20d-4611-87e5-55cedff6bbe3",
+        "degree": 1,
+        "name": "Integračná brána pre vzdialené elektronické podpisovanie",
+        "code": "projekt_3605"
+      },
+      {
+        "uuid": "4674be12-3753-4c1a-a9d6-020128155bdf",
+        "degree": 1,
+        "name": "Mobilná aplikácia pre prístup k elektronickým schránkam občanov",
+        "code": "projekt_3606"
+      },
+      {
+        "uuid": "27a6104e-2885-48cf-88bb-c1f595e336d7",
+        "degree": 1,
+        "name": "Platforma pre integráciu bankovej identity pre vydávanie kvalifikovaných certifikátov",
+        "code": "projekt_3607"
+      },
+      {
+        "uuid": "8546b67a-12e5-4047-be5a-f4ec24e7506b",
+        "degree": 1,
+        "name": "Výstup pre spracovanie správ G2G, G2B a G2C - Kostra",
+        "code": "projekt_3608"
+      },
+      {
+        "uuid": "b04b3218-6949-41ea-ad34-e2894be44588",
+        "degree": 1,
+        "name": "Výstup pre doručovanie a dlhodobú archiváciu G2G, G2B a G2C - Dokument",
+        "code": "projekt_3609"
+      },
+      {
+        "uuid": "eb66a80e-7671-4249-8da1-fef81843dbbf",
+        "degree": 1,
+        "name": "Výstup pre orchestráciu a choreografiu správ G2G, G2B a G2C - Choreo",
+        "code": "projekt_3610"
+      },
+      {
+        "uuid": "ae12f933-5e77-4320-b9f6-0ae723fe11f9",
+        "degree": 1,
+        "name": "Vstup pre príjem správ G2G, G2B a G2C - Vstup",
+        "code": "projekt_3611"
+      },
+      {
+        "uuid": "0e02d315-4cbf-4cc1-9f9e-36180ccc8001",
+        "degree": 1,
+        "name": "Výstup pre odosielanie správ G2G, G2B a G2C - Výstup",
+        "code": "projekt_3612"
+      },
+      {
+        "uuid": "478d7975-8158-4f49-8250-4677db62a705",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti v meste Trstená",
+        "code": "projekt_2489"
+      },
+      {
+        "uuid": "703ef7e6-b5f6-4cc6-a06b-aa6723debe78",
+        "degree": 1,
+        "name": "Manažment údajov mesta Trstená",
+        "code": "projekt_1845"
+      },
+      {
+        "uuid": "a660d0bb-4617-4b0c-9dfe-da38a01e419b",
+        "degree": 1,
+        "name": "Manažment údajov v obci Horná Súča",
+        "code": "projekt_1852"
+      },
+      {
+        "uuid": "3e6c2d46-352c-42d2-a552-361f239eecdf",
+        "degree": 1,
+        "name": "Vybudovanie platformy na manažment priestorových dát mesta Nové Zámky",
+        "code": "projekt_1854"
+      },
+      {
+        "uuid": "31869661-76ad-4f38-99e7-c6c33091ed08",
+        "degree": 1,
+        "name": "Manažment údajov obce Lubina",
+        "code": "projekt_1899"
+      },
+      {
+        "uuid": "c21e347e-cb53-41c6-a60c-9278d5e9a34a",
+        "degree": 1,
+        "name": "Manažment údajov mesta Komárno",
+        "code": "projekt_1910"
+      },
+      {
+        "uuid": "f7ecb577-6ad7-4029-ae67-4eb26e1c7c9a",
+        "degree": 1,
+        "name": "Manažment údajov mesta Trebišov",
+        "code": "projekt_1912"
+      },
+      {
+        "uuid": "80f35b35-8edd-41cf-a2d5-e5b2e43b2e2b",
+        "degree": 1,
+        "name": "Predikatívna údržba a monitoring mostov a ciest Košického kraja pomocou smart riešení",
+        "code": "projekt_1941"
+      },
+      {
+        "uuid": "8e4fe08a-3c1b-420e-829b-f08700d0c4b6",
+        "degree": 1,
+        "name": "Modernizácia a rozšírenie serverovej farmy",
+        "code": "projekt_3295"
+      },
+      {
+        "uuid": "6ed6a006-6177-4414-b0af-4c221c19cc64",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej a informačnej bezpečnosti MKSR",
+        "code": "projekt_3230"
+      },
+      {
+        "uuid": "28d6a6a5-2fdc-4ee8-b0b3-8473f81ad1bb",
+        "degree": 1,
+        "name": "Nákup a rozšírenie kapacít diskových úložísk v pôsobnosti Ministerstva spravodlivosti SR",
+        "code": "projekt_3168"
+      },
+      {
+        "uuid": "c2b63bba-cb22-447c-8863-bc2cecd6cf1e",
+        "degree": 1,
+        "name": "HW Obnova zálohova pre ISVS FS",
+        "code": "projekt_3136"
+      },
+      {
+        "uuid": "d94355dd-b6c0-4a25-bdcd-e7f1c561f68b",
+        "degree": 1,
+        "name": "Obnova sieťovej infraštruktúry v pôsobnosti MS SR",
+        "code": "projekt_2566"
+      },
+      {
+        "uuid": "e65437f0-1f0f-4aa4-954f-5dcf5b9b1b87",
+        "degree": 1,
+        "name": "ŽS5 - Upgrade existujúceho riešenia mID",
+        "code": "projekt_2474"
+      },
+      {
+        "uuid": "701c1dbb-eab0-4e41-a99a-76d005d15570",
+        "degree": 1,
+        "name": "Modernizácia informačného systému Automatizovanej správy registratúry",
+        "code": "projekt_2080"
+      },
+      {
+        "uuid": "80e4a1c2-6c33-43b0-93ab-d96346194047",
+        "degree": 1,
+        "name": "Malé zlepšenia eGov služieb Národného osvetového centra",
+        "code": "projekt_1917"
+      },
+      {
+        "uuid": "b06046fe-5645-4e8c-b438-d64a6badf4ca",
+        "degree": 1,
+        "name": "Rozvoj governance a úrovne informačnej a kybernetickej bezpečnosti ÚRSO",
+        "code": "projekt_1946"
+      },
+      {
+        "uuid": "0b7015da-ee75-4a26-8dab-4096ff99f873",
+        "degree": 1,
+        "name": "Manažment údajov v prostredí regulácie sieťových odvetví",
+        "code": "projekt_1506"
+      },
+      {
+        "uuid": "38b7a82e-8b88-43e0-aae3-fbde613f9651",
+        "degree": 1,
+        "name": "Agendový informačný systém v prostredí regulácie sieťových odvetví",
+        "code": "projekt_1677"
+      },
+      {
+        "uuid": "167d879b-8afc-4c50-bd15-9a2301b58a98",
+        "degree": 1,
+        "name": "Diagnostika vybraných mostných objektov v PSK",
+        "code": "projekt_1949"
+      },
+      {
+        "uuid": "9f1a6ef4-2dc1-468b-89eb-1aebe77ea8ae",
+        "degree": 1,
+        "name": "Manažment údajov mesta Myjava",
+        "code": "projekt_1984"
+      },
+      {
+        "uuid": "a4fe2d69-44d9-4d72-ae65-ba4bbc488398",
+        "degree": 1,
+        "name": "Zvýšenie KB v Centre spoločných činností SAV",
+        "code": "projekt_1991"
+      },
+      {
+        "uuid": "2195b1fa-d403-4358-ac97-cb329298fb03",
+        "degree": 1,
+        "name": "Obnova IKT",
+        "code": "projekt_1993"
+      },
+      {
+        "uuid": "28f20579-aed2-4d0b-baa0-52b538df152d",
+        "degree": 1,
+        "name": "Malé zlepšenia eGov služieb mesta Vysoké Tatry",
+        "code": "projekt_2029"
+      },
+      {
+        "uuid": "55e3f402-88cf-49f6-a31b-bbf66f1ef0e4",
+        "degree": 1,
+        "name": "Obnova vybavenia pre elektronickú poštu Lotus Notes",
+        "code": "projekt_1581"
+      },
+      {
+        "uuid": "21a3d912-1f0d-42d7-86f2-ef276cc3f858",
+        "degree": 1,
+        "name": "Nákup koncových IT zariadení",
+        "code": "projekt_2148"
+      },
+      {
+        "uuid": "44143d7e-c84d-49c4-acdd-3f280dcce8ba",
+        "degree": 1,
+        "name": "Zavedenie inteligentných technológií na Ú PSK",
+        "code": "projekt_3650"
+      },
+      {
+        "uuid": "3ffb0406-3bf0-4e17-8dd3-d3d312bbf1a1",
+        "degree": 1,
+        "name": "Moderné technológie - Energetická optimalizácia prevádzkovania verejných budov prostredníctvom inteligentného merania",
+        "code": "projekt_2997"
+      },
+      {
+        "uuid": "a423e5fa-a24f-47ef-97a9-06f985f99d40",
+        "degree": 1,
+        "name": "Obnova ethernetových prepínačov",
+        "code": "projekt_2283"
+      },
+      {
+        "uuid": "7f7eaf13-5b26-44ca-97d2-15c40db1655a",
+        "degree": 1,
+        "name": "Nákup HW na zabezpečenie nového volebného obdobia",
+        "code": "projekt_2178"
+      },
+      {
+        "uuid": "38deb191-61af-4f5d-ad0f-a6aa372eaae3",
+        "degree": 1,
+        "name": "Zaznamenávanie udalostí a analýza sieťovej prevádzky",
+        "code": "projekt_3267"
+      },
+      {
+        "uuid": "ddde27fb-fb97-41a8-9652-eb6c931a3c91",
+        "degree": 1,
+        "name": "Skenovacie centrum ÚÚPaV",
+        "code": "projekt_2476"
+      },
+      {
+        "uuid": "c4071b8d-488d-4973-92b0-2f48fdbc05d7",
+        "degree": 1,
+        "name": "Softvér - IA:47423",
+        "code": "projekt_2352"
+      },
+      {
+        "uuid": "5360e4c2-86a7-4bb2-9c60-58ab4eee263b",
+        "degree": 1,
+        "name": "Výpočtová technika - IA:46902",
+        "code": "projekt_2351"
+      },
+      {
+        "uuid": "ae1e91ba-ca80-42c5-b99e-ed5693477719",
+        "degree": 1,
+        "name": "Riadenie a správa privilegovaných účtov",
+        "code": "projekt_2306"
+      },
+      {
+        "uuid": "129798fd-db0a-4773-b220-00a35daa8d22",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej a informačnej bezpečnosti Ministerstva školstva, výskumu, vývoja a mládeže Slovenskej republiky",
+        "code": "projekt_3002"
+      },
+      {
+        "uuid": "9feb6541-96d4-4879-a082-b55a5fc53fa3",
+        "degree": 1,
+        "name": "Rozvoj kybernetickej bezpečnosti mesta Dubnica nad Váhom",
+        "code": "projekt_2381"
+      },
+      {
+        "uuid": "3e468e22-31f9-4d81-8297-66283483bec1",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej bezpečnosti - Mesto Piešťany",
+        "code": "projekt_2510"
+      },
+      {
+        "uuid": "54a1515b-5a4e-45fe-a5fe-4df436315d9f",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti Mesta Martin",
+        "code": "projekt_2509"
+      },
+      {
+        "uuid": "9549d7cc-6e0c-4e31-9d42-17a2b5adf8e2",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti - Mesto Prievidza",
+        "code": "projekt_2505"
+      },
+      {
+        "uuid": "5f37472b-47ca-4576-b3af-3dc931ae9ae0",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti - Mesto Hlohovec",
+        "code": "projekt_2506"
+      },
+      {
+        "uuid": "0b92ae75-6e3f-4afc-bf22-2a4bec63cddc",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti Mesta Poprad",
+        "code": "projekt_2519"
+      },
+      {
+        "uuid": "5e065a21-93d8-42e5-a332-b3e3c8eb7ece",
+        "degree": 1,
+        "name": "Riadenie kybernetickej bezpečnosti – II.",
+        "code": "projekt_2983"
+      },
+      {
+        "uuid": "eab6b17b-171a-4bca-b783-6be85fa483ad",
+        "degree": 1,
+        "name": "Riadenie kybernetickej bezpečnosti – I.",
+        "code": "projekt_2521"
+      },
+      {
+        "uuid": "2e7b363d-feff-4852-83b6-b565f3f8b018",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej bezpečnosti v meste Liptovský Mikuláš",
+        "code": "projekt_2524"
+      },
+      {
+        "uuid": "883f8d6d-b241-4bf4-9b4f-545a0dff9ec3",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti Trenčianskeho samosprávneho kraja",
+        "code": "projekt_2525"
+      },
+      {
+        "uuid": "d1ac5c36-b54d-4cf6-ba89-430341c03865",
+        "degree": 1,
+        "name": "Kybernetická bezpečnosť mesta Nové Zámky",
+        "code": "projekt_2533"
+      },
+      {
+        "uuid": "1db06e2a-0980-430d-a07b-71551b379a5b",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti pre mesto Sereď",
+        "code": "projekt_2532"
+      },
+      {
+        "uuid": "4c7bc425-2763-496d-b1e1-5d7fdc901988",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti v meste Púchov",
+        "code": "projekt_2538"
+      },
+      {
+        "uuid": "4d13c746-0e91-4a91-9b18-01668738c287",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti Úradu pre reguláciu hazardných hier",
+        "code": "projekt_2553"
+      },
+      {
+        "uuid": "3cd53e29-18c4-4c8a-b915-54af52b39508",
+        "degree": 1,
+        "name": "Komplexné riešenie výrobných liniek dokladov občanov a cudzincov",
+        "code": "projekt_2593"
+      },
+      {
+        "uuid": "9b096932-81b0-4995-b812-ff5f4841cc7f",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej bezpečnosti v Akadémii umení v Banskej Bystrici",
+        "code": "projekt_2600"
+      },
+      {
+        "uuid": "efdd69c9-b7a0-460d-a92a-1a06f0e01659",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na regionálnej úrovni – Univerzita Komenského v Bratislave",
+        "code": "projekt_2660"
+      },
+      {
+        "uuid": "ab0f75a6-8722-40fd-a078-a18de3099630",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na regionálnej úrovni – Východoslovenského ústavu srdcových a cievnych chorôb",
+        "code": "projekt_2657"
+      },
+      {
+        "uuid": "70c94a15-45dc-4497-bff1-3d80f5c1abd4",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej bezpečnosti TASR",
+        "code": "projekt_2685"
+      },
+      {
+        "uuid": "c51c6f8d-419f-46b0-b9c9-cf10053f0bed",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti - Hornooravská nemocnica s poliklinikou Trstená",
+        "code": "projekt_2708"
+      },
+      {
+        "uuid": "39f5815d-fa58-4e15-b085-39c1a9a66e99",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej bezpečnosti na Technickej univerzite vo Zvolene",
+        "code": "projekt_2722"
+      },
+      {
+        "uuid": "9925d3c3-6ad7-4fb3-9f06-d18958086518",
+        "degree": 1,
+        "name": "Rozvoj kybernetickej a informačnej bezpečnosti v SHMÚ, skratka ROKIB",
+        "code": "projekt_2717"
+      },
+      {
+        "uuid": "f6943ceb-e5a2-4d11-9d49-474174d4024c",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti Mesta Prešov",
+        "code": "projekt_2747"
+      },
+      {
+        "uuid": "99d25b72-8f61-43db-9d0d-2279f78da98f",
+        "degree": 1,
+        "name": "Kybernetická a informačná bezpečnosť v meste Pezinok",
+        "code": "projekt_2756"
+      },
+      {
+        "uuid": "3226ea1d-944d-40d8-a817-bb105fcf73bd",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na regionálnej úrovni – Východoslovenský onkologický ústav",
+        "code": "projekt_2787"
+      },
+      {
+        "uuid": "52a985d3-8788-4c55-9778-46bdea52d929",
+        "degree": 1,
+        "name": "Zvýšenie úrovne kybernetickej a informačnej bezpečnosti mesta Stupava",
+        "code": "projekt_2790"
+      },
+      {
+        "uuid": "22f17aac-1b07-45e1-8e8a-ea6ad0929fe1",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na regionálnej úrovni – Mestskej časti Ružinov",
+        "code": "projekt_2791"
+      },
+      {
+        "uuid": "edbbf57b-16fd-416b-a02b-0eefe550fd11",
+        "degree": 1,
+        "name": "Realizácia opatrení v oblasti KB pre SAŽP",
+        "code": "projekt_2799"
+      },
+      {
+        "uuid": "17bd7817-2612-42ea-99cc-63b6c8a71703",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na regionálnej úrovni - Mestská časť Bratislava-Nové Mesto",
+        "code": "projekt_2767"
+      },
+      {
+        "uuid": "ff55dc4a-5bce-45d6-8437-824f1ea7e6ca",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na regionálnej úrovni – Záchranná služba Košice",
+        "code": "projekt_2813"
+      },
+      {
+        "uuid": "0a2a03d8-7d86-483b-a966-d962cfa8d58a",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na regionálnej úrovni – Inštitút nukleárnej a molekulárnej medicíny",
+        "code": "projekt_2814"
+      },
+      {
+        "uuid": "397203e1-1f48-4aeb-a251-e3565516cceb",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na regionálnej úrovni – Mesto Stará Ľubovňa",
+        "code": "projekt_2849"
+      },
+      {
+        "uuid": "f9d3b186-3f8a-46bd-89b5-14116c1ceb5e",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti SAMRS",
+        "code": "projekt_2860"
+      },
+      {
+        "uuid": "a5ad7cda-f644-4c6a-85f5-c0f8262d052a",
+        "degree": 1,
+        "name": "Rozvoj KIB na Katolíckej univerzite v Ružomberku",
+        "code": "projekt_2930"
+      },
+      {
+        "uuid": "c069c317-82db-4f53-b181-4ff6f593c06d",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti v rámci Univerzity sv. Cyrila a  Metoda v Trnave",
+        "code": "projekt_2937"
+      },
+      {
+        "uuid": "8596ce2d-2dec-4b43-a114-da5e1245e4fd",
+        "degree": 1,
+        "name": "Zvyšovanie úrovne kybernetickej a informačnej bezpečnosti STU",
+        "code": "projekt_2940"
+      },
+      {
+        "uuid": "f09c59a3-15c0-4a3a-80ba-eb5452084cb7",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti v NsP Brezno",
+        "code": "projekt_2695"
+      },
+      {
+        "uuid": "d17d2aca-9918-45e1-b937-a3c2857f237e",
+        "degree": 1,
+        "name": "Zvýšenie úrovne informačnej a kybernetickej bezpečnosti Psychiatrickej liečebne Plešivec",
+        "code": "projekt_2672"
+      },
+      {
+        "uuid": "0e548607-8005-4025-994b-f45fdb3624fe",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti UNLP Košice",
+        "code": "projekt_2957"
+      },
+      {
+        "uuid": "738d7bb7-7460-483d-b23d-ec64d6a35e0b",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti - Nemocnica s poliklinikou Prievidza so sídlom v Bojniciach",
+        "code": "projekt_2958"
+      },
+      {
+        "uuid": "f5eae256-f3fd-4583-ae99-86ed484e3018",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti - Nemocnica s poliklinikou Myjava",
+        "code": "projekt_2974"
+      },
+      {
+        "uuid": "95c8291b-bacb-498a-b25c-7fae374fe794",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti - Ústredná vojenská nemocnica SNP Ružomberok - FN",
+        "code": "projekt_2998"
+      },
+      {
+        "uuid": "c83bd028-f2fe-43f3-88a3-cd3810ba5cea",
+        "degree": 1,
+        "name": "Realizácia opatrení kybernetickej a informačnej bezpečnosti - Nemocnica s poliklinikou Považská Bystrica",
+        "code": "projekt_2956"
+      },
+      {
+        "uuid": "cda002ac-b05d-4ce1-bfed-d15a79201079",
+        "degree": 1,
+        "name": "Zvýšenie kybernetickej bezpečnosti v prostredí Slovenského pozemkového fondu",
+        "code": "projekt_3031"
+      },
+      {
+        "uuid": "39b8e708-c238-4bf3-a8cd-9dc06d73f04d",
+        "degree": 1,
+        "name": "Rozvoj KIB v MČ Bratislava-Rača (kód NFP401101FIX8)",
+        "code": "projekt_2737"
+      },
+      {
+        "uuid": "2fb98e83-5c7a-45c8-8cff-15542ee31565",
+        "degree": 1,
+        "name": "Vybudovanie analyticko-strategického centra a nástrojov pre riadenie mesta Liptovský Mikuláš",
+        "code": "projekt_3228"
+      },
+      {
+        "uuid": "b6986beb-f953-4773-a14c-af691d201651",
+        "degree": 1,
+        "name": "Zefektívnenie a rozšírenie štatistického informačného systému Slovenskej poľovníckej komory a zrýchlenie prenosu informačných tokov systémových opatrení štátnej správy",
+        "code": "projekt_3257"
+      },
+      {
+        "uuid": "e1275baa-2666-4a03-adb8-11681ba8e98d",
+        "degree": 1,
+        "name": "Nemocničný informačný systém",
+        "code": "projekt_3325"
+      },
+      {
+        "uuid": "a5109fef-e127-414b-9a9e-26ab793bc410",
+        "degree": 1,
+        "name": "Smart zariadenia na KVP",
+        "code": "projekt_3580"
+      },
+      {
+        "uuid": "8072da40-0019-4c8a-9696-1c670120ea31",
+        "degree": 1,
+        "name": "Zavedenie nástrojov a služieb kybernetickej a informačnej bezpečnosti",
+        "code": "projekt_3711"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+        "degree": 51,
+        "name": "DataCentrum (Bratislava, Cintorínska)",
+        "code": "mp_18"
+      },
+      {
+        "uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+        "degree": 47,
+        "name": "DC Nová FRSR (DCN)",
+        "code": "mp_16"
+      },
+      {
+        "uuid": "55004fc7-61bd-457f-926d-85c8e12a8d7f",
+        "degree": 29,
+        "name": "ZDC Tajov FRSR (ZDCT)",
+        "code": "mp_19"
+      },
+      {
+        "uuid": "0132bbd6-ed6f-498f-9705-ae221659de86",
+        "degree": 22,
+        "name": "DC - Sociálna poisťovňa - ústredie",
+        "code": "mp_113"
+      },
+      {
+        "uuid": "ef315642-f9c3-4a2c-afbf-c9f915902aac",
+        "degree": 18,
+        "name": "Dátové centrum - Kopčianska, ÚV SR",
+        "code": "mp_5"
+      },
+      {
+        "uuid": "7bed7d72-0335-4f38-8df4-a64e66082432",
+        "degree": 15,
+        "name": "DC- Chlumeckého, ÚGKK",
+        "code": "mp_109"
+      },
+      {
+        "uuid": "d0b4ec59-d508-4deb-b336-384ceac76165",
+        "degree": 14,
+        "name": "DC MVSR - Banská Bystrica",
+        "code": "mp_153"
+      },
+      {
+        "uuid": "6026fd2c-1711-4555-b7c6-55ac0cac142a",
+        "degree": 13,
+        "name": "Ministerstvo vnútra SR",
+        "code": "mp_206"
+      },
+      {
+        "uuid": "424315b2-feff-4b20-a86e-12edee56cfd2",
+        "degree": 13,
+        "name": "DC Kopčianska NASES",
+        "code": "mp_244"
+      },
+      {
+        "uuid": "a4087ec6-9b88-41cd-b07f-b05b62e17a5e",
+        "degree": 10,
+        "name": "DC Kováčska 3",
+        "code": "mp_173"
+      },
+      {
+        "uuid": "86e0b115-b730-49de-92e8-e2ac093e5e2c",
+        "degree": 10,
+        "name": "DC Trnavská cesta 25",
+        "code": "mp_174"
+      },
+      {
+        "uuid": "d22936bf-3d25-40af-8ead-17cedbbe4ab1",
+        "degree": 10,
+        "name": "Datacentrum - Kopčianska",
+        "code": "mp_255"
+      },
+      {
+        "uuid": "7df7748a-37f8-4511-bff4-e313c0f6b5d5",
+        "degree": 8,
+        "name": "Dopravný úrad - Divízia vnútrozemskej plavby - Bratislava",
+        "code": "mp_117"
+      },
+      {
+        "uuid": "1177a222-78ca-4bdd-8183-784c8f224d14",
+        "degree": 6,
+        "name": "Ministerstvo práce, sociálnych vecí a rodiny SR",
+        "code": "mp_58"
+      },
+      {
+        "uuid": "c52f11f2-46e1-4bf8-b23c-9533347dde08",
+        "degree": 6,
+        "name": "Vládny cloud - komunitná časť - Kopčianska, DCOM",
+        "code": "mp_62"
+      },
+      {
+        "uuid": "bf995a36-8c70-42f8-8df5-3443f8c3ae90",
+        "degree": 6,
+        "name": "Ministerstvo zahraničných vecí a európskych záležitostí SR",
+        "code": "mp_115"
+      },
+      {
+        "uuid": "00ede176-92b9-4c9b-a7cc-bcfa007df750",
+        "degree": 6,
+        "name": "Ministerstvo investícií, regionálneho rozvoja a informatizácie SR",
+        "code": "mp_132"
+      },
+      {
+        "uuid": "7bf76d11-2d79-4c60-b2f8-5b493e306fe3",
+        "degree": 5,
+        "name": "Národné centrum zdravotníckych informácií",
+        "code": "mp_150"
+      },
+      {
+        "uuid": "890119fe-35c8-42e6-90ac-e559e638a1f2",
+        "degree": 5,
+        "name": "Dátové centrum MSSR, Račianska",
+        "code": "mp_182"
+      },
+      {
+        "uuid": "877a92d4-06d4-44f8-8327-fc43055a0784",
+        "degree": 4,
+        "name": "Ministerstvo pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
+        "code": "mp_96"
+      },
+      {
+        "uuid": "4c4ebd93-c6a4-4e61-a23d-a0893f9766c7",
+        "degree": 4,
+        "name": "Dopravný úrad - ústredie",
+        "code": "mp_122"
+      },
+      {
+        "uuid": "660678a5-984f-47c3-9637-f1a2731479be",
+        "degree": 4,
+        "name": "Generálne riaditeľstvo Zboru väzenskej a justičnej stráže - Šagátova 1, 821 08 Bratislava 1",
+        "code": "mp_135"
+      },
+      {
+        "uuid": "1356f039-7eb7-49a0-b6d4-09ce51f996c9",
+        "degree": 4,
+        "name": "Lakeside Park 02",
+        "code": "mp_280"
+      },
+      {
+        "uuid": "836d60be-e8ee-45ee-9516-1915cd968a73",
+        "degree": 3,
+        "name": "Serverovňa - Štefanovičová, MFSR",
+        "code": "mp_23"
+      },
+      {
+        "uuid": "3c9cfeb9-2092-46bb-a23e-c7b1ddc4b267",
+        "degree": 3,
+        "name": "Nemocnica pre obvinených a odsúdených a Ústav na výkon trestu odňatia slobody Trenčín",
+        "code": "mp_137"
+      },
+      {
+        "uuid": "c61d3bf7-839c-4bd0-b9a1-742cb40fe883",
+        "degree": 3,
+        "name": "DC Perpetuus - Istrijská 26, NASES",
+        "code": "mp_163"
+      },
+      {
+        "uuid": "10b5c617-e7a9-41c3-9a21-38b8638d06e4",
+        "degree": 3,
+        "name": "Ministerstvo dopravy a výstavby SR, Námestie slobody 6",
+        "code": "mp_191"
+      },
+      {
+        "uuid": "8e8fc9df-83f4-4482-aa2a-a14e27766284",
+        "degree": 3,
+        "name": "DC Ministerstva školstva vedy vyskumu a športu",
+        "code": "mp_199"
+      },
+      {
+        "uuid": "814ad1fc-6237-4c95-a6fe-70830abcb73f",
+        "degree": 3,
+        "name": "Ústav na výkon väzby a Ústav na výkon trestu odňatia slobody Bratislava",
+        "code": "mp_219"
+      },
+      {
+        "uuid": "227ee397-5ae8-4212-9342-13ac976ff118",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody a Ústav na výkon väzby Leopoldov",
+        "code": "mp_220"
+      },
+      {
+        "uuid": "adf6755b-4c49-467f-8f05-bda25b315e3d",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody Hrnčiarovce nad Parnou",
+        "code": "mp_221"
+      },
+      {
+        "uuid": "46a6a007-6c50-46ae-ae94-fef687c54846",
+        "degree": 3,
+        "name": "Ústav na výkon väzby a Ústav na výkon trestu odňatia slobody Nitra",
+        "code": "mp_222"
+      },
+      {
+        "uuid": "ac7f0f8c-ae20-4594-9ab8-422594e4520e",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody Nitra-Chrenová",
+        "code": "mp_224"
+      },
+      {
+        "uuid": "56923d3a-0419-4c9f-a472-6eed0f2c4093",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody Želiezovce",
+        "code": "mp_225"
+      },
+      {
+        "uuid": "c653606f-6642-46e7-8045-7980d2d78f7b",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody a Ústav na výkon väzby Ilava",
+        "code": "mp_226"
+      },
+      {
+        "uuid": "03d00ba3-9c2d-4d30-af90-3267e3f09a14",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody Ružomberok",
+        "code": "mp_227"
+      },
+      {
+        "uuid": "46145c71-7016-4534-92c2-49bf2e3d8400",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody Dubnica nad Váhom",
+        "code": "mp_228"
+      },
+      {
+        "uuid": "4db0f4a5-c418-4af8-809b-cbb5428f6aa7",
+        "degree": 3,
+        "name": "Ústav na výkon väzby a Ústav na výkon trestu odňatia slobody Žilina",
+        "code": "mp_229"
+      },
+      {
+        "uuid": "d59ff193-a6a7-4c6e-9ae7-aab3840e4451",
+        "degree": 3,
+        "name": "Ústav na výkon väzby a Ústav na výkon trestu odňatia slobody Banská Bystrica",
+        "code": "mp_230"
+      },
+      {
+        "uuid": "b4f485e0-8e3b-47d2-a586-f8170634ac5c",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody Banská Bystrica",
+        "code": "mp_231"
+      },
+      {
+        "uuid": "dd533238-c097-4b13-902f-ad2752c5fbe0",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody Levoča",
+        "code": "mp_232"
+      },
+      {
+        "uuid": "6122399e-b4c7-4f3b-8fcf-3e7d14893b4f",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody Košice - Šaca",
+        "code": "mp_234"
+      },
+      {
+        "uuid": "03aa0941-da73-4859-b4ec-b82843c0888c",
+        "degree": 3,
+        "name": "Ústav na výkon väzby a Ústav na výkon trestu odňatia slobody Prešov",
+        "code": "mp_236"
+      },
+      {
+        "uuid": "f7037cb6-e05f-4ad8-9e64-ab89ba97d37d",
+        "degree": 3,
+        "name": "Ústav na výkon trestu odňatia slobody pre mladistvých Sučany",
+        "code": "mp_237"
+      },
+      {
+        "uuid": "de9c61a9-5aed-45a3-adce-c05d92f6f013",
+        "degree": 3,
+        "name": "Ústav na výkon väzby a Ústav na výkon trestu odňatia slobody Košice",
+        "code": "mp_238"
+      },
+      {
+        "uuid": "e3e814ca-b636-4ab5-809a-8882f251f0a5",
+        "degree": 3,
+        "name": "DC SPP NASES",
+        "code": "mp_242"
+      },
+      {
+        "uuid": "84699f3d-2c39-4a27-ac2c-b7eaa9909158",
+        "degree": 3,
+        "name": "Úrad pre reguláciu sieťových odvetví",
+        "code": "mp_257"
+      },
+      {
+        "uuid": "2fa58ace-58a8-4ea7-be56-7933137992f3",
+        "degree": 2,
+        "name": "Dopravný úrad - Divízia vnútrozemskej plavby - Komárno",
+        "code": "mp_118"
+      },
+      {
+        "uuid": "8d6832f9-ded9-4073-88b3-d32a247027d7",
+        "degree": 2,
+        "name": "Dopravný úrad - Divízia vnútrozemskej plavby - Gabčíkovo",
+        "code": "mp_119"
+      },
+      {
+        "uuid": "00bb7e5e-696c-458b-84fc-bf1178a1e05f",
+        "degree": 2,
+        "name": "Dopravný úrad - Divízia vnútrozemskej plavby - Štúrovo",
+        "code": "mp_120"
+      },
+      {
+        "uuid": "ad4492bc-6bae-4eb2-a980-5fc8dffae8b5",
+        "degree": 2,
+        "name": "Dopravný úrad - Divízia dráh a dopravy na dráhach - Bratislava",
+        "code": "mp_123"
+      },
+      {
+        "uuid": "f6e44e67-65ad-4ca0-a201-7ad71c682c7a",
+        "degree": 2,
+        "name": "Dopravný úrad - Divízia dráh a dopravy na dráhach - Košice",
+        "code": "mp_124"
+      },
+      {
+        "uuid": "2b885b21-a9c0-44bd-9391-41ad01a6afe9",
+        "degree": 2,
+        "name": "Dopravný úrad - Divízia dráh a dopravy na dráhach - Žilina",
+        "code": "mp_125"
+      },
+      {
+        "uuid": "3a50440e-125c-4bd5-89df-f04bc6cb2f44",
+        "degree": 2,
+        "name": "Dopravný úrad - Divízia vnútrozemskej plavby - Žilina",
+        "code": "mp_126"
+      },
+      {
+        "uuid": "667a9886-5980-474a-8a5a-77de6b246c6a",
+        "degree": 2,
+        "name": "Dopravný úrad - Divízia civilného letectva - Bratislava",
+        "code": "mp_127"
+      },
+      {
+        "uuid": "e00b476e-cd20-47c2-9062-b304fa1c1a0a",
+        "degree": 2,
+        "name": "Ministerstvo životného prostredia Slovenskej republiky - Námestie Ľudovíta Štúra 1, Bratislava",
+        "code": "mp_143"
+      },
+      {
+        "uuid": "bcc4d50d-3e1e-45b0-aab5-1d6c71ba3bac",
+        "degree": 2,
+        "name": "DC ŠÚ SR  - Westend",
+        "code": "mp_146"
+      },
+      {
+        "uuid": "415bac0f-5d20-47f2-a56b-317d97e54f00",
+        "degree": 2,
+        "name": "MsÚ Banská Bystrica",
+        "code": "mp_195"
+      },
+      {
+        "uuid": "6642df17-1d3e-4caa-b4e5-f8d928ad3379",
+        "degree": 2,
+        "name": "Mestský úrad Žilina",
+        "code": "mp_204"
+      },
+      {
+        "uuid": "a9645673-79e9-4d52-b709-cf582e52dfbe",
+        "degree": 2,
+        "name": "Mestský úrad Senica",
+        "code": "mp_217"
+      },
+      {
+        "uuid": "9fd3704d-ba5e-44d1-9d2c-ef1df7fad756",
+        "degree": 2,
+        "name": "Mestský úrad Ružomberok",
+        "code": "mp_241"
+      },
+      {
+        "uuid": "74bc7ee5-1597-4ee6-807d-e1621941964b",
+        "degree": 2,
+        "name": "Mestský úrad mesta Trstená",
+        "code": "mp_246"
+      },
+      {
+        "uuid": "0cd7860b-5559-4d22-9cca-fb32e97bd8a6",
+        "degree": 2,
+        "name": "DC A - GP SR",
+        "code": "mp_270"
+      },
+      {
+        "uuid": "5facd3e9-d4b8-4c65-85dd-7fd5a729f68c",
+        "degree": 2,
+        "name": "Prešovský samosprávny kraj, Námestie mieru 2, 080 01 Prešov",
+        "code": "mp_274"
+      },
+      {
+        "uuid": "6544f920-9f28-4407-a202-89f02a72f37a",
+        "degree": 2,
+        "name": "Kancelária Národnej rady SR - všeobecné umiestnenie v spravovaných budovách",
+        "code": "mp_277"
+      },
+      {
+        "uuid": "dec8bfeb-4896-494d-ab6a-d8c9f2714de4",
+        "degree": 2,
+        "name": "infraštruktúra GPSR",
+        "code": "mp_295"
+      },
+      {
+        "uuid": "c5b13e56-e2cc-40ad-a477-2fe1d2d78792",
+        "degree": 1,
+        "name": "DC Mierová (DCM) - MF SR",
+        "code": "mp_47"
+      },
+      {
+        "uuid": "01f66d11-5922-492a-8b48-90f3b3b52b35",
+        "degree": 1,
+        "name": "Generálne riaditeľstvo Zboru väzenskej a justičnej stráže",
+        "code": "mp_134"
+      },
+      {
+        "uuid": "b55067da-4d4e-4630-9a5c-3f31bcaa6bd0",
+        "degree": 1,
+        "name": "neverejná časť -TDC Varšavská -Telecom",
+        "code": "mp_160"
+      },
+      {
+        "uuid": "50a6848d-de00-43f4-8a64-500c0351d6b1",
+        "degree": 1,
+        "name": "Ústredie práce, sociálnych vecí a rodiny",
+        "code": "mp_162"
+      },
+      {
+        "uuid": "c7c455d9-6005-4e6e-942f-dbcab2ce745c",
+        "degree": 1,
+        "name": "DC Úradu vlády SR",
+        "code": "mp_165"
+      },
+      {
+        "uuid": "11ced83b-7781-4cdc-989c-56e997c2bf4c",
+        "degree": 1,
+        "name": "Štátna veterinárna a potravinová správa Slovenskej republiky",
+        "code": "mp_180"
+      },
+      {
+        "uuid": "3133f90f-0520-4f34-9579-ecc3646480f6",
+        "degree": 1,
+        "name": "Národné lesnícke centrum",
+        "code": "mp_181"
+      },
+      {
+        "uuid": "02e09c92-a9fd-40f2-8be3-9ed4e0ee5218",
+        "degree": 1,
+        "name": "Mestský úrad Trenčín",
+        "code": "mp_193"
+      },
+      {
+        "uuid": "13c980b9-812c-4b59-ab83-ecde5636b9af",
+        "degree": 1,
+        "name": "Mestský úrad Zvolen",
+        "code": "mp_186"
+      },
+      {
+        "uuid": "b37315aa-bed7-49fc-aec1-2bb300104d14",
+        "degree": 1,
+        "name": "Ministerstvo zdravotníctva SR",
+        "code": "mp_187"
+      },
+      {
+        "uuid": "2dd3db77-db43-42a8-b7f6-c1574c90d9f4",
+        "degree": 1,
+        "name": "Ministerstvo zdravotníctva SR",
+        "code": "mp_188"
+      },
+      {
+        "uuid": "7e838bfe-5756-4abc-8b56-8dcb324d2624",
+        "degree": 1,
+        "name": "Mestský úrad Liptovský Mikuláš",
+        "code": "mp_189"
+      },
+      {
+        "uuid": "780f70a6-6f77-47c2-91a5-ba6178ed7881",
+        "degree": 1,
+        "name": "VOiP ústredňa FNsP Žilina",
+        "code": "mp_196"
+      },
+      {
+        "uuid": "1d040b54-7dad-4341-b24a-d1cffb8e82fe",
+        "degree": 1,
+        "name": "Mestský úrad Tvrdošín",
+        "code": "mp_203"
+      },
+      {
+        "uuid": "8f6d835f-2236-44d5-a7ba-74e5868b857c",
+        "degree": 1,
+        "name": "DC-J.C.Hronského Martin, SNK",
+        "code": "mp_208"
+      },
+      {
+        "uuid": "84e01553-6413-4c6e-ae93-f627be6ddd9a",
+        "degree": 1,
+        "name": "Serverovňa NASES",
+        "code": "mp_209"
+      },
+      {
+        "uuid": "11a431b1-4c60-49e7-adde-7d6db5ebda28",
+        "degree": 1,
+        "name": "DC NSS",
+        "code": "mp_214"
+      },
+      {
+        "uuid": "ff98415f-bae6-4a67-a0ff-30aab222e236",
+        "degree": 1,
+        "name": "Mestský úrad Nové mesto nad Váhom",
+        "code": "mp_240"
+      },
+      {
+        "uuid": "acc53ee8-ca0d-40ca-b35b-a2f0ce762205",
+        "degree": 1,
+        "name": "Obecný úrad Horná Súča",
+        "code": "mp_247"
+      },
+      {
+        "uuid": "5325fbe5-3ab4-4f7a-bc35-950faa4d6ba9",
+        "degree": 1,
+        "name": "Mestský úrad Nové Zámky",
+        "code": "mp_248"
+      },
+      {
+        "uuid": "065f6077-c981-4cd6-80b3-bdcc5075663b",
+        "degree": 1,
+        "name": "Obecný úrad Lubina",
+        "code": "mp_249"
+      },
+      {
+        "uuid": "9bd45b83-9e65-4868-ad47-692cd4209e58",
+        "degree": 1,
+        "name": "Mestský úrad Komárno",
+        "code": "mp_252"
+      },
+      {
+        "uuid": "50ba2f83-8cde-4bcc-b5c6-3422a0696413",
+        "degree": 1,
+        "name": "Mestský úrad Trebišov",
+        "code": "mp_253"
+      },
+      {
+        "uuid": "468ec67a-ceee-42be-8bc1-ab8a21ad5dea",
+        "degree": 1,
+        "name": "Správa ciest Košického samosprávneho kraja",
+        "code": "mp_254"
+      },
+      {
+        "uuid": "4d2ded09-59a5-40f2-9b98-a82def934703",
+        "degree": 1,
+        "name": "Správa a údržba ciest Prešovského samosprávneho kraja",
+        "code": "mp_258"
+      },
+      {
+        "uuid": "7deb501d-ed2d-43ec-8c62-d8255358a31a",
+        "degree": 1,
+        "name": "Mestský úrad Myjava",
+        "code": "mp_259"
+      },
+      {
+        "uuid": "f88e058e-18d5-44c0-a1e2-24a1e486e04e",
+        "degree": 1,
+        "name": "DC Centrum spoločných činností SAV",
+        "code": "mp_260"
+      },
+      {
+        "uuid": "febdfc7c-1b81-456b-b429-59dd617424f1",
+        "degree": 1,
+        "name": "Serverovňa SSC",
+        "code": "mp_261"
+      },
+      {
+        "uuid": "e0b75fdf-adf0-4a1c-b946-a615b13a0730",
+        "degree": 1,
+        "name": "Serverovňa mesta Vysoké Tatry",
+        "code": "mp_263"
+      },
+      {
+        "uuid": "3c9d3ee1-4af5-466f-8177-4ce065f376ee",
+        "degree": 1,
+        "name": "UNLP Košice",
+        "code": "mp_273"
+      },
+      {
+        "uuid": "de997b5e-83e0-4d33-beba-8a2ed117dbc6",
+        "degree": 1,
+        "name": "Úrad pre verejné obstarávanie - serverovňa",
+        "code": "mp_281"
+      },
+      {
+        "uuid": "e922d1ca-0198-4c01-a76b-00e987fe9076",
+        "degree": 1,
+        "name": "Ministerstvo školstva, výskumu, vývoja a mládeže Slovenskej republiky",
+        "code": "mp_352"
+      },
+      {
+        "uuid": "0650d405-d6b1-48d3-ac52-d460a3d7ad37",
+        "degree": 1,
+        "name": "mesto Dubnica nad Váhom . mestský úrad",
+        "code": "mp_285"
+      },
+      {
+        "uuid": "2ae99211-923e-4368-9d3b-e1b20e7db613",
+        "degree": 1,
+        "name": "Mesto Piešťany",
+        "code": "mp_288"
+      },
+      {
+        "uuid": "cfbbd3e2-5a39-46f9-b87f-0ca0380f8f6f",
+        "degree": 1,
+        "name": "Mesto Martin",
+        "code": "mp_289"
+      },
+      {
+        "uuid": "e35efde4-8f92-4070-94f3-faf69ba2e2ba",
+        "degree": 1,
+        "name": "Mestský úrad Prievidza",
+        "code": "mp_290"
+      },
+      {
+        "uuid": "5a465f4c-97da-435a-8924-5a324225d3ef",
+        "degree": 1,
+        "name": "Mestský úrad Hlohovec",
+        "code": "mp_291"
+      },
+      {
+        "uuid": "39de83ae-cef7-4c52-b3e3-f50ed20e8938",
+        "degree": 1,
+        "name": "Mesto Poprad",
+        "code": "mp_292"
+      },
+      {
+        "uuid": "5422d015-9289-4302-8655-16cb3b1d3959",
+        "degree": 1,
+        "name": "Mesto Liptovský Mikuláš",
+        "code": "mp_296"
+      },
+      {
+        "uuid": "43b7b6d1-f75f-457f-9bad-188d7c52a79b",
+        "degree": 1,
+        "name": "Úrad Trenčianskeho samosprávneho kraja",
+        "code": "mp_297"
+      },
+      {
+        "uuid": "a4bd3629-b5b2-4520-a1c6-c9913d585a2b",
+        "degree": 1,
+        "name": "Nové Zámky",
+        "code": "mp_298"
+      },
+      {
+        "uuid": "a75d4e5f-5a23-4939-8cbc-3029fde36c03",
+        "degree": 1,
+        "name": "Mestský úrad Sereď",
+        "code": "mp_299"
+      },
+      {
+        "uuid": "8fcaa727-7bf7-4aab-9f06-e65d105dcf48",
+        "degree": 1,
+        "name": "Mestský úrad Púchov",
+        "code": "mp_300"
+      },
+      {
+        "uuid": "7100574a-1e16-48ea-8a40-a095e5886d7d",
+        "degree": 1,
+        "name": "Úrad pre reguláciu hazardných hier",
+        "code": "mp_301"
+      },
+      {
+        "uuid": "17211f50-5a6c-4509-93d6-d14f772b1e0e",
+        "degree": 1,
+        "name": "Národné personalizačné centrum",
+        "code": "mp_304"
+      },
+      {
+        "uuid": "546f6810-3b28-49ee-952e-b173e8b076a6",
+        "degree": 1,
+        "name": "Akadémia umení v Banskej Bystrici",
+        "code": "mp_306"
+      },
+      {
+        "uuid": "48bbe437-c1df-4ed3-917e-cbca3cdb665f",
+        "degree": 1,
+        "name": "Mesto Banská Bystrica",
+        "code": "mp_307"
+      },
+      {
+        "uuid": "95f65d90-083c-4719-90e0-3461a7b6ab1a",
+        "degree": 1,
+        "name": "Mesto Poprad",
+        "code": "mp_308"
+      },
+      {
+        "uuid": "cc058ebf-830f-4e09-b786-c46b0822930e",
+        "degree": 1,
+        "name": "Mesto Bratislava",
+        "code": "mp_309"
+      },
+      {
+        "uuid": "108e67a8-0059-4875-abfa-05ac0861e33d",
+        "degree": 1,
+        "name": "Sídlo VUSCH",
+        "code": "mp_310"
+      },
+      {
+        "uuid": "fc6e1eba-1b7d-45c7-b1aa-843d8796a90c",
+        "degree": 1,
+        "name": "Mesto Bratislava",
+        "code": "mp_312"
+      },
+      {
+        "uuid": "f6075c89-2c0b-48aa-9801-1569886f9dad",
+        "degree": 1,
+        "name": "Hornooravská nemocnica s poliklinikou Trstená",
+        "code": "mp_313"
+      },
+      {
+        "uuid": "010f76ff-0ed1-4486-99a1-a27e8175e41d",
+        "degree": 1,
+        "name": "Zvolen",
+        "code": "mp_316"
+      },
+      {
+        "uuid": "fef303f5-60aa-4d3c-aad4-c404bb73f5b5",
+        "degree": 1,
+        "name": "Slovenský hydrometeorologický ústav, Jeséniova 17, Bratislava",
+        "code": "mp_317"
+      },
+      {
+        "uuid": "a7a2e232-d3d4-459e-8a84-7c0b7925b769",
+        "degree": 1,
+        "name": "MsÚ Prešov",
+        "code": "mp_318"
+      },
+      {
+        "uuid": "9fa21c7b-82a0-41e7-8170-3f90adaa093f",
+        "degree": 1,
+        "name": "Mesto Pezinok",
+        "code": "mp_319"
+      },
+      {
+        "uuid": "d1141069-ee12-42a5-9d6b-8e26dd7e5d8c",
+        "degree": 1,
+        "name": "Sídlo VOU",
+        "code": "mp_320"
+      },
+      {
+        "uuid": "ecdffffd-30d9-48e1-838c-41b1a395a569",
+        "degree": 1,
+        "name": "Mesto Stupava",
+        "code": "mp_321"
+      },
+      {
+        "uuid": "f58a357e-c32c-4b4a-a503-98a23f74f474",
+        "degree": 1,
+        "name": "sídlo MČ BA-Ružinov",
+        "code": "mp_323"
+      },
+      {
+        "uuid": "869df128-a744-4d55-a351-6e8afc413f77",
+        "degree": 1,
+        "name": "Datacentrum SAŽP",
+        "code": "mp_324"
+      },
+      {
+        "uuid": "589fb53b-6609-43e6-9e24-4f2db8125397",
+        "degree": 1,
+        "name": "Miestny úrad Bratislava - Nové Mesto",
+        "code": "mp_325"
+      },
+      {
+        "uuid": "dd0e80ab-d724-4b0e-932f-1735d38be7a5",
+        "degree": 1,
+        "name": "ZSKE",
+        "code": "mp_326"
+      },
+      {
+        "uuid": "6c51d3da-786c-40ef-886f-f67b10582cc5",
+        "degree": 1,
+        "name": "INMM KE",
+        "code": "mp_327"
+      },
+      {
+        "uuid": "e176f348-b996-4b8c-ae4e-350c57aa8a9c",
+        "degree": 1,
+        "name": "Mesto SĽ",
+        "code": "mp_328"
+      },
+      {
+        "uuid": "d4f973aa-b74f-4af1-b0d1-f5f5110eb00c",
+        "degree": 1,
+        "name": "Slovenská agentúra pre medzinárodnú rozvojovú spoluprácu - SlovakAid",
+        "code": "mp_329"
+      },
+      {
+        "uuid": "dbd66612-8d7a-4434-812e-d3bc4fcde8d7",
+        "degree": 1,
+        "name": "Ústredný kontrolný a skúšobný ústav poľnohospodársky v Bratislave",
+        "code": "mp_331"
+      },
+      {
+        "uuid": "9432ffe1-91ff-4764-9521-4716625ec89d",
+        "degree": 1,
+        "name": "Ružomberok",
+        "code": "mp_332"
+      },
+      {
+        "uuid": "dca4de78-e785-4761-8dbe-591f832610dc",
+        "degree": 1,
+        "name": "Trnava",
+        "code": "mp_334"
+      },
+      {
+        "uuid": "f7a5707e-4a55-4573-a374-29d04149bcdb",
+        "degree": 1,
+        "name": "STU Bratislava",
+        "code": "mp_336"
+      },
+      {
+        "uuid": "963f0094-5f6d-42b8-ac80-dfb0478961ab",
+        "degree": 1,
+        "name": "Nemocnica s poliklinikou Brezno",
+        "code": "mp_337"
+      },
+      {
+        "uuid": "d31f9a0d-faaf-40e6-b980-d1e2f25e7c93",
+        "degree": 1,
+        "name": "Sídlo Psychiatrickej liečebne Samuela Bluma v Plešivci",
+        "code": "mp_339"
+      },
+      {
+        "uuid": "84c9e3c7-888c-4f0e-bea6-b11f15898681",
+        "degree": 1,
+        "name": "Univerzitná nemocnica L. Pasteura Košice",
+        "code": "mp_340"
+      },
+      {
+        "uuid": "2f5d5c2b-c5c3-41c5-8cca-b6420c17142c",
+        "degree": 1,
+        "name": "Nemocnica s poliklinikou Prievidza so sídlom v Bojniciach",
+        "code": "mp_342"
+      },
+      {
+        "uuid": "f51d22b4-84d3-4b62-ba7d-21daca26abc5",
+        "degree": 1,
+        "name": "Nemocnica s poliklinikou Myjava",
+        "code": "mp_343"
+      },
+      {
+        "uuid": "65b3dede-ef6b-4aed-8df2-54eb7025a6f8",
+        "degree": 1,
+        "name": "Ústredná vojenská nemocnica SNP Ružomberok - FN",
+        "code": "mp_344"
+      },
+      {
+        "uuid": "94a8c958-fed2-4a6a-8d05-99e601b76458",
+        "degree": 1,
+        "name": "Nemocnica s poliklinikou Považská Bystrica",
+        "code": "mp_345"
+      },
+      {
+        "uuid": "841e0622-03c4-463e-8ecf-a36ee57d23fb",
+        "degree": 1,
+        "name": "Datacentrum SPF",
+        "code": "mp_347"
+      },
+      {
+        "uuid": "0ca6e010-50a5-458c-8d75-3251fbc2a752",
+        "degree": 1,
+        "name": "Miestny úrad Bratislava - Rača",
+        "code": "mp_349"
+      },
+      {
+        "uuid": "befc26d4-3ee1-4914-968f-a3d824ccd1b9",
+        "degree": 1,
+        "name": "Datacentrum LM",
+        "code": "mp_355"
+      },
+      {
+        "uuid": "bbde6555-2c8f-44f4-a778-b128467bf61b",
+        "degree": 1,
+        "name": "Slovenská poľovnícka komora",
+        "code": "mp_357"
+      },
+      {
+        "uuid": "ced0575f-9043-4745-9e9f-ab5ecbcbbfe0",
+        "degree": 1,
+        "name": "Fakultná nemocnica Nitra",
+        "code": "mp_361"
+      },
+      {
+        "uuid": "15253a4b-8215-4fb1-a6a2-4c8be804efc2",
+        "degree": 1,
+        "name": "Košický samosprávny kraj (Námestie maratónu mieru 1)",
+        "code": "mp_363"
+      },
+      {
+        "uuid": "d0f9dd4d-9f58-45c6-bfb2-fe4190159cd5",
+        "degree": 1,
+        "name": "Košice - Sídlisko KVP Trieda KVP 1",
+        "code": "mp_365"
+      },
+      {
+        "uuid": "71b446c5-2067-4cc6-9418-1b9deee8f91e",
+        "degree": 1,
+        "name": "Dátové centrum Národnej diaľničnej spoločnosti",
+        "code": "mp_367"
+      },
+      {
+        "uuid": "822d1e25-ed4e-40ed-aca6-83d5c7841ac4",
+        "degree": 1,
+        "name": "Mestský úrad mesta Tisovec",
+        "code": "mp_368"
+      },
+      {
+        "uuid": "7d6442e6-55b7-4cac-90e0-230611b40d31",
+        "degree": 1,
+        "name": "Obecný úrad Klenovec",
+        "code": "mp_369"
+      }
+    ],
+    "islands": {
+      "total_nodes": 1794,
+      "total_islands": 1375,
+      "singleton_islands": 1266,
+      "multi_islands": [
+        {
+          "size_total": 79,
+          "size_source": 72,
+          "size_target": 7,
+          "fraction_total": 0.04403567447045708,
+          "top_source_uuid": "2a9d3a34-5eb2-468c-9210-346b7b2d2f81",
+          "top_source_degree": 4,
+          "top_target_uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+          "top_target_degree": 51
+        },
+        {
+          "size_total": 49,
+          "size_source": 47,
+          "size_target": 2,
+          "fraction_total": 0.027313266443701228,
+          "top_source_uuid": "9edec41a-8b78-4cdb-83b9-4cea3fe9d061",
+          "top_source_degree": 2,
+          "top_target_uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+          "top_target_degree": 47
+        },
+        {
+          "size_total": 28,
+          "size_source": 24,
+          "size_target": 4,
+          "fraction_total": 0.01560758082497213,
+          "top_source_uuid": "525c6669-e4dd-47b6-963f-2dcd6606f3d0",
+          "top_source_degree": 2,
+          "top_target_uuid": "ef315642-f9c3-4a2c-afbf-c9f915902aac",
+          "top_target_degree": 18
+        },
+        {
+          "size_total": 27,
+          "size_source": 25,
+          "size_target": 2,
+          "fraction_total": 0.015050167224080268,
+          "top_source_uuid": "afeb3b66-9c63-4200-ae80-16f9914521d6",
+          "top_source_degree": 2,
+          "top_target_uuid": "d0b4ec59-d508-4deb-b336-384ceac76165",
+          "top_target_degree": 14
+        },
+        {
+          "size_total": 23,
+          "size_source": 22,
+          "size_target": 1,
+          "fraction_total": 0.01282051282051282,
+          "top_source_uuid": "08f2799a-2aea-408a-bee5-a6062f5a34cd",
+          "top_source_degree": 1,
+          "top_target_uuid": "0132bbd6-ed6f-498f-9705-ae221659de86",
+          "top_target_degree": 22
+        },
+        {
+          "size_total": 23,
+          "size_source": 4,
+          "size_target": 19,
+          "fraction_total": 0.01282051282051282,
+          "top_source_uuid": "8b327b29-7bc6-4d24-a8ec-c84508aabc6f",
+          "top_source_degree": 19,
+          "top_target_uuid": "660678a5-984f-47c3-9637-f1a2731479be",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 20,
+          "size_source": 10,
+          "size_target": 10,
+          "fraction_total": 0.011148272017837236,
+          "top_source_uuid": "b5a8579b-27d9-4acb-ad7a-a4fe154e9173",
+          "top_source_degree": 10,
+          "top_target_uuid": "7df7748a-37f8-4511-bff4-e313c0f6b5d5",
+          "top_target_degree": 8
+        },
+        {
+          "size_total": 16,
+          "size_source": 15,
+          "size_target": 1,
+          "fraction_total": 0.008918617614269788,
+          "top_source_uuid": "5523051b-1c1f-47dd-a7d9-84392ddaf5aa",
+          "top_source_degree": 1,
+          "top_target_uuid": "7bed7d72-0335-4f38-8df4-a64e66082432",
+          "top_target_degree": 15
+        },
+        {
+          "size_total": 12,
+          "size_source": 10,
+          "size_target": 2,
+          "fraction_total": 0.006688963210702341,
+          "top_source_uuid": "635bd7af-173d-48f4-a2bf-7f928d1606f0",
+          "top_source_degree": 2,
+          "top_target_uuid": "a4087ec6-9b88-41cd-b07f-b05b62e17a5e",
+          "top_target_degree": 10
+        },
+        {
+          "size_total": 9,
+          "size_source": 6,
+          "size_target": 3,
+          "fraction_total": 0.005016722408026756,
+          "top_source_uuid": "2db064e2-ae5e-4220-8a0c-165937aa158a",
+          "top_source_degree": 2,
+          "top_target_uuid": "1177a222-78ca-4bdd-8183-784c8f224d14",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0039018952062430325,
+          "top_source_uuid": "2582da0b-7ed5-4ba3-8d95-6ff3eb32be03",
+          "top_source_degree": 1,
+          "top_target_uuid": "bf995a36-8c70-42f8-8df5-3443f8c3ae90",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0039018952062430325,
+          "top_source_uuid": "aa32f982-43f5-4eb3-94e1-600ae0760e42",
+          "top_source_degree": 1,
+          "top_target_uuid": "c52f11f2-46e1-4bf8-b23c-9533347dde08",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.0033444816053511705,
+          "top_source_uuid": "587c087a-b51d-4c57-a70e-a87fd18f6b46",
+          "top_source_degree": 1,
+          "top_target_uuid": "890119fe-35c8-42e6-90ac-e559e638a1f2",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.0033444816053511705,
+          "top_source_uuid": "9fd6915d-cf76-4c50-8a2e-2b688103a763",
+          "top_source_degree": 1,
+          "top_target_uuid": "7bf76d11-2d79-4c60-b2f8-5b493e306fe3",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.002787068004459309,
+          "top_source_uuid": "c4071b8d-488d-4973-92b0-2f48fdbc05d7",
+          "top_source_degree": 1,
+          "top_target_uuid": "1356f039-7eb7-49a0-b6d4-09ce51f996c9",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.002787068004459309,
+          "top_source_uuid": "500201bf-3e07-43de-aa51-818ff0e9e5f7",
+          "top_source_degree": 1,
+          "top_target_uuid": "877a92d4-06d4-44f8-8327-fc43055a0784",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.002229654403567447,
+          "top_source_uuid": "e31e0da1-6449-4349-9e93-7623ffd47546",
+          "top_source_degree": 1,
+          "top_target_uuid": "836d60be-e8ee-45ee-9516-1915cd968a73",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.002229654403567447,
+          "top_source_uuid": "0b7015da-ee75-4a26-8dab-4096ff99f873",
+          "top_source_degree": 1,
+          "top_target_uuid": "84699f3d-2c39-4a27-ac2c-b7eaa9909158",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.002229654403567447,
+          "top_source_uuid": "389b9e87-383b-4081-bd76-dd0d2eebcc51",
+          "top_source_degree": 1,
+          "top_target_uuid": "8e8fc9df-83f4-4482-aa2a-a14e27766284",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.002229654403567447,
+          "top_source_uuid": "1db7a282-bea4-4937-a519-df031e4e34a0",
+          "top_source_degree": 1,
+          "top_target_uuid": "10b5c617-e7a9-41c3-9a21-38b8638d06e4",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "776479b8-b665-4cec-a361-1530d0088032",
+          "top_source_degree": 2,
+          "top_target_uuid": "7d6442e6-55b7-4cac-90e0-230611b40d31",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "7f7eaf13-5b26-44ca-97d2-15c40db1655a",
+          "top_source_degree": 1,
+          "top_target_uuid": "6544f920-9f28-4407-a202-89f02a72f37a",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "a9d7b10d-cd93-426e-a1c0-48dae3e717b2",
+          "top_source_degree": 1,
+          "top_target_uuid": "e00b476e-cd20-47c2-9062-b304fa1c1a0a",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "e13b76ff-5435-4c53-bd2f-e9b95bd94806",
+          "top_source_degree": 1,
+          "top_target_uuid": "a9645673-79e9-4d52-b709-cf582e52dfbe",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "805a7b6f-5b90-41f1-85ca-ffde085ded66",
+          "top_source_degree": 1,
+          "top_target_uuid": "bcc4d50d-3e1e-45b0-aab5-1d6c71ba3bac",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "4d73f4b5-b323-459a-85a0-653dc4619852",
+          "top_source_degree": 1,
+          "top_target_uuid": "6642df17-1d3e-4caa-b4e5-f8d928ad3379",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "e1de753f-e9b3-47d5-be2d-3e599597163a",
+          "top_source_degree": 1,
+          "top_target_uuid": "415bac0f-5d20-47f2-a56b-317d97e54f00",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "5e065a21-93d8-42e5-a332-b3e3c8eb7ece",
+          "top_source_degree": 1,
+          "top_target_uuid": "dec8bfeb-4896-494d-ab6a-d8c9f2714de4",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "a260c0ad-9b5b-4bee-a7eb-74a32a3e3c3c",
+          "top_source_degree": 1,
+          "top_target_uuid": "9fd3704d-ba5e-44d1-9d2c-ef1df7fad756",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "3ffb0406-3bf0-4e17-8dd3-d3d312bbf1a1",
+          "top_source_degree": 1,
+          "top_target_uuid": "5facd3e9-d4b8-4c65-85dd-7fd5a729f68c",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "c9c1cb4a-1142-4ffc-9dc4-8cc0d925943d",
+          "top_source_degree": 2,
+          "top_target_uuid": "48bbe437-c1df-4ed3-917e-cbca3cdb665f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0016722408026755853,
+          "top_source_uuid": "703ef7e6-b5f6-4cc6-a06b-aa6723debe78",
+          "top_source_degree": 1,
+          "top_target_uuid": "74bc7ee5-1597-4ee6-807d-e1621941964b",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "d95083ef-acbf-4c75-a66f-f5232a49dac9",
+          "top_source_degree": 1,
+          "top_target_uuid": "1d040b54-7dad-4341-b24a-d1cffb8e82fe",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "a0d913cf-d23f-42a1-b597-c6c42bbf4f62",
+          "top_source_degree": 1,
+          "top_target_uuid": "01f66d11-5922-492a-8b48-90f3b3b52b35",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "1db06e2a-0980-430d-a07b-71551b379a5b",
+          "top_source_degree": 1,
+          "top_target_uuid": "a75d4e5f-5a23-4939-8cbc-3029fde36c03",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "c069c317-82db-4f53-b181-4ff6f593c06d",
+          "top_source_degree": 1,
+          "top_target_uuid": "dca4de78-e785-4761-8dbe-591f832610dc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "a4fe2d69-44d9-4d72-ae65-ba4bbc488398",
+          "top_source_degree": 1,
+          "top_target_uuid": "f88e058e-18d5-44c0-a1e2-24a1e486e04e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "23b86b2b-83ec-4620-97a3-fca599229e19",
+          "top_source_degree": 1,
+          "top_target_uuid": "8f6d835f-2236-44d5-a7ba-74e5868b857c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "738d7bb7-7460-483d-b23d-ec64d6a35e0b",
+          "top_source_degree": 1,
+          "top_target_uuid": "2f5d5c2b-c5c3-41c5-8cca-b6420c17142c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "359c43e4-a3e3-4cf5-a00d-b306fe53595f",
+          "top_source_degree": 1,
+          "top_target_uuid": "11ced83b-7781-4cdc-989c-56e997c2bf4c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "2195b1fa-d403-4358-ac97-cb329298fb03",
+          "top_source_degree": 1,
+          "top_target_uuid": "febdfc7c-1b81-456b-b429-59dd617424f1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "c21e347e-cb53-41c6-a60c-9278d5e9a34a",
+          "top_source_degree": 1,
+          "top_target_uuid": "9bd45b83-9e65-4868-ad47-692cd4209e58",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "f7ecb577-6ad7-4029-ae67-4eb26e1c7c9a",
+          "top_source_degree": 1,
+          "top_target_uuid": "50ba2f83-8cde-4bcc-b5c6-3422a0696413",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "d1ac5c36-b54d-4cf6-ba89-430341c03865",
+          "top_source_degree": 1,
+          "top_target_uuid": "a4bd3629-b5b2-4520-a1c6-c9913d585a2b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "4d13c746-0e91-4a91-9b18-01668738c287",
+          "top_source_degree": 1,
+          "top_target_uuid": "7100574a-1e16-48ea-8a40-a095e5886d7d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "edbbf57b-16fd-416b-a02b-0eefe550fd11",
+          "top_source_degree": 1,
+          "top_target_uuid": "869df128-a744-4d55-a351-6e8afc413f77",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "ab0f75a6-8722-40fd-a078-a18de3099630",
+          "top_source_degree": 1,
+          "top_target_uuid": "108e67a8-0059-4875-abfa-05ac0861e33d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "f9d3b186-3f8a-46bd-89b5-14116c1ceb5e",
+          "top_source_degree": 1,
+          "top_target_uuid": "d4f973aa-b74f-4af1-b0d1-f5f5110eb00c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "70c94a15-45dc-4497-bff1-3d80f5c1abd4",
+          "top_source_degree": 1,
+          "top_target_uuid": "fc6e1eba-1b7d-45c7-b1aa-843d8796a90c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "38416f8d-e7d6-4bc4-906c-ddbe1ca14a7b",
+          "top_source_degree": 1,
+          "top_target_uuid": "c7c455d9-6005-4e6e-942f-dbcab2ce745c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "abb385a9-020e-4892-b16e-ba315a6beb3f",
+          "top_source_degree": 1,
+          "top_target_uuid": "7e838bfe-5756-4abc-8b56-8dcb324d2624",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "0b92ae75-6e3f-4afc-bf22-2a4bec63cddc",
+          "top_source_degree": 1,
+          "top_target_uuid": "39de83ae-cef7-4c52-b3e3-f50ed20e8938",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "a5ad7cda-f644-4c6a-85f5-c0f8262d052a",
+          "top_source_degree": 1,
+          "top_target_uuid": "9432ffe1-91ff-4764-9521-4716625ec89d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "ff55dc4a-5bce-45d6-8437-824f1ea7e6ca",
+          "top_source_degree": 1,
+          "top_target_uuid": "dd0e80ab-d724-4b0e-932f-1735d38be7a5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "883f8d6d-b241-4bf4-9b4f-545a0dff9ec3",
+          "top_source_degree": 1,
+          "top_target_uuid": "43b7b6d1-f75f-457f-9bad-188d7c52a79b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "9925d3c3-6ad7-4fb3-9f06-d18958086518",
+          "top_source_degree": 1,
+          "top_target_uuid": "fef303f5-60aa-4d3c-aad4-c404bb73f5b5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "45330c92-0a9c-4c73-a955-0f67413934ee",
+          "top_source_degree": 1,
+          "top_target_uuid": "c5b13e56-e2cc-40ad-a477-2fe1d2d78792",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "2fb98e83-5c7a-45c8-8cff-15542ee31565",
+          "top_source_degree": 1,
+          "top_target_uuid": "befc26d4-3ee1-4914-968f-a3d824ccd1b9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "9f1a6ef4-2dc1-468b-89eb-1aebe77ea8ae",
+          "top_source_degree": 1,
+          "top_target_uuid": "7deb501d-ed2d-43ec-8c62-d8255358a31a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "2e7b363d-feff-4852-83b6-b565f3f8b018",
+          "top_source_degree": 1,
+          "top_target_uuid": "5422d015-9289-4302-8655-16cb3b1d3959",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "5f37472b-47ca-4576-b3af-3dc931ae9ae0",
+          "top_source_degree": 1,
+          "top_target_uuid": "5a465f4c-97da-435a-8924-5a324225d3ef",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "21a3d912-1f0d-42d7-86f2-ef276cc3f858",
+          "top_source_degree": 1,
+          "top_target_uuid": "3c9d3ee1-4af5-466f-8177-4ce065f376ee",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "8072da40-0019-4c8a-9696-1c670120ea31",
+          "top_source_degree": 1,
+          "top_target_uuid": "71b446c5-2067-4cc6-9418-1b9deee8f91e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "52a985d3-8788-4c55-9778-46bdea52d929",
+          "top_source_degree": 1,
+          "top_target_uuid": "ecdffffd-30d9-48e1-838c-41b1a395a569",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "397203e1-1f48-4aeb-a251-e3565516cceb",
+          "top_source_degree": 1,
+          "top_target_uuid": "e176f348-b996-4b8c-ae4e-350c57aa8a9c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "99d25b72-8f61-43db-9d0d-2279f78da98f",
+          "top_source_degree": 1,
+          "top_target_uuid": "9fa21c7b-82a0-41e7-8170-3f90adaa093f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "f6943ceb-e5a2-4d11-9d49-474174d4024c",
+          "top_source_degree": 1,
+          "top_target_uuid": "a7a2e232-d3d4-459e-8a84-7c0b7925b769",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "e1275baa-2666-4a03-adb8-11681ba8e98d",
+          "top_source_degree": 1,
+          "top_target_uuid": "ced0575f-9043-4745-9e9f-ab5ecbcbbfe0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "881a8f99-a5dc-4910-b17e-e9ba65a0d4e4",
+          "top_source_degree": 1,
+          "top_target_uuid": "780f70a6-6f77-47c2-91a5-ba6178ed7881",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "f5eae256-f3fd-4583-ae99-86ed484e3018",
+          "top_source_degree": 1,
+          "top_target_uuid": "f51d22b4-84d3-4b62-ba7d-21daca26abc5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "80f35b35-8edd-41cf-a2d5-e5b2e43b2e2b",
+          "top_source_degree": 1,
+          "top_target_uuid": "468ec67a-ceee-42be-8bc1-ab8a21ad5dea",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "a660d0bb-4617-4b0c-9dfe-da38a01e419b",
+          "top_source_degree": 1,
+          "top_target_uuid": "acc53ee8-ca0d-40ca-b35b-a2f0ce762205",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "39f5815d-fa58-4e15-b085-39c1a9a66e99",
+          "top_source_degree": 1,
+          "top_target_uuid": "010f76ff-0ed1-4486-99a1-a27e8175e41d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "28f20579-aed2-4d0b-baa0-52b538df152d",
+          "top_source_degree": 1,
+          "top_target_uuid": "e0b75fdf-adf0-4a1c-b946-a615b13a0730",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "efdd69c9-b7a0-460d-a92a-1a06f0e01659",
+          "top_source_degree": 1,
+          "top_target_uuid": "cc058ebf-830f-4e09-b786-c46b0822930e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "d17d2aca-9918-45e1-b937-a3c2857f237e",
+          "top_source_degree": 1,
+          "top_target_uuid": "d31f9a0d-faaf-40e6-b980-d1e2f25e7c93",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "3cd53e29-18c4-4c8a-b915-54af52b39508",
+          "top_source_degree": 1,
+          "top_target_uuid": "17211f50-5a6c-4509-93d6-d14f772b1e0e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "22f17aac-1b07-45e1-8e8a-ea6ad0929fe1",
+          "top_source_degree": 1,
+          "top_target_uuid": "f58a357e-c32c-4b4a-a503-98a23f74f474",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "b6986beb-f953-4773-a14c-af691d201651",
+          "top_source_degree": 1,
+          "top_target_uuid": "bbde6555-2c8f-44f4-a778-b128467bf61b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "0a2a03d8-7d86-483b-a966-d962cfa8d58a",
+          "top_source_degree": 1,
+          "top_target_uuid": "6c51d3da-786c-40ef-886f-f67b10582cc5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "b7b1a687-2dd3-465e-9dc6-f279db4ca2f5",
+          "top_source_degree": 1,
+          "top_target_uuid": "02e09c92-a9fd-40f2-8be3-9ed4e0ee5218",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "c51c6f8d-419f-46b0-b9c9-cf10053f0bed",
+          "top_source_degree": 1,
+          "top_target_uuid": "f6075c89-2c0b-48aa-9801-1569886f9dad",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "d76a7b49-e99e-403c-8502-b965ba17e792",
+          "top_source_degree": 1,
+          "top_target_uuid": "13c980b9-812c-4b59-ab83-ecde5636b9af",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "3e6c2d46-352c-42d2-a552-361f239eecdf",
+          "top_source_degree": 1,
+          "top_target_uuid": "5325fbe5-3ab4-4f7a-bc35-950faa4d6ba9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "95c8291b-bacb-498a-b25c-7fae374fe794",
+          "top_source_degree": 1,
+          "top_target_uuid": "65b3dede-ef6b-4aed-8df2-54eb7025a6f8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "3e468e22-31f9-4d81-8297-66283483bec1",
+          "top_source_degree": 1,
+          "top_target_uuid": "2ae99211-923e-4368-9d3b-e1b20e7db613",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "cda002ac-b05d-4ce1-bfed-d15a79201079",
+          "top_source_degree": 1,
+          "top_target_uuid": "841e0622-03c4-463e-8ecf-a36ee57d23fb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "9549d7cc-6e0c-4e31-9d42-17a2b5adf8e2",
+          "top_source_degree": 1,
+          "top_target_uuid": "e35efde4-8f92-4070-94f3-faf69ba2e2ba",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "4c7bc425-2763-496d-b1e1-5d7fdc901988",
+          "top_source_degree": 1,
+          "top_target_uuid": "8fcaa727-7bf7-4aab-9f06-e65d105dcf48",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "9feb6541-96d4-4879-a082-b55a5fc53fa3",
+          "top_source_degree": 1,
+          "top_target_uuid": "0650d405-d6b1-48d3-ac52-d460a3d7ad37",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "932f4d04-0299-4c4f-aa8c-bf3060262617",
+          "top_source_degree": 1,
+          "top_target_uuid": "3133f90f-0520-4f34-9579-ecc3646480f6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "6059a5ce-78c8-4236-9701-6a409d15c746",
+          "top_source_degree": 1,
+          "top_target_uuid": "b37315aa-bed7-49fc-aec1-2bb300104d14",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "167d879b-8afc-4c50-bd15-9a2301b58a98",
+          "top_source_degree": 1,
+          "top_target_uuid": "4d2ded09-59a5-40f2-9b98-a82def934703",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "f182d8d7-d765-40bf-a2b9-24115e540e3f",
+          "top_source_degree": 1,
+          "top_target_uuid": "2dd3db77-db43-42a8-b7f6-c1574c90d9f4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "ae1e91ba-ca80-42c5-b99e-ed5693477719",
+          "top_source_degree": 1,
+          "top_target_uuid": "de997b5e-83e0-4d33-beba-8a2ed117dbc6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "3226ea1d-944d-40d8-a817-bb105fcf73bd",
+          "top_source_degree": 1,
+          "top_target_uuid": "d1141069-ee12-42a5-9d6b-8e26dd7e5d8c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "31869661-76ad-4f38-99e7-c6c33091ed08",
+          "top_source_degree": 1,
+          "top_target_uuid": "065f6077-c981-4cd6-80b3-bdcc5075663b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "b19a50de-cdaa-4ecd-a841-ec5917c2556a",
+          "top_source_degree": 1,
+          "top_target_uuid": "11a431b1-4c60-49e7-adde-7d6db5ebda28",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "54a1515b-5a4e-45fe-a5fe-4df436315d9f",
+          "top_source_degree": 1,
+          "top_target_uuid": "cfbbd3e2-5a39-46f9-b87f-0ca0380f8f6f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "39b8e708-c238-4bf3-a8cd-9dc06d73f04d",
+          "top_source_degree": 1,
+          "top_target_uuid": "0ca6e010-50a5-458c-8d75-3251fbc2a752",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "17bd7817-2612-42ea-99cc-63b6c8a71703",
+          "top_source_degree": 1,
+          "top_target_uuid": "589fb53b-6609-43e6-9e24-4f2db8125397",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "0e548607-8005-4025-994b-f45fdb3624fe",
+          "top_source_degree": 1,
+          "top_target_uuid": "84c9e3c7-888c-4f0e-bea6-b11f15898681",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "8596ce2d-2dec-4b43-a114-da5e1245e4fd",
+          "top_source_degree": 1,
+          "top_target_uuid": "f7a5707e-4a55-4573-a374-29d04149bcdb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "c83bd028-f2fe-43f3-88a3-cd3810ba5cea",
+          "top_source_degree": 1,
+          "top_target_uuid": "94a8c958-fed2-4a6a-8d05-99e601b76458",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "f09c59a3-15c0-4a3a-80ba-eb5452084cb7",
+          "top_source_degree": 1,
+          "top_target_uuid": "963f0094-5f6d-42b8-ac80-dfb0478961ab",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "9b096932-81b0-4995-b812-ff5f4841cc7f",
+          "top_source_degree": 1,
+          "top_target_uuid": "546f6810-3b28-49ee-952e-b173e8b076a6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "a5109fef-e127-414b-9a9e-26ab793bc410",
+          "top_source_degree": 1,
+          "top_target_uuid": "d0f9dd4d-9f58-45c6-bfb2-fe4190159cd5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "129798fd-db0a-4773-b220-00a35daa8d22",
+          "top_source_degree": 1,
+          "top_target_uuid": "e922d1ca-0198-4c01-a76b-00e987fe9076",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0011148272017837235,
+          "top_source_uuid": "c5c664c4-e765-466e-bb0d-5d74b7d8180c",
+          "top_source_degree": 1,
+          "top_target_uuid": "ff98415f-bae6-4a67-a0ff-30aab222e236",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 1604,
+        "total_islands": 1337,
+        "singleton_islands": 1307,
+        "multi_islands": [
+          {
+            "size": 72,
+            "fraction": 0.04488778054862843,
+            "size_total": 79,
+            "top_uuid": "2a9d3a34-5eb2-468c-9210-346b7b2d2f81",
+            "top_degree": 4
+          },
+          {
+            "size": 47,
+            "fraction": 0.029301745635910224,
+            "size_total": 49,
+            "top_uuid": "9edec41a-8b78-4cdb-83b9-4cea3fe9d061",
+            "top_degree": 2
+          },
+          {
+            "size": 25,
+            "fraction": 0.015586034912718205,
+            "size_total": 27,
+            "top_uuid": "afeb3b66-9c63-4200-ae80-16f9914521d6",
+            "top_degree": 2
+          },
+          {
+            "size": 24,
+            "fraction": 0.014962593516209476,
+            "size_total": 28,
+            "top_uuid": "525c6669-e4dd-47b6-963f-2dcd6606f3d0",
+            "top_degree": 2
+          },
+          {
+            "size": 22,
+            "fraction": 0.01371571072319202,
+            "size_total": 23,
+            "top_uuid": "08f2799a-2aea-408a-bee5-a6062f5a34cd",
+            "top_degree": 1
+          },
+          {
+            "size": 15,
+            "fraction": 0.009351620947630923,
+            "size_total": 16,
+            "top_uuid": "5523051b-1c1f-47dd-a7d9-84392ddaf5aa",
+            "top_degree": 1
+          },
+          {
+            "size": 10,
+            "fraction": 0.006234413965087282,
+            "size_total": 12,
+            "top_uuid": "635bd7af-173d-48f4-a2bf-7f928d1606f0",
+            "top_degree": 2
+          },
+          {
+            "size": 10,
+            "fraction": 0.006234413965087282,
+            "size_total": 20,
+            "top_uuid": "b5a8579b-27d9-4acb-ad7a-a4fe154e9173",
+            "top_degree": 10
+          },
+          {
+            "size": 6,
+            "fraction": 0.003740648379052369,
+            "size_total": 7,
+            "top_uuid": "2582da0b-7ed5-4ba3-8d95-6ff3eb32be03",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.003740648379052369,
+            "size_total": 9,
+            "top_uuid": "2db064e2-ae5e-4220-8a0c-165937aa158a",
+            "top_degree": 2
+          },
+          {
+            "size": 6,
+            "fraction": 0.003740648379052369,
+            "size_total": 7,
+            "top_uuid": "aa32f982-43f5-4eb3-94e1-600ae0760e42",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.003117206982543641,
+            "size_total": 6,
+            "top_uuid": "587c087a-b51d-4c57-a70e-a87fd18f6b46",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.003117206982543641,
+            "size_total": 6,
+            "top_uuid": "9fd6915d-cf76-4c50-8a2e-2b688103a763",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0024937655860349127,
+            "size_total": 23,
+            "top_uuid": "8b327b29-7bc6-4d24-a8ec-c84508aabc6f",
+            "top_degree": 19
+          },
+          {
+            "size": 4,
+            "fraction": 0.0024937655860349127,
+            "size_total": 5,
+            "top_uuid": "c4071b8d-488d-4973-92b0-2f48fdbc05d7",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0024937655860349127,
+            "size_total": 5,
+            "top_uuid": "500201bf-3e07-43de-aa51-818ff0e9e5f7",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0018703241895261845,
+            "size_total": 4,
+            "top_uuid": "e31e0da1-6449-4349-9e93-7623ffd47546",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0018703241895261845,
+            "size_total": 4,
+            "top_uuid": "0b7015da-ee75-4a26-8dab-4096ff99f873",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0018703241895261845,
+            "size_total": 4,
+            "top_uuid": "389b9e87-383b-4081-bd76-dd0d2eebcc51",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0018703241895261845,
+            "size_total": 4,
+            "top_uuid": "1db7a282-bea4-4937-a519-df031e4e34a0",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "7f7eaf13-5b26-44ca-97d2-15c40db1655a",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "a9d7b10d-cd93-426e-a1c0-48dae3e717b2",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "e13b76ff-5435-4c53-bd2f-e9b95bd94806",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "805a7b6f-5b90-41f1-85ca-ffde085ded66",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "4d73f4b5-b323-459a-85a0-653dc4619852",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "e1de753f-e9b3-47d5-be2d-3e599597163a",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "5e065a21-93d8-42e5-a332-b3e3c8eb7ece",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "a260c0ad-9b5b-4bee-a7eb-74a32a3e3c3c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "3ffb0406-3bf0-4e17-8dd3-d3d312bbf1a1",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0012468827930174563,
+            "size_total": 3,
+            "top_uuid": "703ef7e6-b5f6-4cc6-a06b-aa6723debe78",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 190,
+        "total_islands": 147,
+        "singleton_islands": 137,
+        "multi_islands": [
+          {
+            "size": 19,
+            "fraction": 0.1,
+            "size_total": 23,
+            "top_uuid": "660678a5-984f-47c3-9637-f1a2731479be",
+            "top_degree": 4
+          },
+          {
+            "size": 10,
+            "fraction": 0.05263157894736842,
+            "size_total": 20,
+            "top_uuid": "7df7748a-37f8-4511-bff4-e313c0f6b5d5",
+            "top_degree": 8
+          },
+          {
+            "size": 7,
+            "fraction": 0.03684210526315789,
+            "size_total": 79,
+            "top_uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+            "top_degree": 51
+          },
+          {
+            "size": 4,
+            "fraction": 0.021052631578947368,
+            "size_total": 28,
+            "top_uuid": "ef315642-f9c3-4a2c-afbf-c9f915902aac",
+            "top_degree": 18
+          },
+          {
+            "size": 3,
+            "fraction": 0.015789473684210527,
+            "size_total": 9,
+            "top_uuid": "1177a222-78ca-4bdd-8183-784c8f224d14",
+            "top_degree": 6
+          },
+          {
+            "size": 2,
+            "fraction": 0.010526315789473684,
+            "size_total": 49,
+            "top_uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+            "top_degree": 47
+          },
+          {
+            "size": 2,
+            "fraction": 0.010526315789473684,
+            "size_total": 12,
+            "top_uuid": "a4087ec6-9b88-41cd-b07f-b05b62e17a5e",
+            "top_degree": 10
+          },
+          {
+            "size": 2,
+            "fraction": 0.010526315789473684,
+            "size_total": 3,
+            "top_uuid": "7d6442e6-55b7-4cac-90e0-230611b40d31",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.010526315789473684,
+            "size_total": 27,
+            "top_uuid": "d0b4ec59-d508-4deb-b336-384ceac76165",
+            "top_degree": 14
+          },
+          {
+            "size": 2,
+            "fraction": 0.010526315789473684,
+            "size_total": 3,
+            "top_uuid": "48bbe437-c1df-4ed3-917e-cbca3cdb665f",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": [
+      {
+        "count": 2,
+        "source": {
+          "uuid": "cd16dc53-f596-43e5-bbe8-11ab7c155f92",
+          "code": "projekt_3704",
+          "name": "Obnova a posilnenie technologickej a sieťovej infraštruktúry DataCentra"
+        },
+        "target": {
+          "uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+          "code": "mp_18",
+          "name": "DataCentrum (Bratislava, Cintorínska)"
+        }
+      },
+      {
+        "count": 2,
+        "source": {
+          "uuid": "86c4a771-e076-4c09-9866-c742f5cbb80f",
+          "code": "projekt_3708",
+          "name": "Zvýšenie bezpečnosti a obnova zariadení  katastra nehnuteľností v správe MV SR"
+        },
+        "target": {
+          "uuid": "6026fd2c-1711-4555-b7c6-55ac0cac142a",
+          "code": "mp_206",
+          "name": "Ministerstvo vnútra SR"
+        }
+      }
+    ]
+  },
+  "attributes": []
+}

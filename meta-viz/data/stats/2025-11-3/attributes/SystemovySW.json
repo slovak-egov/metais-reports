@@ -1,0 +1,188 @@
+{
+  "type": "SystemovySW",
+  "count": 30,
+  "attributes": [
+    {
+      "name": "IKT_Profil_SystemovySW_priznak_schvalenia",
+      "count": 30,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 6.666666666666667
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 30,
+      "pct": 100.0,
+      "unique_count": 30,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 30,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 3.3333333333333335
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 30,
+      "pct": 100.0,
+      "unique_count": 30,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 30,
+      "pct": 100.0,
+      "unique_count": 30,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Licencia_crd",
+      "count": 30,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 3.3333333333333335
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 29,
+      "pct": 96.66666666666667,
+      "unique_count": 1,
+      "unique_pct": 3.4482758620689653
+    },
+    {
+      "name": "IKT_Profil_SystemovySW_verzia",
+      "count": 17,
+      "pct": 56.666666666666664,
+      "unique_count": 10,
+      "unique_pct": 58.82352941176471
+    },
+    {
+      "name": "IKT_Profil_Licencia_model_licencny",
+      "count": 15,
+      "pct": 50.0,
+      "unique_count": 2,
+      "unique_pct": 13.333333333333334
+    },
+    {
+      "name": "IKT_Profil_SystemovySW_mnozstvo",
+      "count": 15,
+      "pct": 50.0,
+      "unique_count": 6,
+      "unique_pct": 40.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 6,
+      "pct": 20.0,
+      "unique_count": 5,
+      "unique_pct": 83.33333333333334
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 3,
+      "pct": 10.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_SystemovySW_aktualny_stav",
+      "count": 3,
+      "pct": 10.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "IKT_Migracia_SystemovySW_pocet",
+      "count": 3,
+      "pct": 10.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_SystemovySW_licencny_model",
+      "count": 3,
+      "pct": 10.0,
+      "unique_count": 2,
+      "unique_pct": 66.66666666666666
+    },
+    {
+      "name": "IKT_Migracia_SystemovySW_verzia_ps",
+      "count": 3,
+      "pct": 10.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_SystemovySW_vyrobca",
+      "count": 3,
+      "pct": 10.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_SystemovySW_nazov",
+      "count": 3,
+      "pct": 10.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Licencia_stav",
+      "count": 2,
+      "pct": 6.666666666666667,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 2,
+      "pct": 6.666666666666667,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_SystemovySW_platforma",
+      "count": 1,
+      "pct": 3.3333333333333335,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Licencia_product_name",
+      "count": 1,
+      "pct": 3.3333333333333335,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Licencia_options",
+      "count": 1,
+      "pct": 3.3333333333333335,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Licencia_opensource",
+      "count": 1,
+      "pct": 3.3333333333333335,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Licencia_vendor",
+      "count": 1,
+      "pct": 3.3333333333333335,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Licencia_subtitle",
+      "count": 1,
+      "pct": 3.3333333333333335,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

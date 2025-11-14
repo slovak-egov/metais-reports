@@ -1,0 +1,41 @@
+{
+  "type": "PZS",
+  "count": 16,
+  "attributes": [
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 16,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 16,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 6.25
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 16,
+      "pct": 100.0,
+      "unique_count": 16,
+      "unique_pct": 100.0
+    }
+  ]
+}

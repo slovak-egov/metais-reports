@@ -1,0 +1,119 @@
+{
+  "id": 156,
+  "name": "Projekt je evidovaný v Clarity",
+  "technicalName": "Projekt_je_evidovany_Clarity",
+  "description": "Projekt je evidovaný v Clarity.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Project is recorded in Clarity",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 103,
+      "name": "Profil Projekt je evidovany v Clarity",
+      "description": "Profil Projekt je evidovany v Clarity",
+      "technicalName": "Clarity_Profil_Projekt",
+      "roleList": [
+        "EA_GARPO",
+        "CLARITY"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Project profile is recorded in Clarity",
+      "attributes": [
+        {
+          "id": 32,
+          "name": "Clarity id",
+          "description": "Identifikátor projektu v systéme Clarity",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Clarity_Profil_Projekt_clarity_id",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Clarity id",
+          "engDescription": "Clarity id.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 56,
+      "name": "Projekt rozvoja IT",
+      "technicalName": "Projekt",
+      "description": "Projekt je jednorazový proces zameraný na dosiahnutie definovaného cieľa, pozostávajúci zo súboru zosúladených, riadených a časovo ohraničených činností, ktorý je pre danú organizáciu jedinečný, pričom to nie je pravidelná činnosť, má presne určený začiatok a koniec trvania, má definované najmenej finančné zdroje a ľudské zdroje, ak sú potrebné, vyžaduje analýzu súčasného stavu, špecifikáciu cieľového stavu a spôsobu jeho dosiahnutia. Projektom informačného systému verejnej správy sa rozumie produkt, ktorým sa vopred definuje informačný systém verejnej správy, jeho úprava alebo zmena.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Project of IT development",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_asociuje_Projekt",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 83,
+      "name": "Clarity",
+      "technicalName": "Clarity",
+      "description": "Clarity.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Clarity",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Project is recorded in Clarity.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

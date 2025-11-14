@@ -1,0 +1,67 @@
+{
+  "id": 52,
+  "name": "Posledný request",
+  "technicalName": "LATEST_REQUEST",
+  "description": "Posledný request.",
+  "roleList": [],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Last request",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 10,
+      "name": "CMDB_REQUEST_TRACKER",
+      "technicalName": "CMDB_REQUEST_TRACKER",
+      "description": "Interne - skupina CMDB",
+      "roleList": null,
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "CMDB_REQUEST_TRACKER",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": null,
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 9,
+      "name": "CMDB_REQUEST",
+      "technicalName": "CMDB_REQUEST",
+      "description": "Interne - skupina CMDB",
+      "roleList": null,
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "CMDB_REQUEST",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": null,
+      "labels": []
+    }
+  ],
+  "engDescription": "Last request.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

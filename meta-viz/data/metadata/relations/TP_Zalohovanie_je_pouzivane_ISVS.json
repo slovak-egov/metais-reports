@@ -1,0 +1,178 @@
+{
+  "id": 138,
+  "name": "Zálohovacie zariadenie je používané ISVS",
+  "technicalName": "TP_Zalohovanie_je_pouzivane_ISVS",
+  "description": "Vybrané ISVS používa dané zálohovacie zariadenia.",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": false,
+  "color": null,
+  "engName": "Backup device is used by ISVS",
+  "category": "RWCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 89,
+      "name": "EA profil pre reláciu",
+      "description": "Architektonický profil pre relácie",
+      "technicalName": "EA_Profil_Rel",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Architecture profile for relations",
+      "attributes": [
+        {
+          "id": 515,
+          "name": "Typ väzby",
+          "description": "Príslušný typ Archimate vzťahu z BDA. Hodnota je vyplnená, len keď sa daná relácia nachádza aj v BDA.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_Rel_typ_vazby",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_VAZBY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Relation type",
+          "engDescription": "Corresponding type of Archimate relation with BDA. Value is filled in only when is particular relation also located in BDA.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 60,
+      "name": "Zálohovacie zariadenie",
+      "technicalName": "TP_Zalohovanie",
+      "description": "Detaily týkajúce sa zálohovacieho zariadenia.",
+      "roleList": [
+        "IKT_GARPO",
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Backup device",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";IKT_GARPO;EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 20,
+      "name": "ISVS",
+      "technicalName": "ISVS",
+      "description": "Informačný systém v pôsobnosti povinnej osoby ako správcu, ktorý slúži na výkon správy. Rozoznávame tri časti tohto informačného systému - vecnú (úseky správy – agendy a s nimi súvisiace procesy), inštitucionálnu (kompetencie inštitúcií verejnej správy, resp. povinných osôb vo vzťahu k agendám a procesom) a technologickú (nástroje a metódy; materiálne a technické prostriedky realizácie procesov). Správca určuje účel a prostriedky spracúvania informácií informačného systému. Z kompetenčného hľadiska ho definujeme ako „Informačný systém úradu, ktorý pozostáva z častí agend úsekov správy, ktoré vykonáva povinná osoba v súlade s kompetenciami ustanovenými osobitnými predpismi“. Z vecného hľadiska ho definujeme ako „Informačný systém úseku správy, ktorý pozostáva z častí agend úseku správy, ktoré vykonávajú povinné osoby, v súlade s ich kompetenciami ustanovenými osobitným predpisom.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "ISVS",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_je_spravca_ISVS",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Selected ISVS uses particular backup devices.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

@@ -1,0 +1,97 @@
+{
+  "type": "LicenseRequest",
+  "count": 7,
+  "attributes": [
+    {
+      "name": "Profile_LicenseRequest_contractType",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 14.285714285714285
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 14.285714285714285
+    },
+    {
+      "name": "Profile_LicenseRequest_requestedBy",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 6,
+      "unique_pct": 85.71428571428571
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_LicenseRequest_vendor",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 28.57142857142857
+    },
+    {
+      "name": "Profile_LicenseRequest_requestedByName",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 6,
+      "unique_pct": 85.71428571428571
+    },
+    {
+      "name": "Profile_LicenseRequest_state",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 42.857142857142854
+    },
+    {
+      "name": "Profile_LicenseRequest_attachment",
+      "count": 6,
+      "pct": 85.71428571428571,
+      "unique_count": 6,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_LicenseRequest_reason",
+      "count": 3,
+      "pct": 42.857142857142854,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_LicenseRequest_contactPerson",
+      "count": 3,
+      "pct": 42.857142857142854,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_LicenseRequest_note",
+      "count": 2,
+      "pct": 28.57142857142857,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profile_LicenseRequest_fromExistingSupport",
+      "count": 1,
+      "pct": 14.285714285714285,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

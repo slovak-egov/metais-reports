@@ -1,0 +1,173 @@
+{
+  "id": 50,
+  "name": "System Action ChangeOwner",
+  "technicalName": "SYSTEM_ACTION_CHANGE_OWNER",
+  "description": "Systémový typ, ktorý obsahuje informácie o operácii zmeny vlastníka",
+  "roleList": null,
+  "type": "system",
+  "valid": true,
+  "color": "#ffe0af",
+  "engName": "System Action ChangeOwner",
+  "category": "RWNCB",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 63,
+      "name": "System Action ChangeOwner - Profil",
+      "description": "System Action ChangeOwner - Profil",
+      "technicalName": "genprof_SYSTEM_ACTION_CHANGE_OWNER",
+      "roleList": null,
+      "type": "system",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "System Action ChangeOwner - Profile",
+      "attributes": [
+        {
+          "id": 79,
+          "name": "Dôvod zmeny",
+          "description": "Dôvod zmeny.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_SYSTEM_ACTION_CHANGE_OWNER_change_reason",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reason of change",
+          "engDescription": "Reason of change",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 240,
+          "name": "Nový vlastník",
+          "description": "Nový vlastník.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_SYSTEM_ACTION_CHANGE_OWNER_new_owner",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "New owner",
+          "engDescription": "New owner.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 303,
+          "name": "Popis",
+          "description": "Popis.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_SYSTEM_ACTION_CHANGE_OWNER_change_description",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Description",
+          "engDescription": "Description.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 522,
+          "name": "Typ zmeny",
+          "description": "Typ zmeny.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_SYSTEM_ACTION_CHANGE_OWNER_change_type",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_LEG_ZMENY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Change type",
+          "engDescription": "Change type.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "change_owner_",
+  "ownerRelation": null,
+  "uriPrefix": "",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": []
+  }
+}

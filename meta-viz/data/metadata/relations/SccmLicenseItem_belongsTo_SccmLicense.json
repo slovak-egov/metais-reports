@@ -1,0 +1,73 @@
+{
+  "id": 148,
+  "name": "Polozka licencie patri pod licenciu",
+  "technicalName": "SccmLicenseItem_belongsTo_SccmLicense",
+  "description": "Polozka licencie patri pod licenciu.",
+  "roleList": [
+    "LIC_ZLPO"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "License item belongs under license",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 81,
+      "name": "Polozka SCCM Licencie",
+      "technicalName": "SccmLicenseItem",
+      "description": "SCCM Licencie",
+      "roleList": [
+        "LIC_ZLPO"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "SCCM License item",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_ZLPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 80,
+      "name": "SCCM Licencie",
+      "technicalName": "SccmLicense",
+      "description": "SCCM Licencie",
+      "roleList": [
+        "LIC_ZLPO"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "SCCM Licenses",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_ZLPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "License item belongs under license.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

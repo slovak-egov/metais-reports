@@ -1,0 +1,83 @@
+{
+  "type": "Platforma",
+  "count": 53,
+  "attributes": [
+    {
+      "name": "EA_Profil_InfraVS_vladny_cloud",
+      "count": 53,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 3.7735849056603774
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 53,
+      "pct": 100.0,
+      "unique_count": 53,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 53,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 1.8867924528301887
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 53,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 1.8867924528301887
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 53,
+      "pct": 100.0,
+      "unique_count": 53,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 53,
+      "pct": 100.0,
+      "unique_count": 53,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 17,
+      "pct": 32.075471698113205,
+      "unique_count": 17,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_InfraVS_aktualny_stav",
+      "count": 15,
+      "pct": 28.30188679245283,
+      "unique_count": 2,
+      "unique_pct": 13.333333333333334
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 7,
+      "pct": 13.20754716981132,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_InfraVS_nazov",
+      "count": 2,
+      "pct": 3.7735849056603774,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 1,
+      "pct": 1.8867924528301887,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

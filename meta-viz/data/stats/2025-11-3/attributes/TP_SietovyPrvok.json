@@ -1,0 +1,104 @@
+{
+  "type": "TP_SietovyPrvok",
+  "count": 5,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_priznak_schvalenia",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_SietovyPrvok_vyrobca",
+      "count": 4,
+      "pct": 80.0,
+      "unique_count": 1,
+      "unique_pct": 25.0
+    },
+    {
+      "name": "IKT_Migracia_TP_SietovyPrvok_typ",
+      "count": 4,
+      "pct": 80.0,
+      "unique_count": 4,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_SietovyPrvok_nazov",
+      "count": 3,
+      "pct": 60.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_vyrobca",
+      "count": 2,
+      "pct": 40.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "IKT_Migracia_TP_SietovyPrvok_aktualny_stav",
+      "count": 1,
+      "pct": 20.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_TP_pocet",
+      "count": 1,
+      "pct": 20.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_TP_SietovyPrvok_siet",
+      "count": 1,
+      "pct": 20.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 1,
+      "pct": 20.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

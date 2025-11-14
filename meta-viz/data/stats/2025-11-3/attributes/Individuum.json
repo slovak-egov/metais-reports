@@ -1,0 +1,104 @@
+{
+  "type": "Individuum",
+  "count": 88,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 88,
+      "pct": 100.0,
+      "unique_count": 88,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_RefID_stav_registracie",
+      "count": 88,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 4.545454545454546
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 88,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 2.272727272727273
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 88,
+      "pct": 100.0,
+      "unique_count": 86,
+      "unique_pct": 97.72727272727273
+    },
+    {
+      "name": "Profil_Individuum_zaklad_uri",
+      "count": 88,
+      "pct": 100.0,
+      "unique_count": 85,
+      "unique_pct": 96.5909090909091
+    },
+    {
+      "name": "Profil_Individuum_platne_od",
+      "count": 88,
+      "pct": 100.0,
+      "unique_count": 17,
+      "unique_pct": 19.318181818181817
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 88,
+      "pct": 100.0,
+      "unique_count": 88,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Individuum_kod",
+      "count": 87,
+      "pct": 98.86363636363636,
+      "unique_count": 30,
+      "unique_pct": 34.48275862068966
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 86,
+      "pct": 97.72727272727273,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 86,
+      "pct": 97.72727272727273,
+      "unique_count": 6,
+      "unique_pct": 6.976744186046512
+    },
+    {
+      "name": "Gen_Profil_RefID_dovod_zamietnutia",
+      "count": 16,
+      "pct": 18.181818181818183,
+      "unique_count": 2,
+      "unique_pct": 12.5
+    },
+    {
+      "name": "Profil_Individuum_deferenceTarget",
+      "count": 2,
+      "pct": 2.272727272727273,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Individuum_hasVersion",
+      "count": 2,
+      "pct": 2.272727272727273,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "Profil_Individuum_platne_do",
+      "count": 1,
+      "pct": 1.1363636363636365,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

@@ -1,0 +1,1889 @@
+{
+  "relation_name": "PO_ma_UVS",
+  "name": "Povinná osoba má úseky verejnej správy",
+  "description": "Povinná osoba má úseky verejnej správy.",
+  "engDescription": "Public authority has section of public administration.",
+  "type": "application",
+  "source_type": "PO",
+  "source_name": "Povinná osoba",
+  "target_type": "UVS",
+  "target_name": "Úsek verejnej správy",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 224,
+    "unique_pairs": 224,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 5788,
+    "target_total": 228,
+    "source_connected": 24,
+    "target_connected": 221,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 31,
+      "avg": 9.333333333333334,
+      "median": 7.0,
+      "p90": 22,
+      "p99": 31
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.0135746606334841,
+      "median": 1,
+      "p90": 1,
+      "p99": 2
+    },
+    "top_source": [
+      {
+        "uuid": "0303d336-d570-47f5-846d-7f2d95b1d40b",
+        "degree": 31,
+        "name": "Ministerstvo vnútra Slovenskej republiky",
+        "code": "00151866"
+      },
+      {
+        "uuid": "01307c20-d576-486d-96f5-0d18641ef43a",
+        "degree": 23,
+        "name": "Ministerstvo hospodárstva Slovenskej republiky",
+        "code": "35683813"
+      },
+      {
+        "uuid": "b9525626-338b-410e-b82d-e3fe4c95d31f",
+        "degree": 22,
+        "name": "Ministerstvo dopravy Slovenskej republiky",
+        "code": "30416094"
+      },
+      {
+        "uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+        "degree": 19,
+        "name": "Ministerstvo financií Slovenskej republiky",
+        "code": "00151742"
+      },
+      {
+        "uuid": "82ed4d16-86e5-4cdf-888e-96060dda8288",
+        "degree": 17,
+        "name": "Ministerstvo spravodlivosti Slovenskej republiky",
+        "code": "00166073"
+      },
+      {
+        "uuid": "f069547e-bf00-4bbf-aa07-631be84ea36c",
+        "degree": 16,
+        "name": "Ministerstvo životného prostredia Slovenskej republiky",
+        "code": "42181810"
+      },
+      {
+        "uuid": "8b22734b-273a-4c83-a38f-b5f904c2b157",
+        "degree": 15,
+        "name": "Ministerstvo pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
+        "code": "00156621"
+      },
+      {
+        "uuid": "efc1cb80-bbf1-4311-ad68-d418aa63f6ff",
+        "degree": 14,
+        "name": "Ministerstvo práce, sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "00681156"
+      },
+      {
+        "uuid": "be304941-5b5c-4ee5-8f64-b46d7048d9c6",
+        "degree": 10,
+        "name": "Ministerstvo zdravotníctva Slovenskej republiky",
+        "code": "00165565"
+      },
+      {
+        "uuid": "73ec5411-5dc6-43d8-9234-cf427153ae97",
+        "degree": 10,
+        "name": "Ministerstvo obrany Slovenskej republiky",
+        "code": "30845572"
+      },
+      {
+        "uuid": "40ed1f67-d112-4e29-86bc-5b5e69b4520f",
+        "degree": 9,
+        "name": "Ministerstvo kultúry Slovenskej republiky",
+        "code": "00165182"
+      },
+      {
+        "uuid": "c67de740-0722-4b3d-9c12-8db578b7606a",
+        "degree": 8,
+        "name": "Ministerstvo zahraničných vecí a európskych záležitostí Slovenskej republiky",
+        "code": "00699021"
+      },
+      {
+        "uuid": "cedc6be2-9465-4c5d-878c-60f80988d268",
+        "degree": 6,
+        "name": "Úrad vlády Slovenskej republiky",
+        "code": "00151513"
+      },
+      {
+        "uuid": "a067167e-7851-4cf9-bdcb-09dcec21a723",
+        "degree": 5,
+        "name": "Ministerstvo školstva, výskumu, vývoja a mládeže Slovenskej republiky",
+        "code": "00164381"
+      },
+      {
+        "uuid": "f698bd0b-9319-4b1b-b3ef-8343ae337424",
+        "degree": 5,
+        "name": "Úrad pre normalizáciu, metrológiu a skúšobníctvo Slovenskej republiky",
+        "code": "30810710"
+      },
+      {
+        "uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+        "degree": 3,
+        "name": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
+        "code": "50349287"
+      },
+      {
+        "uuid": "6ce0e645-8836-441e-8d03-c8deb5f62700",
+        "degree": 2,
+        "name": "Protimonopolný úrad SR",
+        "code": "00699063"
+      },
+      {
+        "uuid": "3da4edd2-e1c8-4862-bd23-fc9167ec536e",
+        "degree": 2,
+        "name": "Úrad geodézie, kartografie a katastra Slovenskej republiky",
+        "code": "00166260"
+      },
+      {
+        "uuid": "38b99897-c2be-4277-9cd9-f4b523955f7f",
+        "degree": 2,
+        "name": "Úrad priemyselného vlastníctva Slovenskej republiky",
+        "code": "30810787"
+      },
+      {
+        "uuid": "f4760beb-3b8e-4e62-8eff-efecb5e10a4d",
+        "degree": 1,
+        "name": "Národný bezpečnostný úrad",
+        "code": "36061701"
+      },
+      {
+        "uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+        "degree": 1,
+        "name": "Štatistický úrad Slovenskej republiky",
+        "code": "00166197"
+      },
+      {
+        "uuid": "0812ab55-cc17-4bec-89ad-0f5fea58e13c",
+        "degree": 1,
+        "name": "Správa štátnych hmotných rezerv Slovenskej republiky",
+        "code": "30844363"
+      },
+      {
+        "uuid": "cf3d26e8-6a0c-4b60-a5ec-9864b8f0a28c",
+        "degree": 1,
+        "name": "Úrad jadrového dozoru Slovenskej republiky",
+        "code": "30844185"
+      },
+      {
+        "uuid": "cb45bee5-c165-43dc-b3b1-bb4abc823215",
+        "degree": 1,
+        "name": "Úrad pre verejné obstarávanie",
+        "code": "31797903"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "19560435-cd14-4c80-a85a-a61686a77b26",
+        "degree": 2,
+        "name": "Coordinating the preparations for regional development policy",
+        "code": "U00063"
+      },
+      {
+        "uuid": "859a8cea-ec9c-4858-8275-01c9d9c408ce",
+        "degree": 2,
+        "name": "Informatizácia spoločnosti",
+        "code": "U00029"
+      },
+      {
+        "uuid": "e2fc92ea-6cb5-4750-b6b4-56174cca882f",
+        "degree": 2,
+        "name": "Koordinácia čerpania financií z fondov Európskej únie",
+        "code": "U00062"
+      },
+      {
+        "uuid": "027f807a-da65-4425-b1df-9869879dab96",
+        "degree": 1,
+        "name": "Cestná doprava",
+        "code": "U00044"
+      },
+      {
+        "uuid": "0287ca1c-45a9-4612-b348-0e6c3ebde082",
+        "degree": 1,
+        "name": "Ochrana štátnych hraníc",
+        "code": "U00081"
+      },
+      {
+        "uuid": "02c1437f-2141-4a0c-9273-1ca49a7dde88",
+        "degree": 1,
+        "name": "Hospodárenie a nakladanie s majetkom Slovenskej republiky v zahraničí, ktorý má vo svojej správe Ministerstvo zahraničných vecí Slovenskej republiky",
+        "code": "U00131"
+      },
+      {
+        "uuid": "02f9b720-8a4e-4543-862c-d0277ed5eec6",
+        "degree": 1,
+        "name": "Ochrana bezpečnosti a plynulosti železničnej dopravy",
+        "code": "U00084"
+      },
+      {
+        "uuid": "04787080-cf90-4544-b729-3cb21624d6ce",
+        "degree": 1,
+        "name": "Policajný zbor",
+        "code": "U00106"
+      },
+      {
+        "uuid": "0604d6c8-2acc-4fd7-9a03-43c66a77d6e3",
+        "degree": 1,
+        "name": "Koordinácia výkonu štátnej správy uskutočňovanej obcami, vyššími územnými celkami a orgánmi miestnej štátnej správy",
+        "code": "U00105"
+      },
+      {
+        "uuid": "089d70e0-e1b9-4f60-b833-9ce949b5d220",
+        "degree": 1,
+        "name": "Politika spravovania majetku verejnej správy vo verejnoprospešnej sfére a nepodnikateľskej sfére",
+        "code": "U00035"
+      },
+      {
+        "uuid": "09db4203-193d-43ac-98e5-0f1714deb9e1",
+        "degree": 1,
+        "name": "Občianske preukazy a štátne občianstvo",
+        "code": "U00088"
+      },
+      {
+        "uuid": "0a55eb65-41ed-4171-a184-f5b622217f47",
+        "degree": 1,
+        "name": "Závlahové systémy a odvodňovacie systémy",
+        "code": "U00068"
+      },
+      {
+        "uuid": "0cdedd39-4cad-4f15-8468-c3518006a76c",
+        "degree": 1,
+        "name": "Štátne symboly, heraldický register",
+        "code": "U00097"
+      },
+      {
+        "uuid": "0ceaced4-6385-45fa-9e41-48d9de91592e",
+        "degree": 1,
+        "name": "Cenová politika v oblasti cien výrobkov, služieb a výkonov v zdravotníctve a v oblasti cien nájmu nebytových priestorov v zdravotníckych zariadeniach",
+        "code": "U00185"
+      },
+      {
+        "uuid": "0f484653-c569-4b7e-a261-1ddba245e6c6",
+        "degree": 1,
+        "name": "Koordinácia štátnej pomoci",
+        "code": "U00030"
+      },
+      {
+        "uuid": "10137231-f452-4434-b04d-5fb05affe2fa",
+        "degree": 1,
+        "name": "Spracovanie dreva vrátane biotechnológií",
+        "code": "U00076"
+      },
+      {
+        "uuid": "14db650c-5ec7-4baa-b114-6263fe6a23d7",
+        "degree": 1,
+        "name": "Vydávanie Zbierky zákonov Slovenskej republiky a Obchodného vestníka",
+        "code": "U00124"
+      },
+      {
+        "uuid": "16a7b482-064a-4524-ad55-9c9b581f2098",
+        "degree": 1,
+        "name": "Ťažba rudných a nerudných surovín a vyhľadávanie a prieskum rádioaktívnych surovín a ich ťažba",
+        "code": "U00007"
+      },
+      {
+        "uuid": "1831997d-8ef2-42ff-bf41-d5ba89d4a1d9",
+        "degree": 1,
+        "name": "Súkromné bezpečnostné služby",
+        "code": "U00086"
+      },
+      {
+        "uuid": "1901eb37-a03d-4252-ace5-3920a5838322",
+        "degree": 1,
+        "name": "Vládny audit",
+        "code": "U00028"
+      },
+      {
+        "uuid": "1943e4ca-9306-4fa6-8f57-08e75b164558",
+        "degree": 1,
+        "name": "Ochrana a regulácia obchodu s ohrozenými druhmi voľne žijúcich živočíchov a voľne rastúcich rastlín",
+        "code": "U00163"
+      },
+      {
+        "uuid": "1a76c385-6fdd-4dee-86c9-b30e237f49f5",
+        "degree": 1,
+        "name": "Poskytovanie štátnej prémie k stavebnému sporeniu a štátneho príspevku k hypotekárnym úverom",
+        "code": "U00058"
+      },
+      {
+        "uuid": "1a780d8f-d5dc-4454-9314-8d2f33e93016",
+        "degree": 1,
+        "name": "Ochrana ovzdušia, ozónovej vrstvy a klimatického systému Zeme",
+        "code": "U00154"
+      },
+      {
+        "uuid": "1e688a33-01af-4de0-8852-04475cc2da4c",
+        "degree": 1,
+        "name": "Jednotné účtovníctvo a účtovné výkazníctvo",
+        "code": "U00040"
+      },
+      {
+        "uuid": "1f179fbc-2556-4f51-825b-059cf72b4cea",
+        "degree": 1,
+        "name": "Činnosť Národnej rady Slovenskej republiky, jej výborov, osobitných kontrolných výborov a komisií vrátane parlamentnej dokumentácie a tlačovej služby",
+        "code": "U00216"
+      },
+      {
+        "uuid": "21335d9f-b491-4a4f-84f7-8aeb2c743aab",
+        "degree": 1,
+        "name": "Odštátnenie a privatizácia majetku štátu",
+        "code": "U00019"
+      },
+      {
+        "uuid": "223248fa-a670-4620-bb8b-535c96aee235",
+        "degree": 1,
+        "name": "Koordinácia činností a kontrola orgánov štátnej správy, orgánov územnej samosprávy a iných právnických osôb pri príprave na obranu Slovenskej republiky",
+        "code": "U00112"
+      },
+      {
+        "uuid": "22f1e1b2-425f-4036-a6da-ec158b11fe20",
+        "degree": 1,
+        "name": "Zdravotná starostlivosť",
+        "code": "U00179"
+      },
+      {
+        "uuid": "2497f517-b9ed-45e3-b50d-b182f6c70440",
+        "degree": 1,
+        "name": "Kontrola plnenia úloh z uznesení vlády Slovenskej republiky",
+        "code": "U00189"
+      },
+      {
+        "uuid": "2507c7c5-efed-4d3d-b994-43e7ac9ae5f9",
+        "degree": 1,
+        "name": "Vzťahy s cirkvami a náboženskými spoločnosťami",
+        "code": "U00176"
+      },
+      {
+        "uuid": "253c6332-0d1d-421f-862f-afb0473a643f",
+        "degree": 1,
+        "name": "Dohľad nad poskytovaním zdravotnej starostlivosti",
+        "code": "U00211"
+      },
+      {
+        "uuid": "253d95e0-dce0-4f95-8c0f-dd712bc7f23c",
+        "degree": 1,
+        "name": "Výstavba, riadenie a kontrola ozbrojených síl Slovenskej republiky",
+        "code": "U00111"
+      },
+      {
+        "uuid": "265dee9d-87b9-4a29-bb79-09da823742fc",
+        "degree": 1,
+        "name": "Rozpočtovanie súhrnného schodku verejného rozpočtu",
+        "code": "U00032"
+      },
+      {
+        "uuid": "26dec9ec-204c-4917-aa2e-5f4c84b60ae4",
+        "degree": 1,
+        "name": "Finančný trh vrátane ochrany spotrebiteľa pri poskytovaní finančných služieb",
+        "code": "U00034"
+      },
+      {
+        "uuid": "28c59f55-7713-495e-91cd-63b053b670be",
+        "degree": 1,
+        "name": "Otázky azylantov a odídencov",
+        "code": "U00090"
+      },
+      {
+        "uuid": "2a8104ca-6143-42cf-b3ed-fbac96c22dff",
+        "degree": 1,
+        "name": "Vnútorný obchod",
+        "code": "U00010"
+      },
+      {
+        "uuid": "2b8991a9-6834-4b27-8958-872476991717",
+        "degree": 1,
+        "name": "Výkon štátneho dozoru nad vykonávaním sociálneho poistenia a výkon dohľadu nad poskytovaním sociálnych služieb",
+        "code": "U00148"
+      },
+      {
+        "uuid": "2da449f2-e83b-444d-a04e-98aa719e4fc1",
+        "degree": 1,
+        "name": "Geneticky modifikované organizmy",
+        "code": "U00164"
+      },
+      {
+        "uuid": "2f98a14f-8d24-410b-b360-024f13e66d52",
+        "degree": 1,
+        "name": "Podmienky prevádzky vozidiel v premávke na pozemných komunikáciách",
+        "code": "U00047"
+      },
+      {
+        "uuid": "30c14e92-d10d-4a88-a364-e3fe47415046",
+        "degree": 1,
+        "name": "Ochrana prírody a krajiny",
+        "code": "U00149"
+      },
+      {
+        "uuid": "311aab15-ea68-446b-ad82-cf7e24632d3c",
+        "degree": 1,
+        "name": "Ochrana a podpora hospodárskej súťaže",
+        "code": "U00193"
+      },
+      {
+        "uuid": "316f1702-b366-48f4-bdf4-9ef35831c7ea",
+        "degree": 1,
+        "name": "Riadenie a kontrola obrany Slovenskej republiky",
+        "code": "U00110"
+      },
+      {
+        "uuid": "3675f30c-9ac9-45aa-bc63-c3abf8cc534a",
+        "degree": 1,
+        "name": "Dane a poplatky",
+        "code": "U00024"
+      },
+      {
+        "uuid": "38b10fbb-79d3-4b5d-8bd6-653f6436c3bd",
+        "degree": 1,
+        "name": "Posudzovanie vplyvov na životné prostredie",
+        "code": "U00160"
+      },
+      {
+        "uuid": "39d3efcf-d2ed-476a-8cd0-0dfc55d451a2",
+        "degree": 1,
+        "name": "Cestovný ruch",
+        "code": "U00059"
+      },
+      {
+        "uuid": "3a646897-874d-4552-b67a-6ca977966fbe",
+        "degree": 1,
+        "name": "Pozemkové úpravy a ochrana poľnohospodárskej pôdy",
+        "code": "U00067"
+      },
+      {
+        "uuid": "3a82f40f-b35e-4877-94d4-40d0b261e4a0",
+        "degree": 1,
+        "name": "Regionálny rozvoj okrem koordinácie využívania finančných prostriedkov z fondov Európskej únie",
+        "code": "U00077"
+      },
+      {
+        "uuid": "3b331a32-a58f-4024-ae3e-34974f63c28f",
+        "degree": 1,
+        "name": "Umenie",
+        "code": "U00172"
+      },
+      {
+        "uuid": "3c980c05-8958-4522-b791-2cd59e8d29d3",
+        "degree": 1,
+        "name": "Evidencia obyvateľov",
+        "code": "U00091"
+      },
+      {
+        "uuid": "3dd773a6-8a4a-4947-8b6c-a21408b2fa05",
+        "degree": 1,
+        "name": "Pošty",
+        "code": "U00050"
+      },
+      {
+        "uuid": "3e8e8295-4381-4464-a2a4-1cd8033b9fbb",
+        "degree": 1,
+        "name": "Verejné vodovody a verejné kanalizácie",
+        "code": "U00151"
+      },
+      {
+        "uuid": "3f04c082-82dc-47d8-8f46-3c5d074370bf",
+        "degree": 1,
+        "name": "Plemenársky dozor",
+        "code": "U00072"
+      },
+      {
+        "uuid": "3fd863d3-7a45-4456-bad4-a0223dffd1b6",
+        "degree": 1,
+        "name": "Ceny a cenová kontrola s výnimkou cien a cenovej kontroly tovarov ustanovených osobitnými zákonmi",
+        "code": "U00031"
+      },
+      {
+        "uuid": "3fe7aa79-508f-41c6-921d-a5681a91f899",
+        "degree": 1,
+        "name": "Styky s orgánmi a predstaviteľmi cudzích štátov v Slovenskej republike a v zahraničí",
+        "code": "U00130"
+      },
+      {
+        "uuid": "42d6ef95-d6c6-49b8-91f4-09ab9eb7c4b4",
+        "degree": 1,
+        "name": "Ochrana utajovaných skutočností, šifrová služba a elektronický podpis",
+        "code": "U00207"
+      },
+      {
+        "uuid": "43230022-fa05-44ba-ab79-5c5d484a9738",
+        "degree": 1,
+        "name": "Voľby a referendum",
+        "code": "U00101"
+      },
+      {
+        "uuid": "4422cd1a-7c3d-488e-9996-daed5c0daac8",
+        "degree": 1,
+        "name": "Koordinácia politiky vnútorného trhu Európskej únie",
+        "code": "U00013"
+      },
+      {
+        "uuid": "442b47d5-02eb-4273-969e-6758515a0290",
+        "degree": 1,
+        "name": "Pomoc v hmotnej núdzi",
+        "code": "U00145"
+      },
+      {
+        "uuid": "4497c61b-fef7-4181-8ddc-a3652b1d3309",
+        "degree": 1,
+        "name": "Vojnové hroby",
+        "code": "U00102"
+      },
+      {
+        "uuid": "44f46567-cc8f-4a10-b9cf-88d8197e885c",
+        "degree": 1,
+        "name": "Stratégia tvorby a realizácie inovácií na úsekoch U00001 až U00007",
+        "code": "U00021"
+      },
+      {
+        "uuid": "47a0cf2a-c44d-4b0a-b84f-6b3abfdc25a9",
+        "degree": 1,
+        "name": "Činnosť Súdnej rady Slovenskej republiky",
+        "code": "U00219"
+      },
+      {
+        "uuid": "4ec47249-586d-4183-bb47-6cab839f83c9",
+        "degree": 1,
+        "name": "Obchod s emisnými kvótami",
+        "code": "U00155"
+      },
+      {
+        "uuid": "4f5ebdcc-2cbf-4d41-ad0c-58d2156c7a4d",
+        "degree": 1,
+        "name": "Koordinácia štátnej rodinnej politiky",
+        "code": "U00147"
+      },
+      {
+        "uuid": "4fab2110-43a6-49f6-857d-48b24f402c0e",
+        "degree": 1,
+        "name": "Teplárenstvo",
+        "code": "U00003"
+      },
+      {
+        "uuid": "5236a6ff-d709-4d38-ae7e-521d2589a880",
+        "degree": 1,
+        "name": "Hypotekárne bankovníctvo",
+        "code": "U00037"
+      },
+      {
+        "uuid": "558af2fe-0f4b-4b38-a1dc-15ac0d599a25",
+        "degree": 1,
+        "name": "Rastlinolekárska starostlivosť",
+        "code": "U00071"
+      },
+      {
+        "uuid": "56513dcc-aea8-43f7-a630-f5702b29e378",
+        "degree": 1,
+        "name": "Plnenie úloh súvisiacich s členstvom Slovenskej republiky v Eurojuste",
+        "code": "U00126"
+      },
+      {
+        "uuid": "56e271a8-c4ea-4c32-ab9f-e6742e6ed953",
+        "degree": 1,
+        "name": "Vnútrozemská plavba a prístavy, námorná plavba",
+        "code": "U00048"
+      },
+      {
+        "uuid": "57164d9f-9854-413c-b613-e90761bc8502",
+        "degree": 1,
+        "name": "Ochrana ústavného zriadenia Slovenskej republiky",
+        "code": "U00079"
+      },
+      {
+        "uuid": "5beefbc1-6417-463c-a37c-0036b98d08e0",
+        "degree": 1,
+        "name": "Riadenie úloh hospodárskej mobilizácie",
+        "code": "U00018"
+      },
+      {
+        "uuid": "5cd29813-957b-4b5e-a00c-8198989c3aad",
+        "degree": 1,
+        "name": "Správa štátnych hraníc",
+        "code": "U00082"
+      },
+      {
+        "uuid": "5cdbaaee-964e-4062-b818-67c851998848",
+        "degree": 1,
+        "name": "Kontrola plnenia úloh súvisiacich s výkonom štátnej správy",
+        "code": "U00188"
+      },
+      {
+        "uuid": "607a0054-9b4e-4f6f-a9a3-980dfc3fe061",
+        "degree": 1,
+        "name": "Integrovaný záchranný systém",
+        "code": "U00093"
+      },
+      {
+        "uuid": "638db521-3d45-4d11-bf40-5b7f7db815be",
+        "degree": 1,
+        "name": "Prevencia závažných priemyselných havárií",
+        "code": "U00159"
+      },
+      {
+        "uuid": "6445982f-a334-469b-9f66-55b81af014cc",
+        "degree": 1,
+        "name": "Ochrana spotrebiteľa s výnimkou ochrany spotrebiteľa pri poskytovaní finančných služieb",
+        "code": "U00012"
+      },
+      {
+        "uuid": "64a7c2ef-989e-416f-9be9-1f71ed135757",
+        "degree": 1,
+        "name": "Železničná polícia",
+        "code": "U00107"
+      },
+      {
+        "uuid": "64d3e179-ddee-4369-a857-fc9f1f8a4093",
+        "degree": 1,
+        "name": "Štátne sociálne dávky",
+        "code": "U00142"
+      },
+      {
+        "uuid": "6597401b-8836-4b58-931d-a3250f4fd596",
+        "degree": 1,
+        "name": "Právna úprava v oblasti ústavného práva, trestného práva, občianskeho práva, obchodného práva, rodinného práva, konkurzného práva a medzinárodného práva súkromného",
+        "code": "U00120"
+      },
+      {
+        "uuid": "65da755e-098b-49a5-9ef0-92a194338865",
+        "degree": 1,
+        "name": "Jednotný informačný systém o životnom prostredí a plošnom monitoringu",
+        "code": "U00161"
+      },
+      {
+        "uuid": "66c17345-7dad-4afd-a7a0-f24581ac244d",
+        "degree": 1,
+        "name": "Odborné, organizačné a technické zabezpečovanie činnosti vlády Slovenskej republiky",
+        "code": "U00187"
+      },
+      {
+        "uuid": "6823c93c-0df4-4a19-9f2b-55ebf8298407",
+        "degree": 1,
+        "name": "Štátna štatistika",
+        "code": "U00194"
+      },
+      {
+        "uuid": "6a67a325-f746-4104-a071-a54c551e6848",
+        "degree": 1,
+        "name": "Poľovníctvo",
+        "code": "U00074"
+      },
+      {
+        "uuid": "6ad65219-3dea-4592-897c-dc1b8364295d",
+        "degree": 1,
+        "name": "Stratégia tvorby podnikateľského prostredia a podpora podnikateľského prostredia vrátane podpory potravinárskeho podnikateľského prostredia, ktorého produkty nie sú zaradené do prílohy I Zmluvy o fungovaní Európskej únie a podnikateľského prostredia v oblasti  spracovania dreva a biotechnológií",
+        "code": "U00009"
+      },
+      {
+        "uuid": "6cd392bb-7fc7-439f-b80c-5764fed314ed",
+        "degree": 1,
+        "name": "Devízové hospodárstvo a devízová kontrola",
+        "code": "U00039"
+      },
+      {
+        "uuid": "6de13272-649b-45b6-8a68-1796f895f84b",
+        "degree": 1,
+        "name": "Koordinácia vojenskej letovej premávky s civilnou letovou premávkou",
+        "code": "U00115"
+      },
+      {
+        "uuid": "6e8ec188-c3ce-4e4f-846e-76f94e32fda5",
+        "degree": 1,
+        "name": "Ochrana základných práv a slobôd",
+        "code": "U00220"
+      },
+      {
+        "uuid": "6f752df7-9236-451c-9948-7a05de7230a5",
+        "degree": 1,
+        "name": "Geodézia a kartografia",
+        "code": "U00195"
+      },
+      {
+        "uuid": "711d7e07-9d8f-4e33-9810-673c8ca52468",
+        "degree": 1,
+        "name": "Financie",
+        "code": "U00023"
+      },
+      {
+        "uuid": "721e842f-4ac9-4668-b58f-f49eced3cb17",
+        "degree": 1,
+        "name": "Pozemné komunikácie",
+        "code": "U00046"
+      },
+      {
+        "uuid": "72ac26ae-f928-48da-a7b9-17faef0bf509",
+        "degree": 1,
+        "name": "Ochrana a využívanie nerastných surovín vrátane hlavného dozoru nad ochranou a využívaním ložísk nerastov",
+        "code": "U00014"
+      },
+      {
+        "uuid": "72d26a21-4f14-4567-a49f-2d1a2aebb4a6",
+        "degree": 1,
+        "name": "Rozvoj vidieka",
+        "code": "U00078"
+      },
+      {
+        "uuid": "735ed0e1-0eaf-4bf3-b9c5-0b60e20a7b98",
+        "degree": 1,
+        "name": "Vstup na územie Slovenskej republiky a pobyt cudzincov na jej území",
+        "code": "U00087"
+      },
+      {
+        "uuid": "738e3891-3056-43d9-8646-7d9cfd8cebad",
+        "degree": 1,
+        "name": "Štátne hmotné rezervy a koordinácia a metodické usmerňovanie opatrení na riešenie stavu ropnej núdze",
+        "code": "U00206"
+      },
+      {
+        "uuid": "73f71f3d-867e-4fbd-a46f-deb1759186f5",
+        "degree": 1,
+        "name": "Regulácia v sieťových odvetviach",
+        "code": "U00215"
+      },
+      {
+        "uuid": "74b8d825-ddab-4036-895d-b9cb6f8b9d1a",
+        "degree": 1,
+        "name": "Bezpečnosť a ochrana zdravia pri práci",
+        "code": "U00136"
+      },
+      {
+        "uuid": "74dae005-9917-4ffe-b04e-aeb502d32beb",
+        "degree": 1,
+        "name": "Sociálne služby",
+        "code": "U00143"
+      },
+      {
+        "uuid": "75d46f44-5637-4338-b8e0-4aedcb22966e",
+        "degree": 1,
+        "name": "Koordinácia plnenia úloh v oblasti informatizácie spoločnosti",
+        "code": "U00191"
+      },
+      {
+        "uuid": "764ca15d-2829-4b87-93c9-dcafa2cc6594",
+        "degree": 1,
+        "name": "Jadrový dozor",
+        "code": "U00197"
+      },
+      {
+        "uuid": "77d10716-d127-4cc2-ad09-f7975b15f64c",
+        "degree": 1,
+        "name": "Ekologické aspekty územného plánovania",
+        "code": "U00156"
+      },
+      {
+        "uuid": "788afea6-d86e-4b0d-b181-4043037d47ba",
+        "degree": 1,
+        "name": "Štátna starostlivosť o mládež a šport",
+        "code": "U00169"
+      },
+      {
+        "uuid": "7b84fbbf-fb4c-4f1c-916c-44446979b0e1",
+        "degree": 1,
+        "name": "Koordinácia obranného plánovania",
+        "code": "U00113"
+      },
+      {
+        "uuid": "7d3af2fc-59c8-4abe-b27c-ba32a9294eda",
+        "degree": 1,
+        "name": "Kontrola zákazu biologických zbraní",
+        "code": "U00186"
+      },
+      {
+        "uuid": "7e9ffd6f-7563-40f2-8e35-becb8a9a0fb7",
+        "degree": 1,
+        "name": "Doplnkové dôchodkové sporenie",
+        "code": "U00141"
+      },
+      {
+        "uuid": "8053af25-3550-4921-9af5-53d204b58dff",
+        "degree": 1,
+        "name": "Evidencia cestných motorových vozidiel a prípojných vozidiel",
+        "code": "U00092"
+      },
+      {
+        "uuid": "83f8124a-6539-4e02-b8c9-0cd85753c014",
+        "degree": 1,
+        "name": "Odpadové hospodárstvo",
+        "code": "U00157"
+      },
+      {
+        "uuid": "8493af82-ac4a-4087-bf61-39c3755b685f",
+        "degree": 1,
+        "name": "Inšpekcia práce",
+        "code": "U00137"
+      },
+      {
+        "uuid": "84e94511-abfc-4b8b-a5b5-cfa0e89557f6",
+        "degree": 1,
+        "name": "Hasičský a záchranný zbor",
+        "code": "U00108"
+      },
+      {
+        "uuid": "84f9ae40-8abe-4e79-9584-05397357e9da",
+        "degree": 1,
+        "name": "Metrológia",
+        "code": "U00199"
+      },
+      {
+        "uuid": "85436df9-af09-4822-93eb-92fdcaf57561",
+        "degree": 1,
+        "name": "Kontrola zákazu vývoja, výroby, skladovania, použitia a obchodu s chemickými zbraňami a prekurzormi potrebnými na ich výrobu",
+        "code": "U00017"
+      },
+      {
+        "uuid": "8604a7c1-983f-40c2-8864-d2511ea0bb1a",
+        "degree": 1,
+        "name": "Podpora malého podnikania a stredného podnikania vrátane podpory potravinárskych produktov, ktoré nie sú zaradené do prílohy I Zmluvy o fungovaní Európskej únie a podpory spracovania dreva a biotechnológií",
+        "code": "U00008"
+      },
+      {
+        "uuid": "86946214-32e4-4b89-a7b8-e5538fbde875",
+        "degree": 1,
+        "name": "Určovanie kritérií výberu zamestnancov obchodno-ekonomických oddelení",
+        "code": "U00022"
+      },
+      {
+        "uuid": "883a9308-f089-486a-bc5f-7d27e1ae0401",
+        "degree": 1,
+        "name": "Zbrane a strelivá",
+        "code": "U00085"
+      },
+      {
+        "uuid": "8888406c-d714-4817-bdf4-ec1ef2a462a3",
+        "degree": 1,
+        "name": "Štátny jazyk",
+        "code": "U00170"
+      },
+      {
+        "uuid": "88e47e8c-dd69-4787-8860-d8f2a9d021cf",
+        "degree": 1,
+        "name": "Autorské právo a práva súvisiace s autorským právom",
+        "code": "U00173"
+      },
+      {
+        "uuid": "892de438-76f2-4a57-9310-07ec8305d7a9",
+        "degree": 1,
+        "name": "Vinohradníctvo a vinárstvo",
+        "code": "U00065"
+      },
+      {
+        "uuid": "8b30e391-4567-48c8-8a3a-29db98bfdcfa",
+        "degree": 1,
+        "name": "Verejné práce",
+        "code": "U00054"
+      },
+      {
+        "uuid": "8bbc02f9-87b4-45d8-87c7-f568a6a3e7cc",
+        "degree": 1,
+        "name": "Znalecká činnosť, prekladateľská činnosť a tlmočnícka činnosť",
+        "code": "U00123"
+      },
+      {
+        "uuid": "8e451555-4aa0-4d29-8122-89d86cae3ef2",
+        "degree": 1,
+        "name": "Povoľovanie verejných zbierok",
+        "code": "U00104"
+      },
+      {
+        "uuid": "8f378319-9e60-4c93-85d6-ede35d4c3c7c",
+        "degree": 1,
+        "name": "Ochrana práv a zákonom chránených záujmov fyzických osôb, právnických osôb a štátu",
+        "code": "U00208"
+      },
+      {
+        "uuid": "9090bf7c-9d21-47b8-a7b3-2003ab322aa7",
+        "degree": 1,
+        "name": "Ochrana pamiatkového fondu, kultúrne dedičstvo a knihovníctvo",
+        "code": "U00171"
+      },
+      {
+        "uuid": "92a52d12-8718-4d6f-9ab1-3c3178ad5bd6",
+        "degree": 1,
+        "name": "Prevencia a nápravy environmentálnych škôd",
+        "code": "U00158"
+      },
+      {
+        "uuid": "94346c05-d3d9-43a0-93e3-5cda9018bf7f",
+        "degree": 1,
+        "name": "Tvorba a uskutočňovanie bytovej politiky",
+        "code": "U00057"
+      },
+      {
+        "uuid": "95d6878e-f10b-4d35-ab59-81d0cf15da6f",
+        "degree": 1,
+        "name": "Ochrana pred požiarmi",
+        "code": "U00095"
+      },
+      {
+        "uuid": "966c9272-2ccb-4d13-86f0-66538f77a8b2",
+        "degree": 1,
+        "name": "Štátny dozor nad vykonávaním sociálneho poistenia, dodržiavaním podmienok poskytovania štátnej prémie v stavebnom sporení, dodržiavaním podmienok poskytovania štátneho príspevku k hypotekárnym úverom, činnosťou Exportno-importnej banky Slovenskej republiky a nad hospodárením Sociálnej poisťovne",
+        "code": "U00042"
+      },
+      {
+        "uuid": "96737ae2-1141-4436-8874-8b8b3ab25c6c",
+        "degree": 1,
+        "name": "Prírodné liečebné kúpele, prírodné liečivé zdroje, prírodné minerálne vody",
+        "code": "U00184"
+      },
+      {
+        "uuid": "96a5f239-5ace-42d3-bc69-e836d0c7b890",
+        "degree": 1,
+        "name": "Celoživotné vzdelávanie",
+        "code": "U00167"
+      },
+      {
+        "uuid": "97f0ed2f-b882-421f-be3f-b340da6ac6b2",
+        "degree": 1,
+        "name": "Dráhy a doprava na dráhach",
+        "code": "U00043"
+      },
+      {
+        "uuid": "9ac40229-9ee3-42aa-85a6-844cfa7db1e5",
+        "degree": 1,
+        "name": "Metodické riadenie činnosti slovenských inštitútov v zahraničí v oblasti ich kultúrneho pôsobenia",
+        "code": "U00178"
+      },
+      {
+        "uuid": "9e10acf7-4189-432d-bd55-d657d3fdf9ec",
+        "degree": 1,
+        "name": "Všeobecná vnútorná správa vrátane veci územného a správneho usporiadania Slovenskej republiky",
+        "code": "U00096"
+      },
+      {
+        "uuid": "9ec542ff-8b2e-439b-a018-ab932913ce97",
+        "degree": 1,
+        "name": "Energetika vrátane hospodárenia s jadrovým palivom a uskladňovania rádioaktívnych odpadov a energetická efektívnosť",
+        "code": "U00002"
+      },
+      {
+        "uuid": "9f7c33a6-85e6-4230-8c8e-b0b14a3ee5c1",
+        "degree": 1,
+        "name": "Civilná ochrana a krízové riadenie",
+        "code": "U00094"
+      },
+      {
+        "uuid": "a11f9618-d231-4c8d-8fac-9c6c598bd752",
+        "degree": 1,
+        "name": "Funkcie námorného úradu",
+        "code": "U00053"
+      },
+      {
+        "uuid": "a122cb5d-b35d-4e2f-a4fb-92a993f3506e",
+        "degree": 1,
+        "name": "Médiá a audiovízia",
+        "code": "U00177"
+      },
+      {
+        "uuid": "a2a8a2b3-1ad5-4095-bd6d-37d3247c5c4c",
+        "degree": 1,
+        "name": "Pracovnoprávne vzťahy, štátnozamestnanecké vzťahy a právne vzťahy pri výkone práce vo verejnom záujme a právne vzťahy volených funkcionárov orgánov územnej samosprávy",
+        "code": "U00135"
+      },
+      {
+        "uuid": "a4cd4ac8-9888-4621-bd84-a0d212cf686a",
+        "degree": 1,
+        "name": "Koordinácia realizácie politík  Európskej únie",
+        "code": "U00134"
+      },
+      {
+        "uuid": "a605a7da-e9e9-4015-9538-e52ce296893d",
+        "degree": 1,
+        "name": "Ťažba a úprava tuhých palív",
+        "code": "U00005"
+      },
+      {
+        "uuid": "a667d961-334f-4283-b025-3e0380964bc8",
+        "degree": 1,
+        "name": "Funkcie štátneho dopravného úradu",
+        "code": "U00052"
+      },
+      {
+        "uuid": "a67a007a-1870-4973-a1cd-1e6c311a648e",
+        "degree": 1,
+        "name": "Súdy a väzenstvo",
+        "code": "U00119"
+      },
+      {
+        "uuid": "a6987be7-4c03-456e-a837-2ff95016c718",
+        "degree": 1,
+        "name": "Technická normalizácia",
+        "code": "U00198"
+      },
+      {
+        "uuid": "a6aa8ca1-5a89-456f-817c-2a6bd4be3c2d",
+        "degree": 1,
+        "name": "Štátna regulácia poštových služieb",
+        "code": "U00214"
+      },
+      {
+        "uuid": "a8540f19-927c-40d1-a755-c592bade5541",
+        "degree": 1,
+        "name": "Tvorba a uskutočňovanie politiky mestského rozvoja",
+        "code": "U00061"
+      },
+      {
+        "uuid": "aa193c96-987a-4c37-b516-a3c932ade6c4",
+        "degree": 1,
+        "name": "Priemysel s výnimkou spracovania dreva, biotechnológií, potravinárstva a stavebných výrobkov",
+        "code": "U00001"
+      },
+      {
+        "uuid": "aae76b82-08a1-4141-bc36-0325d495434e",
+        "degree": 1,
+        "name": "Podpora sociálneho začlenenia fyzickej osoby s ťažkým zdravotným postihnutím do spoločnosti",
+        "code": "U00144"
+      },
+      {
+        "uuid": "ab4cdcf4-a196-44ef-a100-04f68e5c3dcb",
+        "degree": 1,
+        "name": "Lesné hospodárstvo",
+        "code": "U00066"
+      },
+      {
+        "uuid": "ace6c3d4-78e4-41bf-80c9-6d71fcafe05b",
+        "degree": 1,
+        "name": "Tvorba a realizácia štátneho rozpočtu",
+        "code": "U00033"
+      },
+      {
+        "uuid": "ad6f4739-7ae8-47fd-b1eb-074e2c483076",
+        "degree": 1,
+        "name": "Stavebná výroba a stavebné výrobky",
+        "code": "U00056"
+      },
+      {
+        "uuid": "adb3897c-71d1-4427-970b-62d8d38c5598",
+        "degree": 1,
+        "name": "Priemyselné vlastníctvo",
+        "code": "U00204"
+      },
+      {
+        "uuid": "afbfe5e6-282b-43bf-9efb-fb5225c088e4",
+        "degree": 1,
+        "name": "Telekomunikácie",
+        "code": "U00051"
+      },
+      {
+        "uuid": "afd80398-3cfc-475d-8544-57c588a24d1a",
+        "degree": 1,
+        "name": "Ochrana práv a záujmov Slovenskej republiky a jej občanov v zahraničí",
+        "code": "U00128"
+      },
+      {
+        "uuid": "b14d1173-32f0-4a93-82d3-bb0bb41513f8",
+        "degree": 1,
+        "name": "Sociálne poistenie",
+        "code": "U00139"
+      },
+      {
+        "uuid": "b2afcc14-8452-4328-8de4-867d9f02501f",
+        "degree": 1,
+        "name": "Koordinácia vzdelávania zamestnancov obcí a zamestnancov vyšších územných celkov plniacich úlohy štátnej správy",
+        "code": "U00109"
+      },
+      {
+        "uuid": "b3e8d7f1-51e3-4269-a3c3-7905aaad5812",
+        "degree": 1,
+        "name": "Civilné letectvo",
+        "code": "U00049"
+      },
+      {
+        "uuid": "b967b056-63c4-47d7-bb9e-7ef4e7f6c7c4",
+        "degree": 1,
+        "name": "Geologický výskum a prieskum",
+        "code": "U00162"
+      },
+      {
+        "uuid": "ba00f9bc-d1a7-492e-808d-b9baaddff1a5",
+        "degree": 1,
+        "name": "Sociálnoprávna ochrana detí a sociálna kuratela",
+        "code": "U00146"
+      },
+      {
+        "uuid": "baba7be1-575c-4877-9eee-314946a6a9b4",
+        "degree": 1,
+        "name": "Vodné hospodárstvo",
+        "code": "U00150"
+      },
+      {
+        "uuid": "bacd26a8-44f1-4ebd-979a-0ac829a2f41f",
+        "degree": 1,
+        "name": "Národná regulácia a cenová regulácia v oblasti elektronických komunikácií",
+        "code": "U00213"
+      },
+      {
+        "uuid": "baf1cb50-a81a-42ae-9518-64a88ec778a2",
+        "degree": 1,
+        "name": "Vojenské spravodajstvo",
+        "code": "U00116"
+      },
+      {
+        "uuid": "baf83ec4-aa1a-4134-875f-9d4c544c6763",
+        "degree": 1,
+        "name": "Zahraničná politika a vzťahy Slovenskej republiky k ostatným štátom a medzinárodným organizáciám",
+        "code": "U00127"
+      },
+      {
+        "uuid": "bc5547fc-d1c6-40ec-9c62-68ea111a7528",
+        "degree": 1,
+        "name": "Kontrola vybavovania petícií a sťažností",
+        "code": "U00190"
+      },
+      {
+        "uuid": "be2c23bc-2c6a-4380-b0e0-35a67813911a",
+        "degree": 1,
+        "name": "Finančná kontrola",
+        "code": "U00026"
+      },
+      {
+        "uuid": "c1009e21-93e3-4f35-bcef-a2ad78de8990",
+        "degree": 1,
+        "name": "Ochrana osobných údajov",
+        "code": "U00212"
+      },
+      {
+        "uuid": "c16e3f38-5012-4363-b745-9010f41c8ce3",
+        "degree": 1,
+        "name": "Stavebný poriadok a územné plánovanie okrem ekologických aspektov",
+        "code": "U00055"
+      },
+      {
+        "uuid": "c1da17f7-7a91-4327-958e-b27bb120d663",
+        "degree": 1,
+        "name": "Správa štátnych finančných aktív a štátnych finančných pasív Slovenskej republiky",
+        "code": "U00036"
+      },
+      {
+        "uuid": "c1fc03b6-54dc-4842-92df-08edab2df65a",
+        "degree": 1,
+        "name": "Veterinárna kontrola, veterinárna inšpekcia a veterinárny dozor",
+        "code": "U00069"
+      },
+      {
+        "uuid": "c3dcd951-f204-47a5-b855-5163ae35539d",
+        "degree": 1,
+        "name": "Správa majetku štátu v podnikateľskej sfére",
+        "code": "U00020"
+      },
+      {
+        "uuid": "c6280dc2-e8cc-445c-851f-e0fc239585ec",
+        "degree": 1,
+        "name": "Dohľad nad verejným zdravotným poistením",
+        "code": "U00210"
+      },
+      {
+        "uuid": "c6ae7fcc-e1e1-4a84-bf5d-7547cd8c484e",
+        "degree": 1,
+        "name": "Činnosť Ústavného súdu Slovenskej republiky",
+        "code": "U00218"
+      },
+      {
+        "uuid": "cab06fb3-7b4c-48be-a3a6-36d12fabbabd",
+        "degree": 1,
+        "name": "Ťažba ropy a zemného plynu",
+        "code": "U00006"
+      },
+      {
+        "uuid": "cb29db44-3d13-402a-9442-fd2e5fa289b4",
+        "degree": 1,
+        "name": "Hazardné hry",
+        "code": "U00041"
+      },
+      {
+        "uuid": "cb5f4e74-5430-45a5-9d06-a34599feb981",
+        "degree": 1,
+        "name": "Veterinárska farmácia",
+        "code": "U00070"
+      },
+      {
+        "uuid": "cbbc4de1-e5cd-41e2-825b-fb1a90c1ed9f",
+        "degree": 1,
+        "name": "Starobné dôchodkové sporenie",
+        "code": "U00140"
+      },
+      {
+        "uuid": "cc5e28e4-ed6a-4fa1-a159-e4f7906b1655",
+        "degree": 1,
+        "name": "Sprístupnenie dokumentov, ktoré vznikli činnosťou bezpečnostných zložiek štátu v období od 18. apríla 1939 do 31. decembra 1989",
+        "code": "U00221"
+      },
+      {
+        "uuid": "cc5ef994-7e22-45d7-9a70-b0de9655ffb6",
+        "degree": 1,
+        "name": "Vedenie ústredného fondu patentovej literatúry a zabezpečovanie výmeny a sprístupňovania informácií v oblasti priemyselných práv",
+        "code": "U00205"
+      },
+      {
+        "uuid": "cc9a16fb-bfeb-466c-b41b-2693d1795d89",
+        "degree": 1,
+        "name": "Kontrola nad dodržiavaním podmienok organizovania a priebehu dobrovoľných dražieb",
+        "code": "U00122"
+      },
+      {
+        "uuid": "cd855a22-6e33-45a8-b35c-ae898a8f805c",
+        "degree": 1,
+        "name": "Správa vojenských obvodov a vojenských lesov",
+        "code": "U00118"
+      },
+      {
+        "uuid": "cf1405e4-6d2f-4a06-9102-13031edd437d",
+        "degree": 1,
+        "name": "Osvetová činnosť a ľudová umelecká výroba",
+        "code": "U00174"
+      },
+      {
+        "uuid": "cf570edb-83e3-4a35-bc36-0c1e0564913f",
+        "degree": 1,
+        "name": "Archívy a registratúry",
+        "code": "U00098"
+      },
+      {
+        "uuid": "cfa07318-b07a-4235-9e5d-bcd3604d7fd8",
+        "degree": 1,
+        "name": "Kvalita",
+        "code": "U00200"
+      },
+      {
+        "uuid": "cfd9511a-232e-4327-a805-edc690b2d1b6",
+        "degree": 1,
+        "name": "Stavebné sporenie s výnimkou poskytovania štátnej prémie k stavebnému sporeniu",
+        "code": "U00038"
+      },
+      {
+        "uuid": "d13ea897-efe0-4f4d-8325-c8bfe2549405",
+        "degree": 1,
+        "name": "Materské školy, základné školy, stredné školy, základné umelecké školy, jazykové školy a školské zariadenia",
+        "code": "U00165"
+      },
+      {
+        "uuid": "d16625a3-9545-4cc5-bd4f-17d970bcc249",
+        "degree": 1,
+        "name": "Prezentácia slovenskej kultúry v zahraničí",
+        "code": "U00175"
+      },
+      {
+        "uuid": "d37c4aa4-688b-4892-9199-36fd60dfacf8",
+        "degree": 1,
+        "name": "Colníctvo",
+        "code": "U00025"
+      },
+      {
+        "uuid": "d59c6a28-5885-4fc7-85b5-31d734df974d",
+        "degree": 1,
+        "name": "Ochrana ústavného zriadenia, vnútorného poriadku a bezpečnosti štátu",
+        "code": "U00222"
+      },
+      {
+        "uuid": "d5b4f808-c02b-4f09-869b-60ea47cb5c0a",
+        "degree": 1,
+        "name": "Alternatívna služba",
+        "code": "U00117"
+      },
+      {
+        "uuid": "d67322a3-cef7-4098-81e5-8c4702d90a1e",
+        "degree": 1,
+        "name": "Humánna farmácia",
+        "code": "U00180"
+      },
+      {
+        "uuid": "d701b515-2703-486b-8a9e-b871355cf9cd",
+        "degree": 1,
+        "name": "Zastupovanie Slovenskej republiky v konaní pred Súdnym dvorom Európskej únie",
+        "code": "U00125"
+      },
+      {
+        "uuid": "d79071e0-d8e2-45f3-a812-c2bb68141a75",
+        "degree": 1,
+        "name": "Riadenie zastupiteľských úradov Slovenskej republiky v zahraničí vrátane riadenia obchodno-ekonomických oddelení",
+        "code": "U00129"
+      },
+      {
+        "uuid": "d901714c-ad8a-4748-9a47-9beffacef12a",
+        "degree": 1,
+        "name": "Kombinovaná doprava",
+        "code": "U00045"
+      },
+      {
+        "uuid": "da8dde05-ce24-461c-90e2-324788d72de6",
+        "degree": 1,
+        "name": "Zabezpečenie nedotknuteľnosti vzdušného priestoru Slovenskej republiky",
+        "code": "U00114"
+      },
+      {
+        "uuid": "db650016-c7bb-4c7c-9251-892f9f2506aa",
+        "degree": 1,
+        "name": "Stratégia zamestnanosti, koordinácia jej tvorby a politika trhu práce",
+        "code": "U00138"
+      },
+      {
+        "uuid": "de265bed-6fd3-4e43-a378-da2a8ef62b4f",
+        "degree": 1,
+        "name": "Potravinárstvo a potravinový dozor",
+        "code": "U00075"
+      },
+      {
+        "uuid": "de299f42-c5b6-4202-adec-cb6cffc202bd",
+        "degree": 1,
+        "name": "Ochrana akosti a množstva vôd a ich racionálneho využívania a rybárstva s výnimkou akvakultúry a morského rybolovu",
+        "code": "U00153"
+      },
+      {
+        "uuid": "def8e655-457d-4e6d-b865-04121d6f6e7c",
+        "degree": 1,
+        "name": "Energetická hospodárnosť budov",
+        "code": "U00060"
+      },
+      {
+        "uuid": "e13f0551-635a-4e00-a9ce-2e306e2256a8",
+        "degree": 1,
+        "name": "Akreditácia orgánov posudzovania zhody",
+        "code": "U00202"
+      },
+      {
+        "uuid": "e17430fc-62ce-4e61-b9bb-98afae70022f",
+        "degree": 1,
+        "name": "Štátny dohľad nad činnosťou Slovenskej komory exekútorov, nad činnosťou Notárskej komory Slovenskej republiky, v zákonom ustanovenom rozsahu nad činnosťou súdnych exekútorov a nad činnosťou notárov",
+        "code": "U00121"
+      },
+      {
+        "uuid": "e1b4f61b-36e3-433d-bc02-c11a851a6ddb",
+        "degree": 1,
+        "name": "Puncovníctvo a skúšanie drahých kovov",
+        "code": "U00016"
+      },
+      {
+        "uuid": "e2928134-cab2-4e9b-9a0a-c08f1055e48a",
+        "degree": 1,
+        "name": "Plynárenstvo",
+        "code": "U00004"
+      },
+      {
+        "uuid": "e2bd4ab9-06f7-4d0e-abe8-5ce8309b18d0",
+        "degree": 1,
+        "name": "Vnútorný audit",
+        "code": "U00027"
+      },
+      {
+        "uuid": "e4200d78-9952-4e60-b66a-ae204711cdfc",
+        "degree": 1,
+        "name": "Verejný poriadok, bezpečnosť osôb a majetku",
+        "code": "U00080"
+      },
+      {
+        "uuid": "e523acc6-8c53-40bc-b5e5-83fc016aca7b",
+        "degree": 1,
+        "name": "Oficiálna rozvojová pomoc",
+        "code": "U00133"
+      },
+      {
+        "uuid": "e86b2c31-e5f7-4f71-bdc7-25cd555d2915",
+        "degree": 1,
+        "name": "Rybárstvo v oblasti akvakultúry a morského rybolovu",
+        "code": "U00073"
+      },
+      {
+        "uuid": "e8f04b6c-43d2-411c-be16-2e6e35716fd1",
+        "degree": 1,
+        "name": "Hlavný dozor nad bezpečnosťou a ochranou zdravia pri práci a bezpečnosťou prevádzky v banskej činnosti, činnosti vykonávanej banským spôsobom a pri používaní výbušnín",
+        "code": "U00015"
+      },
+      {
+        "uuid": "e94fa4ad-0c8e-4232-96ca-3a489bf39597",
+        "degree": 1,
+        "name": "Poľnohospodárstvo",
+        "code": "U00064"
+      },
+      {
+        "uuid": "ebaf4854-9acb-4cc2-8b13-4b5e194e3d74",
+        "degree": 1,
+        "name": "Kataster nehnuteľností",
+        "code": "U00196"
+      },
+      {
+        "uuid": "ee21a03c-bba5-4a18-abe1-eaa924e45092",
+        "degree": 1,
+        "name": "Zahraničný obchod vrátane obchodu s vojenským materiálom a tvorby zahraničnej obchodnej politiky",
+        "code": "U00011"
+      },
+      {
+        "uuid": "ef014eb3-6eb1-4d2d-9ff9-da8f0ad5581d",
+        "degree": 1,
+        "name": "Koordinácia prípravy a vnútroštátneho prerokúvania, uzatvárania, vyhlasovania, vykonávania a vypovedávania medzinárodných zmlúv",
+        "code": "U00132"
+      },
+      {
+        "uuid": "ef46c77f-e98f-4cbe-b7a7-7256d741fb4c",
+        "degree": 1,
+        "name": "Zhromažďovanie a združovanie vrátane registrácie niektorých právnických osôb, o ktorých to ustanoví osobitný zákon",
+        "code": "U00100"
+      },
+      {
+        "uuid": "f1a730df-2e78-40b7-bdd9-68cb02a77b7c",
+        "degree": 1,
+        "name": "Bezpečnosť a plynulosť cestnej premávky",
+        "code": "U00083"
+      },
+      {
+        "uuid": "f1ddfa97-c061-4ae6-a3a3-30f28595827d",
+        "degree": 1,
+        "name": "Verejné zdravotné poistenie",
+        "code": "U00182"
+      },
+      {
+        "uuid": "f41f9a35-baa6-4ac1-ac23-dfd46510fcf2",
+        "degree": 1,
+        "name": "Veda a technika",
+        "code": "U00168"
+      },
+      {
+        "uuid": "f48d2cdc-f5b6-43e7-bcf4-1bd615476088",
+        "degree": 1,
+        "name": "Výkon funkcie prezidenta, politická a verejná činnosť prezidenta",
+        "code": "U00217"
+      },
+      {
+        "uuid": "f4b58706-ff78-45a6-80c7-d2d9964c4ee6",
+        "degree": 1,
+        "name": "Matričné veci",
+        "code": "U00099"
+      },
+      {
+        "uuid": "f81efb2a-34fb-41c4-94a2-20d6a611da52",
+        "degree": 1,
+        "name": "Vysoké školy",
+        "code": "U00166"
+      },
+      {
+        "uuid": "fa0393ba-4a50-455f-baa8-2e77ff11251b",
+        "degree": 1,
+        "name": "Ochrana  zdravia",
+        "code": "U00181"
+      },
+      {
+        "uuid": "fbb8b68d-a09b-43ab-9a32-860d1a831dbb",
+        "degree": 1,
+        "name": "Ochrana pred povodňami",
+        "code": "U00152"
+      },
+      {
+        "uuid": "fbfc6c04-5d27-4c6b-a9c1-246b14cf448a",
+        "degree": 1,
+        "name": "Verejné obstarávanie",
+        "code": "U00203"
+      },
+      {
+        "uuid": "fcba3fbb-87fe-41f2-a825-89b5029a2458",
+        "degree": 1,
+        "name": "Cestovné doklady a oprávnenia na vedenie motorových vozidiel",
+        "code": "U00089"
+      },
+      {
+        "uuid": "fdbe305b-61c6-42c4-99f6-4ae927f331c2",
+        "degree": 1,
+        "name": "Kontrolná činnosť Najvyššieho kontrolného úradu Slovenskej republiky",
+        "code": "U00209"
+      },
+      {
+        "uuid": "fde9f383-dd74-4d41-b3de-340949558ea1",
+        "degree": 1,
+        "name": "Posudzovanie zhody",
+        "code": "U00201"
+      },
+      {
+        "uuid": "fe919b27-4fca-40f7-b97f-fb3c29baaa08",
+        "degree": 1,
+        "name": "Živnostenské podnikanie",
+        "code": "U00103"
+      },
+      {
+        "uuid": "fe9bb4e8-c003-4593-89f9-10a84629ac07",
+        "degree": 1,
+        "name": "Ďalšie vzdelávanie zdravotníckych pracovníkov",
+        "code": "U00183"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6016,
+      "total_islands": 5792,
+      "singleton_islands": 5771,
+      "multi_islands": [
+        {
+          "size_total": 51,
+          "size_source": 4,
+          "size_target": 47,
+          "fraction_total": 0.008477393617021276,
+          "top_source_uuid": "b9525626-338b-410e-b82d-e3fe4c95d31f",
+          "top_source_degree": 22,
+          "top_target_uuid": "19560435-cd14-4c80-a85a-a61686a77b26",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 32,
+          "size_source": 1,
+          "size_target": 31,
+          "fraction_total": 0.005319148936170213,
+          "top_source_uuid": "0303d336-d570-47f5-846d-7f2d95b1d40b",
+          "top_source_degree": 31,
+          "top_target_uuid": "09db4203-193d-43ac-98e5-0f1714deb9e1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 24,
+          "size_source": 1,
+          "size_target": 23,
+          "fraction_total": 0.003989361702127659,
+          "top_source_uuid": "01307c20-d576-486d-96f5-0d18641ef43a",
+          "top_source_degree": 23,
+          "top_target_uuid": "73f71f3d-867e-4fbd-a46f-deb1759186f5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 18,
+          "size_source": 1,
+          "size_target": 17,
+          "fraction_total": 0.0029920212765957447,
+          "top_source_uuid": "82ed4d16-86e5-4cdf-888e-96060dda8288",
+          "top_source_degree": 17,
+          "top_target_uuid": "e17430fc-62ce-4e61-b9bb-98afae70022f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 17,
+          "size_source": 1,
+          "size_target": 16,
+          "fraction_total": 0.0028257978723404257,
+          "top_source_uuid": "f069547e-bf00-4bbf-aa07-631be84ea36c",
+          "top_source_degree": 16,
+          "top_target_uuid": "baba7be1-575c-4877-9eee-314946a6a9b4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 16,
+          "size_source": 1,
+          "size_target": 15,
+          "fraction_total": 0.0026595744680851063,
+          "top_source_uuid": "8b22734b-273a-4c83-a38f-b5f904c2b157",
+          "top_source_degree": 15,
+          "top_target_uuid": "ab4cdcf4-a196-44ef-a100-04f68e5c3dcb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 15,
+          "size_source": 1,
+          "size_target": 14,
+          "fraction_total": 0.0024933510638297874,
+          "top_source_uuid": "efc1cb80-bbf1-4311-ad68-d418aa63f6ff",
+          "top_source_degree": 14,
+          "top_target_uuid": "aae76b82-08a1-4141-bc36-0325d495434e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 11,
+          "size_source": 1,
+          "size_target": 10,
+          "fraction_total": 0.0018284574468085107,
+          "top_source_uuid": "be304941-5b5c-4ee5-8f64-b46d7048d9c6",
+          "top_source_degree": 10,
+          "top_target_uuid": "96737ae2-1141-4436-8874-8b8b3ab25c6c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 11,
+          "size_source": 1,
+          "size_target": 10,
+          "fraction_total": 0.0018284574468085107,
+          "top_source_uuid": "73ec5411-5dc6-43d8-9234-cf427153ae97",
+          "top_source_degree": 10,
+          "top_target_uuid": "7b84fbbf-fb4c-4f1c-916c-44446979b0e1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 10,
+          "size_source": 1,
+          "size_target": 9,
+          "fraction_total": 0.0016622340425531915,
+          "top_source_uuid": "40ed1f67-d112-4e29-86bc-5b5e69b4520f",
+          "top_source_degree": 9,
+          "top_target_uuid": "88e47e8c-dd69-4787-8860-d8f2a9d021cf",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 9,
+          "size_source": 1,
+          "size_target": 8,
+          "fraction_total": 0.0014960106382978723,
+          "top_source_uuid": "c67de740-0722-4b3d-9c12-8db578b7606a",
+          "top_source_degree": 8,
+          "top_target_uuid": "ef014eb3-6eb1-4d2d-9ff9-da8f0ad5581d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 6,
+          "size_source": 1,
+          "size_target": 5,
+          "fraction_total": 0.0009973404255319148,
+          "top_source_uuid": "f698bd0b-9319-4b1b-b3ef-8343ae337424",
+          "top_source_degree": 5,
+          "top_target_uuid": "e13f0551-635a-4e00-a9ce-2e306e2256a8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 6,
+          "size_source": 1,
+          "size_target": 5,
+          "fraction_total": 0.0009973404255319148,
+          "top_source_uuid": "a067167e-7851-4cf9-bdcb-09dcec21a723",
+          "top_source_degree": 5,
+          "top_target_uuid": "d13ea897-efe0-4f4d-8325-c8bfe2549405",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004986702127659574,
+          "top_source_uuid": "3da4edd2-e1c8-4862-bd23-fc9167ec536e",
+          "top_source_degree": 2,
+          "top_target_uuid": "6f752df7-9236-451c-9948-7a05de7230a5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004986702127659574,
+          "top_source_uuid": "6ce0e645-8836-441e-8d03-c8deb5f62700",
+          "top_source_degree": 2,
+          "top_target_uuid": "311aab15-ea68-446b-ad82-cf7e24632d3c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004986702127659574,
+          "top_source_uuid": "38b99897-c2be-4277-9cd9-f4b523955f7f",
+          "top_source_degree": 2,
+          "top_target_uuid": "cc5ef994-7e22-45d7-9a70-b0de9655ffb6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0003324468085106383,
+          "top_source_uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+          "top_source_degree": 1,
+          "top_target_uuid": "6823c93c-0df4-4a19-9f2b-55ebf8298407",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0003324468085106383,
+          "top_source_uuid": "cf3d26e8-6a0c-4b60-a5ec-9864b8f0a28c",
+          "top_source_degree": 1,
+          "top_target_uuid": "764ca15d-2829-4b87-93c9-dcafa2cc6594",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0003324468085106383,
+          "top_source_uuid": "f4760beb-3b8e-4e62-8eff-efecb5e10a4d",
+          "top_source_degree": 1,
+          "top_target_uuid": "42d6ef95-d6c6-49b8-91f4-09ab9eb7c4b4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0003324468085106383,
+          "top_source_uuid": "cb45bee5-c165-43dc-b3b1-bb4abc823215",
+          "top_source_degree": 1,
+          "top_target_uuid": "fbfc6c04-5d27-4c6b-a9c1-246b14cf448a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0003324468085106383,
+          "top_source_uuid": "0812ab55-cc17-4bec-89ad-0f5fea58e13c",
+          "top_source_degree": 1,
+          "top_target_uuid": "738e3891-3056-43d9-8646-7d9cfd8cebad",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 5788,
+        "total_islands": 5785,
+        "singleton_islands": 5784,
+        "multi_islands": [
+          {
+            "size": 4,
+            "fraction": 0.000691085003455425,
+            "size_total": 51,
+            "top_uuid": "b9525626-338b-410e-b82d-e3fe4c95d31f",
+            "top_degree": 22
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 228,
+        "total_islands": 28,
+        "singleton_islands": 12,
+        "multi_islands": [
+          {
+            "size": 47,
+            "fraction": 0.20614035087719298,
+            "size_total": 51,
+            "top_uuid": "19560435-cd14-4c80-a85a-a61686a77b26",
+            "top_degree": 2
+          },
+          {
+            "size": 31,
+            "fraction": 0.13596491228070176,
+            "size_total": 32,
+            "top_uuid": "09db4203-193d-43ac-98e5-0f1714deb9e1",
+            "top_degree": 1
+          },
+          {
+            "size": 23,
+            "fraction": 0.10087719298245613,
+            "size_total": 24,
+            "top_uuid": "73f71f3d-867e-4fbd-a46f-deb1759186f5",
+            "top_degree": 1
+          },
+          {
+            "size": 17,
+            "fraction": 0.07456140350877193,
+            "size_total": 18,
+            "top_uuid": "e17430fc-62ce-4e61-b9bb-98afae70022f",
+            "top_degree": 1
+          },
+          {
+            "size": 16,
+            "fraction": 0.07017543859649122,
+            "size_total": 17,
+            "top_uuid": "baba7be1-575c-4877-9eee-314946a6a9b4",
+            "top_degree": 1
+          },
+          {
+            "size": 15,
+            "fraction": 0.06578947368421052,
+            "size_total": 16,
+            "top_uuid": "ab4cdcf4-a196-44ef-a100-04f68e5c3dcb",
+            "top_degree": 1
+          },
+          {
+            "size": 14,
+            "fraction": 0.06140350877192982,
+            "size_total": 15,
+            "top_uuid": "aae76b82-08a1-4141-bc36-0325d495434e",
+            "top_degree": 1
+          },
+          {
+            "size": 10,
+            "fraction": 0.043859649122807015,
+            "size_total": 11,
+            "top_uuid": "96737ae2-1141-4436-8874-8b8b3ab25c6c",
+            "top_degree": 1
+          },
+          {
+            "size": 10,
+            "fraction": 0.043859649122807015,
+            "size_total": 11,
+            "top_uuid": "7b84fbbf-fb4c-4f1c-916c-44446979b0e1",
+            "top_degree": 1
+          },
+          {
+            "size": 9,
+            "fraction": 0.039473684210526314,
+            "size_total": 10,
+            "top_uuid": "88e47e8c-dd69-4787-8860-d8f2a9d021cf",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.03508771929824561,
+            "size_total": 9,
+            "top_uuid": "ef014eb3-6eb1-4d2d-9ff9-da8f0ad5581d",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.021929824561403508,
+            "size_total": 6,
+            "top_uuid": "e13f0551-635a-4e00-a9ce-2e306e2256a8",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.021929824561403508,
+            "size_total": 6,
+            "top_uuid": "d13ea897-efe0-4f4d-8325-c8bfe2549405",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.008771929824561403,
+            "size_total": 3,
+            "top_uuid": "6f752df7-9236-451c-9948-7a05de7230a5",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.008771929824561403,
+            "size_total": 3,
+            "top_uuid": "311aab15-ea68-446b-ad82-cf7e24632d3c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.008771929824561403,
+            "size_total": 3,
+            "top_uuid": "cc5ef994-7e22-45d7-9a70-b0de9655ffb6",
+            "top_degree": 1
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

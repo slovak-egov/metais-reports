@@ -1,0 +1,559 @@
+{
+  "id": 96,
+  "name": "Osobitný postup podľa zákona o ITVS",
+  "technicalName": "OsobitnyPostup",
+  "description": "Osobitný postup podľa zákona o ITVS",
+  "roleList": [
+    "R_EGOV",
+    "EA_GARPO",
+    "IKT_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#ccccff",
+  "engName": "Special procedure acoording to ISVS Law",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Predmet rozhodnutia",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 136,
+      "name": "Profil pre osobitný postup",
+      "description": "Profil pre osobitný postup",
+      "technicalName": "Profil_OsobitnyPostup",
+      "roleList": [
+        "R_EGOV",
+        "EA_GARPO",
+        "IKT_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile for Special procedure",
+      "attributes": [
+        {
+          "id": 1066,
+          "name": "Súvisiace ITVS text",
+          "description": "Súvisiace ITVS text",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_OsobitnyPostup_suvisiace_ITVS_text",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Related ISVS rext",
+          "engDescription": "Related ISVS rext",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 907,
+          "name": "Povinnosti podľa ustanovenia",
+          "description": "Povinnosti podľa ustanovenia",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Osobitny_Postup_povinnosti_podla_ustanovenia",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Obligations according to the provision",
+          "engDescription": "Obligations according to the provision",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 906,
+          "name": "Dátum účinnosti od",
+          "description": "Dátum účinnosti od",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Osobitny_Postup_datum_ucinnosti_od",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Effective from",
+          "engDescription": "Effective from",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 905,
+          "name": "Dátum účinnosti do",
+          "description": "Dátum účinnosti do",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Osobitny_Postup_datum_ucinnosti_do",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Effective to",
+          "engDescription": "Effective to",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 908,
+          "name": "Výrok rozhodnutia",
+          "description": "Výrok rozhodnutia",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Osobitny_Postup_vyrok_rozhodnutia",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Decision statement",
+          "engDescription": "Decision statement",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 909,
+          "name": "Typ rozhodnutia",
+          "description": "Typ rozhodnutia",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": "c_typ_rozhodnutia.1",
+          "technicalName": "Profil_Osobitny_Postup_typ_rozhodnutia",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_ROZHODNUTIA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Decision type",
+          "engDescription": "Decision type",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 1146,
+          "name": "Súvisiaca PO text",
+          "description": "Súvisiaca PO text",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_OsobitnyPostup_suvisiace_PO_text",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Related obliged person - text",
+          "engDescription": "Related obliged person - text",
+          "opendata": null,
+          "array": true,
+          "isArray": true
+        }
+      ]
+    }
+  ],
+  "codePrefix": "osobitny_postup_",
+  "ownerRelation": "Osobitny_postup_je_spravovany_PO",
+  "uriPrefix": "https://data.gov.sk/osobitne_postupy/itvs",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 1201,
+        "name": "Osobitný postup vo väzbe na ISVS",
+        "engName": "Special procedure in relation to ISVS",
+        "technicalName": "osobitny_postup_vztah_ISVS",
+        "description": "Osobitný postup vo väzbe na ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Special procedure in relation to ISVS",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1206,
+        "name": "Osobitný postup vo väzbe na KRIT",
+        "engName": "Special procedure in relation to KRIT",
+        "technicalName": "osobitny_postup_vztah_KRIT",
+        "description": "Osobitný postup vo väzbe na KRIT",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "SPecial procedure in relation to KRIT",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1224,
+        "name": "Osobitný postup má vzťah na Orgán riadenia",
+        "engName": "Special procedure has an relationship to XXX",
+        "technicalName": "osobitny_postup_vztah_PO",
+        "description": "Osobitný postup má vzťah na Orgán riadenia",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Special procedure has an relationship to XXX",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1232,
+        "name": "Osobitný postup je spravovaný PO",
+        "engName": "Special procedure is administered by Obliged person",
+        "technicalName": "Osobitny_postup_je_spravovany_PO",
+        "description": "Osobitný postup je spravovaný PO",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "Special procedure is administered by Obliged person",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": []
+  }
+}

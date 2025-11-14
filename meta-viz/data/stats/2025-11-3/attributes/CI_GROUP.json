@@ -1,0 +1,13 @@
+{
+  "type": "CI_GROUP",
+  "count": 10,
+  "attributes": [
+    {
+      "name": "genprof_CI_GROUP_name",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 90.0
+    }
+  ]
+}

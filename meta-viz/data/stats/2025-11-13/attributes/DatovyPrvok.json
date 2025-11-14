@@ -1,0 +1,97 @@
+{
+  "type": "DatovyPrvok",
+  "count": 659,
+  "attributes": [
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 659,
+      "pct": 100.0,
+      "unique_count": 491,
+      "unique_pct": 74.50682852807283
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 659,
+      "pct": 100.0,
+      "unique_count": 659,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_DatovyPrvok_kod_datoveho_prvku",
+      "count": 659,
+      "pct": 100.0,
+      "unique_count": 480,
+      "unique_pct": 72.83763277693474
+    },
+    {
+      "name": "Gen_Profil_RefID_stav_registracie",
+      "count": 659,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 0.6069802731411229
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 659,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.30349013657056145
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 659,
+      "pct": 100.0,
+      "unique_count": 474,
+      "unique_pct": 71.92716236722306
+    },
+    {
+      "name": "Profil_DatovyPrvok_typ_datoveho_prvku",
+      "count": 659,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 0.4552352048558422
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 659,
+      "pct": 100.0,
+      "unique_count": 658,
+      "unique_pct": 99.84825493171472
+    },
+    {
+      "name": "Profil_DatovyPrvok_zaciatok_ucinnosti",
+      "count": 658,
+      "pct": 99.84825493171472,
+      "unique_count": 40,
+      "unique_pct": 6.079027355623101
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 616,
+      "pct": 93.47496206373293,
+      "unique_count": 168,
+      "unique_pct": 27.27272727272727
+    },
+    {
+      "name": "Profil_DatovyPrvok_historicky_kod",
+      "count": 590,
+      "pct": 89.52959028831563,
+      "unique_count": 185,
+      "unique_pct": 31.35593220338983
+    },
+    {
+      "name": "Gen_Profil_RefID_dovod_zamietnutia",
+      "count": 220,
+      "pct": 33.38391502276176,
+      "unique_count": 4,
+      "unique_pct": 1.8181818181818181
+    },
+    {
+      "name": "Profil_DatovyPrvok_koniec_ucinnosti",
+      "count": 31,
+      "pct": 4.704097116843703,
+      "unique_count": 4,
+      "unique_pct": 12.903225806451612
+    }
+  ]
+}

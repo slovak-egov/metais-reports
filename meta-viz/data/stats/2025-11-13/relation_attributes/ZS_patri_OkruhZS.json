@@ -1,0 +1,1600 @@
+{
+  "relation_name": "ZS_patri_OkruhZS",
+  "name": "Životná situácia patrí do okruhu životnej situácie",
+  "description": "Životná situácia patrí do okruhu životnej situácie.",
+  "engDescription": "Life situation belongs to cycle of life situation.",
+  "type": "application",
+  "source_type": "ZS",
+  "source_name": "Životná situácia",
+  "target_type": "OkruhZS",
+  "target_name": "Okruh životnej situácie",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 175,
+    "unique_pairs": 175,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 175,
+    "target_total": 20,
+    "source_connected": 175,
+    "target_connected": 20,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 2,
+      "max": 13,
+      "avg": 8.75,
+      "median": 9.0,
+      "p90": 13,
+      "p99": 13
+    },
+    "top_source": [
+      {
+        "uuid": "0fa349af-0555-451b-b04d-14ac139690fb",
+        "degree": 1,
+        "name": "Veda",
+        "code": "023"
+      },
+      {
+        "uuid": "9219bb12-75fd-4f5c-9213-d073ca577386",
+        "degree": 1,
+        "name": "Výskum",
+        "code": "024"
+      },
+      {
+        "uuid": "c3f38ae4-7351-43fa-baff-37e84aa48c0a",
+        "degree": 1,
+        "name": "Nové odrody pestovaných rastlín a nové plemená",
+        "code": "040"
+      },
+      {
+        "uuid": "b4b7a9bc-3fd4-47d0-9761-e9b76c404798",
+        "degree": 1,
+        "name": "Zlepšovacie návrhy",
+        "code": "050"
+      },
+      {
+        "uuid": "7bc493aa-814b-41d3-be8d-d515a7dca02a",
+        "degree": 1,
+        "name": "Doménové mená",
+        "code": "049"
+      },
+      {
+        "uuid": "2e7ae483-8e0a-499b-bc5e-9eb0ed89bd98",
+        "degree": 1,
+        "name": "Obchodné mená",
+        "code": "041"
+      },
+      {
+        "uuid": "f74972c0-3739-4b58-a63a-ad82f8a886e7",
+        "degree": 1,
+        "name": "Autorské právo, právo príbuzné autorskému právu a práva súvisiace s autorským právom",
+        "code": "045"
+      },
+      {
+        "uuid": "b219ac5a-fab4-4f66-8aa6-9a011a6d7c7b",
+        "degree": 1,
+        "name": "Úžitkové vzory",
+        "code": "047"
+      },
+      {
+        "uuid": "73eca651-7674-476e-8d03-6ea05d1e6897",
+        "degree": 1,
+        "name": "Logá",
+        "code": "039"
+      },
+      {
+        "uuid": "ab3560b0-e318-4866-984c-e8215ce650d2",
+        "degree": 1,
+        "name": "Patenty a dodatkové ochranné osvedčenia",
+        "code": "044"
+      },
+      {
+        "uuid": "862572e3-230c-4a1a-8741-02e43d4ead1e",
+        "degree": 1,
+        "name": "Označenia pôvodu výrobkov a zemepisné označenia",
+        "code": "043"
+      },
+      {
+        "uuid": "f87c9e84-4804-41c5-a24b-cd77aacc0aa6",
+        "degree": 1,
+        "name": "Dizajny",
+        "code": "048"
+      },
+      {
+        "uuid": "c2cef1cf-e411-44e2-a73b-ed91492758c7",
+        "degree": 1,
+        "name": "Ochranné známky",
+        "code": "042"
+      },
+      {
+        "uuid": "5f307ecc-478f-4c90-8a18-3e2bc994f99f",
+        "degree": 1,
+        "name": "Topografie polovodičových výrobkov",
+        "code": "046"
+      },
+      {
+        "uuid": "d45519af-fd5b-4de9-a881-ef1e0c3204e5",
+        "degree": 1,
+        "name": "Predaj podniku",
+        "code": "029"
+      },
+      {
+        "uuid": "1fddee2c-6c2e-4876-8fa3-a145f5020fc3",
+        "degree": 1,
+        "name": "Bankrot a nový začiatok",
+        "code": "028"
+      },
+      {
+        "uuid": "2ac56cd8-3719-458c-b7b0-af282362f632",
+        "degree": 1,
+        "name": "Zatvorenie podniku",
+        "code": "030"
+      },
+      {
+        "uuid": "d645ee30-6bf2-492d-bfad-9304ff137a64",
+        "degree": 1,
+        "name": "Štátna pomoc",
+        "code": "002"
+      },
+      {
+        "uuid": "d4da81c2-b1fc-46fe-840f-834d5ddff117",
+        "degree": 1,
+        "name": "Iná podpora, slobodný prístup k informáciám, prístup k odtajneným skutočnostiam, archívy",
+        "code": "003"
+      },
+      {
+        "uuid": "fcdd36b9-9948-4113-9cd9-c4306327131c",
+        "degree": 1,
+        "name": "Dotácie",
+        "code": "001"
+      },
+      {
+        "uuid": "bdea7e97-5c61-4eb3-93e4-89791c049e78",
+        "degree": 1,
+        "name": "Pamiatky a zbierky múzeí a galérií",
+        "code": "121"
+      },
+      {
+        "uuid": "3635566e-3207-471c-adab-e34776f11a5b",
+        "degree": 1,
+        "name": "Cirkev a náboženské spoločnosti",
+        "code": "119"
+      },
+      {
+        "uuid": "2a1b6429-e0d2-4866-8b58-0ba8add54bc4",
+        "degree": 1,
+        "name": "Publikácie",
+        "code": "124"
+      },
+      {
+        "uuid": "01450ef3-419f-4526-968f-6f5729abc540",
+        "degree": 1,
+        "name": "Podpora kultúry",
+        "code": "122"
+      },
+      {
+        "uuid": "fa5a2be5-c2fe-4893-989a-828a59c15507",
+        "degree": 1,
+        "name": "Kultúrne aktivity",
+        "code": "180"
+      },
+      {
+        "uuid": "ecfc81c4-381b-43b1-8f93-c3b6c188acb4",
+        "degree": 1,
+        "name": "Verejné knižnice",
+        "code": "125"
+      },
+      {
+        "uuid": "e38fa3fc-5e46-47bb-a8d6-8eca46377e37",
+        "degree": 1,
+        "name": "Rozhlas a televízia",
+        "code": "123"
+      },
+      {
+        "uuid": "8f85b2c5-c9f6-45b9-8be4-0dd1294c6acd",
+        "degree": 1,
+        "name": "Kultúra národnostných menšín a znevýhodnených skupín",
+        "code": "120"
+      },
+      {
+        "uuid": "8b059cc2-5cb3-4ef5-af22-b8d7ec2b0cc2",
+        "degree": 1,
+        "name": "Cestovanie do zahraničia",
+        "code": "075"
+      },
+      {
+        "uuid": "6899112b-a10f-4510-9e3b-04c034c60060",
+        "degree": 1,
+        "name": "Pomoc v núdzi v zahraničí",
+        "code": "078"
+      },
+      {
+        "uuid": "ccc8f5a4-5866-419d-8028-b26af97c3046",
+        "degree": 1,
+        "name": "Pobyt v zahraničí",
+        "code": "077"
+      },
+      {
+        "uuid": "99cd5320-bf11-45ec-8fe7-b540ebd82c32",
+        "degree": 1,
+        "name": "Zdravotné poistenie",
+        "code": "080"
+      },
+      {
+        "uuid": "f3016edb-157c-450f-9405-ea2aecd18926",
+        "degree": 1,
+        "name": "Víza",
+        "code": "079"
+      },
+      {
+        "uuid": "bfc62a33-6064-486f-abf4-318b73299365",
+        "degree": 1,
+        "name": "Cestovné doklady a  náhradné cestovné doklady",
+        "code": "076"
+      },
+      {
+        "uuid": "3d558a7d-9fff-42be-8ce4-a716428b16c7",
+        "degree": 1,
+        "name": "Povinná registrácia v profesnom združení",
+        "code": "006"
+      },
+      {
+        "uuid": "a875861c-99e8-4dad-ba2f-475a36c28abd",
+        "degree": 1,
+        "name": "Oznamovacie povinnosti po registrácii podnikania",
+        "code": "005"
+      },
+      {
+        "uuid": "67eb21fb-a11d-4efe-9bb7-e582567da170",
+        "degree": 1,
+        "name": "Doklady potrebné k začatiu podnikania",
+        "code": "004"
+      },
+      {
+        "uuid": "c601bd88-c618-4752-bd3b-04614c46e2c6",
+        "degree": 1,
+        "name": "Prevzatie podniku",
+        "code": "009"
+      },
+      {
+        "uuid": "659fe4a9-a49b-49c0-8c84-af1933ce3f98",
+        "degree": 1,
+        "name": "Registrácia právnickej osoby",
+        "code": "007"
+      },
+      {
+        "uuid": "bef6c520-0782-481b-bee9-9aa9caa3a6d3",
+        "degree": 1,
+        "name": "Registrácia živnosti",
+        "code": "008"
+      },
+      {
+        "uuid": "a689a694-5193-4312-ab2e-ecea86f9d2d4",
+        "degree": 1,
+        "name": "Daň z príjmu",
+        "code": "065"
+      },
+      {
+        "uuid": "5864b3c3-799d-4ff7-afd8-a0ed3d25c354",
+        "degree": 1,
+        "name": "Daň za psa",
+        "code": "066"
+      },
+      {
+        "uuid": "755d6030-54d9-4c42-9e5a-fe20afbf6806",
+        "degree": 1,
+        "name": "Dražby, exekúcie",
+        "code": "071"
+      },
+      {
+        "uuid": "2362ca35-99c3-4f28-b030-5f788c67700d",
+        "degree": 1,
+        "name": "Dotácie",
+        "code": "070"
+      },
+      {
+        "uuid": "b9fb7d79-4c22-4ea3-87cf-a2ca28da93f2",
+        "degree": 1,
+        "name": "Daň za ubytovanie",
+        "code": "067"
+      },
+      {
+        "uuid": "86a1d2e2-a836-4345-99db-392d71cfd7a3",
+        "degree": 1,
+        "name": "Daň za vjazd a zotrvanie motorového vozidla v historickej časti mesta",
+        "code": "069"
+      },
+      {
+        "uuid": "5e7995d0-a817-4967-b964-0152c4687785",
+        "degree": 1,
+        "name": "Daň z nehnuteľnosti",
+        "code": "064"
+      },
+      {
+        "uuid": "400ec43e-ca91-4cf8-a1bd-377f0dacd702",
+        "degree": 1,
+        "name": "Poplatky za verejné služby",
+        "code": "074"
+      },
+      {
+        "uuid": "31c932c7-8cb8-4ed9-b06b-0f00659ee234",
+        "degree": 1,
+        "name": "Odškodnenie",
+        "code": "073"
+      },
+      {
+        "uuid": "92c42149-8543-4a90-be39-7560ef2751ca",
+        "degree": 1,
+        "name": "Miestny poplatok za komunálne odpady a drobné stavebné odpady",
+        "code": "072"
+      },
+      {
+        "uuid": "eb302521-a00b-4258-b719-4d68cce84115",
+        "degree": 1,
+        "name": "Daň za užívanie verejného priestranstva",
+        "code": "068"
+      },
+      {
+        "uuid": "2d487726-9c5e-4781-a64e-a7148932c571",
+        "degree": 1,
+        "name": "Clá",
+        "code": "062"
+      },
+      {
+        "uuid": "fb84d751-96cc-4e91-9445-0b73832040aa",
+        "degree": 1,
+        "name": "Diaľničné a cestné poplatky",
+        "code": "082"
+      },
+      {
+        "uuid": "60a3c033-797f-422f-a8b0-4e128ec17551",
+        "degree": 1,
+        "name": "Cestná doprava a parkovanie",
+        "code": "081"
+      },
+      {
+        "uuid": "1b784b90-10f5-45f1-8fce-b02b1256a45b",
+        "degree": 1,
+        "name": "Letecká doprava",
+        "code": "086"
+      },
+      {
+        "uuid": "cc1758e7-bffb-45a6-98d3-27568c9a3eda",
+        "degree": 1,
+        "name": "Vodná doprava",
+        "code": "090"
+      },
+      {
+        "uuid": "81aeb206-5858-49f2-ace6-521f422389dd",
+        "degree": 1,
+        "name": "Emisná a technická kontrola a kontrola originality vozidla",
+        "code": "084"
+      },
+      {
+        "uuid": "e2f78198-eaf7-43be-9ac1-b66826746107",
+        "degree": 1,
+        "name": "Vodičský preukaz  a vodičské oprávnenie",
+        "code": "089"
+      },
+      {
+        "uuid": "8e2c5fc2-ec37-4807-bb64-d1f7d1cbe2fb",
+        "degree": 1,
+        "name": "Evidencia vozidla",
+        "code": "085"
+      },
+      {
+        "uuid": "2d7f1f38-d0e9-4f99-81f8-3e36d82ad2e9",
+        "degree": 1,
+        "name": "Dopravné nehody a priestupky",
+        "code": "083"
+      },
+      {
+        "uuid": "1251e7a7-6a99-4951-9bc6-9eb25156a46f",
+        "degree": 1,
+        "name": "Železničná doprava",
+        "code": "092"
+      },
+      {
+        "uuid": "d5fa3e47-0682-4a1e-964b-a17a32bf1fb7",
+        "degree": 1,
+        "name": "Výroba a prestavba vozidla",
+        "code": "091"
+      },
+      {
+        "uuid": "e752ffe9-54a5-4244-8a2c-aa9c657e1ac4",
+        "degree": 1,
+        "name": "Poistenie vozidla",
+        "code": "088"
+      },
+      {
+        "uuid": "60c3d348-e8d6-44c3-b33c-3c1ddb119302",
+        "degree": 1,
+        "name": "Likvidácia vozidla",
+        "code": "087"
+      },
+      {
+        "uuid": "22ae133b-d05d-455b-bf98-31f3660b18d6",
+        "degree": 1,
+        "name": "Zdravotné poistenie a zdravotná starostlivosť pre cudzincov",
+        "code": "152"
+      },
+      {
+        "uuid": "c8528b66-2079-499d-ba47-9bd68a6cd718",
+        "degree": 1,
+        "name": "Lekárska služba prvej pomoci a prvá pomoc",
+        "code": "147"
+      },
+      {
+        "uuid": "bcac166d-7f6c-494a-8c6c-269938d11524",
+        "degree": 1,
+        "name": "Darovanie krvi, orgánov, odovzdanie tela na darovanie orgánov",
+        "code": "143"
+      },
+      {
+        "uuid": "197b7050-6286-46cb-8b5d-4fed8d69b1b5",
+        "degree": 1,
+        "name": "Záchranná zdravotná služba",
+        "code": "149"
+      },
+      {
+        "uuid": "944e0bc8-805d-4a8b-a321-b878e0d17df6",
+        "degree": 1,
+        "name": "Jednodňová chirurgická starostlivosť",
+        "code": "144"
+      },
+      {
+        "uuid": "10448988-b19a-43ab-aa91-4a16f7382636",
+        "degree": 1,
+        "name": "Zdravotné poistenie a dohľad nad zdravotnou starostlivosťou",
+        "code": "151"
+      },
+      {
+        "uuid": "5f1f0c53-ae08-47f0-84f0-26f12439fdaa",
+        "degree": 1,
+        "name": "Ochrana zdravia / Zdravotná prevencia",
+        "code": "146"
+      },
+      {
+        "uuid": "df8f419f-0e68-484c-82a6-4d00dd57cc90",
+        "degree": 1,
+        "name": "Lieková starostlivosť, zdravotnícke pomôcky a dietetické potraviny",
+        "code": "145"
+      },
+      {
+        "uuid": "c2eb6528-e605-4889-ad96-a5c3413b4cd5",
+        "degree": 1,
+        "name": "Ambulantná starostlivosť zubného lekára",
+        "code": "142"
+      },
+      {
+        "uuid": "b633fe4d-c245-44a9-af48-fd79ea2b93f9",
+        "degree": 1,
+        "name": "Ústavná zdravotná starostlivosť a ústavná pohotovostná služba",
+        "code": "148"
+      },
+      {
+        "uuid": "59761dd7-ccde-4f93-b1f2-8cca5ee55900",
+        "degree": 1,
+        "name": "Ambulantná starostlivosť lekára prvého kontaktu",
+        "code": "140"
+      },
+      {
+        "uuid": "35a4d8cb-d8d6-42fd-b9d5-272bea0f3334",
+        "degree": 1,
+        "name": "Ambulantná starostlivosť lekára špecialistu",
+        "code": "141"
+      },
+      {
+        "uuid": "415c10df-e678-4f7c-960e-d287fa31560d",
+        "degree": 1,
+        "name": "Daň z pridanej hodnoty",
+        "code": "011"
+      },
+      {
+        "uuid": "7f6b43f9-28bd-49a8-8677-b5bf44044d79",
+        "degree": 1,
+        "name": "Účtovníctvo",
+        "code": "019"
+      },
+      {
+        "uuid": "08863b42-7ee6-4ee5-be77-ad39d606ccf8",
+        "degree": 1,
+        "name": "Miestne dane a poplatky",
+        "code": "013"
+      },
+      {
+        "uuid": "5d30fcc8-c65c-46e7-9041-e508a06583dd",
+        "degree": 1,
+        "name": "Rozširovanie podnikania",
+        "code": "016"
+      },
+      {
+        "uuid": "def9686f-e8de-4b0f-abca-5eea0d64ac6a",
+        "degree": 1,
+        "name": "Ostatné dane",
+        "code": "014"
+      },
+      {
+        "uuid": "f94213b7-59d5-433c-9c09-e9f48d7da061",
+        "degree": 1,
+        "name": "Verejné obstarávanie",
+        "code": "020"
+      },
+      {
+        "uuid": "33da5c1e-af0b-4d46-8b70-efc411c9ea58",
+        "degree": 1,
+        "name": "Štatistiky a iné ohlasovacie a spravodajské povinnosti",
+        "code": "018"
+      },
+      {
+        "uuid": "d0a57add-4dd8-4b31-9942-3f53c3e3cc8c",
+        "degree": 1,
+        "name": "Daň z príjmu právnických osôb",
+        "code": "012"
+      },
+      {
+        "uuid": "f596956c-5cee-43bf-90b4-d3074ab34b55",
+        "degree": 1,
+        "name": "Spotrebná daň",
+        "code": "017"
+      },
+      {
+        "uuid": "0a7b4827-1186-4b06-b1f0-cd6e90a1d67d",
+        "degree": 1,
+        "name": "Clá",
+        "code": "010"
+      },
+      {
+        "uuid": "df21119f-32b3-49b1-9f15-d2e41df5199b",
+        "degree": 1,
+        "name": "Výkazy od zamestnávateľa do Sociálnej poisťovne",
+        "code": "021"
+      },
+      {
+        "uuid": "601fcf0a-bd2c-4e25-87aa-42fb21e1cdbe",
+        "degree": 1,
+        "name": "Poistenie",
+        "code": "015"
+      },
+      {
+        "uuid": "05790a46-1652-44bc-b5fe-217bd221f6bc",
+        "degree": 1,
+        "name": "Dôchodkové sporenie",
+        "code": "128"
+      },
+      {
+        "uuid": "b4f87f38-7071-43d5-a25c-a62af6d67d73",
+        "degree": 1,
+        "name": "Bezpečnosť a ochrana zdravia pri práci",
+        "code": "126"
+      },
+      {
+        "uuid": "fd8d8777-9d6e-4124-8d7d-7bb7d97241e8",
+        "degree": 1,
+        "name": "Pracovnoprávne vzťahy",
+        "code": "132"
+      },
+      {
+        "uuid": "4285f032-ca9d-4877-a63a-e25abbfb570e",
+        "degree": 1,
+        "name": "Štátny zamestnanec",
+        "code": "137"
+      },
+      {
+        "uuid": "467c7146-4f75-48fa-837b-09eb83d5e46b",
+        "degree": 1,
+        "name": "Daňové priznanie",
+        "code": "127"
+      },
+      {
+        "uuid": "e94801f7-c83c-49ec-9281-37a8113b6224",
+        "degree": 1,
+        "name": "Podpora v nezamestnanosti",
+        "code": "129"
+      },
+      {
+        "uuid": "d2f53fb6-c48d-413b-9b7a-a8bcef675c28",
+        "degree": 1,
+        "name": "Sociálne poistenie",
+        "code": "134"
+      },
+      {
+        "uuid": "b849a630-418c-4a89-907b-56800ad2dfa9",
+        "degree": 1,
+        "name": "Práca v zahraničí",
+        "code": "130"
+      },
+      {
+        "uuid": "a8334a20-ce0f-48b6-aa76-026de199dc72",
+        "degree": 1,
+        "name": "Pracujúci dôchodca",
+        "code": "133"
+      },
+      {
+        "uuid": "c907d18b-426c-4228-82ee-0acecd7d5169",
+        "degree": 1,
+        "name": "Práca vo verejnom záujme",
+        "code": "131"
+      },
+      {
+        "uuid": "32cc2229-478a-498b-ba34-c967dcb20fff",
+        "degree": 1,
+        "name": "Strata a hľadanie zamestnania",
+        "code": "135"
+      },
+      {
+        "uuid": "3ec68f40-9262-459d-a1d6-18fb4995b749",
+        "degree": 1,
+        "name": "Práceneschopnosť, materská, ošetrenie člena rodiny",
+        "code": "136"
+      },
+      {
+        "uuid": "2b4ea5e5-1423-41d9-8aa9-9e0661b755f6",
+        "degree": 1,
+        "name": "Zamestnanosť osôb so zníženou pracovnou schopnosťou",
+        "code": "138"
+      },
+      {
+        "uuid": "0d648763-ec5d-4b76-a23e-734271ee0d3e",
+        "degree": 1,
+        "name": "Spotrebiteľ",
+        "code": "056"
+      },
+      {
+        "uuid": "d8d59744-c29f-4dc5-a1cb-c08232af43f4",
+        "degree": 1,
+        "name": "Osobné údaje a doklady",
+        "code": "053"
+      },
+      {
+        "uuid": "6b81d37c-e734-4610-bf29-9025374042f6",
+        "degree": 1,
+        "name": "Verejno prospešné práce",
+        "code": "060"
+      },
+      {
+        "uuid": "57b71fb3-6e07-49ae-96fe-719e9d12c559",
+        "degree": 1,
+        "name": "Voľby",
+        "code": "061"
+      },
+      {
+        "uuid": "e7edc2b5-d791-4c06-939c-19f8c547be0c",
+        "degree": 1,
+        "name": "Právna ochrana",
+        "code": "059"
+      },
+      {
+        "uuid": "6cb8edf6-e4e5-4b41-bfda-a9e4037ef610",
+        "degree": 1,
+        "name": "Slobodný prístup k informáciám, prístup k odtajneným skutočnostiam, archívy",
+        "code": "055"
+      },
+      {
+        "uuid": "5e6d791f-24fe-478f-8e42-07c90afd12c9",
+        "degree": 1,
+        "name": "Združenia, nadácie, verejnoprospešné organizácie a neinvestičné fondy",
+        "code": "054"
+      },
+      {
+        "uuid": "1dcb5456-326c-4a4e-89ea-465a5a9b275d",
+        "degree": 1,
+        "name": "Štatistické informácie",
+        "code": "057"
+      },
+      {
+        "uuid": "157f0687-be3c-4106-b638-02d054ebb083",
+        "degree": 1,
+        "name": "Účasť na veciach verejných",
+        "code": "058"
+      },
+      {
+        "uuid": "2beb00fa-47c1-479f-a394-3cfd89e6326d",
+        "degree": 1,
+        "name": "Demokracia",
+        "code": "051"
+      },
+      {
+        "uuid": "0cce0428-7510-4e3c-8441-f3f66c0a8d76",
+        "degree": 1,
+        "name": "Daň z nehnuteľnosti",
+        "code": "zs_154"
+      },
+      {
+        "uuid": "f1819cbd-6108-4ece-9881-c0517efcc223",
+        "degree": 1,
+        "name": "Energetická hospodárnosť budov",
+        "code": "155"
+      },
+      {
+        "uuid": "5fb67726-8a22-41eb-a5c4-dddb5f3b4581",
+        "degree": 1,
+        "name": "Príspevok na bývanie",
+        "code": "161"
+      },
+      {
+        "uuid": "f94a1afe-1633-476b-8818-91d5fa5ec310",
+        "degree": 1,
+        "name": "Kataster nehnuteľností",
+        "code": "157"
+      },
+      {
+        "uuid": "9275bb50-948d-4f07-a4dc-d8124596fdfb",
+        "degree": 1,
+        "name": "Prenájom nehnuteľnosti",
+        "code": "160"
+      },
+      {
+        "uuid": "ca907c1d-794e-4d7f-96ea-8744857ddf0b",
+        "degree": 1,
+        "name": "Stavebné konanie",
+        "code": "163"
+      },
+      {
+        "uuid": "6bb381a6-1b7c-4a80-b46f-d6e4ce88d1c8",
+        "degree": 1,
+        "name": "Územné plánovanie",
+        "code": "165"
+      },
+      {
+        "uuid": "3b52f472-9d06-4ddd-884b-623088f77dcd",
+        "degree": 1,
+        "name": "Odpad",
+        "code": "158"
+      },
+      {
+        "uuid": "3172462a-239f-41f6-a93a-e7db2fbc289e",
+        "degree": 1,
+        "name": "Inžinierske siete",
+        "code": "156"
+      },
+      {
+        "uuid": "53975f43-df33-4ae8-ae20-e87da27e145c",
+        "degree": 1,
+        "name": "Bytová politika",
+        "code": "153"
+      },
+      {
+        "uuid": "4712e13d-dc77-4738-9942-23d1e60a244d",
+        "degree": 1,
+        "name": "Trvalý pobyt/Sťahovanie",
+        "code": "164"
+      },
+      {
+        "uuid": "ac3a5d9d-af8b-4441-bfae-8e38b7d8d902",
+        "degree": 1,
+        "name": "Rekonštrukcia nehnuteľnosti",
+        "code": "162"
+      },
+      {
+        "uuid": "94e57d35-46e3-4724-bc0f-385a767165f0",
+        "degree": 1,
+        "name": "Prechodný pobyt",
+        "code": "159"
+      },
+      {
+        "uuid": "bda8e787-4f17-4c10-bfea-c1ce78f8a118",
+        "degree": 1,
+        "name": "Poskytovanie ekologických dotácií",
+        "code": "033"
+      },
+      {
+        "uuid": "17b1ed38-f3cb-4539-8fcf-b0bf76467150",
+        "degree": 1,
+        "name": "Povolenia životného prostredia",
+        "code": "034"
+      },
+      {
+        "uuid": "32009d8b-4b1d-44a3-acdc-95a039303962",
+        "degree": 1,
+        "name": "Využívanie a ochrana pôdy",
+        "code": "037"
+      },
+      {
+        "uuid": "cc71ea68-b371-49dc-ab6e-14697a35c87c",
+        "degree": 1,
+        "name": "Využívanie a ochrana lesa",
+        "code": "036"
+      },
+      {
+        "uuid": "a343c8b4-470c-4426-814f-6091a6b36be0",
+        "degree": 1,
+        "name": "Využívanie a ochrana vôd",
+        "code": "038"
+      },
+      {
+        "uuid": "e067d3bb-c40d-43c7-a7c0-b743b452d441",
+        "degree": 1,
+        "name": "Ochrana a bezpečnosť pri práci",
+        "code": "032"
+      },
+      {
+        "uuid": "f1d48a2c-4ff7-4eb1-9384-cf07c3f11e50",
+        "degree": 1,
+        "name": "Udržateľnosť a ďalšie dimenzie",
+        "code": "035"
+      },
+      {
+        "uuid": "f519afa4-cd5d-4a51-8669-b5fda040aea4",
+        "degree": 1,
+        "name": "Odpadové hospodárstvo",
+        "code": "031"
+      },
+      {
+        "uuid": "031b17d0-4e11-408a-a1ab-83c6b2299eed",
+        "degree": 1,
+        "name": "Spravodlivý konkurenčný boj",
+        "code": "026"
+      },
+      {
+        "uuid": "78379c0d-92e8-4736-b10b-27a672099d73",
+        "degree": 1,
+        "name": "Služby",
+        "code": "025"
+      },
+      {
+        "uuid": "66285553-fe8b-4712-902b-2b5859b56d00",
+        "degree": 1,
+        "name": "Tovary",
+        "code": "027"
+      },
+      {
+        "uuid": "e59e6176-9bc8-42e0-8a77-a7752d105c6d",
+        "degree": 1,
+        "name": "Poľovníctvo a rybárstvo",
+        "code": "171"
+      },
+      {
+        "uuid": "9fe93d95-1268-4ea9-ac8d-694720c63024",
+        "degree": 1,
+        "name": "Poskytovanie ekologických dotácií",
+        "code": "172"
+      },
+      {
+        "uuid": "0e56d070-184f-4af9-b80f-082073893d0a",
+        "degree": 1,
+        "name": "Ochrana pôdy",
+        "code": "168"
+      },
+      {
+        "uuid": "eddb1eb6-50d3-4b09-8c43-413840e979b8",
+        "degree": 1,
+        "name": "Ochrana vôd",
+        "code": "170"
+      },
+      {
+        "uuid": "1d924d36-8de7-42cb-931d-ecca2e11696a",
+        "degree": 1,
+        "name": "Zvieratá a rastliny",
+        "code": "173"
+      },
+      {
+        "uuid": "a03598fe-3ab8-47b3-a47a-a31df1b4be75",
+        "degree": 1,
+        "name": "Ochrana prírody a krajiny",
+        "code": "169"
+      },
+      {
+        "uuid": "e9780ba1-4aec-4382-aa8c-f958366c9cea",
+        "degree": 1,
+        "name": "Ochrana ovzdušia",
+        "code": "167"
+      },
+      {
+        "uuid": "559d273c-cd30-4024-bca2-fc70eb5d0fd1",
+        "degree": 1,
+        "name": "Odpadové hospodárstvo",
+        "code": "166"
+      },
+      {
+        "uuid": "d0359051-55f6-41bb-a6cf-7b61dd843889",
+        "degree": 1,
+        "name": "Stredné školy",
+        "code": "096"
+      },
+      {
+        "uuid": "127e329f-c3ac-41bd-9b60-cdbf40f66697",
+        "degree": 1,
+        "name": "Ďalšie vzdelávanie pracovníkov",
+        "code": "105"
+      },
+      {
+        "uuid": "d50231a1-d02c-45bf-8542-066134e2de61",
+        "degree": 1,
+        "name": "Štúdium na univerzitách tretieho veku",
+        "code": "099"
+      },
+      {
+        "uuid": "f6cb771f-f75e-4660-8425-83addaa4c185",
+        "degree": 1,
+        "name": "Stáže, kurzy, jazykové školy a iné",
+        "code": "095"
+      },
+      {
+        "uuid": "7a7b2b15-8ea5-4e46-ab88-600fa06e37d3",
+        "degree": 1,
+        "name": "Uznávanie odborných kvalifikácií a dokladov o vzdelaní",
+        "code": "101"
+      },
+      {
+        "uuid": "f3486035-3c74-4e58-89ed-1373e48b325c",
+        "degree": 1,
+        "name": "Základné školy",
+        "code": "103"
+      },
+      {
+        "uuid": "f6323836-fdac-49ac-816e-0b6a2ed2268f",
+        "degree": 1,
+        "name": "Predškolské zariadenia",
+        "code": "094"
+      },
+      {
+        "uuid": "6cc83ab3-c92f-45b0-a6cf-e674157827a2",
+        "degree": 1,
+        "name": "Základné umelecké školy",
+        "code": "104"
+      },
+      {
+        "uuid": "d21a78b6-9d27-4ae9-a0c3-a6645a10b57f",
+        "degree": 1,
+        "name": "Štipendiá a študentské pôžičky",
+        "code": "098"
+      },
+      {
+        "uuid": "fb52d6df-fa45-4eea-8160-edf38d660ff4",
+        "degree": 1,
+        "name": "Vysoké školy",
+        "code": "102"
+      },
+      {
+        "uuid": "053a8408-e3a5-4361-9e3f-d526c6f0b970",
+        "degree": 1,
+        "name": "Centrá voľného času",
+        "code": "093"
+      },
+      {
+        "uuid": "50c083a0-84f0-475f-aff9-6397cdbbee58",
+        "degree": 1,
+        "name": "Šport",
+        "code": "097"
+      },
+      {
+        "uuid": "307190c0-badc-48ba-92eb-9a98adf316c5",
+        "degree": 1,
+        "name": "Štúdium v zahraničí",
+        "code": "100"
+      },
+      {
+        "uuid": "4a07ed79-6219-4925-aae0-efc8aa4bb887",
+        "degree": 1,
+        "name": "Mestská polícia",
+        "code": "176"
+      },
+      {
+        "uuid": "d26560e9-f031-480d-82a4-294bb35c38ed",
+        "degree": 1,
+        "name": "Zbrane a strelivo",
+        "code": "179"
+      },
+      {
+        "uuid": "021bcd7c-229a-47c6-a3f3-3f7bab6671fe",
+        "degree": 1,
+        "name": "Polícia",
+        "code": "177"
+      },
+      {
+        "uuid": "4f3c71a8-cfc3-4537-898c-12320fbb4d28",
+        "degree": 1,
+        "name": "Požiar, povodeň a iné nebezpečenstvo",
+        "code": "178"
+      },
+      {
+        "uuid": "9c0a3d96-c3f1-4f57-a2b9-4044d88e7796",
+        "degree": 1,
+        "name": "Civilná ochrana",
+        "code": "175"
+      },
+      {
+        "uuid": "47a63a43-d09c-4133-ad06-14e64b212aaa",
+        "degree": 1,
+        "name": "Armáda",
+        "code": "174"
+      },
+      {
+        "uuid": "03720370-1725-4f64-8ff4-c745bd3ed050",
+        "degree": 1,
+        "name": "Sociálne služby",
+        "code": "115"
+      },
+      {
+        "uuid": "0a082efc-286b-49aa-ae82-b09eca04b52e",
+        "degree": 1,
+        "name": "Registrované partnerstvo",
+        "code": "113"
+      },
+      {
+        "uuid": "3097c24c-84d7-430c-8c5b-2332c0a5ecb3",
+        "degree": 1,
+        "name": "Starostlivosť o dieťa",
+        "code": "116"
+      },
+      {
+        "uuid": "933c8eb2-5236-4021-87a2-acbc0765434c",
+        "degree": 1,
+        "name": "Adopcia a náhradná rodinná starostlivosť",
+        "code": "106"
+      },
+      {
+        "uuid": "85486e6b-2fe6-4724-9b9d-232f4c3baa26",
+        "degree": 1,
+        "name": "Krízové poradenstvo",
+        "code": "108"
+      },
+      {
+        "uuid": "eb97eb83-c9c1-497e-bcea-d99d982a5625",
+        "degree": 1,
+        "name": "Zdravotné postihnutie a podpora sociálneho začlenenia fyzickej osoby s ťažkým zdravotným postihnutím do spoločnosti",
+        "code": "111"
+      },
+      {
+        "uuid": "349a2417-05f7-4497-9242-f9e5cb27df9e",
+        "degree": 1,
+        "name": "Narodenie",
+        "code": "109"
+      },
+      {
+        "uuid": "8d83e63d-7e93-451d-a0c8-e0c6ebbac769",
+        "degree": 1,
+        "name": "Pomoc v hmotnej núdzi",
+        "code": "112"
+      },
+      {
+        "uuid": "91a8225e-1838-464b-b85c-771d8bbd4451",
+        "degree": 1,
+        "name": "Uzavretie manželstva / rozvod manželstva",
+        "code": "118"
+      },
+      {
+        "uuid": "2a486610-2eaf-49e8-9618-a75e7ead769d",
+        "degree": 1,
+        "name": "Rodičovstvo",
+        "code": "114"
+      },
+      {
+        "uuid": "e5bed796-ca4f-499b-a137-b8ddb1a47fd9",
+        "degree": 1,
+        "name": "Úmrtie",
+        "code": "117"
+      },
+      {
+        "uuid": "61617921-f6fb-4b3b-9847-f9e0567f0f36",
+        "degree": 1,
+        "name": "Dôchodok",
+        "code": "107"
+      },
+      {
+        "uuid": "fa6534c7-2ac4-4a06-9bbd-9e14e53dc062",
+        "degree": 1,
+        "name": "Opatera člena rodiny",
+        "code": "110"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "f26f941d-0b58-43d6-9ead-43cc2cae0468",
+        "degree": 13,
+        "name": "Zamestnanie",
+        "code": "C08"
+      },
+      {
+        "uuid": "bde95758-08e8-4453-a3a3-1e72f9f84a20",
+        "degree": 13,
+        "name": "Bývanie",
+        "code": "C10"
+      },
+      {
+        "uuid": "e9b0ea43-2672-40fb-a7fa-3137d38af082",
+        "degree": 13,
+        "name": "Vzdelanie a šport",
+        "code": "C05"
+      },
+      {
+        "uuid": "24d55c84-6606-4943-b24b-313d0ae6c27c",
+        "degree": 13,
+        "name": "Rodina a vzťahy",
+        "code": "C06"
+      },
+      {
+        "uuid": "e7a26959-c407-4e30-89eb-76fb13cc0008",
+        "degree": 12,
+        "name": "Duševné vlastníctvo",
+        "code": "B08"
+      },
+      {
+        "uuid": "d2b93942-a554-46e6-b674-0ad05e4224a5",
+        "degree": 12,
+        "name": "Financie",
+        "code": "C02"
+      },
+      {
+        "uuid": "b6945f87-0aed-4e6b-bec0-a5639c070b22",
+        "degree": 12,
+        "name": "Doprava",
+        "code": "C04"
+      },
+      {
+        "uuid": "2ba796d6-1ae5-423f-adc0-68b4c0961cf1",
+        "degree": 12,
+        "name": "Zdravie",
+        "code": "C09"
+      },
+      {
+        "uuid": "437a3bac-4b97-4c3d-a453-dc4a8407737d",
+        "degree": 12,
+        "name": "Administratívny a ekonomický chod podniku",
+        "code": "B03"
+      },
+      {
+        "uuid": "3609efeb-4a9f-41f0-9fc6-739923aa433b",
+        "degree": 10,
+        "name": "Občan a štát",
+        "code": "C01"
+      },
+      {
+        "uuid": "3e20eed2-05d7-40ce-bd95-8aa396c59f7f",
+        "degree": 8,
+        "name": "Kultúra",
+        "code": "C07"
+      },
+      {
+        "uuid": "519c4b17-f3e3-4b3a-81b6-fffcc443df52",
+        "degree": 8,
+        "name": "Zodpovedné podnikanie",
+        "code": "B07"
+      },
+      {
+        "uuid": "df9d7d88-82a0-482e-b268-207295ab2519",
+        "degree": 8,
+        "name": "Životné prostredie",
+        "code": "C11"
+      },
+      {
+        "uuid": "e2b69298-e2f1-48f0-9741-f8da89ef4465",
+        "degree": 6,
+        "name": "Cestovanie",
+        "code": "C03"
+      },
+      {
+        "uuid": "6f20a932-d497-451f-a7ca-49c879e4f58a",
+        "degree": 6,
+        "name": "Začatie podnikania",
+        "code": "B02"
+      },
+      {
+        "uuid": "f1043cb0-c0d4-43b1-b0b2-40831c4f5501",
+        "degree": 6,
+        "name": "Obrana a bezpečnosť",
+        "code": "C12"
+      },
+      {
+        "uuid": "3b56f67d-5ca4-40bf-97f9-e53575c24eb0",
+        "degree": 3,
+        "name": "Ukončenie podnikania",
+        "code": "B06"
+      },
+      {
+        "uuid": "ed768488-6cdc-4165-a0d8-fddbd2da1462",
+        "degree": 3,
+        "name": "Podpora podnikania",
+        "code": "B01"
+      },
+      {
+        "uuid": "943846c8-721d-4d11-964d-9b86b3e9b130",
+        "degree": 3,
+        "name": "Podnikanie",
+        "code": "B05"
+      },
+      {
+        "uuid": "85cfe027-88f9-4b2f-8b8f-8217ef67e086",
+        "degree": 2,
+        "name": "Veda, výskum a inovácie",
+        "code": "B04"
+      }
+    ],
+    "islands": {
+      "total_nodes": 195,
+      "total_islands": 20,
+      "singleton_islands": 0,
+      "multi_islands": [
+        {
+          "size_total": 14,
+          "size_source": 13,
+          "size_target": 1,
+          "fraction_total": 0.07179487179487179,
+          "top_source_uuid": "d21a78b6-9d27-4ae9-a0c3-a6645a10b57f",
+          "top_source_degree": 1,
+          "top_target_uuid": "e9b0ea43-2672-40fb-a7fa-3137d38af082",
+          "top_target_degree": 13
+        },
+        {
+          "size_total": 14,
+          "size_source": 13,
+          "size_target": 1,
+          "fraction_total": 0.07179487179487179,
+          "top_source_uuid": "c907d18b-426c-4228-82ee-0acecd7d5169",
+          "top_source_degree": 1,
+          "top_target_uuid": "f26f941d-0b58-43d6-9ead-43cc2cae0468",
+          "top_target_degree": 13
+        },
+        {
+          "size_total": 14,
+          "size_source": 13,
+          "size_target": 1,
+          "fraction_total": 0.07179487179487179,
+          "top_source_uuid": "933c8eb2-5236-4021-87a2-acbc0765434c",
+          "top_source_degree": 1,
+          "top_target_uuid": "24d55c84-6606-4943-b24b-313d0ae6c27c",
+          "top_target_degree": 13
+        },
+        {
+          "size_total": 14,
+          "size_source": 13,
+          "size_target": 1,
+          "fraction_total": 0.07179487179487179,
+          "top_source_uuid": "94e57d35-46e3-4724-bc0f-385a767165f0",
+          "top_source_degree": 1,
+          "top_target_uuid": "bde95758-08e8-4453-a3a3-1e72f9f84a20",
+          "top_target_degree": 13
+        },
+        {
+          "size_total": 13,
+          "size_source": 12,
+          "size_target": 1,
+          "fraction_total": 0.06666666666666667,
+          "top_source_uuid": "2362ca35-99c3-4f28-b030-5f788c67700d",
+          "top_source_degree": 1,
+          "top_target_uuid": "d2b93942-a554-46e6-b674-0ad05e4224a5",
+          "top_target_degree": 12
+        },
+        {
+          "size_total": 13,
+          "size_source": 12,
+          "size_target": 1,
+          "fraction_total": 0.06666666666666667,
+          "top_source_uuid": "0a7b4827-1186-4b06-b1f0-cd6e90a1d67d",
+          "top_source_degree": 1,
+          "top_target_uuid": "437a3bac-4b97-4c3d-a453-dc4a8407737d",
+          "top_target_degree": 12
+        },
+        {
+          "size_total": 13,
+          "size_source": 12,
+          "size_target": 1,
+          "fraction_total": 0.06666666666666667,
+          "top_source_uuid": "22ae133b-d05d-455b-bf98-31f3660b18d6",
+          "top_source_degree": 1,
+          "top_target_uuid": "2ba796d6-1ae5-423f-adc0-68b4c0961cf1",
+          "top_target_degree": 12
+        },
+        {
+          "size_total": 13,
+          "size_source": 12,
+          "size_target": 1,
+          "fraction_total": 0.06666666666666667,
+          "top_source_uuid": "73eca651-7674-476e-8d03-6ea05d1e6897",
+          "top_source_degree": 1,
+          "top_target_uuid": "e7a26959-c407-4e30-89eb-76fb13cc0008",
+          "top_target_degree": 12
+        },
+        {
+          "size_total": 13,
+          "size_source": 12,
+          "size_target": 1,
+          "fraction_total": 0.06666666666666667,
+          "top_source_uuid": "81aeb206-5858-49f2-ace6-521f422389dd",
+          "top_source_degree": 1,
+          "top_target_uuid": "b6945f87-0aed-4e6b-bec0-a5639c070b22",
+          "top_target_degree": 12
+        },
+        {
+          "size_total": 11,
+          "size_source": 10,
+          "size_target": 1,
+          "fraction_total": 0.05641025641025641,
+          "top_source_uuid": "57b71fb3-6e07-49ae-96fe-719e9d12c559",
+          "top_source_degree": 1,
+          "top_target_uuid": "3609efeb-4a9f-41f0-9fc6-739923aa433b",
+          "top_target_degree": 10
+        },
+        {
+          "size_total": 9,
+          "size_source": 8,
+          "size_target": 1,
+          "fraction_total": 0.046153846153846156,
+          "top_source_uuid": "e067d3bb-c40d-43c7-a7c0-b743b452d441",
+          "top_source_degree": 1,
+          "top_target_uuid": "519c4b17-f3e3-4b3a-81b6-fffcc443df52",
+          "top_target_degree": 8
+        },
+        {
+          "size_total": 9,
+          "size_source": 8,
+          "size_target": 1,
+          "fraction_total": 0.046153846153846156,
+          "top_source_uuid": "e59e6176-9bc8-42e0-8a77-a7752d105c6d",
+          "top_source_degree": 1,
+          "top_target_uuid": "df9d7d88-82a0-482e-b268-207295ab2519",
+          "top_target_degree": 8
+        },
+        {
+          "size_total": 9,
+          "size_source": 8,
+          "size_target": 1,
+          "fraction_total": 0.046153846153846156,
+          "top_source_uuid": "e38fa3fc-5e46-47bb-a8d6-8eca46377e37",
+          "top_source_degree": 1,
+          "top_target_uuid": "3e20eed2-05d7-40ce-bd95-8aa396c59f7f",
+          "top_target_degree": 8
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.035897435897435895,
+          "top_source_uuid": "67eb21fb-a11d-4efe-9bb7-e582567da170",
+          "top_source_degree": 1,
+          "top_target_uuid": "6f20a932-d497-451f-a7ca-49c879e4f58a",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.035897435897435895,
+          "top_source_uuid": "99cd5320-bf11-45ec-8fe7-b540ebd82c32",
+          "top_source_degree": 1,
+          "top_target_uuid": "e2b69298-e2f1-48f0-9741-f8da89ef4465",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.035897435897435895,
+          "top_source_uuid": "4f3c71a8-cfc3-4537-898c-12320fbb4d28",
+          "top_source_degree": 1,
+          "top_target_uuid": "f1043cb0-c0d4-43b1-b0b2-40831c4f5501",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.020512820512820513,
+          "top_source_uuid": "d645ee30-6bf2-492d-bfad-9304ff137a64",
+          "top_source_degree": 1,
+          "top_target_uuid": "ed768488-6cdc-4165-a0d8-fddbd2da1462",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.020512820512820513,
+          "top_source_uuid": "78379c0d-92e8-4736-b10b-27a672099d73",
+          "top_source_degree": 1,
+          "top_target_uuid": "943846c8-721d-4d11-964d-9b86b3e9b130",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.020512820512820513,
+          "top_source_uuid": "2ac56cd8-3719-458c-b7b0-af282362f632",
+          "top_source_degree": 1,
+          "top_target_uuid": "3b56f67d-5ca4-40bf-97f9-e53575c24eb0",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.015384615384615385,
+          "top_source_uuid": "9219bb12-75fd-4f5c-9213-d073ca577386",
+          "top_source_degree": 1,
+          "top_target_uuid": "85cfe027-88f9-4b2f-8b8f-8217ef67e086",
+          "top_target_degree": 2
+        }
+      ],
+      "source": {
+        "total_nodes": 175,
+        "total_islands": 20,
+        "singleton_islands": 0,
+        "multi_islands": [
+          {
+            "size": 13,
+            "fraction": 0.07428571428571429,
+            "size_total": 14,
+            "top_uuid": "d21a78b6-9d27-4ae9-a0c3-a6645a10b57f",
+            "top_degree": 1
+          },
+          {
+            "size": 13,
+            "fraction": 0.07428571428571429,
+            "size_total": 14,
+            "top_uuid": "c907d18b-426c-4228-82ee-0acecd7d5169",
+            "top_degree": 1
+          },
+          {
+            "size": 13,
+            "fraction": 0.07428571428571429,
+            "size_total": 14,
+            "top_uuid": "933c8eb2-5236-4021-87a2-acbc0765434c",
+            "top_degree": 1
+          },
+          {
+            "size": 13,
+            "fraction": 0.07428571428571429,
+            "size_total": 14,
+            "top_uuid": "94e57d35-46e3-4724-bc0f-385a767165f0",
+            "top_degree": 1
+          },
+          {
+            "size": 12,
+            "fraction": 0.06857142857142857,
+            "size_total": 13,
+            "top_uuid": "2362ca35-99c3-4f28-b030-5f788c67700d",
+            "top_degree": 1
+          },
+          {
+            "size": 12,
+            "fraction": 0.06857142857142857,
+            "size_total": 13,
+            "top_uuid": "0a7b4827-1186-4b06-b1f0-cd6e90a1d67d",
+            "top_degree": 1
+          },
+          {
+            "size": 12,
+            "fraction": 0.06857142857142857,
+            "size_total": 13,
+            "top_uuid": "22ae133b-d05d-455b-bf98-31f3660b18d6",
+            "top_degree": 1
+          },
+          {
+            "size": 12,
+            "fraction": 0.06857142857142857,
+            "size_total": 13,
+            "top_uuid": "73eca651-7674-476e-8d03-6ea05d1e6897",
+            "top_degree": 1
+          },
+          {
+            "size": 12,
+            "fraction": 0.06857142857142857,
+            "size_total": 13,
+            "top_uuid": "81aeb206-5858-49f2-ace6-521f422389dd",
+            "top_degree": 1
+          },
+          {
+            "size": 10,
+            "fraction": 0.05714285714285714,
+            "size_total": 11,
+            "top_uuid": "57b71fb3-6e07-49ae-96fe-719e9d12c559",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.045714285714285714,
+            "size_total": 9,
+            "top_uuid": "e067d3bb-c40d-43c7-a7c0-b743b452d441",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.045714285714285714,
+            "size_total": 9,
+            "top_uuid": "e59e6176-9bc8-42e0-8a77-a7752d105c6d",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.045714285714285714,
+            "size_total": 9,
+            "top_uuid": "e38fa3fc-5e46-47bb-a8d6-8eca46377e37",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.03428571428571429,
+            "size_total": 7,
+            "top_uuid": "67eb21fb-a11d-4efe-9bb7-e582567da170",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.03428571428571429,
+            "size_total": 7,
+            "top_uuid": "99cd5320-bf11-45ec-8fe7-b540ebd82c32",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.03428571428571429,
+            "size_total": 7,
+            "top_uuid": "4f3c71a8-cfc3-4537-898c-12320fbb4d28",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.017142857142857144,
+            "size_total": 4,
+            "top_uuid": "d645ee30-6bf2-492d-bfad-9304ff137a64",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.017142857142857144,
+            "size_total": 4,
+            "top_uuid": "78379c0d-92e8-4736-b10b-27a672099d73",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.017142857142857144,
+            "size_total": 4,
+            "top_uuid": "2ac56cd8-3719-458c-b7b0-af282362f632",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.011428571428571429,
+            "size_total": 3,
+            "top_uuid": "9219bb12-75fd-4f5c-9213-d073ca577386",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 20,
+        "total_islands": 20,
+        "singleton_islands": 20,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

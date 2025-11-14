@@ -1,0 +1,974 @@
+{
+  "id": 22,
+  "name": "Koncept rozvoja IT",
+  "technicalName": "KRIS",
+  "description": "Koncept rozvoja IT",
+  "roleList": [
+    "KRIS_PODPIS",
+    "KRIS_TVORBA",
+    "KRIS_SCHVAL"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#ffffaf",
+  "engName": "KRIT",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov\n",
+      "description": "Názov dokumentu sa tvorí skratkou “KRIS” a vyskloňovaným oficiálnym názvom inštitúcie verejnej správy bez skratiek, napríklad “KRIS Ministerstva financií Slovenskej republiky”, KRIS obce Lipany”.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Name of document is coined with abbreviation \"KRIS\" and official name of public administration institution with proper declination and no abbreviations, for example \"ISDC of Ministry of Finance of the Slovak Republic\", ISDC of Lipany\".",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód",
+      "description": "Navrhovaný formát „krit_<n>“",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Code",
+      "engDescription": "Proposed format „krit_<n>“",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 78,
+      "name": "Spracovateľ KRIT",
+      "description": "Spracovateľ KRIT",
+      "technicalName": "Profil_KRIS_Spracovatel",
+      "roleList": [
+        "KRIS_TVORBA"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Profile of ISVS elaborator specific for entity KRIT",
+      "attributes": [
+        {
+          "id": 190,
+          "name": "Meno",
+          "description": "Meno spracovateľa KRITu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Spracovatel_meno",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Name",
+          "engDescription": "Name of KRIT elaborator.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 363,
+          "name": "Priezvisko",
+          "description": "Priezvisko spracovateľa KRITu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Spracovatel_priezvisko",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Surname",
+          "engDescription": "Surname of KRIT elaborator.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 475,
+          "name": "Titul pred",
+          "description": "Titul pred menom spracovateľa KRITu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Spracovatel_titul_pred",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Title before",
+          "engDescription": "Title before name of KRIT elaborator.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 480,
+          "name": "Titul za",
+          "description": "Titul za menom spracovateľa KRITu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Spracovatel_titul_za",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Title following",
+          "engDescription": "Title following name of KRIT elaborator.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 101,
+          "name": "Funkcia",
+          "description": "Funkcia spracovateľa KRITu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Spracovatel_funkcia",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Position",
+          "engDescription": "Position of KRIT elaborator.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 466,
+          "name": "Telefón",
+          "description": "Telefón spracovateľa KRITu.",
+          "type": "PHONE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Spracovatel_telefon",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "PHONE",
+          "engName": "Phone",
+          "engDescription": "Telephone of KRIT elaborator.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 88,
+          "name": "Email",
+          "description": "Emailová schránka spracovateľa KRITu.",
+          "type": "EMAIL",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Spracovatel_email",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "EMAIL",
+          "engName": "Email",
+          "engDescription": "Email mailbox of KRIT elaborator.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 76,
+      "name": "Špecifický profil",
+      "description": "Špecifický profil",
+      "technicalName": "Profil_KRIS",
+      "roleList": [
+        "KRIS_PODPIS",
+        "KRIS_TVORBA",
+        "KRIS_SCHVAL"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Special profile for entity KRIT",
+      "attributes": [
+        {
+          "id": 31,
+          "name": "Číslo spisu",
+          "description": "Číslo spisu - dopĺňa MFSR.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_cislo_spisu",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "File number",
+          "engDescription": "Document ID.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 55,
+          "name": "Dátum schválenia",
+          "description": "Dátum schválenia dokumentu KRIT.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_datum_schvalenia",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Date of approval",
+          "engDescription": "Date of document KRIT approval.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 59,
+          "name": "Dátum vypracovania",
+          "description": "Dátum vypracovania dokumentu KRIT.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_datum_vypracovania",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Date of elaboration",
+          "engDescription": "Date of document KRIT elaboration.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 445,
+          "name": "Stav KRIT",
+          "description": "Stav z číselníka Stavy dokumentov KRIT.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_stav_kris",
+          "order": 0,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "STAV_KRIS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "KRIT status",
+          "engDescription": "Status from codelist KRIT documents status.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 694,
+          "name": "Záväzok dodržiavania cieľov a princípov Národnej koncepcie informatizácie verejnej správy",
+          "description": "Záväzok dodržiavania cieľov a princípov Národnej koncepcie informatizácie verejnej správy",
+          "type": "BOOLEAN",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Zavazok_ciele_principy_stav",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "BOOLEAN",
+          "engName": "Commitment to the observance of the goals and principles of the National Informatization Concept of Public Administration",
+          "engDescription": "Commitment to the observance of the goals and principles of the National Informatization Concept of Public Administration",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 77,
+      "name": "Štatutárny orgán",
+      "description": "Štatutárny orgán",
+      "technicalName": "Profil_KRIS_Predkladatel",
+      "roleList": [
+        "KRIS_TVORBA"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Statutory body",
+      "attributes": [
+        {
+          "id": 189,
+          "name": "Meno",
+          "description": "Meno Predkladatela.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Predkladatel_meno",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Name",
+          "engDescription": "Name of Tenderer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 362,
+          "name": "Priezvisko",
+          "description": "Priezvisko Predkladatela.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Predkladatel_priezvisko",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Surname",
+          "engDescription": "Surname of Tenderer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 474,
+          "name": "Titul pred",
+          "description": "Titul pred menom.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Predkladatel_titul_pred",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Title before",
+          "engDescription": "Title before name.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 479,
+          "name": "Titul za",
+          "description": "Titul za menom.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Predkladatel_titul_za",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Title following",
+          "engDescription": "Title following name.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 100,
+          "name": "Funkcia",
+          "description": "Funkcia Predkladatela.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Predkladatel_funkcia",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Position",
+          "engDescription": "Position of Tenderer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 465,
+          "name": "Telefón",
+          "description": "Telefon Predkladatela.",
+          "type": "PHONE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Predkladatel_telefon",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "PHONE",
+          "engName": "Phone",
+          "engDescription": "Phone of Tenderer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 87,
+          "name": "Email",
+          "description": "Emailova schranka Predkladatela.",
+          "type": "EMAIL",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_KRIS_Predkladatel_email",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "EMAIL",
+          "engName": "Email",
+          "engDescription": "Email mailbox of Tenderer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "krit_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/doc/egov/krit",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 20,
+        "name": "Dokument sa týka KRIT",
+        "engName": "Document is related to KRIT",
+        "technicalName": "Dokument_sa_tyka_KRIS",
+        "description": "Dokument sa týka KRIT.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KRIS_TVORBA",
+          "KRIS_SCHVAL",
+          "KRIS_PODPIS"
+        ],
+        "engDescription": "Document is related to KRIT.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 43,
+        "name": "KRIT rozvíja ISVS",
+        "engName": "KRIT develops ISVS",
+        "technicalName": "KRIS_rozvija_ISVS",
+        "description": "KRIT rozvíja ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KRIS_PODPIS",
+          "KRIS_TVORBA",
+          "KRIS_SCHVAL"
+        ],
+        "engDescription": "KRIT develops ISVS",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 44,
+        "name": "KRIT Rozvija Projekt",
+        "engName": "KRIT develops Project",
+        "technicalName": "KRIS_rozvija_Projekt",
+        "description": "KRIT Rozvija Projekt.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "KRIS_PODPIS",
+          "KRIS_TVORBA",
+          "KRIS_SCHVAL"
+        ],
+        "engDescription": "KRIT develops Project.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 45,
+        "name": "KRIT Stanovuje Ciel",
+        "engName": "KRIT determines Objective",
+        "technicalName": "KRIS_stanovuje_Ciel",
+        "description": "KRIT Stanovuje Ciel.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KRIS_PODPIS",
+          "KRIS_TVORBA",
+          "KRIS_SCHVAL"
+        ],
+        "engDescription": "KRIT determines Objective.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 42,
+        "name": "KRIT protokol sa tyka KRITu",
+        "engName": "KRIT protocol refers to KRIT",
+        "technicalName": "KRIS_protokol_sa_tyka_KRIS",
+        "description": "KRIT protokol sa tyka KRITu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KRIS_PODPIS",
+          "KRIS_TVORBA",
+          "KRIS_SCHVAL"
+        ],
+        "engDescription": "KRIT protocol refers to KRIT.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 101,
+        "name": "Povinna osoba predklada KRIT",
+        "engName": "Public authority submits KRIT",
+        "technicalName": "PO_predklada_KRIS",
+        "description": "Povinna osoba predklada KRIT.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "KRIS_PODPIS",
+          "KRIS_TVORBA",
+          "KRIS_SCHVAL"
+        ],
+        "engDescription": "Public authority submits KRIT.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1206,
+        "name": "Osobitný postup vo väzbe na KRIT",
+        "engName": "Special procedure in relation to KRIT",
+        "technicalName": "osobitny_postup_vztah_KRIT",
+        "description": "Osobitný postup vo väzbe na KRIT",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO"
+        ],
+        "engDescription": "SPecial procedure in relation to KRIT",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

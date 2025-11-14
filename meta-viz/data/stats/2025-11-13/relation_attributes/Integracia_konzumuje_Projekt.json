@@ -1,0 +1,111 @@
+{
+  "relation_name": "Integracia_konzumuje_Projekt",
+  "name": "Integrácia konzumuje projekt",
+  "description": "Projekt je v rámci Integrácie ISVS konzumentom (iného Projektu)",
+  "engDescription": "Project is within ISVS integration a consumer (of other Project)",
+  "type": "application",
+  "source_type": "Integracia",
+  "source_name": "Integrácia",
+  "target_type": "Projekt",
+  "target_name": "Projekt rozvoja IT",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 1,
+    "unique_pairs": 1,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 1,
+    "target_total": 1604,
+    "source_connected": 1,
+    "target_connected": 1,
+    "cardinality": "one-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "27b90fb9-471e-4121-bcdb-0b9af86b7b15",
+        "degree": 1,
+        "name": "Konzumovanie údajov z CSRÚ",
+        "code": "int_vazba_13"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "6c28ca1e-4a6b-43be-9a04-bdafea6f43b0",
+        "degree": 1,
+        "name": "Metainformačný systém",
+        "code": "projekt_100"
+      }
+    ],
+    "islands": {
+      "total_nodes": 1605,
+      "total_islands": 1604,
+      "singleton_islands": 1603,
+      "multi_islands": [
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0012461059190031153,
+          "top_source_uuid": "27b90fb9-471e-4121-bcdb-0b9af86b7b15",
+          "top_source_degree": 1,
+          "top_target_uuid": "6c28ca1e-4a6b-43be-9a04-bdafea6f43b0",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 1,
+        "total_islands": 1,
+        "singleton_islands": 1,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 1604,
+        "total_islands": 1604,
+        "singleton_islands": 1604,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

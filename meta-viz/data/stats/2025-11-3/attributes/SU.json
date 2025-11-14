@@ -1,0 +1,181 @@
+{
+  "type": "SU",
+  "count": 244,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 244,
+      "pct": 100.0,
+      "unique_count": 244,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "SU_Profil_SU_typ_studie",
+      "count": 244,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 1.2295081967213115
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 244,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.4098360655737705
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 244,
+      "pct": 100.0,
+      "unique_count": 241,
+      "unique_pct": 98.77049180327869
+    },
+    {
+      "name": "SU_Profil_SU_stav_su",
+      "count": 244,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 2.0491803278688523
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 244,
+      "pct": 100.0,
+      "unique_count": 244,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Predkladatel_Profil_SU_meno",
+      "count": 217,
+      "pct": 88.9344262295082,
+      "unique_count": 82,
+      "unique_pct": 37.78801843317972
+    },
+    {
+      "name": "Predkladatel_Profil_SU_priezvisko",
+      "count": 217,
+      "pct": 88.9344262295082,
+      "unique_count": 152,
+      "unique_pct": 70.04608294930875
+    },
+    {
+      "name": "Predkladatel_Profil_SU_email",
+      "count": 211,
+      "pct": 86.47540983606558,
+      "unique_count": 152,
+      "unique_pct": 72.03791469194313
+    },
+    {
+      "name": "Predkladatel_Profil_SU_telefon",
+      "count": 207,
+      "pct": 84.8360655737705,
+      "unique_count": 110,
+      "unique_pct": 53.14009661835749
+    },
+    {
+      "name": "Predkladatel_Profil_SU_funkcia",
+      "count": 199,
+      "pct": 81.55737704918032,
+      "unique_count": 76,
+      "unique_pct": 38.19095477386934
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 145,
+      "pct": 59.42622950819673,
+      "unique_count": 129,
+      "unique_pct": 88.96551724137932
+    },
+    {
+      "name": "Predkladatel_Profil_SU_titul_pred",
+      "count": 68,
+      "pct": 27.86885245901639,
+      "unique_count": 12,
+      "unique_pct": 17.647058823529413
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 32,
+      "pct": 13.114754098360656,
+      "unique_count": 32,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "SU_Profil_SU_datum_vypracovania",
+      "count": 25,
+      "pct": 10.245901639344263,
+      "unique_count": 22,
+      "unique_pct": 88.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 13,
+      "pct": 5.327868852459016,
+      "unique_count": 13,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "SU_Profil_SU_datum_dorucenia",
+      "count": 13,
+      "pct": 5.327868852459016,
+      "unique_count": 12,
+      "unique_pct": 92.3076923076923
+    },
+    {
+      "name": "Schvalovatel_Profil_SU_meno",
+      "count": 8,
+      "pct": 3.278688524590164,
+      "unique_count": 6,
+      "unique_pct": 75.0
+    },
+    {
+      "name": "Schvalovatel_Profil_SU_email",
+      "count": 8,
+      "pct": 3.278688524590164,
+      "unique_count": 6,
+      "unique_pct": 75.0
+    },
+    {
+      "name": "Schvalovatel_Profil_SU_priezvisko",
+      "count": 8,
+      "pct": 3.278688524590164,
+      "unique_count": 6,
+      "unique_pct": 75.0
+    },
+    {
+      "name": "Schvalovatel_Profil_SU_funkcia",
+      "count": 8,
+      "pct": 3.278688524590164,
+      "unique_count": 7,
+      "unique_pct": 87.5
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 8,
+      "pct": 3.278688524590164,
+      "unique_count": 8,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Schvalovatel_Profil_SU_telefon",
+      "count": 7,
+      "pct": 2.8688524590163933,
+      "unique_count": 6,
+      "unique_pct": 85.71428571428571
+    },
+    {
+      "name": "Schvalovatel_Profil_SU_titul_pred",
+      "count": 7,
+      "pct": 2.8688524590163933,
+      "unique_count": 2,
+      "unique_pct": 28.57142857142857
+    },
+    {
+      "name": "Predkladatel_Profil_SU_titul_za",
+      "count": 7,
+      "pct": 2.8688524590163933,
+      "unique_count": 4,
+      "unique_pct": 57.14285714285714
+    }
+  ]
+}

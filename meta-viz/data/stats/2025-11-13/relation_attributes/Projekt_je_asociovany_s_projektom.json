@@ -1,0 +1,725 @@
+{
+  "relation_name": "Projekt_je_asociovany_s_projektom",
+  "name": "Projekt je asociovaný s projektom",
+  "description": "Projekt je asociovaný s projektom",
+  "engDescription": "Project is associated with Project",
+  "type": "application",
+  "source_type": "Projekt",
+  "source_name": "Projekt rozvoja IT",
+  "target_type": "Projekt",
+  "target_name": "Projekt rozvoja IT",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 98,
+    "unique_pairs": 98,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 1604,
+    "target_total": 1604,
+    "source_connected": 36,
+    "target_connected": 50,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 32,
+      "avg": 2.7222222222222223,
+      "median": 1.0,
+      "p90": 5,
+      "p99": 32
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 6,
+      "avg": 1.96,
+      "median": 1.0,
+      "p90": 3,
+      "p99": 6
+    },
+    "top_source": [
+      {
+        "uuid": "23d6b020-2337-4933-91bf-fe2200d5121c",
+        "degree": 32,
+        "name": "ŽS 0 Program životných situácií",
+        "code": "projekt_3044"
+      },
+      {
+        "uuid": "e0b688f4-afb9-41e6-921d-82cd3f2ff754",
+        "degree": 7,
+        "name": "Modernizácia špecializovaného portálu",
+        "code": "projekt_3386"
+      },
+      {
+        "uuid": "32b2c0a8-9a09-4422-898a-ae9234023d6f",
+        "degree": 7,
+        "name": "Projekt implementácie DWH ŽS pre MPSVR SR",
+        "code": "projekt_3265"
+      },
+      {
+        "uuid": "e7dff618-b4a7-487a-9e5d-2221fafec2de",
+        "degree": 5,
+        "name": "Slovensko3.0",
+        "code": "projekt_2383"
+      },
+      {
+        "uuid": "6ead2e9e-9144-4a43-a3e0-5304b17fdbee",
+        "degree": 3,
+        "name": "ŽS 4 Kúpa a vlastnenie motorového vozidla",
+        "code": "projekt_2392"
+      },
+      {
+        "uuid": "2db064e2-ae5e-4220-8a0c-165937aa158a",
+        "degree": 3,
+        "name": "Projekt implementácie HW/SW ŽS pre MPSVR SR",
+        "code": "projekt_3167"
+      },
+      {
+        "uuid": "8a812aad-4d49-48c0-96e2-e8cedb50ec23",
+        "degree": 3,
+        "name": "ŽS 7 Narodenie dieťaťa",
+        "code": "projekt_2395"
+      },
+      {
+        "uuid": "98e764f4-bb25-4c06-90bb-a35623496adc",
+        "degree": 3,
+        "name": "ŽS4 - Kúpa auta MDSR",
+        "code": "projekt_2496"
+      },
+      {
+        "uuid": "78aae651-20ee-4bb4-b597-029b0e350591",
+        "degree": 3,
+        "name": "ŽS 5 Administratívny chod podniku",
+        "code": "projekt_2393"
+      },
+      {
+        "uuid": "74845fbd-a9a9-44a3-be7f-0ac0a6564031",
+        "degree": 2,
+        "name": "ŽS 6 Presťahovanie",
+        "code": "projekt_2394"
+      },
+      {
+        "uuid": "af2f4a71-b1ae-48b7-b1b5-03f3e8af8228",
+        "degree": 2,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 6 pre MPSVR SR",
+        "code": "projekt_3275"
+      },
+      {
+        "uuid": "9320f328-b655-4546-8311-1c8de643a9bf",
+        "degree": 2,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 16 pre MPSVR SR",
+        "code": "projekt_3280"
+      },
+      {
+        "uuid": "f7211ed5-514f-42ae-b679-c9adf2368b8b",
+        "degree": 2,
+        "name": "ŽS 5 Administratívny chod podniku",
+        "code": "projekt_2522"
+      },
+      {
+        "uuid": "1e8b60b2-c6dd-4bf8-82c7-4308a523f6e6",
+        "degree": 2,
+        "name": "ŽS 8 Som chorý, mám chorého člena rodiny",
+        "code": "projekt_2396"
+      },
+      {
+        "uuid": "58685f66-778c-4432-8d4e-99aabfad8503",
+        "degree": 1,
+        "name": "ŽS 1 Strata a hľadanie zamestnania",
+        "code": "projekt_1914"
+      },
+      {
+        "uuid": "a5d58ecb-0fc0-4cdf-b9b2-3a985d41d624",
+        "degree": 1,
+        "name": "ŽS 9 Som odkázaný, mám odkázaného člena rodiny",
+        "code": "projekt_2397"
+      },
+      {
+        "uuid": "59cecba3-162d-49c4-881e-53b9e7826254",
+        "degree": 1,
+        "name": "ŽS 15 Uzavretie manželstva",
+        "code": "projekt_2403"
+      },
+      {
+        "uuid": "a95cd1fb-3b14-41a1-bad3-a1b1efa86de7",
+        "degree": 1,
+        "name": "Budovanie životných situácií pre organizáciu NCZI",
+        "code": "projekt_3291"
+      },
+      {
+        "uuid": "a4f94073-03e7-4014-91d6-2d0431bf8014",
+        "degree": 1,
+        "name": "Online procesy - ezdravie",
+        "code": "projekt_2203"
+      },
+      {
+        "uuid": "f8c2d738-1329-4c52-a75a-3302f26b7c2e",
+        "degree": 1,
+        "name": "Implementácia Centrálneho ekonomického systému",
+        "code": "projekt_211"
+      },
+      {
+        "uuid": "94c7d06d-06ec-4572-8b36-fcd5c0f8b41a",
+        "degree": 1,
+        "name": "Online procesy eZdravia",
+        "code": "projekt_508"
+      },
+      {
+        "uuid": "ba57493b-ed24-46e9-9ce8-92ccfc40182b",
+        "degree": 1,
+        "name": "ŽS6 Presťahovanie",
+        "code": "projekt_2374"
+      },
+      {
+        "uuid": "a0e7608c-fce8-466d-abd1-f0b8fd4d0239",
+        "degree": 1,
+        "name": "Upgrade eDovoz-CCK (2.fáza)",
+        "code": "projekt_2446"
+      },
+      {
+        "uuid": "b4ab0bf5-25c6-adb8-e040-526d452c53d3",
+        "degree": 1,
+        "name": "Rozvoj governance a úrovne informačnej a kybernetickej bezpečnosti v meste Snina",
+        "code": "projekt_3095"
+      },
+      {
+        "uuid": "53a60c6a-35b2-451a-8349-c42bcb9011d5",
+        "degree": 1,
+        "name": "ŽS 10 Hmotná núdza",
+        "code": "projekt_2398"
+      },
+      {
+        "uuid": "66230257-eae5-4c74-bdac-f8434a7bb6e1",
+        "degree": 1,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 5 pre MPSVR SR",
+        "code": "projekt_3274"
+      },
+      {
+        "uuid": "90df4100-731c-4e5d-93f6-f3880ee6263f",
+        "degree": 1,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 7 pre MPSVR SR",
+        "code": "projekt_3276"
+      },
+      {
+        "uuid": "b2226447-dbb4-4e4a-a92f-874da2b8ca6d",
+        "degree": 1,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 8 pre MPSVR SR",
+        "code": "projekt_3277"
+      },
+      {
+        "uuid": "8b80ee21-d2b2-45fe-9e7f-58fcbd48bdf7",
+        "degree": 1,
+        "name": "ŽS 12 Základná škola",
+        "code": "projekt_2400"
+      },
+      {
+        "uuid": "70f41367-1fe7-4a8f-8a90-6ed99bf9d8bf",
+        "degree": 1,
+        "name": "ŽS 11 Materská škola",
+        "code": "projekt_2399"
+      },
+      {
+        "uuid": "4437c329-c952-414d-94ba-b555cad3fb7e",
+        "degree": 1,
+        "name": "ŽS 13 Stredná škola",
+        "code": "projekt_2401"
+      },
+      {
+        "uuid": "1812647c-4343-410a-84d8-d59b254e18e8",
+        "degree": 1,
+        "name": "ŽS 16 Úmrtie a dedičské konanie",
+        "code": "projekt_2404"
+      },
+      {
+        "uuid": "17c96299-18b0-45d3-80f5-e1dbf747d89c",
+        "degree": 1,
+        "name": "ŽS 3 Začatie podnikania",
+        "code": "projekt_2391"
+      },
+      {
+        "uuid": "7efd7438-c8c4-4661-8ada-b7252ad059ea",
+        "degree": 1,
+        "name": "Elektronický výber mýta",
+        "code": "projekt_919"
+      },
+      {
+        "uuid": "596e488f-379c-44c3-ad15-315e9c474e91",
+        "degree": 1,
+        "name": "Modernizácia Platformy pre rozvoj a riešenie prioritných životných situácií",
+        "code": "projekt_3067"
+      },
+      {
+        "uuid": "ec931f5f-6cc9-4fee-8763-877905602267",
+        "degree": 1,
+        "name": "Budovanie životných situácií pre organizáciu ŠVPS SR",
+        "code": "projekt_3690"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "2db064e2-ae5e-4220-8a0c-165937aa158a",
+        "degree": 6,
+        "name": "Projekt implementácie HW/SW ŽS pre MPSVR SR",
+        "code": "projekt_3167"
+      },
+      {
+        "uuid": "a95cd1fb-3b14-41a1-bad3-a1b1efa86de7",
+        "degree": 5,
+        "name": "Budovanie životných situácií pre organizáciu NCZI",
+        "code": "projekt_3291"
+      },
+      {
+        "uuid": "760d1a87-3669-4e69-abeb-2eab9aa34403",
+        "degree": 4,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 1 pre MPSVR SR",
+        "code": "projekt_3080"
+      },
+      {
+        "uuid": "af44bbbf-4ec2-4da0-95fe-649f67950a24",
+        "degree": 4,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 9 pre MPSVR SR",
+        "code": "projekt_3278"
+      },
+      {
+        "uuid": "cdec293a-dda4-4fdf-aa07-f96af67341a7",
+        "degree": 4,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 10 pre MPSVR SR",
+        "code": "projekt_3279"
+      },
+      {
+        "uuid": "a9840c2d-ffd6-4876-9013-9790e687c804",
+        "degree": 3,
+        "name": "ŽS č. 5 Administratívny chod podniku",
+        "code": "projekt_2580"
+      },
+      {
+        "uuid": "4fec3e31-9607-4a22-8d04-c8f23b91dd38",
+        "degree": 3,
+        "name": "Zabezpečenie vybraných procesov v rámci optimalizácie životnej situácie č. 4: Kúpa a vlastnenie motorového vozidla",
+        "code": "projekt_2307"
+      },
+      {
+        "uuid": "fb08f312-af3a-4fc0-89cb-da60ebc503e1",
+        "degree": 3,
+        "name": "ŽS 6 Presťahovanie",
+        "code": "projekt_3068"
+      },
+      {
+        "uuid": "ce3430e4-3b6d-4490-b476-e958ee2b6ffe",
+        "degree": 3,
+        "name": "ŽS 7 Narodenie dieťaťa",
+        "code": "projekt_3072"
+      },
+      {
+        "uuid": "dc97d098-fc96-42c9-ad3a-bd47bffb3363",
+        "degree": 3,
+        "name": "ŽS 15 Uzavretie manželstva",
+        "code": "projekt_3073"
+      },
+      {
+        "uuid": "78aae651-20ee-4bb4-b597-029b0e350591",
+        "degree": 3,
+        "name": "ŽS 5 Administratívny chod podniku",
+        "code": "projekt_2393"
+      },
+      {
+        "uuid": "a0fbb0ef-21eb-480d-a9c5-4db3f4de3da8",
+        "degree": 3,
+        "name": "JISCD – CR089 Úprava agendy v JISCD pre ŠDU",
+        "code": "projekt_2440"
+      },
+      {
+        "uuid": "c61e9d01-6d50-484e-b867-fb981fba1734",
+        "degree": 3,
+        "name": "Centrálna integračná platforma MZ SR",
+        "code": "projekt_2605"
+      },
+      {
+        "uuid": "f6ca091d-26fd-4a46-af13-790d7365c1c9",
+        "degree": 3,
+        "name": "ŽS 16 Úmrtie a dedičské konanie",
+        "code": "projekt_3074"
+      },
+      {
+        "uuid": "cc2b61b3-7a40-45e6-a892-27272a7e3308",
+        "degree": 3,
+        "name": "ŽS č. 3 Začatie podnikania",
+        "code": "projekt_2579"
+      },
+      {
+        "uuid": "fb8ba278-beb2-4d23-bd87-fd42899466b2",
+        "degree": 3,
+        "name": "JISCD – CR093 Kúpa/predaj vozidla",
+        "code": "projekt_3385"
+      },
+      {
+        "uuid": "90df4100-731c-4e5d-93f6-f3880ee6263f",
+        "degree": 3,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 7 pre MPSVR SR",
+        "code": "projekt_3276"
+      },
+      {
+        "uuid": "b2226447-dbb4-4e4a-a92f-874da2b8ca6d",
+        "degree": 3,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 8 pre MPSVR SR",
+        "code": "projekt_3277"
+      },
+      {
+        "uuid": "66230257-eae5-4c74-bdac-f8434a7bb6e1",
+        "degree": 3,
+        "name": "Projekt implementácie zmenových požiadaviek pre ŽS 5 pre MPSVR SR",
+        "code": "projekt_3274"
+      },
+      {
+        "uuid": "6ead2e9e-9144-4a43-a3e0-5304b17fdbee",
+        "degree": 2,
+        "name": "ŽS 4 Kúpa a vlastnenie motorového vozidla",
+        "code": "projekt_2392"
+      },
+      {
+        "uuid": "32b2c0a8-9a09-4422-898a-ae9234023d6f",
+        "degree": 2,
+        "name": "Projekt implementácie DWH ŽS pre MPSVR SR",
+        "code": "projekt_3265"
+      },
+      {
+        "uuid": "17c96299-18b0-45d3-80f5-e1dbf747d89c",
+        "degree": 1,
+        "name": "ŽS 3 Začatie podnikania",
+        "code": "projekt_2391"
+      },
+      {
+        "uuid": "4437c329-c952-414d-94ba-b555cad3fb7e",
+        "degree": 1,
+        "name": "ŽS 13 Stredná škola",
+        "code": "projekt_2401"
+      },
+      {
+        "uuid": "1812647c-4343-410a-84d8-d59b254e18e8",
+        "degree": 1,
+        "name": "ŽS 16 Úmrtie a dedičské konanie",
+        "code": "projekt_2404"
+      },
+      {
+        "uuid": "53a60c6a-35b2-451a-8349-c42bcb9011d5",
+        "degree": 1,
+        "name": "ŽS 10 Hmotná núdza",
+        "code": "projekt_2398"
+      },
+      {
+        "uuid": "877fb488-53d2-4f3e-95bf-5edea85f2124",
+        "degree": 1,
+        "name": "ŽS 14 Odchod do dôchodku",
+        "code": "projekt_2402"
+      },
+      {
+        "uuid": "3a997fa4-6b4b-4567-94a8-537e8920fa11",
+        "degree": 1,
+        "name": "ŽS 2 Kúpa a vlastnenie nehnuteľnosti na bývanie",
+        "code": "projekt_2390"
+      },
+      {
+        "uuid": "8a812aad-4d49-48c0-96e2-e8cedb50ec23",
+        "degree": 1,
+        "name": "ŽS 7 Narodenie dieťaťa",
+        "code": "projekt_2395"
+      },
+      {
+        "uuid": "1e8b60b2-c6dd-4bf8-82c7-4308a523f6e6",
+        "degree": 1,
+        "name": "ŽS 8 Som chorý, mám chorého člena rodiny",
+        "code": "projekt_2396"
+      },
+      {
+        "uuid": "a5d58ecb-0fc0-4cdf-b9b2-3a985d41d624",
+        "degree": 1,
+        "name": "ŽS 9 Som odkázaný, mám odkázaného člena rodiny",
+        "code": "projekt_2397"
+      },
+      {
+        "uuid": "70f41367-1fe7-4a8f-8a90-6ed99bf9d8bf",
+        "degree": 1,
+        "name": "ŽS 11 Materská škola",
+        "code": "projekt_2399"
+      },
+      {
+        "uuid": "65e9b94f-3ea2-4a06-83d8-f824ca0d915e",
+        "degree": 1,
+        "name": "Rozšírenie portfólia služieb a inovácia služieb elektronického zdravotníctva",
+        "code": "projekt_578"
+      },
+      {
+        "uuid": "84b54592-609a-4540-8b13-6726dfc93bc0",
+        "degree": 1,
+        "name": "Notifikačný modul",
+        "code": "projekt_2387"
+      },
+      {
+        "uuid": "862143c9-569b-4a46-81fa-404511fda3c1",
+        "degree": 1,
+        "name": "Stream 1 MVP (aktivácia, sprievodca )",
+        "code": "projekt_2384"
+      },
+      {
+        "uuid": "db386237-166d-485d-8d9b-f28aad52565b",
+        "degree": 1,
+        "name": "Digitálny onboarding",
+        "code": "projekt_2385"
+      },
+      {
+        "uuid": "ba57493b-ed24-46e9-9ce8-92ccfc40182b",
+        "degree": 1,
+        "name": "ŽS6 Presťahovanie",
+        "code": "projekt_2374"
+      },
+      {
+        "uuid": "5e43ff2e-c0cf-4e22-ae60-656928b1033d",
+        "degree": 1,
+        "name": "Implementácia aplikačných požiadaviek a úprav backendu a frontendu pre zabezpečenie procesov ŽS6 Presťahovanie",
+        "code": "projekt_2597"
+      },
+      {
+        "uuid": "215936ad-3dac-41db-88a2-a85dbb752b17",
+        "degree": 1,
+        "name": "Samozdanenie - \"SAMO\"",
+        "code": "projekt_2341"
+      },
+      {
+        "uuid": "8b80ee21-d2b2-45fe-9e7f-58fcbd48bdf7",
+        "degree": 1,
+        "name": "ŽS 12 Základná škola",
+        "code": "projekt_2400"
+      },
+      {
+        "uuid": "74845fbd-a9a9-44a3-be7f-0ac0a6564031",
+        "degree": 1,
+        "name": "ŽS 6 Presťahovanie",
+        "code": "projekt_2394"
+      },
+      {
+        "uuid": "59cecba3-162d-49c4-881e-53b9e7826254",
+        "degree": 1,
+        "name": "ŽS 15 Uzavretie manželstva",
+        "code": "projekt_2403"
+      },
+      {
+        "uuid": "58685f66-778c-4432-8d4e-99aabfad8503",
+        "degree": 1,
+        "name": "ŽS 1 Strata a hľadanie zamestnania",
+        "code": "projekt_1914"
+      },
+      {
+        "uuid": "61e93378-7445-4e68-8c8a-0a22d0a55766",
+        "degree": 1,
+        "name": "Rozvoj governance a úrovne informačnej a kybernetickej bezpečnosti mesta Snina",
+        "code": "projekt_1601"
+      },
+      {
+        "uuid": "e31bae34-92d2-4031-b5cf-cbb4c07c8c21",
+        "degree": 1,
+        "name": "Funkčný rozvoj IS CPDI (v rámci programu SVK 3.0)",
+        "code": "projekt_3192"
+      },
+      {
+        "uuid": "c8bb46da-2629-4cde-8a27-d37709807a5e",
+        "degree": 1,
+        "name": "Funkčný rozvoj CAMP 2.0 (Centrálnej API Manažment Platformy)",
+        "code": "projekt_3231"
+      },
+      {
+        "uuid": "23d6b020-2337-4933-91bf-fe2200d5121c",
+        "degree": 1,
+        "name": "ŽS 0 Program životných situácií",
+        "code": "projekt_3044"
+      },
+      {
+        "uuid": "8b25f190-273c-46d8-a1ae-0bbc263dcb94",
+        "degree": 1,
+        "name": "Elektronický mýtny systém - Implementácia legislatívnych zmien",
+        "code": "projekt_3477"
+      },
+      {
+        "uuid": "e7dff618-b4a7-487a-9e5d-2221fafec2de",
+        "degree": 1,
+        "name": "Slovensko3.0",
+        "code": "projekt_2383"
+      },
+      {
+        "uuid": "ec931f5f-6cc9-4fee-8763-877905602267",
+        "degree": 1,
+        "name": "Budovanie životných situácií pre organizáciu ŠVPS SR",
+        "code": "projekt_3690"
+      },
+      {
+        "uuid": "dad14f5f-1eb6-45ee-8bc4-c2b3348fe50d",
+        "degree": 1,
+        "name": "Budovanie životných situácií pre organizáciu Štatistický úrad Slovenskej republiky",
+        "code": "projekt_3526"
+      }
+    ],
+    "islands": {
+      "total_nodes": 3208,
+      "total_islands": 3131,
+      "singleton_islands": 3122,
+      "multi_islands": [
+        {
+          "size_total": 64,
+          "size_source": 26,
+          "size_target": 38,
+          "fraction_total": 0.0199501246882793,
+          "top_source_uuid": "23d6b020-2337-4933-91bf-fe2200d5121c",
+          "top_source_degree": 32,
+          "top_target_uuid": "2db064e2-ae5e-4220-8a0c-165937aa158a",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 6,
+          "size_source": 1,
+          "size_target": 5,
+          "fraction_total": 0.0018703241895261845,
+          "top_source_uuid": "e7dff618-b4a7-487a-9e5d-2221fafec2de",
+          "top_source_degree": 5,
+          "top_target_uuid": "84b54592-609a-4540-8b13-6726dfc93bc0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0012468827930174563,
+          "top_source_uuid": "94c7d06d-06ec-4572-8b36-fcd5c0f8b41a",
+          "top_source_degree": 1,
+          "top_target_uuid": "c61e9d01-6d50-484e-b867-fb981fba1734",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0006234413965087282,
+          "top_source_uuid": "ba57493b-ed24-46e9-9ce8-92ccfc40182b",
+          "top_source_degree": 1,
+          "top_target_uuid": "5e43ff2e-c0cf-4e22-ae60-656928b1033d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0006234413965087282,
+          "top_source_uuid": "a0e7608c-fce8-466d-abd1-f0b8fd4d0239",
+          "top_source_degree": 1,
+          "top_target_uuid": "215936ad-3dac-41db-88a2-a85dbb752b17",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0006234413965087282,
+          "top_source_uuid": "596e488f-379c-44c3-ad15-315e9c474e91",
+          "top_source_degree": 1,
+          "top_target_uuid": "e7dff618-b4a7-487a-9e5d-2221fafec2de",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0006234413965087282,
+          "top_source_uuid": "7efd7438-c8c4-4661-8ada-b7252ad059ea",
+          "top_source_degree": 1,
+          "top_target_uuid": "8b25f190-273c-46d8-a1ae-0bbc263dcb94",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0006234413965087282,
+          "top_source_uuid": "b4ab0bf5-25c6-adb8-e040-526d452c53d3",
+          "top_source_degree": 1,
+          "top_target_uuid": "61e93378-7445-4e68-8c8a-0a22d0a55766",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0006234413965087282,
+          "top_source_uuid": "a95cd1fb-3b14-41a1-bad3-a1b1efa86de7",
+          "top_source_degree": 1,
+          "top_target_uuid": "65e9b94f-3ea2-4a06-83d8-f824ca0d915e",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 1604,
+        "total_islands": 1577,
+        "singleton_islands": 1575,
+        "multi_islands": [
+          {
+            "size": 26,
+            "fraction": 0.016209476309226933,
+            "size_total": 64,
+            "top_uuid": "23d6b020-2337-4933-91bf-fe2200d5121c",
+            "top_degree": 32
+          },
+          {
+            "size": 3,
+            "fraction": 0.0018703241895261845,
+            "size_total": 4,
+            "top_uuid": "94c7d06d-06ec-4572-8b36-fcd5c0f8b41a",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 1604,
+        "total_islands": 1563,
+        "singleton_islands": 1561,
+        "multi_islands": [
+          {
+            "size": 38,
+            "fraction": 0.02369077306733167,
+            "size_total": 64,
+            "top_uuid": "2db064e2-ae5e-4220-8a0c-165937aa158a",
+            "top_degree": 6
+          },
+          {
+            "size": 5,
+            "fraction": 0.003117206982543641,
+            "size_total": 6,
+            "top_uuid": "84b54592-609a-4540-8b13-6726dfc93bc0",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

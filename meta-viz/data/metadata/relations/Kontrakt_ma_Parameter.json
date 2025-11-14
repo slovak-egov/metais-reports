@@ -1,0 +1,126 @@
+{
+  "id": 36,
+  "name": "Kontrakt má parameter",
+  "technicalName": "Kontrakt_ma_Parameter",
+  "description": "Kontrakt má parameter.",
+  "roleList": [
+    "SLA_SPRAVA",
+    "INT_PODPIS"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Contract has a parameter",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 21,
+      "name": "Kontrakt",
+      "technicalName": "Kontrakt",
+      "description": "Dohoda o úrovni poskytovaných služieb alebo service-level agreement (SLA) je časť zmluvy o poskytovaní služieb, v ktorej je definovaná určitá úroveň služby.",
+      "roleList": [
+        "SLA_SPRAVA",
+        "INT_PODPIS"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Contract",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SLA_SPRAVA;INT_PODPIS;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 32,
+      "name": "Parameter kontraktu",
+      "technicalName": "ParameterKontraktu",
+      "description": "Kvantifikovateľné parametre kontraktu.",
+      "roleList": [
+        "SLA_SPRAVA"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Contract parameter",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SLA_SPRAVA;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Contract has a parameter.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

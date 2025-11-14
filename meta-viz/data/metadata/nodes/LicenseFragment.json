@@ -1,0 +1,736 @@
+{
+  "id": 76,
+  "name": "Žiadosť o licenciu fragment",
+  "technicalName": "LicenseFragment",
+  "description": "Žiadosť o licenciu fragment.",
+  "roleList": [
+    "LIC_LMMF",
+    "LIC_ZLPO",
+    "LIC_LM_UPVII"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#dfdfdf",
+  "engName": "Fragment license request",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 80,
+      "name": "Profil ORACLE Ziadost o licenciu fragment",
+      "description": "Profil ORACLE Ziadost o licenciu fragment",
+      "technicalName": "Profil_LicenseFragment_Oracle",
+      "roleList": [
+        "LIC_LMMF",
+        "LIC_ZLPO",
+        "LIC_LM_UPVII"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "ORACLE Profile Fragment license request",
+      "attributes": [
+        {
+          "id": 227,
+          "name": "Názov fragmentu licencie",
+          "description": "Názov fragmentu licencie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_name",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Name of license fragment",
+          "engDescription": "Name of license fragment.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 300,
+          "name": "Počet žiadaných licencií",
+          "description": "Počet žiadaných licencií.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_numberOfLicenses",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of requested licenses",
+          "engDescription": "Number of requested licenses.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 416,
+          "name": "SI kód",
+          "description": "SI kód (kód nákupu) vo formáte 5-9 miestne číslo.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_siCode",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "regex",
+              "id": null,
+              "regex": "^[0-9]{5,9}$"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "SI code",
+          "engDescription": "SI code (purchase code) in from of 5-9 digit number.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 533,
+          "name": "Umiestnenie",
+          "description": "Umiestnenie licencie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_location",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Location",
+          "engDescription": "License location.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 337,
+          "name": "Poznámka",
+          "description": "Poznámka.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_note",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Note",
+          "engDescription": "Note to reference register.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 27,
+          "name": "Cena",
+          "description": "Cena Oracle licencie",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_price",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Price",
+          "engDescription": "Price.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 196,
+          "name": "Merná jednotka",
+          "description": "Merná jednotka zvolenej licencie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_unitOfMeassure",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Unit of measure",
+          "engDescription": "Selected license unit of measure.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 63,
+          "name": "Dátum zabezpečenia licencie",
+          "description": "Dátum zabezpečenia licencie.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_dateOfOrder",
+          "order": 8,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Date of providing support",
+          "engDescription": "Date of providing license.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 65,
+          "name": "Dátum zabezpečenia podpory",
+          "description": "Dátum zabezpečenia podpory.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_supportValidFrom",
+          "order": 9,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Date of providing support",
+          "engDescription": "Date of providing support",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 242,
+          "name": "Obdobie zabezpečenia podpory",
+          "description": "Obdobie zabezpečenia podpory.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_supportValidTo",
+          "order": 10,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Period of providing support",
+          "engDescription": "Period of providing support.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 438,
+          "name": "Stav",
+          "description": "Stav licencie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_state",
+          "order": 12,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Status",
+          "engDescription": "License status.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 569,
+          "name": "Vlastník",
+          "description": "Vlastník.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_owner",
+          "order": 13,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Owner",
+          "engDescription": "Owner.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 324,
+          "name": "Používateľ",
+          "description": "Koncový používateľ licencie",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_endUser",
+          "order": 14,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "User",
+          "engDescription": "License end user",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 524,
+          "name": "Typ zmluvy",
+          "description": "Typ zmluvy.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_contractType",
+          "order": 15,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Type of contract",
+          "engDescription": "Type of contract.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 369,
+          "name": "Príloha",
+          "description": "Príloha.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_attachment",
+          "order": 16,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Attachment",
+          "engDescription": "Attachment.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 503,
+          "name": "Typ podpory",
+          "description": "Typ podpory.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_supportType",
+          "order": 17,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Support type",
+          "engDescription": "Support type.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 29,
+          "name": "Číslo fragmentu licencie",
+          "description": "Číslo fragmentu licencie",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_LicenseFragment_Oracle_license_number",
+          "order": 18,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "License fragment number",
+          "engDescription": "Fragment license number",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 847,
+          "name": "Id licencie",
+          "description": "Id licencie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_licenseUuid",
+          "order": 19,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "License id",
+          "engDescription": "License id.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 849,
+          "name": "Cena supportu",
+          "description": "Cena.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_supportPrice",
+          "order": 23,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Price",
+          "engDescription": "Price.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 854,
+          "name": "Cena supportu",
+          "description": "Cena.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_supportPlusPrice",
+          "order": 23,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Price",
+          "engDescription": "Price.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 852,
+          "name": "Platnosť supportu od",
+          "description": "Platnosť supportu od.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_supportPlusValidFrom",
+          "order": 24,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Support valid from",
+          "engDescription": "Support valid from",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 853,
+          "name": "Platnosť supportu do",
+          "description": "Platnosť supportu do.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profile_LicenseFragment_supportPlusValidTo",
+          "order": 25,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Support valid to",
+          "engDescription": "Support valid to.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "fragment_licencie_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/licence-fragment-request",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 54,
+        "name": "Fragment licencie obsahuje produkt",
+        "engName": "License fragment contains product",
+        "technicalName": "LicenseFragment_obsahuje_LicenseVendorProduct",
+        "description": "Fragment licencie obsahuje produkt.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "License fragment contains product.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 55,
+        "name": "Žiadosť obsahuje fragment licencie",
+        "engName": "Request contains license fragment",
+        "technicalName": "LicenseRequest_obsahuje_LicenseFragment",
+        "description": "Žiadosť obsahuje fragment licencie",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "Request contains license fragment",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 100,
+        "name": "PO používa fragment licencie",
+        "engName": "PA uses license fragment",
+        "technicalName": "PO_pouziva_LicenseFragment",
+        "description": "PO používa fragment licencie.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "PA uses license fragment.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 105,
+        "name": "PO vlastní fragment licencie",
+        "engName": "Public authority owns license fragment",
+        "technicalName": "PO_vlastni_LicenseFragment",
+        "description": "PO vlastní fragment licencie.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "LIC_LMMF",
+          "LIC_ZLPO",
+          "LIC_LM_UPVII"
+        ],
+        "engDescription": "PA owns license fragment.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

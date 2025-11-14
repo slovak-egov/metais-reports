@@ -1,0 +1,127 @@
+{
+  "id": 53,
+  "name": "TCO",
+  "technicalName": "TCO",
+  "description": "Nakladová položka",
+  "roleList": [
+    "EA_GARPO",
+    "TCO_FiN_MANMF",
+    "TCO_ZPO"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": "#ffe0af",
+  "engName": "TCO",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 55,
+      "name": "TCO - generický profil",
+      "description": "Generický profil TCO",
+      "technicalName": "genprof_TCO",
+      "roleList": [
+        "EA_GARPO",
+        "TCO_FiN_MANMF",
+        "TCO_ZPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "TCO generic profile",
+      "attributes": [
+        {
+          "id": 499,
+          "name": "Typ nákladov",
+          "description": "Typ nákladov.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_TCO_typ_nakladov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Costs type",
+          "engDescription": "Costs type.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "tco_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/tco",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 92,
+        "name": "Náklady TCO",
+        "engName": "TCO costs",
+        "technicalName": "Naklady_TCO",
+        "description": "Náklady TCO.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "TCO_FiN_MANMF"
+        ],
+        "engDescription": "TCO costs.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": []
+  }
+}

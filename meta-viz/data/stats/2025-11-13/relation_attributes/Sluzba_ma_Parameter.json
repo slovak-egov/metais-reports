@@ -1,0 +1,149 @@
+{
+  "relation_name": "Sluzba_ma_Parameter",
+  "name": "Služba má parameter",
+  "description": "Služba má parameter.",
+  "engDescription": "Service has parameter.",
+  "type": "application",
+  "source_type": "AS",
+  "source_name": "Aplikačná služba",
+  "target_type": "ParameterKontraktu",
+  "target_name": "Parameter kontraktu",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 6,
+    "unique_pairs": 6,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 17544,
+    "target_total": 6,
+    "source_connected": 1,
+    "target_connected": 6,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 6,
+      "max": 6,
+      "avg": 6.0,
+      "median": 6,
+      "p90": 6,
+      "p99": 6
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "4e0ae3fb-df65-421f-9b5b-1088e9324f28",
+        "degree": 6,
+        "name": "Poskytnutie konsolidovaných referenčných údajov z IS CSRÚ na synchronizáciu",
+        "code": "sluzba_is_49253"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "fbd2a0cd-974c-4727-801b-17c850a4c040",
+        "degree": 1,
+        "name": "c_planovana_doba_dostupnosti.1",
+        "code": null
+      },
+      {
+        "uuid": "c6c87f15-e536-4f17-b770-cb7706080da6",
+        "degree": 1,
+        "name": "100",
+        "code": null
+      },
+      {
+        "uuid": "a0137d22-a9aa-4662-941b-840bc792ebfe",
+        "degree": 1,
+        "name": "48",
+        "code": null
+      },
+      {
+        "uuid": "97eb3178-c90b-4353-8fc0-f8886fb5e037",
+        "degree": 1,
+        "name": "4",
+        "code": null
+      },
+      {
+        "uuid": "ca57c5f3-e41f-4559-8a62-b97c74bea832",
+        "degree": 1,
+        "name": "3600",
+        "code": null
+      },
+      {
+        "uuid": "9ccd760d-a34d-4136-b2ed-864e8def8eae",
+        "degree": 1,
+        "name": "98",
+        "code": null
+      }
+    ],
+    "islands": {
+      "total_nodes": 17550,
+      "total_islands": 17544,
+      "singleton_islands": 17543,
+      "multi_islands": [
+        {
+          "size_total": 7,
+          "size_source": 1,
+          "size_target": 6,
+          "fraction_total": 0.0003988603988603989,
+          "top_source_uuid": "4e0ae3fb-df65-421f-9b5b-1088e9324f28",
+          "top_source_degree": 6,
+          "top_target_uuid": "a0137d22-a9aa-4662-941b-840bc792ebfe",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 17544,
+        "total_islands": 17544,
+        "singleton_islands": 17544,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 6,
+        "total_islands": 1,
+        "singleton_islands": 0,
+        "multi_islands": [
+          {
+            "size": 6,
+            "fraction": 1.0,
+            "size_total": 7,
+            "top_uuid": "a0137d22-a9aa-4662-941b-840bc792ebfe",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

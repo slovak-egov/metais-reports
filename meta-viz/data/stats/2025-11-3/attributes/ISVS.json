@@ -1,0 +1,587 @@
+{
+  "type": "ISVS",
+  "count": 6492,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 6492,
+      "pct": 100.0,
+      "unique_count": 6456,
+      "unique_pct": 99.44547134935306
+    },
+    {
+      "name": "EA_Profil_ISVS_stav_isvs",
+      "count": 6492,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 0.06161429451632779
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 6492,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 0.06161429451632779
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 6492,
+      "pct": 100.0,
+      "unique_count": 5490,
+      "unique_pct": 84.5656192236599
+    },
+    {
+      "name": "EA_Profil_ISVS_modul_isvs",
+      "count": 6492,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.030807147258163897
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 6492,
+      "pct": 100.0,
+      "unique_count": 6455,
+      "unique_pct": 99.43006777572396
+    },
+    {
+      "name": "EA_Profil_ISVS_typ_isvs",
+      "count": 6492,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 0.07701786814540973
+    },
+    {
+      "name": "EA_Profil_ISVS_popis_as_is",
+      "count": 6205,
+      "pct": 95.57917436845348,
+      "unique_count": 2196,
+      "unique_pct": 35.39081385979049
+    },
+    {
+      "name": "EA_Profil_ISVS_prvok_rozpoctu",
+      "count": 6008,
+      "pct": 92.54467036352435,
+      "unique_count": 162,
+      "unique_pct": 2.6964047936085223
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Vyuzivanie_spolocnych_modulov",
+      "count": 5426,
+      "pct": 83.57979051139864,
+      "unique_count": 125,
+      "unique_pct": 2.3037228160707706
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_drobne_zmeny",
+      "count": 5097,
+      "pct": 78.51201478743069,
+      "unique_count": 2,
+      "unique_pct": 0.039238767902687856
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 4733,
+      "pct": 72.90511398644486,
+      "unique_count": 3421,
+      "unique_pct": 72.279738009719
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_Reason",
+      "count": 3950,
+      "pct": 60.84411583487369,
+      "unique_count": 890,
+      "unique_pct": 22.531645569620252
+    },
+    {
+      "name": "IKT_Profil_ISVS_pocet_pouzivatalov",
+      "count": 3896,
+      "pct": 60.01232285890327,
+      "unique_count": 233,
+      "unique_pct": 5.980492813141684
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_Poziadavka_na_vysoku_dostupnost",
+      "count": 3836,
+      "pct": 59.08810844115835,
+      "unique_count": 2,
+      "unique_pct": 0.05213764337851929
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_planovana_spotreba_RAM",
+      "count": 3562,
+      "pct": 54.867529266789894,
+      "unique_count": 23,
+      "unique_pct": 0.6457046603032005
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_planova_spotreba_VCPU",
+      "count": 3562,
+      "pct": 54.867529266789894,
+      "unique_count": 20,
+      "unique_pct": 0.5614823133071308
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_planovy_diskovy_priestor_TI",
+      "count": 3559,
+      "pct": 54.821318545902656,
+      "unique_count": 11,
+      "unique_pct": 0.3090755830289407
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_planovany_diskovy_priestor_TIE",
+      "count": 3558,
+      "pct": 54.80591497227357,
+      "unique_count": 12,
+      "unique_pct": 0.33726812816188867
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_planovany_diskovy_priestor_TIER",
+      "count": 3558,
+      "pct": 54.80591497227357,
+      "unique_count": 11,
+      "unique_pct": 0.30916245081506466
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_alokovane_VCPU",
+      "count": 3558,
+      "pct": 54.80591497227357,
+      "unique_count": 13,
+      "unique_pct": 0.3653738055087128
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_alokovana_RAM",
+      "count": 3558,
+      "pct": 54.80591497227357,
+      "unique_count": 13,
+      "unique_pct": 0.3653738055087128
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_alokovany_diskovy_priestor_TI",
+      "count": 3556,
+      "pct": 54.775107825015404,
+      "unique_count": 8,
+      "unique_pct": 0.22497187851518563
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_IKT_Profil_ISVS_alokovany_diskovy_priestor_TIER",
+      "count": 3556,
+      "pct": 54.775107825015404,
+      "unique_count": 8,
+      "unique_pct": 0.22497187851518563
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_alokovany_diskovy_priestor_TIER",
+      "count": 3555,
+      "pct": 54.759704251386324,
+      "unique_count": 5,
+      "unique_pct": 0.14064697609001406
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_Cielovy_stav_ISVS_priorita",
+      "count": 3545,
+      "pct": 54.60566851509551,
+      "unique_count": 123,
+      "unique_pct": 3.469675599435825
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_zaciatok_koniec",
+      "count": 3539,
+      "pct": 54.51324707332101,
+      "unique_count": 510,
+      "unique_pct": 14.410850522746538
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_Popis_funkcionalit_pre_verejnost",
+      "count": 3516,
+      "pct": 54.15896487985212,
+      "unique_count": 567,
+      "unique_pct": 16.12627986348123
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Popis_referencnych_udajov",
+      "count": 3511,
+      "pct": 54.081947011706724,
+      "unique_count": 372,
+      "unique_pct": 10.595272002278554
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Cielovy_stav_ISVS_Popis_funkcionalit_pre_verejnu_spravu",
+      "count": 3503,
+      "pct": 53.95871842267405,
+      "unique_count": 527,
+      "unique_pct": 15.04424778761062
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Migracia_do_vladneho_cloudu",
+      "count": 3482,
+      "pct": 53.635243376463336,
+      "unique_count": 342,
+      "unique_pct": 9.821941412981046
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Moje_data",
+      "count": 3482,
+      "pct": 53.635243376463336,
+      "unique_count": 344,
+      "unique_pct": 9.879379666858128
+    },
+    {
+      "name": "Cielovy_stav_ISVS_popis_referencnych_udajov_konzument",
+      "count": 3480,
+      "pct": 53.60443622920518,
+      "unique_count": 422,
+      "unique_pct": 12.126436781609195
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Automatizacia_sluzieb",
+      "count": 3469,
+      "pct": 53.43499691928527,
+      "unique_count": 423,
+      "unique_pct": 12.19371576823292
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Planovane_poskytovanie_analytickych_udajov",
+      "count": 3468,
+      "pct": 53.41959334565619,
+      "unique_count": 328,
+      "unique_pct": 9.457900807381776
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Popis_poskytovania_otvorenych_udajov",
+      "count": 3466,
+      "pct": 53.38878619839803,
+      "unique_count": 409,
+      "unique_pct": 11.800346220427006
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Popis_odstranenia_barier_pri_KS",
+      "count": 3460,
+      "pct": 53.29636475662354,
+      "unique_count": 342,
+      "unique_pct": 9.884393063583815
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Proaktivita_a_retazenie",
+      "count": 3459,
+      "pct": 53.28096118299446,
+      "unique_count": 291,
+      "unique_pct": 8.412836079791846
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Vyuzivanie_centralnych_spolocnych_blokov",
+      "count": 3454,
+      "pct": 53.20394331484904,
+      "unique_count": 280,
+      "unique_pct": 8.106543138390272
+    },
+    {
+      "name": "Cielovy_stav_ISVS_Pouzitie_Centralneho_modelu_udajov_VS",
+      "count": 3454,
+      "pct": 53.20394331484904,
+      "unique_count": 242,
+      "unique_pct": 7.006369426751593
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 2261,
+      "pct": 34.82747997535428,
+      "unique_count": 2,
+      "unique_pct": 0.08845643520566121
+    },
+    {
+      "name": "EA_Profil_ISVS_webove_sidlo",
+      "count": 2015,
+      "pct": 31.038200862600124,
+      "unique_count": 1954,
+      "unique_pct": 96.9727047146402
+    },
+    {
+      "name": "Profil_Webove_Sidlo_url",
+      "count": 1939,
+      "pct": 29.867529266789894,
+      "unique_count": 1885,
+      "unique_pct": 97.21505930892212
+    },
+    {
+      "name": "EA_Profil_ISVS_popis_to_be",
+      "count": 1204,
+      "pct": 18.545902649414664,
+      "unique_count": 689,
+      "unique_pct": 57.22591362126246
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_Prevadzka_vo_vladnom_cloude",
+      "count": 849,
+      "pct": 13.077634011090572,
+      "unique_count": 3,
+      "unique_pct": 0.35335689045936397
+    },
+    {
+      "name": "IKT_Profil_ISVS_manazer_isvs",
+      "count": 724,
+      "pct": 11.15218730745533,
+      "unique_count": 374,
+      "unique_pct": 51.657458563535904
+    },
+    {
+      "name": "IKT_Profil_ISVS_Planovana_spotreba_z_Vladneho_cloudu",
+      "count": 548,
+      "pct": 8.441158348736908,
+      "unique_count": 139,
+      "unique_pct": 25.364963503649633
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_IKT_Profil_ISVS_Planovana_migracia_do_vladneho_cloudu_v_roku",
+      "count": 529,
+      "pct": 8.148490449784349,
+      "unique_count": 152,
+      "unique_pct": 28.733459357277884
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_Nasadenie_vo_vladnom_cloudu_od_roku",
+      "count": 390,
+      "pct": 6.007393715341959,
+      "unique_count": 121,
+      "unique_pct": 31.025641025641026
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 390,
+      "pct": 6.007393715341959,
+      "unique_count": 368,
+      "unique_pct": 94.35897435897435
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_IKT_Profil_ISVS_Realizacia_vo_vladnom_cloudu_od_roku",
+      "count": 350,
+      "pct": 5.391250770178681,
+      "unique_count": 115,
+      "unique_pct": 32.857142857142854
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 312,
+      "pct": 4.805914972273567,
+      "unique_count": 213,
+      "unique_pct": 68.26923076923077
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 234,
+      "pct": 3.6044362292051755,
+      "unique_count": 219,
+      "unique_pct": 93.58974358974359
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 155,
+      "pct": 2.387553912507702,
+      "unique_count": 145,
+      "unique_pct": 93.54838709677419
+    },
+    {
+      "name": "IKT_Profil_ISVS_Monitoring_spotreby_z_Vladneho_cloudu",
+      "count": 134,
+      "pct": 2.0640788662969807,
+      "unique_count": 3,
+      "unique_pct": 2.2388059701492535
+    },
+    {
+      "name": "Profil_Webove_Sidlo_typ_rozhrania",
+      "count": 99,
+      "pct": 1.5249537892791127,
+      "unique_count": 6,
+      "unique_pct": 6.0606060606060606
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_typ_vladneho_cloudu",
+      "count": 88,
+      "pct": 1.3555144793592113,
+      "unique_count": 2,
+      "unique_pct": 2.272727272727273
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_IKT_Profil_ISVS_nasadenie_ISVS_do_vladneho_cloudu_v",
+      "count": 70,
+      "pct": 1.0782501540357363,
+      "unique_count": 43,
+      "unique_pct": 61.42857142857143
+    },
+    {
+      "name": "Gen_Profil_EA_typ_replikacie",
+      "count": 63,
+      "pct": 0.9704251386321626,
+      "unique_count": 1,
+      "unique_pct": 1.5873015873015872
+    },
+    {
+      "name": "IKT_Migracia_ISVS_pouzivatelia",
+      "count": 63,
+      "pct": 0.9704251386321626,
+      "unique_count": 16,
+      "unique_pct": 25.396825396825395
+    },
+    {
+      "name": "Profil_Webove_Sidlo_url_vyhlasenie",
+      "count": 59,
+      "pct": 0.9088108441158349,
+      "unique_count": 59,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_ISVS_aktualny_stav",
+      "count": 51,
+      "pct": 0.7855822550831794,
+      "unique_count": 17,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Gen_Profil_EA_pocet_replikacii",
+      "count": 29,
+      "pct": 0.4467036352433764,
+      "unique_count": 7,
+      "unique_pct": 24.137931034482758
+    },
+    {
+      "name": "IKT_Migracia_ISVS_datove_centrum",
+      "count": 19,
+      "pct": 0.29266789895255696,
+      "unique_count": 7,
+      "unique_pct": 36.84210526315789
+    },
+    {
+      "name": "EA_Profil_ISVS_EA_Profil_ISVS_Grafana_Graph",
+      "count": 11,
+      "pct": 0.16943930991990142,
+      "unique_count": 10,
+      "unique_pct": 90.9090909090909
+    },
+    {
+      "name": "EA_Profil_ISVS_EA_Profil_ISVS_Grafana_BarGauge",
+      "count": 11,
+      "pct": 0.16943930991990142,
+      "unique_count": 10,
+      "unique_pct": 90.9090909090909
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_compliance",
+      "count": 10,
+      "pct": 0.15403573629081946,
+      "unique_count": 3,
+      "unique_pct": 30.0
+    },
+    {
+      "name": "IKT_Migracia_ISVS_kod_z_metais",
+      "count": 9,
+      "pct": 0.13863216266173753,
+      "unique_count": 9,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Webove_Sidlo_kontakt_na_spravcu",
+      "count": 8,
+      "pct": 0.12322858903265559,
+      "unique_count": 5,
+      "unique_pct": 62.5
+    },
+    {
+      "name": "IKT_Migracia_ISVS_nazov_is",
+      "count": 8,
+      "pct": 0.12322858903265559,
+      "unique_count": 8,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Migracia_ISVS_id",
+      "count": 8,
+      "pct": 0.12322858903265559,
+      "unique_count": 8,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_method",
+      "count": 5,
+      "pct": 0.07701786814540973,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_noncompliance_sk",
+      "count": 5,
+      "pct": 0.07701786814540973,
+      "unique_count": 3,
+      "unique_pct": 60.0
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_updated",
+      "count": 5,
+      "pct": 0.07701786814540973,
+      "unique_count": 4,
+      "unique_pct": 80.0
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_created",
+      "count": 5,
+      "pct": 0.07701786814540973,
+      "unique_count": 4,
+      "unique_pct": 80.0
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_feedback",
+      "count": 5,
+      "pct": 0.07701786814540973,
+      "unique_count": 4,
+      "unique_pct": 80.0
+    },
+    {
+      "name": "IKT_Migracia_ISVS_manazer",
+      "count": 5,
+      "pct": 0.07701786814540973,
+      "unique_count": 3,
+      "unique_pct": 60.0
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_disproportionate_burden",
+      "count": 3,
+      "pct": 0.04621072088724584,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_content_out_of_scope",
+      "count": 3,
+      "pct": 0.04621072088724584,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_customizable_content",
+      "count": 3,
+      "pct": 0.04621072088724584,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Vyhlasenie_Pristupnost_accessible_alternatives",
+      "count": 3,
+      "pct": 0.04621072088724584,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Profil_Webove_Sidlo_datum_odstranenia_nepristupneho_obsahu",
+      "count": 2,
+      "pct": 0.030807147258163897,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "IKT_Profil_ISVS_IKT_Profil_ISVS_nasadenie_ISVS_do_vladneho_cloudu",
+      "count": 1,
+      "pct": 0.015403573629081948,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

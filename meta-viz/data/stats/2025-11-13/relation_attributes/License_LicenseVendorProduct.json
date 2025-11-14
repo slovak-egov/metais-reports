@@ -1,0 +1,3642 @@
+{
+  "relation_name": "License_LicenseVendorProduct",
+  "name": "Licencia na produkt",
+  "description": "Licencia na produkt.",
+  "engDescription": "Product license.",
+  "type": "application",
+  "source_type": "License",
+  "source_name": "Licencia",
+  "target_type": "LicenseVendorProduct",
+  "target_name": "Produkt vendora",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 352,
+    "unique_pairs": 352,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 353,
+    "target_total": 314,
+    "source_connected": 352,
+    "target_connected": 73,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 53,
+      "avg": 4.821917808219178,
+      "median": 2,
+      "p90": 12,
+      "p99": 30
+    },
+    "top_source": [
+      {
+        "uuid": "e47d721c-a226-469b-92ad-eefc30aca579",
+        "degree": 1,
+        "name": "e47d721c-a226-469b-92ad-eefc30aca579",
+        "code": "licencia_10"
+      },
+      {
+        "uuid": "79260e31-242b-460d-85b3-3105fff17615",
+        "degree": 1,
+        "name": "79260e31-242b-460d-85b3-3105fff17615",
+        "code": "licencia_42"
+      },
+      {
+        "uuid": "8d18aaec-657d-48e4-b1bb-9bf5048c5bcb",
+        "degree": 1,
+        "name": "8d18aaec-657d-48e4-b1bb-9bf5048c5bcb",
+        "code": "licencia_33"
+      },
+      {
+        "uuid": "b4ef789c-a461-471a-ba12-8a3c973b3d2a",
+        "degree": 1,
+        "name": "b4ef789c-a461-471a-ba12-8a3c973b3d2a",
+        "code": "licencia_11"
+      },
+      {
+        "uuid": "96989925-5ad9-4fa1-91a7-24d201f45da8",
+        "degree": 1,
+        "name": "96989925-5ad9-4fa1-91a7-24d201f45da8",
+        "code": "licencia_23"
+      },
+      {
+        "uuid": "9bbd7159-abc1-48eb-8923-9aacf6328d44",
+        "degree": 1,
+        "name": "9bbd7159-abc1-48eb-8923-9aacf6328d44",
+        "code": "licencia_30"
+      },
+      {
+        "uuid": "47ebbf23-a4b9-4022-9d99-0a62d6c61e92",
+        "degree": 1,
+        "name": "47ebbf23-a4b9-4022-9d99-0a62d6c61e92",
+        "code": "licencia_16"
+      },
+      {
+        "uuid": "ac57b48e-86de-4bd5-af40-e47cfec3dcd2",
+        "degree": 1,
+        "name": "ac57b48e-86de-4bd5-af40-e47cfec3dcd2",
+        "code": "licencia_20"
+      },
+      {
+        "uuid": "f7991703-f153-45e7-9396-9473d59c4257",
+        "degree": 1,
+        "name": "f7991703-f153-45e7-9396-9473d59c4257",
+        "code": "licencia_7"
+      },
+      {
+        "uuid": "faf930fd-e8e5-4e6d-91c2-d685bdbddb3d",
+        "degree": 1,
+        "name": "faf930fd-e8e5-4e6d-91c2-d685bdbddb3d",
+        "code": "licencia_35"
+      },
+      {
+        "uuid": "4f93ee26-25e7-4a0a-8030-2dbb55945942",
+        "degree": 1,
+        "name": "4f93ee26-25e7-4a0a-8030-2dbb55945942",
+        "code": "licencia_32"
+      },
+      {
+        "uuid": "53f6b6c7-efde-4102-ab39-de618a1ec0ae",
+        "degree": 1,
+        "name": "53f6b6c7-efde-4102-ab39-de618a1ec0ae",
+        "code": "licencia_26"
+      },
+      {
+        "uuid": "5ec793cd-e135-4024-9287-bed7a1356b6e",
+        "degree": 1,
+        "name": "5ec793cd-e135-4024-9287-bed7a1356b6e",
+        "code": "licencia_6"
+      },
+      {
+        "uuid": "9901ceb8-cbdf-4396-8f8b-3b57e5b042cc",
+        "degree": 1,
+        "name": "9901ceb8-cbdf-4396-8f8b-3b57e5b042cc",
+        "code": "licencia_29"
+      },
+      {
+        "uuid": "b33488a7-2b45-49b7-9771-650bf2f7b5bf",
+        "degree": 1,
+        "name": "b33488a7-2b45-49b7-9771-650bf2f7b5bf",
+        "code": "licencia_4"
+      },
+      {
+        "uuid": "be7b3ec2-85b1-4e84-bc31-ea6afd3633f9",
+        "degree": 1,
+        "name": "be7b3ec2-85b1-4e84-bc31-ea6afd3633f9",
+        "code": "licencia_39"
+      },
+      {
+        "uuid": "4b0b8bbc-c4fb-4bd5-9746-63843b8e2209",
+        "degree": 1,
+        "name": "4b0b8bbc-c4fb-4bd5-9746-63843b8e2209",
+        "code": "licencia_36"
+      },
+      {
+        "uuid": "2687c787-f3e1-4a78-8b45-a0ee9ae427ca",
+        "degree": 1,
+        "name": "2687c787-f3e1-4a78-8b45-a0ee9ae427ca",
+        "code": "licencia_1"
+      },
+      {
+        "uuid": "9f40dd12-4f09-4294-af45-b5310036d550",
+        "degree": 1,
+        "name": "9f40dd12-4f09-4294-af45-b5310036d550",
+        "code": "licencia_37"
+      },
+      {
+        "uuid": "dfbc11aa-d509-4fc3-97c8-2938fbc1d735",
+        "degree": 1,
+        "name": "dfbc11aa-d509-4fc3-97c8-2938fbc1d735",
+        "code": "licencia_40"
+      },
+      {
+        "uuid": "531a1048-5b5b-4a6a-917e-0f945d89956e",
+        "degree": 1,
+        "name": "531a1048-5b5b-4a6a-917e-0f945d89956e",
+        "code": "licencia_41"
+      },
+      {
+        "uuid": "29b5a533-5518-420b-ac40-33b77b9670af",
+        "degree": 1,
+        "name": "29b5a533-5518-420b-ac40-33b77b9670af",
+        "code": "licencia_3"
+      },
+      {
+        "uuid": "6b3d83bd-8277-42ff-a7d3-8e40cad0f0f8",
+        "degree": 1,
+        "name": "6b3d83bd-8277-42ff-a7d3-8e40cad0f0f8",
+        "code": "licencia_22"
+      },
+      {
+        "uuid": "46f132c7-5d40-48ea-bad5-5b5d00d69db4",
+        "degree": 1,
+        "name": "46f132c7-5d40-48ea-bad5-5b5d00d69db4",
+        "code": "licencia_27"
+      },
+      {
+        "uuid": "2f00c4b1-6421-4d6a-9889-20a12971a8e0",
+        "degree": 1,
+        "name": "2f00c4b1-6421-4d6a-9889-20a12971a8e0",
+        "code": "licencia_38"
+      },
+      {
+        "uuid": "6cd7bc96-851a-4c92-9acc-401ca771a6eb",
+        "degree": 1,
+        "name": "6cd7bc96-851a-4c92-9acc-401ca771a6eb",
+        "code": "licencia_14"
+      },
+      {
+        "uuid": "60f4ab71-3a7b-400e-9eb0-cf386ae9a5c1",
+        "degree": 1,
+        "name": "60f4ab71-3a7b-400e-9eb0-cf386ae9a5c1",
+        "code": "licencia_25"
+      },
+      {
+        "uuid": "0ab46fd5-21b9-45e2-b928-b3d234f68cd0",
+        "degree": 1,
+        "name": "0ab46fd5-21b9-45e2-b928-b3d234f68cd0",
+        "code": "licencia_28"
+      },
+      {
+        "uuid": "d522d567-a7fc-4bb3-85a6-056b875d1835",
+        "degree": 1,
+        "name": "d522d567-a7fc-4bb3-85a6-056b875d1835",
+        "code": "licencia_13"
+      },
+      {
+        "uuid": "f2a70316-7b1f-4484-8f51-e78c179cdfd9",
+        "degree": 1,
+        "name": "f2a70316-7b1f-4484-8f51-e78c179cdfd9",
+        "code": "licencia_34"
+      },
+      {
+        "uuid": "6ef4655b-d790-4e19-86bb-3e7fd94b8bcd",
+        "degree": 1,
+        "name": "6ef4655b-d790-4e19-86bb-3e7fd94b8bcd",
+        "code": "licencia_8"
+      },
+      {
+        "uuid": "ed89ddf6-5049-45d3-87f4-bd78356a4581",
+        "degree": 1,
+        "name": "ed89ddf6-5049-45d3-87f4-bd78356a4581",
+        "code": "licencia_2"
+      },
+      {
+        "uuid": "a02c47ff-f7b6-4f26-a00e-fc6ebdc0e257",
+        "degree": 1,
+        "name": "a02c47ff-f7b6-4f26-a00e-fc6ebdc0e257",
+        "code": "licencia_18"
+      },
+      {
+        "uuid": "d07fd8cb-0fc5-4185-bcaa-414e3817d78c",
+        "degree": 1,
+        "name": "d07fd8cb-0fc5-4185-bcaa-414e3817d78c",
+        "code": "licencia_15"
+      },
+      {
+        "uuid": "9ef57386-5ad6-4832-ac73-eab09422f5c4",
+        "degree": 1,
+        "name": "9ef57386-5ad6-4832-ac73-eab09422f5c4",
+        "code": "licencia_5"
+      },
+      {
+        "uuid": "9bf930a7-975a-4aca-b980-9344ebac3806",
+        "degree": 1,
+        "name": "9bf930a7-975a-4aca-b980-9344ebac3806",
+        "code": "licencia_24"
+      },
+      {
+        "uuid": "78f44f88-6efa-4bf4-b4c8-2ae14ae5c846",
+        "degree": 1,
+        "name": "78f44f88-6efa-4bf4-b4c8-2ae14ae5c846",
+        "code": "licencia_21"
+      },
+      {
+        "uuid": "e7794418-054b-4f2f-abf8-dfb3559fbdeb",
+        "degree": 1,
+        "name": "e7794418-054b-4f2f-abf8-dfb3559fbdeb",
+        "code": "licencia_17"
+      },
+      {
+        "uuid": "eb4ae538-b64c-49e0-bc6c-abeba632b3a0",
+        "degree": 1,
+        "name": "eb4ae538-b64c-49e0-bc6c-abeba632b3a0",
+        "code": "licencia_31"
+      },
+      {
+        "uuid": "f661e574-1f75-4425-8ba6-1a39d9d9cc0f",
+        "degree": 1,
+        "name": "f661e574-1f75-4425-8ba6-1a39d9d9cc0f",
+        "code": "licencia_12"
+      },
+      {
+        "uuid": "99264eba-7f56-491d-9d33-363bad6ed93f",
+        "degree": 1,
+        "name": "99264eba-7f56-491d-9d33-363bad6ed93f",
+        "code": "licencia_19"
+      },
+      {
+        "uuid": "e7c5a253-7bf8-4a90-a76f-f82ced959cf8",
+        "degree": 1,
+        "name": "e7c5a253-7bf8-4a90-a76f-f82ced959cf8",
+        "code": "licencia_9"
+      },
+      {
+        "uuid": "d6edc7b7-1dce-4ff1-8f44-da4059ee0e68",
+        "degree": 1,
+        "name": "d6edc7b7-1dce-4ff1-8f44-da4059ee0e68",
+        "code": "licencia_45"
+      },
+      {
+        "uuid": "d158d16b-be68-4331-b62b-0feacf00ba44",
+        "degree": 1,
+        "name": "d158d16b-be68-4331-b62b-0feacf00ba44",
+        "code": "licencia_59"
+      },
+      {
+        "uuid": "95d05b69-f67e-440f-b5ae-dc974101ca1b",
+        "degree": 1,
+        "name": "95d05b69-f67e-440f-b5ae-dc974101ca1b",
+        "code": "licencia_78"
+      },
+      {
+        "uuid": "243a6493-ceb6-4ad6-885e-f383e68e70f2",
+        "degree": 1,
+        "name": "243a6493-ceb6-4ad6-885e-f383e68e70f2",
+        "code": "licencia_88"
+      },
+      {
+        "uuid": "66aa3a13-bb6b-4b72-be2a-9df6565bff37",
+        "degree": 1,
+        "name": "66aa3a13-bb6b-4b72-be2a-9df6565bff37",
+        "code": "licencia_69"
+      },
+      {
+        "uuid": "8c405d85-a482-4304-afb8-2f3764cd8a3e",
+        "degree": 1,
+        "name": "8c405d85-a482-4304-afb8-2f3764cd8a3e",
+        "code": "licencia_64"
+      },
+      {
+        "uuid": "2510d537-aa0f-4675-a1a8-d392485ad708",
+        "degree": 1,
+        "name": "2510d537-aa0f-4675-a1a8-d392485ad708",
+        "code": "licencia_52"
+      },
+      {
+        "uuid": "30952f7a-3b24-483e-8a30-245cf2fd1d58",
+        "degree": 1,
+        "name": "30952f7a-3b24-483e-8a30-245cf2fd1d58",
+        "code": "licencia_54"
+      },
+      {
+        "uuid": "037d558c-3a69-4116-84c4-9f6cc5ece401",
+        "degree": 1,
+        "name": "037d558c-3a69-4116-84c4-9f6cc5ece401",
+        "code": "licencia_55"
+      },
+      {
+        "uuid": "2ad55243-b8dd-4ac6-b3ad-bbe1a09bfb8f",
+        "degree": 1,
+        "name": "2ad55243-b8dd-4ac6-b3ad-bbe1a09bfb8f",
+        "code": "licencia_60"
+      },
+      {
+        "uuid": "00b66a4d-e702-432c-a4ad-f3c293872d2f",
+        "degree": 1,
+        "name": "00b66a4d-e702-432c-a4ad-f3c293872d2f",
+        "code": "licencia_43"
+      },
+      {
+        "uuid": "4fb5d754-5082-4c24-b58e-b631f8023920",
+        "degree": 1,
+        "name": "4fb5d754-5082-4c24-b58e-b631f8023920",
+        "code": "licencia_46"
+      },
+      {
+        "uuid": "be78c5cf-41db-4b53-9b6b-c9e03fa25270",
+        "degree": 1,
+        "name": "be78c5cf-41db-4b53-9b6b-c9e03fa25270",
+        "code": "licencia_73"
+      },
+      {
+        "uuid": "71308a91-cd1b-4a13-b6e0-5b149d558325",
+        "degree": 1,
+        "name": "71308a91-cd1b-4a13-b6e0-5b149d558325",
+        "code": "licencia_66"
+      },
+      {
+        "uuid": "dbba4584-da64-46f2-967f-16b46730d96a",
+        "degree": 1,
+        "name": "dbba4584-da64-46f2-967f-16b46730d96a",
+        "code": "licencia_72"
+      },
+      {
+        "uuid": "17ab1f8e-db25-4e8a-94a6-5074c16a2585",
+        "degree": 1,
+        "name": "17ab1f8e-db25-4e8a-94a6-5074c16a2585",
+        "code": "licencia_82"
+      },
+      {
+        "uuid": "72deb8d1-3e5a-453b-afc4-a78b7e1a2a85",
+        "degree": 1,
+        "name": "72deb8d1-3e5a-453b-afc4-a78b7e1a2a85",
+        "code": "licencia_83"
+      },
+      {
+        "uuid": "9e5e1b14-0109-4e62-a188-974c4b774e93",
+        "degree": 1,
+        "name": "9e5e1b14-0109-4e62-a188-974c4b774e93",
+        "code": "licencia_50"
+      },
+      {
+        "uuid": "bc0f5e8f-2093-4f53-bb96-fb94337e54b6",
+        "degree": 1,
+        "name": "bc0f5e8f-2093-4f53-bb96-fb94337e54b6",
+        "code": "licencia_86"
+      },
+      {
+        "uuid": "109c99e4-9867-43f2-ab82-0565a9817a1e",
+        "degree": 1,
+        "name": "109c99e4-9867-43f2-ab82-0565a9817a1e",
+        "code": "licencia_71"
+      },
+      {
+        "uuid": "3e7f83c8-dad8-4279-9ea9-5ccb48a378cc",
+        "degree": 1,
+        "name": "3e7f83c8-dad8-4279-9ea9-5ccb48a378cc",
+        "code": "licencia_75"
+      },
+      {
+        "uuid": "7ed2901b-5448-4cb3-abf3-5aa59c36d10a",
+        "degree": 1,
+        "name": "7ed2901b-5448-4cb3-abf3-5aa59c36d10a",
+        "code": "licencia_57"
+      },
+      {
+        "uuid": "fc787ffe-41e5-4ca3-b316-7b0158d7eb5f",
+        "degree": 1,
+        "name": "fc787ffe-41e5-4ca3-b316-7b0158d7eb5f",
+        "code": "licencia_48"
+      },
+      {
+        "uuid": "c88838e7-2623-4223-a70e-8e9219d49a85",
+        "degree": 1,
+        "name": "c88838e7-2623-4223-a70e-8e9219d49a85",
+        "code": "licencia_58"
+      },
+      {
+        "uuid": "e498e5cc-5987-494a-a8bc-1bb12c8e4eb2",
+        "degree": 1,
+        "name": "e498e5cc-5987-494a-a8bc-1bb12c8e4eb2",
+        "code": "licencia_63"
+      },
+      {
+        "uuid": "3fa68961-a68d-417c-bce2-e5e5caf7c66d",
+        "degree": 1,
+        "name": "3fa68961-a68d-417c-bce2-e5e5caf7c66d",
+        "code": "licencia_79"
+      },
+      {
+        "uuid": "88dcfed8-471e-463d-8a75-2fc76c79b110",
+        "degree": 1,
+        "name": "88dcfed8-471e-463d-8a75-2fc76c79b110",
+        "code": "licencia_61"
+      },
+      {
+        "uuid": "fdffe55f-c4a1-44fd-8df1-6bd8cdeedeb2",
+        "degree": 1,
+        "name": "fdffe55f-c4a1-44fd-8df1-6bd8cdeedeb2",
+        "code": "licencia_70"
+      },
+      {
+        "uuid": "265c6b49-f93d-4753-91e8-62111d0ecb00",
+        "degree": 1,
+        "name": "265c6b49-f93d-4753-91e8-62111d0ecb00",
+        "code": "licencia_53"
+      },
+      {
+        "uuid": "7da76920-e598-4373-baf7-436f85fdc547",
+        "degree": 1,
+        "name": "7da76920-e598-4373-baf7-436f85fdc547",
+        "code": "licencia_85"
+      },
+      {
+        "uuid": "aed30440-3ec5-43ca-97d5-99cfaf935381",
+        "degree": 1,
+        "name": "aed30440-3ec5-43ca-97d5-99cfaf935381",
+        "code": "licencia_74"
+      },
+      {
+        "uuid": "95a2b45b-93c9-4c13-a559-d0c71d54f430",
+        "degree": 1,
+        "name": "95a2b45b-93c9-4c13-a559-d0c71d54f430",
+        "code": "licencia_44"
+      },
+      {
+        "uuid": "32533252-6e1c-4905-8f2b-98468e3b9bd9",
+        "degree": 1,
+        "name": "32533252-6e1c-4905-8f2b-98468e3b9bd9",
+        "code": "licencia_81"
+      },
+      {
+        "uuid": "a4cdb70e-8959-4fd9-9969-bf13b6b1581c",
+        "degree": 1,
+        "name": "a4cdb70e-8959-4fd9-9969-bf13b6b1581c",
+        "code": "licencia_68"
+      },
+      {
+        "uuid": "39a7be16-ffee-4084-808c-e6f66ce03fa9",
+        "degree": 1,
+        "name": "39a7be16-ffee-4084-808c-e6f66ce03fa9",
+        "code": "licencia_62"
+      },
+      {
+        "uuid": "41426dd6-9b0b-4321-bc6a-073b6fa036fc",
+        "degree": 1,
+        "name": "41426dd6-9b0b-4321-bc6a-073b6fa036fc",
+        "code": "licencia_51"
+      },
+      {
+        "uuid": "d10d3032-1d00-4813-95af-bd2a2e3ebd3b",
+        "degree": 1,
+        "name": "d10d3032-1d00-4813-95af-bd2a2e3ebd3b",
+        "code": "licencia_65"
+      },
+      {
+        "uuid": "1d7fe65f-1943-4b97-bd98-dc9ef5b1a4f8",
+        "degree": 1,
+        "name": "1d7fe65f-1943-4b97-bd98-dc9ef5b1a4f8",
+        "code": "licencia_80"
+      },
+      {
+        "uuid": "8810caf5-8821-4f34-8100-726cdbe5cc43",
+        "degree": 1,
+        "name": "8810caf5-8821-4f34-8100-726cdbe5cc43",
+        "code": "licencia_56"
+      },
+      {
+        "uuid": "b5c23885-108a-403b-b61f-7862551b4fae",
+        "degree": 1,
+        "name": "b5c23885-108a-403b-b61f-7862551b4fae",
+        "code": "licencia_67"
+      },
+      {
+        "uuid": "0af3654e-10eb-4084-aad9-850a52ce060e",
+        "degree": 1,
+        "name": "0af3654e-10eb-4084-aad9-850a52ce060e",
+        "code": "licencia_77"
+      },
+      {
+        "uuid": "69d610ff-4edc-43c1-8b6e-f5f2791e42b3",
+        "degree": 1,
+        "name": "69d610ff-4edc-43c1-8b6e-f5f2791e42b3",
+        "code": "licencia_76"
+      },
+      {
+        "uuid": "e79e55f2-0b95-459f-9cbc-688567955147",
+        "degree": 1,
+        "name": "e79e55f2-0b95-459f-9cbc-688567955147",
+        "code": "licencia_49"
+      },
+      {
+        "uuid": "a7886201-ad72-43a8-aacc-eeda0651d006",
+        "degree": 1,
+        "name": "a7886201-ad72-43a8-aacc-eeda0651d006",
+        "code": "licencia_47"
+      },
+      {
+        "uuid": "0acd5e81-0bdf-48ed-9e85-d7e5b927dba0",
+        "degree": 1,
+        "name": "0acd5e81-0bdf-48ed-9e85-d7e5b927dba0",
+        "code": "licencia_84"
+      },
+      {
+        "uuid": "4a33a44c-bfde-4d3f-ab16-dc9fb2b89272",
+        "degree": 1,
+        "name": "4a33a44c-bfde-4d3f-ab16-dc9fb2b89272",
+        "code": "licencia_87"
+      },
+      {
+        "uuid": "2b7400ba-b37c-44da-b766-ec2c9a6abaa5",
+        "degree": 1,
+        "name": "2b7400ba-b37c-44da-b766-ec2c9a6abaa5",
+        "code": "licencia_103"
+      },
+      {
+        "uuid": "1a7bfca9-5192-4b9a-afc0-90982126cb4f",
+        "degree": 1,
+        "name": "1a7bfca9-5192-4b9a-afc0-90982126cb4f",
+        "code": "licencia_118"
+      },
+      {
+        "uuid": "69393137-db22-4439-bb3e-1b8b03314667",
+        "degree": 1,
+        "name": "69393137-db22-4439-bb3e-1b8b03314667",
+        "code": "licencia_97"
+      },
+      {
+        "uuid": "6c11f24d-1f95-4d9f-8641-7285a87d31d8",
+        "degree": 1,
+        "name": "6c11f24d-1f95-4d9f-8641-7285a87d31d8",
+        "code": "licencia_114"
+      },
+      {
+        "uuid": "cb816d0c-077a-4f13-8073-3657796652e5",
+        "degree": 1,
+        "name": "cb816d0c-077a-4f13-8073-3657796652e5",
+        "code": "licencia_102"
+      },
+      {
+        "uuid": "57d79175-536e-4ad8-af93-14bf3c4f0e22",
+        "degree": 1,
+        "name": "57d79175-536e-4ad8-af93-14bf3c4f0e22",
+        "code": "licencia_120"
+      },
+      {
+        "uuid": "ab663bb6-2d31-43b0-8c25-c617c8efa886",
+        "degree": 1,
+        "name": "ab663bb6-2d31-43b0-8c25-c617c8efa886",
+        "code": "licencia_93"
+      },
+      {
+        "uuid": "195f351e-10e8-454f-8e7b-084795ebd9ef",
+        "degree": 1,
+        "name": "195f351e-10e8-454f-8e7b-084795ebd9ef",
+        "code": "licencia_117"
+      },
+      {
+        "uuid": "ad330ecd-80d7-4719-b99e-1d0f7fb096b6",
+        "degree": 1,
+        "name": "ad330ecd-80d7-4719-b99e-1d0f7fb096b6",
+        "code": "licencia_115"
+      },
+      {
+        "uuid": "997f5fed-b278-4873-a96f-c6f27d2f5b85",
+        "degree": 1,
+        "name": "997f5fed-b278-4873-a96f-c6f27d2f5b85",
+        "code": "licencia_121"
+      },
+      {
+        "uuid": "89751929-adf7-4cf8-b6fe-cb52955fd5d9",
+        "degree": 1,
+        "name": "89751929-adf7-4cf8-b6fe-cb52955fd5d9",
+        "code": "licencia_100"
+      },
+      {
+        "uuid": "d7436cc3-5119-4e51-bb55-706a2f5c8be3",
+        "degree": 1,
+        "name": "d7436cc3-5119-4e51-bb55-706a2f5c8be3",
+        "code": "licencia_113"
+      },
+      {
+        "uuid": "ec06e571-ee4b-4d30-aa39-6727bc5af945",
+        "degree": 1,
+        "name": "ec06e571-ee4b-4d30-aa39-6727bc5af945",
+        "code": "licencia_116"
+      },
+      {
+        "uuid": "220fbca1-46bf-4287-b936-c171f59fbf0f",
+        "degree": 1,
+        "name": "220fbca1-46bf-4287-b936-c171f59fbf0f",
+        "code": "licencia_109"
+      },
+      {
+        "uuid": "758256d1-8cff-464b-a3bc-f0a1f20261aa",
+        "degree": 1,
+        "name": "758256d1-8cff-464b-a3bc-f0a1f20261aa",
+        "code": "licencia_90"
+      },
+      {
+        "uuid": "be7e5f56-05c4-4774-96bb-4f536745676d",
+        "degree": 1,
+        "name": "be7e5f56-05c4-4774-96bb-4f536745676d",
+        "code": "licencia_122"
+      },
+      {
+        "uuid": "c19fbe8b-4877-4bbe-b6e3-cb135dad2c22",
+        "degree": 1,
+        "name": "c19fbe8b-4877-4bbe-b6e3-cb135dad2c22",
+        "code": "licencia_106"
+      },
+      {
+        "uuid": "8a955775-0583-4e23-bdba-25b7323d7107",
+        "degree": 1,
+        "name": "8a955775-0583-4e23-bdba-25b7323d7107",
+        "code": "licencia_101"
+      },
+      {
+        "uuid": "73803032-a558-4858-8588-ebf440fc9c8c",
+        "degree": 1,
+        "name": "73803032-a558-4858-8588-ebf440fc9c8c",
+        "code": "licencia_104"
+      },
+      {
+        "uuid": "97d1710f-b907-4c4f-8ff1-8aa7a69850e7",
+        "degree": 1,
+        "name": "97d1710f-b907-4c4f-8ff1-8aa7a69850e7",
+        "code": "licencia_91"
+      },
+      {
+        "uuid": "82f9fd3b-ab00-4658-a95c-bc525e3bf824",
+        "degree": 1,
+        "name": "82f9fd3b-ab00-4658-a95c-bc525e3bf824",
+        "code": "licencia_111"
+      },
+      {
+        "uuid": "96f0c487-00d7-4089-97ed-24125e7791eb",
+        "degree": 1,
+        "name": "96f0c487-00d7-4089-97ed-24125e7791eb",
+        "code": "licencia_95"
+      },
+      {
+        "uuid": "93368a12-b957-44fb-9863-41b3137fb6f3",
+        "degree": 1,
+        "name": "93368a12-b957-44fb-9863-41b3137fb6f3",
+        "code": "licencia_119"
+      },
+      {
+        "uuid": "e205ca6d-786b-4926-b44d-98d629339817",
+        "degree": 1,
+        "name": "e205ca6d-786b-4926-b44d-98d629339817",
+        "code": "licencia_105"
+      },
+      {
+        "uuid": "6990ea9b-9eda-4bdf-ba74-96e42ac06180",
+        "degree": 1,
+        "name": "6990ea9b-9eda-4bdf-ba74-96e42ac06180",
+        "code": "licencia_96"
+      },
+      {
+        "uuid": "fc03aca9-ffae-4aef-8833-9b5660a7b5cb",
+        "degree": 1,
+        "name": "fc03aca9-ffae-4aef-8833-9b5660a7b5cb",
+        "code": "licencia_99"
+      },
+      {
+        "uuid": "2870069b-628f-441d-a12d-4a6861ae424e",
+        "degree": 1,
+        "name": "2870069b-628f-441d-a12d-4a6861ae424e",
+        "code": "licencia_98"
+      },
+      {
+        "uuid": "c5b63f6f-47a9-4760-80fb-fde5bf6387c1",
+        "degree": 1,
+        "name": "c5b63f6f-47a9-4760-80fb-fde5bf6387c1",
+        "code": "licencia_94"
+      },
+      {
+        "uuid": "b705aca2-44cc-49c5-ac7b-a0928be29d97",
+        "degree": 1,
+        "name": "b705aca2-44cc-49c5-ac7b-a0928be29d97",
+        "code": "licencia_92"
+      },
+      {
+        "uuid": "49aafb0d-adea-41ed-b6bf-2fbaebf21ae7",
+        "degree": 1,
+        "name": "49aafb0d-adea-41ed-b6bf-2fbaebf21ae7",
+        "code": "licencia_107"
+      },
+      {
+        "uuid": "bc6bf224-4ebf-4985-8589-638e130bd54b",
+        "degree": 1,
+        "name": "bc6bf224-4ebf-4985-8589-638e130bd54b",
+        "code": "licencia_112"
+      },
+      {
+        "uuid": "09a9d1ce-4fa2-4bba-ae43-0b0f57ecb924",
+        "degree": 1,
+        "name": "09a9d1ce-4fa2-4bba-ae43-0b0f57ecb924",
+        "code": "licencia_110"
+      },
+      {
+        "uuid": "2b8149ad-76c2-4a4b-bbc6-881e53c5da7d",
+        "degree": 1,
+        "name": "2b8149ad-76c2-4a4b-bbc6-881e53c5da7d",
+        "code": "licencia_89"
+      },
+      {
+        "uuid": "315923c1-5786-4a54-88c8-417a9e477577",
+        "degree": 1,
+        "name": "315923c1-5786-4a54-88c8-417a9e477577",
+        "code": "licencia_108"
+      },
+      {
+        "uuid": "e862b3dc-5215-4b21-940c-bbbf43fc0b25",
+        "degree": 1,
+        "name": "e862b3dc-5215-4b21-940c-bbbf43fc0b25",
+        "code": "licencia_141"
+      },
+      {
+        "uuid": "5cd9a56d-47c9-4188-a67b-4b648ba2cf20",
+        "degree": 1,
+        "name": "5cd9a56d-47c9-4188-a67b-4b648ba2cf20",
+        "code": "licencia_150"
+      },
+      {
+        "uuid": "0c5ff47a-863a-40c0-82ac-c0a8742206c9",
+        "degree": 1,
+        "name": "0c5ff47a-863a-40c0-82ac-c0a8742206c9",
+        "code": "licencia_133"
+      },
+      {
+        "uuid": "cf73e504-d33b-45c3-9479-97a14c466521",
+        "degree": 1,
+        "name": "cf73e504-d33b-45c3-9479-97a14c466521",
+        "code": "licencia_134"
+      },
+      {
+        "uuid": "71cd5afe-a36d-4672-a1ae-0a548c894eaf",
+        "degree": 1,
+        "name": "71cd5afe-a36d-4672-a1ae-0a548c894eaf",
+        "code": "licencia_149"
+      },
+      {
+        "uuid": "c89710e5-15c7-4350-b699-1d9a10157f89",
+        "degree": 1,
+        "name": "c89710e5-15c7-4350-b699-1d9a10157f89",
+        "code": "licencia_135"
+      },
+      {
+        "uuid": "5c06892f-a0f3-4e2e-a25d-384e2c68788c",
+        "degree": 1,
+        "name": "5c06892f-a0f3-4e2e-a25d-384e2c68788c",
+        "code": "licencia_171"
+      },
+      {
+        "uuid": "81834bd3-e720-4dad-93ab-62c42856e1e4",
+        "degree": 1,
+        "name": "81834bd3-e720-4dad-93ab-62c42856e1e4",
+        "code": "licencia_161"
+      },
+      {
+        "uuid": "1293b176-bfd6-4d0b-801b-543fa55f964a",
+        "degree": 1,
+        "name": "1293b176-bfd6-4d0b-801b-543fa55f964a",
+        "code": "licencia_125"
+      },
+      {
+        "uuid": "1dbb8f0d-fbbe-42a4-aeb3-3a5b4a490f5d",
+        "degree": 1,
+        "name": "1dbb8f0d-fbbe-42a4-aeb3-3a5b4a490f5d",
+        "code": "licencia_140"
+      },
+      {
+        "uuid": "15bc3825-5ff3-4ceb-93c0-616f4a4a2070",
+        "degree": 1,
+        "name": "15bc3825-5ff3-4ceb-93c0-616f4a4a2070",
+        "code": "licencia_147"
+      },
+      {
+        "uuid": "9fceac47-a301-4c01-9917-d13a5369daad",
+        "degree": 1,
+        "name": "9fceac47-a301-4c01-9917-d13a5369daad",
+        "code": "licencia_137"
+      },
+      {
+        "uuid": "5ad5f0dd-ef0b-45bd-9838-652b83d3991f",
+        "degree": 1,
+        "name": "5ad5f0dd-ef0b-45bd-9838-652b83d3991f",
+        "code": "licencia_148"
+      },
+      {
+        "uuid": "aeedd1ff-7634-4b43-b43e-18b453bb46f9",
+        "degree": 1,
+        "name": "aeedd1ff-7634-4b43-b43e-18b453bb46f9",
+        "code": "licencia_154"
+      },
+      {
+        "uuid": "2ded7a0f-d3e7-4401-8be3-b6841fd93fd5",
+        "degree": 1,
+        "name": "2ded7a0f-d3e7-4401-8be3-b6841fd93fd5",
+        "code": "licencia_160"
+      },
+      {
+        "uuid": "1b680473-afc4-4d7d-88a3-35a6136dfbbf",
+        "degree": 1,
+        "name": "1b680473-afc4-4d7d-88a3-35a6136dfbbf",
+        "code": "licencia_169"
+      },
+      {
+        "uuid": "d1d020ec-28c8-4f39-9d53-0dbf27f1a0d8",
+        "degree": 1,
+        "name": "d1d020ec-28c8-4f39-9d53-0dbf27f1a0d8",
+        "code": "licencia_173"
+      },
+      {
+        "uuid": "5199db75-79c9-4821-a0ca-f8314960a713",
+        "degree": 1,
+        "name": "5199db75-79c9-4821-a0ca-f8314960a713",
+        "code": "licencia_157"
+      },
+      {
+        "uuid": "ecb42e66-8d2c-4769-ad05-1fb4aeb6368c",
+        "degree": 1,
+        "name": "ecb42e66-8d2c-4769-ad05-1fb4aeb6368c",
+        "code": "licencia_165"
+      },
+      {
+        "uuid": "5e5b4d6f-0bfc-4731-8baa-f61639a7f243",
+        "degree": 1,
+        "name": "5e5b4d6f-0bfc-4731-8baa-f61639a7f243",
+        "code": "licencia_152"
+      },
+      {
+        "uuid": "dbed8a42-0bf7-4b4f-af19-68f51241395d",
+        "degree": 1,
+        "name": "dbed8a42-0bf7-4b4f-af19-68f51241395d",
+        "code": "licencia_132"
+      },
+      {
+        "uuid": "e95dea28-7988-4d62-8b8a-15932afc74cf",
+        "degree": 1,
+        "name": "e95dea28-7988-4d62-8b8a-15932afc74cf",
+        "code": "licencia_146"
+      },
+      {
+        "uuid": "e0be20b8-c8e8-48d3-ba89-e131a2769e4f",
+        "degree": 1,
+        "name": "e0be20b8-c8e8-48d3-ba89-e131a2769e4f",
+        "code": "licencia_153"
+      },
+      {
+        "uuid": "2e637abf-0932-460e-9db5-bb775ff534a9",
+        "degree": 1,
+        "name": "2e637abf-0932-460e-9db5-bb775ff534a9",
+        "code": "licencia_131"
+      },
+      {
+        "uuid": "539f091b-f107-4494-9d15-1db1b1edd0de",
+        "degree": 1,
+        "name": "539f091b-f107-4494-9d15-1db1b1edd0de",
+        "code": "licencia_159"
+      },
+      {
+        "uuid": "36f45a29-578c-4f44-823c-4068c470d772",
+        "degree": 1,
+        "name": "36f45a29-578c-4f44-823c-4068c470d772",
+        "code": "licencia_128"
+      },
+      {
+        "uuid": "de09262c-81af-4836-a4f1-b6edc1bed9dc",
+        "degree": 1,
+        "name": "de09262c-81af-4836-a4f1-b6edc1bed9dc",
+        "code": "licencia_143"
+      },
+      {
+        "uuid": "09d48800-2774-4174-8ae1-f2d15a9289f2",
+        "degree": 1,
+        "name": "09d48800-2774-4174-8ae1-f2d15a9289f2",
+        "code": "licencia_129"
+      },
+      {
+        "uuid": "a315964c-3cb2-4838-85b4-0c5f417d7983",
+        "degree": 1,
+        "name": "a315964c-3cb2-4838-85b4-0c5f417d7983",
+        "code": "licencia_136"
+      },
+      {
+        "uuid": "6bdf2242-eaa2-4da9-b1bb-a9ebaa554603",
+        "degree": 1,
+        "name": "6bdf2242-eaa2-4da9-b1bb-a9ebaa554603",
+        "code": "licencia_167"
+      },
+      {
+        "uuid": "64db82eb-f223-4674-9b4e-50f822b524f0",
+        "degree": 1,
+        "name": "64db82eb-f223-4674-9b4e-50f822b524f0",
+        "code": "licencia_145"
+      },
+      {
+        "uuid": "de1fd33d-ffcc-4740-a0e5-5e73919c34f0",
+        "degree": 1,
+        "name": "de1fd33d-ffcc-4740-a0e5-5e73919c34f0",
+        "code": "licencia_144"
+      },
+      {
+        "uuid": "05d80fdc-5863-4a05-920d-b50d4dd2bd68",
+        "degree": 1,
+        "name": "05d80fdc-5863-4a05-920d-b50d4dd2bd68",
+        "code": "licencia_168"
+      },
+      {
+        "uuid": "23caf884-cb9b-4bc3-9b2d-5caa75433937",
+        "degree": 1,
+        "name": "23caf884-cb9b-4bc3-9b2d-5caa75433937",
+        "code": "licencia_151"
+      },
+      {
+        "uuid": "a0c47ee2-5fa4-40d3-b4bf-858a1a1a5b58",
+        "degree": 1,
+        "name": "a0c47ee2-5fa4-40d3-b4bf-858a1a1a5b58",
+        "code": "licencia_163"
+      },
+      {
+        "uuid": "c5652a0b-4f40-4338-b1c7-710034b0af48",
+        "degree": 1,
+        "name": "c5652a0b-4f40-4338-b1c7-710034b0af48",
+        "code": "licencia_174"
+      },
+      {
+        "uuid": "a8904300-a136-487c-92de-95d12b5aa47d",
+        "degree": 1,
+        "name": "a8904300-a136-487c-92de-95d12b5aa47d",
+        "code": "licencia_166"
+      },
+      {
+        "uuid": "7cae4371-be21-40b4-998b-816be9f741b3",
+        "degree": 1,
+        "name": "7cae4371-be21-40b4-998b-816be9f741b3",
+        "code": "licencia_123"
+      },
+      {
+        "uuid": "e84237a7-244f-49a5-a92e-8e29af4377bb",
+        "degree": 1,
+        "name": "e84237a7-244f-49a5-a92e-8e29af4377bb",
+        "code": "licencia_155"
+      },
+      {
+        "uuid": "10e37703-ec76-44ac-b8a1-d08902373394",
+        "degree": 1,
+        "name": "10e37703-ec76-44ac-b8a1-d08902373394",
+        "code": "licencia_142"
+      },
+      {
+        "uuid": "829a7e9b-cea8-4a8e-9f16-03d5a169d7ba",
+        "degree": 1,
+        "name": "829a7e9b-cea8-4a8e-9f16-03d5a169d7ba",
+        "code": "licencia_130"
+      },
+      {
+        "uuid": "c07fd4c6-f0c2-49c3-a607-cd684cc9b7e8",
+        "degree": 1,
+        "name": "c07fd4c6-f0c2-49c3-a607-cd684cc9b7e8",
+        "code": "licencia_170"
+      },
+      {
+        "uuid": "f7a3542b-c189-465d-8b8c-cc1e4cca90fd",
+        "degree": 1,
+        "name": "f7a3542b-c189-465d-8b8c-cc1e4cca90fd",
+        "code": "licencia_172"
+      },
+      {
+        "uuid": "f0600012-3210-4ded-83e2-228f93c39419",
+        "degree": 1,
+        "name": "f0600012-3210-4ded-83e2-228f93c39419",
+        "code": "licencia_139"
+      },
+      {
+        "uuid": "841320ff-f3ab-4440-9aac-767ee420b40e",
+        "degree": 1,
+        "name": "841320ff-f3ab-4440-9aac-767ee420b40e",
+        "code": "licencia_162"
+      },
+      {
+        "uuid": "d86b922c-2ac6-4b9a-8110-860e2f52a65c",
+        "degree": 1,
+        "name": "d86b922c-2ac6-4b9a-8110-860e2f52a65c",
+        "code": "licencia_126"
+      },
+      {
+        "uuid": "5e48aeb3-f131-4bac-8c11-97520a2d9fc7",
+        "degree": 1,
+        "name": "5e48aeb3-f131-4bac-8c11-97520a2d9fc7",
+        "code": "licencia_164"
+      },
+      {
+        "uuid": "b40aa37d-efbe-489a-a4b7-731241aa24d0",
+        "degree": 1,
+        "name": "b40aa37d-efbe-489a-a4b7-731241aa24d0",
+        "code": "licencia_124"
+      },
+      {
+        "uuid": "1d81f5d5-057e-4106-b156-8a3ea95a1b10",
+        "degree": 1,
+        "name": "1d81f5d5-057e-4106-b156-8a3ea95a1b10",
+        "code": "licencia_127"
+      },
+      {
+        "uuid": "9e40739e-8851-43c8-bc63-1ced81741e63",
+        "degree": 1,
+        "name": "9e40739e-8851-43c8-bc63-1ced81741e63",
+        "code": "licencia_156"
+      },
+      {
+        "uuid": "901bf643-5717-4ef7-9344-6da9b59e1d11",
+        "degree": 1,
+        "name": "901bf643-5717-4ef7-9344-6da9b59e1d11",
+        "code": "licencia_158"
+      },
+      {
+        "uuid": "f6dbefb2-20ec-43f1-9b9a-0aafa6488a17",
+        "degree": 1,
+        "name": "f6dbefb2-20ec-43f1-9b9a-0aafa6488a17",
+        "code": "licencia_138"
+      },
+      {
+        "uuid": "53a47de9-d2c4-4339-8f53-f08d7f5ebe18",
+        "degree": 1,
+        "name": "53a47de9-d2c4-4339-8f53-f08d7f5ebe18",
+        "code": "licencia_205"
+      },
+      {
+        "uuid": "377e170d-4195-4ad7-913b-09d3ac585f61",
+        "degree": 1,
+        "name": "377e170d-4195-4ad7-913b-09d3ac585f61",
+        "code": "licencia_195"
+      },
+      {
+        "uuid": "d4310a02-381d-44dc-9f1e-07278979d5b0",
+        "degree": 1,
+        "name": "d4310a02-381d-44dc-9f1e-07278979d5b0",
+        "code": "licencia_193"
+      },
+      {
+        "uuid": "f4b67f28-cf51-4bc6-8e13-888dd9154bcb",
+        "degree": 1,
+        "name": "f4b67f28-cf51-4bc6-8e13-888dd9154bcb",
+        "code": "licencia_194"
+      },
+      {
+        "uuid": "e58b20f5-c1f5-4919-91e9-a5359840aa18",
+        "degree": 1,
+        "name": "e58b20f5-c1f5-4919-91e9-a5359840aa18",
+        "code": "licencia_189"
+      },
+      {
+        "uuid": "5405c008-cbeb-40bb-8762-53d8ca5acda0",
+        "degree": 1,
+        "name": "5405c008-cbeb-40bb-8762-53d8ca5acda0",
+        "code": "licencia_181"
+      },
+      {
+        "uuid": "5f8eac0f-7d5d-45f1-8e0d-229c3e7087ad",
+        "degree": 1,
+        "name": "5f8eac0f-7d5d-45f1-8e0d-229c3e7087ad",
+        "code": "licencia_175"
+      },
+      {
+        "uuid": "df2e5520-9494-4ad0-9024-952b66ed64c8",
+        "degree": 1,
+        "name": "df2e5520-9494-4ad0-9024-952b66ed64c8",
+        "code": "licencia_190"
+      },
+      {
+        "uuid": "21a102f4-53bb-46a6-87ae-541caeb8b561",
+        "degree": 1,
+        "name": "21a102f4-53bb-46a6-87ae-541caeb8b561",
+        "code": "licencia_192"
+      },
+      {
+        "uuid": "ddcba723-d8b3-4018-93f4-71cc4e666870",
+        "degree": 1,
+        "name": "ddcba723-d8b3-4018-93f4-71cc4e666870",
+        "code": "licencia_209"
+      },
+      {
+        "uuid": "091c63ee-4dcf-4f28-8907-3e4a5a0f92fb",
+        "degree": 1,
+        "name": "091c63ee-4dcf-4f28-8907-3e4a5a0f92fb",
+        "code": "licencia_211"
+      },
+      {
+        "uuid": "ab6771a9-147a-45d0-aea6-f2726c612a62",
+        "degree": 1,
+        "name": "ab6771a9-147a-45d0-aea6-f2726c612a62",
+        "code": "licencia_203"
+      },
+      {
+        "uuid": "6a6e084c-72e8-418f-99e3-cd34658e776a",
+        "degree": 1,
+        "name": "6a6e084c-72e8-418f-99e3-cd34658e776a",
+        "code": "licencia_184"
+      },
+      {
+        "uuid": "73e7b03a-c753-407c-8115-58da37f3b177",
+        "degree": 1,
+        "name": "73e7b03a-c753-407c-8115-58da37f3b177",
+        "code": "licencia_182"
+      },
+      {
+        "uuid": "8f73c89f-9119-4f6c-b64e-ac9e89e908e3",
+        "degree": 1,
+        "name": "8f73c89f-9119-4f6c-b64e-ac9e89e908e3",
+        "code": "licencia_212"
+      },
+      {
+        "uuid": "0ecf9986-caea-42d9-b57a-dcf83a267b5c",
+        "degree": 1,
+        "name": "0ecf9986-caea-42d9-b57a-dcf83a267b5c",
+        "code": "licencia_191"
+      },
+      {
+        "uuid": "552385cd-2e46-4241-a677-093bbd452aa2",
+        "degree": 1,
+        "name": "552385cd-2e46-4241-a677-093bbd452aa2",
+        "code": "licencia_177"
+      },
+      {
+        "uuid": "c192588a-aa15-47a5-8c2c-4fcb3277b675",
+        "degree": 1,
+        "name": "c192588a-aa15-47a5-8c2c-4fcb3277b675",
+        "code": "licencia_201"
+      },
+      {
+        "uuid": "db374ef0-796a-4b1a-a654-49b2dad48cca",
+        "degree": 1,
+        "name": "db374ef0-796a-4b1a-a654-49b2dad48cca",
+        "code": "licencia_206"
+      },
+      {
+        "uuid": "e3e762ab-971d-4ef1-a925-f2e993f78694",
+        "degree": 1,
+        "name": "e3e762ab-971d-4ef1-a925-f2e993f78694",
+        "code": "licencia_180"
+      },
+      {
+        "uuid": "d420876f-b1a2-4ce3-a9f2-99ff16557541",
+        "degree": 1,
+        "name": "d420876f-b1a2-4ce3-a9f2-99ff16557541",
+        "code": "licencia_186"
+      },
+      {
+        "uuid": "687d2d49-8a47-47a5-bed3-28b2f620fbcc",
+        "degree": 1,
+        "name": "687d2d49-8a47-47a5-bed3-28b2f620fbcc",
+        "code": "licencia_214"
+      },
+      {
+        "uuid": "9e0c6b57-64c5-4348-b7be-83478e0f1081",
+        "degree": 1,
+        "name": "9e0c6b57-64c5-4348-b7be-83478e0f1081",
+        "code": "licencia_196"
+      },
+      {
+        "uuid": "e6d7517f-aa3e-48b0-882d-882572126fd7",
+        "degree": 1,
+        "name": "e6d7517f-aa3e-48b0-882d-882572126fd7",
+        "code": "licencia_197"
+      },
+      {
+        "uuid": "68d09883-0fb7-4efd-8c01-e3babfb37dfb",
+        "degree": 1,
+        "name": "68d09883-0fb7-4efd-8c01-e3babfb37dfb",
+        "code": "licencia_185"
+      },
+      {
+        "uuid": "52af1019-a0c4-4775-942d-d0ece874bc0d",
+        "degree": 1,
+        "name": "52af1019-a0c4-4775-942d-d0ece874bc0d",
+        "code": "licencia_199"
+      },
+      {
+        "uuid": "1ac3f1e1-ac94-451d-b9c2-3495210c2d75",
+        "degree": 1,
+        "name": "1ac3f1e1-ac94-451d-b9c2-3495210c2d75",
+        "code": "licencia_207"
+      },
+      {
+        "uuid": "e3a77207-4c4c-4c2d-af3a-bc0a5efa144e",
+        "degree": 1,
+        "name": "e3a77207-4c4c-4c2d-af3a-bc0a5efa144e",
+        "code": "licencia_179"
+      },
+      {
+        "uuid": "0aab4f0b-bd2f-4243-b7fa-86f9669c7580",
+        "degree": 1,
+        "name": "0aab4f0b-bd2f-4243-b7fa-86f9669c7580",
+        "code": "licencia_183"
+      },
+      {
+        "uuid": "fafd5a71-957f-4a26-a7b5-0f3185f7773d",
+        "degree": 1,
+        "name": "fafd5a71-957f-4a26-a7b5-0f3185f7773d",
+        "code": "licencia_204"
+      },
+      {
+        "uuid": "6bd6eb4e-5129-46c4-9459-ef3d18e3456d",
+        "degree": 1,
+        "name": "6bd6eb4e-5129-46c4-9459-ef3d18e3456d",
+        "code": "licencia_187"
+      },
+      {
+        "uuid": "2c9acb4a-4709-4d9c-94ca-6b7f94fa80ea",
+        "degree": 1,
+        "name": "2c9acb4a-4709-4d9c-94ca-6b7f94fa80ea",
+        "code": "licencia_213"
+      },
+      {
+        "uuid": "e0743597-2907-43b9-b20b-27a8f28fcc81",
+        "degree": 1,
+        "name": "e0743597-2907-43b9-b20b-27a8f28fcc81",
+        "code": "licencia_198"
+      },
+      {
+        "uuid": "751a7c31-2442-4b9b-b94c-13b3c7468d7e",
+        "degree": 1,
+        "name": "751a7c31-2442-4b9b-b94c-13b3c7468d7e",
+        "code": "licencia_210"
+      },
+      {
+        "uuid": "97f61951-7b59-450c-970c-4f4dc472a0f9",
+        "degree": 1,
+        "name": "97f61951-7b59-450c-970c-4f4dc472a0f9",
+        "code": "licencia_188"
+      },
+      {
+        "uuid": "54ba7150-9f75-4d9c-bdae-e1465da53d87",
+        "degree": 1,
+        "name": "54ba7150-9f75-4d9c-bdae-e1465da53d87",
+        "code": "licencia_202"
+      },
+      {
+        "uuid": "707b70b2-628e-4627-b8b1-493906b394ac",
+        "degree": 1,
+        "name": "707b70b2-628e-4627-b8b1-493906b394ac",
+        "code": "licencia_200"
+      },
+      {
+        "uuid": "7c8979b4-8713-4334-b771-17bfc53cb730",
+        "degree": 1,
+        "name": "7c8979b4-8713-4334-b771-17bfc53cb730",
+        "code": "licencia_208"
+      },
+      {
+        "uuid": "78eedfec-499a-43f9-b879-ae74ee084db8",
+        "degree": 1,
+        "name": "78eedfec-499a-43f9-b879-ae74ee084db8",
+        "code": "licencia_178"
+      },
+      {
+        "uuid": "98b03758-961a-4d57-8cd1-6e8723987d76",
+        "degree": 1,
+        "name": "98b03758-961a-4d57-8cd1-6e8723987d76",
+        "code": "licencia_176"
+      },
+      {
+        "uuid": "4c486bff-46c1-4e10-b53c-581a58ee2fc6",
+        "degree": 1,
+        "name": "4c486bff-46c1-4e10-b53c-581a58ee2fc6",
+        "code": "licencia_248"
+      },
+      {
+        "uuid": "ecc508ba-ec38-4ade-b75c-10bcb02f15a6",
+        "degree": 1,
+        "name": "ecc508ba-ec38-4ade-b75c-10bcb02f15a6",
+        "code": "licencia_216"
+      },
+      {
+        "uuid": "e1392d29-be03-4ade-80bc-c4da636884f5",
+        "degree": 1,
+        "name": "e1392d29-be03-4ade-80bc-c4da636884f5",
+        "code": "licencia_241"
+      },
+      {
+        "uuid": "8f25ea0b-7b41-4e16-910d-7035a28f3b8c",
+        "degree": 1,
+        "name": "8f25ea0b-7b41-4e16-910d-7035a28f3b8c",
+        "code": "licencia_221"
+      },
+      {
+        "uuid": "f0add0a6-e754-48c0-ac8a-32419d10a701",
+        "degree": 1,
+        "name": "f0add0a6-e754-48c0-ac8a-32419d10a701",
+        "code": "licencia_215"
+      },
+      {
+        "uuid": "75414396-597f-4752-91c2-871a5ca5c081",
+        "degree": 1,
+        "name": "75414396-597f-4752-91c2-871a5ca5c081",
+        "code": "licencia_247"
+      },
+      {
+        "uuid": "04b19ef1-0b7e-4590-9b14-bf32e29c261c",
+        "degree": 1,
+        "name": "04b19ef1-0b7e-4590-9b14-bf32e29c261c",
+        "code": "licencia_239"
+      },
+      {
+        "uuid": "9675e971-8f66-4f21-b3cf-fbfaa6e62f43",
+        "degree": 1,
+        "name": "9675e971-8f66-4f21-b3cf-fbfaa6e62f43",
+        "code": "licencia_256"
+      },
+      {
+        "uuid": "dca8d1f2-8677-46dd-96d2-e2d9e26146cd",
+        "degree": 1,
+        "name": "dca8d1f2-8677-46dd-96d2-e2d9e26146cd",
+        "code": "licencia_230"
+      },
+      {
+        "uuid": "c1ad7245-5050-4edc-adbb-6cbad3203f18",
+        "degree": 1,
+        "name": "c1ad7245-5050-4edc-adbb-6cbad3203f18",
+        "code": "licencia_242"
+      },
+      {
+        "uuid": "eeab16ad-23c4-45d9-b779-07eb50e25633",
+        "degree": 1,
+        "name": "eeab16ad-23c4-45d9-b779-07eb50e25633",
+        "code": "licencia_245"
+      },
+      {
+        "uuid": "d0864887-a50d-4533-95a6-e33a7cac2c2a",
+        "degree": 1,
+        "name": "d0864887-a50d-4533-95a6-e33a7cac2c2a",
+        "code": "licencia_254"
+      },
+      {
+        "uuid": "ef872950-6018-4f58-add0-ea44e10430bc",
+        "degree": 1,
+        "name": "ef872950-6018-4f58-add0-ea44e10430bc",
+        "code": "licencia_250"
+      },
+      {
+        "uuid": "f91db3ac-e8fd-49f0-a95b-d6bebc120d2d",
+        "degree": 1,
+        "name": "f91db3ac-e8fd-49f0-a95b-d6bebc120d2d",
+        "code": "licencia_251"
+      },
+      {
+        "uuid": "89c814e7-6905-4d0e-a81e-b322d86ab414",
+        "degree": 1,
+        "name": "89c814e7-6905-4d0e-a81e-b322d86ab414",
+        "code": "licencia_244"
+      },
+      {
+        "uuid": "614cdd3a-8d86-4166-a308-4e390d431cce",
+        "degree": 1,
+        "name": "614cdd3a-8d86-4166-a308-4e390d431cce",
+        "code": "licencia_255"
+      },
+      {
+        "uuid": "683492f6-e9f1-4f8f-9eb4-ce65228c8a8c",
+        "degree": 1,
+        "name": "683492f6-e9f1-4f8f-9eb4-ce65228c8a8c",
+        "code": "licencia_219"
+      },
+      {
+        "uuid": "f35e3b0c-533a-43a0-81f1-1a990c46fc57",
+        "degree": 1,
+        "name": "f35e3b0c-533a-43a0-81f1-1a990c46fc57",
+        "code": "licencia_260"
+      },
+      {
+        "uuid": "c038613b-860c-4688-b188-3ca4502990bd",
+        "degree": 1,
+        "name": "c038613b-860c-4688-b188-3ca4502990bd",
+        "code": "licencia_238"
+      },
+      {
+        "uuid": "137bb31c-8215-4bd6-99cb-0f65cf65d328",
+        "degree": 1,
+        "name": "137bb31c-8215-4bd6-99cb-0f65cf65d328",
+        "code": "licencia_235"
+      },
+      {
+        "uuid": "7caffafa-e7f5-4046-af71-6b4f3fde9d94",
+        "degree": 1,
+        "name": "7caffafa-e7f5-4046-af71-6b4f3fde9d94",
+        "code": "licencia_231"
+      },
+      {
+        "uuid": "796ae6fa-9ca5-40bf-b5f8-32794d4e4ee2",
+        "degree": 1,
+        "name": "796ae6fa-9ca5-40bf-b5f8-32794d4e4ee2",
+        "code": "licencia_236"
+      },
+      {
+        "uuid": "3af871f4-dfab-4937-902d-ffdde138fcba",
+        "degree": 1,
+        "name": "3af871f4-dfab-4937-902d-ffdde138fcba",
+        "code": "licencia_234"
+      },
+      {
+        "uuid": "b50872d2-0117-4838-b7e5-c6ae81288e65",
+        "degree": 1,
+        "name": "b50872d2-0117-4838-b7e5-c6ae81288e65",
+        "code": "licencia_237"
+      },
+      {
+        "uuid": "3d54acdd-2564-4a9a-9a56-95eb0036720a",
+        "degree": 1,
+        "name": "3d54acdd-2564-4a9a-9a56-95eb0036720a",
+        "code": "licencia_224"
+      },
+      {
+        "uuid": "c80f533e-c256-4162-b167-c42eec966f6d",
+        "degree": 1,
+        "name": "c80f533e-c256-4162-b167-c42eec966f6d",
+        "code": "licencia_229"
+      },
+      {
+        "uuid": "06b80ad5-ec36-414b-b8c9-86496c941ffe",
+        "degree": 1,
+        "name": "06b80ad5-ec36-414b-b8c9-86496c941ffe",
+        "code": "licencia_226"
+      },
+      {
+        "uuid": "a91556a5-c833-42ef-a50e-25e8381f2e2f",
+        "degree": 1,
+        "name": "a91556a5-c833-42ef-a50e-25e8381f2e2f",
+        "code": "licencia_257"
+      },
+      {
+        "uuid": "13fc0e5e-4568-4163-943c-494f3f09606c",
+        "degree": 1,
+        "name": "13fc0e5e-4568-4163-943c-494f3f09606c",
+        "code": "licencia_259"
+      },
+      {
+        "uuid": "f3e6ecdc-31a3-4edb-a3e1-cb1f853bfffb",
+        "degree": 1,
+        "name": "f3e6ecdc-31a3-4edb-a3e1-cb1f853bfffb",
+        "code": "licencia_223"
+      },
+      {
+        "uuid": "0e322af4-858a-4f46-b221-dcb1bb8e1068",
+        "degree": 1,
+        "name": "0e322af4-858a-4f46-b221-dcb1bb8e1068",
+        "code": "licencia_258"
+      },
+      {
+        "uuid": "75f89eb6-3b92-4175-8303-66859b12e0f4",
+        "degree": 1,
+        "name": "75f89eb6-3b92-4175-8303-66859b12e0f4",
+        "code": "licencia_217"
+      },
+      {
+        "uuid": "73312309-6a6d-403a-8447-af73f46947e8",
+        "degree": 1,
+        "name": "73312309-6a6d-403a-8447-af73f46947e8",
+        "code": "licencia_218"
+      },
+      {
+        "uuid": "8eb5aac5-aa2e-4bd0-b7c1-bc2334255b92",
+        "degree": 1,
+        "name": "8eb5aac5-aa2e-4bd0-b7c1-bc2334255b92",
+        "code": "licencia_240"
+      },
+      {
+        "uuid": "3def760d-7147-4189-a4dc-0793afa0a95b",
+        "degree": 1,
+        "name": "3def760d-7147-4189-a4dc-0793afa0a95b",
+        "code": "licencia_232"
+      },
+      {
+        "uuid": "ce5ef4c1-3cc4-47fd-a834-c5d2233061ec",
+        "degree": 1,
+        "name": "ce5ef4c1-3cc4-47fd-a834-c5d2233061ec",
+        "code": "licencia_249"
+      },
+      {
+        "uuid": "f0dca7f1-2864-4697-bea9-b178d86fbdbc",
+        "degree": 1,
+        "name": "f0dca7f1-2864-4697-bea9-b178d86fbdbc",
+        "code": "licencia_246"
+      },
+      {
+        "uuid": "f0c0cfa3-44b3-42b2-a244-6b4b75ae6373",
+        "degree": 1,
+        "name": "f0c0cfa3-44b3-42b2-a244-6b4b75ae6373",
+        "code": "licencia_220"
+      },
+      {
+        "uuid": "6665cc00-99e0-451f-be8c-65b1a2c87e56",
+        "degree": 1,
+        "name": "6665cc00-99e0-451f-be8c-65b1a2c87e56",
+        "code": "licencia_253"
+      },
+      {
+        "uuid": "6ae48cf0-0d62-4503-b33a-411a6aa20941",
+        "degree": 1,
+        "name": "6ae48cf0-0d62-4503-b33a-411a6aa20941",
+        "code": "licencia_225"
+      },
+      {
+        "uuid": "9ea1d670-d804-4ab9-b0f1-398cb15a8a88",
+        "degree": 1,
+        "name": "9ea1d670-d804-4ab9-b0f1-398cb15a8a88",
+        "code": "licencia_228"
+      },
+      {
+        "uuid": "4bc891f7-9274-4f3b-880e-75923baeb08c",
+        "degree": 1,
+        "name": "4bc891f7-9274-4f3b-880e-75923baeb08c",
+        "code": "licencia_222"
+      },
+      {
+        "uuid": "2df588c4-7591-4e58-9a39-34157685329e",
+        "degree": 1,
+        "name": "2df588c4-7591-4e58-9a39-34157685329e",
+        "code": "licencia_243"
+      },
+      {
+        "uuid": "21bf0d44-45c2-48ca-a3bc-ce142107db90",
+        "degree": 1,
+        "name": "21bf0d44-45c2-48ca-a3bc-ce142107db90",
+        "code": "licencia_252"
+      },
+      {
+        "uuid": "ae1b90cd-38a9-42b6-bcad-cfeb1d5c5a04",
+        "degree": 1,
+        "name": "ae1b90cd-38a9-42b6-bcad-cfeb1d5c5a04",
+        "code": "licencia_233"
+      },
+      {
+        "uuid": "f3181f19-47da-42cb-984e-071f20f149ae",
+        "degree": 1,
+        "name": "f3181f19-47da-42cb-984e-071f20f149ae",
+        "code": "licencia_227"
+      },
+      {
+        "uuid": "2cfafa3f-b5e6-42de-b606-f52cd330dfc4",
+        "degree": 1,
+        "name": "2cfafa3f-b5e6-42de-b606-f52cd330dfc4",
+        "code": "licencia_283"
+      },
+      {
+        "uuid": "6afe9d36-5eba-4820-b505-b8b0403c5df9",
+        "degree": 1,
+        "name": "6afe9d36-5eba-4820-b505-b8b0403c5df9",
+        "code": "licencia_269"
+      },
+      {
+        "uuid": "ec1a1d73-9f89-4969-8095-3f943a4fd3aa",
+        "degree": 1,
+        "name": "ec1a1d73-9f89-4969-8095-3f943a4fd3aa",
+        "code": "licencia_300"
+      },
+      {
+        "uuid": "35fce11c-257c-4f37-8dcf-d1728a48c4b4",
+        "degree": 1,
+        "name": "35fce11c-257c-4f37-8dcf-d1728a48c4b4",
+        "code": "licencia_301"
+      },
+      {
+        "uuid": "11ffe2fa-9b31-4418-a649-d382d36f54ba",
+        "degree": 1,
+        "name": "11ffe2fa-9b31-4418-a649-d382d36f54ba",
+        "code": "licencia_264"
+      },
+      {
+        "uuid": "38d49694-4c1f-4b02-833f-74b83313ee86",
+        "degree": 1,
+        "name": "38d49694-4c1f-4b02-833f-74b83313ee86",
+        "code": "licencia_303"
+      },
+      {
+        "uuid": "60a31d29-bd3c-499b-8264-3dbb447a0b8f",
+        "degree": 1,
+        "name": "60a31d29-bd3c-499b-8264-3dbb447a0b8f",
+        "code": "licencia_295"
+      },
+      {
+        "uuid": "0bda61d0-fee3-45e9-8a9b-a70f79a58035",
+        "degree": 1,
+        "name": "0bda61d0-fee3-45e9-8a9b-a70f79a58035",
+        "code": "licencia_270"
+      },
+      {
+        "uuid": "974fb539-2672-411d-a580-a85cae8ef19a",
+        "degree": 1,
+        "name": "974fb539-2672-411d-a580-a85cae8ef19a",
+        "code": "licencia_299"
+      },
+      {
+        "uuid": "2cedd92b-bc0d-43eb-8d47-42df4cb3b117",
+        "degree": 1,
+        "name": "2cedd92b-bc0d-43eb-8d47-42df4cb3b117",
+        "code": "licencia_281"
+      },
+      {
+        "uuid": "9f0ff68c-77b0-4e2c-abe6-4e6897354ac6",
+        "degree": 1,
+        "name": "9f0ff68c-77b0-4e2c-abe6-4e6897354ac6",
+        "code": "licencia_267"
+      },
+      {
+        "uuid": "f1988989-c8d4-497a-9805-ebde8dcfd782",
+        "degree": 1,
+        "name": "f1988989-c8d4-497a-9805-ebde8dcfd782",
+        "code": "licencia_265"
+      },
+      {
+        "uuid": "ec22ccb5-0eb1-4161-87bb-b95fad5d3091",
+        "degree": 1,
+        "name": "ec22ccb5-0eb1-4161-87bb-b95fad5d3091",
+        "code": "licencia_298"
+      },
+      {
+        "uuid": "16463418-e83a-4d0f-8dc3-a8db819790f7",
+        "degree": 1,
+        "name": "16463418-e83a-4d0f-8dc3-a8db819790f7",
+        "code": "licencia_290"
+      },
+      {
+        "uuid": "94cf30ac-79d0-4436-bfc7-4da3ef1769a3",
+        "degree": 1,
+        "name": "94cf30ac-79d0-4436-bfc7-4da3ef1769a3",
+        "code": "licencia_274"
+      },
+      {
+        "uuid": "a78c5f33-a34d-4207-a814-83bec5fa17bc",
+        "degree": 1,
+        "name": "a78c5f33-a34d-4207-a814-83bec5fa17bc",
+        "code": "licencia_285"
+      },
+      {
+        "uuid": "7d071512-5f99-4394-b6ce-7a087057ebec",
+        "degree": 1,
+        "name": "7d071512-5f99-4394-b6ce-7a087057ebec",
+        "code": "licencia_262"
+      },
+      {
+        "uuid": "874909ea-f3fb-4edb-b974-f814ffc2ca5e",
+        "degree": 1,
+        "name": "874909ea-f3fb-4edb-b974-f814ffc2ca5e",
+        "code": "licencia_294"
+      },
+      {
+        "uuid": "50cf881b-83dd-473d-9a14-a46415323f35",
+        "degree": 1,
+        "name": "50cf881b-83dd-473d-9a14-a46415323f35",
+        "code": "licencia_297"
+      },
+      {
+        "uuid": "570269f8-53e4-4d86-b6f1-7ef4f65c1c47",
+        "degree": 1,
+        "name": "570269f8-53e4-4d86-b6f1-7ef4f65c1c47",
+        "code": "licencia_287"
+      },
+      {
+        "uuid": "37fb257d-0a04-43b2-8697-06745164ed3e",
+        "degree": 1,
+        "name": "37fb257d-0a04-43b2-8697-06745164ed3e",
+        "code": "licencia_296"
+      },
+      {
+        "uuid": "fa0d489b-8b44-4afa-9062-4cf8c41738ee",
+        "degree": 1,
+        "name": "fa0d489b-8b44-4afa-9062-4cf8c41738ee",
+        "code": "licencia_273"
+      },
+      {
+        "uuid": "9bdc5c13-0992-4300-a2c1-47adf3c39d7f",
+        "degree": 1,
+        "name": "9bdc5c13-0992-4300-a2c1-47adf3c39d7f",
+        "code": "licencia_272"
+      },
+      {
+        "uuid": "8a07fa6d-c6f9-4c42-8760-2d4288d264b7",
+        "degree": 1,
+        "name": "8a07fa6d-c6f9-4c42-8760-2d4288d264b7",
+        "code": "licencia_292"
+      },
+      {
+        "uuid": "66d8bc3d-df8b-4db7-ba7d-057f5d510e5d",
+        "degree": 1,
+        "name": "66d8bc3d-df8b-4db7-ba7d-057f5d510e5d",
+        "code": "licencia_291"
+      },
+      {
+        "uuid": "a2b0aa44-1276-46c6-a4a6-6c7a37384386",
+        "degree": 1,
+        "name": "a2b0aa44-1276-46c6-a4a6-6c7a37384386",
+        "code": "licencia_302"
+      },
+      {
+        "uuid": "0b6d0dac-9984-47c4-972e-056b508b9e6f",
+        "degree": 1,
+        "name": "0b6d0dac-9984-47c4-972e-056b508b9e6f",
+        "code": "licencia_276"
+      },
+      {
+        "uuid": "91a200a2-2d45-4f1f-9698-1c34a1598f59",
+        "degree": 1,
+        "name": "91a200a2-2d45-4f1f-9698-1c34a1598f59",
+        "code": "licencia_261"
+      },
+      {
+        "uuid": "9ca9ceac-b64d-4a5b-b9b3-43f080a7811d",
+        "degree": 1,
+        "name": "9ca9ceac-b64d-4a5b-b9b3-43f080a7811d",
+        "code": "licencia_268"
+      },
+      {
+        "uuid": "1e4a01fd-8254-4c58-b3f2-0b8918c39fed",
+        "degree": 1,
+        "name": "1e4a01fd-8254-4c58-b3f2-0b8918c39fed",
+        "code": "licencia_288"
+      },
+      {
+        "uuid": "ff0ec240-4807-4067-9229-c0f78f942096",
+        "degree": 1,
+        "name": "ff0ec240-4807-4067-9229-c0f78f942096",
+        "code": "licencia_282"
+      },
+      {
+        "uuid": "2f7cca29-755b-4a61-bf3a-70a63b0f994b",
+        "degree": 1,
+        "name": "2f7cca29-755b-4a61-bf3a-70a63b0f994b",
+        "code": "licencia_279"
+      },
+      {
+        "uuid": "afa3a9f0-0d52-4b81-a2bc-4e58d8835dd1",
+        "degree": 1,
+        "name": "afa3a9f0-0d52-4b81-a2bc-4e58d8835dd1",
+        "code": "licencia_289"
+      },
+      {
+        "uuid": "a03ed19f-fe86-4519-a667-632663bb343a",
+        "degree": 1,
+        "name": "a03ed19f-fe86-4519-a667-632663bb343a",
+        "code": "licencia_275"
+      },
+      {
+        "uuid": "3d7c29c8-0ffe-48f1-93b0-111480f6b52f",
+        "degree": 1,
+        "name": "3d7c29c8-0ffe-48f1-93b0-111480f6b52f",
+        "code": "licencia_278"
+      },
+      {
+        "uuid": "a4085aad-2262-4947-9357-91e0ed2c11dd",
+        "degree": 1,
+        "name": "a4085aad-2262-4947-9357-91e0ed2c11dd",
+        "code": "licencia_280"
+      },
+      {
+        "uuid": "5eec8fb4-4c61-46db-a2e9-69c736b6a8be",
+        "degree": 1,
+        "name": "5eec8fb4-4c61-46db-a2e9-69c736b6a8be",
+        "code": "licencia_277"
+      },
+      {
+        "uuid": "0b420878-a941-4a75-a8fe-2dfebf0fe308",
+        "degree": 1,
+        "name": "0b420878-a941-4a75-a8fe-2dfebf0fe308",
+        "code": "licencia_263"
+      },
+      {
+        "uuid": "0c064937-f848-47ef-9901-5982e7553c8b",
+        "degree": 1,
+        "name": "0c064937-f848-47ef-9901-5982e7553c8b",
+        "code": "licencia_266"
+      },
+      {
+        "uuid": "e639a015-49f4-4d24-bdf4-e20a4fe75a28",
+        "degree": 1,
+        "name": "e639a015-49f4-4d24-bdf4-e20a4fe75a28",
+        "code": "licencia_286"
+      },
+      {
+        "uuid": "c7754120-2a4c-4d6f-a3a2-3d798fc560bd",
+        "degree": 1,
+        "name": "c7754120-2a4c-4d6f-a3a2-3d798fc560bd",
+        "code": "licencia_271"
+      },
+      {
+        "uuid": "11444af5-9e28-40cf-95c6-89129e125d09",
+        "degree": 1,
+        "name": "11444af5-9e28-40cf-95c6-89129e125d09",
+        "code": "licencia_293"
+      },
+      {
+        "uuid": "89655b66-3701-4379-994a-1c2b3527d5e3",
+        "degree": 1,
+        "name": "89655b66-3701-4379-994a-1c2b3527d5e3",
+        "code": "licencia_284"
+      },
+      {
+        "uuid": "5cf716be-80ce-477d-b041-cfaf49bdbcde",
+        "degree": 1,
+        "name": "5cf716be-80ce-477d-b041-cfaf49bdbcde",
+        "code": "licencia_312"
+      },
+      {
+        "uuid": "9f79903c-6d81-4189-b8eb-6693088a58bb",
+        "degree": 1,
+        "name": "9f79903c-6d81-4189-b8eb-6693088a58bb",
+        "code": "licencia_341"
+      },
+      {
+        "uuid": "45ae1657-eaf0-4b51-8fee-e1b07fa48eaf",
+        "degree": 1,
+        "name": "45ae1657-eaf0-4b51-8fee-e1b07fa48eaf",
+        "code": "licencia_331"
+      },
+      {
+        "uuid": "d3c21b43-2a86-44e2-8cf8-cec07db32c41",
+        "degree": 1,
+        "name": "d3c21b43-2a86-44e2-8cf8-cec07db32c41",
+        "code": "licencia_338"
+      },
+      {
+        "uuid": "5e7ded34-3bf4-4a03-b5ce-1054a1a9b3df",
+        "degree": 1,
+        "name": "5e7ded34-3bf4-4a03-b5ce-1054a1a9b3df",
+        "code": "licencia_349"
+      },
+      {
+        "uuid": "fd607fd3-db68-4c48-8ddb-a9b37bd6e835",
+        "degree": 1,
+        "name": "fd607fd3-db68-4c48-8ddb-a9b37bd6e835",
+        "code": "licencia_339"
+      },
+      {
+        "uuid": "af687859-e515-41cd-9a2a-1b33faef4779",
+        "degree": 1,
+        "name": "af687859-e515-41cd-9a2a-1b33faef4779",
+        "code": "licencia_346"
+      },
+      {
+        "uuid": "d6ca0331-d291-4f38-a355-34eaa65d7f01",
+        "degree": 1,
+        "name": "d6ca0331-d291-4f38-a355-34eaa65d7f01",
+        "code": "licencia_347"
+      },
+      {
+        "uuid": "408aa764-5142-4eb4-8792-c0b71eb07806",
+        "degree": 1,
+        "name": "408aa764-5142-4eb4-8792-c0b71eb07806",
+        "code": "licencia_336"
+      },
+      {
+        "uuid": "78d43036-26f2-497f-b15d-036bdf4a5a1c",
+        "degree": 1,
+        "name": "78d43036-26f2-497f-b15d-036bdf4a5a1c",
+        "code": "licencia_325"
+      },
+      {
+        "uuid": "e6592985-c06c-4392-9558-0b25c91481dd",
+        "degree": 1,
+        "name": "e6592985-c06c-4392-9558-0b25c91481dd",
+        "code": "licencia_326"
+      },
+      {
+        "uuid": "8fc9db5e-69c2-4e06-9019-fd2397896bb8",
+        "degree": 1,
+        "name": "8fc9db5e-69c2-4e06-9019-fd2397896bb8",
+        "code": "licencia_315"
+      },
+      {
+        "uuid": "4773bb24-97b2-451a-b365-a17bb3ae4412",
+        "degree": 1,
+        "name": "4773bb24-97b2-451a-b365-a17bb3ae4412",
+        "code": "licencia_324"
+      },
+      {
+        "uuid": "e4ec35df-82c3-4c74-99d2-036a095bb0cc",
+        "degree": 1,
+        "name": "e4ec35df-82c3-4c74-99d2-036a095bb0cc",
+        "code": "licencia_320"
+      },
+      {
+        "uuid": "eeddac24-b766-41e4-95f9-ee4c9a4e72e4",
+        "degree": 1,
+        "name": "eeddac24-b766-41e4-95f9-ee4c9a4e72e4",
+        "code": "licencia_342"
+      },
+      {
+        "uuid": "6a1c8e72-d190-4481-aee9-553569d2a5df",
+        "degree": 1,
+        "name": "6a1c8e72-d190-4481-aee9-553569d2a5df",
+        "code": "licencia_327"
+      },
+      {
+        "uuid": "069fc904-64dc-4023-ac8c-7b9147cb6ec7",
+        "degree": 1,
+        "name": "069fc904-64dc-4023-ac8c-7b9147cb6ec7",
+        "code": "licencia_307"
+      },
+      {
+        "uuid": "a307875c-c2e9-4ed3-91c4-a4aaff889538",
+        "degree": 1,
+        "name": "a307875c-c2e9-4ed3-91c4-a4aaff889538",
+        "code": "licencia_316"
+      },
+      {
+        "uuid": "2e1077b7-55d8-4891-bbd2-12ec475e2c0b",
+        "degree": 1,
+        "name": "2e1077b7-55d8-4891-bbd2-12ec475e2c0b",
+        "code": "licencia_310"
+      },
+      {
+        "uuid": "f7f1ec5e-46a1-4898-bb5a-db0a67a3d722",
+        "degree": 1,
+        "name": "f7f1ec5e-46a1-4898-bb5a-db0a67a3d722",
+        "code": "licencia_337"
+      },
+      {
+        "uuid": "6b4897df-d00d-4de8-aaca-77c7ff870272",
+        "degree": 1,
+        "name": "6b4897df-d00d-4de8-aaca-77c7ff870272",
+        "code": "licencia_321"
+      },
+      {
+        "uuid": "305d7a48-7ca6-4498-b707-78a0f9b462b2",
+        "degree": 1,
+        "name": "305d7a48-7ca6-4498-b707-78a0f9b462b2",
+        "code": "licencia_308"
+      },
+      {
+        "uuid": "a53b3dfc-1074-444e-b48e-f61bd0257599",
+        "degree": 1,
+        "name": "a53b3dfc-1074-444e-b48e-f61bd0257599",
+        "code": "licencia_318"
+      },
+      {
+        "uuid": "44632e5f-4c1c-4438-bf0e-78e1ee78410e",
+        "degree": 1,
+        "name": "44632e5f-4c1c-4438-bf0e-78e1ee78410e",
+        "code": "licencia_343"
+      },
+      {
+        "uuid": "fe951b39-54c1-42e7-8816-4a7e6b491025",
+        "degree": 1,
+        "name": "fe951b39-54c1-42e7-8816-4a7e6b491025",
+        "code": "licencia_314"
+      },
+      {
+        "uuid": "90a115de-6d50-49cf-b2fa-1257c058e985",
+        "degree": 1,
+        "name": "90a115de-6d50-49cf-b2fa-1257c058e985",
+        "code": "licencia_345"
+      },
+      {
+        "uuid": "ebf8a41c-e3a1-464f-821a-466cf654eab9",
+        "degree": 1,
+        "name": "ebf8a41c-e3a1-464f-821a-466cf654eab9",
+        "code": "licencia_328"
+      },
+      {
+        "uuid": "1bd5488f-3b6d-40da-a80c-4dbdfd5ce7da",
+        "degree": 1,
+        "name": "1bd5488f-3b6d-40da-a80c-4dbdfd5ce7da",
+        "code": "licencia_333"
+      },
+      {
+        "uuid": "851f774a-b116-432c-b174-7b86773eac3f",
+        "degree": 1,
+        "name": "851f774a-b116-432c-b174-7b86773eac3f",
+        "code": "licencia_319"
+      },
+      {
+        "uuid": "abdd9d4b-b34a-43c5-ae06-bcb88c5aad63",
+        "degree": 1,
+        "name": "abdd9d4b-b34a-43c5-ae06-bcb88c5aad63",
+        "code": "licencia_306"
+      },
+      {
+        "uuid": "7a5b417f-6641-4173-b1bb-e605faa296a1",
+        "degree": 1,
+        "name": "7a5b417f-6641-4173-b1bb-e605faa296a1",
+        "code": "licencia_311"
+      },
+      {
+        "uuid": "fdd9d679-a59e-467b-8211-4ad8f7804e25",
+        "degree": 1,
+        "name": "fdd9d679-a59e-467b-8211-4ad8f7804e25",
+        "code": "licencia_332"
+      },
+      {
+        "uuid": "4bbc0c4d-0af2-499b-80a3-fbdc8f748f3c",
+        "degree": 1,
+        "name": "4bbc0c4d-0af2-499b-80a3-fbdc8f748f3c",
+        "code": "licencia_304"
+      },
+      {
+        "uuid": "92da6e76-69e8-4059-b997-e4df1f042da0",
+        "degree": 1,
+        "name": "92da6e76-69e8-4059-b997-e4df1f042da0",
+        "code": "licencia_330"
+      },
+      {
+        "uuid": "9fa8b0f2-a5c0-4cb4-85ed-61dccab7a747",
+        "degree": 1,
+        "name": "9fa8b0f2-a5c0-4cb4-85ed-61dccab7a747",
+        "code": "licencia_344"
+      },
+      {
+        "uuid": "3502fa65-f5dc-4dc7-abf9-f28a376e2b4f",
+        "degree": 1,
+        "name": "3502fa65-f5dc-4dc7-abf9-f28a376e2b4f",
+        "code": "licencia_323"
+      },
+      {
+        "uuid": "770c1bb6-60a9-4ead-8a76-0933631293d2",
+        "degree": 1,
+        "name": "770c1bb6-60a9-4ead-8a76-0933631293d2",
+        "code": "licencia_305"
+      },
+      {
+        "uuid": "a8388742-aa70-4043-ae89-e9cf36a9b85c",
+        "degree": 1,
+        "name": "a8388742-aa70-4043-ae89-e9cf36a9b85c",
+        "code": "licencia_313"
+      },
+      {
+        "uuid": "bdb8ba4c-8773-418e-9e61-1cd22a26b321",
+        "degree": 1,
+        "name": "bdb8ba4c-8773-418e-9e61-1cd22a26b321",
+        "code": "licencia_348"
+      },
+      {
+        "uuid": "02b1495a-0f90-4684-ace4-7c781643c6e0",
+        "degree": 1,
+        "name": "02b1495a-0f90-4684-ace4-7c781643c6e0",
+        "code": "licencia_340"
+      },
+      {
+        "uuid": "2580f3e5-c079-423d-9016-f13f4fc4a544",
+        "degree": 1,
+        "name": "2580f3e5-c079-423d-9016-f13f4fc4a544",
+        "code": "licencia_334"
+      },
+      {
+        "uuid": "dd486d04-9345-4cfd-bb10-9d3afebf93f2",
+        "degree": 1,
+        "name": "dd486d04-9345-4cfd-bb10-9d3afebf93f2",
+        "code": "licencia_317"
+      },
+      {
+        "uuid": "adcbab14-09e5-44d1-8eec-2e9e7397c6dc",
+        "degree": 1,
+        "name": "adcbab14-09e5-44d1-8eec-2e9e7397c6dc",
+        "code": "licencia_329"
+      },
+      {
+        "uuid": "8fc3b3b7-191f-4838-a57e-4577522e4da4",
+        "degree": 1,
+        "name": "8fc3b3b7-191f-4838-a57e-4577522e4da4",
+        "code": "licencia_322"
+      },
+      {
+        "uuid": "0c56c482-62a0-4106-8d0e-9a51782d3adf",
+        "degree": 1,
+        "name": "0c56c482-62a0-4106-8d0e-9a51782d3adf",
+        "code": "licencia_335"
+      },
+      {
+        "uuid": "cfb51bd8-a456-4e53-9e80-69c62503c432",
+        "degree": 1,
+        "name": "cfb51bd8-a456-4e53-9e80-69c62503c432",
+        "code": "licencia_309"
+      },
+      {
+        "uuid": "e90a9407-aae4-4ca9-a5d0-4e89501a5020",
+        "degree": 1,
+        "name": "e90a9407-aae4-4ca9-a5d0-4e89501a5020",
+        "code": "licencia_354"
+      },
+      {
+        "uuid": "76ba337e-dfcb-49fd-a7b9-76e603154897",
+        "degree": 1,
+        "name": "76ba337e-dfcb-49fd-a7b9-76e603154897",
+        "code": "licencia_356"
+      },
+      {
+        "uuid": "e1dbda16-332c-43bb-a011-e85572675b50",
+        "degree": 1,
+        "name": "e1dbda16-332c-43bb-a011-e85572675b50",
+        "code": "licencia_357"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "19251455-9525-4d88-a6bf-de9346fb9085",
+        "degree": 53,
+        "name": "19251455-9525-4d88-a6bf-de9346fb9085",
+        "code": "licencny_produkt_277"
+      },
+      {
+        "uuid": "62bfd1da-3294-4681-a96a-e878521d72d1",
+        "degree": 30,
+        "name": "62bfd1da-3294-4681-a96a-e878521d72d1",
+        "code": "licencny_produkt_301"
+      },
+      {
+        "uuid": "6b0d7664-f021-4f8f-b1e4-041ecd16b570",
+        "degree": 29,
+        "name": "6b0d7664-f021-4f8f-b1e4-041ecd16b570",
+        "code": "licencny_produkt_302"
+      },
+      {
+        "uuid": "a571a812-086e-4805-94fe-20ba94e32d7d",
+        "degree": 22,
+        "name": "a571a812-086e-4805-94fe-20ba94e32d7d",
+        "code": "licencny_produkt_275"
+      },
+      {
+        "uuid": "bfc1b63f-69cd-446e-9807-418f2ba603ac",
+        "degree": 19,
+        "name": "bfc1b63f-69cd-446e-9807-418f2ba603ac",
+        "code": "licencny_produkt_285"
+      },
+      {
+        "uuid": "978b6f1d-7d08-4a48-8caf-d06b15973797",
+        "degree": 17,
+        "name": "978b6f1d-7d08-4a48-8caf-d06b15973797",
+        "code": "licencny_produkt_282"
+      },
+      {
+        "uuid": "07f8c4c3-1697-4a24-bbe7-2ca22addd45c",
+        "degree": 14,
+        "name": "07f8c4c3-1697-4a24-bbe7-2ca22addd45c",
+        "code": "licencny_produkt_288"
+      },
+      {
+        "uuid": "c9d676db-b734-4c7e-b23e-27991d4e7c65",
+        "degree": 12,
+        "name": "c9d676db-b734-4c7e-b23e-27991d4e7c65",
+        "code": "licencny_produkt_350"
+      },
+      {
+        "uuid": "15d540d4-c413-4a36-9fe4-24010d430b4b",
+        "degree": 12,
+        "name": "15d540d4-c413-4a36-9fe4-24010d430b4b",
+        "code": "licencny_produkt_549"
+      },
+      {
+        "uuid": "e2a97d29-84e5-4ad6-bcf7-994d4d8d9b3a",
+        "degree": 11,
+        "name": "e2a97d29-84e5-4ad6-bcf7-994d4d8d9b3a",
+        "code": "licencny_produkt_550"
+      },
+      {
+        "uuid": "67e76ddc-21b1-498d-8108-99a06397d98f",
+        "degree": 9,
+        "name": "67e76ddc-21b1-498d-8108-99a06397d98f",
+        "code": "licencny_produkt_544"
+      },
+      {
+        "uuid": "7f5a558c-b8e3-4eee-a9f4-718ca6e663fa",
+        "degree": 8,
+        "name": "7f5a558c-b8e3-4eee-a9f4-718ca6e663fa",
+        "code": "licencny_produkt_287"
+      },
+      {
+        "uuid": "fbe8a0f0-4373-464a-b341-fb1d71f16ad3",
+        "degree": 6,
+        "name": "fbe8a0f0-4373-464a-b341-fb1d71f16ad3",
+        "code": "licencny_produkt_381"
+      },
+      {
+        "uuid": "f483daa7-5765-4bfa-b222-dcff1b450d0d",
+        "degree": 5,
+        "name": "f483daa7-5765-4bfa-b222-dcff1b450d0d",
+        "code": "licencny_produkt_291"
+      },
+      {
+        "uuid": "21b7bb6b-d325-4742-a3d7-a21f20f64a48",
+        "degree": 4,
+        "name": "21b7bb6b-d325-4742-a3d7-a21f20f64a48",
+        "code": "licencny_produkt_551"
+      },
+      {
+        "uuid": "4f02dded-e3be-4a7e-9489-8328030a52d6",
+        "degree": 4,
+        "name": "4f02dded-e3be-4a7e-9489-8328030a52d6",
+        "code": "licencny_produkt_477"
+      },
+      {
+        "uuid": "dcac900c-99bb-4812-a230-6af394dafb68",
+        "degree": 4,
+        "name": "dcac900c-99bb-4812-a230-6af394dafb68",
+        "code": "licencny_produkt_425"
+      },
+      {
+        "uuid": "b1247ddb-217f-4f32-be5c-7222b0f81531",
+        "degree": 4,
+        "name": "b1247ddb-217f-4f32-be5c-7222b0f81531",
+        "code": "licencny_produkt_461"
+      },
+      {
+        "uuid": "f976f2ab-dc54-4c66-a843-63966fbe0dc0",
+        "degree": 4,
+        "name": "f976f2ab-dc54-4c66-a843-63966fbe0dc0",
+        "code": "licencny_produkt_390"
+      },
+      {
+        "uuid": "1805ccaa-8ec2-4423-a36a-07862a70ff0f",
+        "degree": 3,
+        "name": "1805ccaa-8ec2-4423-a36a-07862a70ff0f",
+        "code": "licencny_produkt_559"
+      },
+      {
+        "uuid": "38333bd4-9398-4c97-a607-5ba5458394d4",
+        "degree": 3,
+        "name": "38333bd4-9398-4c97-a607-5ba5458394d4",
+        "code": "licencny_produkt_491"
+      },
+      {
+        "uuid": "d4b6fe77-2b8c-49fc-9dd0-8a5951238a01",
+        "degree": 3,
+        "name": "d4b6fe77-2b8c-49fc-9dd0-8a5951238a01",
+        "code": "licencny_produkt_349"
+      },
+      {
+        "uuid": "d82a4486-7fc8-4220-aac1-1f219217b528",
+        "degree": 3,
+        "name": "d82a4486-7fc8-4220-aac1-1f219217b528",
+        "code": "licencny_produkt_510"
+      },
+      {
+        "uuid": "2d6290f8-5f69-430b-b7f7-e304f5822806",
+        "degree": 3,
+        "name": "2d6290f8-5f69-430b-b7f7-e304f5822806",
+        "code": "licencny_produkt_562"
+      },
+      {
+        "uuid": "3b3c856e-159c-4f0a-be71-b1b962fbc615",
+        "degree": 3,
+        "name": "3b3c856e-159c-4f0a-be71-b1b962fbc615",
+        "code": "licencny_produkt_389"
+      },
+      {
+        "uuid": "c3854266-36ef-4245-86d2-f71e6b550e35",
+        "degree": 3,
+        "name": "c3854266-36ef-4245-86d2-f71e6b550e35",
+        "code": "licencny_produkt_485"
+      },
+      {
+        "uuid": "32080a06-fb04-4580-ac9d-150fe8a2be61",
+        "degree": 3,
+        "name": "32080a06-fb04-4580-ac9d-150fe8a2be61",
+        "code": "licencny_produkt_486"
+      },
+      {
+        "uuid": "e8b009b5-15ee-458f-8e7b-ee1423a25ec2",
+        "degree": 3,
+        "name": "e8b009b5-15ee-458f-8e7b-ee1423a25ec2",
+        "code": "licencny_produkt_484"
+      },
+      {
+        "uuid": "c17f8c38-1c2e-4751-8000-0c51d98953b4",
+        "degree": 2,
+        "name": "c17f8c38-1c2e-4751-8000-0c51d98953b4",
+        "code": "licencny_produkt_487"
+      },
+      {
+        "uuid": "f8cd3f53-d003-4792-8143-60fb64bb7674",
+        "degree": 2,
+        "name": "f8cd3f53-d003-4792-8143-60fb64bb7674",
+        "code": "licencny_produkt_479"
+      },
+      {
+        "uuid": "1ffd3cd9-07fa-43ec-8beb-0e185122dc75",
+        "degree": 2,
+        "name": "1ffd3cd9-07fa-43ec-8beb-0e185122dc75",
+        "code": "licencny_produkt_344"
+      },
+      {
+        "uuid": "4652f1ec-cc11-4987-8683-657af0fbcfec",
+        "degree": 2,
+        "name": "4652f1ec-cc11-4987-8683-657af0fbcfec",
+        "code": "licencny_produkt_557"
+      },
+      {
+        "uuid": "856f4ad2-1372-4d93-b5fb-17d6dab0f1ba",
+        "degree": 2,
+        "name": "856f4ad2-1372-4d93-b5fb-17d6dab0f1ba",
+        "code": "licencny_produkt_483"
+      },
+      {
+        "uuid": "d008aa30-026f-435e-bb7e-851a72ac325a",
+        "degree": 2,
+        "name": "d008aa30-026f-435e-bb7e-851a72ac325a",
+        "code": "licencny_produkt_303"
+      },
+      {
+        "uuid": "ade32084-11f9-4393-aba3-d019d2ec3b5c",
+        "degree": 2,
+        "name": "ade32084-11f9-4393-aba3-d019d2ec3b5c",
+        "code": "licencny_produkt_376"
+      },
+      {
+        "uuid": "e6f5bd8e-19f8-45e7-ae1f-c236345d4fa3",
+        "degree": 2,
+        "name": "e6f5bd8e-19f8-45e7-ae1f-c236345d4fa3",
+        "code": "licencny_produkt_374"
+      },
+      {
+        "uuid": "50528f22-14ba-4daf-bd02-a7bda728555e",
+        "degree": 2,
+        "name": "50528f22-14ba-4daf-bd02-a7bda728555e",
+        "code": "licencny_produkt_373"
+      },
+      {
+        "uuid": "0525f1d5-5e98-449c-b200-0db83010011a",
+        "degree": 2,
+        "name": "0525f1d5-5e98-449c-b200-0db83010011a",
+        "code": "licencny_produkt_364"
+      },
+      {
+        "uuid": "6aa5dafb-fabe-4125-9630-90850095f787",
+        "degree": 2,
+        "name": "6aa5dafb-fabe-4125-9630-90850095f787",
+        "code": "licencny_produkt_382"
+      },
+      {
+        "uuid": "34abf9fd-45b3-46de-87a5-7c56d1915dbf",
+        "degree": 2,
+        "name": "34abf9fd-45b3-46de-87a5-7c56d1915dbf",
+        "code": "licencny_produkt_465"
+      },
+      {
+        "uuid": "d80959f1-2a8f-4549-89bf-c42149243a09",
+        "degree": 2,
+        "name": "d80959f1-2a8f-4549-89bf-c42149243a09",
+        "code": "licencny_produkt_276"
+      },
+      {
+        "uuid": "416394bd-7f2f-4b5b-9e59-ec624ac3e434",
+        "degree": 1,
+        "name": "416394bd-7f2f-4b5b-9e59-ec624ac3e434",
+        "code": "licencny_produkt_552"
+      },
+      {
+        "uuid": "3277ea63-51d3-4eec-b11f-2825b79df44e",
+        "degree": 1,
+        "name": "3277ea63-51d3-4eec-b11f-2825b79df44e",
+        "code": "licencny_produkt_560"
+      },
+      {
+        "uuid": "b91c9487-af02-4b43-b137-844f5aaf4783",
+        "degree": 1,
+        "name": "b91c9487-af02-4b43-b137-844f5aaf4783",
+        "code": "licencny_produkt_361"
+      },
+      {
+        "uuid": "ce6cd4e8-5d06-4456-830a-aa73a51619d9",
+        "degree": 1,
+        "name": "ce6cd4e8-5d06-4456-830a-aa73a51619d9",
+        "code": "licencny_produkt_547"
+      },
+      {
+        "uuid": "da3e2af8-ff83-4ad3-ba92-8755fefc37aa",
+        "degree": 1,
+        "name": "da3e2af8-ff83-4ad3-ba92-8755fefc37aa",
+        "code": "licencny_produkt_434"
+      },
+      {
+        "uuid": "ae92ade2-8e26-40d3-b2cf-fa8476f17e38",
+        "degree": 1,
+        "name": "ae92ade2-8e26-40d3-b2cf-fa8476f17e38",
+        "code": "licencny_produkt_548"
+      },
+      {
+        "uuid": "34f24e41-ba5d-4e71-8336-f73e2f948771",
+        "degree": 1,
+        "name": "34f24e41-ba5d-4e71-8336-f73e2f948771",
+        "code": "licencny_produkt_432"
+      },
+      {
+        "uuid": "9cdc169c-d09c-43e3-b99f-05254726d920",
+        "degree": 1,
+        "name": "9cdc169c-d09c-43e3-b99f-05254726d920",
+        "code": "licencny_produkt_448"
+      },
+      {
+        "uuid": "410629c3-9763-453c-8bc3-db94c1fc2528",
+        "degree": 1,
+        "name": "410629c3-9763-453c-8bc3-db94c1fc2528",
+        "code": "licencny_produkt_427"
+      },
+      {
+        "uuid": "32007466-852b-44ea-996b-bce19ae8b87c",
+        "degree": 1,
+        "name": "32007466-852b-44ea-996b-bce19ae8b87c",
+        "code": "licencny_produkt_478"
+      },
+      {
+        "uuid": "572c7b3e-2ebf-4381-af4a-152eefce77d0",
+        "degree": 1,
+        "name": "572c7b3e-2ebf-4381-af4a-152eefce77d0",
+        "code": "licencny_produkt_480"
+      },
+      {
+        "uuid": "f025eb97-cc2d-4ca6-b93f-d7ec659a2ca4",
+        "degree": 1,
+        "name": "f025eb97-cc2d-4ca6-b93f-d7ec659a2ca4",
+        "code": "licencny_produkt_466"
+      },
+      {
+        "uuid": "2ab11025-342c-4f85-a09c-c8677fa3287f",
+        "degree": 1,
+        "name": "2ab11025-342c-4f85-a09c-c8677fa3287f",
+        "code": "licencny_produkt_293"
+      },
+      {
+        "uuid": "dde8b335-baa1-4992-ba36-0ad8379720b5",
+        "degree": 1,
+        "name": "dde8b335-baa1-4992-ba36-0ad8379720b5",
+        "code": "licencny_produkt_565"
+      },
+      {
+        "uuid": "a8ec7409-0b79-4b7d-be5f-bc9b8260a2f5",
+        "degree": 1,
+        "name": "a8ec7409-0b79-4b7d-be5f-bc9b8260a2f5",
+        "code": "licencny_produkt_392"
+      },
+      {
+        "uuid": "a6abe0e5-b318-4070-b3f6-dfa140a8d1f2",
+        "degree": 1,
+        "name": "a6abe0e5-b318-4070-b3f6-dfa140a8d1f2",
+        "code": "licencny_produkt_566"
+      },
+      {
+        "uuid": "6ad41284-c638-461c-807b-f40d2489af61",
+        "degree": 1,
+        "name": "6ad41284-c638-461c-807b-f40d2489af61",
+        "code": "licencny_produkt_290"
+      },
+      {
+        "uuid": "4008883a-043a-4dce-827b-44632e462b1e",
+        "degree": 1,
+        "name": "4008883a-043a-4dce-827b-44632e462b1e",
+        "code": "licencny_produkt_435"
+      },
+      {
+        "uuid": "fe70172c-f9a1-4492-86de-7ca389562185",
+        "degree": 1,
+        "name": "fe70172c-f9a1-4492-86de-7ca389562185",
+        "code": "licencny_produkt_284"
+      },
+      {
+        "uuid": "6cc6da4f-81e5-4be2-8180-d01dd17dddb3",
+        "degree": 1,
+        "name": "6cc6da4f-81e5-4be2-8180-d01dd17dddb3",
+        "code": "licencny_produkt_568"
+      },
+      {
+        "uuid": "6473e49c-a1c7-4369-aab5-b6c9fd0967b4",
+        "degree": 1,
+        "name": "6473e49c-a1c7-4369-aab5-b6c9fd0967b4",
+        "code": "licencny_produkt_304"
+      },
+      {
+        "uuid": "2d446b52-11b2-4526-bd6f-8227876cfba9",
+        "degree": 1,
+        "name": "2d446b52-11b2-4526-bd6f-8227876cfba9",
+        "code": "licencny_produkt_558"
+      },
+      {
+        "uuid": "2c6aee9f-77f4-4575-83f6-deb0e4d7cc94",
+        "degree": 1,
+        "name": "2c6aee9f-77f4-4575-83f6-deb0e4d7cc94",
+        "code": "licencny_produkt_563"
+      },
+      {
+        "uuid": "84b74178-94cc-467d-a01e-1b63afb833bc",
+        "degree": 1,
+        "name": "84b74178-94cc-467d-a01e-1b63afb833bc",
+        "code": "licencny_produkt_488"
+      },
+      {
+        "uuid": "aaa7a2f6-3dd1-4635-b6ec-8f7d31152348",
+        "degree": 1,
+        "name": "aaa7a2f6-3dd1-4635-b6ec-8f7d31152348",
+        "code": "licencny_produkt_535"
+      },
+      {
+        "uuid": "4466d99a-c619-4374-abd2-45735502eaaf",
+        "degree": 1,
+        "name": "4466d99a-c619-4374-abd2-45735502eaaf",
+        "code": "licencny_produkt_561"
+      },
+      {
+        "uuid": "c1aa45a4-b7c9-4dbb-9c63-b9ace36b7737",
+        "degree": 1,
+        "name": "c1aa45a4-b7c9-4dbb-9c63-b9ace36b7737",
+        "code": "licencny_produkt_323"
+      },
+      {
+        "uuid": "7881dec9-0dc1-48ac-91f2-a1d2c6eb0b8f",
+        "degree": 1,
+        "name": "7881dec9-0dc1-48ac-91f2-a1d2c6eb0b8f",
+        "code": "licencny_produkt_567"
+      },
+      {
+        "uuid": "5f3d028f-f639-4738-9056-e8eb054c8ce4",
+        "degree": 1,
+        "name": "5f3d028f-f639-4738-9056-e8eb054c8ce4",
+        "code": "licencny_produkt_464"
+      },
+      {
+        "uuid": "2e922225-1112-481b-8ff9-17ee5670adb5",
+        "degree": 1,
+        "name": "2e922225-1112-481b-8ff9-17ee5670adb5",
+        "code": "licencny_produkt_577"
+      },
+      {
+        "uuid": "e1b15232-8e84-4c78-be4b-0eeecf1bd0ec",
+        "degree": 1,
+        "name": "e1b15232-8e84-4c78-be4b-0eeecf1bd0ec",
+        "code": "licencny_produkt_581"
+      },
+      {
+        "uuid": "cbb5582c-e489-411f-9c9b-988027d7d661",
+        "degree": 1,
+        "name": "cbb5582c-e489-411f-9c9b-988027d7d661",
+        "code": "licencny_produkt_582"
+      }
+    ],
+    "islands": {
+      "total_nodes": 667,
+      "total_islands": 315,
+      "singleton_islands": 242,
+      "multi_islands": [
+        {
+          "size_total": 54,
+          "size_source": 53,
+          "size_target": 1,
+          "fraction_total": 0.08095952023988005,
+          "top_source_uuid": "1ac3f1e1-ac94-451d-b9c2-3495210c2d75",
+          "top_source_degree": 1,
+          "top_target_uuid": "19251455-9525-4d88-a6bf-de9346fb9085",
+          "top_target_degree": 53
+        },
+        {
+          "size_total": 31,
+          "size_source": 30,
+          "size_target": 1,
+          "fraction_total": 0.046476761619190406,
+          "top_source_uuid": "ec1a1d73-9f89-4969-8095-3f943a4fd3aa",
+          "top_source_degree": 1,
+          "top_target_uuid": "62bfd1da-3294-4681-a96a-e878521d72d1",
+          "top_target_degree": 30
+        },
+        {
+          "size_total": 30,
+          "size_source": 29,
+          "size_target": 1,
+          "fraction_total": 0.044977511244377814,
+          "top_source_uuid": "af687859-e515-41cd-9a2a-1b33faef4779",
+          "top_source_degree": 1,
+          "top_target_uuid": "6b0d7664-f021-4f8f-b1e4-041ecd16b570",
+          "top_target_degree": 29
+        },
+        {
+          "size_total": 23,
+          "size_source": 22,
+          "size_target": 1,
+          "fraction_total": 0.034482758620689655,
+          "top_source_uuid": "901bf643-5717-4ef7-9344-6da9b59e1d11",
+          "top_source_degree": 1,
+          "top_target_uuid": "a571a812-086e-4805-94fe-20ba94e32d7d",
+          "top_target_degree": 22
+        },
+        {
+          "size_total": 20,
+          "size_source": 19,
+          "size_target": 1,
+          "fraction_total": 0.029985007496251874,
+          "top_source_uuid": "1d81f5d5-057e-4106-b156-8a3ea95a1b10",
+          "top_source_degree": 1,
+          "top_target_uuid": "bfc1b63f-69cd-446e-9807-418f2ba603ac",
+          "top_target_degree": 19
+        },
+        {
+          "size_total": 18,
+          "size_source": 17,
+          "size_target": 1,
+          "fraction_total": 0.026986506746626688,
+          "top_source_uuid": "f0add0a6-e754-48c0-ac8a-32419d10a701",
+          "top_source_degree": 1,
+          "top_target_uuid": "978b6f1d-7d08-4a48-8caf-d06b15973797",
+          "top_target_degree": 17
+        },
+        {
+          "size_total": 15,
+          "size_source": 14,
+          "size_target": 1,
+          "fraction_total": 0.022488755622188907,
+          "top_source_uuid": "53f6b6c7-efde-4102-ab39-de618a1ec0ae",
+          "top_source_degree": 1,
+          "top_target_uuid": "07f8c4c3-1697-4a24-bbe7-2ca22addd45c",
+          "top_target_degree": 14
+        },
+        {
+          "size_total": 13,
+          "size_source": 12,
+          "size_target": 1,
+          "fraction_total": 0.019490254872563718,
+          "top_source_uuid": "c80f533e-c256-4162-b167-c42eec966f6d",
+          "top_source_degree": 1,
+          "top_target_uuid": "15d540d4-c413-4a36-9fe4-24010d430b4b",
+          "top_target_degree": 12
+        },
+        {
+          "size_total": 13,
+          "size_source": 12,
+          "size_target": 1,
+          "fraction_total": 0.019490254872563718,
+          "top_source_uuid": "f7991703-f153-45e7-9396-9473d59c4257",
+          "top_source_degree": 1,
+          "top_target_uuid": "c9d676db-b734-4c7e-b23e-27991d4e7c65",
+          "top_target_degree": 12
+        },
+        {
+          "size_total": 12,
+          "size_source": 11,
+          "size_target": 1,
+          "fraction_total": 0.017991004497751123,
+          "top_source_uuid": "d1d020ec-28c8-4f39-9d53-0dbf27f1a0d8",
+          "top_source_degree": 1,
+          "top_target_uuid": "e2a97d29-84e5-4ad6-bcf7-994d4d8d9b3a",
+          "top_target_degree": 11
+        },
+        {
+          "size_total": 10,
+          "size_source": 9,
+          "size_target": 1,
+          "fraction_total": 0.014992503748125937,
+          "top_source_uuid": "04b19ef1-0b7e-4590-9b14-bf32e29c261c",
+          "top_source_degree": 1,
+          "top_target_uuid": "67e76ddc-21b1-498d-8108-99a06397d98f",
+          "top_target_degree": 9
+        },
+        {
+          "size_total": 9,
+          "size_source": 8,
+          "size_target": 1,
+          "fraction_total": 0.013493253373313344,
+          "top_source_uuid": "0aab4f0b-bd2f-4243-b7fa-86f9669c7580",
+          "top_source_degree": 1,
+          "top_target_uuid": "7f5a558c-b8e3-4eee-a9f4-718ca6e663fa",
+          "top_target_degree": 8
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.010494752623688156,
+          "top_source_uuid": "5c06892f-a0f3-4e2e-a25d-384e2c68788c",
+          "top_source_degree": 1,
+          "top_target_uuid": "fbe8a0f0-4373-464a-b341-fb1d71f16ad3",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.008995502248875561,
+          "top_source_uuid": "037d558c-3a69-4116-84c4-9f6cc5ece401",
+          "top_source_degree": 1,
+          "top_target_uuid": "f483daa7-5765-4bfa-b222-dcff1b450d0d",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0074962518740629685,
+          "top_source_uuid": "e205ca6d-786b-4926-b44d-98d629339817",
+          "top_source_degree": 1,
+          "top_target_uuid": "21b7bb6b-d325-4742-a3d7-a21f20f64a48",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0074962518740629685,
+          "top_source_uuid": "b40aa37d-efbe-489a-a4b7-731241aa24d0",
+          "top_source_degree": 1,
+          "top_target_uuid": "dcac900c-99bb-4812-a230-6af394dafb68",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0074962518740629685,
+          "top_source_uuid": "3d54acdd-2564-4a9a-9a56-95eb0036720a",
+          "top_source_degree": 1,
+          "top_target_uuid": "f976f2ab-dc54-4c66-a843-63966fbe0dc0",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0074962518740629685,
+          "top_source_uuid": "dca8d1f2-8677-46dd-96d2-e2d9e26146cd",
+          "top_source_degree": 1,
+          "top_target_uuid": "b1247ddb-217f-4f32-be5c-7222b0f81531",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.0074962518740629685,
+          "top_source_uuid": "30952f7a-3b24-483e-8a30-245cf2fd1d58",
+          "top_source_degree": 1,
+          "top_target_uuid": "4f02dded-e3be-4a7e-9489-8328030a52d6",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "a91556a5-c833-42ef-a50e-25e8381f2e2f",
+          "top_source_degree": 1,
+          "top_target_uuid": "d82a4486-7fc8-4220-aac1-1f219217b528",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "3fa68961-a68d-417c-bce2-e5e5caf7c66d",
+          "top_source_degree": 1,
+          "top_target_uuid": "38333bd4-9398-4c97-a607-5ba5458394d4",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "e4ec35df-82c3-4c74-99d2-036a095bb0cc",
+          "top_source_degree": 1,
+          "top_target_uuid": "2d6290f8-5f69-430b-b7f7-e304f5822806",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "f91db3ac-e8fd-49f0-a95b-d6bebc120d2d",
+          "top_source_degree": 1,
+          "top_target_uuid": "32080a06-fb04-4580-ac9d-150fe8a2be61",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "9675e971-8f66-4f21-b3cf-fbfaa6e62f43",
+          "top_source_degree": 1,
+          "top_target_uuid": "d4b6fe77-2b8c-49fc-9dd0-8a5951238a01",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "3af871f4-dfab-4937-902d-ffdde138fcba",
+          "top_source_degree": 1,
+          "top_target_uuid": "e8b009b5-15ee-458f-8e7b-ee1423a25ec2",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "8f25ea0b-7b41-4e16-910d-7035a28f3b8c",
+          "top_source_degree": 1,
+          "top_target_uuid": "3b3c856e-159c-4f0a-be71-b1b962fbc615",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "eeab16ad-23c4-45d9-b779-07eb50e25633",
+          "top_source_degree": 1,
+          "top_target_uuid": "c3854266-36ef-4245-86d2-f71e6b550e35",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.005997001499250375,
+          "top_source_uuid": "96989925-5ad9-4fa1-91a7-24d201f45da8",
+          "top_source_degree": 1,
+          "top_target_uuid": "1805ccaa-8ec2-4423-a36a-07862a70ff0f",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "92da6e76-69e8-4059-b997-e4df1f042da0",
+          "top_source_degree": 1,
+          "top_target_uuid": "34abf9fd-45b3-46de-87a5-7c56d1915dbf",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "e58b20f5-c1f5-4919-91e9-a5359840aa18",
+          "top_source_degree": 1,
+          "top_target_uuid": "ade32084-11f9-4393-aba3-d019d2ec3b5c",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "9f0ff68c-77b0-4e2c-abe6-4e6897354ac6",
+          "top_source_degree": 1,
+          "top_target_uuid": "c17f8c38-1c2e-4751-8000-0c51d98953b4",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "8fc3b3b7-191f-4838-a57e-4577522e4da4",
+          "top_source_degree": 1,
+          "top_target_uuid": "1ffd3cd9-07fa-43ec-8beb-0e185122dc75",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "377e170d-4195-4ad7-913b-09d3ac585f61",
+          "top_source_degree": 1,
+          "top_target_uuid": "d008aa30-026f-435e-bb7e-851a72ac325a",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "d420876f-b1a2-4ce3-a9f2-99ff16557541",
+          "top_source_degree": 1,
+          "top_target_uuid": "e6f5bd8e-19f8-45e7-ae1f-c236345d4fa3",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "c192588a-aa15-47a5-8c2c-4fcb3277b675",
+          "top_source_degree": 1,
+          "top_target_uuid": "0525f1d5-5e98-449c-b200-0db83010011a",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "315923c1-5786-4a54-88c8-417a9e477577",
+          "top_source_degree": 1,
+          "top_target_uuid": "4652f1ec-cc11-4987-8683-657af0fbcfec",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "06b80ad5-ec36-414b-b8c9-86496c941ffe",
+          "top_source_degree": 1,
+          "top_target_uuid": "6aa5dafb-fabe-4125-9630-90850095f787",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "5e48aeb3-f131-4bac-8c11-97520a2d9fc7",
+          "top_source_degree": 1,
+          "top_target_uuid": "856f4ad2-1372-4d93-b5fb-17d6dab0f1ba",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "0ecf9986-caea-42d9-b57a-dcf83a267b5c",
+          "top_source_degree": 1,
+          "top_target_uuid": "50528f22-14ba-4daf-bd02-a7bda728555e",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "0af3654e-10eb-4084-aad9-850a52ce060e",
+          "top_source_degree": 1,
+          "top_target_uuid": "f8cd3f53-d003-4792-8143-60fb64bb7674",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.004497751124437781,
+          "top_source_uuid": "adcbab14-09e5-44d1-8eec-2e9e7397c6dc",
+          "top_source_degree": 1,
+          "top_target_uuid": "d80959f1-2a8f-4549-89bf-c42149243a09",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "d6ca0331-d291-4f38-a355-34eaa65d7f01",
+          "top_source_degree": 1,
+          "top_target_uuid": "6473e49c-a1c7-4369-aab5-b6c9fd0967b4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "c89710e5-15c7-4350-b699-1d9a10157f89",
+          "top_source_degree": 1,
+          "top_target_uuid": "572c7b3e-2ebf-4381-af4a-152eefce77d0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "5e7ded34-3bf4-4a03-b5ce-1054a1a9b3df",
+          "top_source_degree": 1,
+          "top_target_uuid": "6cc6da4f-81e5-4be2-8180-d01dd17dddb3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "82f9fd3b-ab00-4658-a95c-bc525e3bf824",
+          "top_source_degree": 1,
+          "top_target_uuid": "34f24e41-ba5d-4e71-8336-f73e2f948771",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "6b4897df-d00d-4de8-aaca-77c7ff870272",
+          "top_source_degree": 1,
+          "top_target_uuid": "2c6aee9f-77f4-4575-83f6-deb0e4d7cc94",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "1bd5488f-3b6d-40da-a80c-4dbdfd5ce7da",
+          "top_source_degree": 1,
+          "top_target_uuid": "aaa7a2f6-3dd1-4635-b6ec-8f7d31152348",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "cfb51bd8-a456-4e53-9e80-69c62503c432",
+          "top_source_degree": 1,
+          "top_target_uuid": "5f3d028f-f639-4738-9056-e8eb054c8ce4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "11ffe2fa-9b31-4418-a649-d382d36f54ba",
+          "top_source_degree": 1,
+          "top_target_uuid": "4008883a-043a-4dce-827b-44632e462b1e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "ec22ccb5-0eb1-4161-87bb-b95fad5d3091",
+          "top_source_degree": 1,
+          "top_target_uuid": "fe70172c-f9a1-4492-86de-7ca389562185",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "6bd6eb4e-5129-46c4-9459-ef3d18e3456d",
+          "top_source_degree": 1,
+          "top_target_uuid": "a8ec7409-0b79-4b7d-be5f-bc9b8260a2f5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "cf73e504-d33b-45c3-9479-97a14c466521",
+          "top_source_degree": 1,
+          "top_target_uuid": "32007466-852b-44ea-996b-bce19ae8b87c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "90a115de-6d50-49cf-b2fa-1257c058e985",
+          "top_source_degree": 1,
+          "top_target_uuid": "84b74178-94cc-467d-a01e-1b63afb833bc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "e0743597-2907-43b9-b20b-27a8f28fcc81",
+          "top_source_degree": 1,
+          "top_target_uuid": "a6abe0e5-b318-4070-b3f6-dfa140a8d1f2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "ad330ecd-80d7-4719-b99e-1d0f7fb096b6",
+          "top_source_degree": 1,
+          "top_target_uuid": "ce6cd4e8-5d06-4456-830a-aa73a51619d9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "e90a9407-aae4-4ca9-a5d0-4e89501a5020",
+          "top_source_degree": 1,
+          "top_target_uuid": "2e922225-1112-481b-8ff9-17ee5670adb5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "4b0b8bbc-c4fb-4bd5-9746-63843b8e2209",
+          "top_source_degree": 1,
+          "top_target_uuid": "3277ea63-51d3-4eec-b11f-2825b79df44e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "76ba337e-dfcb-49fd-a7b9-76e603154897",
+          "top_source_degree": 1,
+          "top_target_uuid": "e1b15232-8e84-4c78-be4b-0eeecf1bd0ec",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "614cdd3a-8d86-4166-a308-4e390d431cce",
+          "top_source_degree": 1,
+          "top_target_uuid": "6ad41284-c638-461c-807b-f40d2489af61",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "faf930fd-e8e5-4e6d-91c2-d685bdbddb3d",
+          "top_source_degree": 1,
+          "top_target_uuid": "416394bd-7f2f-4b5b-9e59-ec624ac3e434",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "e1dbda16-332c-43bb-a011-e85572675b50",
+          "top_source_degree": 1,
+          "top_target_uuid": "cbb5582c-e489-411f-9c9b-988027d7d661",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "2e1077b7-55d8-4891-bbd2-12ec475e2c0b",
+          "top_source_degree": 1,
+          "top_target_uuid": "2d446b52-11b2-4526-bd6f-8227876cfba9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "93368a12-b957-44fb-9863-41b3137fb6f3",
+          "top_source_degree": 1,
+          "top_target_uuid": "9cdc169c-d09c-43e3-b99f-05254726d920",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "fdd9d679-a59e-467b-8211-4ad8f7804e25",
+          "top_source_degree": 1,
+          "top_target_uuid": "c1aa45a4-b7c9-4dbb-9c63-b9ace36b7737",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "73803032-a558-4858-8588-ebf440fc9c8c",
+          "top_source_degree": 1,
+          "top_target_uuid": "ae92ade2-8e26-40d3-b2cf-fa8476f17e38",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "52af1019-a0c4-4775-942d-d0ece874bc0d",
+          "top_source_degree": 1,
+          "top_target_uuid": "dde8b335-baa1-4992-ba36-0ad8379720b5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "f0600012-3210-4ded-83e2-228f93c39419",
+          "top_source_degree": 1,
+          "top_target_uuid": "2ab11025-342c-4f85-a09c-c8677fa3287f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "e95dea28-7988-4d62-8b8a-15932afc74cf",
+          "top_source_degree": 1,
+          "top_target_uuid": "f025eb97-cc2d-4ca6-b93f-d7ec659a2ca4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "851f774a-b116-432c-b174-7b86773eac3f",
+          "top_source_degree": 1,
+          "top_target_uuid": "4466d99a-c619-4374-abd2-45735502eaaf",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "49aafb0d-adea-41ed-b6bf-2fbaebf21ae7",
+          "top_source_degree": 1,
+          "top_target_uuid": "410629c3-9763-453c-8bc3-db94c1fc2528",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "72deb8d1-3e5a-453b-afc4-a78b7e1a2a85",
+          "top_source_degree": 1,
+          "top_target_uuid": "b91c9487-af02-4b43-b137-844f5aaf4783",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "bdb8ba4c-8773-418e-9e61-1cd22a26b321",
+          "top_source_degree": 1,
+          "top_target_uuid": "7881dec9-0dc1-48ac-91f2-a1d2c6eb0b8f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0029985007496251873,
+          "top_source_uuid": "c19fbe8b-4877-4bbe-b6e3-cb135dad2c22",
+          "top_source_degree": 1,
+          "top_target_uuid": "da3e2af8-ff83-4ad3-ba92-8755fefc37aa",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 353,
+        "total_islands": 74,
+        "singleton_islands": 33,
+        "multi_islands": [
+          {
+            "size": 53,
+            "fraction": 0.1501416430594901,
+            "size_total": 54,
+            "top_uuid": "1ac3f1e1-ac94-451d-b9c2-3495210c2d75",
+            "top_degree": 1
+          },
+          {
+            "size": 30,
+            "fraction": 0.08498583569405099,
+            "size_total": 31,
+            "top_uuid": "ec1a1d73-9f89-4969-8095-3f943a4fd3aa",
+            "top_degree": 1
+          },
+          {
+            "size": 29,
+            "fraction": 0.0821529745042493,
+            "size_total": 30,
+            "top_uuid": "af687859-e515-41cd-9a2a-1b33faef4779",
+            "top_degree": 1
+          },
+          {
+            "size": 22,
+            "fraction": 0.06232294617563739,
+            "size_total": 23,
+            "top_uuid": "901bf643-5717-4ef7-9344-6da9b59e1d11",
+            "top_degree": 1
+          },
+          {
+            "size": 19,
+            "fraction": 0.053824362606232294,
+            "size_total": 20,
+            "top_uuid": "1d81f5d5-057e-4106-b156-8a3ea95a1b10",
+            "top_degree": 1
+          },
+          {
+            "size": 17,
+            "fraction": 0.04815864022662889,
+            "size_total": 18,
+            "top_uuid": "f0add0a6-e754-48c0-ac8a-32419d10a701",
+            "top_degree": 1
+          },
+          {
+            "size": 14,
+            "fraction": 0.039660056657223795,
+            "size_total": 15,
+            "top_uuid": "53f6b6c7-efde-4102-ab39-de618a1ec0ae",
+            "top_degree": 1
+          },
+          {
+            "size": 12,
+            "fraction": 0.0339943342776204,
+            "size_total": 13,
+            "top_uuid": "c80f533e-c256-4162-b167-c42eec966f6d",
+            "top_degree": 1
+          },
+          {
+            "size": 12,
+            "fraction": 0.0339943342776204,
+            "size_total": 13,
+            "top_uuid": "f7991703-f153-45e7-9396-9473d59c4257",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.031161473087818695,
+            "size_total": 12,
+            "top_uuid": "d1d020ec-28c8-4f39-9d53-0dbf27f1a0d8",
+            "top_degree": 1
+          },
+          {
+            "size": 9,
+            "fraction": 0.025495750708215296,
+            "size_total": 10,
+            "top_uuid": "04b19ef1-0b7e-4590-9b14-bf32e29c261c",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.0226628895184136,
+            "size_total": 9,
+            "top_uuid": "0aab4f0b-bd2f-4243-b7fa-86f9669c7580",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.0169971671388102,
+            "size_total": 7,
+            "top_uuid": "5c06892f-a0f3-4e2e-a25d-384e2c68788c",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.014164305949008499,
+            "size_total": 6,
+            "top_uuid": "037d558c-3a69-4116-84c4-9f6cc5ece401",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0113314447592068,
+            "size_total": 5,
+            "top_uuid": "e205ca6d-786b-4926-b44d-98d629339817",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0113314447592068,
+            "size_total": 5,
+            "top_uuid": "b40aa37d-efbe-489a-a4b7-731241aa24d0",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0113314447592068,
+            "size_total": 5,
+            "top_uuid": "3d54acdd-2564-4a9a-9a56-95eb0036720a",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0113314447592068,
+            "size_total": 5,
+            "top_uuid": "dca8d1f2-8677-46dd-96d2-e2d9e26146cd",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.0113314447592068,
+            "size_total": 5,
+            "top_uuid": "30952f7a-3b24-483e-8a30-245cf2fd1d58",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "a91556a5-c833-42ef-a50e-25e8381f2e2f",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "3fa68961-a68d-417c-bce2-e5e5caf7c66d",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "e4ec35df-82c3-4c74-99d2-036a095bb0cc",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "f91db3ac-e8fd-49f0-a95b-d6bebc120d2d",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "9675e971-8f66-4f21-b3cf-fbfaa6e62f43",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "3af871f4-dfab-4937-902d-ffdde138fcba",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "8f25ea0b-7b41-4e16-910d-7035a28f3b8c",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "eeab16ad-23c4-45d9-b779-07eb50e25633",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "96989925-5ad9-4fa1-91a7-24d201f45da8",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "92da6e76-69e8-4059-b997-e4df1f042da0",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "e58b20f5-c1f5-4919-91e9-a5359840aa18",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "9f0ff68c-77b0-4e2c-abe6-4e6897354ac6",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "8fc3b3b7-191f-4838-a57e-4577522e4da4",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "377e170d-4195-4ad7-913b-09d3ac585f61",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "d420876f-b1a2-4ce3-a9f2-99ff16557541",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "c192588a-aa15-47a5-8c2c-4fcb3277b675",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "315923c1-5786-4a54-88c8-417a9e477577",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "06b80ad5-ec36-414b-b8c9-86496c941ffe",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "5e48aeb3-f131-4bac-8c11-97520a2d9fc7",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "0ecf9986-caea-42d9-b57a-dcf83a267b5c",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "0af3654e-10eb-4084-aad9-850a52ce060e",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0056657223796034,
+            "size_total": 3,
+            "top_uuid": "adcbab14-09e5-44d1-8eec-2e9e7397c6dc",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 314,
+        "total_islands": 314,
+        "singleton_islands": 314,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

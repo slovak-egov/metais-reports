@@ -1,0 +1,923 @@
+{
+  "id": 15,
+  "name": "Infraštruktúrna služba",
+  "technicalName": "InfraSluzba",
+  "description": "Detaily týkajúce sa infraštruktúrnej služby.",
+  "roleList": [
+    "EA_GARPO",
+    "IKT_GARPO"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#afffaf",
+  "engName": "Infrastructure service",
+  "category": "RWCB",
+  "attributes": [
+    {
+      "id": 209,
+      "name": "Názov",
+      "description": "Stručný, výstižný a jednoznačný názov položky - pre niektoré typy položiek môže existovať metodika tvorby názvoslovia.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_nazov",
+      "order": 1,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Name",
+      "engDescription": "Brief, clear and accurate name of configuration item - for some types of configuration items methodology for creating terminology.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 16,
+      "name": "Anglický názov",
+      "description": "Stručný, výstižný a jednoznačný názov konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_nazov",
+      "order": 2,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English name",
+      "engDescription": "Brief, clear and accurate name of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 302,
+      "name": "Popis",
+      "description": "Detailnejší popis konfiguračnej položky.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_popis",
+      "order": 3,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Description",
+      "engDescription": "Detailed description of configuration item.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 17,
+      "name": "Anglický popis",
+      "description": "Detailnejší popis konfiguračnej položky v anglickom jazyku.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_anglicky_popis",
+      "order": 4,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "English description",
+      "engDescription": "Detailed description of configuration item in English.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 335,
+      "name": "Poznámka",
+      "description": "Ďalšie informácie o položke, ktoré sú potrebné pre spresnenie jej definície.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_poznamka",
+      "order": 5,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Other information about configuration item that are required in order to specify its definition.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 615,
+      "name": "Zdroj",
+      "description": "Identifikácia systému, z ktorého bolo iniciované vytvorenie danej konfiguračnej položky. Napr. BDA nástroj, ASPR, prípadne iný systém, ktorý bude využívať CMDB API. Údaj je generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": "c_zdroj.9",
+      "technicalName": "Gen_Profil_zdroj",
+      "order": 6,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": true,
+      "constraints": [
+        {
+          "type": "enum",
+          "id": null,
+          "enumCode": "ZDROJ"
+        }
+      ],
+      "attributeTypeEnum": "STRING",
+      "engName": "Source",
+      "engDescription": "Identification system that initiated creation of particular configuration item. E.g. BDA tool, ASPR, or other system that will use CMDB API. System generates data automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 156,
+      "name": "Kód MetaIS",
+      "description": "Jednoznačný identifikátor položky v rámci systému MetaIS.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_kod_metais",
+      "order": 8,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code",
+      "engDescription": "Unambiguous identificator of configuration item in the MetaIS system.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 394,
+      "name": "Referencovateľný identifikátor",
+      "description": "Referencovateľný identifikátor (URI) generovaný systémom automaticky.",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_ref_id",
+      "order": 10,
+      "valid": true,
+      "readOnly": true,
+      "mandatory": {
+        "type": "critical",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Reference identifier",
+      "engDescription": "Reference identifier (URI) generated by system automatically.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 94,
+      "name": "EA profil pre infraštruktúrnu službu",
+      "description": "Architektonický profil pre infraštruktúrnu službu",
+      "technicalName": "EA_Profil_InfraSluzba",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Architecture profile for infrastructure service",
+      "attributes": [
+        {
+          "id": 489,
+          "name": "Typ cloudovej služby",
+          "description": "Typ cloudovej služby pre infraštruktúrnu službu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_InfraSluzba_typ_cloudovej_sluzby",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_CLOUD_SLUZBA_IS"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Cloud services type",
+          "engDescription": "Cloud services type for application service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 899,
+          "name": "Úroveň akreditácie",
+          "description": "Výber z komboboxu: U1 Otvorené údaje, U2 Dôverné údaje, U3 Regulované údaje, U3+ Prísne regulované údaje.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_akreditacie_cloudovych_sluzieb",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "AKREDITACIE_CLOUDOVYCH_SLUZIEB"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Cloud Service accreditation Levels",
+          "engDescription": "Cloud Service accreditation Levels",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 900,
+          "name": "Bezpečnostná úroveň - dôvernosť",
+          "description": "Bezpečnostné úrovne cloudových služieb z hľadiska: dôvernosti (C) a miery vplyvu (žiadna - 0, nízka - 1, stredná - 2, vysoká – 3).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_bezpecnostna_uroven_dovernost",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "BEZPECNOST_CLOUDOVYCH_SLUZIEB_DOVERNOST"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Security Level - Confidentiality",
+          "engDescription": "Security Level - Confidentiality",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 901,
+          "name": "Bezpečnostná úroveň - integrita",
+          "description": "Bezpečnostné úrovne cloudových služieb z hľadiska: integrity (I) a miery vplyvu (žiadna - 0, nízka - 1, stredná - 2, vysoká – 3).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_bezpecnostna_uroven_integrita",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "BEZPECNOST_CLOUDOVYCH_SLUZIEB_INTEGRITA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Security Level - Integrity",
+          "engDescription": "Security Level - Integrity",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 902,
+          "name": "Bezpečnostná úroveň - dostupnosť",
+          "description": "Bezpečnostné úrovne cloudových služieb z hľadiska:  dostupnosti (A) a miery vplyvu (žiadna - 0, nízka - 1, stredná - 2, vysoká – 3).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_bezpecnostna_uroven_dostupnost",
+          "order": 5,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "BEZPECNOST_CLOUDOVYCH_SLUZIEB_DOSTUPNOST"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Security Level - Availability",
+          "engDescription": "Security Level - Availability",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 903,
+          "name": "Dátum zaradenia cloudovej služby do Katalógu",
+          "description": "Účinnosť novej verzie Katalógu vládnych cloudových služieb",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_datum_zaradenia_do_katalogu_KVCS",
+          "order": 6,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Date of inclusion of the cloud service in the Catalog of Government Cloud Services",
+          "engDescription": "Date of inclusion of the cloud service in the Catalog of Government Cloud Services",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 898,
+          "name": "Bezpečnostné úrovne cloudových služieb",
+          "description": "Bezpečnostné úrovne cloudových služieb z hľadiska: dôvernosti (C), integrity (I), dostupnosti (A) a miery vplyvu (žiadna - 0, nízka - 1, stredná - 2, vysoká – 3).",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "EA_Profil_InfraSluzba_EA_Profil_InfraSluzba_bezpecnost_cloudovych_sluzieb",
+          "order": 7,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "SPOLOCNE_MODULY"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Security Levels of Cloud Services",
+          "engDescription": "Security Levels of Cloud Services",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Generický profil EA",
+      "description": "Informácie z architektonického modelu",
+      "technicalName": "Gen_Profil_EA",
+      "roleList": [
+        "EA_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": false,
+      "isGeneric": false,
+      "engDescription": "Additional information",
+      "attributes": [
+        {
+          "id": 418,
+          "name": "Skratený názov",
+          "description": "Skratený názov položky prenášaný z názvu položky architektonického modelu.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_skrateny_nazov",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Abbreviated name",
+          "engDescription": "Abbreviated item name transfered from name of architecture model item.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 310,
+          "name": "Popis referencie",
+          "description": "Popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING",
+          "displayAs": "textarea",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_popis_referencie",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Reference description",
+          "engDescription": "Description of document, picture, model describing reference detail.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 620,
+          "name": "Zoznam referencií",
+          "description": "Zoznam referencií. Odkaz a popis dokumentu, obrázku, modelu kde je popísaný detail referencie.",
+          "type": "STRING_PAIR",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_zoznam_referencii",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING_PAIR",
+          "engName": "Reference list",
+          "engDescription": "Reference list. Link and description of document, picture, model where is detail of reference described.",
+          "opendata": true,
+          "array": true,
+          "isArray": true
+        },
+        {
+          "id": 245,
+          "name": "Odkaz na referenciu",
+          "description": "URL odkaz obsahujúci doplňujúce informácie k danej infraštruktúrnej službe",
+          "type": "STRING",
+          "displayAs": "url",
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_odkaz_na_referenciu",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Link to reference",
+          "engDescription": "URL link that includes additional information to a particular infrastructure service.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 508,
+          "name": "Typ replikácie",
+          "description": "Hovorí o tom, či je daná položka v modeli replikovaná alebo nie.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_typ_replikacie",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "TYP_REPLIKACIE"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Replication type",
+          "engDescription": "Determines if particular item in model is replicated or no.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 297,
+          "name": "Počet replikácií",
+          "description": "Hovorí o početnosti objektu, napr 500 PC s windows, optimalizuje repozitár (aby nemusel obsahovať 500 položiek). Hodnotou je celé číslo.",
+          "type": "INTEGER",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Gen_Profil_EA_pocet_replikacii",
+          "order": 4,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": true,
+          "constraints": [
+            {
+              "type": "interval",
+              "id": null,
+              "minValue": 0.0,
+              "maxValue": 1000000000.0
+            }
+          ],
+          "attributeTypeEnum": "INTEGER",
+          "engName": "Number of replications",
+          "engDescription": "Deals with quantity of object. e.g. 500 PCs with Windows, optimized by repository (not to include 500 items). Value is integer.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "infra_sluzba_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/infrastructure-service",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 26,
+        "name": "Infraštruktúrna služba prevádzkuje ISVS",
+        "engName": "Infrastructure service operates ISVS",
+        "technicalName": "InfraSluzba_prevadzkuje_ISVS",
+        "description": "Infraštruktúrna služba prevádzkuje daný ISVS",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Infrastructure service operates particular ISVS",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 141,
+        "name": "Infraštruktúrna služba realizuje cloud koncovú službu",
+        "engName": "Infrastructure service performs cloud eGov service",
+        "technicalName": "InfraSluzba_realizuje_cloud_KS",
+        "description": "Infraštruktúrna služba realizuje cloud koncovú službu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Infrastructure service performs cloud eGov service.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 190,
+        "name": "Infraštruktúrna služba má cennikový záznam",
+        "engName": "Infrastructure service has pricelist entry",
+        "technicalName": "InfraSluzba_ma_cennikovy_zaznam",
+        "description": "Prepojenie cenníkových záznamov na infraštruktúrnu službu",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO"
+        ],
+        "engDescription": "Infrastructure service pricelist relation",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1198,
+        "name": "Infraštruktúrna služba slúži ISVS",
+        "engName": "ISVS uses sevice",
+        "technicalName": "Sluzba_sluzi_ISVS",
+        "description": null,
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO",
+          "EA_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1220,
+        "name": "Infraštruktúrna služba realizuje aplikačnú službu",
+        "engName": "Infrastructure service realizes Application service",
+        "technicalName": "InfraSluzba_realizuje_AS",
+        "description": "Infraštruktúrna služba realizuje aplikačnú službu",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Infrastructure service realizes Application service",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 90,
+        "name": "Platforma realizuje infraštruktúrnu službu",
+        "engName": "Platform performs infrastructure service",
+        "technicalName": "Platforma_realizuje_InfraSluzba",
+        "description": "Platforma realizuje danú Infraštruktúrnu službu.",
+        "type": "application",
+        "valid": false,
+        "roleList": [
+          "IKT_GARPO"
+        ],
+        "engDescription": "Platform performs particular infrastructure service.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 152,
+        "name": "Projekt realizuje infraštruktúrnu službu",
+        "engName": "Project performs infrastructure service",
+        "technicalName": "Projekt_realizuje_InfraSluzba",
+        "description": "Projekt realizuje infraštruktúrnu službu.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "Project performs infrastructure service.",
+        "category": "RWCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1193,
+        "name": "ISVS realizuje infraštruktúrnu (cloudovú) službu",
+        "engName": "Cloud Infrastructure service is realised by ISVS",
+        "technicalName": "ISVS_realizuje_infrastrukturnu_sluzbu",
+        "description": "ISVS realizuje infraštruktúrnu (cloudovú) službu",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV"
+        ],
+        "engDescription": "",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1203,
+        "name": "Miesto prevádzky realizuje infraštruktúrnu službu",
+        "engName": "Operation site realizes infra service",
+        "technicalName": "MiestoPrevadzky_realizuje_InfraSluzbu",
+        "description": null,
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "IKT_GARPO",
+          "EA_GARPO"
+        ],
+        "engDescription": "",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": null
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 1223,
+        "name": "SLA dodávateľa Infraštruktúrnej služby",
+        "engName": "SLA of Infrastructure service contractor",
+        "technicalName": "SLA_dodavatela_InfraSluzby",
+        "description": "SLA dodávateľa Infraštruktúrnej služby",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "SLA_SPRAVA"
+        ],
+        "engDescription": "SLA of Infrastructure service contractor",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 1,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

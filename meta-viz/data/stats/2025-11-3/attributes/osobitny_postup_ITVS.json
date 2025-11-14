@@ -1,0 +1,62 @@
+{
+  "type": "osobitny_postup_ITVS",
+  "count": 10,
+  "attributes": [
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 8,
+      "unique_pct": 80.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 70.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 10.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 8,
+      "unique_pct": 80.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 9,
+      "pct": 90.0,
+      "unique_count": 7,
+      "unique_pct": 77.77777777777779
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 9,
+      "pct": 90.0,
+      "unique_count": 6,
+      "unique_pct": 66.66666666666666
+    }
+  ]
+}

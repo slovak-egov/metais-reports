@@ -1,0 +1,71 @@
+{
+  "relation_name": "ZC_ma_vedlajsieho_gestora_PO",
+  "name": "Základný číselník má vedľajšieho gestora Povinnú osobu",
+  "description": "Základný číselník  nemusí mať vedľajšieho gestora. Základný číselník môže mať viac vedľajších gestorov.",
+  "engDescription": "Codelist is not required to have auxiliary authority. Codelist may have more auxiliary authorities.",
+  "type": "application",
+  "source_type": "ZC",
+  "source_name": "Základný číselník",
+  "target_type": "PO",
+  "target_name": "Povinná osoba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 80,
+    "target_total": 5788,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 5868,
+      "total_islands": 5868,
+      "singleton_islands": 5868,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 80,
+        "total_islands": 80,
+        "singleton_islands": 80,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 5788,
+        "total_islands": 5788,
+        "singleton_islands": 5788,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

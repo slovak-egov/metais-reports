@@ -1,0 +1,69 @@
+{
+  "type": "OperaciaAS",
+  "count": 915,
+  "attributes": [
+    {
+      "name": "Profil_OperaciaAS_verzia",
+      "count": 915,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 0.546448087431694
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 915,
+      "pct": 100.0,
+      "unique_count": 915,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 915,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.2185792349726776
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 915,
+      "pct": 100.0,
+      "unique_count": 177,
+      "unique_pct": 19.34426229508197
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 915,
+      "pct": 100.0,
+      "unique_count": 915,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_OperaciaAS_popis_poziadavky",
+      "count": 721,
+      "pct": 78.79781420765028,
+      "unique_count": 495,
+      "unique_pct": 68.65464632454923
+    },
+    {
+      "name": "Profil_OperaciaAS_popis_odpovede",
+      "count": 646,
+      "pct": 70.60109289617486,
+      "unique_count": 414,
+      "unique_pct": 64.08668730650155
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 1,
+      "pct": 0.1092896174863388,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 1,
+      "pct": 0.1092896174863388,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

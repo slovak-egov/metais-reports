@@ -1,0 +1,78 @@
+{
+  "id": 1202,
+  "name": "Projekt rozvíja Miesto prevádzky",
+  "technicalName": "Projekt_rozvija_miesto_prevadzky",
+  "description": "Projekt môže súčasne rozvíjať viaceré Miesta prevádzky",
+  "roleList": [
+    "IKT_GARPO",
+    "EA_GARPO",
+    "R_EGOV"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Project develops Operation site",
+  "category": "RWCB",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 56,
+      "name": "Projekt rozvoja IT",
+      "technicalName": "Projekt",
+      "description": "Projekt je jednorazový proces zameraný na dosiahnutie definovaného cieľa, pozostávajúci zo súboru zosúladených, riadených a časovo ohraničených činností, ktorý je pre danú organizáciu jedinečný, pričom to nie je pravidelná činnosť, má presne určený začiatok a koniec trvania, má definované najmenej finančné zdroje a ľudské zdroje, ak sú potrebné, vyžaduje analýzu súčasného stavu, špecifikáciu cieľového stavu a spôsobu jeho dosiahnutia. Projektom informačného systému verejnej správy sa rozumie produkt, ktorým sa vopred definuje informačný systém verejnej správy, jeho úprava alebo zmena.",
+      "roleList": [
+        "EA_GARPO",
+        "IKT_GARPO",
+        "R_EGOV"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Project of IT development",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": "PO_asociuje_Projekt",
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;IKT_GARPO;R_EGOV;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 25,
+      "name": "Miesto prevádzky",
+      "technicalName": "MiestoPrevadzky",
+      "description": "Lokalita umožňuje modelovanie polohy rôznych konštrukčných prvkov, akými sú aplikačné komponenty a zariadenia.",
+      "roleList": [
+        "IKT_GARPO",
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Operation site",
+      "category": "RWCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";IKT_GARPO;EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Project may at the same time develop more operation sites.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

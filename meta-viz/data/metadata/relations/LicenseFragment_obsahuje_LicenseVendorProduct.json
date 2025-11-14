@@ -1,0 +1,78 @@
+{
+  "id": 54,
+  "name": "Fragment licencie obsahuje produkt",
+  "technicalName": "LicenseFragment_obsahuje_LicenseVendorProduct",
+  "description": "Fragment licencie obsahuje produkt.",
+  "roleList": [
+    "LIC_LMMF",
+    "LIC_ZLPO",
+    "LIC_LM_UPVII"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "License fragment contains product",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 76,
+      "name": "Žiadosť o licenciu fragment",
+      "technicalName": "LicenseFragment",
+      "description": "Žiadosť o licenciu fragment.",
+      "roleList": [
+        "LIC_LMMF",
+        "LIC_ZLPO",
+        "LIC_LM_UPVII"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Fragment license request",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_LMMF;LIC_ZLPO;LIC_LM_UPVII;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 78,
+      "name": "Produkt vendora",
+      "technicalName": "LicenseVendorProduct",
+      "description": "Produkt vendora.",
+      "roleList": [
+        "LIC_LMMF",
+        "LIC_LM_UPVII"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Vendor product",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";LIC_LMMF;LIC_LM_UPVII;",
+      "labels": []
+    }
+  ],
+  "engDescription": "License fragment contains product.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

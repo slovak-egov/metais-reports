@@ -1,0 +1,69 @@
+{
+  "type": "ZC",
+  "count": 86,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 86,
+      "pct": 100.0,
+      "unique_count": 85,
+      "unique_pct": 98.83720930232558
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 86,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 3.488372093023256
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 86,
+      "pct": 100.0,
+      "unique_count": 85,
+      "unique_pct": 98.83720930232558
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 85,
+      "pct": 98.83720930232558,
+      "unique_count": 81,
+      "unique_pct": 95.29411764705881
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 78,
+      "pct": 90.69767441860465,
+      "unique_count": 36,
+      "unique_pct": 46.15384615384615
+    },
+    {
+      "name": "Profil_ZC_je_zakladny",
+      "count": 73,
+      "pct": 84.88372093023256,
+      "unique_count": 2,
+      "unique_pct": 2.73972602739726
+    },
+    {
+      "name": "Profil_Platnost_platnost_od",
+      "count": 62,
+      "pct": 72.09302325581395,
+      "unique_count": 21,
+      "unique_pct": 33.87096774193548
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 28,
+      "pct": 32.55813953488372,
+      "unique_count": 28,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_Platnost_platnost_do",
+      "count": 1,
+      "pct": 1.1627906976744187,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

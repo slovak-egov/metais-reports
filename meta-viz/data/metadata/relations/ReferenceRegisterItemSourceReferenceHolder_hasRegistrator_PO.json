@@ -1,0 +1,74 @@
+{
+  "id": 187,
+  "name": "Registrátor zdrojového registra",
+  "technicalName": "ReferenceRegisterItemSourceReferenceHolder_hasRegistrator_PO",
+  "description": "Uvedie sa povinná osoba, ktorá je registrátorom zvoleného zdrojového registra. Registrátor je orgán verejnej moci, ktorý je oprávnený zapisovať, meniť a vymazávať údaje do registra. V prípade, že registrátorom sú viaceré subjekty, napr. obce, VÚC, okresné súdy v sídle kraja, uvedie sa typ osoby.",
+  "roleList": [
+    "RR_MANAGER",
+    "EA_GARPO"
+  ],
+  "type": "system",
+  "valid": true,
+  "color": null,
+  "engName": "Source information has registrator PO",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 91,
+      "name": "Zdrojový register a registrátor",
+      "technicalName": "ReferenceRegisterItemSourceReferenceHolder",
+      "description": "Zdrojový register a registrátor.",
+      "roleList": [
+        "RR_MANAGER"
+      ],
+      "type": "system",
+      "valid": true,
+      "color": null,
+      "engName": "Source register and registrar",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";RR_MANAGER;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 37,
+      "name": "Povinná osoba",
+      "technicalName": "PO",
+      "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Public authority",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Defines connection between reference item and PO as a source register registrar.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

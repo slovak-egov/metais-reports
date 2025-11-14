@@ -1,0 +1,178 @@
+{
+  "id": 17,
+  "name": "Integračný míľnik",
+  "technicalName": "IntegracnyMilnik",
+  "description": "Integrácia sa realizuje po etapách ktoré vymedzujú míľniky životného cyklu integrácie.",
+  "roleList": [
+    "INT_SPRAVA"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": "#ffffaf",
+  "engName": "Integration milestone",
+  "category": "NO",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 18,
+      "name": "Profil integračného míľnika",
+      "description": "Profil integračného míľnika",
+      "technicalName": "Integracia_Profil_IntegracnyMilnik",
+      "roleList": [
+        "INT_SPRAVA",
+        "INT_PODPIS"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "Integration milestone profile",
+      "attributes": [
+        {
+          "id": 93,
+          "name": "Fáza míľnika",
+          "description": "Fáza integračného míľnika",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Integracia_Profil_IntegracnyMilnik_faza_milnika",
+          "order": 1,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [
+            {
+              "type": "enum",
+              "id": null,
+              "enumCode": "FAZA_INTEGRACNEHO_MILNIKA"
+            }
+          ],
+          "attributeTypeEnum": "STRING",
+          "engName": "Milestone phase",
+          "engDescription": "Integration milestone phase",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 263,
+          "name": "Plánovaný dátum",
+          "description": "Dátum plánovaného ukončenia etapy.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Integracia_Profil_IntegracnyMilnik_planovany_datum",
+          "order": 2,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Planned date",
+          "engDescription": "Planned date for completing stage.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 387,
+          "name": "Realizovaný dátum",
+          "description": "Skutočný dátum zrealizovania etapy.",
+          "type": "DATE",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Integracia_Profil_IntegracnyMilnik_realizovany_datum",
+          "order": 3,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "DATE",
+          "engName": "Date of execution",
+          "engDescription": "Concrete date of stage execution.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "integracny_milnik_",
+  "ownerRelation": null,
+  "uriPrefix": "https://data.gov.sk/id/ikt/integration-mile-stone",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 28,
+        "name": "Integrácia pozostáva z integračných míľnikov",
+        "engName": "Integration consists of integration milestones",
+        "technicalName": "Integracia_pozostava_z_IntegracnyMilnik",
+        "description": "Integrácia pozostáva z integračných míľnikov.",
+        "type": "application",
+        "valid": true,
+        "roleList": [
+          "INT_SPRAVA"
+        ],
+        "engDescription": "Integration consists of integration milestones.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

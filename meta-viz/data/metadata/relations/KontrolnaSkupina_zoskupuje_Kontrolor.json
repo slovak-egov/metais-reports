@@ -1,0 +1,128 @@
+{
+  "id": 39,
+  "name": "Kontrolná skupina zoskupuje kontrolórov.",
+  "technicalName": "KontrolnaSkupina_zoskupuje_Kontrolor",
+  "description": "Kontrolná skupina zoskupuje kontrolórov.",
+  "roleList": [
+    "KONT_PLAN",
+    "KONT_VYKON",
+    "KONT_MANAZ"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Controlling group aggregates controlling authorities.",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 64,
+      "name": "Kontrolná skupina",
+      "technicalName": "KontrolnaSkupina",
+      "description": "Detaily týkajce sa skupiny kontolórov",
+      "roleList": [
+        "KONT_PLAN",
+        "KONT_MANAZ"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Controlling group",
+      "category": "NO",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";KONT_PLAN;KONT_MANAZ;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 63,
+      "name": "Kontrolór",
+      "technicalName": "Kontrolor",
+      "description": "Detaily týkajce sa kontrolóra",
+      "roleList": [
+        "KONT_PLAN",
+        "KONT_MANAZ"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Controller",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";KONT_PLAN;KONT_MANAZ;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Controlling group aggregates controlling authorities.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

@@ -1,0 +1,128 @@
+{
+  "id": 158,
+  "name": "Povinná osoba má úseky verejnej správy",
+  "technicalName": "PO_ma_UVS",
+  "description": "Povinná osoba má úseky verejnej správy.",
+  "roleList": [
+    "EA_GARPO",
+    "R_EGOV",
+    "SZC_HLGES"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Public authority has section of public administration",
+  "category": "RWNCB",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [],
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "sources": [
+    {
+      "id": 37,
+      "name": "Povinná osoba",
+      "technicalName": "PO",
+      "description": "Povinná osoba podľa § 3 ods. 3 zákona č. 275/2006 Z. z.",
+      "roleList": [
+        "EA_GARPO"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Public authority",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";EA_GARPO;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 2,
+      "name": "Úsek verejnej správy",
+      "technicalName": "UVS",
+      "description": "Úsekom verejnej správy je vecná oblasť, v ktorej právomoci, práva a povinnosti povinných osôb, ako aj spôsob ich výkonu ustanovujú osobitné predpisy. Úseky verejnej správy sú taxatívne vymenované vo Výnose Ministerstva financií Slovenskej republiky 478/2010 o základnom číselníku úsekov verejnej správy a agend verejnej správy.",
+      "roleList": [
+        "SZC_HLGES"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Section of public administration",
+      "category": "ROCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SZC_HLGES;",
+      "labels": [
+        "codelist"
+      ]
+    }
+  ],
+  "engDescription": "Public authority has section of public administration.",
+  "codePrefix": null,
+  "uriPrefix": null
+}

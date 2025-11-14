@@ -1,0 +1,359 @@
+{
+  "id": 9,
+  "name": "CMDB_REQUEST",
+  "technicalName": "CMDB_REQUEST",
+  "description": "Interne - skupina CMDB",
+  "roleList": null,
+  "type": "system",
+  "valid": true,
+  "color": "#ffe0af",
+  "engName": "CMDB_REQUEST",
+  "category": "RWNCB",
+  "attributes": [],
+  "attributeProfiles": [
+    {
+      "id": 57,
+      "name": "CMDB_REQUEST - generický profil",
+      "description": "Generický profil CMDB_REQUEST",
+      "technicalName": "genprof_CMDB_REQUEST",
+      "roleList": null,
+      "type": "system",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "CMDB_REQUEST generic profile",
+      "attributes": [
+        {
+          "id": 19,
+          "name": "Čas spracovania",
+          "description": "Timestamp kedy bol request spracovany",
+          "type": "LONG",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_processedAt",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "LONG",
+          "engName": "Processing time",
+          "engDescription": "Timestamp for processing of request.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 131,
+          "name": "Identifikátor používateľa",
+          "description": "Identifikator pouzivatela, ktory vytvoril dany request",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_userId",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "User identifier",
+          "engDescription": "Identifier of user that created particular request.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 132,
+          "name": "Identifikátor transakcie",
+          "description": "Identifikator transakcie zo sekvencie",
+          "type": "LONG",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_transId",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "LONG",
+          "engName": "Transaction identifier",
+          "engDescription": "Transaction identifier from sequence",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 435,
+          "name": "Status",
+          "description": "Enum predstavujuci stav requestu",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_status",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "critical",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Status",
+          "engDescription": "Enum representing request status",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 925,
+          "name": "CMDB History Ready",
+          "description": "CMDB History Ready",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_historyReady",
+          "order": 1,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Pripravenosť záznamu v CMDB historií",
+          "engDescription": "Ready for CMDB History",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 924,
+          "name": "IAM Ready",
+          "description": "IAM Ready",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_iamReady",
+          "order": 1,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Pripravenosť záznamu v IAM",
+          "engDescription": "Ready for IAM",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 923,
+          "name": "Index Ready",
+          "description": "Index Ready",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_indexReady",
+          "order": 1,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Pripravenosť záznamu v indexe pre vyhľadávanie",
+          "engDescription": "Ready for search index",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 926,
+          "name": "Notification Ready",
+          "description": "Notification Ready",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_notificationReady",
+          "order": 1,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Pripravenosť záznamu po notifkácií",
+          "engDescription": "Ready for notification",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        },
+        {
+          "id": 927,
+          "name": "Ready At",
+          "description": "Ready At",
+          "type": "LONG",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "genprof_CMDB_REQUEST_readyAt",
+          "order": 1,
+          "valid": true,
+          "readOnly": true,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "LONG",
+          "engName": "Čas kompletnej pripravenosti",
+          "engDescription": "Timestamp when entry is fully ready",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "codePrefix": "cmdb_request_",
+  "ownerRelation": null,
+  "uriPrefix": "",
+  "labels": [],
+  "relationshipTypes": {
+    "asSource": [
+      {
+        "id": 106,
+        "name": "Predchádzajúci request",
+        "engName": "Previous request",
+        "technicalName": "PREVIOUS_REQUEST",
+        "description": "Predchádzajúci request.",
+        "type": "system",
+        "valid": true,
+        "roleList": null,
+        "engDescription": "Previous request.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 146,
+        "name": "CI má dokument",
+        "engName": "CI has document",
+        "technicalName": "CI_HAS_DOCUMENT",
+        "description": "Konfiguračná položka obsahuje dokument.",
+        "type": "system",
+        "valid": true,
+        "roleList": [
+          "EA_GARPO",
+          "IKT_GARPO",
+          "R_EGOV",
+          "KONT_MANAZ",
+          "KONT_PLAN",
+          "KONT_VYKON",
+          "SKOLITEL"
+        ],
+        "engDescription": "Configuration item contains document.",
+        "category": "RWNCB",
+        "cardinalitySource": {
+          "min": 0,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": null
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ],
+    "asTarget": [
+      {
+        "id": 52,
+        "name": "Posledný request",
+        "engName": "Last request",
+        "technicalName": "LATEST_REQUEST",
+        "description": "Posledný request.",
+        "type": "system",
+        "valid": true,
+        "roleList": null,
+        "engDescription": "Last request.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      },
+      {
+        "id": 106,
+        "name": "Predchádzajúci request",
+        "engName": "Previous request",
+        "technicalName": "PREVIOUS_REQUEST",
+        "description": "Predchádzajúci request.",
+        "type": "system",
+        "valid": true,
+        "roleList": null,
+        "engDescription": "Previous request.",
+        "category": "NO",
+        "cardinalitySource": {
+          "min": 1,
+          "max": 1
+        },
+        "cardinalityTarget": {
+          "min": 0,
+          "max": 1
+        },
+        "codePrefix": null,
+        "uriPrefix": null
+      }
+    ]
+  }
+}

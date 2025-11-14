@@ -1,0 +1,62 @@
+{
+  "type": "Program",
+  "count": 7,
+  "attributes": [
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 14.285714285714285
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 7,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 3,
+      "pct": 42.857142857142854,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 2,
+      "pct": 28.57142857142857,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 2,
+      "pct": 28.57142857142857,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 2,
+      "pct": 28.57142857142857,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    }
+  ]
+}

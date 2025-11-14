@@ -1,0 +1,71 @@
+{
+  "relation_name": "Formular_patri_PO",
+  "name": "Formulár patrí osobe",
+  "description": "Formulár patrí osobe",
+  "engDescription": "Form belongs to Person",
+  "type": "application",
+  "source_type": "Formular",
+  "source_name": "Formulár",
+  "target_type": "PO",
+  "target_name": "Povinná osoba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 2818,
+    "target_total": 5788,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 8606,
+      "total_islands": 8606,
+      "singleton_islands": 8606,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 2818,
+        "total_islands": 2818,
+        "singleton_islands": 2818,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 5788,
+        "total_islands": 5788,
+        "singleton_islands": 5788,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

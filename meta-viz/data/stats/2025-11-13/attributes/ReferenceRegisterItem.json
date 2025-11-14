@@ -1,0 +1,48 @@
+{
+  "type": "ReferenceRegisterItem",
+  "count": 152,
+  "attributes": [
+    {
+      "name": "ReferenceRegisterItem_Profile_name",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 141,
+      "unique_pct": 92.76315789473685
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_dataElementRefID",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 51,
+      "unique_pct": 33.55263157894737
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_subjectIdentifications",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 14,
+      "unique_pct": 9.210526315789473
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_refID",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 137,
+      "unique_pct": 90.13157894736842
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_note",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 106,
+      "unique_pct": 69.73684210526315
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_order",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 106,
+      "unique_pct": 69.73684210526315
+    }
+  ]
+}

@@ -1,0 +1,3904 @@
+{
+  "relation_name": "DatovyPrvok_je_definovany_Ontologia",
+  "name": "Dátový prvok je definovaný ontológiou",
+  "description": "Výber ontológie, tj. kde patrí dátový prvok",
+  "engDescription": "Selection of ontology, i.e. where data element belongs",
+  "type": "application",
+  "source_type": "DatovyPrvok",
+  "source_name": "Dátový prvok",
+  "target_type": "Ontologia",
+  "target_name": "Ontológia",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 586,
+    "unique_pairs": 586,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 617,
+    "target_total": 16,
+    "source_connected": 586,
+    "target_connected": 13,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 4,
+      "max": 121,
+      "avg": 45.07692307692308,
+      "median": 47,
+      "p90": 87,
+      "p99": 121
+    },
+    "top_source": [
+      {
+        "uuid": "dae26f48-60f2-4d5f-ac76-21bb919ad0b4",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_562"
+      },
+      {
+        "uuid": "51ae2bca-3592-46e1-804a-05814645aa24",
+        "degree": 1,
+        "name": "Fyzická osoba - podnikateľ",
+        "code": "datovy_prvok_598"
+      },
+      {
+        "uuid": "7344da1a-7391-4ce4-a7a9-29d166d7066c",
+        "degree": 1,
+        "name": "Zahraničná organizácia",
+        "code": "datovy_prvok_597"
+      },
+      {
+        "uuid": "8533a5e2-0db9-4f23-936c-ffce196f9ab0",
+        "degree": 1,
+        "name": "Tuzemská organizácia",
+        "code": "datovy_prvok_596"
+      },
+      {
+        "uuid": "0117da0b-66e6-4ca0-8af7-a7c2ca19f667",
+        "degree": 1,
+        "name": "Organizácia",
+        "code": "datovy_prvok_595"
+      },
+      {
+        "uuid": "43529370-11f4-4e60-a76a-8922bdb90cf1",
+        "degree": 1,
+        "name": "Právnická osoba",
+        "code": "datovy_prvok_594"
+      },
+      {
+        "uuid": "b40a097a-1f34-4b93-be4e-27f6826aff62",
+        "degree": 1,
+        "name": "právnická osoba",
+        "code": "datovy_prvok_593"
+      },
+      {
+        "uuid": "f6855c00-fe3e-4608-80de-97e6493b2b93",
+        "degree": 1,
+        "name": "Štatistický kód inštitucionálneho sektora",
+        "code": "datovy_prvok_592"
+      },
+      {
+        "uuid": "06abeae7-360e-4616-a377-be0dd1af8346",
+        "degree": 1,
+        "name": "štatistický kód inštitucionálneho subsektora",
+        "code": "datovy_prvok_591"
+      },
+      {
+        "uuid": "ef8a66ee-4464-4bfa-b91d-2c1a81f16b80",
+        "degree": 1,
+        "name": "Typ vlastníctva",
+        "code": "datovy_prvok_590"
+      },
+      {
+        "uuid": "0b4c9539-6bfb-480d-a5a3-8db7b3df8abe",
+        "degree": 1,
+        "name": "typ vlastníctva",
+        "code": "datovy_prvok_589"
+      },
+      {
+        "uuid": "9fa447f1-4db4-495e-9455-3267928ed0d6",
+        "degree": 1,
+        "name": "Kategória organizácie podľa počtu zamestnancov",
+        "code": "datovy_prvok_588"
+      },
+      {
+        "uuid": "80bf06cd-4ebd-4924-a6af-dd269d6836b0",
+        "degree": 1,
+        "name": "kategória organizácie podľa počtu zamestnancov",
+        "code": "datovy_prvok_587"
+      },
+      {
+        "uuid": "4684562a-6fba-4cd8-b619-871c82dc019b",
+        "degree": 1,
+        "name": "Predmet činnosti (voľný popis)",
+        "code": "datovy_prvok_586"
+      },
+      {
+        "uuid": "c31e8457-b0aa-4673-a81e-79e854a60595",
+        "degree": 1,
+        "name": "predmet činnosti (voľný popis)",
+        "code": "datovy_prvok_585"
+      },
+      {
+        "uuid": "96c09cfe-60eb-46c7-bd7e-75f7d9b753ea",
+        "degree": 1,
+        "name": "Identifikačné číslo pre daň z pridanej hodnoty",
+        "code": "datovy_prvok_584"
+      },
+      {
+        "uuid": "709816aa-4d7f-448a-b9e6-8e0a860b2b0f",
+        "degree": 1,
+        "name": "identifikačné číslo pre daň z pridanej hodnoty",
+        "code": "datovy_prvok_583"
+      },
+      {
+        "uuid": "3ae4c244-59f5-467d-862f-0f84da8905ae",
+        "degree": 1,
+        "name": "Daňové identifikačné číslo",
+        "code": "datovy_prvok_582"
+      },
+      {
+        "uuid": "70357fad-9f0b-48c1-b246-bf15f10cc79f",
+        "degree": 1,
+        "name": "daňové identifikačné číslo",
+        "code": "datovy_prvok_581"
+      },
+      {
+        "uuid": "1df8a7b1-3858-48c2-b296-d93bd5af5845",
+        "degree": 1,
+        "name": "Identifikačné číslo organizácie",
+        "code": "datovy_prvok_580"
+      },
+      {
+        "uuid": "d93233a2-61bc-4fc9-a7c0-0d8544bf6fef",
+        "degree": 1,
+        "name": "identifikačné číslo organizácie",
+        "code": "datovy_prvok_579"
+      },
+      {
+        "uuid": "66cba83b-3762-45df-8bc3-49aedb0de29b",
+        "degree": 1,
+        "name": "identifikátor právnickej osoby",
+        "code": "datovy_prvok_578"
+      },
+      {
+        "uuid": "c20a76c5-5bf9-47b0-99de-db4d304a8cf2",
+        "degree": 1,
+        "name": "adresa prevádzky",
+        "code": "datovy_prvok_577"
+      },
+      {
+        "uuid": "e87480b8-0de6-4f8d-9c14-4cf9424c57cd",
+        "degree": 1,
+        "name": "adresa miesta podnikania",
+        "code": "datovy_prvok_576"
+      },
+      {
+        "uuid": "08721d15-bb6c-4102-bf93-b85b20f2756b",
+        "degree": 1,
+        "name": "adresa sídla",
+        "code": "datovy_prvok_575"
+      },
+      {
+        "uuid": "37fa687c-ab08-4fb0-8e0c-e7cc9f78eabf",
+        "degree": 1,
+        "name": "fyzická osoba",
+        "code": "datovy_prvok_574"
+      },
+      {
+        "uuid": "b75febcc-368b-4551-b8e5-004d91b47700",
+        "degree": 1,
+        "name": "Štatutárny orgán - Osoba",
+        "code": "datovy_prvok_565"
+      },
+      {
+        "uuid": "115b7323-7af6-4f68-9e56-1a49e31b9aa2",
+        "degree": 1,
+        "name": "Štatutárny orgán - Skupina",
+        "code": "datovy_prvok_564"
+      },
+      {
+        "uuid": "54df638c-a752-475f-b1dc-77885c3627b1",
+        "degree": 1,
+        "name": "Štatutárny orgán",
+        "code": "datovy_prvok_563"
+      },
+      {
+        "uuid": "6494d9d2-79ab-42b1-aebd-e13120c634f2",
+        "degree": 1,
+        "name": "názov právnickej osoby",
+        "code": "datovy_prvok_510"
+      },
+      {
+        "uuid": "b24c28af-2d92-4f4d-b42e-6b4474d518ec",
+        "degree": 1,
+        "name": "alternatívne meno právnickej osoby",
+        "code": "datovy_prvok_511"
+      },
+      {
+        "uuid": "7d4ed4cb-c2cd-44ee-b863-6915c1fb7eca",
+        "degree": 1,
+        "name": "právna forma",
+        "code": "datovy_prvok_512"
+      },
+      {
+        "uuid": "d84b3417-bf2a-4a4f-ae77-43d7d5e1aee8",
+        "degree": 1,
+        "name": "typ organizačnej jednotky",
+        "code": "datovy_prvok_513"
+      },
+      {
+        "uuid": "af555271-f851-488b-a1f1-37e636969ac8",
+        "degree": 1,
+        "name": "Typ organizačnej jednotky",
+        "code": "datovy_prvok_514"
+      },
+      {
+        "uuid": "8067f142-ada2-4295-88a7-99e5fe05e413",
+        "degree": 1,
+        "name": "názov organizačnej jednotky",
+        "code": "datovy_prvok_515"
+      },
+      {
+        "uuid": "d3f15ea3-64ab-4aad-a15c-fed5ff982ec1",
+        "degree": 1,
+        "name": "organizačná jednotka",
+        "code": "datovy_prvok_516"
+      },
+      {
+        "uuid": "4f2e1732-8669-49bc-b20a-6fba38345212",
+        "degree": 1,
+        "name": "Organizačná jednotka",
+        "code": "datovy_prvok_517"
+      },
+      {
+        "uuid": "4790c84f-ff3f-4cab-89c2-beffba631b34",
+        "degree": 1,
+        "name": "vznik",
+        "code": "datovy_prvok_518"
+      },
+      {
+        "uuid": "dbcaa275-7225-4da7-ab73-718dce253c70",
+        "degree": 1,
+        "name": "zánik",
+        "code": "datovy_prvok_519"
+      },
+      {
+        "uuid": "92718f47-b919-407e-8148-e16a9082e3aa",
+        "degree": 1,
+        "name": "klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_521"
+      },
+      {
+        "uuid": "49c61d1e-d1ca-468b-990e-f0dc23b5571d",
+        "degree": 1,
+        "name": "Klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_522"
+      },
+      {
+        "uuid": "a29d7e14-e1b4-4e0b-ad5e-dcd8b5961041",
+        "degree": 1,
+        "name": "popis ekonomickej činnosti",
+        "code": "datovy_prvok_523"
+      },
+      {
+        "uuid": "f97a4d08-a210-43fd-8323-433f7226a77f",
+        "degree": 1,
+        "name": "ekonomická činnosť",
+        "code": "datovy_prvok_524"
+      },
+      {
+        "uuid": "a9022960-8184-4f2b-8f93-82f7b2c715c2",
+        "degree": 1,
+        "name": "Ekonomická činnosť",
+        "code": "datovy_prvok_525"
+      },
+      {
+        "uuid": "5e0af1bc-a225-4325-80a2-cdbf7a50b801",
+        "degree": 1,
+        "name": "hlavná ekonomická činnosť",
+        "code": "datovy_prvok_526"
+      },
+      {
+        "uuid": "18f1285c-d96c-4ba1-94c5-c655a4c0832e",
+        "degree": 1,
+        "name": "právna skutočnosť",
+        "code": "datovy_prvok_527"
+      },
+      {
+        "uuid": "e693982f-b25f-47ed-a97a-a709ceb6cf85",
+        "degree": 1,
+        "name": "Právna skutočnosť",
+        "code": "datovy_prvok_528"
+      },
+      {
+        "uuid": "58d7e8b0-7158-44c7-b768-eec389cc1fc9",
+        "degree": 1,
+        "name": "schválená výška základného imania",
+        "code": "datovy_prvok_529"
+      },
+      {
+        "uuid": "6679aa92-34c3-4f6b-b4e8-4f9325f3096a",
+        "degree": 1,
+        "name": "výška splateného základného imania",
+        "code": "datovy_prvok_530"
+      },
+      {
+        "uuid": "e6aa6717-22fc-49de-9817-340ad4633c6a",
+        "degree": 1,
+        "name": "výška základného imania",
+        "code": "datovy_prvok_531"
+      },
+      {
+        "uuid": "7f1af4c1-8e7a-408e-96b1-275a5a09e096",
+        "degree": 1,
+        "name": "základné imanie",
+        "code": "datovy_prvok_533"
+      },
+      {
+        "uuid": "340a8ebf-42bc-4189-8c25-06fa0807ec4b",
+        "degree": 1,
+        "name": "Základné imanie",
+        "code": "datovy_prvok_534"
+      },
+      {
+        "uuid": "e5cf7887-8637-48fd-9c83-81566b8461b6",
+        "degree": 1,
+        "name": "typ zainteresovanej osoby",
+        "code": "datovy_prvok_535"
+      },
+      {
+        "uuid": "7cb4f8a1-1385-4cb5-9170-418a0c7ad3cb",
+        "degree": 1,
+        "name": "Typ zainteresovanej osoby",
+        "code": "datovy_prvok_536"
+      },
+      {
+        "uuid": "0457b0bd-2f61-432e-9e6e-2c944589b32c",
+        "degree": 1,
+        "name": "zainteresovaná osoba",
+        "code": "datovy_prvok_537"
+      },
+      {
+        "uuid": "6111d1ca-7cac-4149-be49-62cc7ce7f79a",
+        "degree": 1,
+        "name": "Zainteresovaná osoba",
+        "code": "datovy_prvok_538"
+      },
+      {
+        "uuid": "617bbe66-061d-461d-b4f4-9e445a9b8cf1",
+        "degree": 1,
+        "name": "zainteresovaná osoba",
+        "code": "datovy_prvok_539"
+      },
+      {
+        "uuid": "b94470e1-7d9a-4f26-a578-e2d754c5437b",
+        "degree": 1,
+        "name": "prevoditeľnosť akcií",
+        "code": "datovy_prvok_540"
+      },
+      {
+        "uuid": "29c1eb59-44a1-4228-9a41-f350b1cff96c",
+        "degree": 1,
+        "name": "množstvo akcií",
+        "code": "datovy_prvok_541"
+      },
+      {
+        "uuid": "ec73e010-3cda-4ca7-a7b1-8a6ebc3f1cb4",
+        "degree": 1,
+        "name": "menovitá hodnota akcie",
+        "code": "datovy_prvok_542"
+      },
+      {
+        "uuid": "f19062f7-9760-459b-a224-9c0208b4741f",
+        "degree": 1,
+        "name": "forma akcie",
+        "code": "datovy_prvok_543"
+      },
+      {
+        "uuid": "400efd1d-9af6-49c6-bfc8-4f77e5795adb",
+        "degree": 1,
+        "name": "Forma akcie",
+        "code": "datovy_prvok_544"
+      },
+      {
+        "uuid": "733bd22e-6b75-4b87-9a4c-85c19e17b3a2",
+        "degree": 1,
+        "name": "stav akcie",
+        "code": "datovy_prvok_545"
+      },
+      {
+        "uuid": "4d944a7c-1b28-41d6-b2e9-6907fd5ca4fa",
+        "degree": 1,
+        "name": "Stav akcie",
+        "code": "datovy_prvok_546"
+      },
+      {
+        "uuid": "b5196990-3de7-464c-bebf-e09e9cc0afd6",
+        "degree": 1,
+        "name": "typ akcie",
+        "code": "datovy_prvok_547"
+      },
+      {
+        "uuid": "1043164f-e0b3-42e2-947b-ed73a76f5c7d",
+        "degree": 1,
+        "name": "Typ akcie",
+        "code": "datovy_prvok_548"
+      },
+      {
+        "uuid": "93033058-627d-4c27-877d-5297e0215df4",
+        "degree": 1,
+        "name": "akcie",
+        "code": "datovy_prvok_549"
+      },
+      {
+        "uuid": "f9d091ca-c44b-4d3b-b954-c3db651bed10",
+        "degree": 1,
+        "name": "Akcie",
+        "code": "datovy_prvok_550"
+      },
+      {
+        "uuid": "5967c740-8f02-444d-a90e-50ed99ef6a65",
+        "degree": 1,
+        "name": "dátum splatnosti vkladu",
+        "code": "datovy_prvok_551"
+      },
+      {
+        "uuid": "ba844486-8457-4f1e-91f7-49ae2c779d24",
+        "degree": 1,
+        "name": "výška vkladu",
+        "code": "datovy_prvok_552"
+      },
+      {
+        "uuid": "d2b4d7f2-2997-4cb4-ba31-dbbf5883c8b6",
+        "degree": 1,
+        "name": "typ vkladu",
+        "code": "datovy_prvok_553"
+      },
+      {
+        "uuid": "d2d01582-1372-4ae7-bc5a-63e91ce2e067",
+        "degree": 1,
+        "name": "Typ vkladu",
+        "code": "datovy_prvok_554"
+      },
+      {
+        "uuid": "ea395966-9a71-4147-8f0f-d7db5890ae8d",
+        "degree": 1,
+        "name": "vklad",
+        "code": "datovy_prvok_555"
+      },
+      {
+        "uuid": "61db26bc-d551-42e4-95d5-5d6bffd356c8",
+        "degree": 1,
+        "name": "Vklad",
+        "code": "datovy_prvok_556"
+      },
+      {
+        "uuid": "b291f243-56f9-43da-89dd-dc6291c4dd12",
+        "degree": 1,
+        "name": "právny stav",
+        "code": "datovy_prvok_557"
+      },
+      {
+        "uuid": "202cc619-1534-4eb8-9909-519520e9e032",
+        "degree": 1,
+        "name": "oprávnenie konať",
+        "code": "datovy_prvok_559"
+      },
+      {
+        "uuid": "a3d83f73-639a-4c40-9fb5-db28d0d14d67",
+        "degree": 1,
+        "name": "typ štatutárneho orgánu",
+        "code": "datovy_prvok_560"
+      },
+      {
+        "uuid": "9f9dc645-50d8-489d-8351-74e6e59820bd",
+        "degree": 1,
+        "name": "Typ štatutárneho orgánu",
+        "code": "datovy_prvok_561"
+      },
+      {
+        "uuid": "afb60728-2fe9-47a8-baaf-20bca1082b43",
+        "degree": 1,
+        "name": "kontajner XML údajov",
+        "code": "datovy_prvok_694"
+      },
+      {
+        "uuid": "0f1b0f67-70ec-42f6-8af4-6448bde2c59a",
+        "degree": 1,
+        "name": "Kontajner XML údajov",
+        "code": "datovy_prvok_693"
+      },
+      {
+        "uuid": "c75a85cf-b9be-4bd9-b82e-190b622814ff",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI pre katalóg",
+        "code": "datovy_prvok_196"
+      },
+      {
+        "uuid": "0d8b94df-d2ee-45d6-b84d-15f01eee641c",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI pre dataset",
+        "code": "datovy_prvok_195"
+      },
+      {
+        "uuid": "1ac3db80-0ea8-420d-ab63-513984e84395",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI pre ontológiu",
+        "code": "datovy_prvok_194"
+      },
+      {
+        "uuid": "3ac3d123-9705-4bb9-87e2-2f297602d541",
+        "degree": 1,
+        "name": "Infraštruktúra VS",
+        "code": "datovy_prvok_193"
+      },
+      {
+        "uuid": "cb5ec20b-707c-4519-b3d2-dd51e94799a7",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI šablóny",
+        "code": "datovy_prvok_192"
+      },
+      {
+        "uuid": "e3f98291-f199-4c3d-9fd9-9b9eb214f1de",
+        "degree": 1,
+        "name": "Žiadosť o registráciu URI pre dátový prvok",
+        "code": "datovy_prvok_191"
+      },
+      {
+        "uuid": "8fca3b3f-2bb5-48ba-845f-458a87dfd572",
+        "degree": 1,
+        "name": "Plán kontroly",
+        "code": "datovy_prvok_177"
+      },
+      {
+        "uuid": "c9ac5d76-dbec-4112-a15c-f703c7c8c476",
+        "degree": 1,
+        "name": "Zálohovacie zariadenie",
+        "code": "datovy_prvok_173"
+      },
+      {
+        "uuid": "1da83d8b-b95a-4661-81fa-dae73ca454e0",
+        "degree": 1,
+        "name": "Výpočtový zdroj",
+        "code": "datovy_prvok_172"
+      },
+      {
+        "uuid": "1a68299e-bb33-4c82-87fb-f22a23744b57",
+        "degree": 1,
+        "name": "Úspora migrácie",
+        "code": "datovy_prvok_170"
+      },
+      {
+        "uuid": "61e59e3b-c1cc-4fd9-ab0c-86ec05b4b01f",
+        "degree": 1,
+        "name": "Úložisko",
+        "code": "datovy_prvok_167"
+      },
+      {
+        "uuid": "9ed971f8-d56a-4b51-be9a-32d4172b6cf1",
+        "degree": 1,
+        "name": "Špeciálna technológia",
+        "code": "datovy_prvok_162"
+      },
+      {
+        "uuid": "62892cc3-c72c-475c-b7f8-e8b4502721f6",
+        "degree": 1,
+        "name": "Systémový softvér",
+        "code": "datovy_prvok_161"
+      },
+      {
+        "uuid": "95f6a7db-1aca-4986-aa9d-632b22513cef",
+        "degree": 1,
+        "name": "Sieťový prvok",
+        "code": "datovy_prvok_159"
+      },
+      {
+        "uuid": "36762125-da79-401e-8b2a-bec13cb407b6",
+        "degree": 1,
+        "name": "Riziko (IKT)",
+        "code": "datovy_prvok_158"
+      },
+      {
+        "uuid": "a4b01bf6-dbb7-4066-a07f-89bffac3cb60",
+        "degree": 1,
+        "name": "Produkt vendora",
+        "code": "datovy_prvok_155"
+      },
+      {
+        "uuid": "3a0b7746-19f8-4933-86e7-45fcd4a5f5bc",
+        "degree": 1,
+        "name": "Prínos migrácie",
+        "code": "datovy_prvok_152"
+      },
+      {
+        "uuid": "4bae075d-a896-4932-8e42-ae8085dab527",
+        "degree": 1,
+        "name": "Požiadavka na súčinnosť",
+        "code": "datovy_prvok_150"
+      },
+      {
+        "uuid": "5d784382-37cd-4bec-aa69-132e79841533",
+        "degree": 1,
+        "name": "Platforma",
+        "code": "datovy_prvok_148"
+      },
+      {
+        "uuid": "f7f17c17-ae7a-4693-91c0-48339c227eb0",
+        "degree": 1,
+        "name": "Parameter služby",
+        "code": "datovy_prvok_147"
+      },
+      {
+        "uuid": "e61f7703-8807-44ff-8ed9-5ef71497a84e",
+        "degree": 1,
+        "name": "Parameter kontraktu",
+        "code": "datovy_prvok_146"
+      },
+      {
+        "uuid": "221817fd-e10c-4fcc-a595-ef031181cc34",
+        "degree": 1,
+        "name": "Oblasť hodnotenia",
+        "code": "datovy_prvok_145"
+      },
+      {
+        "uuid": "eb651482-10a9-4a61-91e2-5b0575374cec",
+        "degree": 1,
+        "name": "Monitor hodnota",
+        "code": "datovy_prvok_144"
+      },
+      {
+        "uuid": "a5f3d6d5-cada-4d68-a07f-3669e6dcd121",
+        "degree": 1,
+        "name": "Migrovaný parameter služby",
+        "code": "datovy_prvok_143"
+      },
+      {
+        "uuid": "6779fec6-004e-4314-a950-dec2fe9a8f39",
+        "degree": 1,
+        "name": "Migrovaná služba",
+        "code": "datovy_prvok_142"
+      },
+      {
+        "uuid": "ac5a1311-5c09-49ec-a951-88b6bfcb2365",
+        "degree": 1,
+        "name": "Migrovaná SLA",
+        "code": "datovy_prvok_141"
+      },
+      {
+        "uuid": "d28b6a67-accc-4cda-826a-e726510ba59f",
+        "degree": 1,
+        "name": "Migrácia",
+        "code": "datovy_prvok_139"
+      },
+      {
+        "uuid": "32907a37-cfc5-4a1d-b60b-c6e36892695e",
+        "degree": 1,
+        "name": "Licencia",
+        "code": "datovy_prvok_138"
+      },
+      {
+        "uuid": "377ab96e-907b-4603-a926-91c3d824db5a",
+        "degree": 1,
+        "name": "Miesto prevádzky IKT",
+        "code": "datovy_prvok_136"
+      },
+      {
+        "uuid": "c47f4ae5-c98b-4b90-9ae6-97915f9e527c",
+        "degree": 1,
+        "name": "Integračný míľnik",
+        "code": "datovy_prvok_131"
+      },
+      {
+        "uuid": "f3f1464b-633e-4cdc-b8b8-d3dd57614abf",
+        "degree": 1,
+        "name": "Integrácia",
+        "code": "datovy_prvok_128"
+      },
+      {
+        "uuid": "055e3486-1024-4ccb-93f7-5529b394ef85",
+        "degree": 1,
+        "name": "Infraštruktúrna služba",
+        "code": "datovy_prvok_126"
+      },
+      {
+        "uuid": "9b0bdfe1-eba7-4813-bc70-2ad8722b3b32",
+        "degree": 1,
+        "name": "Harmonogram migrácie",
+        "code": "datovy_prvok_124"
+      },
+      {
+        "uuid": "bfa9988b-4c91-4777-9ec6-4c04c1d878f9",
+        "degree": 1,
+        "name": "Dotazník spokojnosti",
+        "code": "datovy_prvok_120"
+      },
+      {
+        "uuid": "ca179d7f-f57a-4b17-af14-2123ba4446e6",
+        "degree": 1,
+        "name": "Báza dát",
+        "code": "datovy_prvok_119"
+      },
+      {
+        "uuid": "c45e2ad6-c9d8-4839-b2cf-aa989855a7b5",
+        "degree": 1,
+        "name": "Aktivita harmonogramu migrácie",
+        "code": "datovy_prvok_118"
+      },
+      {
+        "uuid": "d2aa7960-6f13-447d-9a29-bb4660c54195",
+        "degree": 1,
+        "name": "právny stav",
+        "code": "datovy_prvok_653"
+      },
+      {
+        "uuid": "a8892469-c189-45eb-80a9-8ea3ea729dde",
+        "degree": 1,
+        "name": "hodnota identifikačného čísla pre daň z pridanej hodnoty",
+        "code": "datovy_prvok_692"
+      },
+      {
+        "uuid": "a09b24e1-1cef-44a8-931e-888aab890b0f",
+        "degree": 1,
+        "name": "hodnota daňového identifikačného čísla",
+        "code": "datovy_prvok_690"
+      },
+      {
+        "uuid": "aee80fb8-6b9b-4519-9e36-0bd5daaf1265",
+        "degree": 1,
+        "name": "hodnota identifikačného čísla",
+        "code": "datovy_prvok_689"
+      },
+      {
+        "uuid": "a60f3a60-673c-4258-be9d-37aff99b4de6",
+        "degree": 1,
+        "name": "Štatistický kód inštitucionálneho subsektora",
+        "code": "datovy_prvok_688"
+      },
+      {
+        "uuid": "7f0fa7af-101d-4b49-a002-9ceee27c0c42",
+        "degree": 1,
+        "name": "štatistický kód inštitucionálneho subsektora",
+        "code": "datovy_prvok_687"
+      },
+      {
+        "uuid": "61b8df11-6822-40eb-902e-14547549bf2b",
+        "degree": 1,
+        "name": "identifikačné číslo pre daň z pridanej hodnoty",
+        "code": "datovy_prvok_686"
+      },
+      {
+        "uuid": "d7e8bf42-aa23-418a-ba0a-f3e5902ee54c",
+        "degree": 1,
+        "name": "daňové identifikačné číslo",
+        "code": "datovy_prvok_685"
+      },
+      {
+        "uuid": "852467b7-3bd1-47dd-af4c-8f17fd7d07be",
+        "degree": 1,
+        "name": "identifikačné číslo právneho subjektu",
+        "code": "datovy_prvok_684"
+      },
+      {
+        "uuid": "6ab14127-75ef-4cc9-8bf3-1891581d4818",
+        "degree": 1,
+        "name": "identifikátor právneho subjektu",
+        "code": "datovy_prvok_683"
+      },
+      {
+        "uuid": "27e9fca0-ca43-4395-ab92-95891ca04139",
+        "degree": 1,
+        "name": "typ vlastníctva",
+        "code": "datovy_prvok_682"
+      },
+      {
+        "uuid": "7dede9bb-d202-4995-8b15-fc61ef072ae0",
+        "degree": 1,
+        "name": "kategória organizácie podľa počtu zamestnancov",
+        "code": "datovy_prvok_681"
+      },
+      {
+        "uuid": "d90399ca-870b-4bc4-bdaa-052817eb776b",
+        "degree": 1,
+        "name": "predmet činnosti (voľný popis)",
+        "code": "datovy_prvok_680"
+      },
+      {
+        "uuid": "3d09477b-58cd-45dc-b5fd-df875ea46aff",
+        "degree": 1,
+        "name": "adresa prevádzky",
+        "code": "datovy_prvok_679"
+      },
+      {
+        "uuid": "e7e3c9c5-4547-4470-9434-c1069e434e78",
+        "degree": 1,
+        "name": "adresa miesta podnikania",
+        "code": "datovy_prvok_678"
+      },
+      {
+        "uuid": "50a962bf-d350-4e32-9e81-536cf9fc368a",
+        "degree": 1,
+        "name": "adresa sídla",
+        "code": "datovy_prvok_677"
+      },
+      {
+        "uuid": "71d3df21-f05e-4aa3-87b3-b6a8a68660a1",
+        "degree": 1,
+        "name": "Typ vlastníctva",
+        "code": "datovy_prvok_676"
+      },
+      {
+        "uuid": "d65200d8-4003-4bbe-b71e-5bd15216ca11",
+        "degree": 1,
+        "name": "Kategória organizácie podľa počtu zamestnancov",
+        "code": "datovy_prvok_675"
+      },
+      {
+        "uuid": "9e581ce5-82aa-473e-b5a7-9d3cff79bbbf",
+        "degree": 1,
+        "name": "Predmet činnosti (voľný popis)",
+        "code": "datovy_prvok_674"
+      },
+      {
+        "uuid": "d6094129-6e06-455a-b263-e40113272c1a",
+        "degree": 1,
+        "name": "Identifikačné číslo pre daň z pridanej hodnoty",
+        "code": "datovy_prvok_673"
+      },
+      {
+        "uuid": "86ac1ea5-4556-4927-b1fa-eb1aec49a22c",
+        "degree": 1,
+        "name": "Daňové identifikačné číslo",
+        "code": "datovy_prvok_672"
+      },
+      {
+        "uuid": "d4199381-fe98-49a5-bb10-98835cd1ca24",
+        "degree": 1,
+        "name": "Identifikačné číslo právneho subjektu",
+        "code": "datovy_prvok_671"
+      },
+      {
+        "uuid": "675f77cc-9872-4ed1-82da-15aab54308a1",
+        "degree": 1,
+        "name": "Identifikátor právneho subjektu",
+        "code": "datovy_prvok_670"
+      },
+      {
+        "uuid": "aa6c592f-5b94-40d7-aa79-052a19a27516",
+        "degree": 1,
+        "name": "Fyzická osoba - podnikateľ",
+        "code": "datovy_prvok_668"
+      },
+      {
+        "uuid": "fff60ad3-358f-4f38-9624-3ef89e0ada45",
+        "degree": 1,
+        "name": "Zahraničná korporácia",
+        "code": "datovy_prvok_667"
+      },
+      {
+        "uuid": "fb029424-391b-48d7-859d-3f8180a0f8c4",
+        "degree": 1,
+        "name": "Tuzemská korporácia",
+        "code": "datovy_prvok_666"
+      },
+      {
+        "uuid": "5513b031-e1f9-41ce-ada7-3aead1c8bbfc",
+        "degree": 1,
+        "name": "Korporácia",
+        "code": "datovy_prvok_665"
+      },
+      {
+        "uuid": "9540f3de-b27d-4d5c-a002-8241ca5a0eec",
+        "degree": 1,
+        "name": "Podnikateľ",
+        "code": "datovy_prvok_664"
+      },
+      {
+        "uuid": "3945862b-c12c-4fa7-831a-812edef93fa8",
+        "degree": 1,
+        "name": "Právny subjekt",
+        "code": "datovy_prvok_663"
+      },
+      {
+        "uuid": "7557ea33-15a0-43d9-92af-fe268bb29b79",
+        "degree": 1,
+        "name": "právny subjekt",
+        "code": "datovy_prvok_662"
+      },
+      {
+        "uuid": "08bec6f5-c810-4e3a-8a85-eb418f4178f6",
+        "degree": 1,
+        "name": "Štatutárny orgán - Osoba",
+        "code": "datovy_prvok_661"
+      },
+      {
+        "uuid": "38023acf-e4ac-4d55-bbbd-5cb564be3ea7",
+        "degree": 1,
+        "name": "Štatutárny orgán - Skupina",
+        "code": "datovy_prvok_660"
+      },
+      {
+        "uuid": "02fdc375-acd4-45bf-a27a-6870e8294568",
+        "degree": 1,
+        "name": "Štatutárny orgán",
+        "code": "datovy_prvok_659"
+      },
+      {
+        "uuid": "79018691-d57d-4a60-a5b6-c18c5aae1dc0",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_658"
+      },
+      {
+        "uuid": "c8a5d2b1-6477-4329-8a7f-9de929ca1794",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_657"
+      },
+      {
+        "uuid": "fff95b07-4770-4270-9063-9de66e510b34",
+        "degree": 1,
+        "name": "Typ štatutárneho orgánu",
+        "code": "datovy_prvok_656"
+      },
+      {
+        "uuid": "055a35d3-af0a-4c69-856d-de5028c1d077",
+        "degree": 1,
+        "name": "typ štatutárneho orgánu",
+        "code": "datovy_prvok_655"
+      },
+      {
+        "uuid": "6bfdc55f-ff0e-406c-a716-c24f0b09757a",
+        "degree": 1,
+        "name": "Právny stav",
+        "code": "datovy_prvok_654"
+      },
+      {
+        "uuid": "1a193501-90b5-4038-a389-a08c690307d4",
+        "degree": 1,
+        "name": "názov právneho subjektu",
+        "code": "datovy_prvok_600"
+      },
+      {
+        "uuid": "9c8ee6c0-431b-44fc-ad23-ef833f103415",
+        "degree": 1,
+        "name": "názov právneho subjektu",
+        "code": "datovy_prvok_602"
+      },
+      {
+        "uuid": "a973c979-eebd-4db3-9d59-ff2191487804",
+        "degree": 1,
+        "name": "alternatívne meno právneho subjektu",
+        "code": "datovy_prvok_603"
+      },
+      {
+        "uuid": "bc2a695f-c780-40fd-9762-eab8e82bbc7e",
+        "degree": 1,
+        "name": "právna forma",
+        "code": "datovy_prvok_604"
+      },
+      {
+        "uuid": "d43acd16-bb4f-41f3-9bb8-635ac18809f6",
+        "degree": 1,
+        "name": "Právna forma",
+        "code": "datovy_prvok_605"
+      },
+      {
+        "uuid": "9435e9e5-6cd4-4f51-991b-ed8260f51d63",
+        "degree": 1,
+        "name": "názov organizačnej jednotky",
+        "code": "datovy_prvok_606"
+      },
+      {
+        "uuid": "05d21712-b871-4c9f-99a5-c3f1202cf1f1",
+        "degree": 1,
+        "name": "typ organizačnej jednotky",
+        "code": "datovy_prvok_607"
+      },
+      {
+        "uuid": "f8ff1b7c-c80c-49e6-97c9-95c868f5d344",
+        "degree": 1,
+        "name": "Typ organizačnej jednotky",
+        "code": "datovy_prvok_608"
+      },
+      {
+        "uuid": "71eabbf7-f0b3-4c9e-9c50-49744cdbefbc",
+        "degree": 1,
+        "name": "organizačná jednotka",
+        "code": "datovy_prvok_609"
+      },
+      {
+        "uuid": "d1747e8b-5c76-4724-9d57-99260a4121c4",
+        "degree": 1,
+        "name": "Organizačná jednotka",
+        "code": "datovy_prvok_610"
+      },
+      {
+        "uuid": "d8bb301d-1ffc-44ea-8ed5-5e7e0c567eb2",
+        "degree": 1,
+        "name": "vznik",
+        "code": "datovy_prvok_611"
+      },
+      {
+        "uuid": "bb870b39-b89b-4613-bf0c-e86ca93ca766",
+        "degree": 1,
+        "name": "zánik",
+        "code": "datovy_prvok_612"
+      },
+      {
+        "uuid": "9285ff9d-57ae-4a85-9db5-18f730a46da4",
+        "degree": 1,
+        "name": "popis ekonomickej činnosti",
+        "code": "datovy_prvok_613"
+      },
+      {
+        "uuid": "e2f888d0-f3e4-46e3-8465-b8a0bffaed1c",
+        "degree": 1,
+        "name": "klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_614"
+      },
+      {
+        "uuid": "a49e8d66-5a8d-4b44-b326-e181fa0c0afe",
+        "degree": 1,
+        "name": "Klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_615"
+      },
+      {
+        "uuid": "f685828c-6bbb-489d-abb6-61f2a1dd4136",
+        "degree": 1,
+        "name": "ekonomická činnosť",
+        "code": "datovy_prvok_616"
+      },
+      {
+        "uuid": "661b6298-c04a-4e97-9acc-e285e1e8c2b4",
+        "degree": 1,
+        "name": "Ekonomická činnosť",
+        "code": "datovy_prvok_617"
+      },
+      {
+        "uuid": "a91bafbe-6d70-4e22-a512-010483450c50",
+        "degree": 1,
+        "name": "hlavná ekonomická činnosť",
+        "code": "datovy_prvok_618"
+      },
+      {
+        "uuid": "4a04db55-4c9c-4cbf-b027-2a6714f5e8f8",
+        "degree": 1,
+        "name": "právna skutočnosť",
+        "code": "datovy_prvok_619"
+      },
+      {
+        "uuid": "7ac6b577-e26f-4892-9c5d-ca32b749f6b9",
+        "degree": 1,
+        "name": "Právna skutočnosť",
+        "code": "datovy_prvok_620"
+      },
+      {
+        "uuid": "ae7c3dae-1fb3-4ce1-a250-6406618de65f",
+        "degree": 1,
+        "name": "schválená výška základného imania",
+        "code": "datovy_prvok_621"
+      },
+      {
+        "uuid": "aef675b0-68bc-47e8-ace1-0f9b38353c47",
+        "degree": 1,
+        "name": "výška splateného základného imania",
+        "code": "datovy_prvok_622"
+      },
+      {
+        "uuid": "7c4a8e09-126b-4247-86ea-bd4ebc8a40c8",
+        "degree": 1,
+        "name": "výška základného imania",
+        "code": "datovy_prvok_623"
+      },
+      {
+        "uuid": "fbb38b09-682b-40d4-82b0-ee5b756bfd29",
+        "degree": 1,
+        "name": "základné imanie",
+        "code": "datovy_prvok_625"
+      },
+      {
+        "uuid": "6914ae7a-1621-4519-bed9-3ad3a6c615e8",
+        "degree": 1,
+        "name": "Základné imanie",
+        "code": "datovy_prvok_626"
+      },
+      {
+        "uuid": "3063ef1d-ff11-4908-bbaa-314105ab4509",
+        "degree": 1,
+        "name": "typ zainteresovanej osoby",
+        "code": "datovy_prvok_629"
+      },
+      {
+        "uuid": "14100c90-ed25-479e-8cf6-6f25a17d09f7",
+        "degree": 1,
+        "name": "Typ zainteresovanej osoby",
+        "code": "datovy_prvok_630"
+      },
+      {
+        "uuid": "98a6bb26-6eea-4462-aba2-737c1acecaf6",
+        "degree": 1,
+        "name": "zainteresovaná osoba",
+        "code": "datovy_prvok_631"
+      },
+      {
+        "uuid": "366a3440-415f-47da-a523-7f466b6e2f45",
+        "degree": 1,
+        "name": "Zainteresovaná osoba",
+        "code": "datovy_prvok_632"
+      },
+      {
+        "uuid": "cbe04ba2-6dbf-4bf3-9997-2cb9f8e62818",
+        "degree": 1,
+        "name": "prevoditeľnosť akcií",
+        "code": "datovy_prvok_633"
+      },
+      {
+        "uuid": "5318632b-9bc5-41b5-ba2a-451682256c0b",
+        "degree": 1,
+        "name": "množstvo akcií",
+        "code": "datovy_prvok_634"
+      },
+      {
+        "uuid": "175ea620-0f4f-4b63-b10b-774d2fca0610",
+        "degree": 1,
+        "name": "menovitá hodnota akcie",
+        "code": "datovy_prvok_635"
+      },
+      {
+        "uuid": "28b6c1f4-2535-4c86-b098-b4462339ff61",
+        "degree": 1,
+        "name": "prevoditeľnosť akcií",
+        "code": "datovy_prvok_636"
+      },
+      {
+        "uuid": "10ff46bb-1f0d-41bf-9c94-904a43bc4faf",
+        "degree": 1,
+        "name": "množstvo akcií",
+        "code": "datovy_prvok_637"
+      },
+      {
+        "uuid": "fccec2c5-1ef2-4fd2-97ba-ec9ea5de3f23",
+        "degree": 1,
+        "name": "forma akcie",
+        "code": "datovy_prvok_638"
+      },
+      {
+        "uuid": "ba14b803-0faa-49b0-b700-2ac9daf758fc",
+        "degree": 1,
+        "name": "Forma akcie",
+        "code": "datovy_prvok_639"
+      },
+      {
+        "uuid": "88d6cf30-edd9-406d-8aa2-052ca7abdf7c",
+        "degree": 1,
+        "name": "stav akcie",
+        "code": "datovy_prvok_640"
+      },
+      {
+        "uuid": "4c676b59-4fcb-4153-8204-dbc639c9d659",
+        "degree": 1,
+        "name": "Stav akcie",
+        "code": "datovy_prvok_641"
+      },
+      {
+        "uuid": "3cf2418e-8537-4a83-8b0b-f37c69cc4b02",
+        "degree": 1,
+        "name": "typ akcie",
+        "code": "datovy_prvok_642"
+      },
+      {
+        "uuid": "2bb70e9a-e534-47ba-b2ed-48c35fced8de",
+        "degree": 1,
+        "name": "Typ akcie",
+        "code": "datovy_prvok_643"
+      },
+      {
+        "uuid": "ed3d39b6-5349-45ca-9000-18f218882075",
+        "degree": 1,
+        "name": "akcie",
+        "code": "datovy_prvok_644"
+      },
+      {
+        "uuid": "35c5f205-1bd5-4bc3-b39d-28a39dfebd86",
+        "degree": 1,
+        "name": "Akcie",
+        "code": "datovy_prvok_645"
+      },
+      {
+        "uuid": "af146d1d-7a8a-4123-8f2a-3131972e14f6",
+        "degree": 1,
+        "name": "dátum splatnosti vkladu",
+        "code": "datovy_prvok_646"
+      },
+      {
+        "uuid": "d3815e1b-b907-44dc-aaf0-047a4802b7f7",
+        "degree": 1,
+        "name": "výška vkladu",
+        "code": "datovy_prvok_647"
+      },
+      {
+        "uuid": "291d4bbe-f729-43b7-b935-9aca55b61a28",
+        "degree": 1,
+        "name": "typ vkladu",
+        "code": "datovy_prvok_648"
+      },
+      {
+        "uuid": "521dfa88-0a89-41d6-a834-8be162533314",
+        "degree": 1,
+        "name": "Typ vkladu",
+        "code": "datovy_prvok_649"
+      },
+      {
+        "uuid": "f4d14256-d2a4-4fba-a5ca-5846643fac18",
+        "degree": 1,
+        "name": "vklad",
+        "code": "datovy_prvok_650"
+      },
+      {
+        "uuid": "b0e53b33-962a-4e96-9ef7-863561a32586",
+        "degree": 1,
+        "name": "Vklad",
+        "code": "datovy_prvok_651"
+      },
+      {
+        "uuid": "05aa7cc7-7d1c-4498-98e2-536eed629a50",
+        "degree": 1,
+        "name": "oprávnenie konať",
+        "code": "datovy_prvok_652"
+      },
+      {
+        "uuid": "64e95436-136d-4908-bd58-0a326374a5d6",
+        "degree": 1,
+        "name": "relácie doložky",
+        "code": "datovy_prvok_862"
+      },
+      {
+        "uuid": "c7903ec1-ea22-4194-b718-10aada4d3958",
+        "degree": 1,
+        "name": "Časť textu platnosti doložky",
+        "code": "datovy_prvok_848"
+      },
+      {
+        "uuid": "293011c5-7ecf-4c01-b7d7-cf8090e5a591",
+        "degree": 1,
+        "name": "Je doložka platná pre celý dokument?",
+        "code": "datovy_prvok_847"
+      },
+      {
+        "uuid": "7983223d-0b4b-4a36-891c-d5d524ebe8d0",
+        "degree": 1,
+        "name": "Dátum právoplatnosti",
+        "code": "datovy_prvok_846"
+      },
+      {
+        "uuid": "4496680e-a6c0-48e9-9586-81602f242092",
+        "degree": 1,
+        "name": "Dátum vykonateľnosti",
+        "code": "datovy_prvok_845"
+      },
+      {
+        "uuid": "70783975-6ccf-4257-a7af-cd40ae0c68f4",
+        "degree": 1,
+        "name": "Doložka právoplatnosti",
+        "code": "datovy_prvok_842"
+      },
+      {
+        "uuid": "f4959b9b-5f5e-4156-8b89-7cc9a25801ce",
+        "degree": 1,
+        "name": "Doložka",
+        "code": "datovy_prvok_841"
+      },
+      {
+        "uuid": "c98d052d-b0f8-41c8-b776-e1ad19341f01",
+        "degree": 1,
+        "name": "relácie doložky",
+        "code": "datovy_prvok_844"
+      },
+      {
+        "uuid": "fea420d3-e3f8-4cd2-95a4-272a43fd89f9",
+        "degree": 1,
+        "name": "Doložka vykonateľnosti",
+        "code": "datovy_prvok_843"
+      },
+      {
+        "uuid": "6b79f9c3-45a4-4bc7-95bf-2159c2562120",
+        "degree": 1,
+        "name": "Licencia",
+        "code": "datovy_prvok_215"
+      },
+      {
+        "uuid": "6a6c678e-628a-4220-b14e-88d5625193ec",
+        "degree": 1,
+        "name": "Legislatívna zmena",
+        "code": "datovy_prvok_213"
+      },
+      {
+        "uuid": "c69a6f24-b08b-4ace-a2d0-ce51a6f07fbc",
+        "degree": 1,
+        "name": "Vendor licencie",
+        "code": "datovy_prvok_186"
+      },
+      {
+        "uuid": "317c54dc-96bf-42fe-80c3-f000b612e2fa",
+        "degree": 1,
+        "name": "Dohoda o úrovni poskytovaných služieb (OLA)",
+        "code": "datovy_prvok_182"
+      },
+      {
+        "uuid": "2c1712d9-b733-446d-993f-a48e27c286a9",
+        "degree": 1,
+        "name": "Žiadost o licenciu fragment",
+        "code": "datovy_prvok_180"
+      },
+      {
+        "uuid": "d60be41f-2e37-42c2-b7e7-f0a58ef0b208",
+        "degree": 1,
+        "name": "Typ licenčnej dohody",
+        "code": "datovy_prvok_166"
+      },
+      {
+        "uuid": "b007e7c5-4655-410c-b262-504ed086d7bb",
+        "degree": 1,
+        "name": "Právny stav",
+        "code": "datovy_prvok_86"
+      },
+      {
+        "uuid": "09547f30-a5ca-45d0-b78b-e812fd2ffd7f",
+        "degree": 1,
+        "name": "Právna forma",
+        "code": "datovy_prvok_84"
+      },
+      {
+        "uuid": "84c70d22-2c57-44b2-93e7-da78c99674ab",
+        "degree": 1,
+        "name": "agent",
+        "code": "datovy_prvok_735"
+      },
+      {
+        "uuid": "e0d2f617-11ad-420e-bcfc-8f1c4f0a2489",
+        "degree": 1,
+        "name": "platné",
+        "code": "datovy_prvok_240"
+      },
+      {
+        "uuid": "f71739b9-5af7-4d61-a8a9-42da775a4013",
+        "degree": 1,
+        "name": "platné do",
+        "code": "datovy_prvok_239"
+      },
+      {
+        "uuid": "28cfa757-95ee-4793-981d-00793d01611f",
+        "degree": 1,
+        "name": "platné od",
+        "code": "datovy_prvok_238"
+      },
+      {
+        "uuid": "4de3a116-7dde-41bd-bcbb-dd1db92e2aa7",
+        "degree": 1,
+        "name": "gestor",
+        "code": "datovy_prvok_237"
+      },
+      {
+        "uuid": "bf5d8b48-f83a-4e19-8528-0967fbd4dcbc",
+        "degree": 1,
+        "name": "URI šablóna",
+        "code": "datovy_prvok_236"
+      },
+      {
+        "uuid": "eeb5e766-e08a-4150-b554-e0f92b7f6b09",
+        "degree": 1,
+        "name": "distribúcia",
+        "code": "datovy_prvok_235"
+      },
+      {
+        "uuid": "49331fd8-9d8c-4b9f-9fda-bea21ed305e9",
+        "degree": 1,
+        "name": "Agent",
+        "code": "datovy_prvok_234"
+      },
+      {
+        "uuid": "849f16e5-4c99-49ac-b0df-336ed3ce2aae",
+        "degree": 1,
+        "name": "Zdroj",
+        "code": "datovy_prvok_73"
+      },
+      {
+        "uuid": "3845f282-ebce-45c9-905a-44b617d77da3",
+        "degree": 1,
+        "name": "príbuzná osoba (zdroj)",
+        "code": "datovy_prvok_302"
+      },
+      {
+        "uuid": "83960064-cae6-4414-8660-17480c077e6f",
+        "degree": 1,
+        "name": "rodné priezvisko",
+        "code": "datovy_prvok_749"
+      },
+      {
+        "uuid": "9724bf3a-a92f-4494-9257-e4dd0d388431",
+        "degree": 1,
+        "name": "Zahraničný občan s udeleným azylom na Slovensku",
+        "code": "datovy_prvok_573"
+      },
+      {
+        "uuid": "83a268c9-a58b-4f8d-8b2b-00f4d040b0ed",
+        "degree": 1,
+        "name": "Zahraničný občan s pobytom na Slovensku",
+        "code": "datovy_prvok_572"
+      },
+      {
+        "uuid": "d6d0f0f6-bc4b-4b94-8a5f-0bc0678c1541",
+        "degree": 1,
+        "name": "Zahraničný občan",
+        "code": "datovy_prvok_571"
+      },
+      {
+        "uuid": "f5286897-cbda-4b26-923f-66afa5c26ae1",
+        "degree": 1,
+        "name": "Občan Slovenskej republiky bez trvalého pobytu",
+        "code": "datovy_prvok_570"
+      },
+      {
+        "uuid": "a668e9b1-e809-4c8d-a928-01526aea1159",
+        "degree": 1,
+        "name": "Občan Slovenskej republiky s trvalým pobytom",
+        "code": "datovy_prvok_569"
+      },
+      {
+        "uuid": "582b9760-e50c-44ac-b33b-72929d95cdcf",
+        "degree": 1,
+        "name": "Občan Slovenskej republiky",
+        "code": "datovy_prvok_568"
+      },
+      {
+        "uuid": "48f6c41a-e218-4558-8fad-93850f45e4bf",
+        "degree": 1,
+        "name": "Fyzická osoba",
+        "code": "datovy_prvok_567"
+      },
+      {
+        "uuid": "88025fe2-15cf-41c7-b404-37717fae0771",
+        "degree": 1,
+        "name": "fyzická osoba",
+        "code": "datovy_prvok_566"
+      },
+      {
+        "uuid": "782b7791-3f38-4d79-9ead-7c9a30690115",
+        "degree": 1,
+        "name": "dátum zániku oprávnenia na podnikanie",
+        "code": "datovy_prvok_491"
+      },
+      {
+        "uuid": "0b1c287f-8280-458a-8b6a-bf31fa180e50",
+        "degree": 1,
+        "name": "dátum vzniku oprávnenia na podnikanie",
+        "code": "datovy_prvok_490"
+      },
+      {
+        "uuid": "3f242ea7-11d3-449c-bd2a-cb48bf1f3357",
+        "degree": 1,
+        "name": "adresa prevádzkarne",
+        "code": "datovy_prvok_489"
+      },
+      {
+        "uuid": "573e4d3d-53de-4688-ab4b-df7370ac471d",
+        "degree": 1,
+        "name": "Adresa prevádzkarne",
+        "code": "datovy_prvok_488"
+      },
+      {
+        "uuid": "6f7d71ac-833d-42ca-bdc4-db4969a85003",
+        "degree": 1,
+        "name": "Adresa miesta podnikania",
+        "code": "datovy_prvok_487"
+      },
+      {
+        "uuid": "acbfcb7e-c2fe-4817-b34e-ceb159c0ed96",
+        "degree": 1,
+        "name": "adresa miesta podnikania",
+        "code": "datovy_prvok_486"
+      },
+      {
+        "uuid": "7b72d6c9-820b-4376-b0bf-d944d06ead45",
+        "degree": 1,
+        "name": "Fyzická osoba - podnikateľ",
+        "code": "datovy_prvok_485"
+      },
+      {
+        "uuid": "a79670a4-0f30-4a39-8684-2a42931cd3a9",
+        "degree": 1,
+        "name": "cestovný doklad",
+        "code": "datovy_prvok_473"
+      },
+      {
+        "uuid": "529db50c-32c5-479b-a87f-62e2908aad28",
+        "degree": 1,
+        "name": "občiansky preukaz",
+        "code": "datovy_prvok_472"
+      },
+      {
+        "uuid": "e51713b3-693f-4844-8b7f-b888bfc2bd22",
+        "degree": 1,
+        "name": "doklad totožnosti osoby",
+        "code": "datovy_prvok_471"
+      },
+      {
+        "uuid": "9aa8ea22-94d3-46fc-91ee-2f4158939c29",
+        "degree": 1,
+        "name": "číslo občianskeho preukazu",
+        "code": "datovy_prvok_470"
+      },
+      {
+        "uuid": "0a7df444-89ad-43b1-b7e8-5b02ed0f1cb3",
+        "degree": 1,
+        "name": "Občiansky preukaz",
+        "code": "datovy_prvok_469"
+      },
+      {
+        "uuid": "4979faf1-a447-46ac-8fa5-fab29bcf5c2f",
+        "degree": 1,
+        "name": "Identifikačný doklad osoby",
+        "code": "datovy_prvok_468"
+      },
+      {
+        "uuid": "4c9c2b6a-714a-440a-beaf-2dc93b846f2d",
+        "degree": 1,
+        "name": "Cestovný doklad",
+        "code": "datovy_prvok_467"
+      },
+      {
+        "uuid": "93bcfdf6-21fb-4c65-a333-c39234cf0ddd",
+        "degree": 1,
+        "name": "číslo a druh cestovného dokladu",
+        "code": "datovy_prvok_466"
+      },
+      {
+        "uuid": "19771c16-fbce-46c7-8829-d8844a963f86",
+        "degree": 1,
+        "name": "Občiansky preukaz",
+        "code": "datovy_prvok_465"
+      },
+      {
+        "uuid": "bf0fa594-eaeb-45aa-a0bc-62ceaf732ed5",
+        "degree": 1,
+        "name": "číslo občianskeho preukazu",
+        "code": "datovy_prvok_463"
+      },
+      {
+        "uuid": "aaec04f4-4104-43ca-bac9-5f91fe170c3e",
+        "degree": 1,
+        "name": "príbuzný",
+        "code": "datovy_prvok_462"
+      },
+      {
+        "uuid": "d985ef53-70bc-4b2f-b179-820a0ab3adab",
+        "degree": 1,
+        "name": "obmedzený pobyt",
+        "code": "datovy_prvok_461"
+      },
+      {
+        "uuid": "3a2f5581-71a2-4c94-b1c8-a5ee3047c521",
+        "degree": 1,
+        "name": "pobyt",
+        "code": "datovy_prvok_460"
+      },
+      {
+        "uuid": "5be63ae5-8324-49f8-9f9c-0c50493f32a8",
+        "degree": 1,
+        "name": "Pobyt",
+        "code": "datovy_prvok_459"
+      },
+      {
+        "uuid": "380a70a8-cc81-42f7-8842-c849b7d3befa",
+        "degree": 1,
+        "name": "koniec prechodného pobytu",
+        "code": "datovy_prvok_458"
+      },
+      {
+        "uuid": "dfd4dc6f-012d-4666-b6ee-97d51a1058c1",
+        "degree": 1,
+        "name": "začiatok prechodného pobytu",
+        "code": "datovy_prvok_457"
+      },
+      {
+        "uuid": "237e82b2-a4e3-48ae-b2ba-cf827198a9f4",
+        "degree": 1,
+        "name": "koniec trvalého pobytu",
+        "code": "datovy_prvok_456"
+      },
+      {
+        "uuid": "32e5c57d-544c-4a00-9677-2a05f8cf79ac",
+        "degree": 1,
+        "name": "začiatok trvalého pobytu",
+        "code": "datovy_prvok_455"
+      },
+      {
+        "uuid": "944e5343-9c4d-422b-8a18-4d18a784e01a",
+        "degree": 1,
+        "name": "Prechodný pobyt",
+        "code": "datovy_prvok_453"
+      },
+      {
+        "uuid": "9dc2f9aa-bc9c-41c6-a00c-7e5d6fb42efa",
+        "degree": 1,
+        "name": "Trvalý pobyt",
+        "code": "datovy_prvok_452"
+      },
+      {
+        "uuid": "34e0b320-a300-4558-93cf-3e7ab21c8293",
+        "degree": 1,
+        "name": "prechodný pobyt",
+        "code": "datovy_prvok_451"
+      },
+      {
+        "uuid": "c56be851-af41-4ca8-8caa-93ef4a658de7",
+        "degree": 1,
+        "name": "trvalý pobyt",
+        "code": "datovy_prvok_450"
+      },
+      {
+        "uuid": "77b7ef4a-2f83-4527-a63c-dc22ab413582",
+        "degree": 1,
+        "name": "Rodné číslo",
+        "code": "datovy_prvok_449"
+      },
+      {
+        "uuid": "adc2bf7d-c420-467c-9b79-73dfb879d0a8",
+        "degree": 1,
+        "name": "rodné číslo",
+        "code": "datovy_prvok_448"
+      },
+      {
+        "uuid": "63698d97-c10c-4cdf-87b0-e4b2ad43444e",
+        "degree": 1,
+        "name": "kód rodného čísla",
+        "code": "datovy_prvok_446"
+      },
+      {
+        "uuid": "fa70614f-5c00-4aed-a717-025445135d81",
+        "degree": 1,
+        "name": "kód rodného číslo",
+        "code": "datovy_prvok_444"
+      },
+      {
+        "uuid": "3f6fc188-c20f-453e-b0b1-00e0bf045b77",
+        "degree": 1,
+        "name": "Občiansky preukaz",
+        "code": "datovy_prvok_442"
+      },
+      {
+        "uuid": "c5b37c43-bba8-4e93-b6a7-9bb44e7f4c7b",
+        "degree": 1,
+        "name": "občiansky preukaz",
+        "code": "datovy_prvok_440"
+      },
+      {
+        "uuid": "9fab7ae9-f01b-49db-92b6-5d3b22d0bb35",
+        "degree": 1,
+        "name": "rodné číslo",
+        "code": "datovy_prvok_437"
+      },
+      {
+        "uuid": "e797f30c-97d8-4a3c-bb67-f04dbfa45df0",
+        "degree": 1,
+        "name": "dieťa",
+        "code": "datovy_prvok_439"
+      },
+      {
+        "uuid": "4813388b-91d3-4fa4-9245-94db68865619",
+        "degree": 1,
+        "name": "otec",
+        "code": "datovy_prvok_438"
+      },
+      {
+        "uuid": "aec6a54f-3908-45a1-8bdf-e4c2d4b30a29",
+        "degree": 1,
+        "name": "matka",
+        "code": "datovy_prvok_436"
+      },
+      {
+        "uuid": "6925196a-6929-4d00-830d-87d0f74e5184",
+        "degree": 1,
+        "name": "manžel",
+        "code": "datovy_prvok_435"
+      },
+      {
+        "uuid": "4fe5906d-2984-408a-acbc-ddfd66416a69",
+        "degree": 1,
+        "name": "Rodné číslo",
+        "code": "datovy_prvok_434"
+      },
+      {
+        "uuid": "ae13f47c-659a-481a-9f81-714360d3adcc",
+        "degree": 1,
+        "name": "rodné číslo",
+        "code": "datovy_prvok_433"
+      },
+      {
+        "uuid": "5a547d8b-4d0a-44c9-95d4-d9bedda505cb",
+        "degree": 1,
+        "name": "rodné priezvisko",
+        "code": "datovy_prvok_432"
+      },
+      {
+        "uuid": "082a9283-c7a7-4c97-a081-904551775a5f",
+        "degree": 1,
+        "name": "Fyzická osoba",
+        "code": "datovy_prvok_343"
+      },
+      {
+        "uuid": "a14a0565-5b98-44b9-b3c9-589e658a17fc",
+        "degree": 1,
+        "name": "koniec zákazu vykonávania povolania",
+        "code": "datovy_prvok_323"
+      },
+      {
+        "uuid": "e9d1ac9f-fc78-4624-b48a-192f645ec6bf",
+        "degree": 1,
+        "name": "začiatok zákazu vykonávania povolania",
+        "code": "datovy_prvok_322"
+      },
+      {
+        "uuid": "2868da25-69f7-4a7b-8e17-fc5f3e0f30dd",
+        "degree": 1,
+        "name": "Zákaz vykonávania povolania",
+        "code": "datovy_prvok_321"
+      },
+      {
+        "uuid": "a7b28236-f828-406e-b040-828ce3af8539",
+        "degree": 1,
+        "name": "zákaz vykonávania povolania",
+        "code": "datovy_prvok_320"
+      },
+      {
+        "uuid": "b6ed3bdd-4f26-4a57-b2af-949dc9bda268",
+        "degree": 1,
+        "name": "Zákaz pobytu",
+        "code": "datovy_prvok_319"
+      },
+      {
+        "uuid": "5d12205c-23ba-4783-88de-5b794b24c5a4",
+        "degree": 1,
+        "name": "zákaz pobytu",
+        "code": "datovy_prvok_318"
+      },
+      {
+        "uuid": "daeef624-0fbe-406b-b8e1-5a2d31583ba8",
+        "degree": 1,
+        "name": "zákaz pobytu",
+        "code": "datovy_prvok_317"
+      },
+      {
+        "uuid": "21ba0978-47da-4851-8823-3334ba82abf5",
+        "degree": 1,
+        "name": "zákaz pobytu",
+        "code": "datovy_prvok_316"
+      },
+      {
+        "uuid": "06e7bd67-f6da-4a07-8e33-8a060ec0dd5c",
+        "degree": 1,
+        "name": "koniec zákazu pobytu",
+        "code": "datovy_prvok_315"
+      },
+      {
+        "uuid": "ea0e86c3-874c-4625-a99a-c3c71a004619",
+        "degree": 1,
+        "name": "začiatok zákazu pobytu",
+        "code": "datovy_prvok_314"
+      },
+      {
+        "uuid": "c79573db-62aa-49fe-842f-8f4b0b5c2a8f",
+        "degree": 1,
+        "name": "Obmedzenie právnej spôsobilosti",
+        "code": "datovy_prvok_313"
+      },
+      {
+        "uuid": "54221a56-4d72-4042-84ab-d162ac07a6bc",
+        "degree": 1,
+        "name": "obmedzenie právnej spôsobilosti",
+        "code": "datovy_prvok_312"
+      },
+      {
+        "uuid": "26fca800-f724-4e80-b4ba-7ca66f896342",
+        "degree": 1,
+        "name": "koniec obmedzenia právnej spôsobilosti",
+        "code": "datovy_prvok_311"
+      },
+      {
+        "uuid": "7b63e439-594d-488f-8959-f96266929073",
+        "degree": 1,
+        "name": "začiatok obmedzenia právnej spôsobilosti",
+        "code": "datovy_prvok_310"
+      },
+      {
+        "uuid": "b9baef0c-9a9e-4da6-98af-0c6c97d16c40",
+        "degree": 1,
+        "name": "Typ obmedzenia právnej spôsobilosti",
+        "code": "datovy_prvok_309"
+      },
+      {
+        "uuid": "5d371ca2-b2b6-4038-8ebc-60a63eb1a720",
+        "degree": 1,
+        "name": "typ obmedzenia právnej spôsobilosti",
+        "code": "datovy_prvok_308"
+      },
+      {
+        "uuid": "224cb424-bc74-4f39-af1b-0c8fa58fbc63",
+        "degree": 1,
+        "name": "Národnosť",
+        "code": "datovy_prvok_306"
+      },
+      {
+        "uuid": "341dfc02-2777-4007-a3af-b0de07c5c74e",
+        "degree": 1,
+        "name": "národnosť",
+        "code": "datovy_prvok_305"
+      },
+      {
+        "uuid": "9e7da980-8274-4db4-8c06-8a2f12184433",
+        "degree": 1,
+        "name": "príbuzenstvo",
+        "code": "datovy_prvok_304"
+      },
+      {
+        "uuid": "1478e552-94e2-4a71-b306-9c17a3c32ab1",
+        "degree": 1,
+        "name": "príbuzná osoba (cieľ)",
+        "code": "datovy_prvok_303"
+      },
+      {
+        "uuid": "bac6889a-0677-47ae-bd81-c95d1f4c620c",
+        "degree": 1,
+        "name": "formátované meno",
+        "code": "datovy_prvok_252"
+      },
+      {
+        "uuid": "cf422942-4ec8-427f-b523-7c644907661f",
+        "degree": 1,
+        "name": "právne meno",
+        "code": "datovy_prvok_254"
+      },
+      {
+        "uuid": "37901706-6175-43d7-8d7b-197789914031",
+        "degree": 1,
+        "name": "meno",
+        "code": "datovy_prvok_255"
+      },
+      {
+        "uuid": "299d2a4b-694b-4f4d-b04b-8e41bae916ee",
+        "degree": 1,
+        "name": "preferované meno",
+        "code": "datovy_prvok_256"
+      },
+      {
+        "uuid": "e8794a43-2bec-4a08-b733-8d175cc93fbd",
+        "degree": 1,
+        "name": "ďalšie meno",
+        "code": "datovy_prvok_257"
+      },
+      {
+        "uuid": "4c7f9e2c-e4f5-4104-873a-395a3839d6ac",
+        "degree": 1,
+        "name": "priezvisko",
+        "code": "datovy_prvok_258"
+      },
+      {
+        "uuid": "5e40444d-7cc0-4c91-b40d-2976cc4168af",
+        "degree": 1,
+        "name": "rodné priezvisko",
+        "code": "datovy_prvok_259"
+      },
+      {
+        "uuid": "e8d3ef88-6cef-4a8c-ab55-1f141c64ae4c",
+        "degree": 1,
+        "name": "titul",
+        "code": "datovy_prvok_260"
+      },
+      {
+        "uuid": "cac2de6e-e90f-4a57-b88a-34b50523c9b6",
+        "degree": 1,
+        "name": "Titul",
+        "code": "datovy_prvok_261"
+      },
+      {
+        "uuid": "9ea1d31e-bee8-4629-9835-e0e71d57d3a3",
+        "degree": 1,
+        "name": "titul pred menom",
+        "code": "datovy_prvok_263"
+      },
+      {
+        "uuid": "2d9ef1f6-cc7c-4f49-97ec-8c53b61993dc",
+        "degree": 1,
+        "name": "titul za menom",
+        "code": "datovy_prvok_264"
+      },
+      {
+        "uuid": "6952d772-dfdc-4ff9-91c5-9a0aecd2f8b3",
+        "degree": 1,
+        "name": "Titul pred menom",
+        "code": "datovy_prvok_265"
+      },
+      {
+        "uuid": "0afd759c-1ca2-4a48-b6a2-074f3631ed90",
+        "degree": 1,
+        "name": "Titul za menom",
+        "code": "datovy_prvok_266"
+      },
+      {
+        "uuid": "fefd5b37-f721-4ec1-b61d-0e23263db509",
+        "degree": 1,
+        "name": "titul",
+        "code": "datovy_prvok_267"
+      },
+      {
+        "uuid": "ce4e7dfb-a9d7-4da1-b9e7-506383b68dc4",
+        "degree": 1,
+        "name": "titul",
+        "code": "datovy_prvok_269"
+      },
+      {
+        "uuid": "011dd4dc-1152-4eef-9079-cce0a03ffa33",
+        "degree": 1,
+        "name": "Titul",
+        "code": "datovy_prvok_270"
+      },
+      {
+        "uuid": "86dfe46c-2d82-43c5-ad2f-906b1d4991b8",
+        "degree": 1,
+        "name": "meno osoby",
+        "code": "datovy_prvok_271"
+      },
+      {
+        "uuid": "ab4de050-ac1c-4308-97a4-c4276e3242ea",
+        "degree": 1,
+        "name": "alternatívne meno",
+        "code": "datovy_prvok_272"
+      },
+      {
+        "uuid": "700eed2a-1fb8-4a61-ae90-62459957a83e",
+        "degree": 1,
+        "name": "rodinný stav",
+        "code": "datovy_prvok_273"
+      },
+      {
+        "uuid": "a89d0ef3-5799-443d-b8fa-fd156e9f1ef6",
+        "degree": 1,
+        "name": "Rodinný stav",
+        "code": "datovy_prvok_274"
+      },
+      {
+        "uuid": "81fa2c3b-32f0-4543-96ed-c3ab720c5a47",
+        "degree": 1,
+        "name": "pohlavie",
+        "code": "datovy_prvok_275"
+      },
+      {
+        "uuid": "89f14aed-ca1e-4f8f-a47e-a61e93881df4",
+        "degree": 1,
+        "name": "Pohlavie",
+        "code": "datovy_prvok_276"
+      },
+      {
+        "uuid": "f9252fb1-024d-44b0-abe3-a2d481235fa1",
+        "degree": 1,
+        "name": "dátum narodenia",
+        "code": "datovy_prvok_277"
+      },
+      {
+        "uuid": "8998313e-75e5-48c9-9b16-f73e07aba67d",
+        "degree": 1,
+        "name": "miesto narodenia",
+        "code": "datovy_prvok_278"
+      },
+      {
+        "uuid": "03ea46b3-cea4-4f56-9ae4-f6aad752f950",
+        "degree": 1,
+        "name": "rok narodenia",
+        "code": "datovy_prvok_279"
+      },
+      {
+        "uuid": "3d1fbcd2-21cc-4656-acb8-91535dd82c31",
+        "degree": 1,
+        "name": "rok a mesiac narodenia",
+        "code": "datovy_prvok_280"
+      },
+      {
+        "uuid": "e3e83f40-757b-43c0-82da-c704d94067b0",
+        "degree": 1,
+        "name": "narodenie",
+        "code": "datovy_prvok_281"
+      },
+      {
+        "uuid": "c2cb05f2-4019-4850-a73e-5d164c8932ad",
+        "degree": 1,
+        "name": "dátum úmrtia",
+        "code": "datovy_prvok_282"
+      },
+      {
+        "uuid": "df23cf41-64d1-4d55-835b-ec2588b3e753",
+        "degree": 1,
+        "name": "miesto úmrtia",
+        "code": "datovy_prvok_283"
+      },
+      {
+        "uuid": "2acb38e7-0f36-48ba-adf5-08644e215d6e",
+        "degree": 1,
+        "name": "rok úmrtia",
+        "code": "datovy_prvok_284"
+      },
+      {
+        "uuid": "983f5ea8-db10-4dbf-9c8d-d98d2d8385d1",
+        "degree": 1,
+        "name": "rok a mesiac úmrtia",
+        "code": "datovy_prvok_285"
+      },
+      {
+        "uuid": "20641096-9775-4025-8673-1a7f66c24a97",
+        "degree": 1,
+        "name": "stav fyzickej osoby",
+        "code": "datovy_prvok_286"
+      },
+      {
+        "uuid": "e4d7ede0-e0ba-4fb0-9294-ac86612bf5b0",
+        "degree": 1,
+        "name": "Stav Fyzickej Osoby",
+        "code": "datovy_prvok_287"
+      },
+      {
+        "uuid": "33114dc0-6633-48d0-a206-5fd25e130b2d",
+        "degree": 1,
+        "name": "štátna príslušnosť",
+        "code": "datovy_prvok_288"
+      },
+      {
+        "uuid": "7e9fc3ad-40d0-41e7-a0cc-ad7e398b6f3e",
+        "degree": 1,
+        "name": "náboženstvo",
+        "code": "datovy_prvok_289"
+      },
+      {
+        "uuid": "b9943392-ead9-4538-97fd-908bdf66896d",
+        "degree": 1,
+        "name": "Náboženstvo",
+        "code": "datovy_prvok_290"
+      },
+      {
+        "uuid": "d32d9696-3fbc-4a7c-aa92-88e6969783f9",
+        "degree": 1,
+        "name": "povolanie",
+        "code": "datovy_prvok_291"
+      },
+      {
+        "uuid": "902f9994-ad91-4de2-9963-a8315cddae46",
+        "degree": 1,
+        "name": "názov povolania",
+        "code": "datovy_prvok_292"
+      },
+      {
+        "uuid": "e6768893-7c37-4e77-baf3-1314974b1aad",
+        "degree": 1,
+        "name": "názov povolania",
+        "code": "datovy_prvok_293"
+      },
+      {
+        "uuid": "88c85db9-2093-4023-820d-a3255c9ea853",
+        "degree": 1,
+        "name": "Povolanie",
+        "code": "datovy_prvok_294"
+      },
+      {
+        "uuid": "024351f4-14de-4e17-83b7-3e76687bd1fa",
+        "degree": 1,
+        "name": "úmrtie",
+        "code": "datovy_prvok_295"
+      },
+      {
+        "uuid": "8c371163-80b0-48b4-8706-c72b66660101",
+        "degree": 1,
+        "name": "Úmrtie",
+        "code": "datovy_prvok_296"
+      },
+      {
+        "uuid": "6f16e0a0-de5b-48d7-83aa-c10a4638f151",
+        "degree": 1,
+        "name": "Narodenie",
+        "code": "datovy_prvok_297"
+      },
+      {
+        "uuid": "2b798fcd-2326-460c-8aeb-1e68e13f41b7",
+        "degree": 1,
+        "name": "začiatok príbuzenského vzťahu",
+        "code": "datovy_prvok_298"
+      },
+      {
+        "uuid": "ec50526d-ea92-49c2-84e7-2b0c3a993cfe",
+        "degree": 1,
+        "name": "koniec príbuzenského vzťahu",
+        "code": "datovy_prvok_299"
+      },
+      {
+        "uuid": "e0f3cbae-78cd-42f8-99df-e61f63cae6a6",
+        "degree": 1,
+        "name": "typ príbuzenstva",
+        "code": "datovy_prvok_300"
+      },
+      {
+        "uuid": "113ab0a7-5390-439c-a63c-1eb7b57f8880",
+        "degree": 1,
+        "name": "Typ príbuzenstva",
+        "code": "datovy_prvok_301"
+      },
+      {
+        "uuid": "749b9ecb-69eb-42ff-9cdc-faf12a858594",
+        "degree": 1,
+        "name": "názov prvku xml pre KDP",
+        "code": "datovy_prvok_699"
+      },
+      {
+        "uuid": "dd024f3f-a51d-411b-b253-f164f7bdc7eb",
+        "degree": 1,
+        "name": "info o verzii v kdp",
+        "code": "datovy_prvok_698"
+      },
+      {
+        "uuid": "fa36d0df-acd3-4b3b-a6b2-98b9655d67ee",
+        "degree": 1,
+        "name": "popis významu v kdp",
+        "code": "datovy_prvok_697"
+      },
+      {
+        "uuid": "66a0e426-867e-4fe4-8cdf-f16142b783ef",
+        "degree": 1,
+        "name": "podradený dátový prvok",
+        "code": "datovy_prvok_696"
+      },
+      {
+        "uuid": "75e2837e-dad0-4fbe-afe9-6c770e895944",
+        "degree": 1,
+        "name": "je faktúra predfaktúra",
+        "code": "datovy_prvok_838"
+      },
+      {
+        "uuid": "1e8c7a81-d9a2-473a-8ede-fa1f63039829",
+        "degree": 1,
+        "name": "dátum zrušenia",
+        "code": "datovy_prvok_837"
+      },
+      {
+        "uuid": "782f0c65-6f05-4771-bc1b-2e5990bb686a",
+        "degree": 1,
+        "name": "objednávateľ",
+        "code": "datovy_prvok_839"
+      },
+      {
+        "uuid": "9e04cf76-417c-4aab-b7f8-acb716b48304",
+        "degree": 1,
+        "name": "dodávateľ",
+        "code": "datovy_prvok_834"
+      },
+      {
+        "uuid": "c31f51e9-6e7b-4d99-9731-37d0726902ca",
+        "degree": 1,
+        "name": "dátum vytvorenia dokladu",
+        "code": "datovy_prvok_833"
+      },
+      {
+        "uuid": "7ee919b4-5dd7-4980-acbe-07dbce0d6577",
+        "degree": 1,
+        "name": "dátum zaúčtovania",
+        "code": "datovy_prvok_836"
+      },
+      {
+        "uuid": "a00be886-6f66-49d8-b74e-5b44b7699885",
+        "degree": 1,
+        "name": "dátum doručenia",
+        "code": "datovy_prvok_835"
+      },
+      {
+        "uuid": "02aebfeb-6578-479a-93a0-e6cf6f33c8fa",
+        "degree": 1,
+        "name": "Dátum úhrady",
+        "code": "datovy_prvok_832"
+      },
+      {
+        "uuid": "f8750775-f22a-4a20-be41-1c9343e51490",
+        "degree": 1,
+        "name": "objednávateľ",
+        "code": "datovy_prvok_831"
+      },
+      {
+        "uuid": "fcd93d61-a156-4392-a0d8-71484ad9eb18",
+        "degree": 1,
+        "name": "Schéma financovania",
+        "code": "datovy_prvok_822"
+      },
+      {
+        "uuid": "8edc9b9a-904d-48fe-8d5f-4dbaad08eb63",
+        "degree": 1,
+        "name": "Žiadosť o financovanie",
+        "code": "datovy_prvok_819"
+      },
+      {
+        "uuid": "64930a2a-7818-4c9f-b1d5-9d60aed7def2",
+        "degree": 1,
+        "name": "Výzva na predkladanie ponúk na financovanie",
+        "code": "datovy_prvok_818"
+      },
+      {
+        "uuid": "bd5464bc-28fc-494e-aa08-4796e654a405",
+        "degree": 1,
+        "name": "Žiadateľ o financovanie",
+        "code": "datovy_prvok_820"
+      },
+      {
+        "uuid": "02ba23c5-b970-4156-b00f-255fe570d594",
+        "degree": 1,
+        "name": "Typ financovania",
+        "code": "datovy_prvok_817"
+      },
+      {
+        "uuid": "a9e1aeb1-4c31-40f3-b8a5-1b7a96c6fada",
+        "degree": 1,
+        "name": "Schéma financovania",
+        "code": "datovy_prvok_816"
+      },
+      {
+        "uuid": "7d160ebe-1de0-455d-ad0b-52d576abaf52",
+        "degree": 1,
+        "name": "výška DPH",
+        "code": "datovy_prvok_814"
+      },
+      {
+        "uuid": "ac02de38-2316-4c47-a97b-6e001e11467c",
+        "degree": 1,
+        "name": "cena",
+        "code": "datovy_prvok_811"
+      },
+      {
+        "uuid": "02336204-e98d-4940-8cc6-ddd7f7854478",
+        "degree": 1,
+        "name": "Cena",
+        "code": "datovy_prvok_810"
+      },
+      {
+        "uuid": "e2bf10fc-df9d-47cd-95ea-4248383ff9be",
+        "degree": 1,
+        "name": "hodnota bez DPH",
+        "code": "datovy_prvok_812"
+      },
+      {
+        "uuid": "98c80803-89cd-4d84-9469-005163ffbffb",
+        "degree": 1,
+        "name": "zmluva",
+        "code": "datovy_prvok_807"
+      },
+      {
+        "uuid": "d2cc841e-c9b9-486b-9f88-258e6e0dec8f",
+        "degree": 1,
+        "name": "Zmluva",
+        "code": "datovy_prvok_806"
+      },
+      {
+        "uuid": "6daa1be1-a863-4a93-948c-5d61c034b4fd",
+        "degree": 1,
+        "name": "faktúra",
+        "code": "datovy_prvok_809"
+      },
+      {
+        "uuid": "770c9619-cdd6-4efb-946b-d80d2b394d29",
+        "degree": 1,
+        "name": "Faktúra",
+        "code": "datovy_prvok_808"
+      },
+      {
+        "uuid": "97fe0103-58ae-4b7d-b17d-97babf3ebbae",
+        "degree": 1,
+        "name": "objednávka",
+        "code": "datovy_prvok_805"
+      },
+      {
+        "uuid": "8de35894-a560-43b2-98e9-24766b2b6ad8",
+        "degree": 1,
+        "name": "Objednávka",
+        "code": "datovy_prvok_804"
+      },
+      {
+        "uuid": "ac244a4e-6f16-4519-8f74-6a75fbc8e03e",
+        "degree": 1,
+        "name": "hodnota s DPH",
+        "code": "datovy_prvok_815"
+      },
+      {
+        "uuid": "b2d55810-04b5-40fc-a361-1a3096ce5d6d",
+        "degree": 1,
+        "name": "mena",
+        "code": "datovy_prvok_532"
+      },
+      {
+        "uuid": "36257d15-ba89-493c-8a15-dc1b91b1693c",
+        "degree": 1,
+        "name": "mena",
+        "code": "datovy_prvok_385"
+      },
+      {
+        "uuid": "f7f80e82-c4c9-4523-9a22-3d25662bbe88",
+        "degree": 1,
+        "name": "Mena",
+        "code": "datovy_prvok_373"
+      },
+      {
+        "uuid": "0c71b137-2cb6-472c-9647-4362eb3d8700",
+        "degree": 1,
+        "name": "Bankové spojenie",
+        "code": "datovy_prvok_342"
+      },
+      {
+        "uuid": "787225a6-40cf-49b4-b02f-5fe0f22392e1",
+        "degree": 1,
+        "name": "bankové spojenie",
+        "code": "datovy_prvok_341"
+      },
+      {
+        "uuid": "5a326ed3-ad9b-4664-a44f-d952b0d348c6",
+        "degree": 1,
+        "name": "Vlastník účtu",
+        "code": "datovy_prvok_340"
+      },
+      {
+        "uuid": "c0efb92a-9740-48c7-9f94-bfb50e5687f8",
+        "degree": 1,
+        "name": "vlastník bankového účtu",
+        "code": "datovy_prvok_339"
+      },
+      {
+        "uuid": "c2221465-ced0-4b91-a6a1-25cff844017a",
+        "degree": 1,
+        "name": "názov banky",
+        "code": "datovy_prvok_338"
+      },
+      {
+        "uuid": "9e19d303-a402-4ce5-b862-c6ac63bb9fb7",
+        "degree": 1,
+        "name": "Medzinárodné bankové spojenie",
+        "code": "datovy_prvok_337"
+      },
+      {
+        "uuid": "429491b1-f39f-4d5b-a124-2ae6e0b094ea",
+        "degree": 1,
+        "name": "medzinárodné bankové spojenie",
+        "code": "datovy_prvok_336"
+      },
+      {
+        "uuid": "d3438c9f-1fcc-426f-b34d-d041d00d5806",
+        "degree": 1,
+        "name": "BIC",
+        "code": "datovy_prvok_335"
+      },
+      {
+        "uuid": "45f3aeec-732c-4c1b-b65a-2b21a5ffc0ed",
+        "degree": 1,
+        "name": "IBAN",
+        "code": "datovy_prvok_334"
+      },
+      {
+        "uuid": "e013be4c-05b1-4a38-960e-858f1f621a46",
+        "degree": 1,
+        "name": "Tuzemské bankové spojenie",
+        "code": "datovy_prvok_333"
+      },
+      {
+        "uuid": "1a878bed-9a2d-4ba4-8163-66a5b9e78aec",
+        "degree": 1,
+        "name": "tuzemské bankové spojenie",
+        "code": "datovy_prvok_332"
+      },
+      {
+        "uuid": "76c04726-5337-45b4-a08e-15b859285580",
+        "degree": 1,
+        "name": "Kód banky",
+        "code": "datovy_prvok_331"
+      },
+      {
+        "uuid": "b626e27c-9b11-40b5-8636-cf44e59c431e",
+        "degree": 1,
+        "name": "kód banky",
+        "code": "datovy_prvok_330"
+      },
+      {
+        "uuid": "b505e7c0-effe-4377-b8df-0d170217564f",
+        "degree": 1,
+        "name": "základné číslo účtu",
+        "code": "datovy_prvok_328"
+      },
+      {
+        "uuid": "df2b5c71-43bc-4cba-9be1-db6254cf7df5",
+        "degree": 1,
+        "name": "predčíslie účtu",
+        "code": "datovy_prvok_327"
+      },
+      {
+        "uuid": "b299eb3e-9ea7-4103-b6e3-f1db9ca2b50f",
+        "degree": 1,
+        "name": "formátované bankové spojenie",
+        "code": "datovy_prvok_326"
+      },
+      {
+        "uuid": "55b495c4-15d5-4a7a-92da-3203dcd57f87",
+        "degree": 1,
+        "name": "Žiadost o licenciu",
+        "code": "datovy_prvok_181"
+      },
+      {
+        "uuid": "4dd7a5cf-eece-4c56-895d-586ffbe94ace",
+        "degree": 1,
+        "name": "Nákladová položka (TCO)",
+        "code": "datovy_prvok_164"
+      },
+      {
+        "uuid": "5d934b6c-3c2a-4eae-bace-503486f18ba4",
+        "degree": 1,
+        "name": "kód v registry adries",
+        "code": "datovy_prvok_431"
+      },
+      {
+        "uuid": "478ac0b4-4d14-4cd5-bf89-4b1526b6dabd",
+        "degree": 1,
+        "name": "kód v registry adries",
+        "code": "datovy_prvok_430"
+      },
+      {
+        "uuid": "0eea3710-4036-4540-a223-935a9a973136",
+        "degree": 1,
+        "name": "kód v registry adries",
+        "code": "datovy_prvok_429"
+      },
+      {
+        "uuid": "35c86758-c077-444c-8aa3-7ed2027b7be7",
+        "degree": 1,
+        "name": "Typ identifikátora",
+        "code": "datovy_prvok_250"
+      },
+      {
+        "uuid": "207cbf5b-b512-4cf1-8659-4a68dd9c15a9",
+        "degree": 1,
+        "name": "Identifikátor",
+        "code": "datovy_prvok_249"
+      },
+      {
+        "uuid": "b9604969-02f2-4cc1-9c83-32a9492c5191",
+        "degree": 1,
+        "name": "MetaIS kód",
+        "code": "datovy_prvok_248"
+      },
+      {
+        "uuid": "6d006e1b-27a5-49fc-b89f-834ed510d090",
+        "degree": 1,
+        "name": "KDP kód",
+        "code": "datovy_prvok_247"
+      },
+      {
+        "uuid": "9b40f637-421b-4e59-b261-b5447853a5e3",
+        "degree": 1,
+        "name": "kód číselníka",
+        "code": "datovy_prvok_246"
+      },
+      {
+        "uuid": "d7437860-9a01-469a-bb4e-14e33f1f8c3a",
+        "degree": 1,
+        "name": "identifikátor",
+        "code": "datovy_prvok_244"
+      },
+      {
+        "uuid": "859c560d-60d6-4bee-b239-d6ee56ebb6d3",
+        "degree": 1,
+        "name": "hodnota identifikátora",
+        "code": "datovy_prvok_243"
+      },
+      {
+        "uuid": "c662df45-7077-4dd7-9e34-ed27d7e9caf7",
+        "degree": 1,
+        "name": "typ identifikátora",
+        "code": "datovy_prvok_242"
+      },
+      {
+        "uuid": "4cb1f95f-90a6-4a8b-a3f1-792573cec9e2",
+        "degree": 1,
+        "name": "základné imanie",
+        "code": "datovy_prvok_375"
+      },
+      {
+        "uuid": "ebb89c8d-0f5f-4ba0-af21-26b8deb74a6f",
+        "degree": 1,
+        "name": "adresa prevádzky",
+        "code": "datovy_prvok_496"
+      },
+      {
+        "uuid": "77054fbb-60a6-40ce-b3ff-cc4707dc4a9e",
+        "degree": 1,
+        "name": "adresa sídla",
+        "code": "datovy_prvok_495"
+      },
+      {
+        "uuid": "29625879-17ca-408a-8bcb-3acdf1d8ad34",
+        "degree": 1,
+        "name": "Adresa prevádzkarne",
+        "code": "datovy_prvok_494"
+      },
+      {
+        "uuid": "46a44e94-e8ae-408e-8a1f-946dc959f987",
+        "degree": 1,
+        "name": "Adresa sídla",
+        "code": "datovy_prvok_493"
+      },
+      {
+        "uuid": "c52a3406-6b02-44df-a738-218590fc5345",
+        "degree": 1,
+        "name": "Zahraničná právna osoba",
+        "code": "datovy_prvok_492"
+      },
+      {
+        "uuid": "869e37f1-fd21-43af-bc3c-834705575092",
+        "degree": 1,
+        "name": "Štatistický kód inštitucionálneho sektora",
+        "code": "datovy_prvok_483"
+      },
+      {
+        "uuid": "4f6cfab8-e0e2-4fad-9a3d-e29718a1089b",
+        "degree": 1,
+        "name": "štatistický kód inštitucionálneho subsektora",
+        "code": "datovy_prvok_482"
+      },
+      {
+        "uuid": "d87e80ef-ccf8-4590-b099-939ea57d32a0",
+        "degree": 1,
+        "name": "Identifikačné číslo pre daň z pridanej hodnoty",
+        "code": "datovy_prvok_481"
+      },
+      {
+        "uuid": "82518f14-f559-4952-8ee8-695a34b70289",
+        "degree": 1,
+        "name": "Daňové identifikačné číslo",
+        "code": "datovy_prvok_480"
+      },
+      {
+        "uuid": "cc39beb2-8442-4ef8-ab9f-81cfcde063bb",
+        "degree": 1,
+        "name": "Identifikačné číslo organizácie",
+        "code": "datovy_prvok_479"
+      },
+      {
+        "uuid": "40497421-5af3-4529-a464-5ffb994b1e48",
+        "degree": 1,
+        "name": "identifikačné číslo pre daň z pridanej hodnoty",
+        "code": "datovy_prvok_477"
+      },
+      {
+        "uuid": "3f839900-5722-4fb7-8e8f-77858302ce6d",
+        "degree": 1,
+        "name": "daňové identifikačné číslo",
+        "code": "datovy_prvok_476"
+      },
+      {
+        "uuid": "a29abc8a-a59a-478b-aa0c-5425d5228e85",
+        "degree": 1,
+        "name": "identifikačné číslo organizácie",
+        "code": "datovy_prvok_475"
+      },
+      {
+        "uuid": "aa2c827d-d5d4-4341-92ac-53aeb3b23645",
+        "degree": 1,
+        "name": "identifikátor organizácie",
+        "code": "datovy_prvok_474"
+      },
+      {
+        "uuid": "66b12f93-7942-4dee-af92-c48a53368d80",
+        "degree": 1,
+        "name": "Štatutárny orgán",
+        "code": "datovy_prvok_406"
+      },
+      {
+        "uuid": "7dca650d-d023-4233-851d-62768da84f88",
+        "degree": 1,
+        "name": "štatutárny orgán",
+        "code": "datovy_prvok_405"
+      },
+      {
+        "uuid": "5708ba36-ea5f-4f1f-b356-80296786198d",
+        "degree": 1,
+        "name": "Typ štatutárneho orgánu",
+        "code": "datovy_prvok_404"
+      },
+      {
+        "uuid": "9e36d827-4fec-4e4a-93b5-b5c01902f354",
+        "degree": 1,
+        "name": "typ štatutárneho orgánu",
+        "code": "datovy_prvok_403"
+      },
+      {
+        "uuid": "0bc845c2-1e6f-4c05-b223-13b86a2f20df",
+        "degree": 1,
+        "name": "oprávnenie konať",
+        "code": "datovy_prvok_402"
+      },
+      {
+        "uuid": "6efdac3d-0e72-4974-9a6f-2e6f18a4871c",
+        "degree": 1,
+        "name": "Vklad",
+        "code": "datovy_prvok_401"
+      },
+      {
+        "uuid": "e36fc07f-56d1-4a67-9cb2-b0b2a5724dc2",
+        "degree": 1,
+        "name": "vklad",
+        "code": "datovy_prvok_400"
+      },
+      {
+        "uuid": "e58fd136-78ad-4be6-b950-2342ae3900b3",
+        "degree": 1,
+        "name": "Typ vkladu",
+        "code": "datovy_prvok_399"
+      },
+      {
+        "uuid": "81b7f522-0713-4b71-be2e-240bf4a480f9",
+        "degree": 1,
+        "name": "typ vkladu",
+        "code": "datovy_prvok_398"
+      },
+      {
+        "uuid": "ac7b209f-3068-479f-bb0d-977a59b6437e",
+        "degree": 1,
+        "name": "výška vkladu",
+        "code": "datovy_prvok_397"
+      },
+      {
+        "uuid": "5b3a30d6-eb0c-4ac9-a3d3-a052a909c3b3",
+        "degree": 1,
+        "name": "dátum splatnosti vkladu",
+        "code": "datovy_prvok_396"
+      },
+      {
+        "uuid": "4814ad3b-112f-4c2b-a6d6-4e43e980c255",
+        "degree": 1,
+        "name": "Akcie",
+        "code": "datovy_prvok_395"
+      },
+      {
+        "uuid": "0c8e647f-d9b1-47c5-85d8-c1d8560c7cac",
+        "degree": 1,
+        "name": "akcie",
+        "code": "datovy_prvok_394"
+      },
+      {
+        "uuid": "747de710-9909-4f84-abad-68d20212a752",
+        "degree": 1,
+        "name": "Typ akcie",
+        "code": "datovy_prvok_393"
+      },
+      {
+        "uuid": "1db4f391-4cb6-4db0-b177-297542a6a544",
+        "degree": 1,
+        "name": "typ akcie",
+        "code": "datovy_prvok_392"
+      },
+      {
+        "uuid": "fd196f2c-4263-437d-b1b1-5268a4483bb6",
+        "degree": 1,
+        "name": "Stav akcie",
+        "code": "datovy_prvok_391"
+      },
+      {
+        "uuid": "c60650a7-1d59-4909-af9a-1ff2d7da8a43",
+        "degree": 1,
+        "name": "stav akcie",
+        "code": "datovy_prvok_390"
+      },
+      {
+        "uuid": "62e3347e-5ab5-469c-a4c2-93f583f96702",
+        "degree": 1,
+        "name": "forma akcie",
+        "code": "datovy_prvok_389"
+      },
+      {
+        "uuid": "18211c35-adc2-4ad5-bc5f-52dd84032e8e",
+        "degree": 1,
+        "name": "podoba akcie",
+        "code": "datovy_prvok_388"
+      },
+      {
+        "uuid": "9b06ba8d-3bc7-4bba-9941-1e9998b9f7b7",
+        "degree": 1,
+        "name": "Forma akcie",
+        "code": "datovy_prvok_387"
+      },
+      {
+        "uuid": "120a9de8-b928-4311-86ec-506cfbbb810f",
+        "degree": 1,
+        "name": "podoba akcie",
+        "code": "datovy_prvok_386"
+      },
+      {
+        "uuid": "38697be9-9cfb-4eae-bb4f-e940f489b2b3",
+        "degree": 1,
+        "name": "mena akcie",
+        "code": "datovy_prvok_384"
+      },
+      {
+        "uuid": "6e1d86b2-b592-42a9-b3d5-51fe97e7a8a3",
+        "degree": 1,
+        "name": "menovitá hodnota akcie",
+        "code": "datovy_prvok_383"
+      },
+      {
+        "uuid": "e1349005-27fd-4b7d-8ab2-28bf0c345969",
+        "degree": 1,
+        "name": "množstvo akcií",
+        "code": "datovy_prvok_382"
+      },
+      {
+        "uuid": "2f3737dc-b200-436e-b5a2-8e231f074fa8",
+        "degree": 1,
+        "name": "prevoditeľnosť akcií",
+        "code": "datovy_prvok_381"
+      },
+      {
+        "uuid": "8cab6764-14dc-42e0-bca8-c02111c5e46e",
+        "degree": 1,
+        "name": "Zainteresovaná osoba",
+        "code": "datovy_prvok_380"
+      },
+      {
+        "uuid": "f77f719d-0ffc-40b5-b0e5-91d7f857a022",
+        "degree": 1,
+        "name": "Zainteresovaná osoba",
+        "code": "datovy_prvok_379"
+      },
+      {
+        "uuid": "7016d6c8-a685-4faa-9690-8d10774cc0ec",
+        "degree": 1,
+        "name": "Typ zainteresovanej osoby",
+        "code": "datovy_prvok_378"
+      },
+      {
+        "uuid": "0b91f3cb-c10e-4d89-aa98-261165b8debb",
+        "degree": 1,
+        "name": "typ zainteresovanej osoby",
+        "code": "datovy_prvok_377"
+      },
+      {
+        "uuid": "bfe1b848-2f52-4d6d-85b8-5a94ad1bba39",
+        "degree": 1,
+        "name": "Základné imanie",
+        "code": "datovy_prvok_376"
+      },
+      {
+        "uuid": "92348e02-2888-4995-b90c-20ba2e46bea8",
+        "degree": 1,
+        "name": "plné meno právnickej osoby",
+        "code": "datovy_prvok_345"
+      },
+      {
+        "uuid": "a54b034d-91d0-4501-8428-e5e9fd83223e",
+        "degree": 1,
+        "name": "alternatívne meno právnickej osoby",
+        "code": "datovy_prvok_347"
+      },
+      {
+        "uuid": "e8493f26-0a98-4a7c-90af-8d9b16c91489",
+        "degree": 1,
+        "name": "právna forma organizácie",
+        "code": "datovy_prvok_349"
+      },
+      {
+        "uuid": "7de75e1a-a439-45b8-b69d-2762ffee91c3",
+        "degree": 1,
+        "name": "právny stav organizácie",
+        "code": "datovy_prvok_350"
+      },
+      {
+        "uuid": "8f5b4ce4-9f32-4d40-828d-07a5f760cb5d",
+        "degree": 1,
+        "name": "názov organizačnej jednotky",
+        "code": "datovy_prvok_352"
+      },
+      {
+        "uuid": "69c10b73-3787-43c8-abff-3f961b997cd1",
+        "degree": 1,
+        "name": "typ organizačnej jednotky",
+        "code": "datovy_prvok_353"
+      },
+      {
+        "uuid": "2b8fd842-adcb-421e-a0e4-37a18cd4f51a",
+        "degree": 1,
+        "name": "Typ organizačnej jednotky",
+        "code": "datovy_prvok_354"
+      },
+      {
+        "uuid": "c50f84c3-3559-42ba-b371-b9b5664f6cdc",
+        "degree": 1,
+        "name": "dátum vzniku",
+        "code": "datovy_prvok_357"
+      },
+      {
+        "uuid": "7c717700-271e-43d7-98f7-db2c5dcb0975",
+        "degree": 1,
+        "name": "dátum zániku",
+        "code": "datovy_prvok_358"
+      },
+      {
+        "uuid": "9f89f646-836a-4ed4-be34-f94713c18f85",
+        "degree": 1,
+        "name": "klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_360"
+      },
+      {
+        "uuid": "38276e9d-a3c7-4c38-bafe-91536f8ee7db",
+        "degree": 1,
+        "name": "Klasifikácia ekonomickej činnosti",
+        "code": "datovy_prvok_361"
+      },
+      {
+        "uuid": "df683cc8-38f3-49a8-86a2-0d6048acc524",
+        "degree": 1,
+        "name": "popis ekonomickej činnosti",
+        "code": "datovy_prvok_362"
+      },
+      {
+        "uuid": "e27436a6-3714-42c6-8b02-541f5dba66a4",
+        "degree": 1,
+        "name": "ekonomická činnosť",
+        "code": "datovy_prvok_363"
+      },
+      {
+        "uuid": "59bd5238-61b9-4aef-a2b8-ab7b3bae0ade",
+        "degree": 1,
+        "name": "Predment činnosti",
+        "code": "datovy_prvok_364"
+      },
+      {
+        "uuid": "502bf4f2-2aba-4276-85d1-8cba923ad327",
+        "degree": 1,
+        "name": "hlavná ekonomická činnosť",
+        "code": "datovy_prvok_365"
+      },
+      {
+        "uuid": "8f0fd7c0-f99a-445c-bdcf-7e9bde752a35",
+        "degree": 1,
+        "name": "organizačná jednotka",
+        "code": "datovy_prvok_366"
+      },
+      {
+        "uuid": "406a5e2a-d316-45eb-a7e3-07a236796251",
+        "degree": 1,
+        "name": "Organizačná jednotka",
+        "code": "datovy_prvok_367"
+      },
+      {
+        "uuid": "42659388-0482-4df3-999a-5b5a69c25e0c",
+        "degree": 1,
+        "name": "iná právna skutočnosť",
+        "code": "datovy_prvok_368"
+      },
+      {
+        "uuid": "76092fc6-dd93-43dc-91f2-6947ba805b09",
+        "degree": 1,
+        "name": "Iná právna skutočnosť",
+        "code": "datovy_prvok_369"
+      },
+      {
+        "uuid": "1eef1399-fd55-4d01-b12c-90ef5c37bf8e",
+        "degree": 1,
+        "name": "schválená výška základného imania",
+        "code": "datovy_prvok_370"
+      },
+      {
+        "uuid": "7bb663bd-8e48-4776-a376-3ffe07e745a7",
+        "degree": 1,
+        "name": "výška splateného základného imania",
+        "code": "datovy_prvok_371"
+      },
+      {
+        "uuid": "164b9a31-d1b6-43ae-b12c-2e479c9c1a18",
+        "degree": 1,
+        "name": "výška základného imania",
+        "code": "datovy_prvok_372"
+      },
+      {
+        "uuid": "435ad443-e2e6-4ef9-9d5c-492bede7135b",
+        "degree": 1,
+        "name": "mena základného imania",
+        "code": "datovy_prvok_374"
+      },
+      {
+        "uuid": "dfe8ddb8-f4f9-4855-a016-f2838a4b6f68",
+        "degree": 1,
+        "name": "Elektronické úradné konanie",
+        "code": "datovy_prvok_799"
+      },
+      {
+        "uuid": "47286eca-b49a-419a-b26a-da36acbab947",
+        "degree": 1,
+        "name": "Typ elektronického úradného konania",
+        "code": "datovy_prvok_803"
+      },
+      {
+        "uuid": "e11c8006-828b-440d-94c3-9c79ea4b21a5",
+        "degree": 1,
+        "name": "Elektronický úradný dokument (rozhodnutie OVM)",
+        "code": "datovy_prvok_800"
+      },
+      {
+        "uuid": "208bd164-ef19-4005-bfd0-8505fc4f99f8",
+        "degree": 1,
+        "name": "Elektronický formulár",
+        "code": "datovy_prvok_30"
+      },
+      {
+        "uuid": "a2cf7aec-b917-4e20-9876-23b66078d20e",
+        "degree": 1,
+        "name": "Informačný systém verejnej správy",
+        "code": "datovy_prvok_31"
+      },
+      {
+        "uuid": "887e36af-1337-4133-82ff-7db90484d94a",
+        "degree": 1,
+        "name": "Koncová služba",
+        "code": "datovy_prvok_32"
+      },
+      {
+        "uuid": "a2451037-c462-4dcc-8354-be5b92c711b5",
+        "degree": 1,
+        "name": "Aplikačná služba",
+        "code": "datovy_prvok_33"
+      },
+      {
+        "uuid": "6c07ad6f-274e-420a-b952-09805153f12e",
+        "degree": 1,
+        "name": "Agenda",
+        "code": "datovy_prvok_34"
+      },
+      {
+        "uuid": "3b2f6c56-b8e9-4684-a52e-c069527a2d5d",
+        "degree": 1,
+        "name": "Úsek verejnej správy",
+        "code": "datovy_prvok_37"
+      },
+      {
+        "uuid": "d0e8eb4e-5b6f-4eef-8e2d-d0bc73bb844b",
+        "degree": 1,
+        "name": "Typ životnej situácie",
+        "code": "datovy_prvok_38"
+      },
+      {
+        "uuid": "7e15e3fd-7328-4caf-bb68-505020993882",
+        "degree": 1,
+        "name": "Operácia aplikačnej služby",
+        "code": "datovy_prvok_40"
+      },
+      {
+        "uuid": "08e6f9c2-745e-4eeb-a46e-d80f23b412b0",
+        "degree": 1,
+        "name": "Koncový bod",
+        "code": "datovy_prvok_41"
+      },
+      {
+        "uuid": "06da91c4-f0b7-4809-8035-9464b1051138",
+        "degree": 1,
+        "name": "Infraštruktúrna služba",
+        "code": "datovy_prvok_42"
+      },
+      {
+        "uuid": "3a9528fa-69bf-4a02-8392-8aeb63d49717",
+        "degree": 1,
+        "name": "Cieľ",
+        "code": "datovy_prvok_43"
+      },
+      {
+        "uuid": "0701fcb4-d904-417c-98ce-d3124d0912b2",
+        "degree": 1,
+        "name": "Cieľ EGOV pre Prioritnú os 7",
+        "code": "datovy_prvok_44"
+      },
+      {
+        "uuid": "2b9373dc-ec1e-4ad2-9f59-ffb50e5a91b5",
+        "degree": 1,
+        "name": "EGOV Princíp",
+        "code": "datovy_prvok_46"
+      },
+      {
+        "uuid": "4fb85654-c26b-4ae1-bd24-68a5f53dda90",
+        "degree": 1,
+        "name": "Koncepcia rozvoja ISVS",
+        "code": "datovy_prvok_47"
+      },
+      {
+        "uuid": "4827570e-c913-48ba-adf9-dc6f0438027b",
+        "degree": 1,
+        "name": "KRIS Protokol",
+        "code": "datovy_prvok_48"
+      },
+      {
+        "uuid": "909e5391-2092-4f85-8454-1f9b10315b30",
+        "degree": 1,
+        "name": "Štúdia uskutočniteľnosti",
+        "code": "datovy_prvok_50"
+      },
+      {
+        "uuid": "a494828d-75f8-4bf8-9438-db0abeadbab3",
+        "degree": 1,
+        "name": "Operačný program",
+        "code": "datovy_prvok_51"
+      },
+      {
+        "uuid": "727a1718-2f31-4d29-9041-928ddcf9b4c5",
+        "degree": 1,
+        "name": "EGOV Projekt",
+        "code": "datovy_prvok_52"
+      },
+      {
+        "uuid": "e3f920be-bd08-4313-8436-01bbc7b29add",
+        "degree": 1,
+        "name": "Fáza projektu",
+        "code": "datovy_prvok_121"
+      },
+      {
+        "uuid": "5c0fd6e8-8aed-4c3a-b6df-7f80925b906b",
+        "degree": 1,
+        "name": "Fáza životného cyklu",
+        "code": "datovy_prvok_122"
+      },
+      {
+        "uuid": "38fd273c-e06a-44ee-9b2b-a22728d02224",
+        "degree": 1,
+        "name": "Kanál",
+        "code": "datovy_prvok_132"
+      },
+      {
+        "uuid": "70af6b11-5ad2-4f93-afcf-698b9879ac05",
+        "degree": 1,
+        "name": "Kontrakt",
+        "code": "datovy_prvok_133"
+      },
+      {
+        "uuid": "a84124fa-9959-4ccb-8f24-883fe99d16f4",
+        "degree": 1,
+        "name": "Povinná osoba",
+        "code": "datovy_prvok_149"
+      },
+      {
+        "uuid": "5c71d632-7742-4040-90cf-d6ccefe61644",
+        "degree": 1,
+        "name": "Proces (EGOV)",
+        "code": "datovy_prvok_154"
+      },
+      {
+        "uuid": "bc13852e-4a93-4c23-914b-81c4643ed618",
+        "degree": 1,
+        "name": "Referencny register",
+        "code": "datovy_prvok_157"
+      },
+      {
+        "uuid": "3b99e72c-c6ff-4d36-a157-e1cfa85a51ed",
+        "degree": 1,
+        "name": "Úsek verejnej správy",
+        "code": "datovy_prvok_169"
+      },
+      {
+        "uuid": "550efaaf-082f-40ea-835d-8db347564a45",
+        "degree": 1,
+        "name": "právne meno",
+        "code": "datovy_prvok_253"
+      },
+      {
+        "uuid": "efa76872-550f-4630-aaac-0db4d1ed08ce",
+        "degree": 1,
+        "name": "Okruh životnej situácie",
+        "code": "datovy_prvok_501"
+      },
+      {
+        "uuid": "e12a5e40-0126-443e-8e00-2256b9a5462f",
+        "degree": 1,
+        "name": "životná situácia",
+        "code": "datovy_prvok_502"
+      },
+      {
+        "uuid": "893817ad-3589-486f-a618-888f8f515f7d",
+        "degree": 1,
+        "name": "okruh životnej situácie",
+        "code": "datovy_prvok_503"
+      },
+      {
+        "uuid": "cdd9c705-ee26-4ff7-becf-12fc71e47a65",
+        "degree": 1,
+        "name": "životná situácia",
+        "code": "datovy_prvok_504"
+      },
+      {
+        "uuid": "51d15ccf-89a6-4c2c-971b-ea870144f216",
+        "degree": 1,
+        "name": "zdrojový register",
+        "code": "datovy_prvok_506"
+      },
+      {
+        "uuid": "b7e215ae-c6ea-40c9-987a-91d8fd4d550d",
+        "degree": 1,
+        "name": "referenčný register",
+        "code": "datovy_prvok_507"
+      },
+      {
+        "uuid": "10a08003-a79c-4ae3-bab2-857f27ed3993",
+        "degree": 1,
+        "name": "Zdrojový register",
+        "code": "datovy_prvok_508"
+      },
+      {
+        "uuid": "bd9461e7-4feb-45a8-ad35-55b8a4d7b512",
+        "degree": 1,
+        "name": "realizuje koncovú službu",
+        "code": "datovy_prvok_736"
+      },
+      {
+        "uuid": "024d8cfa-393b-43bb-b042-619c689cfffe",
+        "degree": 1,
+        "name": "obsluhuje agendu",
+        "code": "datovy_prvok_737"
+      },
+      {
+        "uuid": "5543b2ac-0256-4802-9468-67c714c5d9fb",
+        "degree": 1,
+        "name": "obsluhuje koncovú službu",
+        "code": "datovy_prvok_738"
+      },
+      {
+        "uuid": "1694ea58-3094-4031-8f5c-8de822f070dc",
+        "degree": 1,
+        "name": "rozvíja ISVS",
+        "code": "datovy_prvok_739"
+      },
+      {
+        "uuid": "c1621fad-fd4d-4855-8a60-7c919c94f7ab",
+        "degree": 1,
+        "name": "agreguje agendu",
+        "code": "datovy_prvok_740"
+      },
+      {
+        "uuid": "248577eb-da52-458c-bf0c-bff6a4e19ef3",
+        "degree": 1,
+        "name": "nadradený orgán verejnej moci",
+        "code": "datovy_prvok_741"
+      },
+      {
+        "uuid": "fcc4ccb5-86be-477c-9016-5c29364511f5",
+        "degree": 1,
+        "name": "spravuje ISVS",
+        "code": "datovy_prvok_742"
+      },
+      {
+        "uuid": "279df5b0-4334-46f2-8e01-45b9a134ee83",
+        "degree": 1,
+        "name": "podradený orgán verejnej moci",
+        "code": "datovy_prvok_743"
+      },
+      {
+        "uuid": "8e3980ca-526b-4702-a27b-27ad2c415cd3",
+        "degree": 1,
+        "name": "vykonáva agendu",
+        "code": "datovy_prvok_744"
+      },
+      {
+        "uuid": "cb9b292f-69ac-4d13-bede-57ac5816ac42",
+        "degree": 1,
+        "name": "obsluhuje projekt",
+        "code": "datovy_prvok_745"
+      },
+      {
+        "uuid": "99d91f84-5974-4da0-a71f-6a89d4857fe7",
+        "degree": 1,
+        "name": "obsluhuje aplikačnú službu",
+        "code": "datovy_prvok_746"
+      },
+      {
+        "uuid": "0de5baf5-a9a1-43be-8f41-d2ab33f92ebb",
+        "degree": 1,
+        "name": "gestor koncovej služby",
+        "code": "datovy_prvok_747"
+      },
+      {
+        "uuid": "1c56936d-f104-43ce-8348-571854f06c1f",
+        "degree": 1,
+        "name": "Elektronické podanie",
+        "code": "datovy_prvok_801"
+      },
+      {
+        "uuid": "e096291b-b4b8-4da1-b88a-e8e4a03e5c3e",
+        "degree": 1,
+        "name": "Typ elektronického formulára",
+        "code": "datovy_prvok_802"
+      },
+      {
+        "uuid": "4e4890d6-c47a-4b6a-ab1e-d6c89ba08fe6",
+        "degree": 1,
+        "name": "Typ adresy",
+        "code": "datovy_prvok_760"
+      },
+      {
+        "uuid": "f2667820-e1d4-4133-a44c-d4ee8611ef22",
+        "degree": 1,
+        "name": "Byt",
+        "code": "datovy_prvok_765"
+      },
+      {
+        "uuid": "e327f0c2-5f6b-44d1-aba1-33c23dbd6886",
+        "degree": 1,
+        "name": "Fyzická adresa",
+        "code": "datovy_prvok_764"
+      },
+      {
+        "uuid": "93805aa9-7fcd-420e-9aba-57e7832a71b3",
+        "degree": 1,
+        "name": "fyzická adresa",
+        "code": "datovy_prvok_763"
+      },
+      {
+        "uuid": "fe724637-d2f5-4e98-970a-b397785d44b5",
+        "degree": 1,
+        "name": "dátum ukončenia evidencie adresy",
+        "code": "datovy_prvok_762"
+      },
+      {
+        "uuid": "dda1fd89-fa23-4b0d-8be9-dc9d89981f2b",
+        "degree": 1,
+        "name": "dátum evidencie adresy",
+        "code": "datovy_prvok_761"
+      },
+      {
+        "uuid": "4051b917-1c58-4fd9-99e6-c8026c1f2507",
+        "degree": 1,
+        "name": "Lokácia",
+        "code": "datovy_prvok_135"
+      },
+      {
+        "uuid": "3fbd83a1-765a-4bb7-bf28-133bb5aa5524",
+        "degree": 1,
+        "name": "krajina OSN",
+        "code": "datovy_prvok_407"
+      },
+      {
+        "uuid": "b2534289-d224-48ac-8ac6-0f22df51f92e",
+        "degree": 1,
+        "name": "Krajina OSN",
+        "code": "datovy_prvok_408"
+      },
+      {
+        "uuid": "4b27e727-5a81-43c1-95b6-3ac0bd75354a",
+        "degree": 1,
+        "name": "kraj",
+        "code": "datovy_prvok_409"
+      },
+      {
+        "uuid": "95b62792-26de-407a-a4fe-339deae997df",
+        "degree": 1,
+        "name": "Kraj",
+        "code": "datovy_prvok_410"
+      },
+      {
+        "uuid": "1adcab0e-4aae-4b02-a375-1580b45e9d40",
+        "degree": 1,
+        "name": "okres",
+        "code": "datovy_prvok_411"
+      },
+      {
+        "uuid": "849956a6-d26f-493b-bf6c-76bcfe2d755c",
+        "degree": 1,
+        "name": "Okres",
+        "code": "datovy_prvok_412"
+      },
+      {
+        "uuid": "895255d1-e6f9-4864-a9ac-68c2b2334c05",
+        "degree": 1,
+        "name": "obec",
+        "code": "datovy_prvok_413"
+      },
+      {
+        "uuid": "31a18aca-82d9-4c78-911a-952714816e73",
+        "degree": 1,
+        "name": "Obec",
+        "code": "datovy_prvok_414"
+      },
+      {
+        "uuid": "2f89bbf4-3dd9-48a8-b176-d9bafa62b2b9",
+        "degree": 1,
+        "name": "časť obce",
+        "code": "datovy_prvok_415"
+      },
+      {
+        "uuid": "774a8532-51ef-4970-80da-d0280dab8675",
+        "degree": 1,
+        "name": "Časť obce",
+        "code": "datovy_prvok_416"
+      },
+      {
+        "uuid": "7e353701-e90c-4db9-b11c-a08c76eb03cf",
+        "degree": 1,
+        "name": "ulica",
+        "code": "datovy_prvok_417"
+      },
+      {
+        "uuid": "d1cfa644-770b-4904-9380-c25eb066e6cc",
+        "degree": 1,
+        "name": "názov ulice",
+        "code": "datovy_prvok_418"
+      },
+      {
+        "uuid": "38f7fee1-8156-4445-a8ce-565a12361c7d",
+        "degree": 1,
+        "name": "Street",
+        "code": "datovy_prvok_419"
+      },
+      {
+        "uuid": "6be3f4ce-5367-46bd-86ef-1fc5276deaca",
+        "degree": 1,
+        "name": "formátovaná adresa",
+        "code": "datovy_prvok_420"
+      },
+      {
+        "uuid": "3b8c56da-c697-4d14-bb9f-29be7d17e5fd",
+        "degree": 1,
+        "name": "súpisné číslo",
+        "code": "datovy_prvok_421"
+      },
+      {
+        "uuid": "1f799beb-84e1-448a-a419-26b7e444b96c",
+        "degree": 1,
+        "name": "orientačné číslo",
+        "code": "datovy_prvok_422"
+      },
+      {
+        "uuid": "258cdea0-26b2-4774-9bc4-818b2e515c8a",
+        "degree": 1,
+        "name": "Vchod",
+        "code": "datovy_prvok_424"
+      },
+      {
+        "uuid": "81b70f3c-d570-4f14-a334-b3195f8fff24",
+        "degree": 1,
+        "name": "má byty",
+        "code": "datovy_prvok_425"
+      },
+      {
+        "uuid": "c0c967c0-81f8-4b59-b310-3d0b78c3443a",
+        "degree": 1,
+        "name": "názov budovy",
+        "code": "datovy_prvok_426"
+      },
+      {
+        "uuid": "fd7ef232-7139-424e-8933-cd4f94491854",
+        "degree": 1,
+        "name": "typ budovy",
+        "code": "datovy_prvok_427"
+      },
+      {
+        "uuid": "9f2db939-16a9-4187-920a-838b14fef8d7",
+        "degree": 1,
+        "name": "Typ budovy",
+        "code": "datovy_prvok_428"
+      },
+      {
+        "uuid": "213d8b31-0d92-4871-ac69-0259dbdf7230",
+        "degree": 1,
+        "name": "účel budovy",
+        "code": "datovy_prvok_700"
+      },
+      {
+        "uuid": "1be2811d-1b35-47ed-9d1c-8871b6b3cb35",
+        "degree": 1,
+        "name": "Účel budovy",
+        "code": "datovy_prvok_701"
+      },
+      {
+        "uuid": "82fe40da-b756-4f07-ad6a-a2d49b2be077",
+        "degree": 1,
+        "name": "budova",
+        "code": "datovy_prvok_702"
+      },
+      {
+        "uuid": "95efd8ee-4e51-4887-a3f0-d1615b2ef987",
+        "degree": 1,
+        "name": "Budova",
+        "code": "datovy_prvok_703"
+      },
+      {
+        "uuid": "4480e20a-0c26-45fd-8393-ac29cd60977c",
+        "degree": 1,
+        "name": "časť budovy",
+        "code": "datovy_prvok_704"
+      },
+      {
+        "uuid": "abaa1922-d903-4a00-8e87-60cd5d8ef890",
+        "degree": 1,
+        "name": "Časť budovy",
+        "code": "datovy_prvok_705"
+      },
+      {
+        "uuid": "ca397531-fbb8-429c-aed8-1cc659427b8a",
+        "degree": 1,
+        "name": "príjemca pošty",
+        "code": "datovy_prvok_706"
+      },
+      {
+        "uuid": "6b848524-48a7-4fca-b0fb-a0c19e04fb51",
+        "degree": 1,
+        "name": "poštový priečinok",
+        "code": "datovy_prvok_707"
+      },
+      {
+        "uuid": "ce486bdc-b650-42f9-b35a-521acd86caf5",
+        "degree": 1,
+        "name": "Poštový priečinok",
+        "code": "datovy_prvok_708"
+      },
+      {
+        "uuid": "7bf653c9-8743-4ee7-93f6-41ef12861259",
+        "degree": 1,
+        "name": "poštové smerovacie číslo",
+        "code": "datovy_prvok_709"
+      },
+      {
+        "uuid": "ea04f6e5-5e85-439c-ac36-371177d0aeaf",
+        "degree": 1,
+        "name": "Poštové smerovacie číslo",
+        "code": "datovy_prvok_710"
+      },
+      {
+        "uuid": "69b42aee-cee6-426b-8a31-6b7756d3fe55",
+        "degree": 1,
+        "name": "psč kód",
+        "code": "datovy_prvok_711"
+      },
+      {
+        "uuid": "c991553e-da74-43a0-a85c-1d4ffa3179ae",
+        "degree": 1,
+        "name": "poštová adresa",
+        "code": "datovy_prvok_712"
+      },
+      {
+        "uuid": "0a0938c3-20cf-4c14-9fbf-7fd9b75addb2",
+        "degree": 1,
+        "name": "regionálna štatistická územná jednotka 3",
+        "code": "datovy_prvok_720"
+      },
+      {
+        "uuid": "1ce5c693-3d64-46b1-9d6d-7cadceb2466c",
+        "degree": 1,
+        "name": "kraj",
+        "code": "datovy_prvok_721"
+      },
+      {
+        "uuid": "09d12e0e-911d-446b-8a53-e63761add812",
+        "degree": 1,
+        "name": "okres",
+        "code": "datovy_prvok_725"
+      },
+      {
+        "uuid": "bf802b82-2d1d-43a8-9d2c-8eb5b0f853b2",
+        "degree": 1,
+        "name": "okres",
+        "code": "datovy_prvok_726"
+      },
+      {
+        "uuid": "c783e36d-57cf-42dd-a677-6257ae2e0a70",
+        "degree": 1,
+        "name": "lokálna štatistická územná jednotka 1",
+        "code": "datovy_prvok_727"
+      },
+      {
+        "uuid": "9e4c2172-85cb-4149-9245-89c5f1e22eef",
+        "degree": 1,
+        "name": "obec",
+        "code": "datovy_prvok_733"
+      },
+      {
+        "uuid": "0c207ec4-1aca-41a6-ab79-8214dda91dba",
+        "degree": 1,
+        "name": "regionálna štatistická územná jednotka 3",
+        "code": "datovy_prvok_750"
+      },
+      {
+        "uuid": "f5285e8e-1f5d-42e3-ba9c-19c0e83fc76b",
+        "degree": 1,
+        "name": "regionálna štatistická územná jednotka 3",
+        "code": "datovy_prvok_751"
+      },
+      {
+        "uuid": "ac5b2533-3575-4248-8283-ad6663759386",
+        "degree": 1,
+        "name": "lokálna štatistická územná jednotka 1",
+        "code": "datovy_prvok_752"
+      },
+      {
+        "uuid": "765525a3-42e9-45f0-ba3b-f96e5a8042eb",
+        "degree": 1,
+        "name": "lokálna štatistická územná jednotka 2",
+        "code": "datovy_prvok_753"
+      },
+      {
+        "uuid": "37c95040-4362-43d1-9e31-d26693354e27",
+        "degree": 1,
+        "name": "Regionálna štatistická územná jednotka 3",
+        "code": "datovy_prvok_754"
+      },
+      {
+        "uuid": "643a803f-863d-4078-ae7a-6a01482c9efb",
+        "degree": 1,
+        "name": "Lokálna štatistická územná jednotka 1",
+        "code": "datovy_prvok_756"
+      },
+      {
+        "uuid": "83f764e4-0c12-4604-8efb-b0d5e8b67ff0",
+        "degree": 1,
+        "name": "Lokálna štatistická územná jednotka 2",
+        "code": "datovy_prvok_757"
+      },
+      {
+        "uuid": "8123dba9-fba0-4b95-8c40-f1f7be50904c",
+        "degree": 1,
+        "name": "typ adresy",
+        "code": "datovy_prvok_759"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "57ef9690-b750-4ba7-b7c2-be37e2edd95f",
+        "degree": 121,
+        "name": "Ontológia fyzickej osoby",
+        "code": "ontologia_78"
+      },
+      {
+        "uuid": "2ea8453f-1496-4675-a816-dab56c549b78",
+        "degree": 87,
+        "name": "Ontológia právneho subjektu",
+        "code": "ontologia_683"
+      },
+      {
+        "uuid": "14831cc8-b10a-4029-b893-48ff887a4ee2",
+        "degree": 78,
+        "name": "Ontológia právnickej osoby",
+        "code": "ontologia_585"
+      },
+      {
+        "uuid": "a6d8c691-6a4b-4c74-9598-b293ba777cda",
+        "degree": 68,
+        "name": "Ontológia právnickej osoby",
+        "code": "ontologia_81"
+      },
+      {
+        "uuid": "d33427f9-96b3-4bec-982e-91601af0c14d",
+        "degree": 55,
+        "name": "Ontológia entít lokácie",
+        "code": "ontologia_176"
+      },
+      {
+        "uuid": "ace14d5f-3170-41c5-9969-b735941ed412",
+        "degree": 51,
+        "name": "Ontológia egovernment entít",
+        "code": "ontologia_9"
+      },
+      {
+        "uuid": "7ec18cef-eed9-479a-b54e-b419e3cb3a71",
+        "degree": 47,
+        "name": "Ontológia finančných entít",
+        "code": "ontologia_226"
+      },
+      {
+        "uuid": "1cc9a2a2-1bd5-4b27-9b6b-1b51b9e43def",
+        "degree": 38,
+        "name": "Ontológia Infokomunikačných entít",
+        "code": "ontologia_146"
+      },
+      {
+        "uuid": "9e08aa4a-e325-4b4d-8d99-81c8584ecce6",
+        "degree": 11,
+        "name": "Ontológia identifikátora",
+        "code": "ontologia_83"
+      },
+      {
+        "uuid": "3a3d3dc6-7bb8-4bf7-877e-f828cdebf92a",
+        "degree": 9,
+        "name": "Ontológia legislatívy",
+        "code": "ontologia_1081"
+      },
+      {
+        "uuid": "41dfb9a3-064f-4dea-b55f-eedbab50c4b7",
+        "degree": 9,
+        "name": "Ontológia zdroja",
+        "code": "ontologia_102"
+      },
+      {
+        "uuid": "3cd1498b-38bb-4d1c-acb9-361d78426568",
+        "degree": 8,
+        "name": "Ontológia právnych entít",
+        "code": "ontologia_109"
+      },
+      {
+        "uuid": "6ba887bb-882c-46fb-8fb8-0f49a5b06826",
+        "degree": 4,
+        "name": "Ontológia katalógu dátových prvkov",
+        "code": "ontologia_791"
+      }
+    ],
+    "islands": {
+      "total_nodes": 633,
+      "total_islands": 47,
+      "singleton_islands": 34,
+      "multi_islands": [
+        {
+          "size_total": 122,
+          "size_source": 121,
+          "size_target": 1,
+          "fraction_total": 0.19273301737756715,
+          "top_source_uuid": "ce4e7dfb-a9d7-4da1-b9e7-506383b68dc4",
+          "top_source_degree": 1,
+          "top_target_uuid": "57ef9690-b750-4ba7-b7c2-be37e2edd95f",
+          "top_target_degree": 121
+        },
+        {
+          "size_total": 88,
+          "size_source": 87,
+          "size_target": 1,
+          "fraction_total": 0.13902053712480253,
+          "top_source_uuid": "9e581ce5-82aa-473e-b5a7-9d3cff79bbbf",
+          "top_source_degree": 1,
+          "top_target_uuid": "2ea8453f-1496-4675-a816-dab56c549b78",
+          "top_target_degree": 87
+        },
+        {
+          "size_total": 79,
+          "size_source": 78,
+          "size_target": 1,
+          "fraction_total": 0.12480252764612954,
+          "top_source_uuid": "3ae4c244-59f5-467d-862f-0f84da8905ae",
+          "top_source_degree": 1,
+          "top_target_uuid": "14831cc8-b10a-4029-b893-48ff887a4ee2",
+          "top_target_degree": 78
+        },
+        {
+          "size_total": 69,
+          "size_source": 68,
+          "size_target": 1,
+          "fraction_total": 0.10900473933649289,
+          "top_source_uuid": "42659388-0482-4df3-999a-5b5a69c25e0c",
+          "top_source_degree": 1,
+          "top_target_uuid": "a6d8c691-6a4b-4c74-9598-b293ba777cda",
+          "top_target_degree": 68
+        },
+        {
+          "size_total": 56,
+          "size_source": 55,
+          "size_target": 1,
+          "fraction_total": 0.08846761453396525,
+          "top_source_uuid": "ac5b2533-3575-4248-8283-ad6663759386",
+          "top_source_degree": 1,
+          "top_target_uuid": "d33427f9-96b3-4bec-982e-91601af0c14d",
+          "top_target_degree": 55
+        },
+        {
+          "size_total": 52,
+          "size_source": 51,
+          "size_target": 1,
+          "fraction_total": 0.08214849921011058,
+          "top_source_uuid": "887e36af-1337-4133-82ff-7db90484d94a",
+          "top_source_degree": 1,
+          "top_target_uuid": "ace14d5f-3170-41c5-9969-b735941ed412",
+          "top_target_degree": 51
+        },
+        {
+          "size_total": 48,
+          "size_source": 47,
+          "size_target": 1,
+          "fraction_total": 0.07582938388625593,
+          "top_source_uuid": "02336204-e98d-4940-8cc6-ddd7f7854478",
+          "top_source_degree": 1,
+          "top_target_uuid": "7ec18cef-eed9-479a-b54e-b419e3cb3a71",
+          "top_target_degree": 47
+        },
+        {
+          "size_total": 39,
+          "size_source": 38,
+          "size_target": 1,
+          "fraction_total": 0.061611374407582936,
+          "top_source_uuid": "c9ac5d76-dbec-4112-a15c-f703c7c8c476",
+          "top_source_degree": 1,
+          "top_target_uuid": "1cc9a2a2-1bd5-4b27-9b6b-1b51b9e43def",
+          "top_target_degree": 38
+        },
+        {
+          "size_total": 12,
+          "size_source": 11,
+          "size_target": 1,
+          "fraction_total": 0.018957345971563982,
+          "top_source_uuid": "9b40f637-421b-4e59-b261-b5447853a5e3",
+          "top_source_degree": 1,
+          "top_target_uuid": "9e08aa4a-e325-4b4d-8d99-81c8584ecce6",
+          "top_target_degree": 11
+        },
+        {
+          "size_total": 10,
+          "size_source": 9,
+          "size_target": 1,
+          "fraction_total": 0.01579778830963665,
+          "top_source_uuid": "c98d052d-b0f8-41c8-b776-e1ad19341f01",
+          "top_source_degree": 1,
+          "top_target_uuid": "3a3d3dc6-7bb8-4bf7-877e-f828cdebf92a",
+          "top_target_degree": 9
+        },
+        {
+          "size_total": 10,
+          "size_source": 9,
+          "size_target": 1,
+          "fraction_total": 0.01579778830963665,
+          "top_source_uuid": "eeb5e766-e08a-4150-b554-e0f92b7f6b09",
+          "top_source_degree": 1,
+          "top_target_uuid": "41dfb9a3-064f-4dea-b55f-eedbab50c4b7",
+          "top_target_degree": 9
+        },
+        {
+          "size_total": 9,
+          "size_source": 8,
+          "size_target": 1,
+          "fraction_total": 0.014218009478672985,
+          "top_source_uuid": "2c1712d9-b733-446d-993f-a48e27c286a9",
+          "top_source_degree": 1,
+          "top_target_uuid": "3cd1498b-38bb-4d1c-acb9-361d78426568",
+          "top_target_degree": 8
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.007898894154818325,
+          "top_source_uuid": "749b9ecb-69eb-42ff-9cdc-faf12a858594",
+          "top_source_degree": 1,
+          "top_target_uuid": "6ba887bb-882c-46fb-8fb8-0f49a5b06826",
+          "top_target_degree": 4
+        }
+      ],
+      "source": {
+        "total_nodes": 617,
+        "total_islands": 44,
+        "singleton_islands": 31,
+        "multi_islands": [
+          {
+            "size": 121,
+            "fraction": 0.19611021069692058,
+            "size_total": 122,
+            "top_uuid": "ce4e7dfb-a9d7-4da1-b9e7-506383b68dc4",
+            "top_degree": 1
+          },
+          {
+            "size": 87,
+            "fraction": 0.14100486223662884,
+            "size_total": 88,
+            "top_uuid": "9e581ce5-82aa-473e-b5a7-9d3cff79bbbf",
+            "top_degree": 1
+          },
+          {
+            "size": 78,
+            "fraction": 0.12641815235008103,
+            "size_total": 79,
+            "top_uuid": "3ae4c244-59f5-467d-862f-0f84da8905ae",
+            "top_degree": 1
+          },
+          {
+            "size": 68,
+            "fraction": 0.11021069692058347,
+            "size_total": 69,
+            "top_uuid": "42659388-0482-4df3-999a-5b5a69c25e0c",
+            "top_degree": 1
+          },
+          {
+            "size": 55,
+            "fraction": 0.08914100486223663,
+            "size_total": 56,
+            "top_uuid": "ac5b2533-3575-4248-8283-ad6663759386",
+            "top_degree": 1
+          },
+          {
+            "size": 51,
+            "fraction": 0.08265802269043761,
+            "size_total": 52,
+            "top_uuid": "887e36af-1337-4133-82ff-7db90484d94a",
+            "top_degree": 1
+          },
+          {
+            "size": 47,
+            "fraction": 0.07617504051863858,
+            "size_total": 48,
+            "top_uuid": "02336204-e98d-4940-8cc6-ddd7f7854478",
+            "top_degree": 1
+          },
+          {
+            "size": 38,
+            "fraction": 0.06158833063209076,
+            "size_total": 39,
+            "top_uuid": "c9ac5d76-dbec-4112-a15c-f703c7c8c476",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.017828200972447326,
+            "size_total": 12,
+            "top_uuid": "9b40f637-421b-4e59-b261-b5447853a5e3",
+            "top_degree": 1
+          },
+          {
+            "size": 9,
+            "fraction": 0.014586709886547812,
+            "size_total": 10,
+            "top_uuid": "c98d052d-b0f8-41c8-b776-e1ad19341f01",
+            "top_degree": 1
+          },
+          {
+            "size": 9,
+            "fraction": 0.014586709886547812,
+            "size_total": 10,
+            "top_uuid": "eeb5e766-e08a-4150-b554-e0f92b7f6b09",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.012965964343598054,
+            "size_total": 9,
+            "top_uuid": "2c1712d9-b733-446d-993f-a48e27c286a9",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.006482982171799027,
+            "size_total": 5,
+            "top_uuid": "749b9ecb-69eb-42ff-9cdc-faf12a858594",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 16,
+        "total_islands": 16,
+        "singleton_islands": 16,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "relation_name": "VerziaOntologie_meni_VerziaOntologie",
+  "name": "Verzia ontológie mení Verzia ontológie",
+  "description": "Verzia ontológie mení pôvodný Verzia ontológie",
+  "engDescription": "Ontology version modifies original Ontology version",
+  "type": "application",
+  "source_type": "VerziaOntologie",
+  "source_name": "Verzia ontológie",
+  "target_type": "VerziaOntologie",
+  "target_name": "Verzia ontológie",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 4,
+    "target_total": 4,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 8,
+      "total_islands": 8,
+      "singleton_islands": 8,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 4,
+        "total_islands": 4,
+        "singleton_islands": 4,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 4,
+        "total_islands": 4,
+        "singleton_islands": 4,
+        "multi_islands": []
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

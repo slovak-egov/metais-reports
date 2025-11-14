@@ -1,0 +1,4074 @@
+{
+  "relation_name": "PO_predklada_KRIS",
+  "name": "Povinna osoba predklada KRIT",
+  "description": "Povinna osoba predklada KRIT.",
+  "engDescription": "Public authority submits KRIT.",
+  "type": "application",
+  "source_type": "PO",
+  "source_name": "Povinná osoba",
+  "target_type": "KRIS",
+  "target_name": "Koncept rozvoja IT",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 269,
+    "unique_pairs": 269,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 5788,
+    "target_total": 282,
+    "source_connected": 125,
+    "target_connected": 269,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 12,
+      "avg": 2.152,
+      "median": 1,
+      "p90": 4,
+      "p99": 12
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+        "degree": 12,
+        "name": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
+        "code": "50349287"
+      },
+      {
+        "uuid": "0303d336-d570-47f5-846d-7f2d95b1d40b",
+        "degree": 12,
+        "name": "Ministerstvo vnútra Slovenskej republiky",
+        "code": "00151866"
+      },
+      {
+        "uuid": "be304941-5b5c-4ee5-8f64-b46d7048d9c6",
+        "degree": 11,
+        "name": "Ministerstvo zdravotníctva Slovenskej republiky",
+        "code": "00165565"
+      },
+      {
+        "uuid": "a067167e-7851-4cf9-bdcb-09dcec21a723",
+        "degree": 10,
+        "name": "Ministerstvo školstva, výskumu, vývoja a mládeže Slovenskej republiky",
+        "code": "00164381"
+      },
+      {
+        "uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+        "degree": 9,
+        "name": "Ministerstvo financií Slovenskej republiky",
+        "code": "00151742"
+      },
+      {
+        "uuid": "82ed4d16-86e5-4cdf-888e-96060dda8288",
+        "degree": 9,
+        "name": "Ministerstvo spravodlivosti Slovenskej republiky",
+        "code": "00166073"
+      },
+      {
+        "uuid": "8b22734b-273a-4c83-a38f-b5f904c2b157",
+        "degree": 8,
+        "name": "Ministerstvo pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
+        "code": "00156621"
+      },
+      {
+        "uuid": "cedc6be2-9465-4c5d-878c-60f80988d268",
+        "degree": 7,
+        "name": "Úrad vlády Slovenskej republiky",
+        "code": "00151513"
+      },
+      {
+        "uuid": "f069547e-bf00-4bbf-aa07-631be84ea36c",
+        "degree": 7,
+        "name": "Ministerstvo životného prostredia Slovenskej republiky",
+        "code": "42181810"
+      },
+      {
+        "uuid": "b9525626-338b-410e-b82d-e3fe4c95d31f",
+        "degree": 6,
+        "name": "Ministerstvo dopravy Slovenskej republiky",
+        "code": "30416094"
+      },
+      {
+        "uuid": "efc1cb80-bbf1-4311-ad68-d418aa63f6ff",
+        "degree": 6,
+        "name": "Ministerstvo práce, sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "00681156"
+      },
+      {
+        "uuid": "fd65b860-21fe-431f-b548-4515f600d95a",
+        "degree": 5,
+        "name": "Sociálna poisťovňa",
+        "code": "30807484"
+      },
+      {
+        "uuid": "8b88c333-7b27-46b0-abdf-6d36c1f8f678",
+        "degree": 4,
+        "name": "Všeobecná zdravotná poisťovňa a.s.",
+        "code": "35937974"
+      },
+      {
+        "uuid": "0c027273-1133-4871-8d94-44b36be99626",
+        "degree": 4,
+        "name": "Žilinský samosprávny kraj",
+        "code": "37808427"
+      },
+      {
+        "uuid": "cf3d26e8-6a0c-4b60-a5ec-9864b8f0a28c",
+        "degree": 3,
+        "name": "Úrad jadrového dozoru Slovenskej republiky",
+        "code": "30844185"
+      },
+      {
+        "uuid": "d88e14ac-d978-4666-bbe7-8ef82a9b3654",
+        "degree": 3,
+        "name": "DataCentrum elektronizácie územnej samosprávy Slovenska",
+        "code": "45736359"
+      },
+      {
+        "uuid": "87561faa-b1d2-49c2-a3a9-c4b5fb47e53b",
+        "degree": 3,
+        "name": "Trenčiansky samosprávny kraj",
+        "code": "36126624"
+      },
+      {
+        "uuid": "c67de740-0722-4b3d-9c12-8db578b7606a",
+        "degree": 3,
+        "name": "Ministerstvo zahraničných vecí a európskych záležitostí Slovenskej republiky",
+        "code": "00699021"
+      },
+      {
+        "uuid": "40ed1f67-d112-4e29-86bc-5b5e69b4520f",
+        "degree": 3,
+        "name": "Ministerstvo kultúry Slovenskej republiky",
+        "code": "00165182"
+      },
+      {
+        "uuid": "921bfe86-e1a3-4b3d-a803-031dbde4643a",
+        "degree": 3,
+        "name": "Prešovský samosprávny kraj",
+        "code": "37870475"
+      },
+      {
+        "uuid": "f4760beb-3b8e-4e62-8eff-efecb5e10a4d",
+        "degree": 3,
+        "name": "Národný bezpečnostný úrad",
+        "code": "36061701"
+      },
+      {
+        "uuid": "38b99897-c2be-4277-9cd9-f4b523955f7f",
+        "degree": 3,
+        "name": "Úrad priemyselného vlastníctva Slovenskej republiky",
+        "code": "30810787"
+      },
+      {
+        "uuid": "54b24ce2-87f2-445e-8f24-98eca37ca00a",
+        "degree": 3,
+        "name": "Úrad pre dohľad nad zdravotnou starostlivosťou",
+        "code": "30796482"
+      },
+      {
+        "uuid": "bb3ca935-5e86-46c6-8885-8f52a6e6df34",
+        "degree": 2,
+        "name": "Dopravný úrad",
+        "code": "42355826"
+      },
+      {
+        "uuid": "cb45bee5-c165-43dc-b3b1-bb4abc823215",
+        "degree": 2,
+        "name": "Úrad pre verejné obstarávanie",
+        "code": "31797903"
+      },
+      {
+        "uuid": "87b86d95-26e1-42dd-b081-3cba80a1ffe5",
+        "degree": 2,
+        "name": "Mesto Liptovský Mikuláš",
+        "code": "00315524"
+      },
+      {
+        "uuid": "e0344f51-5800-4925-8d22-aec27fd94ca5",
+        "degree": 2,
+        "name": "Exportno-importná banka Slovenskej republiky",
+        "code": "35722959"
+      },
+      {
+        "uuid": "d69416d5-3647-4a7b-813a-70966fb58cf7",
+        "degree": 2,
+        "name": "Mestská časť Bratislava - Nové Mesto",
+        "code": "00603317"
+      },
+      {
+        "uuid": "6f53f266-2cbd-4ed3-893d-925ae3a25e25",
+        "degree": 2,
+        "name": "Kancelária Súdnej rady Slovenskej republiky",
+        "code": "30793629"
+      },
+      {
+        "uuid": "b7435871-8acd-490d-a69e-dcba132566de",
+        "degree": 2,
+        "name": "Generálna prokuratúra SR",
+        "code": "00166481"
+      },
+      {
+        "uuid": "ecfd4484-a2c9-4826-99e4-98658d28df44",
+        "degree": 2,
+        "name": "Nitriansky samosprávny kraj",
+        "code": "37861298"
+      },
+      {
+        "uuid": "49e9e141-c306-4b11-b8fc-22b50c99eefc",
+        "degree": 2,
+        "name": "Kancelária prezidenta SR",
+        "code": "30845157"
+      },
+      {
+        "uuid": "62b6fa90-8667-47a5-8aa3-b464d1901000",
+        "degree": 2,
+        "name": "Národné lesnícke centrum",
+        "code": "42001315"
+      },
+      {
+        "uuid": "01307c20-d576-486d-96f5-0d18641ef43a",
+        "degree": 2,
+        "name": "Ministerstvo hospodárstva Slovenskej republiky",
+        "code": "35683813"
+      },
+      {
+        "uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+        "degree": 2,
+        "name": "Štatistický úrad Slovenskej republiky",
+        "code": "00166197"
+      },
+      {
+        "uuid": "6ce0e645-8836-441e-8d03-c8deb5f62700",
+        "degree": 2,
+        "name": "Protimonopolný úrad SR",
+        "code": "00699063"
+      },
+      {
+        "uuid": "3183c42d-0793-4a44-a18b-e5673ea18416",
+        "degree": 2,
+        "name": "Úrad pre reguláciu sieťových odvetví",
+        "code": "36069841"
+      },
+      {
+        "uuid": "f303d112-2913-4fc5-ad16-c8d7c070d4a5",
+        "degree": 2,
+        "name": "Štátny inštitút odborného vzdelávania",
+        "code": "17314852"
+      },
+      {
+        "uuid": "2e5da597-dd21-4c1e-b2bc-3f5889be7566",
+        "degree": 2,
+        "name": "Bratislavský samosprávny kraj",
+        "code": "36063606"
+      },
+      {
+        "uuid": "c0f01f30-6d1f-45ae-9fb8-623f6c054c9d",
+        "degree": 2,
+        "name": "Kancelária Najvyššieho súdu Slovenskej republiky",
+        "code": "00165581"
+      },
+      {
+        "uuid": "c32009d4-4fa9-4943-a82b-a7df772e321d",
+        "degree": 2,
+        "name": "Mesto Košice",
+        "code": "00691135"
+      },
+      {
+        "uuid": "2486e4fd-7c7d-4890-92a0-7b024d0add38",
+        "degree": 2,
+        "name": "Mesto Pezinok",
+        "code": "00305022"
+      },
+      {
+        "uuid": "73ec5411-5dc6-43d8-9234-cf427153ae97",
+        "degree": 2,
+        "name": "Ministerstvo obrany Slovenskej republiky",
+        "code": "30845572"
+      },
+      {
+        "uuid": "da4c539a-0e13-4f00-b4e9-32e6e3a2e793",
+        "degree": 2,
+        "name": "Dunajská Streda",
+        "code": "00305383"
+      },
+      {
+        "uuid": "c610ecb3-549a-4adb-8c51-2ab8b8c5de96",
+        "degree": 2,
+        "name": "Ústav pamäti národa",
+        "code": "37977997"
+      },
+      {
+        "uuid": "73ec767d-efcf-4b75-b277-809034b203b5",
+        "degree": 2,
+        "name": "Úrad na ochranu osobných údajov Slovenskej republiky",
+        "code": "36064220"
+      },
+      {
+        "uuid": "351a67a1-f824-403f-b70c-050aad28a67c",
+        "degree": 2,
+        "name": "Banskobystrický samosprávny kraj",
+        "code": "37828100"
+      },
+      {
+        "uuid": "993a59d1-d60b-4c3c-aa5c-a77a8baf4c8a",
+        "degree": 2,
+        "name": "Kancelária Ústavného súdu Slovenskej republiky",
+        "code": "31947000"
+      },
+      {
+        "uuid": "b300b0f0-0fb4-4bf5-93db-42ded0babdf1",
+        "degree": 2,
+        "name": "Najvyšší kontrolný úrad Slovenskej republiky",
+        "code": "65948524"
+      },
+      {
+        "uuid": "d05de928-a993-4561-9787-d8710c95f23a",
+        "degree": 2,
+        "name": "Úrad pre reguláciu elektronických komunikácií a poštových služieb",
+        "code": "42355818"
+      },
+      {
+        "uuid": "d48b08e1-3350-4013-b1ce-339c84906c37",
+        "degree": 2,
+        "name": "Národné športové centrum",
+        "code": "30853923"
+      },
+      {
+        "uuid": "ce4ddb23-7e52-4caf-97cc-31a731b14bfc",
+        "degree": 2,
+        "name": "Košický samosprávny kraj",
+        "code": "35541016"
+      },
+      {
+        "uuid": "0812ab55-cc17-4bec-89ad-0f5fea58e13c",
+        "degree": 2,
+        "name": "Správa štátnych hmotných rezerv Slovenskej republiky",
+        "code": "30844363"
+      },
+      {
+        "uuid": "7c8e1193-e767-4a69-bb4d-1744d543f4ea",
+        "degree": 1,
+        "name": "Levice",
+        "code": "00207203"
+      },
+      {
+        "uuid": "3ede60b3-f640-4c92-849a-45c392410f0f",
+        "degree": 1,
+        "name": "Hlavné mesto Slovenskej republiky Bratislava",
+        "code": "00603481"
+      },
+      {
+        "uuid": "e8e88510-070c-4c61-a283-24fdd5576917",
+        "degree": 1,
+        "name": "Trenčín",
+        "code": "00312037"
+      },
+      {
+        "uuid": "014c52c5-6779-43bc-8ae2-8349096e5781",
+        "degree": 1,
+        "name": "Regionálny úrad verejného zdravotníctva so sídlom v Topoľčanoch",
+        "code": "17335761"
+      },
+      {
+        "uuid": "5061ca82-b679-4844-93ab-b03760343f88",
+        "degree": 1,
+        "name": "Slovenská lekárska komora",
+        "code": "17313317"
+      },
+      {
+        "uuid": "bfee1539-38f2-4e50-9f34-152cc34df14e",
+        "degree": 1,
+        "name": "Mesto Kežmarok",
+        "code": "00326283"
+      },
+      {
+        "uuid": "17c57831-7eb5-467b-9eb9-7f1849991ae5",
+        "degree": 1,
+        "name": "Mestská časť Bratislava - Ružinov",
+        "code": "00603155"
+      },
+      {
+        "uuid": "88638c1d-60f4-4d80-a7e2-09417a3ebc7f",
+        "degree": 1,
+        "name": "Trnava",
+        "code": "00313114"
+      },
+      {
+        "uuid": "688aee0a-f29c-49eb-9eff-81d8b2c61bc3",
+        "degree": 1,
+        "name": "Mesto Nitra",
+        "code": "00308307"
+      },
+      {
+        "uuid": "fe36d0c7-4028-414c-b5f5-994f0bb48c7c",
+        "degree": 1,
+        "name": "Obce a mestá",
+        "code": "000000004004"
+      },
+      {
+        "uuid": "da0a08f7-868c-496e-b15e-5841ed257eec",
+        "degree": 1,
+        "name": "Mesto Nováky",
+        "code": "00318361"
+      },
+      {
+        "uuid": "6fc4d6ba-3a05-42cb-b124-3f2b874fbb94",
+        "degree": 1,
+        "name": "Centrum spoločných činností Slovenskej akadémie vied, verejná výskumná inštitúcia",
+        "code": "00398144"
+      },
+      {
+        "uuid": "ec5fb469-9d07-4c2d-abc2-13546a72dcd9",
+        "degree": 1,
+        "name": "Dolný Kubín",
+        "code": "00314463"
+      },
+      {
+        "uuid": "45a3fbc1-0f11-4a89-8480-a8e837930179",
+        "degree": 1,
+        "name": "Obec Blatné",
+        "code": "00304671"
+      },
+      {
+        "uuid": "3da4edd2-e1c8-4862-bd23-fc9167ec536e",
+        "degree": 1,
+        "name": "Úrad geodézie, kartografie a katastra Slovenskej republiky",
+        "code": "00166260"
+      },
+      {
+        "uuid": "70395eda-cd16-4325-809f-682fdda62d56",
+        "degree": 1,
+        "name": "Mesto Michalovce",
+        "code": "00325490"
+      },
+      {
+        "uuid": "9042e116-eb20-43bd-86e1-406b044088ed",
+        "degree": 1,
+        "name": "Mesto Levoča",
+        "code": "00329321"
+      },
+      {
+        "uuid": "aed7b5e2-f3f8-443b-93f2-ef6a17fe7ce1",
+        "degree": 1,
+        "name": "Mesto Brezová pod Bradlom",
+        "code": "00309443"
+      },
+      {
+        "uuid": "ce6a4ed7-e3f9-4b4d-9dda-808b212ab76a",
+        "degree": 1,
+        "name": "Mesto Partizánske",
+        "code": "00310905"
+      },
+      {
+        "uuid": "c828e5d1-3e3b-414c-b4b5-2233304d3507",
+        "degree": 1,
+        "name": "Dubnica nad Váhom",
+        "code": "00317209"
+      },
+      {
+        "uuid": "f698bd0b-9319-4b1b-b3ef-8343ae337424",
+        "degree": 1,
+        "name": "Úrad pre normalizáciu, metrológiu a skúšobníctvo Slovenskej republiky",
+        "code": "30810710"
+      },
+      {
+        "uuid": "63a1d491-f53a-43ba-a441-cc2e0d799d41",
+        "degree": 1,
+        "name": "Slovenská národná akreditačná služba",
+        "code": "30809673"
+      },
+      {
+        "uuid": "a136ca5e-5769-433d-88aa-2692a69cfc1b",
+        "degree": 1,
+        "name": "Zvolen",
+        "code": "00320439"
+      },
+      {
+        "uuid": "88c3572e-370a-4b78-8080-7bc6edd703ba",
+        "degree": 1,
+        "name": "Finančné riaditeľstvo Slovenskej republiky",
+        "code": "42499500"
+      },
+      {
+        "uuid": "42eacc2c-dd4f-4ed3-a3d9-239d2701c6e8",
+        "degree": 1,
+        "name": "Mesto Banská Štiavnica",
+        "code": "00320501"
+      },
+      {
+        "uuid": "89793657-80e0-4df5-975b-597166bb5af2",
+        "degree": 1,
+        "name": "Mesto Sládkovičovo",
+        "code": "00306177"
+      },
+      {
+        "uuid": "44406c16-b58f-4401-babe-2ec169c54cee",
+        "degree": 1,
+        "name": "Žilina",
+        "code": "00321796"
+      },
+      {
+        "uuid": "c7bc75cd-abf5-4adf-8ad6-c09a101ac464",
+        "degree": 1,
+        "name": "Obec Bernolákovo",
+        "code": "00304662"
+      },
+      {
+        "uuid": "58a2acf4-d4f1-47b3-be19-c8593bee51da",
+        "degree": 1,
+        "name": "Mestská časť Bratislava - Vajnory",
+        "code": "00304565"
+      },
+      {
+        "uuid": "2203e078-c6a1-4155-a54f-3f8559fd32d1",
+        "degree": 1,
+        "name": "Národné centrum zdravotníckych informácií",
+        "code": "00165387"
+      },
+      {
+        "uuid": "fb2fdccb-4c66-4046-82db-cc1c9a86b849",
+        "degree": 1,
+        "name": "Štátny fond rozvoja bývania",
+        "code": "31749542"
+      },
+      {
+        "uuid": "72ed14c6-a8eb-4a7b-a7a6-3687a71c72b6",
+        "degree": 1,
+        "name": "Kancelária verejného ochrancu práv",
+        "code": "36064041"
+      },
+      {
+        "uuid": "0fccb721-287a-475f-98eb-5c8503a5c267",
+        "degree": 1,
+        "name": "Mesto Rajecké Teplice",
+        "code": "00321591"
+      },
+      {
+        "uuid": "03341c9b-1641-4b0d-95af-6c09b51e9a2b",
+        "degree": 1,
+        "name": "Slovenská technická univerzita v Bratislave",
+        "code": "00397687"
+      },
+      {
+        "uuid": "3103f40b-b932-4783-b902-a79f02bb25e2",
+        "degree": 1,
+        "name": "Detská fakultná nemocnica Košice",
+        "code": "00606715"
+      },
+      {
+        "uuid": "8c48396d-f3b8-451a-8474-b434d34db191",
+        "degree": 1,
+        "name": "Slovenský pozemkový fond",
+        "code": "17335345"
+      },
+      {
+        "uuid": "466a0bcd-3d37-48df-a445-61e978a90489",
+        "degree": 1,
+        "name": "Technická univerzita v Košiciach",
+        "code": "00397610"
+      },
+      {
+        "uuid": "7079cad3-9ef6-45dc-bff2-1614b21bc86f",
+        "degree": 1,
+        "name": "Národná agentúra pre sieťové a elektronické služby",
+        "code": "42156424"
+      },
+      {
+        "uuid": "cf5e19d8-23e9-4efc-a621-6a1a8ae69275",
+        "degree": 1,
+        "name": "Dôvera zdravotná poisťovňa a.s.",
+        "code": "35942436"
+      },
+      {
+        "uuid": "ec546aaf-91fc-45c0-ac00-6890a011066c",
+        "degree": 1,
+        "name": "Obec Nitrianske Pravno",
+        "code": "00318337"
+      },
+      {
+        "uuid": "bb66330a-8273-411c-a7c8-2e72e8e62337",
+        "degree": 1,
+        "name": "Union zdravotná poisťovňa a.s.",
+        "code": "36284831"
+      },
+      {
+        "uuid": "4e16afb9-5e43-4f5a-8dcd-45ffbfbc1198",
+        "degree": 1,
+        "name": "Mesto Sliač",
+        "code": "00320277"
+      },
+      {
+        "uuid": "b210ce61-3804-4005-afba-5d1b627d6d12",
+        "degree": 1,
+        "name": "Trnavská univerzita v Trnave",
+        "code": "03182524"
+      },
+      {
+        "uuid": "f0152111-ff05-49a0-9154-a26c6fe061a5",
+        "degree": 1,
+        "name": "Veľké Kapušany",
+        "code": "00332038"
+      },
+      {
+        "uuid": "1e546a88-83ed-49b0-9a55-c36e42a58fab",
+        "degree": 1,
+        "name": "Mesto Šaštín - Stráže",
+        "code": "00310069"
+      },
+      {
+        "uuid": "0b16216f-ddd9-497c-9aa8-e25cfe147f1b",
+        "degree": 1,
+        "name": "Mesto Bánovce nad Bebravou",
+        "code": "00310182"
+      },
+      {
+        "uuid": "87724722-c74e-47b9-b999-f9e73f504ec5",
+        "degree": 1,
+        "name": "Mesto Rajec",
+        "code": "00321575"
+      },
+      {
+        "uuid": "6be108a8-31cc-4bee-8d7e-72766f7fc8ff",
+        "degree": 1,
+        "name": "Mesto Stupava",
+        "code": "00305081"
+      },
+      {
+        "uuid": "a2d21995-d29f-42ff-bc5b-90836a2da87d",
+        "degree": 1,
+        "name": "Slovenská akadémia vied",
+        "code": "00037869"
+      },
+      {
+        "uuid": "ee2a2fb8-4e9b-4a5e-a8f8-66e0f953f9b9",
+        "degree": 1,
+        "name": "Detva",
+        "code": "00319805"
+      },
+      {
+        "uuid": "35e05f43-d164-4e78-9086-c1481bc0872b",
+        "degree": 1,
+        "name": "Rada pre mediálne služby",
+        "code": "30844151"
+      },
+      {
+        "uuid": "16430f57-b950-4b2c-8db1-2a06b5983455",
+        "degree": 1,
+        "name": "Generálne riaditeľstvo Zboru väzenskej a justičnej stráže",
+        "code": "00212008"
+      },
+      {
+        "uuid": "b50ac1f5-ea2b-48ca-bd8f-4d095324d596",
+        "degree": 1,
+        "name": "Rozhlas a televízia Slovenska",
+        "code": "47232480"
+      },
+      {
+        "uuid": "243c6628-65bd-431b-aa89-1622244e0e50",
+        "degree": 1,
+        "name": "Agentúra na podporu výskumu a vývoja",
+        "code": "30797764"
+      },
+      {
+        "uuid": "68c893fb-4be0-4ea3-acd7-7dd7ef3cf963",
+        "degree": 1,
+        "name": "Trnavský samosprávny kraj",
+        "code": "37836901"
+      },
+      {
+        "uuid": "2cf2034c-2316-4afd-8030-e5883469bc14",
+        "degree": 1,
+        "name": "Mesto Bardejov",
+        "code": "00321842"
+      },
+      {
+        "uuid": "a70d4875-4de4-47e5-9eaa-146e581afd52",
+        "degree": 1,
+        "name": "Tvrdošín",
+        "code": "00314901"
+      },
+      {
+        "uuid": "d7170d0f-d161-4da0-8df5-562041db4e46",
+        "degree": 1,
+        "name": "Kancelária Národnej rady Slovenskej republiky",
+        "code": "00151491"
+      },
+      {
+        "uuid": "b9c86d3e-3dd5-41ac-a63a-99f83a328e47",
+        "degree": 1,
+        "name": "Obec Miloslavov",
+        "code": "00304948"
+      },
+      {
+        "uuid": "d757e688-58e7-4aa3-89e5-30494939297e",
+        "degree": 1,
+        "name": "Holíč",
+        "code": "00309541"
+      },
+      {
+        "uuid": "63fd37ae-5ee8-413d-9141-c259f190d310",
+        "degree": 1,
+        "name": "Mesto Banská Bystrica",
+        "code": "00313271"
+      },
+      {
+        "uuid": "ce856cf5-7f23-40bd-9de6-65b4687825a2",
+        "degree": 1,
+        "name": "Mesto Malacky",
+        "code": "00304913"
+      },
+      {
+        "uuid": "20caadad-d468-4cfe-9680-3dc69a86c357",
+        "degree": 1,
+        "name": "Obec Bohdanovce nad Trnavou",
+        "code": "00312266"
+      },
+      {
+        "uuid": "2a1c9636-ab4e-48af-ab69-36a6b1c27faf",
+        "degree": 1,
+        "name": "Obec Likavka",
+        "code": "00315362"
+      },
+      {
+        "uuid": "8bc7bfa5-416a-4992-a66f-057b71a5d163",
+        "degree": 1,
+        "name": "Mesto Kremnica",
+        "code": "00320781"
+      },
+      {
+        "uuid": "63daac20-4419-43c8-ab1b-d50502c8c2e9",
+        "degree": 1,
+        "name": "Tlačová agentúra Slovenskej republiky",
+        "code": "31320414"
+      },
+      {
+        "uuid": "3c6d92b9-5f92-4b51-9ad4-5e459d394f93",
+        "degree": 1,
+        "name": "Žiar nad Hronom",
+        "code": "00321125"
+      },
+      {
+        "uuid": "d9784331-d952-4ca6-86b1-82b1e4afd900",
+        "degree": 1,
+        "name": "Hlohovec",
+        "code": "00312509"
+      },
+      {
+        "uuid": "4a9d0220-0ac9-407c-9fc6-0a93d86c10ee",
+        "degree": 1,
+        "name": "Pamiatkový úrad Slovenskej republiky",
+        "code": "31755194"
+      },
+      {
+        "uuid": "8f99cdbe-7815-4f30-959c-7ff96a59b629",
+        "degree": 1,
+        "name": "Úrad verejného zdravotníctva Slovenskej republiky",
+        "code": "00607223"
+      },
+      {
+        "uuid": "dd91675f-e93c-48d3-b757-615456de7eac",
+        "degree": 1,
+        "name": "Mesto Prešov",
+        "code": "00327646"
+      },
+      {
+        "uuid": "ccffc7d1-ebca-4eda-a7f4-fb822820ba2e",
+        "degree": 1,
+        "name": "Obec Bučany",
+        "code": "00312321"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "018b8657-5682-4f06-810f-151a041bb246",
+        "degree": 1,
+        "name": "KRIT Implementácie a integrácie podporného informačného systému (IS ÚRPO)",
+        "code": "kris_802"
+      },
+      {
+        "uuid": "01ef2cdc-8926-47f1-93ed-24381d515b29",
+        "degree": 1,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Ústredný kontrolný a skúšobný ústav poľnohospodársky",
+        "code": "kris_782"
+      },
+      {
+        "uuid": "0222982f-5da3-4c07-af75-ff9fd410ab39",
+        "degree": 1,
+        "name": "KRIS Úradu podpredsedu vlády SR pre investície a informatizáciu ToBe",
+        "code": "kris_528"
+      },
+      {
+        "uuid": "036c0ca5-59a3-49b1-8bb3-743ed410bad7",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií mesta Levice",
+        "code": "kris_801"
+      },
+      {
+        "uuid": "0385d46f-e858-4c03-badb-6e78c2a812d0",
+        "degree": 1,
+        "name": "Elektronizácia služieb bratislavskej samosprávy ESBS",
+        "code": "kris_881"
+      },
+      {
+        "uuid": "04d23caa-f166-410e-a022-c9893711e8cf",
+        "degree": 1,
+        "name": "KRIT - Elektronické úložisko projektovej dokumentácie",
+        "code": "kris_830"
+      },
+      {
+        "uuid": "04e09c89-0300-44f1-800f-b8138740446d",
+        "degree": 1,
+        "name": "KRIS Mesto Trenčín",
+        "code": "kris_665"
+      },
+      {
+        "uuid": "060f1850-7bc4-45bf-8d6d-6f4a8efedcd6",
+        "degree": 1,
+        "name": "KRIT Dopravného úradu - budúci stav",
+        "code": "kris_750"
+      },
+      {
+        "uuid": "0633a2f5-0817-4459-8d9c-f57a292cef58",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov Centrálneho metainformačného systému verejnej správy",
+        "code": "kris_779"
+      },
+      {
+        "uuid": "07a2082e-21c9-4e64-907a-9aba583ac1f8",
+        "degree": 1,
+        "name": "KRIS Ministerstvo financií SR - budúci stav",
+        "code": "kris_515"
+      },
+      {
+        "uuid": "0842a946-3316-4a5d-a16a-7ea3bc0304dd",
+        "degree": 1,
+        "name": "KRIS Ministerstva školstva, vedy, výskumu a športu SR",
+        "code": "kris_314"
+      },
+      {
+        "uuid": "09108b24-d313-4b8e-b510-23c9d7d3eb3b",
+        "degree": 1,
+        "name": "KRIS Optimalizácie procesov riadenia a prevádzky Zboru väzenskej a justičnej stráže",
+        "code": "kris_604"
+      },
+      {
+        "uuid": "0936b5b1-791f-46e1-9561-e910e93d9450",
+        "degree": 1,
+        "name": "KRIS Úradu pre verejné obstarávanie - súčasný stav",
+        "code": "kris_20"
+      },
+      {
+        "uuid": "0bc4072d-9dd3-4f76-aeda-40f479ed1571",
+        "degree": 1,
+        "name": "KRIS Úradu jadrového dozoru",
+        "code": "kris_468"
+      },
+      {
+        "uuid": "0c0a1791-4b83-423f-a28c-03c7a6584b55",
+        "degree": 1,
+        "name": "KRIS - Regionálny úrad verejného zdravotníctva so sídlom v Topoľčanoch",
+        "code": "kris_360"
+      },
+      {
+        "uuid": "0c14888e-cbc8-46b0-a4c3-7cc735b62377",
+        "degree": 1,
+        "name": "KRIS Slovenskej lekárskej komory",
+        "code": "kris_392"
+      },
+      {
+        "uuid": "0c6334ed-ed43-4c90-859a-484094e84d9b",
+        "degree": 1,
+        "name": "KRIS mesta Kežmarok",
+        "code": "kris_459"
+      },
+      {
+        "uuid": "0c82df6a-2647-464f-865e-626f325e1455",
+        "degree": 1,
+        "name": "KRIS DataCentra elektronizácie územnej samosprávy Slovenska",
+        "code": "kris_246"
+      },
+      {
+        "uuid": "0d78710c-be4a-4906-b49b-85f1701c10d8",
+        "degree": 1,
+        "name": "KRIS",
+        "code": "kris_878"
+      },
+      {
+        "uuid": "0d80f45b-f3ff-47f5-9ff6-4a0a43c65c4e",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií mesta Trnava",
+        "code": "kris_955"
+      },
+      {
+        "uuid": "10abd0d0-dbfa-44e3-95aa-198e8a9c1124",
+        "degree": 1,
+        "name": "KRIS mesta Nitra",
+        "code": "kris_282"
+      },
+      {
+        "uuid": "1149519c-b9ca-4484-bc41-585e22c0d920",
+        "degree": 1,
+        "name": "KRIS Úradu podpredsedu vlády SR pre investície a informatizáciu",
+        "code": "kris_385"
+      },
+      {
+        "uuid": "1201147a-1320-4312-a3f0-c5a887b45476",
+        "degree": 1,
+        "name": "KRIS mesto Liptovský Mikuláš",
+        "code": "kris_448"
+      },
+      {
+        "uuid": "12c33098-5d7a-4e10-97b6-bd0c7b98f5d4",
+        "degree": 1,
+        "name": "KRIS Exportno-importnej banky SR - budúci stav",
+        "code": "kris_546"
+      },
+      {
+        "uuid": "1656f3bc-29b7-4987-bc0b-c4d6d36039ef",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Informačného systému Obchodného registra Ministerstva spravodlivosti SR",
+        "code": "kris_425"
+      },
+      {
+        "uuid": "16ddb194-0b86-4259-a7b5-de7225aa7b10",
+        "degree": 1,
+        "name": "KRIS Bratislava - Nové mesto",
+        "code": "kris_339"
+      },
+      {
+        "uuid": "174836f9-1b77-4177-8991-4a0f2f211aa8",
+        "degree": 1,
+        "name": "KRIT Migrácia ISVS Ústredného kontrolného a skúšobného ústavu poľnohospodárskeho do IaaS",
+        "code": "kris_794"
+      },
+      {
+        "uuid": "17b56a55-5b98-4854-a17c-89357b77d0fa",
+        "degree": 1,
+        "name": "Referenčná KRIS pre stredné mestá",
+        "code": "kris_215"
+      },
+      {
+        "uuid": "1a789ecb-4c7a-49bb-8ab4-36134638935a",
+        "degree": 1,
+        "name": "KRIT Živnostenského registra - budúci stav",
+        "code": "kris_685"
+      },
+      {
+        "uuid": "1d1a6b4f-01fb-41c5-be2b-fa66c72c4c0a",
+        "degree": 1,
+        "name": "KRIT Dynamického architektonického modelu governmentu",
+        "code": "kris_849"
+      },
+      {
+        "uuid": "1d6ea213-d151-444c-a7d0-328a7c72733c",
+        "degree": 1,
+        "name": "KRIS Centrálne úložisko digitálneho edukačného obsahu (CUDEO)",
+        "code": "kris_572"
+      },
+      {
+        "uuid": "1e2b7bec-9d0a-47a6-8e28-c3526f123679",
+        "degree": 1,
+        "name": "KRIS Kancelária Súdnej rady Slovenskej republiky - Budúci stav",
+        "code": "kris_552"
+      },
+      {
+        "uuid": "2097bc9e-fd4b-49f1-bc9e-e4a0cf7951a4",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Centrálneho  informačného systému štátnej služby",
+        "code": "kris_427"
+      },
+      {
+        "uuid": "215c2e4c-6983-48d7-b226-5aed1d5a9685",
+        "degree": 1,
+        "name": "KRIS Generálnej prokuratúry SR - budúci stav",
+        "code": "kris_503"
+      },
+      {
+        "uuid": "215ea989-d4db-4f2b-b5d3-de091b530e5c",
+        "degree": 1,
+        "name": "KRIT Atlasu pasívnej infraštruktúry Ministerstva životného prostredia",
+        "code": "kris_739"
+      },
+      {
+        "uuid": "217e3878-7c4a-447b-ae39-55f1802c718d",
+        "degree": 1,
+        "name": "KRIS Úradu vlády Slovenskej republiky 2013",
+        "code": "kris_14"
+      },
+      {
+        "uuid": "21844744-30a2-48b6-9929-5bfe55ee7535",
+        "degree": 1,
+        "name": "KRIT pre podporu aktívneho asistovaného života v podmienkach Trenčianskeho samosprávneho kraja",
+        "code": "kris_807"
+      },
+      {
+        "uuid": "225ab34f-443e-4509-b8dc-7cf377f98dee",
+        "degree": 1,
+        "name": "KRIT Otvorených údajov 2.0",
+        "code": "kris_723"
+      },
+      {
+        "uuid": "2478b6eb-835f-4097-9d86-cc7553938cf9",
+        "degree": 1,
+        "name": "KRIS Mesto Nováky",
+        "code": "kris_450"
+      },
+      {
+        "uuid": "274687fe-f79a-4974-b5e7-dc2849d85633",
+        "degree": 1,
+        "name": "KRIT Plošné rozšírenie IS DCOM na mestá",
+        "code": "kris_747"
+      },
+      {
+        "uuid": "27fdfd15-486b-4316-b2c3-2f4beb7ce7bc",
+        "degree": 1,
+        "name": "KRIT Lepšie využívanie údajov pre kontrolu výskytu a šírenia baktérií - Antimikrobiálna rezistencia v SR (AMR) - budúci stav",
+        "code": "kris_819"
+      },
+      {
+        "uuid": "28289734-e2fc-47a6-874d-8ff98c38405a",
+        "degree": 1,
+        "name": "Koncepcia rozvoja IS Manažmentu údajov Sociálnej poisťovne",
+        "code": "kris_454"
+      },
+      {
+        "uuid": "28530847-bbf5-4def-a52f-66a40fe996d0",
+        "degree": 1,
+        "name": "KRIT mesta Liptovský Mikuláš",
+        "code": "kris_768"
+      },
+      {
+        "uuid": "286092a4-2027-4c32-a5f2-ae751b6cb151",
+        "degree": 1,
+        "name": "KRIS UVSR 2016",
+        "code": "kris_303"
+      },
+      {
+        "uuid": "28a5b9eb-ba29-4aaf-99af-47c6ca4d348d",
+        "degree": 1,
+        "name": "KRIT Lepšieho využívania údajov Nitrianskeho samosprávneho kraja",
+        "code": "kris_493"
+      },
+      {
+        "uuid": "2956cc4f-25c7-4cd9-90b2-c1e3981180c9",
+        "degree": 1,
+        "name": "KRIT Národného kompetenčného centra pre vysokovýkonné počítanie",
+        "code": "kris_852"
+      },
+      {
+        "uuid": "297eacfb-adb9-4734-96f3-5a38ca521d1e",
+        "degree": 1,
+        "name": "KRIS Kancelárie prezidenta Slovenskej republiky",
+        "code": "kris_29"
+      },
+      {
+        "uuid": "29d12576-0a95-4e90-a111-b0037e6620f3",
+        "degree": 1,
+        "name": "KRIT - Malé zlepšenia e-gov služieb Ministerstva životného prostredia SR",
+        "code": "kris_791"
+      },
+      {
+        "uuid": "2b5c980f-ce2b-4f94-b365-2688d2b3089c",
+        "degree": 1,
+        "name": "KRIS Centrálneho údajového repozitára ÚKSÚP - budúci stav",
+        "code": "kris_626"
+      },
+      {
+        "uuid": "2c6702d9-c6af-4009-8eb7-ce65d8b044a3",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov Úradu vlády SR",
+        "code": "kris_786"
+      },
+      {
+        "uuid": "2d0c84d6-80cb-4818-a92e-a070abf1b63b",
+        "degree": 1,
+        "name": "KRIS Ministerstva zahraničných vecí a európskych záležitostí Slovenskej republiky - budúci stav",
+        "code": "kris_553"
+      },
+      {
+        "uuid": "2df13376-8579-45e1-8d0e-d253c4b45035",
+        "degree": 1,
+        "name": "KRIS Registre informačného systému o výstavbe",
+        "code": "kris_583"
+      },
+      {
+        "uuid": "2e786900-2f7f-4283-a007-034bf5c2d996",
+        "degree": 1,
+        "name": "KRIS Manažment údajov a správa Open Data",
+        "code": "kris_639"
+      },
+      {
+        "uuid": "2e895496-c29d-4019-a6d1-a6ee752ce61e",
+        "degree": 1,
+        "name": "Elektronické služby mesta Dolný Kubín",
+        "code": "kris_321"
+      },
+      {
+        "uuid": "2f8c0887-b995-40f9-8597-738223f308c9",
+        "degree": 1,
+        "name": "KRIS Trenčianskeho samosprávneho kraja",
+        "code": "kris_372"
+      },
+      {
+        "uuid": "2fdc67d3-467c-4eb8-864d-1ba81b5cff6f",
+        "degree": 1,
+        "name": "KRIT Registra zbraní a streliva",
+        "code": "kris_669"
+      },
+      {
+        "uuid": "3119014c-9281-4789-8123-4225206e9be5",
+        "degree": 1,
+        "name": "KRIS Exportno-importnej banky SR",
+        "code": "kris_292"
+      },
+      {
+        "uuid": "3245afbe-7fa1-45d4-812f-b88891cc90f2",
+        "degree": 1,
+        "name": "KRIS Kancelárie prezidenta Slovenskej republiky",
+        "code": "kris_518"
+      },
+      {
+        "uuid": "32934fc1-6bf5-463b-a654-67592eccc1b9",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií obce Blatné",
+        "code": "kris_860"
+      },
+      {
+        "uuid": "34645edf-782e-495c-8145-027a246df1c5",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov Národného lesníckeho centra",
+        "code": "kris_787"
+      },
+      {
+        "uuid": "35055b1c-3bc9-49da-a72c-b9951a0a8a71",
+        "degree": 1,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Štátna veterinárna a potravinová správa Slovenskej republiky",
+        "code": "kris_783"
+      },
+      {
+        "uuid": "384b58dc-6083-4f37-ad54-a5033f57af04",
+        "degree": 1,
+        "name": "KRIS Nitrianskeho samosprávneho kraja",
+        "code": "kris_103"
+      },
+      {
+        "uuid": "385d8bbe-bc18-456f-92d6-813a5bcc505d",
+        "degree": 1,
+        "name": "KRIS Úradu geodézie, kartografie a katastra Slovenskej republiky",
+        "code": "kris_17"
+      },
+      {
+        "uuid": "38c292c3-c716-465c-8c40-6ceb6382efcc",
+        "degree": 1,
+        "name": "KRIS Ministerstva kultúry Slovenskej republiky - súčasný stav",
+        "code": "kris_11"
+      },
+      {
+        "uuid": "390d00f3-b2f2-4445-8477-72f3ee8c414e",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Ústredného portálu verejnej správy (ÚPVS)",
+        "code": "kris_537"
+      },
+      {
+        "uuid": "3e83b0c0-8765-4859-9bb4-232779a1a3af",
+        "degree": 1,
+        "name": "KRIS Inteligentné regulácie",
+        "code": "kris_558"
+      },
+      {
+        "uuid": "3ea7f76c-e4c7-40e0-a7c4-5741a278abe7",
+        "degree": 1,
+        "name": "KRIS Štatistického úradu Slovenskej republiky - budúci stav",
+        "code": "kris_620"
+      },
+      {
+        "uuid": "40656d75-7b7c-41cb-a6b3-4dfda0134e91",
+        "degree": 1,
+        "name": "KRIS - mesta Michalovce",
+        "code": "kris_676"
+      },
+      {
+        "uuid": "44e9b7a6-cd22-4056-ab1a-0ae61cc27470",
+        "degree": 1,
+        "name": "KRIT LEVOČA - Koncepcia rozvoja informačných technológií mesta Levoča",
+        "code": "kris_741"
+      },
+      {
+        "uuid": "450bfb98-989c-474c-8942-df77effdd0d6",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných systémov mesta Brezová pod Bradlom",
+        "code": "kris_421"
+      },
+      {
+        "uuid": "454663af-a2b8-454a-a3d8-e8f1a19e1182",
+        "degree": 1,
+        "name": "KRIS Manažment údajov v oblasti neprofesionálneho umenia",
+        "code": "kris_622"
+      },
+      {
+        "uuid": "458e8092-9e9c-4f7d-985f-09107ceb4a6b",
+        "degree": 1,
+        "name": "Kris Protimonopolného úradu Slovenskej republiky",
+        "code": "kris_15"
+      },
+      {
+        "uuid": "47724be4-b222-425d-ba05-6c08ddf019da",
+        "degree": 1,
+        "name": "KRIT Migrácie Informačného systému služieb zamestnanosti",
+        "code": "kris_827"
+      },
+      {
+        "uuid": "4a343548-167b-4344-ba3d-4ba4edc7dfdb",
+        "degree": 1,
+        "name": "KRIS Rozšírenie portfólia služieb a inovácia služieb elektronického zdravotníctva - budúci stav",
+        "code": "kris_748"
+      },
+      {
+        "uuid": "4b1d4d9e-8f65-4ad9-84dc-e0cd1acea7f6",
+        "degree": 1,
+        "name": "KRIS - Implementácia SOC",
+        "code": "kris_825"
+      },
+      {
+        "uuid": "4c90df1f-950b-4a20-957b-b93edf8bbee8",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných systémov mesta Partizánske",
+        "code": "kris_993"
+      },
+      {
+        "uuid": "4cc317d2-db0d-46c5-9a26-5dee39e128e0",
+        "degree": 1,
+        "name": "Koncepcia rozvoja IT mesta Dubnica nad Váhom",
+        "code": "kris_803"
+      },
+      {
+        "uuid": "4d329e12-18e1-4e6c-94fc-2fb0a5d5026f",
+        "degree": 1,
+        "name": "KRIS Protimonopolného úradu SR - budúci stav",
+        "code": "kris_485"
+      },
+      {
+        "uuid": "4d973ec6-6d8e-44d5-88ba-07cd15ad835d",
+        "degree": 1,
+        "name": "KRIS Úradu jadrového dozoru",
+        "code": "kris_18"
+      },
+      {
+        "uuid": "4df1901b-85a8-4191-8ae6-398b60d4959f",
+        "degree": 1,
+        "name": "KRIS Prešovského samosprávneho kraja",
+        "code": "kris_168"
+      },
+      {
+        "uuid": "4f186786-df04-45ad-a309-aa1a1bf91145",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Centrálneho ekonomického systému Ministerstva financií SR",
+        "code": "kris_426"
+      },
+      {
+        "uuid": "4fb4d534-f363-4848-bfba-ead2db161e2c",
+        "degree": 1,
+        "name": "KRIT - Elektronické služby spracovávania bezpečnostných spisov",
+        "code": "kris_839"
+      },
+      {
+        "uuid": "4ff8a3d0-8545-4855-a1cc-4573964e70db",
+        "degree": 1,
+        "name": "KRIT - Konsolidácia, manažment a kvalita údajov VšZP",
+        "code": "kris_857"
+      },
+      {
+        "uuid": "5015edc5-9267-41e9-8017-c4cc3e5d20eb",
+        "degree": 1,
+        "name": "KRIS Úrad pre normalizáciu, metrológiu a skúšobnictvo Slovenskej republiky",
+        "code": "kris_356"
+      },
+      {
+        "uuid": "503405c0-12de-4bd2-9fb8-e94e5224974f",
+        "degree": 1,
+        "name": "KRIS Úradu pre reguláciu sieťových odvetví",
+        "code": "kris_27"
+      },
+      {
+        "uuid": "503ffef5-2e20-4c55-9857-b19340faf6ff",
+        "degree": 1,
+        "name": "KRIT Manažment údajov a zlepšenie eGov služieb - Pôdohospodárska platobná agentúra",
+        "code": "kris_784"
+      },
+      {
+        "uuid": "515c1b72-53b4-4ca5-8226-b9033469c63c",
+        "degree": 1,
+        "name": "KRIT Informačného systému pre certifikáciu kompetencií v informatike",
+        "code": "kris_706"
+      },
+      {
+        "uuid": "5180e05d-5ee0-425d-9652-88611e2a35f4",
+        "degree": 1,
+        "name": "KRIS  - Ministerstva životného prostredia (budúci stav)",
+        "code": "kris_533"
+      },
+      {
+        "uuid": "542ee6b7-897b-42fe-9ec6-de057eff561e",
+        "degree": 1,
+        "name": "KRIS Prešovského samosprávneho kraja - budúci stav",
+        "code": "kris_504"
+      },
+      {
+        "uuid": "5535b2b9-598c-4365-a66a-8a0069922805",
+        "degree": 1,
+        "name": "KRIS SNAS",
+        "code": "kris_664"
+      },
+      {
+        "uuid": "569804da-f19f-4154-8f91-f6b4a1e3ca0a",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológii mesta Zvolen",
+        "code": "kris_884"
+      },
+      {
+        "uuid": "56a060c7-2732-4c07-a541-161efb9d57c1",
+        "degree": 1,
+        "name": "KRIT Migrácia systému PROFSME do Vládneho cloudu SR",
+        "code": "kris_641"
+      },
+      {
+        "uuid": "56f731de-6be3-45ea-a46b-0ec0190dd49d",
+        "degree": 1,
+        "name": "KRIT nosnej infraštruktúry bezpečného informačno-komunikačného systému FS SR",
+        "code": "kris_710"
+      },
+      {
+        "uuid": "5755ac7e-7046-4620-a1c5-0b000f224686",
+        "degree": 1,
+        "name": "KRIS migracia IS ŠIOV do vl. cloudu",
+        "code": "kris_689"
+      },
+      {
+        "uuid": "592e3992-880b-4af3-91e2-d67fc6c6cfb0",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných systémov mesta Banská Štiavnica",
+        "code": "kris_889"
+      },
+      {
+        "uuid": "59a0c455-f46c-4289-92aa-682ef5eeebe8",
+        "degree": 1,
+        "name": "KRIS Národného lesníckeho centra",
+        "code": "kris_614"
+      },
+      {
+        "uuid": "59bade3c-d72e-4bb8-a336-a55a37cd9223",
+        "degree": 1,
+        "name": "KRIS Mesto Sládkovičovo",
+        "code": "kris_411"
+      },
+      {
+        "uuid": "5a56b5e1-fd9a-481d-9b46-b37359f4a7b9",
+        "degree": 1,
+        "name": "KRIS mesta Žilina",
+        "code": "kris_281"
+      },
+      {
+        "uuid": "5ac9b299-8425-45c8-8832-552700025a98",
+        "degree": 1,
+        "name": "KRIS Úradu priemyselného vlastníctva Slovenskej Republiky - súčasný stav",
+        "code": "kris_381"
+      },
+      {
+        "uuid": "5cb38699-c1dc-4d1f-8610-18f25f0c40ed",
+        "degree": 1,
+        "name": "KRIS Ministerstva dopravy a výstavby Slovenskej republiky",
+        "code": "kris_218"
+      },
+      {
+        "uuid": "5cc22fbe-436d-44b3-baea-244418fd2edb",
+        "degree": 1,
+        "name": "KRIS MPSVR SR - ESKO-2 - budúci stav",
+        "code": "kris_573"
+      },
+      {
+        "uuid": "60a9d629-ee2e-4d9a-9df8-01ac600e3688",
+        "degree": 1,
+        "name": "KRIS Ministerstva práce, sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "kris_9"
+      },
+      {
+        "uuid": "60f517a6-f8ff-4353-ac3a-86fdb25ce2eb",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií obce Bernolákovo",
+        "code": "kris_701"
+      },
+      {
+        "uuid": "61b15fc6-48a4-4295-9290-e5983e5af1a4",
+        "degree": 1,
+        "name": "KRIS Ministerstva pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
+        "code": "kris_4"
+      },
+      {
+        "uuid": "61da0008-6ce5-4846-b8ce-7c6d9bfb1846",
+        "degree": 1,
+        "name": "KRIS Bratislavského samosprávneho kraja - súčasný stav",
+        "code": "kris_38"
+      },
+      {
+        "uuid": "62480938-4803-4eb4-b383-1f29e68db24d",
+        "degree": 1,
+        "name": "KRIS Kancelárie Najvyššieho súdu Slovenskej republiky - budúci stav",
+        "code": "kris_522"
+      },
+      {
+        "uuid": "6338dd60-a53e-434c-b609-c4f29b60674b",
+        "degree": 1,
+        "name": "KRIS Úradu pre reguláciu sieťových odvetví",
+        "code": "kris_495"
+      },
+      {
+        "uuid": "63471449-a757-404a-82c6-9be7667ea024",
+        "degree": 1,
+        "name": "KRIS mestskej časti Bratislava Vajnory",
+        "code": "kris_585"
+      },
+      {
+        "uuid": "64556cb6-17f0-44b5-9a94-fa0d9dc4b1a2",
+        "degree": 1,
+        "name": "KRIS Vládny cloud – rozšírenie o Komunitný zdravotnícky cloud - budúci stav",
+        "code": "kris_737"
+      },
+      {
+        "uuid": "64e94d18-090e-41ff-be22-00057dd0fdb2",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov Žilinského samosprávneho kraja",
+        "code": "kris_755"
+      },
+      {
+        "uuid": "65430463-fc43-4338-aa22-702e2d14a3b0",
+        "degree": 1,
+        "name": "KRIS - Ministerstva životného prostredia",
+        "code": "kris_376"
+      },
+      {
+        "uuid": "654f00b8-f629-413f-903a-11086b568ef3",
+        "degree": 1,
+        "name": "KRIT Štátneho fondu rozvoja bývania - budúci stav",
+        "code": "kris_690"
+      },
+      {
+        "uuid": "66b53874-67bc-4317-a51d-6a2c8a85638a",
+        "degree": 1,
+        "name": "KRIS Kancelárie verejného ochrancu práv",
+        "code": "kris_31"
+      },
+      {
+        "uuid": "66c8ca19-0484-4fa4-b622-bc562a7462dd",
+        "degree": 1,
+        "name": "KRIT Úradu priemyselného vlastníctva SR - budúci stav",
+        "code": "kris_828"
+      },
+      {
+        "uuid": "66d6a7c0-5971-4c22-b65e-feb36cd3752d",
+        "degree": 1,
+        "name": "KRIT mesta Košice - inteligentné mesto",
+        "code": "kris_1039"
+      },
+      {
+        "uuid": "67004893-f950-46fa-98a6-5efef06be855",
+        "degree": 1,
+        "name": "KRIT Elektronické služby MZVaEZ SR",
+        "code": "kris_832"
+      },
+      {
+        "uuid": "67e7d01e-4ebd-4420-aefa-79c77bcd73eb",
+        "degree": 1,
+        "name": "KRIS Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "kris_13"
+      },
+      {
+        "uuid": "681d3b77-0e02-44f3-b5c2-af3d58a411e7",
+        "degree": 1,
+        "name": "KRIS mesta Rajecké Teplice",
+        "code": "kris_389"
+      },
+      {
+        "uuid": "697a4e28-5d07-48bb-917a-af7c9fb7e45d",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií mesta Pezinok - budúci stav",
+        "code": "kris_745"
+      },
+      {
+        "uuid": "6a3f9921-04c4-48f7-8a73-b44ab4ca202f",
+        "degree": 1,
+        "name": "KRIS Systému elektronickej pošty Ministerstva spravodlivosti Slovenskej republiky",
+        "code": "kris_643"
+      },
+      {
+        "uuid": "6ade3a33-ee8c-4688-a9bd-bc2edf81e228",
+        "degree": 1,
+        "name": "KRIT univerzálneho telemedicínskeho systému pre ambulantný manažment kardiovaskulárnych ochorení",
+        "code": "kris_865"
+      },
+      {
+        "uuid": "6c4813b7-6227-491b-83e8-e2efc83dfea4",
+        "degree": 1,
+        "name": "KRIT Elektronickej zložky klienta",
+        "code": "kris_752"
+      },
+      {
+        "uuid": "6c7428a8-29cd-40dd-8002-480452de6260",
+        "degree": 1,
+        "name": "KRIS Ministerstva obrany Slovenskej republiky",
+        "code": "kris_217"
+      },
+      {
+        "uuid": "6ccba3c5-6759-439c-98a1-7bf65d91404d",
+        "degree": 1,
+        "name": "KRIS Žilinského samosprávneho kraja - súčasný stav",
+        "code": "kris_397"
+      },
+      {
+        "uuid": "6dc617df-b95a-4f14-9962-9fde673de62f",
+        "degree": 1,
+        "name": "KRIS mesta Pezinok",
+        "code": "kris_301"
+      },
+      {
+        "uuid": "6e47965e-71b6-4705-b2de-b12f48206c93",
+        "degree": 1,
+        "name": "Elektronické služby mesta Dunajská Streda – ESMDS",
+        "code": "kris_319"
+      },
+      {
+        "uuid": "6e7a8cab-ed75-40f4-b457-47096999f413",
+        "degree": 1,
+        "name": "KRIS Detskej fakultnej nemocnice Košice",
+        "code": "kris_927"
+      },
+      {
+        "uuid": "6fe1bcdc-385d-49d2-a489-b81c169207b9",
+        "degree": 1,
+        "name": "KRIS DataCentra elektronizácie územnej samosprávy Slovenska",
+        "code": "kris_484"
+      },
+      {
+        "uuid": "709717f9-21e1-4bff-8008-d943802b0706",
+        "degree": 1,
+        "name": "KRIT Manažment údajov a zlepšenie eGOV služieb - Slovenský pozemkový fond",
+        "code": "kris_720"
+      },
+      {
+        "uuid": "70afffcc-b98e-4684-b3eb-f33fa7298874",
+        "degree": 1,
+        "name": "KRIT Technickej univerzity v Košiciach",
+        "code": "kris_808"
+      },
+      {
+        "uuid": "70b9536b-0711-4953-8e31-98b9ff644484",
+        "degree": 1,
+        "name": "KRIS Centrálny finančný informačný systém pre verejné vysoké školy (SOFIA)",
+        "code": "kris_571"
+      },
+      {
+        "uuid": "70bcd843-4e3e-4d2a-af6e-927d8498aa37",
+        "degree": 1,
+        "name": "KRIT Migrácia IS Elektronizácia vzdelávacieho systému regionálneho školstva",
+        "code": "kris_776"
+      },
+      {
+        "uuid": "70ee137f-67fc-41a9-8ab6-f3783cb1a750",
+        "degree": 1,
+        "name": "KRIT mesta Košice",
+        "code": "kris_288"
+      },
+      {
+        "uuid": "73102845-f9dc-4125-ac89-e956db8509ab",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov - Hydromeliorácie š.p.",
+        "code": "kris_765"
+      },
+      {
+        "uuid": "74440c87-ccbd-4219-a34b-302beaa1446b",
+        "degree": 1,
+        "name": "KRIS Manažment údajov Žilinského samosprávneho kraja - budúci stav",
+        "code": "kris_615"
+      },
+      {
+        "uuid": "76af944b-c7ef-4621-9e5b-b3b480a432a0",
+        "degree": 1,
+        "name": "KRIS Ústavu pamäti národa",
+        "code": "kris_206"
+      },
+      {
+        "uuid": "772d4370-b272-442f-9c04-306f6d6f7a30",
+        "degree": 1,
+        "name": "KRIT Úradu na ochranu osobných údajov SR - budúci stav",
+        "code": "kris_544"
+      },
+      {
+        "uuid": "785376ae-4afa-4549-a689-fef56f791a0f",
+        "degree": 1,
+        "name": "KRIS Jednotného prístupu k priestorovým údajom a službám",
+        "code": "kris_603"
+      },
+      {
+        "uuid": "7a152c82-4e29-4a9d-9c4d-ea539d3ec6da",
+        "degree": 1,
+        "name": "KRIT Redizajn siete GOVNET",
+        "code": "kris_728"
+      },
+      {
+        "uuid": "7d45df49-60eb-46a7-bc82-b1fbe58f7c1d",
+        "degree": 1,
+        "name": "KRIT Všeobecnej zdravotnej poisťovne - budúci stav",
+        "code": "kris_632"
+      },
+      {
+        "uuid": "7fccbd51-e731-48e4-9053-65d11b8311f1",
+        "degree": 1,
+        "name": "KRIS Dôvery zdravotnej poisťovne a. s.",
+        "code": "kris_249"
+      },
+      {
+        "uuid": "8023cddd-612b-4e01-bef7-3e8cf25eb3fb",
+        "degree": 1,
+        "name": "KRIS obce Nitrianske Pravno",
+        "code": "kris_705"
+      },
+      {
+        "uuid": "81809065-1e74-45f0-8e64-0d37ffbb4297",
+        "degree": 1,
+        "name": "Dodatok č. 4 ku KRIS Ministerstva financií Slovenskej republiky",
+        "code": "kris_2"
+      },
+      {
+        "uuid": "8191acb8-941d-492f-ba93-e322612872be",
+        "degree": 1,
+        "name": "KRIS Integrovaný systém úradov verejného zdravotníctva - budúci stav",
+        "code": "kris_613"
+      },
+      {
+        "uuid": "82c1c7c8-32d2-4a47-89ea-866e5e896862",
+        "degree": 1,
+        "name": "KRIS Banskobystrického samosprávneho kraja - budúci stav",
+        "code": "kris_510"
+      },
+      {
+        "uuid": "83262fdb-0f5a-41e5-b676-85817c7ecf0d",
+        "degree": 1,
+        "name": "KRIS UNION zdravotnej poisťovne a. s.",
+        "code": "kris_35"
+      },
+      {
+        "uuid": "83885ccd-b990-42fc-99e5-a20241d22fce",
+        "degree": 1,
+        "name": "KRIS Kancelária Ústavného súdu SR",
+        "code": "kris_508"
+      },
+      {
+        "uuid": "8397c2d9-892c-4f4c-868f-8db4934c5814",
+        "degree": 1,
+        "name": "KRIS Ministerstva vnútra Slovenskej republiky",
+        "code": "kris_6"
+      },
+      {
+        "uuid": "84143ad3-e02b-4289-9adc-4fd37ebce389",
+        "degree": 1,
+        "name": "KRIS Banskobystrického samosprávneho kraja",
+        "code": "kris_146"
+      },
+      {
+        "uuid": "8551acd8-c2e7-4d52-ade2-6561d87808f8",
+        "degree": 1,
+        "name": "KRIT mesta Sliač",
+        "code": "kris_774"
+      },
+      {
+        "uuid": "85621e60-5069-4266-8bfa-46c51af2cbf8",
+        "degree": 1,
+        "name": "KRIS Kancelárie Súdnej rady Slovenskej republiky - súčasný stav",
+        "code": "kris_250"
+      },
+      {
+        "uuid": "85fd5d08-abe5-4026-ba50-2e808701b8d1",
+        "degree": 1,
+        "name": "KRIS MŠVVaŠ SR",
+        "code": "kris_475"
+      },
+      {
+        "uuid": "87153abf-ba44-411e-bc17-55b8b37e87bc",
+        "degree": 1,
+        "name": "KRIT Centrálnej API Manažment platformy",
+        "code": "kris_695"
+      },
+      {
+        "uuid": "87cd6e82-5b3e-44d6-be92-c7da7f1d2628",
+        "degree": 1,
+        "name": "Podpora v oblasti kybernetickej a informačnej bezpečnosti na Trnavskej univerzite v Trnave",
+        "code": "kris_1022"
+      },
+      {
+        "uuid": "8b14504f-4ecd-4269-a50f-ac00cfc1b005",
+        "degree": 1,
+        "name": "KRIS Najvyššieho kontrolného úradu Slovenskej republiky - budúci stav",
+        "code": "kris_580"
+      },
+      {
+        "uuid": "8ddc7f5d-66fa-4376-a8a9-5f7784b25cde",
+        "degree": 1,
+        "name": "KRIT Úradu pre verejné obstarávanie - budúci stav",
+        "code": "kris_414"
+      },
+      {
+        "uuid": "8e402813-d37a-4a43-8561-efd2ff4c2a48",
+        "degree": 1,
+        "name": "KRIS mesta Veľké Kapušany",
+        "code": "kris_549"
+      },
+      {
+        "uuid": "8ede68a7-ea88-40fa-a6fd-2d724729e231",
+        "degree": 1,
+        "name": "KRIT mesta Šaštín-Stráže",
+        "code": "kris_775"
+      },
+      {
+        "uuid": "934abdb5-a789-4bdf-bd8f-22d3db27a164",
+        "degree": 1,
+        "name": "KRIS Národného bezpečnostného úradu - AS IS",
+        "code": "kris_23"
+      },
+      {
+        "uuid": "936828e2-9b05-495f-a5cd-87df8f421583",
+        "degree": 1,
+        "name": "KRIS Trenčianskeho samosprávneho kraja - súčasný stav",
+        "code": "kris_724"
+      },
+      {
+        "uuid": "958fe202-3eb5-452d-8698-89c1b7013381",
+        "degree": 1,
+        "name": "KRIT Centrálneho metainformačného systému verejnej správy pre oblasť služieb vládneho cloudu",
+        "code": "kris_836"
+      },
+      {
+        "uuid": "9855b11a-1bcd-450f-ae2b-101d4e110a4f",
+        "degree": 1,
+        "name": "KRIS Generálnej prokuratúry Slovenskej republiky - súčasný stav",
+        "code": "kris_32"
+      },
+      {
+        "uuid": "98fe6c09-7d9b-4d03-a1f8-afe9d828b92c",
+        "degree": 1,
+        "name": "KRIT Manažérskeho informačného systému MDV SR",
+        "code": "kris_812"
+      },
+      {
+        "uuid": "9ab89b5f-6f92-4167-b3eb-2a134a2fb26a",
+        "degree": 1,
+        "name": "KRIS Ministerstva spravodlivosti Slovenskej republiky stav \"to be\"",
+        "code": "kris_772"
+      },
+      {
+        "uuid": "9b5ff594-f8c4-4703-99d3-9f2f2d501c27",
+        "degree": 1,
+        "name": "KRIT - Elektronizácia dávok z nemocenského poistenia",
+        "code": "kris_837"
+      },
+      {
+        "uuid": "9df26e1b-a931-4760-acb5-be12a71037a1",
+        "degree": 1,
+        "name": "KRIS Najvyššieho kontrolného úradu Slovenskej republiky",
+        "code": "kris_33"
+      },
+      {
+        "uuid": "9ecc392e-12a1-4a2e-96e8-8d0c0571b6b3",
+        "degree": 1,
+        "name": "KRIS Registra mimovládnych neziskových organizácií",
+        "code": "kris_602"
+      },
+      {
+        "uuid": "9f66e1ae-4fbb-4913-b08a-11b2deef446b",
+        "degree": 1,
+        "name": "KRIS Sociálnej poisťovne",
+        "code": "kris_34"
+      },
+      {
+        "uuid": "9fb7ef1f-77c5-458f-a30a-42c06ea968f7",
+        "degree": 1,
+        "name": "KRIS Ministerstva hospodárstva Slovenskej republiky",
+        "code": "kris_378"
+      },
+      {
+        "uuid": "a088d1f9-d821-4eb6-b49e-840146cc3f84",
+        "degree": 1,
+        "name": "Dodatok č. 3 ku KRIS Ministerstva školstva, vedy, výskumu a športu Slovenskej republiky",
+        "code": "kris_12"
+      },
+      {
+        "uuid": "a0fb3104-2371-4394-abd5-bf69939d611d",
+        "degree": 1,
+        "name": "KRIS mesta Bánovce nad Bebravou",
+        "code": "kris_911"
+      },
+      {
+        "uuid": "a2606ed5-f64f-473f-9484-6134f14870a9",
+        "degree": 1,
+        "name": "KRIS Mesto Rajec",
+        "code": "kris_377"
+      },
+      {
+        "uuid": "a311c124-f080-4a58-988a-c073fc648d63",
+        "degree": 1,
+        "name": "KRIT Centrálneho informačného systému na riadenie IT aktív",
+        "code": "kris_822"
+      },
+      {
+        "uuid": "a37198b7-186c-4f01-9a26-fafb7ad215f1",
+        "degree": 1,
+        "name": "KRIS mesta Stupava",
+        "code": "kris_299"
+      },
+      {
+        "uuid": "a41a6d4c-6907-46e2-981b-4e3668c7954f",
+        "degree": 1,
+        "name": "KRIS Kancelárie Najvyššieho súdu Slovenskej republiky",
+        "code": "kris_293"
+      },
+      {
+        "uuid": "ab153db4-e717-45a9-b6f8-d71cd4075200",
+        "degree": 1,
+        "name": "KRIT manažmentu údajov Centrálnej archeologickej evidencie SR",
+        "code": "kris_855"
+      },
+      {
+        "uuid": "aba18c36-e4d5-4b70-ae5a-a73fbbab1bfb",
+        "degree": 1,
+        "name": "KRIS Úradu pre reguláciu elektronických komunikácií a poštových služieb –  súčasný stav",
+        "code": "kris_296"
+      },
+      {
+        "uuid": "ac4bac4e-7001-4e96-9966-335ac551096b",
+        "degree": 1,
+        "name": "KRIT Správy pre IaaS infraštruktúru (Datacentrum Kopčianska)",
+        "code": "kris_795"
+      },
+      {
+        "uuid": "ac919670-73fb-4e1a-b43c-fc40a7b685f0",
+        "degree": 1,
+        "name": "KRIS Ministerstva práce, sociálnych vecí a rodiny Slovenskej republiky - budúci stav",
+        "code": "kris_570"
+      },
+      {
+        "uuid": "ae5e6a45-9045-40a7-9bda-505ab24c22bc",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných systémov mesta Detva",
+        "code": "kris_435"
+      },
+      {
+        "uuid": "af1de2b0-94cc-4361-91c4-3283e94d79c0",
+        "degree": 1,
+        "name": "KRIS Rady pre vysielanie a retransmisiu - súčasný stav",
+        "code": "kris_248"
+      },
+      {
+        "uuid": "af4000f6-769c-4c60-82d4-cca7c0961ec8",
+        "degree": 1,
+        "name": "KRIT MVSR - budúci stav",
+        "code": "kris_959"
+      },
+      {
+        "uuid": "af781a26-0c3e-4afe-b837-d676940e042b",
+        "degree": 1,
+        "name": "KRIS Centrálne komponenty správneho konania vo verejnej správe",
+        "code": "kris_586"
+      },
+      {
+        "uuid": "b0260c1f-150e-4207-87bd-9548524c0d16",
+        "degree": 1,
+        "name": "KRIT Manažment údajov Zboru väzenskej a justičnej stráže",
+        "code": "kris_751"
+      },
+      {
+        "uuid": "b32e76b5-b332-4fb8-8556-bcd8f05b9191",
+        "degree": 1,
+        "name": "KRIS Rozhlasu a televízie Slovenska",
+        "code": "kris_242"
+      },
+      {
+        "uuid": "b58d0ccb-1aa1-45b1-92f6-511c2a96bd54",
+        "degree": 1,
+        "name": "KRIS Online procesy eZdravia - budúci stav",
+        "code": "kris_600"
+      },
+      {
+        "uuid": "b5d6ac25-a5dc-46e6-ade4-7c66cbe2f0e2",
+        "degree": 1,
+        "name": "KRIS Agentúry na podporu výskumu a vývoja",
+        "code": "kris_658"
+      },
+      {
+        "uuid": "b69c3fc5-2ec2-4eb3-a31f-b7f76ae1ab56",
+        "degree": 1,
+        "name": "KRIS Trnavského samosprávneho kraja",
+        "code": "kris_49"
+      },
+      {
+        "uuid": "b6dde8ef-60f8-4cad-a3b7-af80962c4e2c",
+        "degree": 1,
+        "name": "KRIS Ministerstva zahraničných vecí a európskych záležitostí Slovenskej republiky",
+        "code": "kris_8"
+      },
+      {
+        "uuid": "b76522e2-a938-49f1-89a6-df9572735c93",
+        "degree": 1,
+        "name": "KRIT Bardejov - Koncepcia rozvoja informačných technológií mesta Bardejov",
+        "code": "kris_744"
+      },
+      {
+        "uuid": "b7f52d67-11fd-478b-8564-62ae8a269d0b",
+        "degree": 1,
+        "name": "KRIS MV SR v oblasti kybernetickej bezpečnosti - budúci stav",
+        "code": "kris_936"
+      },
+      {
+        "uuid": "b9fff9d9-f214-41cd-b966-59a6f6e94161",
+        "degree": 1,
+        "name": "KRIS Úradu vlády Slovenskej republiky - súčasný stav",
+        "code": "kris_307"
+      },
+      {
+        "uuid": "ba85ff00-4122-4201-bada-9d1164a856b1",
+        "degree": 1,
+        "name": "KRIS - Národné športové centrum - súčasný stav",
+        "code": "kris_650"
+      },
+      {
+        "uuid": "baac4736-1155-4a41-8fde-116144c96889",
+        "degree": 1,
+        "name": "kris",
+        "code": "kris_1000"
+      },
+      {
+        "uuid": "bbdf5585-3ea1-499c-abc2-f1f62676adde",
+        "degree": 1,
+        "name": "KRIT Elektronizácia služieb regionálneho a vysokého školstva SR",
+        "code": "kris_697"
+      },
+      {
+        "uuid": "bced5129-0a2d-4ad1-bcac-af02226ddb81",
+        "degree": 1,
+        "name": "KRIS Kancelárie Národnej rady Slovenskej republiky",
+        "code": "kris_28"
+      },
+      {
+        "uuid": "be4a5c73-7ba3-4236-a6f5-c67cecfa6aee",
+        "degree": 1,
+        "name": "KRIT Konsolidovanej analytickej vrstvy",
+        "code": "kris_820"
+      },
+      {
+        "uuid": "bf6d834c-1754-401d-862f-001f1c5af36f",
+        "degree": 1,
+        "name": "KRIT Lepšieho manažmentu dát Prešovského samosprávneho kraja II",
+        "code": "kris_754"
+      },
+      {
+        "uuid": "bf855ae9-9c35-4ced-8b44-8752438a80d0",
+        "degree": 1,
+        "name": "KRIS obce Miloslavov",
+        "code": "kris_423"
+      },
+      {
+        "uuid": "c036b7cb-4b09-4b04-9bed-4c086c0f6163",
+        "degree": 1,
+        "name": "KRIS Digitálne pracovné prostredie zamestnanca MV SR",
+        "code": "kris_587"
+      },
+      {
+        "uuid": "c06e519b-71dc-4119-8f1f-789d6be7a088",
+        "degree": 1,
+        "name": "KRIT Všeobecnej zdravotnej poisťovne - súčasný stav",
+        "code": "kris_36"
+      },
+      {
+        "uuid": "c0ba5216-5ea7-42a8-b1a4-77eda2b046e0",
+        "degree": 1,
+        "name": "KRIS Riadenie procesov a dát",
+        "code": "kris_588"
+      },
+      {
+        "uuid": "c2d0fe53-01f6-42a9-bf20-579de8805aef",
+        "degree": 1,
+        "name": "KRIT - Migrácia ISVS Ministerstva životného prostredia SR do IaaS",
+        "code": "kris_793"
+      },
+      {
+        "uuid": "c4b624cc-a58e-4ef3-85e7-2ee6de4bb6a2",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov Registrov Zbierky elektronických listín",
+        "code": "kris_792"
+      },
+      {
+        "uuid": "c565ca12-c44c-4bc0-866d-8ced032547b5",
+        "degree": 1,
+        "name": "Koncepcia rozvoja PaaS platformy vládneho cloudu",
+        "code": "kris_565"
+      },
+      {
+        "uuid": "c5a8719c-8b80-48da-ae44-b7982c3440dc",
+        "degree": 1,
+        "name": "KRIS Košického samosprávneho kraja",
+        "code": "kris_186"
+      },
+      {
+        "uuid": "c62fb973-999a-4c5d-b62a-df0871441756",
+        "degree": 1,
+        "name": "KRIS Správy štátnych hmotných rezerv SR",
+        "code": "kris_379"
+      },
+      {
+        "uuid": "c671a205-b1f1-4298-9da7-1c80c8c33ea9",
+        "degree": 1,
+        "name": "KRIS Manažment údajov Ministerstva financií Slovenskej republiky - budúci stav",
+        "code": "kris_638"
+      },
+      {
+        "uuid": "c68908d7-1eee-4fc4-ab2b-51e0845f929d",
+        "degree": 1,
+        "name": "KRIT Komplexného informačného systému riadenia výkonnosti a podpory",
+        "code": "kris_714"
+      },
+      {
+        "uuid": "c7a2a5c4-21a1-4319-87b5-b8629e0de383",
+        "degree": 1,
+        "name": "KRIS mesta Holíč",
+        "code": "kris_452"
+      },
+      {
+        "uuid": "c7a4eb50-f4c2-413f-9ccc-506464bca714",
+        "degree": 1,
+        "name": "KRIS Štatistického úradu Slovenskej republiky",
+        "code": "kris_16"
+      },
+      {
+        "uuid": "c7d4b284-3a71-420b-a3af-fb630de922d9",
+        "degree": 1,
+        "name": "Koncepcia rozvoja IT (kybernetická bezpečnosť)",
+        "code": "kris_1037"
+      },
+      {
+        "uuid": "c919d9d6-3c6c-4f20-abec-728b1fdd91cc",
+        "degree": 1,
+        "name": "KRIT Manažment údajov a zlepšenie služieb Úradu pre dohľad nad zdravotnou starostlivosťou",
+        "code": "kris_778"
+      },
+      {
+        "uuid": "caa92cc8-70ce-4f49-935c-53385e9fe9fe",
+        "degree": 1,
+        "name": "Koncepcia rozvoja IT Ministerstva financií Slovenskej republiky - súčasný stav",
+        "code": "krit_1053"
+      },
+      {
+        "uuid": "cb15767c-3ae1-4203-a20d-d50ecf753d61",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií mesta Banská Bystrica",
+        "code": "kris_989"
+      },
+      {
+        "uuid": "cb284cfc-11ee-41ef-9e30-a3fe1447ba5a",
+        "degree": 1,
+        "name": "KRIS Ministerstva financií Slovenskej republiky - súčasný stav",
+        "code": "kris_333"
+      },
+      {
+        "uuid": "cb52ff03-b004-485a-9038-5e3b1c45a1ca",
+        "degree": 1,
+        "name": "KRIT Komplexného systému environmentálneho dohľadu",
+        "code": "kris_683"
+      },
+      {
+        "uuid": "cb7a841f-a98b-4716-b99a-a58e887f8c76",
+        "degree": 1,
+        "name": "KRIS Manažmentu údajov pre oblast vedy a výskumu",
+        "code": "kris_661"
+      },
+      {
+        "uuid": "cda7b536-e204-41a3-8afc-5be6ffa3fe4c",
+        "degree": 1,
+        "name": "KRIS mesta Malacky",
+        "code": "kris_298"
+      },
+      {
+        "uuid": "cffd03ea-0ae6-4a1c-ad12-f430a3ac8ce6",
+        "degree": 1,
+        "name": "KRIS Národného bezpečnostného úradu - TO BE",
+        "code": "kris_498"
+      },
+      {
+        "uuid": "d2073a46-e662-4ddb-9a0d-8e4d8a02c46b",
+        "degree": 1,
+        "name": "KRIS MPSVR SR - Informačného systému Safe Work (IS SAWO) budúci stav",
+        "code": "kris_574"
+      },
+      {
+        "uuid": "d2390104-6d12-45e9-8de5-c75e13312f59",
+        "degree": 1,
+        "name": "KRIS Úradu pre dohľad nad zdravotnou starostlivosťou",
+        "code": "kris_205"
+      },
+      {
+        "uuid": "d3c45d10-c3d1-4be6-b650-93e6ddad5d65",
+        "degree": 1,
+        "name": "KRIS Úradu vlády Slovenskej republiky - budúci stav",
+        "code": "kris_579"
+      },
+      {
+        "uuid": "d3f834e2-4d6d-4bf4-bcdc-e01b69020ec9",
+        "degree": 1,
+        "name": "KRIT Manažment údajov Ministerstva kultúry Slovenskej republiky",
+        "code": "kris_760"
+      },
+      {
+        "uuid": "d539f2ca-414c-429e-8bec-660c071a7d62",
+        "degree": 1,
+        "name": "KRIS obec Bohdanovce nad Trnavou",
+        "code": "kris_666"
+      },
+      {
+        "uuid": "d5784e04-da6a-45c3-ae12-9337b3252586",
+        "degree": 1,
+        "name": "KRIS Sociálnej poisťovne - budúci stav",
+        "code": "kris_488"
+      },
+      {
+        "uuid": "d6a46985-3d5c-4952-998d-bc04c6d3e285",
+        "degree": 1,
+        "name": "Koncepcia rozvoja Informačného systému Centra právnej pomoci",
+        "code": "kris_449"
+      },
+      {
+        "uuid": "d6e78274-9a49-41b2-ab7a-5f715a359c61",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií mesta Dunajska Streda",
+        "code": "kris_980"
+      },
+      {
+        "uuid": "d8306568-840b-4f7c-a9e7-e9b0a28e13dc",
+        "degree": 1,
+        "name": "KRIS obce Likavka",
+        "code": "kris_444"
+      },
+      {
+        "uuid": "d8f2be6c-b744-413e-8ca6-c340b4c2fac9",
+        "degree": 1,
+        "name": "KRIS Zabezpečenia efektívneho používania služieb ESO1 - budúci stav",
+        "code": "kris_601"
+      },
+      {
+        "uuid": "d985b749-f9d5-4c67-a3ab-e8392642c48a",
+        "degree": 1,
+        "name": "KRIS Ministerstva zdravotníctva Slovenskej republiky",
+        "code": "kris_479"
+      },
+      {
+        "uuid": "dcfd798c-1a1e-4efb-a6c9-b1da8930d977",
+        "degree": 1,
+        "name": "KRIS Ústavu pamäti národa - budúci stav",
+        "code": "kris_521"
+      },
+      {
+        "uuid": "dd52045b-e56d-49b3-b1c1-5f06fcc3c975",
+        "degree": 1,
+        "name": "KRIS Mesta Kremnica",
+        "code": "kris_647"
+      },
+      {
+        "uuid": "dff50a39-7b6b-4692-b4df-4deefab33798",
+        "degree": 1,
+        "name": "KRIT Modernizácie dávkových agend Sociálnej poisťovne",
+        "code": "kris_711"
+      },
+      {
+        "uuid": "e00383d7-51c6-488d-9300-a9f3c39a9f06",
+        "degree": 1,
+        "name": "KRIT Tlačovej agentúry Slovenskej republiky",
+        "code": "kris_37"
+      },
+      {
+        "uuid": "e02ae92a-6a40-463a-8cc2-512f13b7fa80",
+        "degree": 1,
+        "name": "KRIS Bratislava - Nové Mesto - budúci stav (to-be)",
+        "code": "kris_543"
+      },
+      {
+        "uuid": "e03af114-b3da-4df4-9289-3d323f1eb1bb",
+        "degree": 1,
+        "name": "KRIT Portálu Finančnej správy (PFS)",
+        "code": "kris_818"
+      },
+      {
+        "uuid": "e0d5b74d-3f1d-4fd9-a36b-fc5556d28a8f",
+        "degree": 1,
+        "name": "KRIS Kancelárie Ústavného súdu Slovenskej republiky - súčasný stav",
+        "code": "kris_30"
+      },
+      {
+        "uuid": "e1224463-c4a1-4d07-b170-592b099f5b98",
+        "degree": 1,
+        "name": "KRIT Manažmentu údajov v rezorte školstva",
+        "code": "kris_781"
+      },
+      {
+        "uuid": "e212af95-a603-4ecd-af53-42dceeeb29a8",
+        "degree": 1,
+        "name": "KRIS Úradu pre dohľad nad zdravotnou starostlivosťou - budúci stav",
+        "code": "kris_551"
+      },
+      {
+        "uuid": "e2b801ad-f524-48fa-a93e-68d18a34ebce",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií mesta Žiar nad Hronom",
+        "code": "kris_973"
+      },
+      {
+        "uuid": "e2c81c91-dbe4-418d-9c4b-9dd695ce6c59",
+        "degree": 1,
+        "name": "KRIS Správy štátnych hmotných rezerv SR - budúci stav",
+        "code": "kris_496"
+      },
+      {
+        "uuid": "e30a9514-dc20-4bba-9963-aa780f82b95e",
+        "degree": 1,
+        "name": "Koncepcia rozvoja informačných technológií mesta Hlohovec",
+        "code": "kris_1036"
+      },
+      {
+        "uuid": "e36e434a-c77f-48a5-8740-2d2f18947a53",
+        "degree": 1,
+        "name": "KRIT tzdravie – rozšírenie ezdravie o telemedicínske služby  - budúci stav",
+        "code": "kris_854"
+      },
+      {
+        "uuid": "e4a06c2a-5e6a-460c-bfe5-5beb50dfc58b",
+        "degree": 1,
+        "name": "KRIS Úradu jadrového dozoru2022",
+        "code": "kris_947"
+      },
+      {
+        "uuid": "e4bfbff7-bf74-46e5-b4da-7e978d16fb10",
+        "degree": 1,
+        "name": "KRIS Úradu na ochranu osobných údajov - súčasný stav",
+        "code": "kris_24"
+      },
+      {
+        "uuid": "e4ee7e03-5fc2-4035-9cda-c5dda8b958e3",
+        "degree": 1,
+        "name": "KRIS Ministerstva dopravy a výstavby Slovenskej republiky - budúci stav",
+        "code": "kris_555"
+      },
+      {
+        "uuid": "e5a058d3-3c82-4933-b58e-60971b7baa37",
+        "degree": 1,
+        "name": "KRIS Košického samosprávneho kraja",
+        "code": "kris_509"
+      },
+      {
+        "uuid": "e6f4ced6-17eb-44c7-a74d-5949698ebfdb",
+        "degree": 1,
+        "name": "KRIS Úradu Bratislavského samosprávneho kraja - budúci stav",
+        "code": "kris_519"
+      },
+      {
+        "uuid": "e762b59f-e734-4a9c-b07e-3b87701cace6",
+        "degree": 1,
+        "name": "KRIS Analytického nástroja pre ekonomickú reguláciu MZ SR - budúci stav",
+        "code": "kris_644"
+      },
+      {
+        "uuid": "e8212b45-14c8-4ef1-bba2-7f58a55bfbc1",
+        "degree": 1,
+        "name": "KRIT Centralizovaného systému súdneho riadenia (CSSR)",
+        "code": "kris_762"
+      },
+      {
+        "uuid": "e8b744a2-807a-4bfc-ad50-247d542de1a1",
+        "degree": 1,
+        "name": "KRIS Ministerstva spravodlivosti SR - súčasný stav",
+        "code": "kris_349"
+      },
+      {
+        "uuid": "e9f24b34-1c39-424c-a9c7-e85cf32089b1",
+        "degree": 1,
+        "name": "KRIT Informačného systému elektronickej fakturácie - budúci stav",
+        "code": "kris_612"
+      },
+      {
+        "uuid": "ec09c12a-1868-4fc2-98c8-fd4b12ddc08b",
+        "degree": 1,
+        "name": "Posúdenie súčastného stavu a doterajších riešení ISVS MO",
+        "code": "kris_342"
+      },
+      {
+        "uuid": "ef8b0c95-b98d-4771-b93d-d52422e71e33",
+        "degree": 1,
+        "name": "KRIT Úradu priemyselného vlastníctva SR - budúci stav",
+        "code": "kris_790"
+      },
+      {
+        "uuid": "efa602c1-98d1-435b-b80a-6f02159971f1",
+        "degree": 1,
+        "name": "KRIS Úradu pre reguláciu elektronických komunikácii a poštových služieb - budúci stav",
+        "code": "kris_536"
+      },
+      {
+        "uuid": "f27fd488-1544-41bb-949a-20ca516bc4b1",
+        "degree": 1,
+        "name": "KRIS Dopravného úradu - súčasný stav",
+        "code": "kris_418"
+      },
+      {
+        "uuid": "f3cfb2b0-52f5-42b4-9119-01d151df00dc",
+        "degree": 1,
+        "name": "KRIT - Zavedenie analytickej vrstvy pre lepšie využívanie údajov VšZP",
+        "code": "kris_858"
+      },
+      {
+        "uuid": "f481cdea-0fc1-4df6-a667-f453440093c0",
+        "degree": 1,
+        "name": "KRIT Manažment údajov Národné športové centrum - budúci stav",
+        "code": "kris_789"
+      },
+      {
+        "uuid": "f54f7a59-90de-40ea-83c6-298ba24f2811",
+        "degree": 1,
+        "name": "KRIT - Ministerstvo spravodlivosti",
+        "code": "kris_998"
+      },
+      {
+        "uuid": "f60fa5d4-6175-48cd-b533-737fb7a36de8",
+        "degree": 1,
+        "name": "Koncepcia rozvoja IT Ministerstvo financií Slovenskej republiky test",
+        "code": "krit_1069"
+      },
+      {
+        "uuid": "f7897301-6376-4901-a966-b5dcfbee30ae",
+        "degree": 1,
+        "name": "KRIT Pamiatkového úradu SR - budúci stav",
+        "code": "kris_688"
+      },
+      {
+        "uuid": "f86b19a0-d742-45ab-8f34-188c38065923",
+        "degree": 1,
+        "name": "KRIS Ministerstva vnútra Slovenskej republiky",
+        "code": "kris_506"
+      },
+      {
+        "uuid": "f916f454-a4db-4573-9378-f06932527f14",
+        "degree": 1,
+        "name": "KRIS Ministerstva pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
+        "code": "kris_538"
+      },
+      {
+        "uuid": "f9ecea59-dc6f-4f1c-ab44-e65d110eba98",
+        "degree": 1,
+        "name": "KRIT Komponentu sprístupňovania a zdieľania doručovaných rozhodnutí",
+        "code": "kris_788"
+      },
+      {
+        "uuid": "facc025d-a305-4f07-804e-0ca074e82d7b",
+        "degree": 1,
+        "name": "KRIS Žilinský samosprávny kraj",
+        "code": "kris_541"
+      },
+      {
+        "uuid": "fb0b6135-a113-4804-9d7a-bb52f440137a",
+        "degree": 1,
+        "name": "Prediktívne modely prevenčných programov",
+        "code": "kris_842"
+      },
+      {
+        "uuid": "fd094649-b7ee-4f83-ad64-7302d899a61d",
+        "degree": 1,
+        "name": "KRIT mesto Prešov - Koncepcia rozvoja informačných technológií mesta Prešov",
+        "code": "kris_859"
+      },
+      {
+        "uuid": "fd559630-e0eb-48fc-91fb-bf7a501bb93b",
+        "degree": 1,
+        "name": "KRIS Bučany",
+        "code": "kris_678"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6070,
+      "total_islands": 5801,
+      "singleton_islands": 5676,
+      "multi_islands": [
+        {
+          "size_total": 13,
+          "size_source": 1,
+          "size_target": 12,
+          "fraction_total": 0.00214168039538715,
+          "top_source_uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+          "top_source_degree": 12,
+          "top_target_uuid": "1d1a6b4f-01fb-41c5-be2b-fa66c72c4c0a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 13,
+          "size_source": 1,
+          "size_target": 12,
+          "fraction_total": 0.00214168039538715,
+          "top_source_uuid": "0303d336-d570-47f5-846d-7f2d95b1d40b",
+          "top_source_degree": 12,
+          "top_target_uuid": "2fdc67d3-467c-4eb8-864d-1ba81b5cff6f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.0019769357495881385,
+          "top_source_uuid": "be304941-5b5c-4ee5-8f64-b46d7048d9c6",
+          "top_source_degree": 11,
+          "top_target_uuid": "67e7d01e-4ebd-4420-aefa-79c77bcd73eb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 11,
+          "size_source": 1,
+          "size_target": 10,
+          "fraction_total": 0.001812191103789127,
+          "top_source_uuid": "a067167e-7851-4cf9-bdcb-09dcec21a723",
+          "top_source_degree": 10,
+          "top_target_uuid": "cb7a841f-a98b-4716-b99a-a58e887f8c76",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 10,
+          "size_source": 1,
+          "size_target": 9,
+          "fraction_total": 0.0016474464579901153,
+          "top_source_uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+          "top_source_degree": 9,
+          "top_target_uuid": "f60fa5d4-6175-48cd-b533-737fb7a36de8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 10,
+          "size_source": 1,
+          "size_target": 9,
+          "fraction_total": 0.0016474464579901153,
+          "top_source_uuid": "82ed4d16-86e5-4cdf-888e-96060dda8288",
+          "top_source_degree": 9,
+          "top_target_uuid": "6a3f9921-04c4-48f7-8a73-b44ab4ca202f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 9,
+          "size_source": 1,
+          "size_target": 8,
+          "fraction_total": 0.0014827018121911038,
+          "top_source_uuid": "8b22734b-273a-4c83-a38f-b5f904c2b157",
+          "top_source_degree": 8,
+          "top_target_uuid": "61b15fc6-48a4-4295-9290-e5983e5af1a4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 8,
+          "size_source": 1,
+          "size_target": 7,
+          "fraction_total": 0.0013179571663920922,
+          "top_source_uuid": "f069547e-bf00-4bbf-aa07-631be84ea36c",
+          "top_source_degree": 7,
+          "top_target_uuid": "cb52ff03-b004-485a-9038-5e3b1c45a1ca",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 8,
+          "size_source": 1,
+          "size_target": 7,
+          "fraction_total": 0.0013179571663920922,
+          "top_source_uuid": "cedc6be2-9465-4c5d-878c-60f80988d268",
+          "top_source_degree": 7,
+          "top_target_uuid": "2c6702d9-c6af-4009-8eb7-ce65d8b044a3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 7,
+          "size_source": 1,
+          "size_target": 6,
+          "fraction_total": 0.0011532125205930808,
+          "top_source_uuid": "efc1cb80-bbf1-4311-ad68-d418aa63f6ff",
+          "top_source_degree": 6,
+          "top_target_uuid": "5cc22fbe-436d-44b3-baea-244418fd2edb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 7,
+          "size_source": 1,
+          "size_target": 6,
+          "fraction_total": 0.0011532125205930808,
+          "top_source_uuid": "b9525626-338b-410e-b82d-e3fe4c95d31f",
+          "top_source_degree": 6,
+          "top_target_uuid": "5cb38699-c1dc-4d1f-8610-18f25f0c40ed",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 6,
+          "size_source": 1,
+          "size_target": 5,
+          "fraction_total": 0.0009884678747940692,
+          "top_source_uuid": "fd65b860-21fe-431f-b548-4515f600d95a",
+          "top_source_degree": 5,
+          "top_target_uuid": "28289734-e2fc-47a6-874d-8ff98c38405a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.0008237232289950577,
+          "top_source_uuid": "0c027273-1133-4871-8d94-44b36be99626",
+          "top_source_degree": 4,
+          "top_target_uuid": "facc025d-a305-4f07-804e-0ca074e82d7b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.0008237232289950577,
+          "top_source_uuid": "8b88c333-7b27-46b0-abdf-6d36c1f8f678",
+          "top_source_degree": 4,
+          "top_target_uuid": "c06e519b-71dc-4119-8f1f-789d6be7a088",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "40ed1f67-d112-4e29-86bc-5b5e69b4520f",
+          "top_source_degree": 3,
+          "top_target_uuid": "d3f834e2-4d6d-4bf4-bcdc-e01b69020ec9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "87561faa-b1d2-49c2-a3a9-c4b5fb47e53b",
+          "top_source_degree": 3,
+          "top_target_uuid": "2f8c0887-b995-40f9-8597-738223f308c9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "54b24ce2-87f2-445e-8f24-98eca37ca00a",
+          "top_source_degree": 3,
+          "top_target_uuid": "d2390104-6d12-45e9-8de5-c75e13312f59",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "d88e14ac-d978-4666-bbe7-8ef82a9b3654",
+          "top_source_degree": 3,
+          "top_target_uuid": "274687fe-f79a-4974-b5e7-dc2849d85633",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "cf3d26e8-6a0c-4b60-a5ec-9864b8f0a28c",
+          "top_source_degree": 3,
+          "top_target_uuid": "0bc4072d-9dd3-4f76-aeda-40f479ed1571",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "c67de740-0722-4b3d-9c12-8db578b7606a",
+          "top_source_degree": 3,
+          "top_target_uuid": "b6dde8ef-60f8-4cad-a3b7-af80962c4e2c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "f4760beb-3b8e-4e62-8eff-efecb5e10a4d",
+          "top_source_degree": 3,
+          "top_target_uuid": "4fb4d534-f363-4848-bfba-ead2db161e2c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "921bfe86-e1a3-4b3d-a803-031dbde4643a",
+          "top_source_degree": 3,
+          "top_target_uuid": "542ee6b7-897b-42fe-9ec6-de057eff561e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 4,
+          "size_source": 1,
+          "size_target": 3,
+          "fraction_total": 0.0006589785831960461,
+          "top_source_uuid": "38b99897-c2be-4277-9cd9-f4b523955f7f",
+          "top_source_degree": 3,
+          "top_target_uuid": "66c8ca19-0484-4fa4-b622-bc562a7462dd",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "bb3ca935-5e86-46c6-8885-8f52a6e6df34",
+          "top_source_degree": 2,
+          "top_target_uuid": "060f1850-7bc4-45bf-8d6d-6f4a8efedcd6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "351a67a1-f824-403f-b70c-050aad28a67c",
+          "top_source_degree": 2,
+          "top_target_uuid": "84143ad3-e02b-4289-9adc-4fd37ebce389",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "f303d112-2913-4fc5-ad16-c8d7c070d4a5",
+          "top_source_degree": 2,
+          "top_target_uuid": "5755ac7e-7046-4620-a1c5-0b000f224686",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "01307c20-d576-486d-96f5-0d18641ef43a",
+          "top_source_degree": 2,
+          "top_target_uuid": "9fb7ef1f-77c5-458f-a30a-42c06ea968f7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "b300b0f0-0fb4-4bf5-93db-42ded0babdf1",
+          "top_source_degree": 2,
+          "top_target_uuid": "9df26e1b-a931-4760-acb5-be12a71037a1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "87b86d95-26e1-42dd-b081-3cba80a1ffe5",
+          "top_source_degree": 2,
+          "top_target_uuid": "1201147a-1320-4312-a3f0-c5a887b45476",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "e0344f51-5800-4925-8d22-aec27fd94ca5",
+          "top_source_degree": 2,
+          "top_target_uuid": "12c33098-5d7a-4e10-97b6-bd0c7b98f5d4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "2486e4fd-7c7d-4890-92a0-7b024d0add38",
+          "top_source_degree": 2,
+          "top_target_uuid": "697a4e28-5d07-48bb-917a-af7c9fb7e45d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+          "top_source_degree": 2,
+          "top_target_uuid": "3ea7f76c-e4c7-40e0-a7c4-5741a278abe7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "c0f01f30-6d1f-45ae-9fb8-623f6c054c9d",
+          "top_source_degree": 2,
+          "top_target_uuid": "62480938-4803-4eb4-b383-1f29e68db24d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "d69416d5-3647-4a7b-813a-70966fb58cf7",
+          "top_source_degree": 2,
+          "top_target_uuid": "e02ae92a-6a40-463a-8cc2-512f13b7fa80",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "62b6fa90-8667-47a5-8aa3-b464d1901000",
+          "top_source_degree": 2,
+          "top_target_uuid": "34645edf-782e-495c-8145-027a246df1c5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "ecfd4484-a2c9-4826-99e4-98658d28df44",
+          "top_source_degree": 2,
+          "top_target_uuid": "384b58dc-6083-4f37-ad54-a5033f57af04",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "6f53f266-2cbd-4ed3-893d-925ae3a25e25",
+          "top_source_degree": 2,
+          "top_target_uuid": "85621e60-5069-4266-8bfa-46c51af2cbf8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "993a59d1-d60b-4c3c-aa5c-a77a8baf4c8a",
+          "top_source_degree": 2,
+          "top_target_uuid": "e0d5b74d-3f1d-4fd9-a36b-fc5556d28a8f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "49e9e141-c306-4b11-b8fc-22b50c99eefc",
+          "top_source_degree": 2,
+          "top_target_uuid": "297eacfb-adb9-4734-96f3-5a38ca521d1e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "2e5da597-dd21-4c1e-b2bc-3f5889be7566",
+          "top_source_degree": 2,
+          "top_target_uuid": "e6f4ced6-17eb-44c7-a74d-5949698ebfdb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "d48b08e1-3350-4013-b1ce-339c84906c37",
+          "top_source_degree": 2,
+          "top_target_uuid": "f481cdea-0fc1-4df6-a667-f453440093c0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "73ec5411-5dc6-43d8-9234-cf427153ae97",
+          "top_source_degree": 2,
+          "top_target_uuid": "ec09c12a-1868-4fc2-98c8-fd4b12ddc08b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "cb45bee5-c165-43dc-b3b1-bb4abc823215",
+          "top_source_degree": 2,
+          "top_target_uuid": "0936b5b1-791f-46e1-9561-e910e93d9450",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "ce4ddb23-7e52-4caf-97cc-31a731b14bfc",
+          "top_source_degree": 2,
+          "top_target_uuid": "c5a8719c-8b80-48da-ae44-b7982c3440dc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "c610ecb3-549a-4adb-8c51-2ab8b8c5de96",
+          "top_source_degree": 2,
+          "top_target_uuid": "76af944b-c7ef-4621-9e5b-b3b480a432a0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "3183c42d-0793-4a44-a18b-e5673ea18416",
+          "top_source_degree": 2,
+          "top_target_uuid": "6338dd60-a53e-434c-b609-c4f29b60674b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "0812ab55-cc17-4bec-89ad-0f5fea58e13c",
+          "top_source_degree": 2,
+          "top_target_uuid": "c62fb973-999a-4c5d-b62a-df0871441756",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "b7435871-8acd-490d-a69e-dcba132566de",
+          "top_source_degree": 2,
+          "top_target_uuid": "9855b11a-1bcd-450f-ae2b-101d4e110a4f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "73ec767d-efcf-4b75-b277-809034b203b5",
+          "top_source_degree": 2,
+          "top_target_uuid": "772d4370-b272-442f-9c04-306f6d6f7a30",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "da4c539a-0e13-4f00-b4e9-32e6e3a2e793",
+          "top_source_degree": 2,
+          "top_target_uuid": "6e47965e-71b6-4705-b2de-b12f48206c93",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "c32009d4-4fa9-4943-a82b-a7df772e321d",
+          "top_source_degree": 2,
+          "top_target_uuid": "70ee137f-67fc-41a9-8ab6-f3783cb1a750",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "6ce0e645-8836-441e-8d03-c8deb5f62700",
+          "top_source_degree": 2,
+          "top_target_uuid": "458e8092-9e9c-4f7d-985f-09107ceb4a6b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004942339373970346,
+          "top_source_uuid": "d05de928-a993-4561-9787-d8710c95f23a",
+          "top_source_degree": 2,
+          "top_target_uuid": "aba18c36-e4d5-4b70-ae5a-a73fbbab1bfb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "014c52c5-6779-43bc-8ae2-8349096e5781",
+          "top_source_degree": 1,
+          "top_target_uuid": "0c0a1791-4b83-423f-a28c-03c7a6584b55",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "ec5fb469-9d07-4c2d-abc2-13546a72dcd9",
+          "top_source_degree": 1,
+          "top_target_uuid": "2e895496-c29d-4019-a6d1-a6ee752ce61e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "6fc4d6ba-3a05-42cb-b124-3f2b874fbb94",
+          "top_source_degree": 1,
+          "top_target_uuid": "2956cc4f-25c7-4cd9-90b2-c1e3981180c9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "0b16216f-ddd9-497c-9aa8-e25cfe147f1b",
+          "top_source_degree": 1,
+          "top_target_uuid": "a0fb3104-2371-4394-abd5-bf69939d611d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "1e546a88-83ed-49b0-9a55-c36e42a58fab",
+          "top_source_degree": 1,
+          "top_target_uuid": "8ede68a7-ea88-40fa-a6fd-2d724729e231",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "b210ce61-3804-4005-afba-5d1b627d6d12",
+          "top_source_degree": 1,
+          "top_target_uuid": "87cd6e82-5b3e-44d6-be92-c7da7f1d2628",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "ee2a2fb8-4e9b-4a5e-a8f8-66e0f953f9b9",
+          "top_source_degree": 1,
+          "top_target_uuid": "ae5e6a45-9045-40a7-9bda-505ab24c22bc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "ce6a4ed7-e3f9-4b4d-9dda-808b212ab76a",
+          "top_source_degree": 1,
+          "top_target_uuid": "4c90df1f-950b-4a20-957b-b93edf8bbee8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "688aee0a-f29c-49eb-9eff-81d8b2c61bc3",
+          "top_source_degree": 1,
+          "top_target_uuid": "10abd0d0-dbfa-44e3-95aa-198e8a9c1124",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "88c3572e-370a-4b78-8080-7bc6edd703ba",
+          "top_source_degree": 1,
+          "top_target_uuid": "56f731de-6be3-45ea-a46b-0ec0190dd49d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "dd91675f-e93c-48d3-b757-615456de7eac",
+          "top_source_degree": 1,
+          "top_target_uuid": "fd094649-b7ee-4f83-ad64-7302d899a61d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "ce856cf5-7f23-40bd-9de6-65b4687825a2",
+          "top_source_degree": 1,
+          "top_target_uuid": "cda7b536-e204-41a3-8afc-5be6ffa3fe4c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "7c8e1193-e767-4a69-bb4d-1744d543f4ea",
+          "top_source_degree": 1,
+          "top_target_uuid": "036c0ca5-59a3-49b1-8bb3-743ed410bad7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "2a1c9636-ab4e-48af-ab69-36a6b1c27faf",
+          "top_source_degree": 1,
+          "top_target_uuid": "d8306568-840b-4f7c-a9e7-e9b0a28e13dc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "da0a08f7-868c-496e-b15e-5841ed257eec",
+          "top_source_degree": 1,
+          "top_target_uuid": "2478b6eb-835f-4097-9d86-cc7553938cf9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "ccffc7d1-ebca-4eda-a7f4-fb822820ba2e",
+          "top_source_degree": 1,
+          "top_target_uuid": "fd559630-e0eb-48fc-91fb-bf7a501bb93b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "89793657-80e0-4df5-975b-597166bb5af2",
+          "top_source_degree": 1,
+          "top_target_uuid": "59bade3c-d72e-4bb8-a336-a55a37cd9223",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "aed7b5e2-f3f8-443b-93f2-ef6a17fe7ce1",
+          "top_source_degree": 1,
+          "top_target_uuid": "450bfb98-989c-474c-8942-df77effdd0d6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "a70d4875-4de4-47e5-9eaa-146e581afd52",
+          "top_source_degree": 1,
+          "top_target_uuid": "baac4736-1155-4a41-8fde-116144c96889",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "45a3fbc1-0f11-4a89-8480-a8e837930179",
+          "top_source_degree": 1,
+          "top_target_uuid": "32934fc1-6bf5-463b-a654-67592eccc1b9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "72ed14c6-a8eb-4a7b-a7a6-3687a71c72b6",
+          "top_source_degree": 1,
+          "top_target_uuid": "66b53874-67bc-4317-a51d-6a2c8a85638a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "b9c86d3e-3dd5-41ac-a63a-99f83a328e47",
+          "top_source_degree": 1,
+          "top_target_uuid": "bf855ae9-9c35-4ced-8b44-8752438a80d0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "44406c16-b58f-4401-babe-2ec169c54cee",
+          "top_source_degree": 1,
+          "top_target_uuid": "5a56b5e1-fd9a-481d-9b46-b37359f4a7b9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "70395eda-cd16-4325-809f-682fdda62d56",
+          "top_source_degree": 1,
+          "top_target_uuid": "40656d75-7b7c-41cb-a6b3-4dfda0134e91",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "63a1d491-f53a-43ba-a441-cc2e0d799d41",
+          "top_source_degree": 1,
+          "top_target_uuid": "5535b2b9-598c-4365-a66a-8a0069922805",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "88638c1d-60f4-4d80-a7e2-09417a3ebc7f",
+          "top_source_degree": 1,
+          "top_target_uuid": "0d80f45b-f3ff-47f5-9ff6-4a0a43c65c4e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "5061ca82-b679-4844-93ab-b03760343f88",
+          "top_source_degree": 1,
+          "top_target_uuid": "0c14888e-cbc8-46b0-a4c3-7cc735b62377",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "d7170d0f-d161-4da0-8df5-562041db4e46",
+          "top_source_degree": 1,
+          "top_target_uuid": "bced5129-0a2d-4ad1-bcac-af02226ddb81",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "63fd37ae-5ee8-413d-9141-c259f190d310",
+          "top_source_degree": 1,
+          "top_target_uuid": "cb15767c-3ae1-4203-a20d-d50ecf753d61",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "a136ca5e-5769-433d-88aa-2692a69cfc1b",
+          "top_source_degree": 1,
+          "top_target_uuid": "569804da-f19f-4154-8f91-f6b4a1e3ca0a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "f0152111-ff05-49a0-9154-a26c6fe061a5",
+          "top_source_degree": 1,
+          "top_target_uuid": "8e402813-d37a-4a43-8561-efd2ff4c2a48",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "6be108a8-31cc-4bee-8d7e-72766f7fc8ff",
+          "top_source_degree": 1,
+          "top_target_uuid": "a37198b7-186c-4f01-9a26-fafb7ad215f1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "8bc7bfa5-416a-4992-a66f-057b71a5d163",
+          "top_source_degree": 1,
+          "top_target_uuid": "dd52045b-e56d-49b3-b1c1-5f06fcc3c975",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "4a9d0220-0ac9-407c-9fc6-0a93d86c10ee",
+          "top_source_degree": 1,
+          "top_target_uuid": "f7897301-6376-4901-a966-b5dcfbee30ae",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "3da4edd2-e1c8-4862-bd23-fc9167ec536e",
+          "top_source_degree": 1,
+          "top_target_uuid": "385d8bbe-bc18-456f-92d6-813a5bcc505d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "8c48396d-f3b8-451a-8474-b434d34db191",
+          "top_source_degree": 1,
+          "top_target_uuid": "709717f9-21e1-4bff-8008-d943802b0706",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "87724722-c74e-47b9-b999-f9e73f504ec5",
+          "top_source_degree": 1,
+          "top_target_uuid": "a2606ed5-f64f-473f-9484-6134f14870a9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "03341c9b-1641-4b0d-95af-6c09b51e9a2b",
+          "top_source_degree": 1,
+          "top_target_uuid": "6ade3a33-ee8c-4688-a9bd-bc2edf81e228",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "cf5e19d8-23e9-4efc-a621-6a1a8ae69275",
+          "top_source_degree": 1,
+          "top_target_uuid": "7fccbd51-e731-48e4-9053-65d11b8311f1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "c7bc75cd-abf5-4adf-8ad6-c09a101ac464",
+          "top_source_degree": 1,
+          "top_target_uuid": "60f517a6-f8ff-4353-ac3a-86fdb25ce2eb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "3ede60b3-f640-4c92-849a-45c392410f0f",
+          "top_source_degree": 1,
+          "top_target_uuid": "0385d46f-e858-4c03-badb-6e78c2a812d0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "8f99cdbe-7815-4f30-959c-7ff96a59b629",
+          "top_source_degree": 1,
+          "top_target_uuid": "fb0b6135-a113-4804-9d7a-bb52f440137a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "17c57831-7eb5-467b-9eb9-7f1849991ae5",
+          "top_source_degree": 1,
+          "top_target_uuid": "0d78710c-be4a-4906-b49b-85f1701c10d8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "58a2acf4-d4f1-47b3-be19-c8593bee51da",
+          "top_source_degree": 1,
+          "top_target_uuid": "63471449-a757-404a-82c6-9be7667ea024",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "16430f57-b950-4b2c-8db1-2a06b5983455",
+          "top_source_degree": 1,
+          "top_target_uuid": "b0260c1f-150e-4207-87bd-9548524c0d16",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "a2d21995-d29f-42ff-bc5b-90836a2da87d",
+          "top_source_degree": 1,
+          "top_target_uuid": "ab153db4-e717-45a9-b6f8-d71cd4075200",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "f698bd0b-9319-4b1b-b3ef-8343ae337424",
+          "top_source_degree": 1,
+          "top_target_uuid": "5015edc5-9267-41e9-8017-c4cc3e5d20eb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "2cf2034c-2316-4afd-8030-e5883469bc14",
+          "top_source_degree": 1,
+          "top_target_uuid": "b76522e2-a938-49f1-89a6-df9572735c93",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "20caadad-d468-4cfe-9680-3dc69a86c357",
+          "top_source_degree": 1,
+          "top_target_uuid": "d539f2ca-414c-429e-8bec-660c071a7d62",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "bb66330a-8273-411c-a7c8-2e72e8e62337",
+          "top_source_degree": 1,
+          "top_target_uuid": "83262fdb-0f5a-41e5-b676-85817c7ecf0d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "9042e116-eb20-43bd-86e1-406b044088ed",
+          "top_source_degree": 1,
+          "top_target_uuid": "44e9b7a6-cd22-4056-ab1a-0ae61cc27470",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "d9784331-d952-4ca6-86b1-82b1e4afd900",
+          "top_source_degree": 1,
+          "top_target_uuid": "e30a9514-dc20-4bba-9963-aa780f82b95e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "c828e5d1-3e3b-414c-b4b5-2233304d3507",
+          "top_source_degree": 1,
+          "top_target_uuid": "4cc317d2-db0d-46c5-9a26-5dee39e128e0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "fb2fdccb-4c66-4046-82db-cc1c9a86b849",
+          "top_source_degree": 1,
+          "top_target_uuid": "654f00b8-f629-413f-903a-11086b568ef3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "b50ac1f5-ea2b-48ca-bd8f-4d095324d596",
+          "top_source_degree": 1,
+          "top_target_uuid": "b32e76b5-b332-4fb8-8556-bcd8f05b9191",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "2203e078-c6a1-4155-a54f-3f8559fd32d1",
+          "top_source_degree": 1,
+          "top_target_uuid": "64556cb6-17f0-44b5-9a94-fa0d9dc4b1a2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "0fccb721-287a-475f-98eb-5c8503a5c267",
+          "top_source_degree": 1,
+          "top_target_uuid": "681d3b77-0e02-44f3-b5c2-af3d58a411e7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "3103f40b-b932-4783-b902-a79f02bb25e2",
+          "top_source_degree": 1,
+          "top_target_uuid": "6e7a8cab-ed75-40f4-b457-47096999f413",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "fe36d0c7-4028-414c-b5f5-994f0bb48c7c",
+          "top_source_degree": 1,
+          "top_target_uuid": "17b56a55-5b98-4854-a17c-89357b77d0fa",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "d757e688-58e7-4aa3-89e5-30494939297e",
+          "top_source_degree": 1,
+          "top_target_uuid": "c7a2a5c4-21a1-4319-87b5-b8629e0de383",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "243c6628-65bd-431b-aa89-1622244e0e50",
+          "top_source_degree": 1,
+          "top_target_uuid": "b5d6ac25-a5dc-46e6-ade4-7c66cbe2f0e2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "ec546aaf-91fc-45c0-ac00-6890a011066c",
+          "top_source_degree": 1,
+          "top_target_uuid": "8023cddd-612b-4e01-bef7-3e8cf25eb3fb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "3c6d92b9-5f92-4b51-9ad4-5e459d394f93",
+          "top_source_degree": 1,
+          "top_target_uuid": "e2b801ad-f524-48fa-a93e-68d18a34ebce",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "466a0bcd-3d37-48df-a445-61e978a90489",
+          "top_source_degree": 1,
+          "top_target_uuid": "70afffcc-b98e-4684-b3eb-f33fa7298874",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "68c893fb-4be0-4ea3-acd7-7dd7ef3cf963",
+          "top_source_degree": 1,
+          "top_target_uuid": "b69c3fc5-2ec2-4eb3-a31f-b7f76ae1ab56",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "bfee1539-38f2-4e50-9f34-152cc34df14e",
+          "top_source_degree": 1,
+          "top_target_uuid": "0c6334ed-ed43-4c90-859a-484094e84d9b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "7079cad3-9ef6-45dc-bff2-1614b21bc86f",
+          "top_source_degree": 1,
+          "top_target_uuid": "7a152c82-4e29-4a9d-9c4d-ea539d3ec6da",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "63daac20-4419-43c8-ab1b-d50502c8c2e9",
+          "top_source_degree": 1,
+          "top_target_uuid": "e00383d7-51c6-488d-9300-a9f3c39a9f06",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "42eacc2c-dd4f-4ed3-a3d9-239d2701c6e8",
+          "top_source_degree": 1,
+          "top_target_uuid": "592e3992-880b-4af3-91e2-d67fc6c6cfb0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "35e05f43-d164-4e78-9086-c1481bc0872b",
+          "top_source_degree": 1,
+          "top_target_uuid": "af1de2b0-94cc-4361-91c4-3283e94d79c0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "e8e88510-070c-4c61-a283-24fdd5576917",
+          "top_source_degree": 1,
+          "top_target_uuid": "04e09c89-0300-44f1-800f-b8138740446d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00032948929159802305,
+          "top_source_uuid": "4e16afb9-5e43-4f5a-8dcd-45ffbfbc1198",
+          "top_source_degree": 1,
+          "top_target_uuid": "8551acd8-c2e7-4d52-ade2-6561d87808f8",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 5788,
+        "total_islands": 5788,
+        "singleton_islands": 5788,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 282,
+        "total_islands": 138,
+        "singleton_islands": 85,
+        "multi_islands": [
+          {
+            "size": 12,
+            "fraction": 0.0425531914893617,
+            "size_total": 13,
+            "top_uuid": "1d1a6b4f-01fb-41c5-be2b-fa66c72c4c0a",
+            "top_degree": 1
+          },
+          {
+            "size": 12,
+            "fraction": 0.0425531914893617,
+            "size_total": 13,
+            "top_uuid": "2fdc67d3-467c-4eb8-864d-1ba81b5cff6f",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.03900709219858156,
+            "size_total": 12,
+            "top_uuid": "67e7d01e-4ebd-4420-aefa-79c77bcd73eb",
+            "top_degree": 1
+          },
+          {
+            "size": 10,
+            "fraction": 0.03546099290780142,
+            "size_total": 11,
+            "top_uuid": "cb7a841f-a98b-4716-b99a-a58e887f8c76",
+            "top_degree": 1
+          },
+          {
+            "size": 9,
+            "fraction": 0.031914893617021274,
+            "size_total": 10,
+            "top_uuid": "f60fa5d4-6175-48cd-b533-737fb7a36de8",
+            "top_degree": 1
+          },
+          {
+            "size": 9,
+            "fraction": 0.031914893617021274,
+            "size_total": 10,
+            "top_uuid": "6a3f9921-04c4-48f7-8a73-b44ab4ca202f",
+            "top_degree": 1
+          },
+          {
+            "size": 8,
+            "fraction": 0.028368794326241134,
+            "size_total": 9,
+            "top_uuid": "61b15fc6-48a4-4295-9290-e5983e5af1a4",
+            "top_degree": 1
+          },
+          {
+            "size": 7,
+            "fraction": 0.024822695035460994,
+            "size_total": 8,
+            "top_uuid": "cb52ff03-b004-485a-9038-5e3b1c45a1ca",
+            "top_degree": 1
+          },
+          {
+            "size": 7,
+            "fraction": 0.024822695035460994,
+            "size_total": 8,
+            "top_uuid": "2c6702d9-c6af-4009-8eb7-ce65d8b044a3",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.02127659574468085,
+            "size_total": 7,
+            "top_uuid": "5cc22fbe-436d-44b3-baea-244418fd2edb",
+            "top_degree": 1
+          },
+          {
+            "size": 6,
+            "fraction": 0.02127659574468085,
+            "size_total": 7,
+            "top_uuid": "5cb38699-c1dc-4d1f-8610-18f25f0c40ed",
+            "top_degree": 1
+          },
+          {
+            "size": 5,
+            "fraction": 0.01773049645390071,
+            "size_total": 6,
+            "top_uuid": "28289734-e2fc-47a6-874d-8ff98c38405a",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.014184397163120567,
+            "size_total": 5,
+            "top_uuid": "facc025d-a305-4f07-804e-0ca074e82d7b",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.014184397163120567,
+            "size_total": 5,
+            "top_uuid": "c06e519b-71dc-4119-8f1f-789d6be7a088",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "d3f834e2-4d6d-4bf4-bcdc-e01b69020ec9",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "2f8c0887-b995-40f9-8597-738223f308c9",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "d2390104-6d12-45e9-8de5-c75e13312f59",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "274687fe-f79a-4974-b5e7-dc2849d85633",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "0bc4072d-9dd3-4f76-aeda-40f479ed1571",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "b6dde8ef-60f8-4cad-a3b7-af80962c4e2c",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "4fb4d534-f363-4848-bfba-ead2db161e2c",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "542ee6b7-897b-42fe-9ec6-de057eff561e",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.010638297872340425,
+            "size_total": 4,
+            "top_uuid": "66c8ca19-0484-4fa4-b622-bc562a7462dd",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "060f1850-7bc4-45bf-8d6d-6f4a8efedcd6",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "84143ad3-e02b-4289-9adc-4fd37ebce389",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "5755ac7e-7046-4620-a1c5-0b000f224686",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "9fb7ef1f-77c5-458f-a30a-42c06ea968f7",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "9df26e1b-a931-4760-acb5-be12a71037a1",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "1201147a-1320-4312-a3f0-c5a887b45476",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "12c33098-5d7a-4e10-97b6-bd0c7b98f5d4",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "697a4e28-5d07-48bb-917a-af7c9fb7e45d",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "3ea7f76c-e4c7-40e0-a7c4-5741a278abe7",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "62480938-4803-4eb4-b383-1f29e68db24d",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "e02ae92a-6a40-463a-8cc2-512f13b7fa80",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "34645edf-782e-495c-8145-027a246df1c5",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "384b58dc-6083-4f37-ad54-a5033f57af04",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "85621e60-5069-4266-8bfa-46c51af2cbf8",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "e0d5b74d-3f1d-4fd9-a36b-fc5556d28a8f",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "297eacfb-adb9-4734-96f3-5a38ca521d1e",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "e6f4ced6-17eb-44c7-a74d-5949698ebfdb",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "f481cdea-0fc1-4df6-a667-f453440093c0",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "ec09c12a-1868-4fc2-98c8-fd4b12ddc08b",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "0936b5b1-791f-46e1-9561-e910e93d9450",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "c5a8719c-8b80-48da-ae44-b7982c3440dc",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "76af944b-c7ef-4621-9e5b-b3b480a432a0",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "6338dd60-a53e-434c-b609-c4f29b60674b",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "c62fb973-999a-4c5d-b62a-df0871441756",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "9855b11a-1bcd-450f-ae2b-101d4e110a4f",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "772d4370-b272-442f-9c04-306f6d6f7a30",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "6e47965e-71b6-4705-b2de-b12f48206c93",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "70ee137f-67fc-41a9-8ab6-f3783cb1a750",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "458e8092-9e9c-4f7d-985f-09107ceb4a6b",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0070921985815602835,
+            "size_total": 3,
+            "top_uuid": "aba18c36-e4d5-4b70-ae5a-a73fbbab1bfb",
+            "top_degree": 1
+          }
+        ]
+      }
+    }
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

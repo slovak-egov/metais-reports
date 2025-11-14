@@ -1,0 +1,169 @@
+{
+  "id": 125,
+  "name": "Štúdia Uskutočniteľnosti preberá Princíp",
+  "technicalName": "SU_prebera_PRINCIP",
+  "description": "Štúdia Uskutočniteľnosti preberá Princíp.",
+  "roleList": [
+    "KRIS_SCHVAL",
+    "SU_TVORBA",
+    "SU_SCHVAL"
+  ],
+  "type": "application",
+  "valid": true,
+  "color": null,
+  "engName": "Feasibility Study takes over Principle",
+  "category": "NO",
+  "attributes": [
+    {
+      "id": 1067,
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "type": "STRING",
+      "displayAs": null,
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "MetaIS code for relation",
+      "engDescription": "MetaIS code for relation",
+      "opendata": null,
+      "array": false,
+      "isArray": false
+    },
+    {
+      "id": 336,
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "type": "STRING",
+      "displayAs": "textarea",
+      "units": null,
+      "defaultValue": null,
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "order": 0,
+      "valid": true,
+      "readOnly": false,
+      "mandatory": {
+        "type": "none",
+        "processIds": []
+      },
+      "invisible": false,
+      "constraints": [],
+      "attributeTypeEnum": "STRING",
+      "engName": "Note",
+      "engDescription": "Note in relations is optional. Completed by user only when necessary to file some information to created relation.",
+      "opendata": true,
+      "array": false,
+      "isArray": false
+    }
+  ],
+  "attributeProfiles": [
+    {
+      "id": 104,
+      "name": "SU profil pre princip",
+      "description": "SU profil pre princip",
+      "technicalName": "Profil_Rel_Princip",
+      "roleList": [
+        "SU_TVORBA"
+      ],
+      "type": "application",
+      "valid": true,
+      "isGeneric": false,
+      "engDescription": "FS profile for principle",
+      "attributes": [
+        {
+          "id": 427,
+          "name": "Spôsob plnenia",
+          "description": "Spôsob plnenia.",
+          "type": "STRING",
+          "displayAs": null,
+          "units": null,
+          "defaultValue": null,
+          "technicalName": "Profil_Rel_Princip_sposob_plnenia",
+          "order": 0,
+          "valid": true,
+          "readOnly": false,
+          "mandatory": {
+            "type": "none",
+            "processIds": []
+          },
+          "invisible": false,
+          "constraints": [],
+          "attributeTypeEnum": "STRING",
+          "engName": "Performance method",
+          "engDescription": "Performance method.",
+          "opendata": true,
+          "array": false,
+          "isArray": false
+        }
+      ]
+    }
+  ],
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "sources": [
+    {
+      "id": 49,
+      "name": "Štúdia uskutočniteľnosti",
+      "technicalName": "SU",
+      "description": "Studia uskutocnitelnosti",
+      "roleList": [
+        "SU_TVORBA",
+        "SU_SCHVAL"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Feasibility study",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";SU_TVORBA;SU_SCHVAL;",
+      "labels": []
+    }
+  ],
+  "targets": [
+    {
+      "id": 39,
+      "name": "Princíp",
+      "technicalName": "Princip",
+      "description": "Princípy implementované v SU",
+      "roleList": [
+        "KRIS_SCHVAL",
+        "SU_SCHVAL"
+      ],
+      "type": "application",
+      "valid": true,
+      "color": null,
+      "engName": "Principle",
+      "category": "RWNCB",
+      "attributes": [],
+      "attributeProfiles": [],
+      "codePrefix": null,
+      "ownerRelation": null,
+      "uriPrefix": null,
+      "roles": ";KRIS_SCHVAL;SU_SCHVAL;",
+      "labels": []
+    }
+  ],
+  "engDescription": "Feasibility Study takes over Principle.",
+  "codePrefix": null,
+  "uriPrefix": null
+}
