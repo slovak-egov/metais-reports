@@ -2,12 +2,12 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="51.156136mm"
-   height="51.171066mm"
-   viewBox="0 0 51.156136 51.171066"
+   width="60mm"
+   height="60mm"
+   viewBox="0 0 60.000001 60"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:version="1.4 (86a8ad7, 2024-10-11)"
    sodipodi:docname="CielPO7.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,12 +24,12 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="2.8756734"
-     inkscape:cx="129.01326"
-     inkscape:cy="33.905102"
-     inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="1912"
+     inkscape:zoom="4.0668163"
+     inkscape:cx="200.03362"
+     inkscape:cy="94.791594"
+     inkscape:window-width="5120"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
@@ -101,7 +101,8 @@
        fx="78.182892"
        fy="88.298058"
        r="25.578068"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1119486,0,0,1.112201,-4.8890367,-4.7948779)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient11"
@@ -111,7 +112,7 @@
        x2="87.209251"
        y2="95.046371"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(0.31726218,0.26254813)" />
+       gradientTransform="translate(1.3172622,0.26254813)" />
     <filter
        inkscape:collect="always"
        style="color-interpolation-filters:sRGB"
@@ -131,6 +132,10 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(-52.604824,-62.705058)">
+    <path
+       id="path1-2"
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       d="M 70.163959 63.704997 C 68.38469 63.704997 66.992641 64.282748 65.98747 65.438225 C 64.988075 66.587924 64.488336 68.046823 64.488336 69.814702 C 64.488336 70.245955 64.519808 70.654933 64.576703 71.045634 A 28.441497 28.447953 0 0 0 53.604763 93.410161 A 28.441497 28.447953 0 0 0 82.046438 121.85804 A 28.441497 28.447953 0 0 0 110.4876 93.410161 A 28.441497 28.447953 0 0 0 102.58575 73.744694 L 104.17945 72.173214 C 104.9189 72.752374 105.46258 72.848108 105.46258 72.848108 L 110.44677 68.176559 C 109.24465 67.9719 107.55338 68.45385 106.23618 69.157377 C 106.8435 67.711051 107.39299 66.358275 107.21699 64.945748 L 102.547 69.93149 C 102.547 69.93149 102.64464 70.483581 103.23533 71.231669 L 101.66488 72.82537 A 28.441497 28.447953 0 0 0 85.79608 65.2217 L 85.79608 63.886898 L 77.295823 63.886898 L 77.164565 65.433574 A 28.441497 28.447953 0 0 0 74.696499 65.970492 C 74.541193 65.747678 74.374938 65.532855 74.184902 65.334355 C 73.150846 64.248207 71.810361 63.704997 70.163959 63.704997 z M 53.604763 63.886898 L 53.604763 75.71615 L 57.287742 75.71615 L 57.287742 71.417704 L 59.341364 71.417704 C 60.652708 71.417704 61.701256 71.071261 62.486908 70.377975 C 63.272559 69.684689 63.665131 68.774498 63.665131 67.647909 C 63.665131 66.908404 63.471853 66.241551 63.084804 65.646481 C 62.703533 65.05141 62.183254 64.609333 61.524693 64.320463 C 60.871909 64.031595 59.916004 63.886898 58.656651 63.886898 L 53.604763 63.886898 z M 70.181529 66.391655 C 70.710183 66.391655 71.110743 66.63006 71.386107 67.102206 A 28.441497 28.447953 0 0 0 68.495327 68.48145 C 68.706504 67.093111 69.265989 66.391655 70.181529 66.391655 z M 57.235549 66.590609 L 58.569835 66.590609 C 59.557676 66.590609 60.051915 66.960597 60.051915 67.700102 C 60.051915 68.485826 59.517628 68.878841 58.448912 68.878841 L 57.235549 68.878841 L 57.235549 66.590609 z " />
     <g
        id="path2"
        style="opacity:1">
@@ -141,37 +146,40 @@
            style="opacity:1" />
       </g>
     </g>
-    <circle
+    <ellipse
        style="fill:url(#radialGradient2);stroke:none;stroke-width:0.15;stroke-linecap:round"
        id="path1"
-       cx="78.182892"
-       cy="88.298058"
-       r="25.578068" />
+       cx="82.046318"
+       cy="93.410316"
+       rx="28.441496"
+       ry="28.447952" />
     <path
-       style="mix-blend-mode:normal;fill:url(#linearGradient12);fill-opacity:1;stroke:none;stroke-width:0.799999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter12)"
-       d="m 78.581206,87.665286 c 0,0 -0.692745,-0.176462 -0.978775,0.109569 -0.286031,0.28603 -0.0296,0.87445 -0.0296,0.87445 l 6.935412,8.173626 c 0,0 3.991213,1.408107 4.691682,0.543823 0.700469,-0.864284 -1.371096,-4.171767 -1.371096,-4.171767 z"
+       style="mix-blend-mode:normal;fill:url(#linearGradient12);fill-opacity:1;stroke:none;stroke-width:0.719375;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter12)"
+       d="m 79.581206,87.665286 c 0,0 -0.692745,-0.176462 -0.978775,0.109569 -0.286031,0.28603 -0.0296,0.87445 -0.0296,0.87445 l 6.935412,8.173626 c 0,0 3.991213,1.408107 4.691682,0.543823 0.700469,-0.864284 -1.371096,-4.171767 -1.371096,-4.171767 z"
        id="path11"
-       sodipodi:nodetypes="czcczcc" />
+       sodipodi:nodetypes="czcczcc"
+       transform="matrix(1.1119486,0,0,1.112201,-6.0009853,-4.7948779)" />
     <path
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
-       d="m 77.942899,87.934658 c -0.156578,0.156271 -0.156578,0.409961 0,0.566241 0.156273,0.15658 0.409965,0.15658 0.566238,0 l 19.693146,-19.410422 -0.84924,-0.849236 z"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-width:1;stroke-linecap:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       d="m 81.779461,93.006137 c -0.174107,0.173805 -0.174107,0.455959 0,0.629774 0.173767,0.174149 0.45586,0.174149 0.629627,0 L 104.30685,72.04762 103.36254,71.103099 Z"
        id="path10"
        sodipodi:nodetypes="cccccc" />
     <path
        id="rect10"
        style="fill:#442b17;fill-opacity:1;stroke-width:0.799999;stroke-linecap:round"
-       d="m 96.619513,67.188039 4.199997,-4.482981 c 0.15828,1.270029 -0.3361,2.48667 -0.882287,3.787088 1.184597,-0.632554 2.705997,-1.066305 3.787087,-0.882293 l -4.482587,4.200398 c 0,0 -0.72456,-0.126513 -1.61013,-1.012084 -0.88557,-0.885572 -1.01208,-1.610128 -1.01208,-1.610128 z"
+       d="m 102.5469,69.931727 4.67018,-4.985976 c 0.176,1.412527 -0.37373,2.765677 -0.98106,4.212003 1.31721,-0.703527 3.00893,-1.185946 4.21104,-0.981287 l -4.98441,4.671687 c 0,0 -0.80567,-0.140708 -1.79037,-1.125641 -0.98471,-0.984934 -1.12538,-1.790786 -1.12538,-1.790786 z"
        sodipodi:nodetypes="ccccczc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.6389px;font-family:'Franklin Gothic Heavy';-inkscape-font-specification:'Franklin Gothic Heavy, ';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.3;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-       x="51.739765"
-       y="74.804352"
-       id="text1"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.7473px;font-family:'Franklin Gothic Heavy';-inkscape-font-specification:'Franklin Gothic Heavy, ';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       x="52.576084"
+       y="75.712738"
+       id="text1"
+       transform="scale(0.99995381,1.0000462)"><tspan
          sodipodi:role="line"
          id="tspan1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Franklin Gothic Heavy';-inkscape-font-specification:'Franklin Gothic Heavy, ';fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:0.3;stroke-dasharray:none;stroke-opacity:1"
-         x="51.739765"
-         y="74.804352">PO7</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Franklin Gothic Heavy';-inkscape-font-specification:'Franklin Gothic Heavy, ';fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-dasharray:none;stroke-opacity:1"
+         x="52.576084"
+         y="75.712738">PO7</tspan></text>
   </g>
 </svg>
