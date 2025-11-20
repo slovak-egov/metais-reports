@@ -89,7 +89,7 @@ REL_TEMPLATE = os.getenv(
 
 RAW_CMD_TEMPLATE = os.getenv(
     "METAIS_REL_CMD",
-    '"%s" {central} {outer} {relation} '
+    '"%s" {target} {source} {relation} '
     '--template %s --limit {limit} --offset {offset} --outdir "{outdir}" --no-csv' % (
         REL_SH,
         REL_TEMPLATE,
@@ -271,13 +271,6 @@ def fetch_reltypes_list_and_details() -> dict[str, dict]:
 
 
 def build_rel_specs(rel_meta: dict[str, dict]) -> list[dict]:
-    """
-    Build a list of {central, outer, relation} triplets based on:
-      - INCLUDE_TYPES / VALID_FLAG (applied to rel type tags)
-      - include/exclude regex for names
-      - first valid source/target pair from metadata
-    """
-
     specs: list[dict] = []
 
     for tech, meta in rel_meta.items():
@@ -310,23 +303,23 @@ def build_rel_specs(rel_meta: dict[str, dict]) -> list[dict]:
         if not sources or not targets:
             continue
 
-        outer   = sources[0]
-        central = targets[0]
+        source = sources[0]
+        target = targets[0]
 
         specs.append({
-            "central": central,
-            "outer": outer,
+            "source": source,
+            "target": target,
             "relation": tech,
         })
 
-    specs.sort(key=lambda s: (s["central"], s["relation"], s["outer"]))
+    specs.sort(key=lambda s: (s["target"], s["relation"], s["source"]))
     return specs
 
 
-def group_by_central(specs: list[dict]) -> dict[str, list[dict]]:
+def group_by_target(specs: list[dict]) -> dict[str, list[dict]]:
     out: dict[str, list[dict]] = {}
     for s in specs:
-        out.setdefault(s["central"], []).append(s)
+        out.setdefault(s["target"], []).append(s)
     return out
 
 
@@ -335,20 +328,14 @@ def group_by_central(specs: list[dict]) -> dict[str, list[dict]]:
 # ----------------------------------------------------------------------
 
 
-def fetch_relation_page(central: str, outer: str, relation: str,
+def fetch_relation_page(source: str, target: str, relation: str,
                         limit: int, offset: int) -> list[dict]:
-    """
-    Fetch a single page of {source, target} for given spec.
-
-    If TOKEN is missing/expired (token-missing, http-401, http-403) and we're
-    in an interactive TTY, prompt for a new TOKEN and retry this page.
-    """
     page_dir = DATE_ROOT / "relations_parts" / relation
     page_dir.mkdir(parents=True, exist_ok=True)
 
     cmd = RAW_CMD_TEMPLATE.format(
-        central=central,
-        outer=outer,
+        target=target,
+        source=source,
         relation=relation,
         limit=limit,
         offset=offset,
@@ -356,7 +343,7 @@ def fetch_relation_page(central: str, outer: str, relation: str,
     )
 
     while True:
-        print(f"[PAGE] {relation} ({outer}->{central}): limit={limit}, offset={offset}")
+        print(f"[PAGE] {relation} ({source}->{target}): limit={limit}, offset={offset}")
         ok, wrote, reason, stderr_text = run_cmd(cmd)
 
         # success
@@ -387,12 +374,12 @@ def fetch_relation_page(central: str, outer: str, relation: str,
             else:
                 raise RuntimeError(
                     f"TOKEN required but not provided for {relation} "
-                    f"({outer}->{central}) offset={offset}."
+                    f"({source}->{target}) offset={offset}."
                 )
 
         # non-auth error or non-interactive → fail this page
         raise RuntimeError(
-            f"Page fetch failed for {relation} ({outer}->{central}) "
+            f"Page fetch failed for {relation} ({source}->{target}) "
             f"offset={offset}, limit={limit}: {reason}"
         )
 
@@ -410,8 +397,8 @@ def fetch_relation_page(central: str, outer: str, relation: str,
 
 
 def fetch_all_relations_for_spec(spec: dict, limit: int) -> list[dict]:
-    central  = spec["central"]
-    outer    = spec["outer"]
+    source   = spec["source"]
+    target   = spec["target"]
     relation = spec["relation"]
 
     all_edges: list[dict] = []
@@ -419,19 +406,19 @@ def fetch_all_relations_for_spec(spec: dict, limit: int) -> list[dict]:
 
     while True:
         offset = page_index * limit
-        items = fetch_relation_page(central, outer, relation, limit, offset)
+        items = fetch_relation_page(source, target, relation, limit, offset)
         if not items:
-            print(f"[PAGE] {relation} ({outer}->{central}): empty page at offset={offset}; done.")
+            print(f"[PAGE] {relation} ({source}->{target}): empty page at offset={offset}; done.")
             break
         all_edges.extend(items)
         page_index += 1
 
-    print(f"[OK] {relation} ({outer}->{central}): fetched {len(all_edges)} edges total.")
+    print(f"[OK] {relation} ({source}->{target}): fetched {len(all_edges)} edges total.")
     return all_edges
 
 
 def run_one_spec(spec: dict, idx: int, total: int) -> bool:
-    label = f"{spec['relation']} ({spec['outer']} -> {spec['central']})"
+    label = f"{spec['relation']} ({spec['source']} -> {spec['target']})"
     print(f"\n=== Generating relation {label} ({idx}/{total}) ===")
 
     attempt = 1
@@ -492,19 +479,19 @@ def main():
         print("[ERROR] No usable relationship specs found.", file=sys.stderr)
         sys.exit(1)
 
-    by_central = group_by_central(specs)
+    by_target = group_by_target(specs)
 
-    arg_central = sys.argv[1].strip() if len(sys.argv) >= 2 else None
-    if arg_central and arg_central.lower() not in ("", "all", "*"):
-        if arg_central not in by_central:
-            avail = ", ".join(sorted(by_central.keys()))
-            print(f"[ERROR] No relations for central '{arg_central}'. Available: {avail}", file=sys.stderr)
+    arg_target = sys.argv[1].strip() if len(sys.argv) >= 2 else None
+    if arg_target and arg_target.lower() not in ("", "all", "*"):
+        if arg_target not in by_target:
+            avail = ", ".join(sorted(by_target.keys()))
+            print(f"[ERROR] No relations for target '{arg_target}'. Available: {avail}", file=sys.stderr)
             sys.exit(1)
-        specs = by_central[arg_central]
+        specs = by_target[arg_target]
 
     total = len(specs)
     print(f"[INFO] Will process {total} relations" +
-          (f" for central '{arg_central}'" if arg_central else "") + ".")
+        (f" for target '{arg_target}'" if arg_target else "") + ".")
 
     failures = 0
     for i, spec in enumerate(specs, start=1):
