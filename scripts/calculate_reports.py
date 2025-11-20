@@ -550,7 +550,7 @@ def process_nodes(nodes_dir: Path, out_dir: Path, *, only: Optional[re.Pattern] 
 
             print_attr_table(counter, total, title=f"======== {fp.name} (central) ========")
             out_path = write_attributes_json(out_dir, fp, objs, counter, unique_counts, total, defined_attrs)
-            print(f"[ATTR] {name} → {out_path}")
+            print(f"[ATTR] {name} -> {out_path}")
             done += 1
         except Exception as e:
             print(f"[ERR ] {name}: {e}")
@@ -683,13 +683,93 @@ def process_relations(rels_dir: Path, nodes_dir: Path, out_dir: Path, *, only: O
             out_path = out_dir / f"{rel_name}.json"
             with open(out_path, "w", encoding="utf-8") as f:
                 json.dump(summary, f, ensure_ascii=False, indent=2)
-            print(f"  → saved {out_path}")
+            print(f"  --> saved {out_path}")
             done += 1
 
         except Exception as e:
             print(f"  !! error processing {rel_name}: {e}")
 
     print(f"[INFO] Relation attributes: {done} files.")
+
+def rebuild_stats_index(stats_root: Path, out_path: Path) -> None:
+    """
+    Build meta-viz/data/stats/index.json by scanning all snapshot subdirs under stats_root.
+    For each snapshot <DATE>, it looks for:
+      - <DATE>/nodes/*.json      -> node_types (+ non_empty_node_types)
+      - <DATE>/relations/*.json  -> relations (+ non_empty_relations)
+    """
+    snapshots = []
+
+    for snap_dir in sorted(stats_root.iterdir()):
+        if not snap_dir.is_dir():
+            continue
+
+        date_str = snap_dir.name  # "19-11-2025"
+
+        nodes_dir = snap_dir / "nodes"
+        rels_dir = snap_dir / "relations"
+
+        node_types: list[str] = []
+        non_empty_node_types: list[str] = []
+        relations: list[str] = []
+        non_empty_relations: list[str] = []
+
+        # --- Nodes ---
+        if nodes_dir.exists():
+            for p in sorted(nodes_dir.glob("*.json")):
+                tech = p.stem
+                node_types.append(tech)
+
+                try:
+                    data = load_json(p)
+                except Exception as e:
+                    print(f"[WARN] Failed to read node stats {p}: {e}")
+                    continue
+
+                # Stats format from write_attributes_json:
+                # { "type": ..., "count": <int>, "attributes": [...] }
+                cnt = data.get("count", 0)
+                if isinstance(cnt, (int, float)) and cnt > 0:
+                    non_empty_node_types.append(tech)
+
+        # --- Relations ---
+        if rels_dir.exists():
+            for p in sorted(rels_dir.glob("*.json")):
+                rel_name = p.stem
+                relations.append(rel_name)
+
+                try:
+                    data = load_json(p)
+                except Exception as e:
+                    print(f"[WARN] Failed to read relation stats {p}: {e}")
+                    continue
+
+                # Relation summary format:
+                # { ..., "stats": { "edges_total": <int>, ... } }
+                stats = data.get("stats") or {}
+                edges_total = stats.get("edges_total", 0)
+                if isinstance(edges_total, (int, float)) and edges_total > 0:
+                    non_empty_relations.append(rel_name)
+
+        # only add if there is at least something
+        if not node_types and not relations:
+            continue
+
+        snapshots.append({
+            "date": date_str,
+            "node_types": node_types,
+            "relations": relations,
+            "non_empty_node_types": non_empty_node_types,
+            "non_empty_relations": non_empty_relations,
+        })
+
+    index_obj = {"snapshots": snapshots}
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with out_path.open("w", encoding="utf-8") as f:
+        json.dump(index_obj, f, ensure_ascii=False, indent=2)
+
+    print(f"[META] Wrote stats index: {out_path}")
 
 # relation index builder
 def build_relation_index_from_meta(meta_dir: Path, out_path: Path) -> None:
@@ -754,7 +834,7 @@ def build_relation_index_from_meta(meta_dir: Path, out_path: Path) -> None:
 
         index["relations"][technical] = entry
 
-    out_path.mkdir(parents=True, exist_ok=True)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(index, f, ensure_ascii=False, indent=2)
     print(f"[META] Wrote relation index: {out_path}")
@@ -815,7 +895,7 @@ def build_node_index_from_citypes(meta_dir: Path, out_path: Path) -> None:
 
         index["types"][technical] = entry
 
-    out_path.mkdir(parents=True, exist_ok=True)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(index, f, ensure_ascii=False, indent=2)
     print(f"[META] Wrote node index: {out_path}")
@@ -855,6 +935,11 @@ def main():
     if rels_dir.exists():
         print(f"[INFO] Relations: {rels_dir} -> {out_rel_attrs}")
         process_relations(rels_dir, nodes_dir, out_rel_attrs, only=only_rel, skip=skip_rel)
+
+    try:
+        rebuild_stats_index(STATS_ROOT, STATS_ROOT / "index.json")
+    except Exception as e:
+        print(f"[WARN] Failed to rebuild stats index.json: {e}")
 
     # After building stats, refresh metadata indexes from cached citype/rel JSONs
     try:

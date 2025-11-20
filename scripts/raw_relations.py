@@ -76,11 +76,11 @@ def fetch_json(url: str):
     # Cache full payloads for metadata inspection
     try:
         if url == REL_TYPES_URL:
-            # relationshiptypes/list → metadata/DATE/relations/reltypes_list.json
+            # relationshiptypes/list -> metadata/DATE/relations/reltypes_list.json
             out_path = REL_LIST_CACHE_DIR / "reltypes_list.json"
             with out_path.open("w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
-            print(f"[META] Cached relationship types list → {out_path}")
+            print(f"[META] Cached relationship types list -> {out_path}")
         elif url == CITYPES_URL:
             # (Optional) also allow caching here if you want from this script
             pass
@@ -206,10 +206,10 @@ def run_cmd_with_reason(cmd: str) -> tuple[bool, list[str], str, str]:
     Run a shell command, return (ok, wrote_files, reason, stderr_text).
 
     reason:
-      - "ok"                  → success
-      - "subprocess-timeout"  → Python's SUBPROC_TIMEOUT hit
-      - "http-<code>"         → core.sh printed 'HTTP ERROR: <code>'
-      - "exit-<code>"         → generic non-zero exit status
+      - "ok"                  -> success
+      - "subprocess-timeout"  -> Python's SUBPROC_TIMEOUT hit
+      - "http-<code>"         -> core.sh printed 'HTTP ERROR: <code>'
+      - "exit-<code>"         -> generic non-zero exit status
     """
     wrote_files: list[str] = []
     stderr_buf: list[str] = []
@@ -274,7 +274,7 @@ def run_cmd_with_reason(cmd: str) -> tuple[bool, list[str], str, str]:
 
 def run_one(spec, idx, total):
     central, outer, relation = spec["central"], spec["outer"], spec["relation"]
-    label = f"{relation}  ({outer} → {central})"
+    label = f"{relation}  ({outer} -> {central})"
 
     cmd = RAW_CMD.format(central=central, outer=outer, relation=relation)
 
@@ -288,7 +288,32 @@ def run_one(spec, idx, total):
             print(f"[OK] {label}")
             return True
 
-        # 1) HTTP auth-ish errors → offer interactive TOKEN fix when possible
+        # 0) Shell complained that TOKEN is missing (run.sh)
+        if "TOKEN env var is required" in stderr_text:
+            if sys.stdin.isatty():
+                print(
+                    "\n[AUTH] The runner script reports that TOKEN is missing.\n"
+                    "Please paste a valid MetaIS TOKEN.\n"
+                    "Press Enter on an empty line to abort without changing anything."
+                )
+                try:
+                    new_token = input("New TOKEN: ").strip()
+                except EOFError:
+                    new_token = ""
+
+                if new_token:
+                    os.environ["TOKEN"] = new_token
+                    print("[INFO] TOKEN updated in this process; retrying the same relation…")
+                    # Do NOT burn a retry attempt here – just re-run immediately
+                    continue
+                else:
+                    print("[ERROR] No TOKEN provided; aborting this relation.")
+                    return False
+            else:
+                print("[ERROR] TOKEN is missing and no interactive TTY is available; aborting.")
+                return False
+
+        # 1) HTTP auth-ish errors -> offer interactive TOKEN fix when possible
         if reason in ("http-401", "http-403") and sys.stdin.isatty():
             print(
                 "\n[AUTH] The server responded with an authorization error "
@@ -313,7 +338,7 @@ def run_one(spec, idx, total):
                 print("[ERROR] No TOKEN provided; aborting this relation.")
                 return False
 
-        # 2) Everything else → normal retry behavior
+        # 2) Everything else -> normal retry behavior
         print(
             f"[WARN] {label}: attempt {attempt}/{MAX_RETRIES} failed "
             f"({reason}). Retrying in {RETRY_DELAY}s..."
@@ -329,6 +354,19 @@ def group_by_central(specs):
     for s in specs:
         by_central.setdefault(s["central"], []).append(s)
     return by_central
+
+def mark_relations_dir_complete(rels_dir: Path):
+    """
+    Drop a .complete marker into the relations output directory.
+    This is used by metais_pipeline.py to decide whether to skip refetching.
+    """
+    flag = rels_dir / ".complete"
+    try:
+        with flag.open("w", encoding="utf-8") as f:
+            f.write(f"completed at {datetime.now().isoformat()}\n")
+        print(f"[INFO] Marked relation dump as complete: {flag}")
+    except Exception as e:
+        print(f"[WARN] Could not write .complete flag for relations: {e}")
 
 def main():
     try:
@@ -369,6 +407,9 @@ def main():
             failures += 1
 
     print(f"\n[INFO] Completed: {total - failures} ok / {failures} failed.")
+
+    if total > 0 and failures == 0:
+        mark_relations_dir_complete(RELS_DIR)
 
 if __name__ == "__main__":
     main()

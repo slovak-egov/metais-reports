@@ -1,28 +1,47 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# usage: run/relation.sh <CENTRAL> <OUTER> <RELATION_TYPE> [extra args...]
-# example: run/relation.sh KS PO PO_je_gestor_KS --no-csv
-
-if [[ $# -lt 3 ]]; then
-  echo "usage: $0 <CENTRAL> <OUTER> <RELATION_TYPE> [extra run args]" >&2
+usage() {
+  echo "usage: $0 <CENTRAL> <OUTER> <RELATION_TYPE> [--template tpl.groovy] [--outdir DIR] [--no-csv] [extra args...]" >&2
   exit 1
+}
+
+CENTRAL="${1:-}"
+OUTER="${2:-}"
+TYPE_REL="${3:-}"
+shift 3 || true
+
+if [[ -z "$CENTRAL" || -z "$OUTER" || -z "$TYPE_REL" ]]; then
+  usage
 fi
 
-CENTRAL="$1"; OUTER="$2"; TYPE_REL="$3"; shift 3 || true
+# Defaults
+TPL="groovy/templates/extract_relation_template.groovy"
+OUTDIR="output/relations"
+EXTRA_ARGS=()
 
-# File base name = exact technical relation name, so metadata lookups match
-report_base="$TYPE_REL"
+# Parse optional flags (mirroring raw.sh style)
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --template) TPL="${2:?}"; shift 2 ;;
+    --outdir)   OUTDIR="${2:?}"; shift 2 ;;
+    --no-csv)   EXTRA_ARGS+=("--no-csv"); shift ;;
+    *)          EXTRA_ARGS+=("$1"); shift ;;
+  esac
+done
 
-TEMPLATE="groovy/templates/extract_relation_template.groovy"
+# Resolve this script's directory (…/scripts)
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-# Prepare script from template
+# Build SCRIPT_CONTENT from the template with placeholders
 SCRIPT_CONTENT="$(
   sed -e "s|__CENTRAL__|${CENTRAL}|g" \
       -e "s|__OUTER__|${OUTER}|g" \
       -e "s|__RELATION__|${TYPE_REL}|g" \
-    "$TEMPLATE"
+    "$TPL"
 )"
 
 export SCRIPT_CONTENT
-run/run.sh -o "$report_base" --outdir output/relations "$@"
+
+# Delegate to sibling run.sh, using the OUTDIR we just parsed
+"${SCRIPT_DIR}/run.sh" -o "${TYPE_REL}" --outdir "${OUTDIR}" "${EXTRA_ARGS[@]}"

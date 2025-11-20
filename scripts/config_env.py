@@ -1,10 +1,13 @@
 import os
 import re
+from pathlib import Path
 
 #flags for VALID_FLAG
 VALID_BOTH     = 0b11   # 3
 VALID_ONLY     = 0b01   # 1
 INVALID_ONLY   = 0b10   # 2
+
+SCRIPT_DIR = Path(__file__).resolve().parent
 
 def parse_valid_flag(value: str, default: str = "both") -> int:
     """
@@ -57,7 +60,7 @@ def get_include_types(
     raw = os.getenv(env_var, default)
     return parse_include_types(raw)
 
-def load_env_file(path=".env"):
+def load_env_file(path=f"{SCRIPT_DIR}/.metais.env"):
     if not os.path.exists(path):
         return
 

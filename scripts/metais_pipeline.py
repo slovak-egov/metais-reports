@@ -6,12 +6,19 @@ from datetime import date
 from config_env import load_env_file
 
 
-def dir_is_stale(path: Path, pattern: str = "*.json") -> bool:
+def dir_is_stale(path: Path, pattern: str = "*.json", require_complete_flag: bool = False) -> bool:
     if not path.exists():
         return True
+
+    if require_complete_flag:
+        complete_flag = path / ".complete"
+        if not complete_flag.exists():
+            return True
+
     files = list(path.glob(pattern))
     if not files:
         return True
+
     today = date.today()
     latest_mtime = max(f.stat().st_mtime for f in files)
     latest_date = date.fromtimestamp(latest_mtime)
@@ -53,17 +60,17 @@ def main():
     from raw_relations import main as fetch_relations_main
     from calculate_reports import main as calc_reports_main
 
-    if dir_is_stale(nodes_dir):
+    if dir_is_stale(nodes_dir, require_complete_flag=True):
         print(f"[INFO] Node dumps in {nodes_dir} are stale or missing; fetching raw nodes...")
         fetch_nodes_main()
     else:
-        print(f"[INFO] Node dumps in {nodes_dir} are from today; skipping node fetch.")
+        print(f"[INFO] Node dumps in {nodes_dir} look complete and from today; skipping node fetch.")
 
-    if dir_is_stale(rels_dir):
+    if dir_is_stale(rels_dir, require_complete_flag=True):
         print(f"[INFO] Relation dumps in {rels_dir} are stale or missing; fetching raw relations...")
         fetch_relations_main()
     else:
-        print(f"[INFO] Relation dumps in {rels_dir} are from today; skipping relation fetch.")
+        print(f"[INFO] Relation dumps in {rels_dir} look complete and from today; skipping relation fetch.")
 
     print("[INFO] Calculating node/relationship reports...")
     calc_reports_main()

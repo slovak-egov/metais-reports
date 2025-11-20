@@ -3,7 +3,8 @@ import subprocess, os, re, sys, json
 import time
 import requests
 from pathlib import Path
-from datetime import date  # <-- ADD THIS
+from datetime import date
+import shutil
 
 from config_env import (
     load_env_file,
@@ -37,6 +38,8 @@ OUT_DIR = Path(
 )
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
+COMPLETE_FLAG = OUT_DIR / ".complete"
+
 # How many retries per report
 
 TYPES_URL = os.getenv(
@@ -63,6 +66,13 @@ FETCH_TIMEOUT = float(os.getenv("METAIS_FETCH_TIMEOUT", "60"))
 
 SUBPROC_TIMEOUT = float(os.getenv("METAIS_SUBPROC_TIMEOUT", "180"))
 PAGE_SIZE = int(os.getenv("METAIS_PAGE_SIZE", "5000"))
+
+force_paginate_raw = os.getenv("FORCE_PAGINATE", "")
+FORCE_PAGINATE: set[str] = {
+    item.strip()
+    for item in force_paginate_raw.split(",")
+    if item.strip()
+}
 
 OUT_DIR = Path(
     os.getenv("METAIS_NODES_DIR") or
@@ -349,34 +359,120 @@ def rebuild_full_from_pages(t: str, total_count: int, limit: int):
     print(f"Wrote: {out_path} ({out_path.stat().st_size} bytes)")
 
 def run_paginated(report_name: str, per_page: int):
-    print(f"[PAGE] {report_name}: paginated fetch without sizing (limit={per_page})")
-    page_index = 0
-    total_items = 0
+    """
+    Paginated fetch with automatic page-size fallback.
+
+    Strategy:
+      - Try per_page (e.g. 5000).
+      - If the pagination run fails (e.g. 504 on page 1), shrink per_page and retry:
+          5000 -> 2500 -> 1000 -> 500 (by default).
+      - If all sizes fail, raise the last exception.
+    """
+    print(f"[PAGE] {report_name}: paginated fetch with fallback (initial limit={per_page})")
+
+    # --- 1) Try UUID sizing first to know approximate total items ---
+    try:
+        uuid_count = count_uuids_for_type(report_name)
+        print(f"[PAGE] {report_name}: UUID sizing indicates ~{uuid_count} records.")
+    except Exception as e:
+        uuid_count = None
+        print(f"[WARN] {report_name}: UUID sizing failed ({e}); proceeding without total count.")
+
+    # --- 2) Candidate page sizes (largest first, but not below a minimum) ---
+    min_page = int(os.getenv("METAIS_MIN_PAGE_SIZE", "500"))
+    candidates_raw = [per_page, per_page // 2, per_page // 5]
+    candidates = sorted(
+        {c for c in candidates_raw if c >= min_page},
+        reverse=True,
+    )
+    if not candidates:
+        candidates = [min_page]
+
     max_pages = int(os.getenv("METAIS_MAX_PAGES", "100000"))  # safety cap
+    last_exc: Exception | None = None
 
-    while page_index < max_pages:
-        offset = page_index * per_page
-        print(f"[PAGE] {report_name}: fetching page {page_index+1} (offset={offset})")
-        items = fetch_page(report_name, per_page, offset, page_index)
-        if not items:
-            print(f"[PAGE] {report_name}: empty page at offset={offset}; done.")
-            break
+    for limit in candidates:
+        # Clean previous partial pages for this report
+        parts_dir = OUT_DIR / f"__parts__/{report_name}"
+        if parts_dir.exists():
+            shutil.rmtree(parts_dir)
 
-        # Save each page as RAW for audit
-        page_path = OUT_DIR / f"__parts__/{report_name}" / f"{report_name}.offset{offset}.limit{per_page}.json"
-        write_raw_json(page_path, items)
+        # Recompute total_pages for this specific limit, if we know uuid_count
+        if uuid_count is not None:
+            total_pages = max(1, (uuid_count + limit - 1) // limit)
+            print(
+                f"[PAGE] {report_name}: starting paginated fetch; "
+                f"estimated {uuid_count} items in total "
+                f"({total_pages} pages, limit={limit})."
+            )
+        else:
+            total_pages = None
+            print(f"[PAGE] {report_name}: starting paginated fetch (limit={limit}, total unknown).")
 
-        total_items += len(items)
-        page_index += 1
+        page_index = 0
+        total_items = 0
 
-    # Merge pages
-    rebuild_full_from_pages(report_name, total_items, per_page)
-    print(f"[OK] {report_name}: paginated rebuild done with {total_items} items.")
-    return True
+        try:
+            while page_index < max_pages:
+                offset = page_index * limit
+
+                # Pretty progress message
+                if total_pages:
+                    print(
+                        f"[PAGE] {report_name}: fetching page "
+                        f"{page_index + 1}/{total_pages} (offset={offset})"
+                    )
+                else:
+                    print(
+                        f"[PAGE] {report_name}: fetching page "
+                        f"{page_index + 1} (offset={offset})"
+                    )
+
+                items = fetch_page(report_name, limit, offset, page_index)
+                if not items:
+                    print(f"[PAGE] {report_name}: empty page at offset={offset}; done.")
+                    break
+
+                # Save each page as RAW for audit
+                page_path = parts_dir / f"{report_name}.offset{offset}.limit{limit}.json"
+                write_raw_json(page_path, items)
+
+                total_items += len(items)
+                page_index += 1
+
+            # Merge pages into final RAW file
+            rebuild_full_from_pages(report_name, total_items, limit)
+            print(
+                f"[OK] {report_name}: paginated rebuild done with "
+                f"{total_items} items (limit={limit})."
+            )
+            return True
+
+        except Exception as e:
+            print(f"[PAGE] {report_name}: pagination with limit={limit} failed: {e}")
+            last_exc = e
+            # fall through to try smaller limit
+
+    # All candidate limits failed
+    if last_exc is not None:
+        raise last_exc
+    else:
+        raise RuntimeError(f"Paginated fetch failed for {report_name} with all page sizes.")
 
 def run_with_retries(report_name, idx, total):
     print(f"\n=== Downloading raw report {report_name} ({idx}/{total}) ===")
     attempt = 1
+
+    if report_name in FORCE_PAGINATE:
+        print(
+            f"[FALLBACK] {report_name}: forced pagination, "
+            f"switching immediately to paginated fetch (PAGE_SIZE={PAGE_SIZE})…"
+        )
+        try:
+            return run_paginated(report_name, PAGE_SIZE)
+        except Exception as e:
+            print(f"[ERROR] Paginated fetch failed for {report_name}: {e}")
+            return False
 
     while attempt <= MAX_RETRIES:
         cmd = RAW_CMD.format(name=report_name)
@@ -398,7 +494,19 @@ def run_with_retries(report_name, idx, total):
                 print(f"[ERROR] Paginated fetch failed for {report_name}: {e}")
                 return False
 
-        # 2) HTTP auth-ish errors → offer interactive TOKEN fix when possible
+        # 2) Server 5xx (incl. 504) → ALSO go straight to paginated fetch
+        if reason.startswith("http-5"):
+            print(
+                f"[FALLBACK] {report_name}: server error {reason}, "
+                f"switching immediately to paginated fetch (PAGE_SIZE={PAGE_SIZE})…"
+            )
+            try:
+                return run_paginated(report_name, PAGE_SIZE)
+            except Exception as e:
+                print(f"[ERROR] Paginated fetch failed for {report_name}: {e}")
+                return False
+
+        # 3) HTTP auth-ish errors → offer interactive TOKEN fix when possible
         if reason in ("http-401", "http-403") and sys.stdin.isatty():
             print(
                 "\n[AUTH] The server responded with an authorization error "
@@ -417,13 +525,13 @@ def run_with_retries(report_name, idx, total):
             if new_token:
                 os.environ["TOKEN"] = new_token
                 print("[INFO] TOKEN updated in this process; retrying the same report…")
-                # Don't count this as a "retry attempt" – try again with fresh TOKEN
+                # don't burn a retry
                 continue
             else:
                 print("[ERROR] No TOKEN provided; aborting this report.")
                 return False
 
-        # 3) Any other error → respect MAX_RETRIES
+        # 4) Any other error → normal retry
         print(
             f"[WARN] {report_name}: attempt {attempt}/{MAX_RETRIES} failed "
             f"({reason}). Retrying in {RETRY_DELAY}s…"
@@ -431,7 +539,7 @@ def run_with_retries(report_name, idx, total):
         time.sleep(RETRY_DELAY)
         attempt += 1
 
-    # 4) Ran out of retries → paginated fallback
+    # 5) Final fallback
     print(
         f"[FALLBACK] {report_name}: switching to paginated fetch after "
         f"{MAX_RETRIES} failed attempts (PAGE_SIZE={PAGE_SIZE})…"
@@ -443,6 +551,10 @@ def run_with_retries(report_name, idx, total):
         return False
 
 def main():
+    # remove old flag before starting
+    if COMPLETE_FLAG.exists():
+        COMPLETE_FLAG.unlink()
+
     try:
         results = fetch_citypes()
         reports = build_node_set(results)
@@ -459,6 +571,13 @@ def main():
             failures += 1
 
     print(f"\n[INFO] Completed: {total - failures} ok / {failures} failed.")
+
+    # only mark as complete if everything succeeded
+    if failures == 0:
+        COMPLETE_FLAG.touch()
+        print(f"[INFO] Marked node dump as complete: {COMPLETE_FLAG}")
+    else:
+        print("[WARN] Node dump not complete; leaving .complete flag absent.")
 
 
 if __name__ == "__main__":
