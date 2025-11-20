@@ -16,7 +16,8 @@ const relState = {
     application: true,
     system: false,
     curated: false
-  }
+  },
+  nonEmptyOnly: true,
 };
 
 function parseRGBA(str) {
@@ -194,9 +195,15 @@ async function initRelations() {
   const snapshotSelect = document.getElementById("snapshot-select");
   const relationSelect = document.getElementById("relation-select");
   const reloadBtn = document.getElementById("reload-btn");
+  const cbNonEmpty = document.getElementById("filter-nonempty");
   const cbApplication = document.getElementById("filter-application");
   const cbSystem = document.getElementById("filter-system");
   const cbCurated = document.getElementById("filter-curated");
+
+  cbNonEmpty.checked = relState.nonEmptyOnly;   // true by default
+  cbApplication.checked = relState.typeFilters.application;
+  cbSystem.checked = relState.typeFilters.system;
+  cbCurated.checked = relState.typeFilters.curated;
 
   // Load indices
   const [relIdx, nodeIdx, snapIdx] = await Promise.all([
@@ -236,6 +243,11 @@ async function initRelations() {
     refreshRelationView();
   }
 
+  cbNonEmpty.addEventListener("change", () => {
+    relState.nonEmptyOnly = cbNonEmpty.checked;
+    updateFiltersAndRefresh();
+  });
+
   cbApplication.addEventListener("change", () => {
     relState.typeFilters.application = cbApplication.checked;
     updateFiltersAndRefresh();
@@ -261,19 +273,33 @@ async function initRelations() {
   cbSystem.disabled = false;
 }
 
+function parseDate(d) {
+  const [day, month, year] = d.split("-").map(Number);
+  return new Date(year, month - 1, day).getTime();
+}
+
 function populateSnapshots() {
   const snapshotSelect = document.getElementById("snapshot-select");
   snapshotSelect.innerHTML = "";
-  const snaps = relState.snapshotIndex.snapshots || [];
+
+  const rawSnaps = relState.snapshotIndex?.snapshots || [];
+
+  // newest first
+  const snaps = rawSnaps.slice().sort((a, b) => {
+    return parseDate(b.date) - parseDate(a.date);
+  });
+
   for (const snap of snaps) {
     const opt = document.createElement("option");
     opt.value = snap.date;
     opt.textContent = snap.date;
     snapshotSelect.appendChild(opt);
   }
+
   if (!relState.currentSnapshot && snaps.length > 0) {
-    relState.currentSnapshot = snaps[snaps.length - 1].date;
+    relState.currentSnapshot = snaps[0].date;  // newest
   }
+
   snapshotSelect.value = relState.currentSnapshot || "";
 }
 
@@ -291,8 +317,14 @@ function populateRelationsForSnapshot() {
   if (!snap) return;
 
   const snapEntry = snapshots.find((s) => s.date === snap);
-  const allRelNames = snapEntry?.relations ? snapEntry.relations.slice() : [];
+  if (!snapEntry) return;
 
+  const baseList =
+    relState.nonEmptyOnly && Array.isArray(snapEntry.non_empty_relations)
+      ? snapEntry.non_empty_relations
+      : snapEntry.relations || [];
+
+  const allRelNames = baseList.slice();   // copy
   let filtered = allRelNames.slice();
 
   if (filters.curated) {
@@ -342,7 +374,7 @@ async function loadRelationStats(snapshot, relation) {
     return relState.statsCache[key];
   }
 
-  const url = `data/stats/${encodeURIComponent(snapshot)}/relation_attributes/${encodeURIComponent(relation)}.json`;
+  const url = `data/stats/${encodeURIComponent(snapshot)}/relations/${encodeURIComponent(relation)}.json`;
 
   try {
     const stats = await loadJSON(url);

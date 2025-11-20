@@ -31,7 +31,8 @@ const state = {
     codelist: false,
     system: false,
     curated: false
-  }
+  },
+  nonEmptyOnly: true
 };
 
 function updateSpriteForCurrentNodeType() {
@@ -109,7 +110,7 @@ async function loadAttributesSnapshot(snapshot, nodeType) {
     return state.statsCache[key];
   }
 
-  const url = `data/stats/${encodeURIComponent(snapshot)}/attributes/${encodeURIComponent(nodeType)}.json`;
+  const url = `data/stats/${encodeURIComponent(snapshot)}/nodes/${encodeURIComponent(nodeType)}.json`;
   const res = await fetch(url, { cache: "no-cache" });
   if (!res.ok) {
     throw new Error(`Failed to load ${url}: ${res.status}`);
@@ -174,10 +175,16 @@ function initControls() {
   const filterInput = document.getElementById("filter-input");
   const limitSelect = document.getElementById("limit-select");
 
+  const cbNonEmpty = document.getElementById("filter-nonempty");
   const cbApplication = document.getElementById("filter-application");
   const cbCodelist = document.getElementById("filter-codelist");
   const cbSystem = document.getElementById("filter-system");
   const cbCurated = document.getElementById("filter-curated");
+
+  cbNonEmpty.checked = state.nonEmptyOnly;   // true by default
+  cbApplication.checked = state.typeFilters.application;
+  cbSystem.checked = state.typeFilters.system;
+  cbCurated.checked = state.typeFilters.curated;
 
   snapshotSelect.addEventListener("change", () => {
     state.currentSnapshot = snapshotSelect.value;
@@ -245,6 +252,11 @@ function initControls() {
     refreshView();
   }
 
+  cbNonEmpty.addEventListener("change", () => {
+    state.nonEmptyOnly = cbNonEmpty.checked;
+    updateFiltersAndRefresh();
+  });
+
   cbApplication.addEventListener("change", () => {
     state.typeFilters.application = cbApplication.checked;
     updateFiltersAndRefresh();
@@ -272,6 +284,11 @@ function initControls() {
   });
 }
 
+function parseDate(d) {
+  const [day, month, year] = d.split("-").map(Number);
+  return new Date(year, month - 1, day).getTime();
+}
+
 function populateSnapshotSelect() {
   const snapshotSelect = document.getElementById("snapshot-select");
   snapshotSelect.innerHTML = "";
@@ -279,18 +296,26 @@ function populateSnapshotSelect() {
   const idx = state.index;
   if (!idx || !Array.isArray(idx.snapshots)) return;
 
-  for (const snap of idx.snapshots) {
+  const sortedSnaps = idx.snapshots.slice().sort((a, b) => {
+    return parseDate(b.date) - parseDate(a.date); // newest first
+  });
+
+  for (const snap of sortedSnaps) {
     const opt = document.createElement("option");
     opt.value = snap.date;
     opt.textContent = snap.date;
+
+    // FULL list
     opt.dataset.nodeTypes = JSON.stringify(snap.node_types || []);
+
+    // NON-EMPTY list
+    opt.dataset.nonEmptyNodeTypes = JSON.stringify(snap.non_empty_node_types || []);
+
     snapshotSelect.appendChild(opt);
   }
 
-  // Default to the latest snapshot (lexicographically last date)
-  if (!state.currentSnapshot && idx.snapshots.length > 0) {
-    state.currentSnapshot =
-      idx.snapshots[idx.snapshots.length - 1].date;
+  if (!state.currentSnapshot && sortedSnaps.length > 0) {
+    state.currentSnapshot = sortedSnaps[0].date;
   }
 
   snapshotSelect.value = state.currentSnapshot || "";
@@ -306,13 +331,19 @@ function updateNodeTypesForSnapshot() {
     return;
   }
 
-  const allNodeTypes = JSON.parse(selectedOption.dataset.nodeTypes || "[]");
+  // Choose backing list based on "non-empty" setting
+  const rawNodeTypes =
+    state.nonEmptyOnly && selectedOption.dataset.nonEmptyNodeTypes
+      ? selectedOption.dataset.nonEmptyNodeTypes
+      : selectedOption.dataset.nodeTypes || "[]";
+
+  const allNodeTypes = JSON.parse(rawNodeTypes);
   const nodeTypeMeta = state.metadataIndex && state.metadataIndex.types;
   const filters = state.typeFilters;
 
   let filtered = allNodeTypes.slice();
 
-  // If curated is on, ignore the other filters and only show curated types
+  // Curated filter
   if (filters.curated) {
     filtered = filtered.filter((nt) => CURATED_TYPES.includes(nt));
   } else if (nodeTypeMeta) {
@@ -320,7 +351,6 @@ function updateNodeTypesForSnapshot() {
     const wantCode = filters.codelist;
     const wantSys = filters.system;
 
-    // if at least one of the three is on, filter by them
     if (wantApp || wantCode || wantSys) {
       filtered = filtered.filter((nt) => {
         const m = nodeTypeMeta[nt];
@@ -341,7 +371,6 @@ function updateNodeTypesForSnapshot() {
     const opt = document.createElement("option");
     opt.value = nt;
 
-    // metadata-based label
     const metaIdx = state.metadataIndex && state.metadataIndex.types;
     const typeMeta = metaIdx && metaIdx[nt];
     if (typeMeta && typeMeta.name) {
@@ -353,7 +382,6 @@ function updateNodeTypesForSnapshot() {
     nodeTypeSelect.appendChild(opt);
   }
 
-  // pick current node type if still present, otherwise fall back to first filtered
   if (!filtered.includes(state.currentNodeType)) {
     state.currentNodeType = filtered.length > 0 ? filtered[0] : null;
   }
