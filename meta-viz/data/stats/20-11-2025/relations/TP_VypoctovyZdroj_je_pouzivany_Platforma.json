@@ -1,0 +1,527 @@
+{
+  "relation_name": "TP_VypoctovyZdroj_je_pouzivany_Platforma",
+  "name": "Výpočtový zdroj je používaný platformou",
+  "description": "Platforma používa daný výpočtový zdroj.",
+  "engDescription": "Platform uses particular computing resource.",
+  "type": "application",
+  "source_type": "TP_VypoctovyZdroj",
+  "source_name": "Výpočtový zdroj",
+  "target_type": "Platforma",
+  "target_name": "Platforma",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 26,
+    "unique_pairs": 26,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 32,
+    "target_total": 53,
+    "source_connected": 24,
+    "target_connected": 16,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.0833333333333333,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 4,
+      "avg": 1.625,
+      "median": 1.0,
+      "p90": 3,
+      "p99": 4
+    },
+    "top_source": [
+      {
+        "uuid": "81987915-c72a-4c1c-b05e-8d7b2ae5a319",
+        "degree": 2,
+        "name": "NTMoss01 (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_18"
+      },
+      {
+        "uuid": "f5b0f7c5-af50-4fa3-aea8-eb253a92e94a",
+        "degree": 2,
+        "name": "NThorec (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_19"
+      },
+      {
+        "uuid": "fd52922e-2094-4b37-860d-fc3875050845",
+        "degree": 1,
+        "name": "NTSRS (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_17"
+      },
+      {
+        "uuid": "20dd6a93-7381-48a0-844d-741376d477ca",
+        "degree": 1,
+        "name": "NTAOTSmedia (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_14"
+      },
+      {
+        "uuid": "ee62984a-a83d-4cbc-9cbd-f31305fb070c",
+        "degree": 1,
+        "name": "NTAOTSdata (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_15"
+      },
+      {
+        "uuid": "23e92fc7-8058-4fd0-9a78-c262248912d2",
+        "degree": 1,
+        "name": "NTAOTS (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_16"
+      },
+      {
+        "uuid": "98ecda4b-571a-40e9-beb1-cd7cb6973bf9",
+        "degree": 1,
+        "name": "IBM Power 795 (DCN)",
+        "code": "tp_vypoctovy_zdroj_39"
+      },
+      {
+        "uuid": "2b30a3b8-09be-4c0f-ada6-1cc44013fb7c",
+        "degree": 1,
+        "name": "Hyper-V 2012 R2 cluster (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_13"
+      },
+      {
+        "uuid": "3934184d-f659-4102-969a-31456eefcdec",
+        "degree": 1,
+        "name": "Hyper-V2012 R2 (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_27"
+      },
+      {
+        "uuid": "98d812d9-35d4-4177-b373-25544dbffeb8",
+        "degree": 1,
+        "name": "NTCAFvhd (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_10"
+      },
+      {
+        "uuid": "f5061a82-be0a-4286-beb4-a82a2c5318f1",
+        "degree": 1,
+        "name": "NTWeb1vhd (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_11"
+      },
+      {
+        "uuid": "690a3326-9913-4004-b1f0-8a99f50b32bc",
+        "degree": 1,
+        "name": "IBM Blade Center H (DCN)",
+        "code": "tp_vypoctovy_zdroj_38"
+      },
+      {
+        "uuid": "d51d9ede-825a-4d73-b291-625257073a18",
+        "degree": 1,
+        "name": "Ntlib (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_21"
+      },
+      {
+        "uuid": "380be898-00d2-46c6-98c7-4dc129761a98",
+        "degree": 1,
+        "name": "NTMoss01 (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_26"
+      },
+      {
+        "uuid": "418b4fe5-e9c6-42e1-9459-2ee239038bad",
+        "degree": 1,
+        "name": "Hyper-V 2008 R2 cluster (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_9"
+      },
+      {
+        "uuid": "8339fef2-581b-4877-b105-4d5855834479",
+        "degree": 1,
+        "name": "NTex01 (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_22"
+      },
+      {
+        "uuid": "eae991a9-5a47-4f89-8cce-b0372929f3a6",
+        "degree": 1,
+        "name": "NTexca01 (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_23"
+      },
+      {
+        "uuid": "48af672f-7598-4ecc-9b8e-488ac51e0e04",
+        "degree": 1,
+        "name": "NTexEdge01 (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_24"
+      },
+      {
+        "uuid": "50db21b0-cd50-4977-b3c0-41d3eb2c7215",
+        "degree": 1,
+        "name": "NTexEdge02 (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_25"
+      },
+      {
+        "uuid": "007294de-7ed1-4271-8ff1-61243c012877",
+        "degree": 1,
+        "name": "Server HP DL 360 G10 (KNS SR)",
+        "code": "tp_vypoctovy_zdroj_42"
+      },
+      {
+        "uuid": "c118c084-5101-4ffe-8207-fb30a7fb1dee",
+        "degree": 1,
+        "name": "Server HP DL 360 G9 (KNS SR)",
+        "code": "tp_vypoctovy_zdroj_44"
+      },
+      {
+        "uuid": "670a6814-9317-40fb-b2f5-9215bb93319e",
+        "degree": 1,
+        "name": "SQL 2008 R2 cluster (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_12"
+      },
+      {
+        "uuid": "eb0095d8-4ab9-435e-b519-3069ed2f1749",
+        "degree": 1,
+        "name": "SQL 2008 R2 cluster (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_28"
+      },
+      {
+        "uuid": "ced934d9-cf74-43b7-b6f5-e1b3823588e4",
+        "degree": 1,
+        "name": "Kreditsrv (K NR SR)",
+        "code": "tp_vypoctovy_zdroj_20"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "85add632-015b-430f-99f4-9ba219b42a19",
+        "degree": 4,
+        "name": "Exchange 2010 - mailová platforma (K NR SR)",
+        "code": "platforma_19"
+      },
+      {
+        "uuid": "17d8cb8b-cd2c-49db-bb5a-eacadd5edfb2",
+        "degree": 3,
+        "name": "AOTS - ECM platforma (K NR SR)",
+        "code": "platforma_10"
+      },
+      {
+        "uuid": "2342194a-78bd-4f4a-9cb3-92b394adf4c4",
+        "degree": 3,
+        "name": "Microsoft Hyper-V 2012 R2 - Virtuálna platforma (K NR SR)",
+        "code": "platforma_9"
+      },
+      {
+        "uuid": "2b89b0ec-0058-445c-bdeb-7de012c91fdc",
+        "degree": 2,
+        "name": "SSLP - ECM platforma (K NR SR)",
+        "code": "platforma_7"
+      },
+      {
+        "uuid": "9dfcdbcd-86a9-40ce-be25-461902a76fdd",
+        "degree": 2,
+        "name": "Vmware ESXi (KNS SR)",
+        "code": "platforma_60"
+      },
+      {
+        "uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+        "degree": 2,
+        "name": "SQL 2008 R2 - databázová platforma (K NR SR)",
+        "code": "platforma_8"
+      },
+      {
+        "uuid": "14f2bad0-6a34-44a3-95c3-ca6b1309c83d",
+        "degree": 1,
+        "name": "SRS - ECM platforma (K NR SR)",
+        "code": "platforma_11"
+      },
+      {
+        "uuid": "1f4f1b81-02fa-4e2f-b8fe-c6fa37e33363",
+        "degree": 1,
+        "name": "Virtualizačná platforma PowerVM (DCN)",
+        "code": "platforma_37"
+      },
+      {
+        "uuid": "30f0db18-db7d-4edf-a829-1103b64d214b",
+        "degree": 1,
+        "name": "Virtualizačná platforma VMware (DCN)",
+        "code": "platforma_27"
+      },
+      {
+        "uuid": "3334bc06-daa4-47da-84e2-fda262fabb7b",
+        "degree": 1,
+        "name": "NTlib - ECM platforma",
+        "code": "platforma_17"
+      },
+      {
+        "uuid": "47ef4545-f7d3-425d-b316-b81c9784408a",
+        "degree": 1,
+        "name": "Sharepoint portal server 2007 - portálová platforma (K NR SR)",
+        "code": "platforma_20"
+      },
+      {
+        "uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+        "degree": 1,
+        "name": "Microsoft Hyper-V 2008 R2- Virtuálna platforma (K NR SR)",
+        "code": "platforma_5"
+      },
+      {
+        "uuid": "6f3ce0ee-8af7-40a4-829b-a4c3ed5768d9",
+        "degree": 1,
+        "name": "Oracle - databázová plaforma (K NR SR)",
+        "code": "platforma_15"
+      },
+      {
+        "uuid": "8b40c725-63cc-4c3d-86e8-4c418d00a390",
+        "degree": 1,
+        "name": "Registratúra - ECM platforma (K NR SR)",
+        "code": "platforma_12"
+      },
+      {
+        "uuid": "c9fe3eab-d307-4afd-9188-7ef4d5a2628d",
+        "degree": 1,
+        "name": "Horec - ECM platforma (K NR SR)",
+        "code": "platforma_13"
+      },
+      {
+        "uuid": "eedb532a-8395-4141-b7a5-b0e6e4bc5b1d",
+        "degree": 1,
+        "name": "Kredit - ECM platforma (K NR SR)",
+        "code": "platforma_16"
+      }
+    ],
+    "islands": {
+      "total_nodes": 85,
+      "total_islands": 59,
+      "singleton_islands": 45,
+      "multi_islands": [
+        {
+          "size_total": 5,
+          "size_source": 3,
+          "size_target": 2,
+          "fraction_total": 0.058823529411764705,
+          "top_source_uuid": "81987915-c72a-4c1c-b05e-8d7b2ae5a319",
+          "top_source_degree": 2,
+          "top_target_uuid": "2342194a-78bd-4f4a-9cb3-92b394adf4c4",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.058823529411764705,
+          "top_source_uuid": "8339fef2-581b-4877-b105-4d5855834479",
+          "top_source_degree": 1,
+          "top_target_uuid": "85add632-015b-430f-99f4-9ba219b42a19",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.047058823529411764,
+          "top_source_uuid": "23e92fc7-8058-4fd0-9a78-c262248912d2",
+          "top_source_degree": 1,
+          "top_target_uuid": "17d8cb8b-cd2c-49db-bb5a-eacadd5edfb2",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.03529411764705882,
+          "top_source_uuid": "f5061a82-be0a-4286-beb4-a82a2c5318f1",
+          "top_source_degree": 1,
+          "top_target_uuid": "2b89b0ec-0058-445c-bdeb-7de012c91fdc",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.03529411764705882,
+          "top_source_uuid": "670a6814-9317-40fb-b2f5-9215bb93319e",
+          "top_source_degree": 1,
+          "top_target_uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.03529411764705882,
+          "top_source_uuid": "f5b0f7c5-af50-4fa3-aea8-eb253a92e94a",
+          "top_source_degree": 2,
+          "top_target_uuid": "6f3ce0ee-8af7-40a4-829b-a4c3ed5768d9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.03529411764705882,
+          "top_source_uuid": "007294de-7ed1-4271-8ff1-61243c012877",
+          "top_source_degree": 1,
+          "top_target_uuid": "9dfcdbcd-86a9-40ce-be25-461902a76fdd",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.023529411764705882,
+          "top_source_uuid": "98ecda4b-571a-40e9-beb1-cd7cb6973bf9",
+          "top_source_degree": 1,
+          "top_target_uuid": "1f4f1b81-02fa-4e2f-b8fe-c6fa37e33363",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.023529411764705882,
+          "top_source_uuid": "418b4fe5-e9c6-42e1-9459-2ee239038bad",
+          "top_source_degree": 1,
+          "top_target_uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.023529411764705882,
+          "top_source_uuid": "690a3326-9913-4004-b1f0-8a99f50b32bc",
+          "top_source_degree": 1,
+          "top_target_uuid": "30f0db18-db7d-4edf-a829-1103b64d214b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.023529411764705882,
+          "top_source_uuid": "ced934d9-cf74-43b7-b6f5-e1b3823588e4",
+          "top_source_degree": 1,
+          "top_target_uuid": "eedb532a-8395-4141-b7a5-b0e6e4bc5b1d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.023529411764705882,
+          "top_source_uuid": "fd52922e-2094-4b37-860d-fc3875050845",
+          "top_source_degree": 1,
+          "top_target_uuid": "14f2bad0-6a34-44a3-95c3-ca6b1309c83d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.023529411764705882,
+          "top_source_uuid": "d51d9ede-825a-4d73-b291-625257073a18",
+          "top_source_degree": 1,
+          "top_target_uuid": "3334bc06-daa4-47da-84e2-fda262fabb7b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.023529411764705882,
+          "top_source_uuid": "380be898-00d2-46c6-98c7-4dc129761a98",
+          "top_source_degree": 1,
+          "top_target_uuid": "47ef4545-f7d3-425d-b316-b81c9784408a",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 32,
+        "total_islands": 22,
+        "singleton_islands": 16,
+        "multi_islands": [
+          {
+            "size": 4,
+            "fraction": 0.125,
+            "size_total": 5,
+            "top_uuid": "8339fef2-581b-4877-b105-4d5855834479",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.09375,
+            "size_total": 5,
+            "top_uuid": "81987915-c72a-4c1c-b05e-8d7b2ae5a319",
+            "top_degree": 2
+          },
+          {
+            "size": 3,
+            "fraction": 0.09375,
+            "size_total": 4,
+            "top_uuid": "23e92fc7-8058-4fd0-9a78-c262248912d2",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0625,
+            "size_total": 3,
+            "top_uuid": "f5061a82-be0a-4286-beb4-a82a2c5318f1",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0625,
+            "size_total": 3,
+            "top_uuid": "670a6814-9317-40fb-b2f5-9215bb93319e",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0625,
+            "size_total": 3,
+            "top_uuid": "007294de-7ed1-4271-8ff1-61243c012877",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 53,
+        "total_islands": 51,
+        "singleton_islands": 49,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 5,
+            "top_uuid": "2342194a-78bd-4f4a-9cb3-92b394adf4c4",
+            "top_degree": 3
+          },
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 3,
+            "top_uuid": "6f3ce0ee-8af7-40a4-829b-a4c3ed5768d9",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

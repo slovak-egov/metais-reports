@@ -1,0 +1,111 @@
+{
+  "type": "ReferenceRegisterItem",
+  "count": 152,
+  "attributes": [
+    {
+      "name": "uuid",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 152,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "type",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.6578947368421052
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_name",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 141,
+      "unique_pct": 92.76315789473685
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_dataElementRefID",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 51,
+      "unique_pct": 33.55263157894737
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_subjectIdentifications",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 14,
+      "unique_pct": 9.210526315789473
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_refID",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 137,
+      "unique_pct": 90.13157894736842
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_note",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 106,
+      "unique_pct": 69.73684210526315
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_order",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 106,
+      "unique_pct": 69.73684210526315
+    },
+    {
+      "name": "meta.owner",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 3.289473684210526
+    },
+    {
+      "name": "meta.state",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.6578947368421052
+    },
+    {
+      "name": "meta.createdBy",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 7,
+      "unique_pct": 4.605263157894736
+    },
+    {
+      "name": "meta.createdAt",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 152,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedBy",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 6,
+      "unique_pct": 3.9473684210526314
+    },
+    {
+      "name": "meta.lastModifiedAt",
+      "count": 152,
+      "pct": 100.0,
+      "unique_count": 152,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "ReferenceRegisterItem_Profile_code",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    }
+  ]
+}

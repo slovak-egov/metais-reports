@@ -1,0 +1,211 @@
+{
+  "relation_name": "ReferenceRegister_managedBy_PO",
+  "name": "Register managuje PO",
+  "description": "Register managuje PO.",
+  "engDescription": "Register managed by PA.",
+  "type": "system",
+  "source_type": "ReferenceRegister",
+  "source_name": "Referencny register",
+  "target_type": "PO",
+  "target_name": "Povinná osoba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 7,
+    "unique_pairs": 7,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 7,
+    "target_total": 5792,
+    "source_connected": 7,
+    "target_connected": 5,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.4,
+      "median": 1,
+      "p90": 2,
+      "p99": 2
+    },
+    "top_source": [
+      {
+        "uuid": "aa7ad122-ecca-464e-8f59-2e8be262c753",
+        "degree": 1,
+        "name": "2016-12-07T00:00",
+        "code": null
+      },
+      {
+        "uuid": "d51b0a36-bf55-4809-8320-6d898c79ee6a",
+        "degree": 1,
+        "name": "2020-05-01T00:00",
+        "code": null
+      },
+      {
+        "uuid": "80d31646-5ca4-47f4-87fa-8fc3210769a6",
+        "degree": 1,
+        "name": "2016-05-16T00:00",
+        "code": null
+      },
+      {
+        "uuid": "5120888d-34ea-4923-8c34-63908530eb54",
+        "degree": 1,
+        "name": "2024-01-01T00:00",
+        "code": null
+      },
+      {
+        "uuid": "bb4cf5b0-e854-4deb-bc9b-4644e5cb96fc",
+        "degree": 1,
+        "name": "2016-03-02T00:00",
+        "code": null
+      },
+      {
+        "uuid": "ebc2cbe9-832d-4d8d-8da6-cceeb60b4572",
+        "degree": 1,
+        "name": "2016-03-30T00:00",
+        "code": null
+      },
+      {
+        "uuid": "17a29bc7-d99b-4c2a-b7b3-0c50bbdcacca",
+        "degree": 1,
+        "name": "2024-01-01T00:00",
+        "code": null
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "0303d336-d570-47f5-846d-7f2d95b1d40b",
+        "degree": 2,
+        "name": "Ministerstvo vnútra Slovenskej republiky",
+        "code": "00151866"
+      },
+      {
+        "uuid": "efc1cb80-bbf1-4311-ad68-d418aa63f6ff",
+        "degree": 2,
+        "name": "Ministerstvo práce, sociálnych vecí a rodiny Slovenskej republiky",
+        "code": "00681156"
+      },
+      {
+        "uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+        "degree": 1,
+        "name": "Štatistický úrad Slovenskej republiky",
+        "code": "00166197"
+      },
+      {
+        "uuid": "bb3ca935-5e86-46c6-8885-8f52a6e6df34",
+        "degree": 1,
+        "name": "Dopravný úrad",
+        "code": "42355826"
+      },
+      {
+        "uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+        "degree": 1,
+        "name": "Ministerstvo financií Slovenskej republiky",
+        "code": "00151742"
+      }
+    ],
+    "islands": {
+      "total_nodes": 5799,
+      "total_islands": 5792,
+      "singleton_islands": 5787,
+      "multi_islands": [
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0005173305742369374,
+          "top_source_uuid": "17a29bc7-d99b-4c2a-b7b3-0c50bbdcacca",
+          "top_source_degree": 1,
+          "top_target_uuid": "efc1cb80-bbf1-4311-ad68-d418aa63f6ff",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0005173305742369374,
+          "top_source_uuid": "d51b0a36-bf55-4809-8320-6d898c79ee6a",
+          "top_source_degree": 1,
+          "top_target_uuid": "0303d336-d570-47f5-846d-7f2d95b1d40b",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0003448870494912916,
+          "top_source_uuid": "80d31646-5ca4-47f4-87fa-8fc3210769a6",
+          "top_source_degree": 1,
+          "top_target_uuid": "88027af4-7459-44fa-922a-317ac7dccdfb",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0003448870494912916,
+          "top_source_uuid": "5120888d-34ea-4923-8c34-63908530eb54",
+          "top_source_degree": 1,
+          "top_target_uuid": "bb3ca935-5e86-46c6-8885-8f52a6e6df34",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0003448870494912916,
+          "top_source_uuid": "bb4cf5b0-e854-4deb-bc9b-4644e5cb96fc",
+          "top_source_degree": 1,
+          "top_target_uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 7,
+        "total_islands": 5,
+        "singleton_islands": 3,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.2857142857142857,
+            "size_total": 3,
+            "top_uuid": "17a29bc7-d99b-4c2a-b7b3-0c50bbdcacca",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.2857142857142857,
+            "size_total": 3,
+            "top_uuid": "d51b0a36-bf55-4809-8320-6d898c79ee6a",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 5792,
+        "total_islands": 5792,
+        "singleton_islands": 5792,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

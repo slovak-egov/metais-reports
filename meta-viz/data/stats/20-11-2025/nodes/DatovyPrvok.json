@@ -1,0 +1,167 @@
+{
+  "type": "DatovyPrvok",
+  "count": 663,
+  "attributes": [
+    {
+      "name": "uuid",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 663,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "type",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.1508295625942685
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 494,
+      "unique_pct": 74.50980392156863
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 663,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_DatovyPrvok_kod_datoveho_prvku",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 484,
+      "unique_pct": 73.00150829562594
+    },
+    {
+      "name": "Gen_Profil_RefID_stav_registracie",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 0.603318250377074
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.301659125188537
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 477,
+      "unique_pct": 71.94570135746606
+    },
+    {
+      "name": "Profil_DatovyPrvok_typ_datoveho_prvku",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 0.4524886877828055
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 662,
+      "unique_pct": 99.84917043740573
+    },
+    {
+      "name": "meta.owner",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 0.4524886877828055
+    },
+    {
+      "name": "meta.state",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.1508295625942685
+    },
+    {
+      "name": "meta.createdBy",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 0.603318250377074
+    },
+    {
+      "name": "meta.createdAt",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 663,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedBy",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 0.7541478129713424
+    },
+    {
+      "name": "meta.lastModifiedAt",
+      "count": 663,
+      "pct": 100.0,
+      "unique_count": 663,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_DatovyPrvok_zaciatok_ucinnosti",
+      "count": 662,
+      "pct": 99.84917043740573,
+      "unique_count": 41,
+      "unique_pct": 6.193353474320242
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 616,
+      "pct": 92.91101055806938,
+      "unique_count": 168,
+      "unique_pct": 27.27272727272727
+    },
+    {
+      "name": "Profil_DatovyPrvok_historicky_kod",
+      "count": 590,
+      "pct": 88.9894419306184,
+      "unique_count": 185,
+      "unique_pct": 31.35593220338983
+    },
+    {
+      "name": "Gen_Profil_RefID_dovod_zamietnutia",
+      "count": 220,
+      "pct": 33.18250377073906,
+      "unique_count": 4,
+      "unique_pct": 1.8181818181818181
+    },
+    {
+      "name": "Profil_DatovyPrvok_koniec_ucinnosti",
+      "count": 32,
+      "pct": 4.826546003016592,
+      "unique_count": 5,
+      "unique_pct": 15.625
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    }
+  ]
+}

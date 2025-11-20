@@ -1,0 +1,57 @@
+{
+  "relation_name": "LicenseRequest_usedby_ISVS",
+  "name": "Žiadosť o licenciu je používana ISVS",
+  "description": "Žiadosť o licenciu  je používana ISVS",
+  "engDescription": "LicenseRequest used by ISVS",
+  "type": "system",
+  "source_type": "LicenseRequest",
+  "source_name": "Žiadosť o licenciu",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 7,
+    "target_total": 6667,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 6674,
+      "total_islands": 6674,
+      "singleton_islands": 6674,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 7,
+        "total_islands": 7,
+        "singleton_islands": 7,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 6667,
+        "total_islands": 6667,
+        "singleton_islands": 6667,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

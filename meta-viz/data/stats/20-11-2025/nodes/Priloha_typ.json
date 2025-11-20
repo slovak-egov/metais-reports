@@ -1,0 +1,174 @@
+{
+  "type": "Priloha_typ",
+  "count": 2,
+  "attributes": [
+    {
+      "name": "uuid",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "type",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_Profil_typ_prilohy_Profil_typ_prilohy_request_to_check_authorization_timestamp_new",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "Profil_typ_prilohy_required",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "Profil_typ_prilohy_Profil_typ_prilohy_attachment_authorization",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.owner",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "meta.state",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "meta.createdBy",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "meta.createdAt",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedBy",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "meta.lastModifiedAt",
+      "count": 2,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_attachment_sign_type",
+      "count": 1,
+      "pct": 50.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_attachment_multiplicity",
+      "count": 1,
+      "pct": 50.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_signatureRequired",
+      "count": 1,
+      "pct": 50.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_allowedForm",
+      "count": 1,
+      "pct": 50.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Profil_typ_prilohy_attachment_sign_mass",
+      "count": 1,
+      "pct": 50.0,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    }
+  ]
+}

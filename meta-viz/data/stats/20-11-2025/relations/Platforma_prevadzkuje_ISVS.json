@@ -1,0 +1,523 @@
+{
+  "relation_name": "Platforma_prevadzkuje_ISVS",
+  "name": "Platforma prevádzkuje ISVS",
+  "description": "Platforma ( platforma ) prevádzkuje  ISVS",
+  "engDescription": "Platform ( platform ) operates ISVS",
+  "type": "application",
+  "source_type": "Platforma",
+  "source_name": "Platforma",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 40,
+    "unique_pairs": 40,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 53,
+    "target_total": 6667,
+    "source_connected": 26,
+    "target_connected": 20,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 5,
+      "avg": 1.5384615384615385,
+      "median": 1.0,
+      "p90": 3,
+      "p99": 5
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 6,
+      "avg": 2.0,
+      "median": 2.0,
+      "p90": 3,
+      "p99": 6
+    },
+    "top_source": [
+      {
+        "uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+        "degree": 5,
+        "name": "Microsoft Hyper-V 2008 R2- Virtuálna platforma (K NR SR)",
+        "code": "platforma_5"
+      },
+      {
+        "uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+        "degree": 4,
+        "name": "SQL 2008 R2 - databázová platforma (K NR SR)",
+        "code": "platforma_8"
+      },
+      {
+        "uuid": "98f1797d-d966-4341-ac18-929e7022422b",
+        "degree": 3,
+        "name": "Systémová  platforma Linux (DCN)",
+        "code": "platforma_34"
+      },
+      {
+        "uuid": "2342194a-78bd-4f4a-9cb3-92b394adf4c4",
+        "degree": 3,
+        "name": "Microsoft Hyper-V 2012 R2 - Virtuálna platforma (K NR SR)",
+        "code": "platforma_9"
+      },
+      {
+        "uuid": "6f3ce0ee-8af7-40a4-829b-a4c3ed5768d9",
+        "degree": 2,
+        "name": "Oracle - databázová plaforma (K NR SR)",
+        "code": "platforma_15"
+      },
+      {
+        "uuid": "6e7784ab-b8c4-4ffa-803d-f664c4d888d3",
+        "degree": 2,
+        "name": "Databázová platforma SQL (DCN)",
+        "code": "platforma_30"
+      },
+      {
+        "uuid": "30f0db18-db7d-4edf-a829-1103b64d214b",
+        "degree": 2,
+        "name": "Virtualizačná platforma VMware (DCN)",
+        "code": "platforma_27"
+      },
+      {
+        "uuid": "56cfbc93-454f-4efa-9154-b9e9918eb1c1",
+        "degree": 1,
+        "name": "Virtualizačná platforma ISUF (MFSR)",
+        "code": "platforma_49"
+      },
+      {
+        "uuid": "a8f8852c-1ea0-43bf-96cb-67a30c634015",
+        "degree": 1,
+        "name": "Terminálová platforma ISUF (MFSR)",
+        "code": "platforma_50"
+      },
+      {
+        "uuid": "5e9c6049-8768-402e-b089-5b703166edd6",
+        "degree": 1,
+        "name": "Aplikačná platforma ISUF (MFSR)",
+        "code": "platforma_51"
+      },
+      {
+        "uuid": "81a050df-a9fb-4243-a13f-28a386144442",
+        "degree": 1,
+        "name": "Databázová platforma ISUF (MFSR)",
+        "code": "platforma_52"
+      },
+      {
+        "uuid": "c466c084-9d3e-4fa8-a106-9ce3bc2b52ba",
+        "degree": 1,
+        "name": "Monitorovacia platforma",
+        "code": "platforma_53"
+      },
+      {
+        "uuid": "56bc4862-e1f9-4381-b005-d8b15b42f39d",
+        "degree": 1,
+        "name": "KTI platforma ISUF (MFSR)",
+        "code": "platforma_54"
+      },
+      {
+        "uuid": "8b40c725-63cc-4c3d-86e8-4c418d00a390",
+        "degree": 1,
+        "name": "Registratúra - ECM platforma (K NR SR)",
+        "code": "platforma_12"
+      },
+      {
+        "uuid": "85add632-015b-430f-99f4-9ba219b42a19",
+        "degree": 1,
+        "name": "Exchange 2010 - mailová platforma (K NR SR)",
+        "code": "platforma_19"
+      },
+      {
+        "uuid": "47ef4545-f7d3-425d-b316-b81c9784408a",
+        "degree": 1,
+        "name": "Sharepoint portal server 2007 - portálová platforma (K NR SR)",
+        "code": "platforma_20"
+      },
+      {
+        "uuid": "08365750-0eb5-499a-b634-0eb391eb99ed",
+        "degree": 1,
+        "name": "Virtualizačná platforma DCES (DCC)",
+        "code": "platforma_56"
+      },
+      {
+        "uuid": "88b062d4-ed6d-4453-8d44-55e03641e41c",
+        "degree": 1,
+        "name": "SAP ERP",
+        "code": "platforma_48"
+      },
+      {
+        "uuid": "aff16159-2f1e-4a51-abe6-a4c32bc69acf",
+        "degree": 1,
+        "name": "Databázová platforma Informix (DCN)",
+        "code": "platforma_31"
+      },
+      {
+        "uuid": "500e99b6-4cdb-4ec9-889d-f0e83bc424f7",
+        "degree": 1,
+        "name": "Systémová platforma Windows (DCN)",
+        "code": "platforma_33"
+      },
+      {
+        "uuid": "1f4f1b81-02fa-4e2f-b8fe-c6fa37e33363",
+        "degree": 1,
+        "name": "Virtualizačná platforma PowerVM (DCN)",
+        "code": "platforma_37"
+      },
+      {
+        "uuid": "17d8cb8b-cd2c-49db-bb5a-eacadd5edfb2",
+        "degree": 1,
+        "name": "AOTS - ECM platforma (K NR SR)",
+        "code": "platforma_10"
+      },
+      {
+        "uuid": "d7174d53-22a0-4548-8aa6-0d9d1e0f8f68",
+        "degree": 1,
+        "name": "Business Process Management (BPM) platforma  (MV SR)",
+        "code": "platforma_38"
+      },
+      {
+        "uuid": "4af31125-c8e2-4a6b-a4e4-3cbff276e8e0",
+        "degree": 1,
+        "name": "Databázová platforma Oracle (DCN)",
+        "code": "platforma_26"
+      },
+      {
+        "uuid": "b4ba5c8a-8ed1-420b-9eae-15fce1bae5f9",
+        "degree": 1,
+        "name": "Platforma CISŠS",
+        "code": "platforma_4"
+      },
+      {
+        "uuid": "14f2bad0-6a34-44a3-95c3-ca6b1309c83d",
+        "degree": 1,
+        "name": "SRS - ECM platforma (K NR SR)",
+        "code": "platforma_11"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "0281f528-0045-4fa8-91bc-f5672a40f0f5",
+        "degree": 6,
+        "name": "Informačný systém účtovníctva fondov (ISUF)",
+        "code": "isvs_49"
+      },
+      {
+        "uuid": "b8ad23ff-ff26-4f7f-be81-5cd324d94007",
+        "degree": 4,
+        "name": "Automatizovaný systém riadenia prepisov zo schôdzí NR SR",
+        "code": "isvs_6082"
+      },
+      {
+        "uuid": "0de9aee1-1e5e-451b-bde9-23a962c499bc",
+        "degree": 3,
+        "name": "Registratúra",
+        "code": "isvs_6084"
+      },
+      {
+        "uuid": "3923e6a0-f7bf-422b-bd18-f42f82b981a5",
+        "degree": 3,
+        "name": "Intranetový portál",
+        "code": "isvs_6090"
+      },
+      {
+        "uuid": "e68e11fc-15eb-4df9-924e-542bbe2faaf1",
+        "degree": 3,
+        "name": "Personálno-ekonomický IS",
+        "code": "isvs_6083"
+      },
+      {
+        "uuid": "2fac7778-f89f-499d-8364-c269ac0e9ca5",
+        "degree": 2,
+        "name": "Reštauračný systém Bluegastro",
+        "code": "isvs_6086"
+      },
+      {
+        "uuid": "94954549-cc5f-48ba-8167-af5db8427cd7",
+        "degree": 2,
+        "name": "Data Warehouse (DWH)",
+        "code": "isvs_7146"
+      },
+      {
+        "uuid": "989e340f-4caf-4a37-9d4f-26c9c3d015ee",
+        "degree": 2,
+        "name": "Administratívny informačný systém (ADMIS)",
+        "code": "isvs_7145"
+      },
+      {
+        "uuid": "b0bd9009-b0ad-4241-bc86-c6d4f0caa5ad",
+        "degree": 2,
+        "name": "Alladin",
+        "code": "isvs_8682"
+      },
+      {
+        "uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+        "degree": 2,
+        "name": "Centrálny elektronický priečinok (CEP)",
+        "code": "isvs_66"
+      },
+      {
+        "uuid": "f4c96060-017e-4040-8cfe-479fc01583f3",
+        "degree": 2,
+        "name": "Hotelový systém Horec",
+        "code": "isvs_6085"
+      },
+      {
+        "uuid": "29dda0df-2faa-4cd9-9e67-498858095fdc",
+        "degree": 1,
+        "name": "Informačný systém Kontrolné známky (ISKZ)",
+        "code": "isvs_7151"
+      },
+      {
+        "uuid": "2c8271e1-bf3c-423a-92db-1dac8833b0e8",
+        "degree": 1,
+        "name": "Elektronická pošta",
+        "code": "isvs_6089"
+      },
+      {
+        "uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+        "degree": 1,
+        "name": "Informačný systém pre evidenciu a monitorovanie pomoci „IS SEMP“",
+        "code": "isvs_47"
+      },
+      {
+        "uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+        "degree": 1,
+        "name": "Ekonomický informačný systém (EIS)",
+        "code": "isvs_48"
+      },
+      {
+        "uuid": "8742eb62-f5ba-4426-aaad-3effb4ab84a0",
+        "degree": 1,
+        "name": "Knižničný systém Proflib",
+        "code": "isvs_6088"
+      },
+      {
+        "uuid": "a872cef7-d6c6-4f2a-a4c6-b11311b3726b",
+        "degree": 1,
+        "name": "Integrovaný systém Finančnej správy",
+        "code": "isvs_4859"
+      },
+      {
+        "uuid": "bb63dab8-e58a-43e6-97e1-44d7a2186f92",
+        "degree": 1,
+        "name": "Register mimovládnych neziskových organizácií",
+        "code": "isvs_9421"
+      },
+      {
+        "uuid": "bbfbd9fd-afde-4a0c-80a9-3154924174aa",
+        "degree": 1,
+        "name": "LiveAgent",
+        "code": "isvs_8732"
+      },
+      {
+        "uuid": "c7042564-1c92-4c76-a5d7-f719de8804e3",
+        "degree": 1,
+        "name": "Centrálny informačný systém štátnej služby",
+        "code": "isvs_6140"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6720,
+      "total_islands": 6684,
+      "singleton_islands": 6674,
+      "multi_islands": [
+        {
+          "size_total": 15,
+          "size_source": 8,
+          "size_target": 7,
+          "fraction_total": 0.002232142857142857,
+          "top_source_uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+          "top_source_degree": 5,
+          "top_target_uuid": "b8ad23ff-ff26-4f7f-be81-5cd324d94007",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 7,
+          "size_source": 3,
+          "size_target": 4,
+          "fraction_total": 0.0010416666666666667,
+          "top_source_uuid": "98f1797d-d966-4341-ac18-929e7022422b",
+          "top_source_degree": 3,
+          "top_target_uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 7,
+          "size_source": 6,
+          "size_target": 1,
+          "fraction_total": 0.0010416666666666667,
+          "top_source_uuid": "56bc4862-e1f9-4381-b005-d8b15b42f39d",
+          "top_source_degree": 1,
+          "top_target_uuid": "0281f528-0045-4fa8-91bc-f5672a40f0f5",
+          "top_target_degree": 6
+        },
+        {
+          "size_total": 4,
+          "size_source": 2,
+          "size_target": 2,
+          "fraction_total": 0.0005952380952380953,
+          "top_source_uuid": "6e7784ab-b8c4-4ffa-803d-f664c4d888d3",
+          "top_source_degree": 2,
+          "top_target_uuid": "989e340f-4caf-4a37-9d4f-26c9c3d015ee",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004464285714285714,
+          "top_source_uuid": "aff16159-2f1e-4a51-abe6-a4c32bc69acf",
+          "top_source_degree": 1,
+          "top_target_uuid": "94954549-cc5f-48ba-8167-af5db8427cd7",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029761904761904765,
+          "top_source_uuid": "08365750-0eb5-499a-b634-0eb391eb99ed",
+          "top_source_degree": 1,
+          "top_target_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029761904761904765,
+          "top_source_uuid": "d7174d53-22a0-4548-8aa6-0d9d1e0f8f68",
+          "top_source_degree": 1,
+          "top_target_uuid": "bb63dab8-e58a-43e6-97e1-44d7a2186f92",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029761904761904765,
+          "top_source_uuid": "85add632-015b-430f-99f4-9ba219b42a19",
+          "top_source_degree": 1,
+          "top_target_uuid": "2c8271e1-bf3c-423a-92db-1dac8833b0e8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029761904761904765,
+          "top_source_uuid": "b4ba5c8a-8ed1-420b-9eae-15fce1bae5f9",
+          "top_source_degree": 1,
+          "top_target_uuid": "c7042564-1c92-4c76-a5d7-f719de8804e3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029761904761904765,
+          "top_source_uuid": "88b062d4-ed6d-4453-8d44-55e03641e41c",
+          "top_source_degree": 1,
+          "top_target_uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 53,
+        "total_islands": 37,
+        "singleton_islands": 32,
+        "multi_islands": [
+          {
+            "size": 8,
+            "fraction": 0.1509433962264151,
+            "size_total": 15,
+            "top_uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+            "top_degree": 5
+          },
+          {
+            "size": 6,
+            "fraction": 0.11320754716981132,
+            "size_total": 7,
+            "top_uuid": "56bc4862-e1f9-4381-b005-d8b15b42f39d",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.05660377358490566,
+            "size_total": 7,
+            "top_uuid": "98f1797d-d966-4341-ac18-929e7022422b",
+            "top_degree": 3
+          },
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 3,
+            "top_uuid": "aff16159-2f1e-4a51-abe6-a4c32bc69acf",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 4,
+            "top_uuid": "6e7784ab-b8c4-4ffa-803d-f664c4d888d3",
+            "top_degree": 2
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 6667,
+        "total_islands": 6657,
+        "singleton_islands": 6654,
+        "multi_islands": [
+          {
+            "size": 7,
+            "fraction": 0.0010499475026248687,
+            "size_total": 15,
+            "top_uuid": "b8ad23ff-ff26-4f7f-be81-5cd324d94007",
+            "top_degree": 4
+          },
+          {
+            "size": 4,
+            "fraction": 0.000599970001499925,
+            "size_total": 7,
+            "top_uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.0002999850007499625,
+            "size_total": 4,
+            "top_uuid": "989e340f-4caf-4a37-9d4f-26c9c3d015ee",
+            "top_degree": 2
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

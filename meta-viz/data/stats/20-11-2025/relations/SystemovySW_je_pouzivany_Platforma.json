@@ -1,0 +1,436 @@
+{
+  "relation_name": "SystemovySW_je_pouzivany_Platforma",
+  "name": "Systémový softvér je používaný platformou",
+  "description": "Systémový softvér je používaný platformou",
+  "engDescription": "System software is used by platform",
+  "type": "application",
+  "source_type": "SystemovySW",
+  "source_name": "Systémový softvér",
+  "target_type": "Platforma",
+  "target_name": "Platforma",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 28,
+    "unique_pairs": 28,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 30,
+    "target_total": 53,
+    "source_connected": 18,
+    "target_connected": 18,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 4,
+      "avg": 1.5555555555555556,
+      "median": 1.0,
+      "p90": 4,
+      "p99": 4
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 4,
+      "avg": 1.5555555555555556,
+      "median": 1.0,
+      "p90": 3,
+      "p99": 4
+    },
+    "top_source": [
+      {
+        "uuid": "f11c9fa9-5c10-43dc-8833-14c15e130e09",
+        "degree": 4,
+        "name": "Windows 2008 R2 Standard (K NR SR)",
+        "code": "systemovy_sw_3"
+      },
+      {
+        "uuid": "607c96e8-8d01-41bb-8520-d0edf29a03f4",
+        "degree": 4,
+        "name": "Windows 2012 R2 Standard (K NR SR)",
+        "code": "systemovy_sw_8"
+      },
+      {
+        "uuid": "6863b508-1f91-4f22-84ca-874bea5ec4a2",
+        "degree": 4,
+        "name": "Windows 2003 Standard",
+        "code": "systemovy_sw_12"
+      },
+      {
+        "uuid": "33b5207d-8be8-4f6a-aeec-31e48c55756f",
+        "degree": 2,
+        "name": "Windows Server 2008 R2 (DCN)",
+        "code": "systemovy_sw_18"
+      },
+      {
+        "uuid": "732c76a5-1d80-4bf0-b522-783b5b2b9a65",
+        "degree": 1,
+        "name": "Windows 2003 Storage server (K NR SR)",
+        "code": "systemovy_sw_11"
+      },
+      {
+        "uuid": "782cc968-ae29-4aaf-9cc8-71eca7a191c7",
+        "degree": 1,
+        "name": "Windows 2012 R2 Standard - Hyper-V (K NR SR)",
+        "code": "systemovy_sw_9"
+      },
+      {
+        "uuid": "64ff672f-4cdf-493c-bdc0-4770043edee2",
+        "degree": 1,
+        "name": "VMware ESXi (DCN)",
+        "code": "systemovy_sw_20"
+      },
+      {
+        "uuid": "ddaf7a8f-a30c-4891-b73a-d6167b75811e",
+        "degree": 1,
+        "name": "Windows 2008 R2 Datacenter - Hyper-V (K NR SR)",
+        "code": "systemovy_sw_2"
+      },
+      {
+        "uuid": "46ecd9ee-5eac-46e1-9651-7f8b89f7f182",
+        "degree": 1,
+        "name": "MS SQL Server2008 R2 Enterprise Edition",
+        "code": "systemovy_sw_22"
+      },
+      {
+        "uuid": "047dc5f4-5b5b-4349-8d42-c0f388d81af2",
+        "degree": 1,
+        "name": "Exchange 2010 Standard (K NR SR)",
+        "code": "systemovy_sw_10"
+      },
+      {
+        "uuid": "f5f5026c-73e0-4803-b457-bd58001f9a3e",
+        "degree": 1,
+        "name": "Oracle Linux 6.5 (DCN)",
+        "code": "systemovy_sw_25"
+      },
+      {
+        "uuid": "1379828d-7ead-4a39-9893-dca7cc693dc2",
+        "degree": 1,
+        "name": "Microsoft SQL Server 2008 R2 (KNS SR)",
+        "code": "systemovy_sw_33"
+      },
+      {
+        "uuid": "34f98959-34ec-41e2-8070-a1a9df1cb8f2",
+        "degree": 1,
+        "name": "Windows Server 2016 Datacenter (KNS SR)",
+        "code": "systemovy_sw_34"
+      },
+      {
+        "uuid": "4a78174f-c28a-4df6-b05e-e360c1368944",
+        "degree": 1,
+        "name": "Windows Server 2012 Standard (KNS SR)",
+        "code": "systemovy_sw_35"
+      },
+      {
+        "uuid": "ca183e02-750e-46c6-bf3c-313240d40b96",
+        "degree": 1,
+        "name": "CentOS 7 (KNS SR)",
+        "code": "systemovy_sw_37"
+      },
+      {
+        "uuid": "f833642e-8a14-44ca-9210-519b990a4ae9",
+        "degree": 1,
+        "name": "SQL 2008 R2 Enterprise (K NR SR)",
+        "code": "systemovy_sw_4"
+      },
+      {
+        "uuid": "d2714f19-daa8-45c8-a0e4-0640123b5218",
+        "degree": 1,
+        "name": "SQL 2008 R2 Standard",
+        "code": "systemovy_sw_5"
+      },
+      {
+        "uuid": "d59858a6-2a80-460b-beee-aed46d99ccc3",
+        "degree": 1,
+        "name": "Windows 2012 R2 Enterprise (K NR SR)",
+        "code": "systemovy_sw_7"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "9dfcdbcd-86a9-40ce-be25-461902a76fdd",
+        "degree": 4,
+        "name": "Vmware ESXi (KNS SR)",
+        "code": "platforma_60"
+      },
+      {
+        "uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+        "degree": 4,
+        "name": "SQL 2008 R2 - databázová platforma (K NR SR)",
+        "code": "platforma_8"
+      },
+      {
+        "uuid": "17d8cb8b-cd2c-49db-bb5a-eacadd5edfb2",
+        "degree": 3,
+        "name": "AOTS - ECM platforma (K NR SR)",
+        "code": "platforma_10"
+      },
+      {
+        "uuid": "30f0db18-db7d-4edf-a829-1103b64d214b",
+        "degree": 2,
+        "name": "Virtualizačná platforma VMware (DCN)",
+        "code": "platforma_27"
+      },
+      {
+        "uuid": "85add632-015b-430f-99f4-9ba219b42a19",
+        "degree": 2,
+        "name": "Exchange 2010 - mailová platforma (K NR SR)",
+        "code": "platforma_19"
+      },
+      {
+        "uuid": "14f2bad0-6a34-44a3-95c3-ca6b1309c83d",
+        "degree": 1,
+        "name": "SRS - ECM platforma (K NR SR)",
+        "code": "platforma_11"
+      },
+      {
+        "uuid": "2342194a-78bd-4f4a-9cb3-92b394adf4c4",
+        "degree": 1,
+        "name": "Microsoft Hyper-V 2012 R2 - Virtuálna platforma (K NR SR)",
+        "code": "platforma_9"
+      },
+      {
+        "uuid": "2b89b0ec-0058-445c-bdeb-7de012c91fdc",
+        "degree": 1,
+        "name": "SSLP - ECM platforma (K NR SR)",
+        "code": "platforma_7"
+      },
+      {
+        "uuid": "3334bc06-daa4-47da-84e2-fda262fabb7b",
+        "degree": 1,
+        "name": "NTlib - ECM platforma",
+        "code": "platforma_17"
+      },
+      {
+        "uuid": "47ef4545-f7d3-425d-b316-b81c9784408a",
+        "degree": 1,
+        "name": "Sharepoint portal server 2007 - portálová platforma (K NR SR)",
+        "code": "platforma_20"
+      },
+      {
+        "uuid": "4af31125-c8e2-4a6b-a4e4-3cbff276e8e0",
+        "degree": 1,
+        "name": "Databázová platforma Oracle (DCN)",
+        "code": "platforma_26"
+      },
+      {
+        "uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+        "degree": 1,
+        "name": "Microsoft Hyper-V 2008 R2- Virtuálna platforma (K NR SR)",
+        "code": "platforma_5"
+      },
+      {
+        "uuid": "6e7784ab-b8c4-4ffa-803d-f664c4d888d3",
+        "degree": 1,
+        "name": "Databázová platforma SQL (DCN)",
+        "code": "platforma_30"
+      },
+      {
+        "uuid": "6f3ce0ee-8af7-40a4-829b-a4c3ed5768d9",
+        "degree": 1,
+        "name": "Oracle - databázová plaforma (K NR SR)",
+        "code": "platforma_15"
+      },
+      {
+        "uuid": "8b40c725-63cc-4c3d-86e8-4c418d00a390",
+        "degree": 1,
+        "name": "Registratúra - ECM platforma (K NR SR)",
+        "code": "platforma_12"
+      },
+      {
+        "uuid": "98f1797d-d966-4341-ac18-929e7022422b",
+        "degree": 1,
+        "name": "Systémová  platforma Linux (DCN)",
+        "code": "platforma_34"
+      },
+      {
+        "uuid": "c9fe3eab-d307-4afd-9188-7ef4d5a2628d",
+        "degree": 1,
+        "name": "Horec - ECM platforma (K NR SR)",
+        "code": "platforma_13"
+      },
+      {
+        "uuid": "eedb532a-8395-4141-b7a5-b0e6e4bc5b1d",
+        "degree": 1,
+        "name": "Kredit - ECM platforma (K NR SR)",
+        "code": "platforma_16"
+      }
+    ],
+    "islands": {
+      "total_nodes": 83,
+      "total_islands": 55,
+      "singleton_islands": 47,
+      "multi_islands": [
+        {
+          "size_total": 13,
+          "size_source": 6,
+          "size_target": 7,
+          "fraction_total": 0.1566265060240964,
+          "top_source_uuid": "6863b508-1f91-4f22-84ca-874bea5ec4a2",
+          "top_source_degree": 4,
+          "top_target_uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 6,
+          "size_source": 2,
+          "size_target": 4,
+          "fraction_total": 0.07228915662650602,
+          "top_source_uuid": "f11c9fa9-5c10-43dc-8833-14c15e130e09",
+          "top_source_degree": 4,
+          "top_target_uuid": "85add632-015b-430f-99f4-9ba219b42a19",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 5,
+          "size_source": 4,
+          "size_target": 1,
+          "fraction_total": 0.060240963855421686,
+          "top_source_uuid": "1379828d-7ead-4a39-9893-dca7cc693dc2",
+          "top_source_degree": 1,
+          "top_target_uuid": "9dfcdbcd-86a9-40ce-be25-461902a76fdd",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 4,
+          "size_source": 2,
+          "size_target": 2,
+          "fraction_total": 0.04819277108433735,
+          "top_source_uuid": "33b5207d-8be8-4f6a-aeec-31e48c55756f",
+          "top_source_degree": 2,
+          "top_target_uuid": "30f0db18-db7d-4edf-a829-1103b64d214b",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.024096385542168676,
+          "top_source_uuid": "782cc968-ae29-4aaf-9cc8-71eca7a191c7",
+          "top_source_degree": 1,
+          "top_target_uuid": "2342194a-78bd-4f4a-9cb3-92b394adf4c4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.024096385542168676,
+          "top_source_uuid": "46ecd9ee-5eac-46e1-9651-7f8b89f7f182",
+          "top_source_degree": 1,
+          "top_target_uuid": "6e7784ab-b8c4-4ffa-803d-f664c4d888d3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.024096385542168676,
+          "top_source_uuid": "f5f5026c-73e0-4803-b457-bd58001f9a3e",
+          "top_source_degree": 1,
+          "top_target_uuid": "98f1797d-d966-4341-ac18-929e7022422b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.024096385542168676,
+          "top_source_uuid": "ddaf7a8f-a30c-4891-b73a-d6167b75811e",
+          "top_source_degree": 1,
+          "top_target_uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 30,
+        "total_islands": 20,
+        "singleton_islands": 16,
+        "multi_islands": [
+          {
+            "size": 6,
+            "fraction": 0.2,
+            "size_total": 13,
+            "top_uuid": "6863b508-1f91-4f22-84ca-874bea5ec4a2",
+            "top_degree": 4
+          },
+          {
+            "size": 4,
+            "fraction": 0.13333333333333333,
+            "size_total": 5,
+            "top_uuid": "1379828d-7ead-4a39-9893-dca7cc693dc2",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.06666666666666667,
+            "size_total": 6,
+            "top_uuid": "f11c9fa9-5c10-43dc-8833-14c15e130e09",
+            "top_degree": 4
+          },
+          {
+            "size": 2,
+            "fraction": 0.06666666666666667,
+            "size_total": 4,
+            "top_uuid": "33b5207d-8be8-4f6a-aeec-31e48c55756f",
+            "top_degree": 2
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 53,
+        "total_islands": 43,
+        "singleton_islands": 40,
+        "multi_islands": [
+          {
+            "size": 7,
+            "fraction": 0.1320754716981132,
+            "size_total": 13,
+            "top_uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+            "top_degree": 4
+          },
+          {
+            "size": 4,
+            "fraction": 0.07547169811320754,
+            "size_total": 6,
+            "top_uuid": "85add632-015b-430f-99f4-9ba219b42a19",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.03773584905660377,
+            "size_total": 4,
+            "top_uuid": "30f0db18-db7d-4edf-a829-1103b64d214b",
+            "top_degree": 2
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

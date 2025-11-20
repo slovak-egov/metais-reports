@@ -1,0 +1,116 @@
+{
+  "relation_name": "License_usedby_ISVS",
+  "name": "Licencia je používana ISVS",
+  "description": "Licencia je používana ISVS",
+  "engDescription": "License used by ISVS",
+  "type": "system",
+  "source_type": "License",
+  "source_name": "Licencia",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 3,
+    "unique_pairs": 3,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 353,
+    "target_total": 6667,
+    "source_connected": 3,
+    "target_connected": 1,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 3,
+      "max": 3,
+      "avg": 3.0,
+      "median": 3,
+      "p90": 3,
+      "p99": 3
+    },
+    "top_source": [
+      {
+        "uuid": "e90a9407-aae4-4ca9-a5d0-4e89501a5020",
+        "degree": 1,
+        "name": "e90a9407-aae4-4ca9-a5d0-4e89501a5020",
+        "code": "licencia_354"
+      },
+      {
+        "uuid": "76ba337e-dfcb-49fd-a7b9-76e603154897",
+        "degree": 1,
+        "name": "76ba337e-dfcb-49fd-a7b9-76e603154897",
+        "code": "licencia_356"
+      },
+      {
+        "uuid": "e1dbda16-332c-43bb-a011-e85572675b50",
+        "degree": 1,
+        "name": "e1dbda16-332c-43bb-a011-e85572675b50",
+        "code": "licencia_357"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "b0c68913-e3fc-4741-8eaf-95bd24f4aa5a",
+        "degree": 3,
+        "name": "Integrácia na CSRU",
+        "code": "isvs_10519"
+      }
+    ],
+    "islands": {
+      "total_nodes": 7020,
+      "total_islands": 7017,
+      "singleton_islands": 7016,
+      "multi_islands": [
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005698005698005698,
+          "top_source_uuid": "e1dbda16-332c-43bb-a011-e85572675b50",
+          "top_source_degree": 1,
+          "top_target_uuid": "b0c68913-e3fc-4741-8eaf-95bd24f4aa5a",
+          "top_target_degree": 3
+        }
+      ],
+      "source": {
+        "total_nodes": 353,
+        "total_islands": 351,
+        "singleton_islands": 350,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.0084985835694051,
+            "size_total": 4,
+            "top_uuid": "e1dbda16-332c-43bb-a011-e85572675b50",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 6667,
+        "total_islands": 6667,
+        "singleton_islands": 6667,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

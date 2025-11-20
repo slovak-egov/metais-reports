@@ -1,0 +1,243 @@
+{
+  "relation_name": "MiestoPrevadzky_umiestnuje_TP_VypoctovyZdroj",
+  "name": "Miesto prevádzky umiestňuje výpočtový zdroj",
+  "description": "Výpočtový zdroj je umiestnený v danej lokalite.",
+  "engDescription": "Computing resource is located in particular location.",
+  "type": "application",
+  "source_type": "MiestoPrevadzky",
+  "source_name": "Miesto prevádzky",
+  "target_type": "TP_VypoctovyZdroj",
+  "target_name": "Výpočtový zdroj",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 11,
+    "unique_pairs": 11,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 190,
+    "target_total": 32,
+    "source_connected": 11,
+    "target_connected": 5,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 7,
+      "avg": 2.2,
+      "median": 1,
+      "p90": 7,
+      "p99": 7
+    },
+    "top_source": [
+      {
+        "uuid": "00380b0a-fe08-4986-b576-6cfaaddab6bd",
+        "degree": 1,
+        "name": "KUFS Bratislava",
+        "code": "mp_37"
+      },
+      {
+        "uuid": "921614e9-4942-4df9-a1b0-657216238a77",
+        "degree": 1,
+        "name": "KUFS Košice",
+        "code": "mp_36"
+      },
+      {
+        "uuid": "a55b1ac7-bfe3-4d46-92b0-3d44b3b34fe6",
+        "degree": 1,
+        "name": "PCÚ Veľké Slemence",
+        "code": "mp_35"
+      },
+      {
+        "uuid": "c6394404-e3d7-40d7-b91e-57901ea14aad",
+        "degree": 1,
+        "name": "SCÚ Čierna nad Tisou",
+        "code": "mp_34"
+      },
+      {
+        "uuid": "4d93a9a3-8eea-40fb-8abb-b1d9001e89f9",
+        "degree": 1,
+        "name": "Hraničný prechod Ubľa",
+        "code": "mp_33"
+      },
+      {
+        "uuid": "84dffb68-3915-4b63-91db-8f168ea7dfcf",
+        "degree": 1,
+        "name": "Hraničný prechod Vyšné Nemecké",
+        "code": "mp_32"
+      },
+      {
+        "uuid": "b38969f2-5c7e-4a03-971d-912ff8a0dcb8",
+        "degree": 1,
+        "name": "KUFS Prešov",
+        "code": "mp_31"
+      },
+      {
+        "uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+        "degree": 1,
+        "name": "DataCentrum (Bratislava, Cintorínska)",
+        "code": "mp_18"
+      },
+      {
+        "uuid": "8164308a-7b71-4235-b248-0d0796e5ca31",
+        "degree": 1,
+        "name": "DC KNS SR",
+        "code": "mp_25"
+      },
+      {
+        "uuid": "ffefaa60-bf75-4d20-bb05-1a7354a89144",
+        "degree": 1,
+        "name": "CÚ Prešov",
+        "code": "mp_30"
+      },
+      {
+        "uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+        "degree": 1,
+        "name": "DC Nová FRSR (DCN)",
+        "code": "mp_16"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "21b779e2-4a49-485b-bd17-69c4ab7143b2",
+        "degree": 7,
+        "name": "Talon server",
+        "code": "tp_vypoctovy_zdroj_33"
+      },
+      {
+        "uuid": "4438fd02-0ae2-45df-814b-b4a017b70da2",
+        "degree": 1,
+        "name": "ISVS (Produkcia)",
+        "code": "tp_vypoctovy_zdroj_32"
+      },
+      {
+        "uuid": "6890755b-8eda-4836-ac12-f17b988e0fbd",
+        "degree": 1,
+        "name": "Server HP DL 320 G6 (KNS SR)",
+        "code": "tp_vypoctovy_zdroj_45"
+      },
+      {
+        "uuid": "6f186948-8968-4d76-8951-014e46f0d1c3",
+        "degree": 1,
+        "name": "Talon Kom/Ftp server",
+        "code": "tp_vypoctovy_zdroj_34"
+      },
+      {
+        "uuid": "98ecda4b-571a-40e9-beb1-cd7cb6973bf9",
+        "degree": 1,
+        "name": "IBM Power 795 (DCN)",
+        "code": "tp_vypoctovy_zdroj_39"
+      }
+    ],
+    "islands": {
+      "total_nodes": 222,
+      "total_islands": 211,
+      "singleton_islands": 206,
+      "multi_islands": [
+        {
+          "size_total": 8,
+          "size_source": 7,
+          "size_target": 1,
+          "fraction_total": 0.036036036036036036,
+          "top_source_uuid": "b38969f2-5c7e-4a03-971d-912ff8a0dcb8",
+          "top_source_degree": 1,
+          "top_target_uuid": "21b779e2-4a49-485b-bd17-69c4ab7143b2",
+          "top_target_degree": 7
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.009009009009009009,
+          "top_source_uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+          "top_source_degree": 1,
+          "top_target_uuid": "98ecda4b-571a-40e9-beb1-cd7cb6973bf9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.009009009009009009,
+          "top_source_uuid": "ffefaa60-bf75-4d20-bb05-1a7354a89144",
+          "top_source_degree": 1,
+          "top_target_uuid": "6f186948-8968-4d76-8951-014e46f0d1c3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.009009009009009009,
+          "top_source_uuid": "8164308a-7b71-4235-b248-0d0796e5ca31",
+          "top_source_degree": 1,
+          "top_target_uuid": "6890755b-8eda-4836-ac12-f17b988e0fbd",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.009009009009009009,
+          "top_source_uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+          "top_source_degree": 1,
+          "top_target_uuid": "4438fd02-0ae2-45df-814b-b4a017b70da2",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 190,
+        "total_islands": 184,
+        "singleton_islands": 183,
+        "multi_islands": [
+          {
+            "size": 7,
+            "fraction": 0.03684210526315789,
+            "size_total": 8,
+            "top_uuid": "b38969f2-5c7e-4a03-971d-912ff8a0dcb8",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 32,
+        "total_islands": 32,
+        "singleton_islands": 32,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

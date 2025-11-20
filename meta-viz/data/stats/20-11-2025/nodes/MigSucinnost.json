@@ -1,0 +1,62 @@
+{
+  "type": "MigSucinnost",
+  "count": 0,
+  "attributes": [
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "relation_name": "MiestoPrevadzky_umiestnuje_TP_Ulozisko",
+  "name": "Miesto prevádzky umiestňuje úložisko",
+  "description": "Úložisko je umiestnený v danej lokalite.",
+  "engDescription": "Storage is located in particular location.",
+  "type": "application",
+  "source_type": "MiestoPrevadzky",
+  "source_name": "Miesto prevádzky",
+  "target_type": "TP_Ulozisko",
+  "target_name": "Úložisko",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 4,
+    "unique_pairs": 4,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 190,
+    "target_total": 11,
+    "source_connected": 1,
+    "target_connected": 4,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 4,
+      "max": 4,
+      "avg": 4.0,
+      "median": 4,
+      "p90": 4,
+      "p99": 4
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+        "degree": 4,
+        "name": "DC Nová FRSR (DCN)",
+        "code": "mp_16"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "37f78181-d2ef-4b18-b25c-412a24b3eeb0",
+        "degree": 1,
+        "name": "IBM DS8000 (DCN)",
+        "code": "tp_ulozisko_10"
+      },
+      {
+        "uuid": "42824f66-f200-4023-9d55-8d447e9d26ac",
+        "degree": 1,
+        "name": "IBM Storwize (DCN)",
+        "code": "tp_ulozisko_9"
+      },
+      {
+        "uuid": "55e80129-6516-4cb7-9cc2-54dc21684d8d",
+        "degree": 1,
+        "name": "IBM EXP3000 (DCN)",
+        "code": "tp_ulozisko_11"
+      },
+      {
+        "uuid": "99d584e2-f69c-4262-97b1-3ca560844f63",
+        "degree": 1,
+        "name": "Storwize V7000 Unified (DCN)",
+        "code": "tp_ulozisko_12"
+      }
+    ],
+    "islands": {
+      "total_nodes": 201,
+      "total_islands": 197,
+      "singleton_islands": 196,
+      "multi_islands": [
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.024875621890547265,
+          "top_source_uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+          "top_source_degree": 4,
+          "top_target_uuid": "37f78181-d2ef-4b18-b25c-412a24b3eeb0",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 190,
+        "total_islands": 190,
+        "singleton_islands": 190,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 11,
+        "total_islands": 8,
+        "singleton_islands": 7,
+        "multi_islands": [
+          {
+            "size": 4,
+            "fraction": 0.36363636363636365,
+            "size_total": 5,
+            "top_uuid": "37f78181-d2ef-4b18-b25c-412a24b3eeb0",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

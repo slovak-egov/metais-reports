@@ -1,0 +1,184 @@
+{
+  "relation_name": "KS_ma_verziu_KS",
+  "name": "Koncová služba má verziu koncovej služby",
+  "description": "Koncová služba má verziu koncovej služby.",
+  "engDescription": "eGov service has version of target service.",
+  "type": "system",
+  "source_type": "KS",
+  "source_name": "Koncová služba",
+  "target_type": "KS",
+  "target_name": "Koncová služba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 5,
+    "unique_pairs": 5,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 9030,
+    "target_total": 9030,
+    "source_connected": 5,
+    "target_connected": 5,
+    "cardinality": "one-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "46b7b6aa-7b25-4739-ae64-5459fc83e708",
+        "degree": 1,
+        "name": "Informačné a vzdelávacie služby Štátnej plavebnej správy",
+        "code": "sluzba_egov_7438"
+      },
+      {
+        "uuid": "7542b1f6-b58e-436c-bd73-8a0b71073507",
+        "degree": 1,
+        "name": "Získavanie produktov a dokumentov Úradu priemyselného vlastníctva",
+        "code": "sluzba_egov_977"
+      },
+      {
+        "uuid": "b2d73c24-ab01-4419-b5d4-40bc4b23f7d6",
+        "degree": 1,
+        "name": "Ročné zúčtovanie zdravotného poistenia",
+        "code": "sluzba_egov_7614"
+      },
+      {
+        "uuid": "c6a8c3a2-19c3-48c0-8bde-4bf091e96f1e",
+        "degree": 1,
+        "name": "Objednávanie kalibrácie etalónov, meradiel, overovania a skúšky určených meradiel, úradného merania, certifikovania meradla a certifikačných referenčných materiálov",
+        "code": "sluzba_egov_7311"
+      },
+      {
+        "uuid": "f2f0cc28-fab2-4729-bb43-48b850840b86",
+        "degree": 1,
+        "name": "Poskytovanie výpisu z verejnej časti živnostenského registra",
+        "code": "sluzba_egov_1098"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "1db18eaf-e422-40b7-a3d6-52f00778ad6f",
+        "degree": 1,
+        "name": "Informačné a vzdelávacie služby Štátnej plavebnej správy",
+        "code": "sluzba_egov_7438_v1.0"
+      },
+      {
+        "uuid": "e07c67b3-67a7-48ab-a0cc-5fcf74d121ed",
+        "degree": 1,
+        "name": "Publikovanie informácií na webovom sídle Úradu priemyselného vlastníctva Slovenskej republiky",
+        "code": "sluzba_egov_977_v1.0"
+      },
+      {
+        "uuid": "c98d52b6-8545-446b-9c07-c5326a991cbf",
+        "degree": 1,
+        "name": "Ročné zúčtovanie zdravotného poistenia",
+        "code": "sluzba_egov_7614_v1.0"
+      },
+      {
+        "uuid": "6c31d8c2-1faf-4b9b-9bc5-585d738b40e6",
+        "degree": 1,
+        "name": "Objednávanie služieb Slovenskej legálnej metrológie",
+        "code": "sluzba_egov_7311_v1.0"
+      },
+      {
+        "uuid": "8e4cfbb5-be5a-46d9-9514-906252611df7",
+        "degree": 1,
+        "name": "Poskytovanie výpisu zo živnostenského registra",
+        "code": "sluzba_egov_1098_v1.0"
+      }
+    ],
+    "islands": {
+      "total_nodes": 18060,
+      "total_islands": 18055,
+      "singleton_islands": 18050,
+      "multi_islands": [
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011074197120708749,
+          "top_source_uuid": "c6a8c3a2-19c3-48c0-8bde-4bf091e96f1e",
+          "top_source_degree": 1,
+          "top_target_uuid": "6c31d8c2-1faf-4b9b-9bc5-585d738b40e6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011074197120708749,
+          "top_source_uuid": "7542b1f6-b58e-436c-bd73-8a0b71073507",
+          "top_source_degree": 1,
+          "top_target_uuid": "e07c67b3-67a7-48ab-a0cc-5fcf74d121ed",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011074197120708749,
+          "top_source_uuid": "46b7b6aa-7b25-4739-ae64-5459fc83e708",
+          "top_source_degree": 1,
+          "top_target_uuid": "1db18eaf-e422-40b7-a3d6-52f00778ad6f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011074197120708749,
+          "top_source_uuid": "f2f0cc28-fab2-4729-bb43-48b850840b86",
+          "top_source_degree": 1,
+          "top_target_uuid": "8e4cfbb5-be5a-46d9-9514-906252611df7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00011074197120708749,
+          "top_source_uuid": "b2d73c24-ab01-4419-b5d4-40bc4b23f7d6",
+          "top_source_degree": 1,
+          "top_target_uuid": "c98d52b6-8545-446b-9c07-c5326a991cbf",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 9030,
+        "total_islands": 9030,
+        "singleton_islands": 9030,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 9030,
+        "total_islands": 9030,
+        "singleton_islands": 9030,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

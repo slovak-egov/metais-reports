@@ -1,0 +1,163 @@
+{
+  "relation_name": "PO_BELONGS_TO_CI_GROUP",
+  "name": "Priradene CI Group k PO",
+  "description": "Priradene skupiny CI k PO.",
+  "engDescription": "Assignment group CI to PO.",
+  "type": "system",
+  "source_type": "PO",
+  "source_name": "Povinná osoba",
+  "target_type": "CI_GROUP",
+  "target_name": "CI_GROUP",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 7,
+    "unique_pairs": 7,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 5792,
+    "target_total": 10,
+    "source_connected": 2,
+    "target_connected": 7,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 2,
+      "max": 5,
+      "avg": 3.5,
+      "median": 3.5,
+      "p90": 5,
+      "p99": 5
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+        "degree": 5,
+        "name": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
+        "code": "50349287"
+      },
+      {
+        "uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+        "degree": 2,
+        "name": "Ministerstvo financií Slovenskej republiky",
+        "code": "00151742"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "4b194a02-a44a-4c99-8d81-78b0ca221d2a",
+        "degree": 1,
+        "name": "BES COM 2",
+        "code": null
+      },
+      {
+        "uuid": "64282001-3c8c-443f-9f2d-bd69729cf3d8",
+        "degree": 1,
+        "name": "BES COM",
+        "code": null
+      },
+      {
+        "uuid": "65ca91ad-c9a3-4ed6-a923-d0862698fd3a",
+        "degree": 1,
+        "name": "test",
+        "code": null
+      },
+      {
+        "uuid": "760724f7-e89e-483e-b1f9-c4078232e2ed",
+        "degree": 1,
+        "name": "BES COM MIRRI",
+        "code": null
+      },
+      {
+        "uuid": "b080d2a1-6c00-4257-94a4-068bfc2d2d4e",
+        "degree": 1,
+        "name": "Temporary model BES COM [LHAM]",
+        "code": null
+      },
+      {
+        "uuid": "d5b09e5c-5df2-4f85-a6f6-01750e2368a3",
+        "degree": 1,
+        "name": "Empty model with total view",
+        "code": null
+      },
+      {
+        "uuid": "dbeec571-e4f7-42d1-9476-87235ad24c4e",
+        "degree": 1,
+        "name": "MIRRI (vseobecny-user-VKO)",
+        "code": null
+      }
+    ],
+    "islands": {
+      "total_nodes": 5802,
+      "total_islands": 5795,
+      "singleton_islands": 5793,
+      "multi_islands": [
+        {
+          "size_total": 6,
+          "size_source": 1,
+          "size_target": 5,
+          "fraction_total": 0.001034126163391934,
+          "top_source_uuid": "a26e801d-c331-408a-bb69-4ec22a6c009a",
+          "top_source_degree": 5,
+          "top_target_uuid": "b080d2a1-6c00-4257-94a4-068bfc2d2d4e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.000517063081695967,
+          "top_source_uuid": "d5e4b6f4-f103-44f1-b588-9db280e7d850",
+          "top_source_degree": 2,
+          "top_target_uuid": "65ca91ad-c9a3-4ed6-a923-d0862698fd3a",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 5792,
+        "total_islands": 5792,
+        "singleton_islands": 5792,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 10,
+        "total_islands": 5,
+        "singleton_islands": 3,
+        "multi_islands": [
+          {
+            "size": 5,
+            "fraction": 0.5,
+            "size_total": 6,
+            "top_uuid": "b080d2a1-6c00-4257-94a4-068bfc2d2d4e",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.2,
+            "size_total": 3,
+            "top_uuid": "65ca91ad-c9a3-4ed6-a923-d0862698fd3a",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

@@ -1,0 +1,118 @@
+{
+  "type": "LicenseVendor",
+  "count": 5,
+  "attributes": [
+    {
+      "name": "uuid",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "type",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.owner",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "meta.state",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "meta.createdBy",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 40.0
+    },
+    {
+      "name": "meta.createdAt",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedBy",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 40.0
+    },
+    {
+      "name": "meta.lastModifiedAt",
+      "count": 5,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    }
+  ]
+}

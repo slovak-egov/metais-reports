@@ -1,0 +1,720 @@
+{
+  "relation_name": "AS_realizuje_AS",
+  "name": "Aplikačná služba realizuje aplikačnú službu",
+  "description": "Aplikačná služba realizuje aplikačnú službu.",
+  "engDescription": "Application service realises application service",
+  "type": "application",
+  "source_type": "AS",
+  "source_name": "Aplikačná služba",
+  "target_type": "AS",
+  "target_name": "Aplikačná služba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 43,
+    "unique_pairs": 43,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 17703,
+    "target_total": 17703,
+    "source_connected": 32,
+    "target_connected": 32,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 8,
+      "avg": 1.34375,
+      "median": 1.0,
+      "p90": 2,
+      "p99": 8
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 11,
+      "avg": 1.34375,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 11
+    },
+    "top_source": [
+      {
+        "uuid": "df5f3769-b1b2-4769-bff1-52d4785d0250",
+        "degree": 8,
+        "name": "Zápis záznamu o vyšetrení / Zobrazovacie vyšetrenie",
+        "code": "sluzba_is_34133"
+      },
+      {
+        "uuid": "7ac09c39-e4b0-42f6-85d8-b8adbb1317f1",
+        "degree": 3,
+        "name": "Zápis záznamu o vyšetrení / Lekárska prepúšťacia správa",
+        "code": "sluzba_is_34134"
+      },
+      {
+        "uuid": "28226444-4e3b-4c67-8ed9-49ec0564f6a9",
+        "degree": 2,
+        "name": "Zápis a aktualizácia údajov z dátového zdroja",
+        "code": "sluzba_is_48063"
+      },
+      {
+        "uuid": "4e0ae3fb-df65-421f-9b5b-1088e9324f28",
+        "degree": 2,
+        "name": "Poskytnutie konsolidovaných referenčných údajov z IS CSRÚ na synchronizáciu",
+        "code": "sluzba_is_49253"
+      },
+      {
+        "uuid": "0adb306f-0c7a-438b-a079-6f63d3bb8c9c",
+        "degree": 1,
+        "name": "Snímanie polohy vozidiel MHD na vybraných križovatkách",
+        "code": "as_60301"
+      },
+      {
+        "uuid": "0e8da3d0-a8b5-4bda-b2f6-f737fcd57270",
+        "degree": 1,
+        "name": "Zabezpečenie zberu údajov",
+        "code": "as_59607"
+      },
+      {
+        "uuid": "0ed8c564-1dc4-4521-ace2-e8f041dace0e",
+        "degree": 1,
+        "name": "Sprostredkovanie prihlásenia cez ÚPVS",
+        "code": "as_60688"
+      },
+      {
+        "uuid": "15626a92-b758-473e-b3bd-77fe2078fca1",
+        "degree": 1,
+        "name": "Získanie detailu identity",
+        "code": "as_60689"
+      },
+      {
+        "uuid": "2151864f-4914-43c5-b5bf-dcdd7c2db554",
+        "degree": 1,
+        "name": "Riadenie pripájania dátových zdrojov",
+        "code": "as_59608"
+      },
+      {
+        "uuid": "28bfdee0-8566-4d9b-babf-3640f7791dd0",
+        "degree": 1,
+        "name": "Ochrana citlivých údajov",
+        "code": "as_59614"
+      },
+      {
+        "uuid": "2afe8fe5-472c-4eb0-8a77-51404430d4c5",
+        "degree": 1,
+        "name": "Spracovanie žiadostí prostriedkov ochrany rastlín",
+        "code": "as_54030"
+      },
+      {
+        "uuid": "39bf6d30-3340-4807-b833-d9388b06ada5",
+        "degree": 1,
+        "name": "Kontrola kvality a duplicít",
+        "code": "as_59617"
+      },
+      {
+        "uuid": "3c833943-5175-4bf1-8cd0-b5d57b422fa1",
+        "degree": 1,
+        "name": "Konzumácia údajov z CSRÚ",
+        "code": "as_60069"
+      },
+      {
+        "uuid": "452829e6-628e-4aff-bbbf-e07cc1bf2265",
+        "degree": 1,
+        "name": "Integrácia IS Digiškola na  IS Elektronických služieb vzdelávacieho systému regionálneho školstva",
+        "code": "as_57695"
+      },
+      {
+        "uuid": "55cc1b55-4db5-4f89-ac63-a4df09b6d606",
+        "degree": 1,
+        "name": "Centrálny dátový sklad",
+        "code": "as_59622"
+      },
+      {
+        "uuid": "62cb2f63-f9c3-48fe-b5f5-6bb88d7125cd",
+        "degree": 1,
+        "name": "Aplikovanie rôznych politík na ochranu citlivých údajov",
+        "code": "as_59621"
+      },
+      {
+        "uuid": "6930bee9-38f4-4a71-971f-762469546788",
+        "degree": 1,
+        "name": "Vystavenie elektronického receptu lekárom",
+        "code": "sluzba_is_33236"
+      },
+      {
+        "uuid": "6a5ae8bc-3f8c-4017-bcff-34215b9a0f1b",
+        "degree": 1,
+        "name": "Vyhotovovanie kvalifikovaných elektronických časových pečiatok",
+        "code": "sluzba_is_1683"
+      },
+      {
+        "uuid": "707cbc01-169c-4cff-af9f-05b1d696b485",
+        "degree": 1,
+        "name": "Integrácia na Centrálny register evidencie publikačnej činnosti (CREPČ)",
+        "code": "as_57637"
+      },
+      {
+        "uuid": "72f7345f-7eb4-4cd2-839d-7d2e5a8436cc",
+        "degree": 1,
+        "name": "Zabezpečenie verzionovania",
+        "code": "as_59618"
+      },
+      {
+        "uuid": "7545c1ef-a2ca-4e51-9395-92621c3ac9d3",
+        "degree": 1,
+        "name": "Integrácia na informačný systém Centrálny register študentov (CRŠ)",
+        "code": "as_57635"
+      },
+      {
+        "uuid": "84e05aac-2c5f-4a91-9004-6c332dec79bc",
+        "degree": 1,
+        "name": "Podanie žiadosti o registráciu v informačnom prostredí portálu finančnej správy",
+        "code": "sluzba_is_34293"
+      },
+      {
+        "uuid": "89d60491-fb49-441f-86bb-a9472c47e16d",
+        "degree": 1,
+        "name": "Anonymizácia a pseudonymizácia",
+        "code": "as_59616"
+      },
+      {
+        "uuid": "8c1c55dc-6f63-45d5-abaf-f44e5489f5cd",
+        "degree": 1,
+        "name": "Integrácia na informačný systém eKega",
+        "code": "as_57636"
+      },
+      {
+        "uuid": "951b898e-6f08-43e5-bd2e-2e3eaca5f6af",
+        "degree": 1,
+        "name": "Zabezpečenie zdieľania údajov medzi analytickými jednotkami",
+        "code": "as_59606"
+      },
+      {
+        "uuid": "9b0b8666-d514-45d8-b927-40dc6310fea3",
+        "degree": 1,
+        "name": "Centrálny dátový sklad",
+        "code": "as_59623"
+      },
+      {
+        "uuid": "a9f60816-e65f-438b-83bf-b6bc686f226c",
+        "degree": 1,
+        "name": "Poskytnutie údajov pre data.gov.sk",
+        "code": "as_60068"
+      },
+      {
+        "uuid": "be3bba8c-7304-49cb-820d-dc1a3ab1691a",
+        "degree": 1,
+        "name": "Transformácia dát do potrebnej štruktúry a prepájanie údajov",
+        "code": "as_59613"
+      },
+      {
+        "uuid": "c9350538-08c7-4f77-add7-57cee27f4516",
+        "degree": 1,
+        "name": "Čistenie dát a dátová integrácia",
+        "code": "as_59611"
+      },
+      {
+        "uuid": "cb398a90-304e-4271-a773-b0f9a72200b1",
+        "degree": 1,
+        "name": "Integrácia na informačný systém EDUZOZNAM",
+        "code": "as_57282"
+      },
+      {
+        "uuid": "ccb353b4-12f7-4921-b8a4-22552e841f50",
+        "degree": 1,
+        "name": "Prezentácia kontrol štátneho dozoru",
+        "code": "as_54705"
+      },
+      {
+        "uuid": "d9dcc232-9332-4c05-b3e6-4f720f8909a3",
+        "degree": 1,
+        "name": "Integrácia IS Elektronických služieb vzdelávacieho systému regionálneho školstva na Rezortný Identity Access Management (RIAM)",
+        "code": "as_57574"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "d530c6d5-43ff-4aac-a8c5-66fbe0f56ecb",
+        "degree": 11,
+        "name": "Manažment (Riadenie) analytickej vrstvy",
+        "code": "as_59605"
+      },
+      {
+        "uuid": "94fc84d9-92e8-4691-a0e6-80ec24428853",
+        "degree": 2,
+        "name": "Zápis vyšetrenia do NCZI",
+        "code": "as_58580"
+      },
+      {
+        "uuid": "3f983a44-ce2e-4366-ad8d-798e4aa53b49",
+        "degree": 1,
+        "name": "Snímanie hustoty dopravy na vybraných križovatkách",
+        "code": "as_60300"
+      },
+      {
+        "uuid": "060e1621-9c4c-416c-acd1-b3c3dd429c2b",
+        "degree": 1,
+        "name": "Prihlásenie do elektronickej komunikačnej schránky",
+        "code": "sluzba_is_33998"
+      },
+      {
+        "uuid": "f85e9a46-c8ff-4a81-bc3b-8274d6520c7e",
+        "degree": 1,
+        "name": "Poskytnutie profilu identity v systéme Identity and Acces Management",
+        "code": "sluzba_is_163"
+      },
+      {
+        "uuid": "d09f14df-fda5-4d18-a5e0-338acf7b1cdc",
+        "degree": 1,
+        "name": "Poskytnutie údajov pre data.gov.sk",
+        "code": "as_60035"
+      },
+      {
+        "uuid": "c97969d7-b15e-43e2-a1cd-31553cc418fe",
+        "degree": 1,
+        "name": "Poskytnutie údajov pre data.gov.sk",
+        "code": "as_60036"
+      },
+      {
+        "uuid": "3c833943-5175-4bf1-8cd0-b5d57b422fa1",
+        "degree": 1,
+        "name": "Konzumácia údajov z CSRÚ",
+        "code": "as_60069"
+      },
+      {
+        "uuid": "4e0ae3fb-df65-421f-9b5b-1088e9324f28",
+        "degree": 1,
+        "name": "Poskytnutie konsolidovaných referenčných údajov z IS CSRÚ na synchronizáciu",
+        "code": "sluzba_is_49253"
+      },
+      {
+        "uuid": "3008d7c9-7956-424d-b5e2-ce6887ad2c49",
+        "degree": 1,
+        "name": "Integrácia IS Elektronických služieb vzdelávacieho systému regionálneho školstva na informačný systém Digiškola",
+        "code": "as_57575"
+      },
+      {
+        "uuid": "a704287d-8092-4a4d-b06d-7b1ff37d55ca",
+        "degree": 1,
+        "name": "Konzumácia údajov z CSRÚ",
+        "code": "as_60033"
+      },
+      {
+        "uuid": "939b6b34-c6e0-4a8d-9e01-c0841753ed83",
+        "degree": 1,
+        "name": "Konzumácia údajov z CSRÚ",
+        "code": "as_60034"
+      },
+      {
+        "uuid": "31d6fe58-538b-4819-90ce-db785738a04d",
+        "degree": 1,
+        "name": "Elektronický recept",
+        "code": "as_58577"
+      },
+      {
+        "uuid": "b16313df-cae1-4296-b5bd-bb7f84af22de",
+        "degree": 1,
+        "name": "Integračná služba NBÚ",
+        "code": "sluzba_is_48332"
+      },
+      {
+        "uuid": "e8a713c6-7cd6-4868-8a1a-6a53a631c94e",
+        "degree": 1,
+        "name": "Integrácia IS Centrálny register evidencie publikačnej činnosti na informačný systém Portál vysokých škôl",
+        "code": "as_57584"
+      },
+      {
+        "uuid": "4fa36462-3030-4fbb-ac48-9009508ef4f9",
+        "degree": 1,
+        "name": "Integrácia IS Centrálny register študentov vysokých škôl na informačný systém Portál vysokých škôl",
+        "code": "as_57578"
+      },
+      {
+        "uuid": "aa579ae5-1db2-42cd-98a0-5dfab491c824",
+        "degree": 1,
+        "name": "Zápis vyšetrenia do NCZI",
+        "code": "as_58581"
+      },
+      {
+        "uuid": "ab153f15-1f53-444f-9544-7a9e7a921107",
+        "degree": 1,
+        "name": "Zápis vyšetrenia do NCZI",
+        "code": "as_58584"
+      },
+      {
+        "uuid": "02180d97-e773-47f8-9ce8-26331080896a",
+        "degree": 1,
+        "name": "Prijatie žiadosti o registráciu v informačnom prostredí portálu finančnej správy",
+        "code": "as_54268"
+      },
+      {
+        "uuid": "11a93186-5aff-4a3f-b696-8ad6595ddfbd",
+        "degree": 1,
+        "name": "Poskytnutie integračného rozhrania pre informačný systém Portál vysokých škôl",
+        "code": "as_57639"
+      },
+      {
+        "uuid": "4ea50f25-8ea5-421f-a9c5-380b17a920e7",
+        "degree": 1,
+        "name": "Služby Dátovej vrstvy",
+        "code": "as_58569"
+      },
+      {
+        "uuid": "8b5c67bc-c76a-45eb-9f23-71fe0b31ed27",
+        "degree": 1,
+        "name": "Informovanie sa o registrovaných pesticídoch",
+        "code": "sluzba_is_485"
+      },
+      {
+        "uuid": "f36efa80-ab1e-4599-a6e1-d2c3558c3fba",
+        "degree": 1,
+        "name": "Integácia IS EDUZOZNAM na informačný systém Evidencia havárii v regionálnom školstve",
+        "code": "as_57582"
+      },
+      {
+        "uuid": "03411b3c-b8d8-4ac8-b82a-d5de6d3f6958",
+        "degree": 1,
+        "name": "Sprístupňovanie informácií na ForestPortáli",
+        "code": "as_54021"
+      },
+      {
+        "uuid": "cf449d80-d4f2-4992-a768-ece9a110145a",
+        "degree": 1,
+        "name": "Poskytovanie Identity Access Managemetu (IAM)",
+        "code": "sluzba_is_51475"
+      },
+      {
+        "uuid": "180c4342-e2c9-447e-9c1d-34e8b90322d8",
+        "degree": 1,
+        "name": "Zápis vyšetrenia do NCZI",
+        "code": "as_58037"
+      },
+      {
+        "uuid": "b1ab1a49-6ebd-4560-88c6-6308365e617b",
+        "degree": 1,
+        "name": "Zápis vyšetrenia do NCZI",
+        "code": "as_58574"
+      },
+      {
+        "uuid": "82368dfb-57fd-49a1-a0af-8809a01bd18c",
+        "degree": 1,
+        "name": "Zápis zobrazovacieho vyšetrenia do NZIS",
+        "code": "as_58575"
+      },
+      {
+        "uuid": "abfadd4d-c5d4-4c3e-950f-6357c9995e51",
+        "degree": 1,
+        "name": "Prepojenie WinADAM na eZdravie",
+        "code": "as_57888"
+      },
+      {
+        "uuid": "224e73c9-74d6-44d7-9e73-d9cd2550127b",
+        "degree": 1,
+        "name": "Zápis vyšetrenia do NCZI",
+        "code": "as_58579"
+      },
+      {
+        "uuid": "ca5113fb-6eef-4865-8251-8af485ab20a2",
+        "degree": 1,
+        "name": "Zápis vyšetrenia do NCZI",
+        "code": "as_58629"
+      },
+      {
+        "uuid": "08dc1c64-7ee1-47aa-a0a1-7efa1c826121",
+        "degree": 1,
+        "name": "Zápis zobrazovacieho vyšetrenia do NZIS",
+        "code": "as_58630"
+      }
+    ],
+    "islands": {
+      "total_nodes": 35406,
+      "total_islands": 35363,
+      "singleton_islands": 35342,
+      "multi_islands": [
+        {
+          "size_total": 12,
+          "size_source": 11,
+          "size_target": 1,
+          "fraction_total": 0.0003389256058295204,
+          "top_source_uuid": "951b898e-6f08-43e5-bd2e-2e3eaca5f6af",
+          "top_source_degree": 1,
+          "top_target_uuid": "d530c6d5-43ff-4aac-a8c5-66fbe0f56ecb",
+          "top_target_degree": 11
+        },
+        {
+          "size_total": 12,
+          "size_source": 2,
+          "size_target": 10,
+          "fraction_total": 0.0003389256058295204,
+          "top_source_uuid": "df5f3769-b1b2-4769-bff1-52d4785d0250",
+          "top_source_degree": 8,
+          "top_target_uuid": "94fc84d9-92e8-4691-a0e6-80ec24428853",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 8.47314014573801e-05,
+          "top_source_uuid": "28226444-4e3b-4c67-8ed9-49ec0564f6a9",
+          "top_source_degree": 2,
+          "top_target_uuid": "c97969d7-b15e-43e2-a1cd-31553cc418fe",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 8.47314014573801e-05,
+          "top_source_uuid": "4e0ae3fb-df65-421f-9b5b-1088e9324f28",
+          "top_source_degree": 2,
+          "top_target_uuid": "a704287d-8092-4a4d-b06d-7b1ff37d55ca",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "a9f60816-e65f-438b-83bf-b6bc686f226c",
+          "top_source_degree": 1,
+          "top_target_uuid": "8b5c67bc-c76a-45eb-9f23-71fe0b31ed27",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "3c833943-5175-4bf1-8cd0-b5d57b422fa1",
+          "top_source_degree": 1,
+          "top_target_uuid": "4e0ae3fb-df65-421f-9b5b-1088e9324f28",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "ccb353b4-12f7-4921-b8a4-22552e841f50",
+          "top_source_degree": 1,
+          "top_target_uuid": "03411b3c-b8d8-4ac8-b82a-d5de6d3f6958",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "15626a92-b758-473e-b3bd-77fe2078fca1",
+          "top_source_degree": 1,
+          "top_target_uuid": "f85e9a46-c8ff-4a81-bc3b-8274d6520c7e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "707cbc01-169c-4cff-af9f-05b1d696b485",
+          "top_source_degree": 1,
+          "top_target_uuid": "e8a713c6-7cd6-4868-8a1a-6a53a631c94e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "7545c1ef-a2ca-4e51-9395-92621c3ac9d3",
+          "top_source_degree": 1,
+          "top_target_uuid": "4fa36462-3030-4fbb-ac48-9009508ef4f9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "6a5ae8bc-3f8c-4017-bcff-34215b9a0f1b",
+          "top_source_degree": 1,
+          "top_target_uuid": "b16313df-cae1-4296-b5bd-bb7f84af22de",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "8c1c55dc-6f63-45d5-abaf-f44e5489f5cd",
+          "top_source_degree": 1,
+          "top_target_uuid": "11a93186-5aff-4a3f-b696-8ad6595ddfbd",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "6930bee9-38f4-4a71-971f-762469546788",
+          "top_source_degree": 1,
+          "top_target_uuid": "31d6fe58-538b-4819-90ce-db785738a04d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "9b0b8666-d514-45d8-b927-40dc6310fea3",
+          "top_source_degree": 1,
+          "top_target_uuid": "4ea50f25-8ea5-421f-a9c5-380b17a920e7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "0ed8c564-1dc4-4521-ace2-e8f041dace0e",
+          "top_source_degree": 1,
+          "top_target_uuid": "060e1621-9c4c-416c-acd1-b3c3dd429c2b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "84e05aac-2c5f-4a91-9004-6c332dec79bc",
+          "top_source_degree": 1,
+          "top_target_uuid": "02180d97-e773-47f8-9ce8-26331080896a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "2afe8fe5-472c-4eb0-8a77-51404430d4c5",
+          "top_source_degree": 1,
+          "top_target_uuid": "3c833943-5175-4bf1-8cd0-b5d57b422fa1",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "452829e6-628e-4aff-bbbf-e07cc1bf2265",
+          "top_source_degree": 1,
+          "top_target_uuid": "3008d7c9-7956-424d-b5e2-ce6887ad2c49",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "0adb306f-0c7a-438b-a079-6f63d3bb8c9c",
+          "top_source_degree": 1,
+          "top_target_uuid": "3f983a44-ce2e-4366-ad8d-798e4aa53b49",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "d9dcc232-9332-4c05-b3e6-4f720f8909a3",
+          "top_source_degree": 1,
+          "top_target_uuid": "cf449d80-d4f2-4992-a768-ece9a110145a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 5.6487600971586734e-05,
+          "top_source_uuid": "cb398a90-304e-4271-a773-b0f9a72200b1",
+          "top_source_degree": 1,
+          "top_target_uuid": "f36efa80-ab1e-4599-a6e1-d2c3558c3fba",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 17703,
+        "total_islands": 17692,
+        "singleton_islands": 17690,
+        "multi_islands": [
+          {
+            "size": 11,
+            "fraction": 0.000621363610687454,
+            "size_total": 12,
+            "top_uuid": "951b898e-6f08-43e5-bd2e-2e3eaca5f6af",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.00011297520194317347,
+            "size_total": 12,
+            "top_uuid": "df5f3769-b1b2-4769-bff1-52d4785d0250",
+            "top_degree": 8
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 17703,
+        "total_islands": 17692,
+        "singleton_islands": 17689,
+        "multi_islands": [
+          {
+            "size": 10,
+            "fraction": 0.0005648760097158674,
+            "size_total": 12,
+            "top_uuid": "94fc84d9-92e8-4691-a0e6-80ec24428853",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.00011297520194317347,
+            "size_total": 3,
+            "top_uuid": "c97969d7-b15e-43e2-a1cd-31553cc418fe",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.00011297520194317347,
+            "size_total": 3,
+            "top_uuid": "a704287d-8092-4a4d-b06d-7b1ff37d55ca",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

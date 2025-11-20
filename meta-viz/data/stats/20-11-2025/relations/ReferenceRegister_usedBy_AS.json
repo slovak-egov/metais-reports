@@ -1,0 +1,65 @@
+{
+  "relation_name": "ReferenceRegister_usedBy_AS",
+  "name": "Register puziva AS",
+  "description": "Register puziva AS.",
+  "engDescription": "Register is used by AS.",
+  "type": "system",
+  "source_type": "ReferenceRegister",
+  "source_name": "Referencny register",
+  "target_type": "AS",
+  "target_name": "Aplikačná služba",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 0,
+    "unique_pairs": 0,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 0,
+    "source_total": 7,
+    "target_total": 17703,
+    "source_connected": 0,
+    "target_connected": 0,
+    "cardinality": "empty",
+    "ambiguous_pairs": 0,
+    "degree_source": null,
+    "degree_target": null,
+    "top_source": [],
+    "top_target": [],
+    "islands": {
+      "total_nodes": 17710,
+      "total_islands": 17710,
+      "singleton_islands": 17710,
+      "multi_islands": [],
+      "source": {
+        "total_nodes": 7,
+        "total_islands": 7,
+        "singleton_islands": 7,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 17703,
+        "total_islands": 17703,
+        "singleton_islands": 17703,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "ReferenceRegister_usedBy_AS_Profile_note",
+      "name": "Poznamka",
+      "description": "Poznámka k aplikačnej službe, ktorá poskytuje údaje referenčného registra.",
+      "mandatory": "critical",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "relation_name": "Projekt_je_evidovany_Clarity",
+  "name": "Projekt je evidovaný v Clarity",
+  "description": "Projekt je evidovaný v Clarity.",
+  "engDescription": "Project is recorded in Clarity.",
+  "type": "system",
+  "source_type": "Projekt",
+  "source_name": "Projekt rozvoja IT",
+  "target_type": "Clarity",
+  "target_name": "Clarity",
+  "sourceCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 17,
+    "unique_pairs": 16,
+    "duplicate_edges": 1,
+    "pairs_with_duplicates": 1,
+    "parallel_edges": 1,
+    "parallel_max": 2,
+    "source_total": 1605,
+    "target_total": 1,
+    "source_connected": 16,
+    "target_connected": 1,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.0625,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 17,
+      "max": 17,
+      "avg": 17.0,
+      "median": 17,
+      "p90": 17,
+      "p99": 17
+    },
+    "top_source": [
+      {
+        "uuid": "2ae89026-ba37-4837-8e0a-7e7d701a828f",
+        "degree": 2,
+        "name": "Migrácia IS obcí do vládneho cloudu. Plošné rozšírenie IS DCOM – 2. etapa (DCOM+)",
+        "code": "projekt_347"
+      },
+      {
+        "uuid": "94a6f57e-dc04-49d6-96d0-bb156bb5518f",
+        "degree": 1,
+        "name": "Detekcia zraniteľnosti koncových obslužných bodov",
+        "code": "projekt_991"
+      },
+      {
+        "uuid": "a568e104-18d5-4fcb-98d7-1ee5c1fae37f",
+        "degree": 1,
+        "name": "Rozvoj platformy integrácie údajov (centrálna integračná platforma) a Manažment osobných údajov",
+        "code": "projekt_346"
+      },
+      {
+        "uuid": "fb6715b4-6298-4b3c-8b29-6b361fde9495",
+        "degree": 1,
+        "name": "Centrálny informačný systém štátnej služby",
+        "code": "projekt_130"
+      },
+      {
+        "uuid": "f0ebdf01-7832-4b46-80d9-c89a23665de4",
+        "degree": 1,
+        "name": "Pamiatkový informačný systém",
+        "code": "projekt_490"
+      },
+      {
+        "uuid": "e1e61331-0e30-413a-922b-afa4e9e09ee4",
+        "degree": 1,
+        "name": "Elektronické služby centrálneho elektronického priečinka",
+        "code": "projekt_32"
+      },
+      {
+        "uuid": "90f2d029-7905-49f5-beb2-114c4baf39e4",
+        "degree": 1,
+        "name": "Zvyšovanie úžitkovej hodnoty digitálnych služieb pre občanov, podnikateľov a inš",
+        "code": "projekt_307"
+      },
+      {
+        "uuid": "18466cbd-6933-4e2e-bacc-6f9522dcca35",
+        "degree": 1,
+        "name": "Dátová integrácia: sprístupnenie údajovej základne VS vrátane otvorených údajov prostredníctvom platformy dátovej integrácie",
+        "code": "projekt_327"
+      },
+      {
+        "uuid": "320b1ec7-2115-477e-b72d-5d926cae6cd6",
+        "degree": 1,
+        "name": "Informačný systém Centra právnej pomoci",
+        "code": "projekt_326"
+      },
+      {
+        "uuid": "f8c2d738-1329-4c52-a75a-3302f26b7c2e",
+        "degree": 1,
+        "name": "Implementácia Centrálneho ekonomického systému",
+        "code": "projekt_211"
+      },
+      {
+        "uuid": "121fd23d-3b11-4d86-9faa-1e6c71b53ce6",
+        "degree": 1,
+        "name": "Zavedenie služieb Platform as a Service",
+        "code": "projekt_368"
+      },
+      {
+        "uuid": "a0b3333c-f7bf-4cb3-bec9-f6b5cfe6bf70",
+        "degree": 1,
+        "name": "Efektívny manažment údajov v prostredí Sociálnej poisťovne (MUSP)",
+        "code": "projekt_318"
+      },
+      {
+        "uuid": "0f0bb80a-81e2-486c-9b76-776d94e7db8c",
+        "degree": 1,
+        "name": "Elektronizácia služieb VÚC Košického samosprávneho kraja",
+        "code": "projekt_33"
+      },
+      {
+        "uuid": "56b5824f-9d2b-4006-bf48-c6d4dc336e91",
+        "degree": 1,
+        "name": "Datacentrum Ministerstva vnútra SR",
+        "code": "projekt_135"
+      },
+      {
+        "uuid": "d99d4375-183c-43a4-8f59-200eda418fe1",
+        "degree": 1,
+        "name": "Dátové centrum obcí a miest",
+        "code": "projekt_11"
+      },
+      {
+        "uuid": "45330c92-0a9c-4c73-a955-0f67413934ee",
+        "degree": 1,
+        "name": "Manažment údajov dátových balíčkov ÚRHH",
+        "code": "projekt_2009"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "5d727eab-91f0-4130-936b-ea0dd8536568",
+        "degree": 17,
+        "name": null,
+        "code": null
+      }
+    ],
+    "islands": {
+      "total_nodes": 1606,
+      "total_islands": 1590,
+      "singleton_islands": 1589,
+      "multi_islands": [
+        {
+          "size_total": 17,
+          "size_source": 16,
+          "size_target": 1,
+          "fraction_total": 0.010585305105853052,
+          "top_source_uuid": "2ae89026-ba37-4837-8e0a-7e7d701a828f",
+          "top_source_degree": 2,
+          "top_target_uuid": "5d727eab-91f0-4130-936b-ea0dd8536568",
+          "top_target_degree": 17
+        }
+      ],
+      "source": {
+        "total_nodes": 1605,
+        "total_islands": 1590,
+        "singleton_islands": 1589,
+        "multi_islands": [
+          {
+            "size": 16,
+            "fraction": 0.009968847352024923,
+            "size_total": 17,
+            "top_uuid": "2ae89026-ba37-4837-8e0a-7e7d701a828f",
+            "top_degree": 2
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 1,
+        "total_islands": 1,
+        "singleton_islands": 1,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": [
+      {
+        "count": 2,
+        "source": {
+          "uuid": "2ae89026-ba37-4837-8e0a-7e7d701a828f",
+          "code": "projekt_347",
+          "name": "Migrácia IS obcí do vládneho cloudu. Plošné rozšírenie IS DCOM – 2. etapa (DCOM+)"
+        },
+        "target": {
+          "uuid": "5d727eab-91f0-4130-936b-ea0dd8536568",
+          "code": null,
+          "name": null
+        }
+      }
+    ]
+  },
+  "attributes": []
+}

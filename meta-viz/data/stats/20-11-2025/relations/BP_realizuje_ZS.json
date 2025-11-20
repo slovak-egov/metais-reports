@@ -1,0 +1,544 @@
+{
+  "relation_name": "BP_realizuje_ZS",
+  "name": "Proces realizuje Životná situácia",
+  "description": "Proces rieši životnú situáciu občana / podnikateľa.",
+  "engDescription": "Process handles life situation of citizen / entrepreneur.",
+  "type": "application",
+  "source_type": "BP",
+  "source_name": "Proces",
+  "target_type": "ZS",
+  "target_name": "Životná situácia",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 102,
+    "unique_pairs": 102,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 392,
+    "target_total": 175,
+    "source_connected": 53,
+    "target_connected": 14,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 5,
+      "avg": 1.9245283018867925,
+      "median": 2,
+      "p90": 3,
+      "p99": 3
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 21,
+      "avg": 7.285714285714286,
+      "median": 3.0,
+      "p90": 20,
+      "p99": 21
+    },
+    "top_source": [
+      {
+        "uuid": "bca491ec-6d13-4ed8-a749-9370fdbf93b5",
+        "degree": 5,
+        "name": "Zadávanie údajov o úrazovosti detí, žiakov a študentov do informačného systému Výkaz úrazovosti detí, žiakov a študentov",
+        "code": "proces_390"
+      },
+      {
+        "uuid": "5d616528-ea60-4c7e-a55f-d3facc48705b",
+        "degree": 3,
+        "name": "Vyjadrovanie sa Akreditačnej komisie k žiadostiam",
+        "code": "proces_367"
+      },
+      {
+        "uuid": "1e18054e-b0e8-47f8-8f9e-927ae00ea1ca",
+        "degree": 3,
+        "name": "Proces zaevidovania zaslaných údajov o regionálnych školách do RIS školstva",
+        "code": "proces_389"
+      },
+      {
+        "uuid": "353ebee8-4d86-489c-9153-580110b3fc4a",
+        "degree": 3,
+        "name": "Proces spravovania osobného profilu používateľa v Rezortnom Identity Access Managemente",
+        "code": "proces_334"
+      },
+      {
+        "uuid": "d2d40eb1-4e2d-424b-bea6-dd13aa64c582",
+        "degree": 3,
+        "name": "Proces prístupu do informačného systémi Rezortný Identity Access Management",
+        "code": "proces_335"
+      },
+      {
+        "uuid": "58765f12-2043-4675-9ec6-0e4066aeff2e",
+        "degree": 3,
+        "name": "Proces nahrávania dát o haváriách v oblasti regionálneho školstva",
+        "code": "proces_373"
+      },
+      {
+        "uuid": "032f7bef-0bb2-4f68-b63d-a5da5063f5fc",
+        "degree": 3,
+        "name": "Proces nahrávania výsledkov o pridelených finančných prostriedkoch na riešenie havárijných situácií v regionálnom školstve",
+        "code": "proces_375"
+      },
+      {
+        "uuid": "cff000af-13ea-4401-8a71-ba2c18311bbf",
+        "degree": 3,
+        "name": "Proces generovania návrhu na riešenie havárijnej situácie v regionálnom školstve",
+        "code": "proces_376"
+      },
+      {
+        "uuid": "4a624992-0218-4488-8d3b-29a18cc3281d",
+        "degree": 3,
+        "name": "Proces nahrávania údajov o hospodárení regionálneho školstva pre vypracovanie správy o hospodárení a súhrnnej správy o hospodárení zriaďovateľa",
+        "code": "proces_377"
+      },
+      {
+        "uuid": "bb57e3ca-3306-485d-9524-417adecaf813",
+        "degree": 3,
+        "name": "Proces preberania protokolov o výsledkoch hospodárenia v regionálnom školstve",
+        "code": "proces_378"
+      },
+      {
+        "uuid": "37bd9e6f-d847-4f4a-98d3-46a25ac51ee4",
+        "degree": 3,
+        "name": "Proces nahrávania údajov o mzdách a zamestnanosti v regionálnom školstve",
+        "code": "proces_379"
+      },
+      {
+        "uuid": "1282821a-746c-49bd-bbef-d0b4c86b48eb",
+        "degree": 3,
+        "name": "Proces preberania protokolov o mzdách a zamestnanosti regionálnych škôl",
+        "code": "proces_380"
+      },
+      {
+        "uuid": "454a6b8b-d089-4229-b557-2ee394ff5229",
+        "degree": 3,
+        "name": "Vypracovanie a schválenie školského vzdelávacieho programu",
+        "code": "proces_400"
+      },
+      {
+        "uuid": "6dca013c-257d-4003-850a-cb9a9199dad6",
+        "degree": 3,
+        "name": "Akreditované kontinuálne vzdelávanie pedagogických a odborných zamestnancov školstva",
+        "code": "proces_407"
+      },
+      {
+        "uuid": "5467fc55-1088-473c-b438-df7117d8eb7a",
+        "degree": 3,
+        "name": "Atestácia pedagogického a odborného zamestnanca školstva",
+        "code": "proces_408"
+      },
+      {
+        "uuid": "700c73e9-95e1-458b-92e6-91dfa14b77f9",
+        "degree": 2,
+        "name": "Registrácia organizácie, projektu, výskumníka do ISVS SK CRIS",
+        "code": "proces_415"
+      },
+      {
+        "uuid": "48e529e8-4b18-4103-beb7-0eca99e459ae",
+        "degree": 2,
+        "name": "Hodnotenie spôsobilosti na vykonávanie výskumu a vývoja",
+        "code": "proces_414"
+      },
+      {
+        "uuid": "ce6625a4-e172-4122-b643-6fd9d146a2e4",
+        "degree": 2,
+        "name": "Publikovanie obsahu na portáli KomposyT",
+        "code": "proces_417"
+      },
+      {
+        "uuid": "d026f53d-ed87-4700-b74c-e4aaf871c45e",
+        "degree": 2,
+        "name": "Žiadosť o udelenie oprávnenia na realizáciu skúšky na overenie odbornej spôsobilosti",
+        "code": "proces_371"
+      },
+      {
+        "uuid": "379d16c3-8547-485d-ab1d-abcb975e338d",
+        "degree": 2,
+        "name": "Žiadosť o akreditáciu vzdelávacieho projektu",
+        "code": "proces_370"
+      },
+      {
+        "uuid": "f3ec489e-63d5-4be6-bee0-bf12b57ab98d",
+        "degree": 2,
+        "name": "Proces tvorby štatistických a menných výstupov publikačných činností v informačnom systéme Centrálny register evidencie publikačnej činnosti",
+        "code": "proces_402"
+      },
+      {
+        "uuid": "a004316f-2cc7-402d-8b09-ad38f2d3657c",
+        "degree": 2,
+        "name": "Schvaľovanie verejného informačného obsahu portálu Informačný systém ďalšieho vzdelávania",
+        "code": "proces_369"
+      },
+      {
+        "uuid": "67a5e716-9b4a-442a-8e07-658c0f9c28e2",
+        "degree": 2,
+        "name": "Podávanie projektu v oblasti základného výskumu v informačnom systéme eVEGA",
+        "code": "proces_355"
+      },
+      {
+        "uuid": "a612b148-b33f-4ef6-8750-232ee5799925",
+        "degree": 2,
+        "name": "Proces hodnotenia projektov v oblasti základného výskumu komisiami",
+        "code": "proces_356"
+      },
+      {
+        "uuid": "bc1aa535-ea56-461e-ab9a-1b9398f190cb",
+        "degree": 2,
+        "name": "Proces posudzovania projektov v oblasti základného výskumu spravodajcami",
+        "code": "proces_358"
+      },
+      {
+        "uuid": "4d8a6dd3-b6e0-45a7-bfec-da3d729f83bc",
+        "degree": 2,
+        "name": "Proces hodnotenia záverečných správ projektov v oblasti základného výskumu spravodajcami",
+        "code": "proces_359"
+      },
+      {
+        "uuid": "ca850dc5-58c6-4935-bafb-b630c2941a4d",
+        "degree": 2,
+        "name": "Objednávanie učebníc pre základné a stredné školy",
+        "code": "proces_337"
+      },
+      {
+        "uuid": "0826822d-b356-4d58-884b-1ed7da3c6d1a",
+        "degree": 2,
+        "name": "Schvaľovanie objednávok učebníc pre základné a stredné školy",
+        "code": "proces_338"
+      },
+      {
+        "uuid": "f04134b7-e472-4d7c-a6d0-aad7e3a1afc4",
+        "degree": 2,
+        "name": "Distribúcia učebníc pre základné a stredné školy",
+        "code": "proces_339"
+      },
+      {
+        "uuid": "419daf67-b256-4bc5-8952-abc9f97b07c6",
+        "degree": 2,
+        "name": "Proces nahrávania údajov o školách a školských zariadeniach v regionálnom školstve do informačného systému EDUZOZNAM",
+        "code": "proces_372"
+      },
+      {
+        "uuid": "40f163b1-69e3-4806-8190-fa104791091e",
+        "degree": 2,
+        "name": "Proces nahrávania údajov o počte prijatých a vydaných vzdelávacích poukazov v regionálnom školstve",
+        "code": "proces_381"
+      },
+      {
+        "uuid": "13b19f0c-dd4d-4112-8c08-770543389aee",
+        "degree": 2,
+        "name": "Proces preberania protokolov o  počte prijatých a vydaných vzdelávacích poukazov v regionálnom školstve",
+        "code": "proces_382"
+      },
+      {
+        "uuid": "9343ec9f-fc73-46b1-9662-f115666300dd",
+        "degree": 1,
+        "name": "Proces ukladania slovenských vedeckých a odborných publikácií, výskumných dát a sivej literatúry",
+        "code": "proces_416"
+      },
+      {
+        "uuid": "59b3f8cf-a0ef-49e4-b49a-538806f377d9",
+        "degree": 1,
+        "name": "Požiadanie ministerstva o vykonanie právneho úkonu v Informačnom systéme športu",
+        "code": "proces_397"
+      },
+      {
+        "uuid": "78f16949-29f7-419d-b86c-8fd93897a095",
+        "degree": 1,
+        "name": "Zriadenie autorizovaného vstupu pre externý športový útvar",
+        "code": "proces_398"
+      },
+      {
+        "uuid": "2e844e29-49e1-4ce8-b306-d7345f5401ad",
+        "degree": 1,
+        "name": "Spracovanie žiadosti o terapeutickú výnimku športovcovi",
+        "code": "proces_429"
+      },
+      {
+        "uuid": "5e1e15f1-b7a0-465e-ae72-0b339ca79146",
+        "degree": 1,
+        "name": "Certifikácia v oblasti boja proti dopingu",
+        "code": "proces_430"
+      },
+      {
+        "uuid": "079bea6d-b999-42f7-bd15-42755a72bf8c",
+        "degree": 1,
+        "name": "Proces administrácie výsledkov testovania žiakov",
+        "code": "proces_434"
+      },
+      {
+        "uuid": "5d2e3c41-736a-4b85-ad34-c130c9a3e87b",
+        "degree": 1,
+        "name": "Proces posudzovania projektov v oblasti základného výskumu externými posudzovateľmi",
+        "code": "proces_357"
+      },
+      {
+        "uuid": "7fcde90c-a5aa-4d35-b2f5-56aaebf57461",
+        "degree": 1,
+        "name": "Evidencia podnájomných vzťahov k poľnohospodárskym pozemkom",
+        "code": "proces_201"
+      },
+      {
+        "uuid": "1beb10b5-0be5-4e39-8bf1-61f63459cbf9",
+        "degree": 1,
+        "name": "Podanie prihlášky na vysokú školu",
+        "code": "proces_340"
+      },
+      {
+        "uuid": "a330b744-c95a-4f19-ad8b-5adbd6fa2cf3",
+        "degree": 1,
+        "name": "Nahrávanie importných dávok do Centrálneho registra študentov vysokých škôl (CRŠ)",
+        "code": "proces_341"
+      },
+      {
+        "uuid": "bbdb7b62-c737-446f-9782-5a9405d3859c",
+        "degree": 1,
+        "name": "Registrácia poverených osôb do Centrálneho registra študentov vysokých škôl (CRŠ)",
+        "code": "proces_342"
+      },
+      {
+        "uuid": "c550a5fa-484e-4cfa-bd27-e6086a208567",
+        "degree": 1,
+        "name": "Nahrávanie importných dávok do Centrálneho registra zamestnancov (CRZ)",
+        "code": "proces_343"
+      },
+      {
+        "uuid": "65fe9dca-dfc6-4bb1-9dc2-5e5216dace01",
+        "degree": 1,
+        "name": "Registrácia poverených osôb do Centrálneho registra zamestnancov (CRZ)",
+        "code": "proces_344"
+      },
+      {
+        "uuid": "9babba99-7644-4514-936d-9202488883ff",
+        "degree": 1,
+        "name": "Proces evidencie dát publikačnej činnosti vysokých škôl v informačnom systéme Centrálny register evidencie publikačnej činnosti",
+        "code": "proces_401"
+      },
+      {
+        "uuid": "a257b42c-3e38-43d0-a0df-7a35de38a76e",
+        "degree": 1,
+        "name": "Proces hodnotenia výstupov publikačnej činnosti v informačnom systéme Centrálny register evidencie publikačnej činnosti",
+        "code": "proces_403"
+      },
+      {
+        "uuid": "e3bfbc15-3df7-4857-be50-5b6d44c32fb2",
+        "degree": 1,
+        "name": "Proces tvorby štatistických a menných výstupov umeleckých činností v informačnom systéme Centrálny register evidencie umeleckej činnosti",
+        "code": "proces_404"
+      },
+      {
+        "uuid": "7e27927c-eca9-427d-a254-74ba7233ac71",
+        "degree": 1,
+        "name": "Proces hodnotenia výstupov umeleckej činnosti v informačnom systéme Centrálny register evidencie umeleckej činnosti",
+        "code": "proces_405"
+      },
+      {
+        "uuid": "531fb346-87d5-4edf-a5dc-fcb74cfdae59",
+        "degree": 1,
+        "name": "Proces podávania návrhu na úpravu evidovaných umeleckých výstupov odborným garantom",
+        "code": "proces_406"
+      },
+      {
+        "uuid": "54f8364b-7435-48d1-8abb-d26d59ad5bb1",
+        "degree": 1,
+        "name": "Podanie a spracovanie prihlášky na zahraničný pobyt - Mobilitu",
+        "code": "proces_409"
+      },
+      {
+        "uuid": "2e5f03d0-bbaa-408b-87ff-b55e61a1ed79",
+        "degree": 1,
+        "name": "Povinné vykazovanie zo zahraničných pobytov - Mobilít",
+        "code": "proces_410"
+      },
+      {
+        "uuid": "664fc59b-aa36-402b-8d8a-5f644785ea21",
+        "degree": 1,
+        "name": "Proces evidencie dát umeleckej činnosti vysokých škôl v informačnom systéme Centrálny register evidencie umeleckej činnosti",
+        "code": "proces_426"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "f3486035-3c74-4e58-89ed-1373e48b325c",
+        "degree": 21,
+        "name": "Základné školy",
+        "code": "103"
+      },
+      {
+        "uuid": "d0359051-55f6-41bb-a6cf-7b61dd843889",
+        "degree": 20,
+        "name": "Stredné školy",
+        "code": "096"
+      },
+      {
+        "uuid": "fb52d6df-fa45-4eea-8160-edf38d660ff4",
+        "degree": 20,
+        "name": "Vysoké školy",
+        "code": "102"
+      },
+      {
+        "uuid": "f6323836-fdac-49ac-816e-0b6a2ed2268f",
+        "degree": 13,
+        "name": "Predškolské zariadenia",
+        "code": "094"
+      },
+      {
+        "uuid": "9219bb12-75fd-4f5c-9213-d073ca577386",
+        "degree": 7,
+        "name": "Výskum",
+        "code": "024"
+      },
+      {
+        "uuid": "50c083a0-84f0-475f-aff9-6397cdbbee58",
+        "degree": 5,
+        "name": "Šport",
+        "code": "097"
+      },
+      {
+        "uuid": "0fa349af-0555-451b-b04d-14ac139690fb",
+        "degree": 3,
+        "name": "Veda",
+        "code": "023"
+      },
+      {
+        "uuid": "127e329f-c3ac-41bd-9b60-cdbf40f66697",
+        "degree": 3,
+        "name": "Ďalšie vzdelávanie pracovníkov",
+        "code": "105"
+      },
+      {
+        "uuid": "6cb8edf6-e4e5-4b41-bfda-a9e4037ef610",
+        "degree": 2,
+        "name": "Slobodný prístup k informáciám, prístup k odtajneným skutočnostiam, archívy",
+        "code": "055"
+      },
+      {
+        "uuid": "6cc83ab3-c92f-45b0-a6cf-e674157827a2",
+        "degree": 2,
+        "name": "Základné umelecké školy",
+        "code": "104"
+      },
+      {
+        "uuid": "7a7b2b15-8ea5-4e46-ab88-600fa06e37d3",
+        "degree": 2,
+        "name": "Uznávanie odborných kvalifikácií a dokladov o vzdelaní",
+        "code": "101"
+      },
+      {
+        "uuid": "d4da81c2-b1fc-46fe-840f-834d5ddff117",
+        "degree": 2,
+        "name": "Iná podpora, slobodný prístup k informáciám, prístup k odtajneným skutočnostiam, archívy",
+        "code": "003"
+      },
+      {
+        "uuid": "1dcb5456-326c-4a4e-89ea-465a5a9b275d",
+        "degree": 1,
+        "name": "Štatistické informácie",
+        "code": "057"
+      },
+      {
+        "uuid": "9275bb50-948d-4f07-a4dc-d8124596fdfb",
+        "degree": 1,
+        "name": "Prenájom nehnuteľnosti",
+        "code": "160"
+      }
+    ],
+    "islands": {
+      "total_nodes": 567,
+      "total_islands": 503,
+      "singleton_islands": 500,
+      "multi_islands": [
+        {
+          "size_total": 59,
+          "size_source": 47,
+          "size_target": 12,
+          "fraction_total": 0.10405643738977072,
+          "top_source_uuid": "bca491ec-6d13-4ed8-a749-9370fdbf93b5",
+          "top_source_degree": 5,
+          "top_target_uuid": "f3486035-3c74-4e58-89ed-1373e48b325c",
+          "top_target_degree": 21
+        },
+        {
+          "size_total": 6,
+          "size_source": 5,
+          "size_target": 1,
+          "fraction_total": 0.010582010582010581,
+          "top_source_uuid": "079bea6d-b999-42f7-bd15-42755a72bf8c",
+          "top_source_degree": 1,
+          "top_target_uuid": "50c083a0-84f0-475f-aff9-6397cdbbee58",
+          "top_target_degree": 5
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.003527336860670194,
+          "top_source_uuid": "7fcde90c-a5aa-4d35-b2f5-56aaebf57461",
+          "top_source_degree": 1,
+          "top_target_uuid": "9275bb50-948d-4f07-a4dc-d8124596fdfb",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 392,
+        "total_islands": 342,
+        "singleton_islands": 340,
+        "multi_islands": [
+          {
+            "size": 47,
+            "fraction": 0.11989795918367346,
+            "size_total": 59,
+            "top_uuid": "bca491ec-6d13-4ed8-a749-9370fdbf93b5",
+            "top_degree": 5
+          },
+          {
+            "size": 5,
+            "fraction": 0.012755102040816327,
+            "size_total": 6,
+            "top_uuid": "079bea6d-b999-42f7-bd15-42755a72bf8c",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 175,
+        "total_islands": 164,
+        "singleton_islands": 163,
+        "multi_islands": [
+          {
+            "size": 12,
+            "fraction": 0.06857142857142857,
+            "size_total": 59,
+            "top_uuid": "f3486035-3c74-4e58-89ed-1373e48b325c",
+            "top_degree": 21
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

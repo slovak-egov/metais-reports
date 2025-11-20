@@ -1,0 +1,259 @@
+{
+  "relation_name": "TP_VypoctovyZdroj_je_pouzivany_ISVS",
+  "name": "Výpočtový zdroj je používaný ISVS",
+  "description": "Výpočtový zdroj je používaný daným ISVS.",
+  "engDescription": "Computing resource is used by particular ISVS.",
+  "type": "application",
+  "source_type": "TP_VypoctovyZdroj",
+  "source_name": "Výpočtový zdroj",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 10,
+    "unique_pairs": 10,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 32,
+    "target_total": 6667,
+    "source_connected": 9,
+    "target_connected": 6,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.1111111111111112,
+      "median": 1,
+      "p90": 1,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 3,
+      "avg": 1.6666666666666667,
+      "median": 1.5,
+      "p90": 2,
+      "p99": 3
+    },
+    "top_source": [
+      {
+        "uuid": "1e71cef2-e274-4d2a-ad0c-bfa82e76eb86",
+        "degree": 2,
+        "name": "Výpočtový zdroj poskytovaný DataCentrum( Cintorínska, Bratislava )",
+        "code": "tp_vypoctovy_zdroj_40"
+      },
+      {
+        "uuid": "4438fd02-0ae2-45df-814b-b4a017b70da2",
+        "degree": 1,
+        "name": "ISVS (Produkcia)",
+        "code": "tp_vypoctovy_zdroj_32"
+      },
+      {
+        "uuid": "21b779e2-4a49-485b-bd17-69c4ab7143b2",
+        "degree": 1,
+        "name": "Talon server",
+        "code": "tp_vypoctovy_zdroj_33"
+      },
+      {
+        "uuid": "6f186948-8968-4d76-8951-014e46f0d1c3",
+        "degree": 1,
+        "name": "Talon Kom/Ftp server",
+        "code": "tp_vypoctovy_zdroj_34"
+      },
+      {
+        "uuid": "690a3326-9913-4004-b1f0-8a99f50b32bc",
+        "degree": 1,
+        "name": "IBM Blade Center H (DCN)",
+        "code": "tp_vypoctovy_zdroj_38"
+      },
+      {
+        "uuid": "98ecda4b-571a-40e9-beb1-cd7cb6973bf9",
+        "degree": 1,
+        "name": "IBM Power 795 (DCN)",
+        "code": "tp_vypoctovy_zdroj_39"
+      },
+      {
+        "uuid": "362ac2a5-d1c3-4a28-bc7e-52c200551d58",
+        "degree": 1,
+        "name": "Exchange CAS server",
+        "code": "tp_vypoctovy_zdroj_35"
+      },
+      {
+        "uuid": "9a4a835b-c84a-4648-97d6-b3914c612884",
+        "degree": 1,
+        "name": "Exchange Edge server",
+        "code": "tp_vypoctovy_zdroj_36"
+      },
+      {
+        "uuid": "4ac88e1e-b002-4151-88c4-f00d0d118b31",
+        "degree": 1,
+        "name": "Exchange Mailbox",
+        "code": "tp_vypoctovy_zdroj_37"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "c8adab1a-059b-4098-9f7d-eddb484e77c5",
+        "degree": 3,
+        "name": "Elektronická pošta (FRSR)",
+        "code": "isvs_8728"
+      },
+      {
+        "uuid": "5123ba19-f98d-42ac-9f22-47675247a830",
+        "degree": 2,
+        "name": "TALON",
+        "code": "isvs_7179"
+      },
+      {
+        "uuid": "c59f7ff7-db1a-4151-be9a-820ad1d76224",
+        "degree": 2,
+        "name": "Prierezový IS FS",
+        "code": "isvs_7143"
+      },
+      {
+        "uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+        "degree": 1,
+        "name": "Informačný systém pre evidenciu a monitorovanie pomoci „IS SEMP“",
+        "code": "isvs_47"
+      },
+      {
+        "uuid": "4eb055e4-0692-49c8-acd8-b4e26dad7e4b",
+        "degree": 1,
+        "name": "Accounting Customs Information System (ACIS)",
+        "code": "isvs_7176"
+      },
+      {
+        "uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+        "degree": 1,
+        "name": "Ekonomický informačný systém (EIS)",
+        "code": "isvs_48"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6699,
+      "total_islands": 6689,
+      "singleton_islands": 6684,
+      "multi_islands": [
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0005971040453799074,
+          "top_source_uuid": "9a4a835b-c84a-4648-97d6-b3914c612884",
+          "top_source_degree": 1,
+          "top_target_uuid": "c8adab1a-059b-4098-9f7d-eddb484e77c5",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004478280340349306,
+          "top_source_uuid": "98ecda4b-571a-40e9-beb1-cd7cb6973bf9",
+          "top_source_degree": 1,
+          "top_target_uuid": "c59f7ff7-db1a-4151-be9a-820ad1d76224",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004478280340349306,
+          "top_source_uuid": "21b779e2-4a49-485b-bd17-69c4ab7143b2",
+          "top_source_degree": 1,
+          "top_target_uuid": "5123ba19-f98d-42ac-9f22-47675247a830",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004478280340349306,
+          "top_source_uuid": "1e71cef2-e274-4d2a-ad0c-bfa82e76eb86",
+          "top_source_degree": 2,
+          "top_target_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002985520226899537,
+          "top_source_uuid": "4438fd02-0ae2-45df-814b-b4a017b70da2",
+          "top_source_degree": 1,
+          "top_target_uuid": "4eb055e4-0692-49c8-acd8-b4e26dad7e4b",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 32,
+        "total_islands": 28,
+        "singleton_islands": 25,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.09375,
+            "size_total": 4,
+            "top_uuid": "9a4a835b-c84a-4648-97d6-b3914c612884",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0625,
+            "size_total": 3,
+            "top_uuid": "98ecda4b-571a-40e9-beb1-cd7cb6973bf9",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0625,
+            "size_total": 3,
+            "top_uuid": "21b779e2-4a49-485b-bd17-69c4ab7143b2",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 6667,
+        "total_islands": 6666,
+        "singleton_islands": 6665,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.0002999850007499625,
+            "size_total": 3,
+            "top_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

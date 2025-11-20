@@ -1,0 +1,125 @@
+{
+  "type": "CMDB_REQUEST",
+  "count": 283428,
+  "attributes": [
+    {
+      "name": "uuid",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 283428,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "type",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.0003528232919824435
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_userId",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 1452,
+      "unique_pct": 0.512299419958508
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_status",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 4,
+      "unique_pct": 0.001411293167929774
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_transId",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 283428,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_processedAt",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 283428,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.owner",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.0003528232919824435
+    },
+    {
+      "name": "meta.state",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.0003528232919824435
+    },
+    {
+      "name": "meta.createdBy",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.0003528232919824435
+    },
+    {
+      "name": "meta.createdAt",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 283428,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedBy",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.0003528232919824435
+    },
+    {
+      "name": "meta.lastModifiedAt",
+      "count": 283428,
+      "pct": 100.0,
+      "unique_count": 283428,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_historyReady",
+      "count": 24775,
+      "pct": 8.741197058865039,
+      "unique_count": 2,
+      "unique_pct": 0.008072653884964682
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_notificationReady",
+      "count": 24775,
+      "pct": 8.741197058865039,
+      "unique_count": 2,
+      "unique_pct": 0.008072653884964682
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_indexReady",
+      "count": 24775,
+      "pct": 8.741197058865039,
+      "unique_count": 1,
+      "unique_pct": 0.004036326942482341
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_readyAt",
+      "count": 24775,
+      "pct": 8.741197058865039,
+      "unique_count": 24775,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "genprof_CMDB_REQUEST_iamReady",
+      "count": 24775,
+      "pct": 8.741197058865039,
+      "unique_count": 1,
+      "unique_pct": 0.004036326942482341
+    }
+  ]
+}

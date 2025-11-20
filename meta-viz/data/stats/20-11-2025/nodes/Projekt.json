@@ -1,0 +1,391 @@
+{
+  "type": "Projekt",
+  "count": 1605,
+  "attributes": [
+    {
+      "name": "uuid",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 1605,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "type",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.06230529595015576
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 1579,
+      "unique_pct": 98.38006230529595
+    },
+    {
+      "name": "EA_Profil_Projekt_termin_ukoncenia",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 299,
+      "unique_pct": 18.629283489096572
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 0.1869158878504673
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 1514,
+      "unique_pct": 94.33021806853581
+    },
+    {
+      "name": "EA_Profil_Projekt_rozpoctove_opatrenie",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.12461059190031153
+    },
+    {
+      "name": "EA_Profil_Projekt_metoda_riadenia_projektu",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 2,
+      "unique_pct": 0.12461059190031153
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 1579,
+      "unique_pct": 98.38006230529595
+    },
+    {
+      "name": "meta.owner",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 425,
+      "unique_pct": 26.479750778816197
+    },
+    {
+      "name": "meta.state",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 0.06230529595015576
+    },
+    {
+      "name": "meta.createdBy",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 621,
+      "unique_pct": 38.691588785046726
+    },
+    {
+      "name": "meta.createdAt",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 1605,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedBy",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 397,
+      "unique_pct": 24.73520249221184
+    },
+    {
+      "name": "meta.lastModifiedAt",
+      "count": 1605,
+      "pct": 100.0,
+      "unique_count": 1605,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "EA_Profil_Projekt_typ_investicie",
+      "count": 1604,
+      "pct": 99.93769470404985,
+      "unique_count": 2,
+      "unique_pct": 0.12468827930174563
+    },
+    {
+      "name": "EA_Profil_Projekt_faza_projektu",
+      "count": 1553,
+      "pct": 96.7601246105919,
+      "unique_count": 7,
+      "unique_pct": 0.4507405022537025
+    },
+    {
+      "name": "EA_Profil_Projekt_status",
+      "count": 1545,
+      "pct": 96.26168224299066,
+      "unique_count": 15,
+      "unique_pct": 0.9708737864077669
+    },
+    {
+      "name": "Financny_Profil_Projekt_suma_vydavkov",
+      "count": 1513,
+      "pct": 94.26791277258567,
+      "unique_count": 1098,
+      "unique_pct": 72.57105089226702
+    },
+    {
+      "name": "Financny_Profil_Projekt_rocne_naklady",
+      "count": 1509,
+      "pct": 94.01869158878505,
+      "unique_count": 691,
+      "unique_pct": 45.79191517561299
+    },
+    {
+      "name": "EA_Profil_Projekt_program",
+      "count": 1487,
+      "pct": 92.64797507788161,
+      "unique_count": 8,
+      "unique_pct": 0.5379959650302623
+    },
+    {
+      "name": "EA_Profil_Projekt_prijimatel",
+      "count": 1456,
+      "pct": 90.7165109034268,
+      "unique_count": 323,
+      "unique_pct": 22.184065934065934
+    },
+    {
+      "name": "EA_Profil_Projekt_datum_zacatia",
+      "count": 1407,
+      "pct": 87.66355140186916,
+      "unique_count": 323,
+      "unique_pct": 22.956645344705045
+    },
+    {
+      "name": "EA_Profil_Projekt_schvalovaci_proces",
+      "count": 1183,
+      "pct": 73.70716510903426,
+      "unique_count": 3,
+      "unique_pct": 0.25359256128486896
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 1160,
+      "pct": 72.27414330218068,
+      "unique_count": 1109,
+      "unique_pct": 95.60344827586206
+    },
+    {
+      "name": "Financny_Profil_Projekt_financna_skupina",
+      "count": 938,
+      "pct": 58.442367601246104,
+      "unique_count": 3,
+      "unique_pct": 0.31982942430703626
+    },
+    {
+      "name": "EA_Profil_Projekt_zmena_stavu",
+      "count": 886,
+      "pct": 55.202492211838006,
+      "unique_count": 471,
+      "unique_pct": 53.16027088036117
+    },
+    {
+      "name": "Financny_Profil_Projekt_schvaleny_rozpocet",
+      "count": 589,
+      "pct": 36.69781931464174,
+      "unique_count": 553,
+      "unique_pct": 93.88794567062818
+    },
+    {
+      "name": "Financny_Profil_Projekt_schvalene_rocne_naklady",
+      "count": 585,
+      "pct": 36.44859813084112,
+      "unique_count": 415,
+      "unique_pct": 70.94017094017094
+    },
+    {
+      "name": "EA_Profil_Projekt_percento_splnenia",
+      "count": 291,
+      "pct": 18.13084112149533,
+      "unique_count": 16,
+      "unique_pct": 5.498281786941581
+    },
+    {
+      "name": "Gen_Profil_EA_zoznam_referencii",
+      "count": 272,
+      "pct": 16.947040498442366,
+      "unique_count": 1,
+      "unique_pct": 0.3676470588235294
+    },
+    {
+      "name": "Financny_Profil_Projekt_financovanie",
+      "count": 205,
+      "pct": 12.77258566978193,
+      "unique_count": 4,
+      "unique_pct": 1.951219512195122
+    },
+    {
+      "name": "status_projetku_status_projektu_link_NFP",
+      "count": 192,
+      "pct": 11.962616822429908,
+      "unique_count": 170,
+      "unique_pct": 88.54166666666666
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 161,
+      "pct": 10.031152647975079,
+      "unique_count": 136,
+      "unique_pct": 84.472049689441
+    },
+    {
+      "name": "status_projetku_status_projektu_Datum_NFP",
+      "count": 160,
+      "pct": 9.968847352024921,
+      "unique_count": 117,
+      "unique_pct": 73.125
+    },
+    {
+      "name": "status_projetku_status_projektu_zmluva_o_dielo_CRZ",
+      "count": 140,
+      "pct": 8.722741433021806,
+      "unique_count": 90,
+      "unique_pct": 64.28571428571429
+    },
+    {
+      "name": "status_projetku_status_projektu_VO",
+      "count": 137,
+      "pct": 8.53582554517134,
+      "unique_count": 103,
+      "unique_pct": 75.18248175182481
+    },
+    {
+      "name": "status_projetku_status_projektu_zmluva_o_dielo",
+      "count": 90,
+      "pct": 5.607476635514018,
+      "unique_count": 68,
+      "unique_pct": 75.55555555555556
+    },
+    {
+      "name": "status_projetku_status_projektu_vyhlasenie_VO",
+      "count": 89,
+      "pct": 5.545171339563863,
+      "unique_count": 72,
+      "unique_pct": 80.89887640449437
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 56,
+      "pct": 3.4890965732087227,
+      "unique_count": 55,
+      "unique_pct": 98.21428571428571
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 36,
+      "pct": 2.2429906542056073,
+      "unique_count": 36,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_skrateny_nazov",
+      "count": 33,
+      "pct": 2.0560747663551404,
+      "unique_count": 33,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "EA_Profil_Projekt_Kod_ITMS",
+      "count": 27,
+      "pct": 1.6822429906542056,
+      "unique_count": 27,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Integracny_Profil_Projekt_dostupnost_prod_plan",
+      "count": 11,
+      "pct": 0.6853582554517134,
+      "unique_count": 10,
+      "unique_pct": 90.9090909090909
+    },
+    {
+      "name": "Integracny_Profil_Projekt_dostupnost_test_plan",
+      "count": 11,
+      "pct": 0.6853582554517134,
+      "unique_count": 11,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "EA_Profil_Projekt_predchadzajuci_status",
+      "count": 11,
+      "pct": 0.6853582554517134,
+      "unique_count": 4,
+      "unique_pct": 36.36363636363637
+    },
+    {
+      "name": "Integracny_Profil_Projekt_vypracovanie_im_plan",
+      "count": 10,
+      "pct": 0.6230529595015576,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Integracny_Profil_Projekt_vypracovanie_sla_plan",
+      "count": 10,
+      "pct": 0.6230529595015576,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Integracny_Profil_Projekt_vypracovanie_sla_real",
+      "count": 8,
+      "pct": 0.4984423676012461,
+      "unique_count": 7,
+      "unique_pct": 87.5
+    },
+    {
+      "name": "Integracny_Profil_Projekt_vypracovanie_im_real",
+      "count": 8,
+      "pct": 0.4984423676012461,
+      "unique_count": 7,
+      "unique_pct": 87.5
+    },
+    {
+      "name": "Integracny_Profil_Projekt_dostupnost_prod_real",
+      "count": 8,
+      "pct": 0.4984423676012461,
+      "unique_count": 7,
+      "unique_pct": 87.5
+    },
+    {
+      "name": "Integracny_Profil_Projekt_dostupnost_test_real",
+      "count": 8,
+      "pct": 0.4984423676012461,
+      "unique_count": 8,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_typ_replikacie",
+      "count": 5,
+      "pct": 0.3115264797507788,
+      "unique_count": 1,
+      "unique_pct": 20.0
+    },
+    {
+      "name": "EA_Profil_Projekt_typ_projektu",
+      "count": 2,
+      "pct": 0.12461059190031153,
+      "unique_count": 2,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_EA_pocet_replikacii",
+      "count": 1,
+      "pct": 0.06230529595015576,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "relation_name": "MiestoPrevadzky_umiestnuje_TP_Zalohovanie",
+  "name": "Miesto prevádzky umiestňuje zálohovacie zariadenie",
+  "description": "Zálohovacie zariadenie je umiestnené v danej lokalite.",
+  "engDescription": "Backup device is located in particular location.",
+  "type": "application",
+  "source_type": "MiestoPrevadzky",
+  "source_name": "Miesto prevádzky",
+  "target_type": "TP_Zalohovanie",
+  "target_name": "Zálohovacie zariadenie",
+  "sourceCardinality": {
+    "min": 1,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 3,
+    "unique_pairs": 3,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 190,
+    "target_total": 7,
+    "source_connected": 3,
+    "target_connected": 3,
+    "cardinality": "one-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+        "degree": 1,
+        "name": "DC Nová FRSR (DCN)",
+        "code": "mp_16"
+      },
+      {
+        "uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+        "degree": 1,
+        "name": "DataCentrum (Bratislava, Cintorínska)",
+        "code": "mp_18"
+      },
+      {
+        "uuid": "8164308a-7b71-4235-b248-0d0796e5ca31",
+        "degree": 1,
+        "name": "DC KNS SR",
+        "code": "mp_25"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "b35ef2d0-5a93-417f-83bc-29e3a38d67ab",
+        "degree": 1,
+        "name": "IBM TS3500 (DCN)",
+        "code": "tp_zalohovanie_8"
+      },
+      {
+        "uuid": "ca2edc60-1121-4c0f-9de1-6107f1939043",
+        "degree": 1,
+        "name": "HP DATA PROTECTOR",
+        "code": "tp_zalohovanie_5"
+      },
+      {
+        "uuid": "db69b092-3a31-4110-8148-330d91aae7c3",
+        "degree": 1,
+        "name": "HP StorageWorks x1600",
+        "code": "tp_zalohovanie_7"
+      }
+    ],
+    "islands": {
+      "total_nodes": 197,
+      "total_islands": 194,
+      "singleton_islands": 191,
+      "multi_islands": [
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.01015228426395939,
+          "top_source_uuid": "a9d1290f-fbfc-4894-8839-bc295f984363",
+          "top_source_degree": 1,
+          "top_target_uuid": "b35ef2d0-5a93-417f-83bc-29e3a38d67ab",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.01015228426395939,
+          "top_source_uuid": "8164308a-7b71-4235-b248-0d0796e5ca31",
+          "top_source_degree": 1,
+          "top_target_uuid": "db69b092-3a31-4110-8148-330d91aae7c3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.01015228426395939,
+          "top_source_uuid": "938960eb-13c3-4d82-b673-e17709e184f8",
+          "top_source_degree": 1,
+          "top_target_uuid": "ca2edc60-1121-4c0f-9de1-6107f1939043",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 190,
+        "total_islands": 190,
+        "singleton_islands": 190,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 7,
+        "total_islands": 7,
+        "singleton_islands": 7,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

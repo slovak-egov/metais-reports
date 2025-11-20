@@ -1,0 +1,233 @@
+{
+  "relation_name": "TP_Zalohovanie_je_pouzivane_Platforma",
+  "name": "Zálohovacie zariadenie je používané platformou",
+  "description": "Vybraná platforma používa dané zálohovacie zariadenia.",
+  "engDescription": "Selected platform uses particular backup devices.",
+  "type": "application",
+  "source_type": "TP_Zalohovanie",
+  "source_name": "Zálohovacie zariadenie",
+  "target_type": "Platforma",
+  "target_name": "Platforma",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 29,
+    "unique_pairs": 29,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 7,
+    "target_total": 53,
+    "source_connected": 3,
+    "target_connected": 15,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 14,
+      "avg": 9.666666666666666,
+      "median": 14,
+      "p90": 14,
+      "p99": 14
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.9333333333333333,
+      "median": 2,
+      "p90": 2,
+      "p99": 2
+    },
+    "top_source": [
+      {
+        "uuid": "165f9f5b-a0ad-4b6a-8764-29f6993a2b0a",
+        "degree": 14,
+        "name": "LTO Library (K NR SR)",
+        "code": "tp_zalohovanie_2"
+      },
+      {
+        "uuid": "846ceb72-0af5-436e-9fa7-fa365db55a4e",
+        "degree": 14,
+        "name": "Dataprotection Manager 2012 (K NR SR)",
+        "code": "tp_zalohovanie_3"
+      },
+      {
+        "uuid": "db69b092-3a31-4110-8148-330d91aae7c3",
+        "degree": 1,
+        "name": "HP StorageWorks x1600",
+        "code": "tp_zalohovanie_7"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "14f2bad0-6a34-44a3-95c3-ca6b1309c83d",
+        "degree": 2,
+        "name": "SRS - ECM platforma (K NR SR)",
+        "code": "platforma_11"
+      },
+      {
+        "uuid": "17d8cb8b-cd2c-49db-bb5a-eacadd5edfb2",
+        "degree": 2,
+        "name": "AOTS - ECM platforma (K NR SR)",
+        "code": "platforma_10"
+      },
+      {
+        "uuid": "1822d152-153b-4e9a-bff7-914d1f10b5d8",
+        "degree": 2,
+        "name": "Bluegastro - ECM platforma (K NR SR)",
+        "code": "platforma_14"
+      },
+      {
+        "uuid": "2342194a-78bd-4f4a-9cb3-92b394adf4c4",
+        "degree": 2,
+        "name": "Microsoft Hyper-V 2012 R2 - Virtuálna platforma (K NR SR)",
+        "code": "platforma_9"
+      },
+      {
+        "uuid": "2b89b0ec-0058-445c-bdeb-7de012c91fdc",
+        "degree": 2,
+        "name": "SSLP - ECM platforma (K NR SR)",
+        "code": "platforma_7"
+      },
+      {
+        "uuid": "47ef4545-f7d3-425d-b316-b81c9784408a",
+        "degree": 2,
+        "name": "Sharepoint portal server 2007 - portálová platforma (K NR SR)",
+        "code": "platforma_20"
+      },
+      {
+        "uuid": "4b413824-848b-4251-b990-b1f42e07dc56",
+        "degree": 2,
+        "name": "Microsoft Hyper-V 2008 R2- Virtuálna platforma (K NR SR)",
+        "code": "platforma_5"
+      },
+      {
+        "uuid": "6f3ce0ee-8af7-40a4-829b-a4c3ed5768d9",
+        "degree": 2,
+        "name": "Oracle - databázová plaforma (K NR SR)",
+        "code": "platforma_15"
+      },
+      {
+        "uuid": "85add632-015b-430f-99f4-9ba219b42a19",
+        "degree": 2,
+        "name": "Exchange 2010 - mailová platforma (K NR SR)",
+        "code": "platforma_19"
+      },
+      {
+        "uuid": "8b40c725-63cc-4c3d-86e8-4c418d00a390",
+        "degree": 2,
+        "name": "Registratúra - ECM platforma (K NR SR)",
+        "code": "platforma_12"
+      },
+      {
+        "uuid": "c91499e5-f4a8-4f02-b946-52917ab5510f",
+        "degree": 2,
+        "name": "SQL 2008 R2 - databázová platforma (K NR SR)",
+        "code": "platforma_8"
+      },
+      {
+        "uuid": "c9fe3eab-d307-4afd-9188-7ef4d5a2628d",
+        "degree": 2,
+        "name": "Horec - ECM platforma (K NR SR)",
+        "code": "platforma_13"
+      },
+      {
+        "uuid": "cd82db8a-396d-4ba3-ba6a-22c006b2e440",
+        "degree": 2,
+        "name": "Postgre - databázová platforma (K NR SR)",
+        "code": "platforma_18"
+      },
+      {
+        "uuid": "eedb532a-8395-4141-b7a5-b0e6e4bc5b1d",
+        "degree": 2,
+        "name": "Kredit - ECM platforma (K NR SR)",
+        "code": "platforma_16"
+      },
+      {
+        "uuid": "f8b5c2a1-b17b-44c2-9d5f-112d722af591",
+        "degree": 1,
+        "name": "Microsoft Windows Server 2012 R2 (KNS SR)",
+        "code": "platforma_63"
+      }
+    ],
+    "islands": {
+      "total_nodes": 60,
+      "total_islands": 44,
+      "singleton_islands": 42,
+      "multi_islands": [
+        {
+          "size_total": 16,
+          "size_source": 2,
+          "size_target": 14,
+          "fraction_total": 0.26666666666666666,
+          "top_source_uuid": "846ceb72-0af5-436e-9fa7-fa365db55a4e",
+          "top_source_degree": 14,
+          "top_target_uuid": "17d8cb8b-cd2c-49db-bb5a-eacadd5edfb2",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.03333333333333333,
+          "top_source_uuid": "db69b092-3a31-4110-8148-330d91aae7c3",
+          "top_source_degree": 1,
+          "top_target_uuid": "f8b5c2a1-b17b-44c2-9d5f-112d722af591",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 7,
+        "total_islands": 6,
+        "singleton_islands": 5,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.2857142857142857,
+            "size_total": 16,
+            "top_uuid": "846ceb72-0af5-436e-9fa7-fa365db55a4e",
+            "top_degree": 14
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 53,
+        "total_islands": 40,
+        "singleton_islands": 39,
+        "multi_islands": [
+          {
+            "size": 14,
+            "fraction": 0.2641509433962264,
+            "size_total": 16,
+            "top_uuid": "17d8cb8b-cd2c-49db-bb5a-eacadd5edfb2",
+            "top_degree": 2
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

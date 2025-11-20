@@ -1,0 +1,199 @@
+{
+  "relation_name": "Migracia_migruje_ISVS",
+  "name": "Migrácia migruje ISVS",
+  "description": "ISVS môže byť migrovaný",
+  "engDescription": "ISVS may be migrated",
+  "type": "application",
+  "source_type": "Migracia",
+  "source_name": "Migrácia",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 9,
+    "unique_pairs": 9,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 3,
+    "target_total": 6667,
+    "source_connected": 3,
+    "target_connected": 9,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 7,
+      "avg": 3.0,
+      "median": 1,
+      "p90": 7,
+      "p99": 7
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "d026755b-0c6c-4de0-83d9-227faa63abd9",
+        "degree": 7,
+        "name": "Migrácia ISVS Ministerstva životného prostredia SR do IaaS",
+        "code": "migracia_15"
+      },
+      {
+        "uuid": "cce51e46-750c-4492-8f3b-765071183943",
+        "degree": 1,
+        "name": "Portál ÚRSO",
+        "code": "migracia_12"
+      },
+      {
+        "uuid": "9764c238-32db-4363-81ad-109c05b29c6b",
+        "degree": 1,
+        "name": "Migrácia minimálnych služieb vybudovaných z rozpočtu",
+        "code": "migracia_1"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "41cd6f11-cf32-4a9e-bfb2-c22acc6c4909",
+        "degree": 1,
+        "name": "Informačný portál rezortu Ministerstva životného prostredia - Enviroportál",
+        "code": "isvs_320"
+      },
+      {
+        "uuid": "4784ff8f-db7e-4fa4-909b-587d151707f4",
+        "degree": 1,
+        "name": "Portál URSO",
+        "code": "isvs_8165"
+      },
+      {
+        "uuid": "7ebb6b73-7d5a-43de-b4fd-e7f559c4ebac",
+        "degree": 1,
+        "name": "Webové sídlo Ministerstvo životného prostredia",
+        "code": "isvs_9884"
+      },
+      {
+        "uuid": "7f52dfb2-a0c9-45e9-84c0-fed9b2c61dfa",
+        "degree": 1,
+        "name": "Systém elektronickej pošty Ministerstva životného prostredia SR",
+        "code": "isvs_10027"
+      },
+      {
+        "uuid": "8a5662ce-19b6-4722-b36d-a48c2d1bbd78",
+        "degree": 1,
+        "name": "Webove sidlo národnej infraštruktúry priestorových informácií",
+        "code": "isvs_10026"
+      },
+      {
+        "uuid": "ac724468-9764-4524-aebc-6ab29ab9e351",
+        "degree": 1,
+        "name": "Informačný systém o oprávnených osôbách na vykonávanie oprávnených meraní emisií do ovzdušia",
+        "code": "isvs_7331"
+      },
+      {
+        "uuid": "b1e06f8c-1ecd-4f21-aff8-2b5b02c585d3",
+        "degree": 1,
+        "name": "Systém elektronickej pošty Slovenskej agentúry životného prostredia",
+        "code": "isvs_10028"
+      },
+      {
+        "uuid": "c7042564-1c92-4c76-a5d7-f719de8804e3",
+        "degree": 1,
+        "name": "Centrálny informačný systém štátnej služby",
+        "code": "isvs_6140"
+      },
+      {
+        "uuid": "f78e9a90-9a44-476d-8255-075f143de67d",
+        "degree": 1,
+        "name": "Systém elektronickej pošty Štátnej ochrany prírody SR",
+        "code": "isvs_10029"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6670,
+      "total_islands": 6661,
+      "singleton_islands": 6658,
+      "multi_islands": [
+        {
+          "size_total": 8,
+          "size_source": 1,
+          "size_target": 7,
+          "fraction_total": 0.0011994002998500749,
+          "top_source_uuid": "d026755b-0c6c-4de0-83d9-227faa63abd9",
+          "top_source_degree": 7,
+          "top_target_uuid": "f78e9a90-9a44-476d-8255-075f143de67d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002998500749625187,
+          "top_source_uuid": "cce51e46-750c-4492-8f3b-765071183943",
+          "top_source_degree": 1,
+          "top_target_uuid": "4784ff8f-db7e-4fa4-909b-587d151707f4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.0002998500749625187,
+          "top_source_uuid": "9764c238-32db-4363-81ad-109c05b29c6b",
+          "top_source_degree": 1,
+          "top_target_uuid": "c7042564-1c92-4c76-a5d7-f719de8804e3",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 3,
+        "total_islands": 3,
+        "singleton_islands": 3,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 6667,
+        "total_islands": 6661,
+        "singleton_islands": 6660,
+        "multi_islands": [
+          {
+            "size": 7,
+            "fraction": 0.0010499475026248687,
+            "size_total": 8,
+            "top_uuid": "f78e9a90-9a44-476d-8255-075f143de67d",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

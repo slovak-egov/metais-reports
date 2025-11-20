@@ -1,0 +1,434 @@
+{
+  "relation_name": "SystemovySW_je_pouzivany_ISVS",
+  "name": "Systémový softvér je používaný ISVS",
+  "description": "Systémový softvér je používaný ISVS",
+  "engDescription": "System software is used by ISVS",
+  "type": "application",
+  "source_type": "SystemovySW",
+  "source_name": "Systémový softvér",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 24,
+    "unique_pairs": 24,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 30,
+    "target_total": 6667,
+    "source_connected": 15,
+    "target_connected": 18,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 4,
+      "avg": 1.6,
+      "median": 1,
+      "p90": 4,
+      "p99": 4
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 3,
+      "avg": 1.3333333333333333,
+      "median": 1.0,
+      "p90": 2,
+      "p99": 3
+    },
+    "top_source": [
+      {
+        "uuid": "8617edf5-23da-4db9-a53d-41bd0a118b0f",
+        "degree": 4,
+        "name": "HP-UX (Hewlett Packard Unix)",
+        "code": "systemovy_sw_38"
+      },
+      {
+        "uuid": "1379828d-7ead-4a39-9893-dca7cc693dc2",
+        "degree": 4,
+        "name": "Microsoft SQL Server 2008 R2 (KNS SR)",
+        "code": "systemovy_sw_33"
+      },
+      {
+        "uuid": "6863b508-1f91-4f22-84ca-874bea5ec4a2",
+        "degree": 3,
+        "name": "Windows 2003 Standard",
+        "code": "systemovy_sw_12"
+      },
+      {
+        "uuid": "b40d5d47-680b-4f52-9ade-96a565c8e61c",
+        "degree": 2,
+        "name": "SUSE Linux",
+        "code": "systemovy_sw_39"
+      },
+      {
+        "uuid": "428714ff-4f2e-46a5-a566-2f10c0728b07",
+        "degree": 1,
+        "name": "Microsoft Windows Server, 2012, Std., 64 bit (DCC)",
+        "code": "systemovy_sw_27"
+      },
+      {
+        "uuid": "0cd23f59-8ac9-4e16-8a59-a34d8fb2c9f0",
+        "degree": 1,
+        "name": "Microsoft Windows Server 2003 R2 Std. SP2",
+        "code": "systemovy_sw_21"
+      },
+      {
+        "uuid": "9ad85f83-a7ab-4116-9b5b-2a48f9e1a982",
+        "degree": 1,
+        "name": "MS SQL Server 2008 (SP3)",
+        "code": "systemovy_sw_24"
+      },
+      {
+        "uuid": "ee1d331a-2683-41fe-967a-afddbf9f29a4",
+        "degree": 1,
+        "name": "Systémový softvér poskytovaný DataCentrum( Cintorínska, Bratislava )",
+        "code": "systemovy_sw_28"
+      },
+      {
+        "uuid": "81d96a93-51b5-4442-a4c3-af427df3ab72",
+        "degree": 1,
+        "name": "Fabasoft",
+        "code": "systemovy_sw_17"
+      },
+      {
+        "uuid": "03316aef-95b4-4d77-9337-37247e1ca447",
+        "degree": 1,
+        "name": "IBM IDS 9.4 FC6",
+        "code": "systemovy_sw_23"
+      },
+      {
+        "uuid": "34f98959-34ec-41e2-8070-a1a9df1cb8f2",
+        "degree": 1,
+        "name": "Windows Server 2016 Datacenter (KNS SR)",
+        "code": "systemovy_sw_34"
+      },
+      {
+        "uuid": "f5f5026c-73e0-4803-b457-bd58001f9a3e",
+        "degree": 1,
+        "name": "Oracle Linux 6.5 (DCN)",
+        "code": "systemovy_sw_25"
+      },
+      {
+        "uuid": "33b5207d-8be8-4f6a-aeec-31e48c55756f",
+        "degree": 1,
+        "name": "Windows Server 2008 R2 (DCN)",
+        "code": "systemovy_sw_18"
+      },
+      {
+        "uuid": "64ff672f-4cdf-493c-bdc0-4770043edee2",
+        "degree": 1,
+        "name": "VMware ESXi (DCN)",
+        "code": "systemovy_sw_20"
+      },
+      {
+        "uuid": "ead95d56-c21a-4a0a-97d8-b01f5cd623c6",
+        "degree": 1,
+        "name": "Linux RedHat Enterprise",
+        "code": "systemovy_sw_29"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "a92c2d54-2b4f-4bcb-8c21-59e4edaff1ce",
+        "degree": 3,
+        "name": "Cominfo PASSPORT",
+        "code": "isvs_6515"
+      },
+      {
+        "uuid": "58a12ab3-8f93-435c-9eff-88807108fa4f",
+        "degree": 2,
+        "name": "Softip Profit",
+        "code": "isvs_6510"
+      },
+      {
+        "uuid": "8064e47f-496b-4b02-a1e1-faac81abb1b9",
+        "degree": 2,
+        "name": "Centrálny konsolidačný systém (CKS)",
+        "code": "isvs_52"
+      },
+      {
+        "uuid": "911472fe-502d-4bb6-8953-9eb446983959",
+        "degree": 2,
+        "name": "HUMAN",
+        "code": "isvs_6511"
+      },
+      {
+        "uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+        "degree": 2,
+        "name": "Centrálny elektronický priečinok (CEP)",
+        "code": "isvs_66"
+      },
+      {
+        "uuid": "0eac21d3-9074-4180-86b5-e8986329b200",
+        "degree": 1,
+        "name": "Kontrola dát (CKS)",
+        "code": "isvs_9307"
+      },
+      {
+        "uuid": "1782da50-3b75-4386-9c96-c694e36c8cbb",
+        "degree": 1,
+        "name": "Portál (CKS)",
+        "code": "isvs_9310"
+      },
+      {
+        "uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+        "degree": 1,
+        "name": "Informačný systém pre evidenciu a monitorovanie pomoci „IS SEMP“",
+        "code": "isvs_47"
+      },
+      {
+        "uuid": "5123ba19-f98d-42ac-9f22-47675247a830",
+        "degree": 1,
+        "name": "TALON",
+        "code": "isvs_7179"
+      },
+      {
+        "uuid": "544d694c-60e1-4a9a-8c95-4a48a7244c20",
+        "degree": 1,
+        "name": "Colný informačný systém (CIS)",
+        "code": "isvs_53"
+      },
+      {
+        "uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+        "degree": 1,
+        "name": "Ekonomický informačný systém (EIS)",
+        "code": "isvs_48"
+      },
+      {
+        "uuid": "93cf95a6-dd14-4a47-acef-3bc29486c4ad",
+        "degree": 1,
+        "name": "Registratúra",
+        "code": "isvs_8383"
+      },
+      {
+        "uuid": "94954549-cc5f-48ba-8167-af5db8427cd7",
+        "degree": 1,
+        "name": "Data Warehouse (DWH)",
+        "code": "isvs_7146"
+      },
+      {
+        "uuid": "9b835f06-5a08-4fff-8296-8ad1d350ddf8",
+        "degree": 1,
+        "name": "Spracovanie dát (CKS)",
+        "code": "isvs_9309"
+      },
+      {
+        "uuid": "a33fbf35-4d50-4c00-aa1b-2676e2e918a7",
+        "degree": 1,
+        "name": "Register Najvyššieho súdu",
+        "code": "isvs_5802"
+      },
+      {
+        "uuid": "ae14bab2-92fd-4612-9e8a-177556565917",
+        "degree": 1,
+        "name": "Konsolidácia (CKS)",
+        "code": "isvs_9308"
+      },
+      {
+        "uuid": "b0bd9009-b0ad-4241-bc86-c6d4f0caa5ad",
+        "degree": 1,
+        "name": "Alladin",
+        "code": "isvs_8682"
+      },
+      {
+        "uuid": "d329b1e1-8b39-47ee-b528-5c99b6557074",
+        "degree": 1,
+        "name": "Learning manažment systém (LMS)",
+        "code": "isvs_9222"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6697,
+      "total_islands": 6675,
+      "singleton_islands": 6664,
+      "multi_islands": [
+        {
+          "size_total": 7,
+          "size_source": 3,
+          "size_target": 4,
+          "fraction_total": 0.001045244139166791,
+          "top_source_uuid": "1379828d-7ead-4a39-9893-dca7cc693dc2",
+          "top_source_degree": 4,
+          "top_target_uuid": "a92c2d54-2b4f-4bcb-8c21-59e4edaff1ce",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 7,
+          "size_source": 2,
+          "size_target": 5,
+          "fraction_total": 0.001045244139166791,
+          "top_source_uuid": "8617edf5-23da-4db9-a53d-41bd0a118b0f",
+          "top_source_degree": 4,
+          "top_target_uuid": "8064e47f-496b-4b02-a1e1-faac81abb1b9",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.0004479617739286248,
+          "top_source_uuid": "64ff672f-4cdf-493c-bdc0-4770043edee2",
+          "top_source_degree": 1,
+          "top_target_uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029864118261908315,
+          "top_source_uuid": "ead95d56-c21a-4a0a-97d8-b01f5cd623c6",
+          "top_source_degree": 1,
+          "top_target_uuid": "d329b1e1-8b39-47ee-b528-5c99b6557074",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029864118261908315,
+          "top_source_uuid": "81d96a93-51b5-4442-a4c3-af427df3ab72",
+          "top_source_degree": 1,
+          "top_target_uuid": "93cf95a6-dd14-4a47-acef-3bc29486c4ad",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029864118261908315,
+          "top_source_uuid": "f5f5026c-73e0-4803-b457-bd58001f9a3e",
+          "top_source_degree": 1,
+          "top_target_uuid": "b0bd9009-b0ad-4241-bc86-c6d4f0caa5ad",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029864118261908315,
+          "top_source_uuid": "0cd23f59-8ac9-4e16-8a59-a34d8fb2c9f0",
+          "top_source_degree": 1,
+          "top_target_uuid": "5123ba19-f98d-42ac-9f22-47675247a830",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029864118261908315,
+          "top_source_uuid": "ee1d331a-2683-41fe-967a-afddbf9f29a4",
+          "top_source_degree": 1,
+          "top_target_uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029864118261908315,
+          "top_source_uuid": "03316aef-95b4-4d77-9337-37247e1ca447",
+          "top_source_degree": 1,
+          "top_target_uuid": "94954549-cc5f-48ba-8167-af5db8427cd7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029864118261908315,
+          "top_source_uuid": "9ad85f83-a7ab-4116-9b5b-2a48f9e1a982",
+          "top_source_degree": 1,
+          "top_target_uuid": "544d694c-60e1-4a9a-8c95-4a48a7244c20",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029864118261908315,
+          "top_source_uuid": "428714ff-4f2e-46a5-a566-2f10c0728b07",
+          "top_source_degree": 1,
+          "top_target_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 30,
+        "total_islands": 26,
+        "singleton_islands": 23,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.1,
+            "size_total": 7,
+            "top_uuid": "1379828d-7ead-4a39-9893-dca7cc693dc2",
+            "top_degree": 4
+          },
+          {
+            "size": 2,
+            "fraction": 0.06666666666666667,
+            "size_total": 3,
+            "top_uuid": "64ff672f-4cdf-493c-bdc0-4770043edee2",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.06666666666666667,
+            "size_total": 7,
+            "top_uuid": "8617edf5-23da-4db9-a53d-41bd0a118b0f",
+            "top_degree": 4
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 6667,
+        "total_islands": 6660,
+        "singleton_islands": 6658,
+        "multi_islands": [
+          {
+            "size": 5,
+            "fraction": 0.0007499625018749063,
+            "size_total": 7,
+            "top_uuid": "8064e47f-496b-4b02-a1e1-faac81abb1b9",
+            "top_degree": 2
+          },
+          {
+            "size": 4,
+            "fraction": 0.000599970001499925,
+            "size_total": 7,
+            "top_uuid": "a92c2d54-2b4f-4bcb-8c21-59e4edaff1ce",
+            "top_degree": 3
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "relation_name": "TP_SietovyPrvok_je_pouzivany_ISVS",
+  "name": "Sieťový prvok je používany ISVS",
+  "description": "Sieťový prvok je používaný daným ISVS.",
+  "engDescription": "Network element is used by particular ISVS.",
+  "type": "application",
+  "source_type": "TP_SietovyPrvok",
+  "source_name": "Sieťový prvok",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 25,
+    "unique_pairs": 25,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 5,
+    "target_total": 6667,
+    "source_connected": 5,
+    "target_connected": 10,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 2,
+      "max": 8,
+      "avg": 5.0,
+      "median": 5,
+      "p90": 8,
+      "p99": 8
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 4,
+      "avg": 2.5,
+      "median": 3.0,
+      "p90": 3,
+      "p99": 4
+    },
+    "top_source": [
+      {
+        "uuid": "f4204446-2b40-4fe3-9e2d-ac4cbe72cdbb",
+        "degree": 8,
+        "name": "LAN Switch (DCN)",
+        "code": "tp_sietovy_prvok_11"
+      },
+      {
+        "uuid": "857f12b5-9b05-456e-8a2b-406fcbb6be76",
+        "degree": 7,
+        "name": "Firewall vnútorný (DCN)",
+        "code": "tp_sietovy_prvok_8"
+      },
+      {
+        "uuid": "ea2cbe0a-1bdd-4e4b-92fe-cdb66aed7421",
+        "degree": 5,
+        "name": "Loadbalancer (DCN)",
+        "code": "tp_sietovy_prvok_10"
+      },
+      {
+        "uuid": "3182724a-fde1-4e38-b6aa-6da4ddfa25b7",
+        "degree": 3,
+        "name": "Firewall DMZ (DCN)",
+        "code": "tp_sietovy_prvok_9"
+      },
+      {
+        "uuid": "1d9effac-b684-4fab-91ca-3914889cedf9",
+        "degree": 2,
+        "name": "Sieťové prvky poskytované DataCentrum( Cintorínska, Bratislava )",
+        "code": "tp_sietovy_prvok_12"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "f0c546eb-b3fe-4460-aad2-e4bd02abcd57",
+        "degree": 4,
+        "name": "Portál Finančnej správy (PFS)",
+        "code": "isvs_7213"
+      },
+      {
+        "uuid": "544d694c-60e1-4a9a-8c95-4a48a7244c20",
+        "degree": 3,
+        "name": "Colný informačný systém (CIS)",
+        "code": "isvs_53"
+      },
+      {
+        "uuid": "989e340f-4caf-4a37-9d4f-26c9c3d015ee",
+        "degree": 3,
+        "name": "Administratívny informačný systém (ADMIS)",
+        "code": "isvs_7145"
+      },
+      {
+        "uuid": "a872cef7-d6c6-4f2a-a4c6-b11311b3726b",
+        "degree": 3,
+        "name": "Integrovaný systém Finančnej správy",
+        "code": "isvs_4859"
+      },
+      {
+        "uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+        "degree": 3,
+        "name": "Centrálny elektronický priečinok (CEP)",
+        "code": "isvs_66"
+      },
+      {
+        "uuid": "c59f7ff7-db1a-4151-be9a-820ad1d76224",
+        "degree": 3,
+        "name": "Prierezový IS FS",
+        "code": "isvs_7143"
+      },
+      {
+        "uuid": "416907f6-0b66-4f73-8f54-14157e5fdaae",
+        "degree": 2,
+        "name": "IS pre výmenu informácií FS",
+        "code": "isvs_6943"
+      },
+      {
+        "uuid": "c8adab1a-059b-4098-9f7d-eddb484e77c5",
+        "degree": 2,
+        "name": "Elektronická pošta (FRSR)",
+        "code": "isvs_8728"
+      },
+      {
+        "uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+        "degree": 1,
+        "name": "Informačný systém pre evidenciu a monitorovanie pomoci „IS SEMP“",
+        "code": "isvs_47"
+      },
+      {
+        "uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+        "degree": 1,
+        "name": "Ekonomický informačný systém (EIS)",
+        "code": "isvs_48"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6672,
+      "total_islands": 6659,
+      "singleton_islands": 6657,
+      "multi_islands": [
+        {
+          "size_total": 12,
+          "size_source": 4,
+          "size_target": 8,
+          "fraction_total": 0.0017985611510791368,
+          "top_source_uuid": "f4204446-2b40-4fe3-9e2d-ac4cbe72cdbb",
+          "top_source_degree": 8,
+          "top_target_uuid": "f0c546eb-b3fe-4460-aad2-e4bd02abcd57",
+          "top_target_degree": 4
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004496402877697842,
+          "top_source_uuid": "1d9effac-b684-4fab-91ca-3914889cedf9",
+          "top_source_degree": 2,
+          "top_target_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 5,
+        "total_islands": 2,
+        "singleton_islands": 1,
+        "multi_islands": [
+          {
+            "size": 4,
+            "fraction": 0.8,
+            "size_total": 12,
+            "top_uuid": "f4204446-2b40-4fe3-9e2d-ac4cbe72cdbb",
+            "top_degree": 8
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 6667,
+        "total_islands": 6659,
+        "singleton_islands": 6657,
+        "multi_islands": [
+          {
+            "size": 8,
+            "fraction": 0.00119994000299985,
+            "size_total": 12,
+            "top_uuid": "f0c546eb-b3fe-4460-aad2-e4bd02abcd57",
+            "top_degree": 4
+          },
+          {
+            "size": 2,
+            "fraction": 0.0002999850007499625,
+            "size_total": 3,
+            "top_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

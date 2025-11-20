@@ -1,0 +1,287 @@
+{
+  "relation_name": "ReferenceRegisterItem_belongsTo_ReferenceRegisterItemGroup",
+  "name": "Skupina referečných údajov",
+  "description": "Použije sa v prípade, ak je potrebné zaradiť referenčný údaj do skupiny referenčných údajov. Napríklad k fyzickej osobe \"údaje o pobyte\".",
+  "engDescription": "Reference register item belongs to Group.",
+  "type": "system",
+  "source_type": "ReferenceRegisterItem",
+  "source_name": "Polozka referencneho registra",
+  "target_type": "ReferenceRegisterItemGroup",
+  "target_name": "Skupina poloziek referencneho registra",
+  "sourceCardinality": {
+    "min": 1,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": 1
+  },
+  "stats": {
+    "edges_total": 17,
+    "unique_pairs": 17,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 152,
+    "target_total": 17,
+    "source_connected": 17,
+    "target_connected": 6,
+    "cardinality": "many-to-one",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 10,
+      "avg": 2.8333333333333335,
+      "median": 1.0,
+      "p90": 3,
+      "p99": 10
+    },
+    "top_source": [
+      {
+        "uuid": "0cd24cf6-afd3-4393-ad3f-5fb926356fa3",
+        "degree": 1,
+        "name": "Identifikátor adresy",
+        "code": null
+      },
+      {
+        "uuid": "c231af42-fcce-45af-b5db-c8b72f76a19d",
+        "degree": 1,
+        "name": "Orientačné číslo",
+        "code": null
+      },
+      {
+        "uuid": "78e79394-bb3a-4954-933a-e61319568cdd",
+        "degree": 1,
+        "name": "Súpisné číslo",
+        "code": null
+      },
+      {
+        "uuid": "97188b2c-2531-415a-a045-a7565d4be657",
+        "degree": 1,
+        "name": "Názov ulice",
+        "code": null
+      },
+      {
+        "uuid": "6a3a9831-d7c1-4d7e-8fdb-dc781c27e1dc",
+        "degree": 1,
+        "name": "Názov časti obce",
+        "code": null
+      },
+      {
+        "uuid": "c0157319-ee3b-4265-a20a-28e5de53a8e3",
+        "degree": 1,
+        "name": "Skrátený názov obce",
+        "code": null
+      },
+      {
+        "uuid": "5921e6bb-a3e9-4a08-93ad-f193bcd2188c",
+        "degree": 1,
+        "name": "Názov obce",
+        "code": null
+      },
+      {
+        "uuid": "cd0df2c0-3f15-48bb-acb9-5896c8720e3e",
+        "degree": 1,
+        "name": "Skrátený názov okresu",
+        "code": null
+      },
+      {
+        "uuid": "35a0513d-a8cb-4ed6-be8b-94475d1c9ad6",
+        "degree": 1,
+        "name": "Názov okresu",
+        "code": null
+      },
+      {
+        "uuid": "7b9b1607-d4f7-4678-99d6-23b3f680880b",
+        "degree": 1,
+        "name": "Názov kraja",
+        "code": null
+      },
+      {
+        "uuid": "0697d860-b371-4a50-baeb-19786cd0bdfd",
+        "degree": 1,
+        "name": "Prechodný pobyt",
+        "code": null
+      },
+      {
+        "uuid": "7ddc4dec-b770-4447-bd2d-614c31224581",
+        "degree": 1,
+        "name": "Dátum prihlásenia na pobyt na území Slovenskej republiky",
+        "code": null
+      },
+      {
+        "uuid": "95d64d9f-4884-4399-b84a-f71230bb0f4a",
+        "degree": 1,
+        "name": "Pobyt na území Slovenskej republiky",
+        "code": null
+      },
+      {
+        "uuid": "98d1998c-d702-4ca1-9c6e-bdc500c4245d",
+        "degree": 1,
+        "name": "Štátna príslušnosť",
+        "code": null
+      },
+      {
+        "uuid": "7e839584-e73f-4f8d-9dc8-3b1516a7d5c2",
+        "degree": 1,
+        "name": "Trvalý pobyt",
+        "code": null
+      },
+      {
+        "uuid": "89f4819e-9a53-4e04-a5cb-d8095b706f27",
+        "degree": 1,
+        "name": "Paragraf porušenia nelegálneho zamestnávania",
+        "code": null
+      },
+      {
+        "uuid": "07e0d683-4927-4f2f-94af-f2bb590f5b68",
+        "degree": 1,
+        "name": "Dátum právoplatnosti",
+        "code": null
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "2de2f5c2-b3ce-4c09-b504-3942a479a587",
+        "degree": 10,
+        "name": "Fyzická adresa (Physical address)",
+        "code": null
+      },
+      {
+        "uuid": "63090ab4-59a1-42f1-8c55-60d543421d2d",
+        "degree": 3,
+        "name": "Cudzinec s pobytom v Slovenskej republike, cudzinec s udeleným azylom",
+        "code": null
+      },
+      {
+        "uuid": "5b4df620-ecba-4983-b33c-7077bda9266b",
+        "degree": 1,
+        "name": "Občan s trvalým pobytom na území Slovenskej republiky, občan bez trvalého pobytu na území Slovenskej republiky",
+        "code": null
+      },
+      {
+        "uuid": "91fc37b7-b913-42db-860b-181e719d7e45",
+        "degree": 1,
+        "name": "Občan s trvalým pobytom na území Slovenskej republiky",
+        "code": null
+      },
+      {
+        "uuid": "92481aff-de8f-4020-b70f-61245f8e7175",
+        "degree": 1,
+        "name": "právnická/fyzická osoba",
+        "code": null
+      },
+      {
+        "uuid": "ad52ae0c-c3f2-4105-940d-c367e14ff41c",
+        "degree": 1,
+        "name": "právnická/fyzická osoba",
+        "code": null
+      }
+    ],
+    "islands": {
+      "total_nodes": 169,
+      "total_islands": 152,
+      "singleton_islands": 146,
+      "multi_islands": [
+        {
+          "size_total": 11,
+          "size_source": 10,
+          "size_target": 1,
+          "fraction_total": 0.0650887573964497,
+          "top_source_uuid": "35a0513d-a8cb-4ed6-be8b-94475d1c9ad6",
+          "top_source_degree": 1,
+          "top_target_uuid": "2de2f5c2-b3ce-4c09-b504-3942a479a587",
+          "top_target_degree": 10
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.023668639053254437,
+          "top_source_uuid": "7ddc4dec-b770-4447-bd2d-614c31224581",
+          "top_source_degree": 1,
+          "top_target_uuid": "63090ab4-59a1-42f1-8c55-60d543421d2d",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.011834319526627219,
+          "top_source_uuid": "0697d860-b371-4a50-baeb-19786cd0bdfd",
+          "top_source_degree": 1,
+          "top_target_uuid": "5b4df620-ecba-4983-b33c-7077bda9266b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.011834319526627219,
+          "top_source_uuid": "89f4819e-9a53-4e04-a5cb-d8095b706f27",
+          "top_source_degree": 1,
+          "top_target_uuid": "92481aff-de8f-4020-b70f-61245f8e7175",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.011834319526627219,
+          "top_source_uuid": "07e0d683-4927-4f2f-94af-f2bb590f5b68",
+          "top_source_degree": 1,
+          "top_target_uuid": "ad52ae0c-c3f2-4105-940d-c367e14ff41c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.011834319526627219,
+          "top_source_uuid": "7e839584-e73f-4f8d-9dc8-3b1516a7d5c2",
+          "top_source_degree": 1,
+          "top_target_uuid": "91fc37b7-b913-42db-860b-181e719d7e45",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 152,
+        "total_islands": 141,
+        "singleton_islands": 139,
+        "multi_islands": [
+          {
+            "size": 10,
+            "fraction": 0.06578947368421052,
+            "size_total": 11,
+            "top_uuid": "35a0513d-a8cb-4ed6-be8b-94475d1c9ad6",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.019736842105263157,
+            "size_total": 4,
+            "top_uuid": "7ddc4dec-b770-4447-bd2d-614c31224581",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 17,
+        "total_islands": 17,
+        "singleton_islands": 17,
+        "multi_islands": []
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}

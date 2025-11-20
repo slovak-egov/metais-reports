@@ -1,0 +1,69 @@
+{
+  "type": "CI_GROUP",
+  "count": 10,
+  "attributes": [
+    {
+      "name": "uuid",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "type",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 10.0
+    },
+    {
+      "name": "genprof_CI_GROUP_name",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 9,
+      "unique_pct": 90.0
+    },
+    {
+      "name": "meta.owner",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 10.0
+    },
+    {
+      "name": "meta.state",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 10.0
+    },
+    {
+      "name": "meta.createdBy",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "meta.createdAt",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedBy",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 5,
+      "unique_pct": 50.0
+    },
+    {
+      "name": "meta.lastModifiedAt",
+      "count": 10,
+      "pct": 100.0,
+      "unique_count": 10,
+      "unique_pct": 100.0
+    }
+  ]
+}

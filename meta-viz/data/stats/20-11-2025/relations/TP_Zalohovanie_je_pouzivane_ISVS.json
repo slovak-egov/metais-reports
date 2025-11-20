@@ -1,0 +1,281 @@
+{
+  "relation_name": "TP_Zalohovanie_je_pouzivane_ISVS",
+  "name": "Zálohovacie zariadenie je používané ISVS",
+  "description": "Vybrané ISVS používa dané zálohovacie zariadenia.",
+  "engDescription": "Selected ISVS uses particular backup devices.",
+  "type": "application",
+  "source_type": "TP_Zalohovanie",
+  "source_name": "Zálohovacie zariadenie",
+  "target_type": "ISVS",
+  "target_name": "ISVS",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 15,
+    "unique_pairs": 15,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 7,
+    "target_total": 6667,
+    "source_connected": 5,
+    "target_connected": 15,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 7,
+      "avg": 3.0,
+      "median": 2,
+      "p90": 7,
+      "p99": 7
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "b35ef2d0-5a93-417f-83bc-29e3a38d67ab",
+        "degree": 7,
+        "name": "IBM TS3500 (DCN)",
+        "code": "tp_zalohovanie_8"
+      },
+      {
+        "uuid": "db69b092-3a31-4110-8148-330d91aae7c3",
+        "degree": 4,
+        "name": "HP StorageWorks x1600",
+        "code": "tp_zalohovanie_7"
+      },
+      {
+        "uuid": "03118dcc-c005-4986-88ce-ad76293d5af6",
+        "degree": 2,
+        "name": "Zálohovacie zariadenia poskytované DataCentrum( Cintorínska, Bratislava )",
+        "code": "tp_zalohovanie_10"
+      },
+      {
+        "uuid": "ca2edc60-1121-4c0f-9de1-6107f1939043",
+        "degree": 1,
+        "name": "HP DATA PROTECTOR",
+        "code": "tp_zalohovanie_5"
+      },
+      {
+        "uuid": "10fc9b2b-c8ce-480a-ad29-9e98e59dc044",
+        "degree": 1,
+        "name": "MS DPM (DCN)",
+        "code": "tp_zalohovanie_9"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "06c63c96-d5a2-4dd0-8922-cc488e396586",
+        "degree": 1,
+        "name": "Elektronické komunikačné rozhranie pre Portál FS (EKR (PFS))",
+        "code": "isvs_7218"
+      },
+      {
+        "uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+        "degree": 1,
+        "name": "Informačný systém pre evidenciu a monitorovanie pomoci „IS SEMP“",
+        "code": "isvs_47"
+      },
+      {
+        "uuid": "544d694c-60e1-4a9a-8c95-4a48a7244c20",
+        "degree": 1,
+        "name": "Colný informačný systém (CIS)",
+        "code": "isvs_53"
+      },
+      {
+        "uuid": "58a12ab3-8f93-435c-9eff-88807108fa4f",
+        "degree": 1,
+        "name": "Softip Profit",
+        "code": "isvs_6510"
+      },
+      {
+        "uuid": "7025034a-8939-4ec5-a67d-a34913f4bdd5",
+        "degree": 1,
+        "name": "Ekonomický informačný systém (EIS)",
+        "code": "isvs_48"
+      },
+      {
+        "uuid": "8b58848f-5daa-4167-a720-ac7b958c0d39",
+        "degree": 1,
+        "name": "Rozpočtový informačný systém (RIS)",
+        "code": "isvs_45"
+      },
+      {
+        "uuid": "911472fe-502d-4bb6-8953-9eb446983959",
+        "degree": 1,
+        "name": "HUMAN",
+        "code": "isvs_6511"
+      },
+      {
+        "uuid": "989e340f-4caf-4a37-9d4f-26c9c3d015ee",
+        "degree": 1,
+        "name": "Administratívny informačný systém (ADMIS)",
+        "code": "isvs_7145"
+      },
+      {
+        "uuid": "a33fbf35-4d50-4c00-aa1b-2676e2e918a7",
+        "degree": 1,
+        "name": "Register Najvyššieho súdu",
+        "code": "isvs_5802"
+      },
+      {
+        "uuid": "a872cef7-d6c6-4f2a-a4c6-b11311b3726b",
+        "degree": 1,
+        "name": "Integrovaný systém Finančnej správy",
+        "code": "isvs_4859"
+      },
+      {
+        "uuid": "a92c2d54-2b4f-4bcb-8c21-59e4edaff1ce",
+        "degree": 1,
+        "name": "Cominfo PASSPORT",
+        "code": "isvs_6515"
+      },
+      {
+        "uuid": "c187d1a3-81ae-4e21-8588-5a6be2784594",
+        "degree": 1,
+        "name": "Centrálny elektronický priečinok (CEP)",
+        "code": "isvs_66"
+      },
+      {
+        "uuid": "c59f7ff7-db1a-4151-be9a-820ad1d76224",
+        "degree": 1,
+        "name": "Prierezový IS FS",
+        "code": "isvs_7143"
+      },
+      {
+        "uuid": "c8adab1a-059b-4098-9f7d-eddb484e77c5",
+        "degree": 1,
+        "name": "Elektronická pošta (FRSR)",
+        "code": "isvs_8728"
+      },
+      {
+        "uuid": "f0c546eb-b3fe-4460-aad2-e4bd02abcd57",
+        "degree": 1,
+        "name": "Portál Finančnej správy (PFS)",
+        "code": "isvs_7213"
+      }
+    ],
+    "islands": {
+      "total_nodes": 6674,
+      "total_islands": 6659,
+      "singleton_islands": 6654,
+      "multi_islands": [
+        {
+          "size_total": 8,
+          "size_source": 1,
+          "size_target": 7,
+          "fraction_total": 0.001198681450404555,
+          "top_source_uuid": "b35ef2d0-5a93-417f-83bc-29e3a38d67ab",
+          "top_source_degree": 7,
+          "top_target_uuid": "f0c546eb-b3fe-4460-aad2-e4bd02abcd57",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 5,
+          "size_source": 1,
+          "size_target": 4,
+          "fraction_total": 0.0007491759065028469,
+          "top_source_uuid": "db69b092-3a31-4110-8148-330d91aae7c3",
+          "top_source_degree": 4,
+          "top_target_uuid": "58a12ab3-8f93-435c-9eff-88807108fa4f",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.0004495055439017081,
+          "top_source_uuid": "03118dcc-c005-4986-88ce-ad76293d5af6",
+          "top_source_degree": 2,
+          "top_target_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029967036260113877,
+          "top_source_uuid": "ca2edc60-1121-4c0f-9de1-6107f1939043",
+          "top_source_degree": 1,
+          "top_target_uuid": "8b58848f-5daa-4167-a720-ac7b958c0d39",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00029967036260113877,
+          "top_source_uuid": "10fc9b2b-c8ce-480a-ad29-9e98e59dc044",
+          "top_source_degree": 1,
+          "top_target_uuid": "c8adab1a-059b-4098-9f7d-eddb484e77c5",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 7,
+        "total_islands": 7,
+        "singleton_islands": 7,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 6667,
+        "total_islands": 6657,
+        "singleton_islands": 6654,
+        "multi_islands": [
+          {
+            "size": 7,
+            "fraction": 0.0010499475026248687,
+            "size_total": 8,
+            "top_uuid": "f0c546eb-b3fe-4460-aad2-e4bd02abcd57",
+            "top_degree": 1
+          },
+          {
+            "size": 4,
+            "fraction": 0.000599970001499925,
+            "size_total": 5,
+            "top_uuid": "58a12ab3-8f93-435c-9eff-88807108fa4f",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.0002999850007499625,
+            "size_total": 3,
+            "top_uuid": "4a8b1e87-618d-4fbe-9cfc-c5136def1808",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "relation_name": "KS_je_pouzivana_BP",
+  "name": "Koncová služba je používaná procesom",
+  "description": "Koncová služba je používaná procesom.",
+  "engDescription": "eGov service is used by process.",
+  "type": "application",
+  "source_type": "KS",
+  "source_name": "Koncová služba",
+  "target_type": "BP",
+  "target_name": "Proces",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 19,
+    "unique_pairs": 19,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 9030,
+    "target_total": 392,
+    "source_connected": 18,
+    "target_connected": 11,
+    "cardinality": "many-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 2,
+      "avg": 1.0555555555555556,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 2
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 3,
+      "avg": 1.7272727272727273,
+      "median": 1,
+      "p90": 3,
+      "p99": 3
+    },
+    "top_source": [
+      {
+        "uuid": "40afe705-7aaf-4d84-b708-d3bf0e4e3247",
+        "degree": 2,
+        "name": "Bezpečnostná autorizácia fyzickej alebo právnickej osoby",
+        "code": "sluzba_egov_7310"
+      },
+      {
+        "uuid": "14b272fb-0534-4e4b-be9b-5eb1bfdca5a1",
+        "degree": 1,
+        "name": "Hodnotenie projektov financovaných Agentúrou na podporu výskumu a vývoja",
+        "code": "ks_335156"
+      },
+      {
+        "uuid": "4eb3a5f5-5ad3-4301-82be-9b066b48ee11",
+        "degree": 1,
+        "name": "Vypracovanie ročných a záverečných správ k projektom financovaným Agentúrou na podporu výskumu a vývoja",
+        "code": "ks_335152"
+      },
+      {
+        "uuid": "98146c60-f290-42e2-a348-d3c28a40681f",
+        "degree": 1,
+        "name": "Vypracovanie monitorovacích správ k projektom financovaným Agentúrou na podporu výskumu a vývoja",
+        "code": "ks_335153"
+      },
+      {
+        "uuid": "0c17ae5b-1c39-4bf1-a892-48e4eed71639",
+        "degree": 1,
+        "name": "Poskytovanie zoznamu autorizovaných osôb",
+        "code": "sluzba_egov_1282"
+      },
+      {
+        "uuid": "625810a2-f456-4681-9db3-114290528942",
+        "degree": 1,
+        "name": "Príprava školského vzdelávacieho programu",
+        "code": "ks_335293"
+      },
+      {
+        "uuid": "f7acf17d-fff4-415b-b5bb-bd09a2e0e461",
+        "degree": 1,
+        "name": "Sprístupňovanie školského vzdelávacieho programu",
+        "code": "sluzba_egov_7294"
+      },
+      {
+        "uuid": "bbda344f-ad8c-4d81-a07b-2bbc4d10b2bc",
+        "degree": 1,
+        "name": "Publikovanie informácií o činnosti Národnej rady SR",
+        "code": "ks_331590"
+      },
+      {
+        "uuid": "6e3e9570-d5d8-46b8-9f39-15664d05850f",
+        "degree": 1,
+        "name": "Poskytovanie elektronického vzdelávania v oblasti antidopingu",
+        "code": "ks_335327"
+      },
+      {
+        "uuid": "7448a9cb-7979-4405-857c-a30d44eb168a",
+        "degree": 1,
+        "name": "Hodnotenie žiadostí o financovanie projektov Agentúrou na podporu výskumu a vývoja",
+        "code": "ks_335155"
+      },
+      {
+        "uuid": "bf7107ed-8c8d-4dde-bc02-1903db3511f0",
+        "degree": 1,
+        "name": "Podávanie žiadostí o projekty financované cez grantové schémy Agentúry na podporu výskumu a vývoja",
+        "code": "ks_335150"
+      },
+      {
+        "uuid": "6ccfb4b2-8b04-484a-bf0f-767ac6c5f5e1",
+        "degree": 1,
+        "name": "Vypracovanie posudkov k žiadostiam o financovanie projektov Agentúry na podporu výskumu a vývoja",
+        "code": "ks_335154"
+      },
+      {
+        "uuid": "d406cabc-2b90-43bb-bddc-4f29184ae004",
+        "degree": 1,
+        "name": "Vedenie evidencie podnájomných vzťahov k poľnohospodárskym pozemkom",
+        "code": "ks_333423"
+      },
+      {
+        "uuid": "8c33e561-e337-4009-b19b-8b18d820b99b",
+        "degree": 1,
+        "name": "Poskytovanie údajov z registra poľovníckych organizácií",
+        "code": "ks_331579"
+      },
+      {
+        "uuid": "a0a53f1a-eb66-4233-a707-c06d2d718c7b",
+        "degree": 1,
+        "name": "Hlásenia Národnému bezpečnostnému úradu",
+        "code": "sluzba_egov_7318"
+      },
+      {
+        "uuid": "7e757228-8f77-4da1-8c37-85965431a3cd",
+        "degree": 1,
+        "name": "Spracovanie všetkých typov zmlúv súvisiacich s implementáciou Systému duálneho vzdelávania.",
+        "code": "ks_335223"
+      },
+      {
+        "uuid": "7f755770-8395-4810-a756-33508f4367f3",
+        "degree": 1,
+        "name": "Overovanie spôsobilosti zamestnávateľa v systéme duálneho vzdelávania",
+        "code": "ks_335224"
+      },
+      {
+        "uuid": "0583f10a-bd48-483b-8e53-2f46a221da7f",
+        "degree": 1,
+        "name": "Overovanie spôsobilosti školy užívať označenie Centrum odborného vzdelávania a prípravy",
+        "code": "ks_335225"
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "0600e378-01b1-4faa-a1c2-aec46dc3f404",
+        "degree": 3,
+        "name": "Podávanie ročných a záverečných správ k projektom financovaným Agenúrov na podporu výskumu a vývoja",
+        "code": "proces_424"
+      },
+      {
+        "uuid": "5eb1b6ea-65eb-442b-aa1a-57f79022b555",
+        "degree": 3,
+        "name": "Podávanie žiadosti o financovanie projektu Agentúrov na podporu výskumu a vývoja",
+        "code": "proces_423"
+      },
+      {
+        "uuid": "c73313b0-a012-4e2e-9606-bf94771b76ec",
+        "degree": 3,
+        "name": "Zaradenie školy alebo zamestnávateľa do Systému duálneho vzdelávania",
+        "code": "proces_366"
+      },
+      {
+        "uuid": "2982d8a4-a60a-4f9f-8391-2bb0648f5203",
+        "degree": 2,
+        "name": "Vydanie súhlasu s autorizáciou",
+        "code": "proces_179"
+      },
+      {
+        "uuid": "454a6b8b-d089-4229-b557-2ee394ff5229",
+        "degree": 2,
+        "name": "Vypracovanie a schválenie školského vzdelávacieho programu",
+        "code": "proces_400"
+      },
+      {
+        "uuid": "2acc3ea2-3f14-4804-8524-f6e6aacf46e9",
+        "degree": 1,
+        "name": "Školenie odbornej spôsobilosti oprávnených používateľov podľa pravidiel ŠOI",
+        "code": "proces_174"
+      },
+      {
+        "uuid": "592f7611-1669-4328-af9d-f801c8d04271",
+        "degree": 1,
+        "name": "Evidovanie záznamov v digitálnej knižnici (K NR SR)",
+        "code": "proces_132"
+      },
+      {
+        "uuid": "5e1e15f1-b7a0-465e-ae72-0b339ca79146",
+        "degree": 1,
+        "name": "Certifikácia v oblasti boja proti dopingu",
+        "code": "proces_430"
+      },
+      {
+        "uuid": "7fcde90c-a5aa-4d35-b2f5-56aaebf57461",
+        "degree": 1,
+        "name": "Evidencia podnájomných vzťahov k poľnohospodárskym pozemkom",
+        "code": "proces_201"
+      },
+      {
+        "uuid": "804f4cb0-6346-4df6-991f-ceb775555e68",
+        "degree": 1,
+        "name": "Proces vzniku poľovníckej organizácie",
+        "code": "proces_131"
+      },
+      {
+        "uuid": "84844528-24db-4539-824e-159a7f804396",
+        "degree": 1,
+        "name": "Záznamy o určení, vyhlásenia o mlčanlivosti, zániky určení, hlásenia zmien",
+        "code": "proces_200"
+      }
+    ],
+    "islands": {
+      "total_nodes": 9422,
+      "total_islands": 9403,
+      "singleton_islands": 9393,
+      "multi_islands": [
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0004245383145828911,
+          "top_source_uuid": "14b272fb-0534-4e4b-be9b-5eb1bfdca5a1",
+          "top_source_degree": 1,
+          "top_target_uuid": "0600e378-01b1-4faa-a1c2-aec46dc3f404",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 2,
+          "size_target": 2,
+          "fraction_total": 0.0004245383145828911,
+          "top_source_uuid": "40afe705-7aaf-4d84-b708-d3bf0e4e3247",
+          "top_source_degree": 2,
+          "top_target_uuid": "2982d8a4-a60a-4f9f-8391-2bb0648f5203",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0004245383145828911,
+          "top_source_uuid": "7f755770-8395-4810-a756-33508f4367f3",
+          "top_source_degree": 1,
+          "top_target_uuid": "c73313b0-a012-4e2e-9606-bf94771b76ec",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 4,
+          "size_source": 3,
+          "size_target": 1,
+          "fraction_total": 0.0004245383145828911,
+          "top_source_uuid": "6ccfb4b2-8b04-484a-bf0f-767ac6c5f5e1",
+          "top_source_degree": 1,
+          "top_target_uuid": "5eb1b6ea-65eb-442b-aa1a-57f79022b555",
+          "top_target_degree": 3
+        },
+        {
+          "size_total": 3,
+          "size_source": 2,
+          "size_target": 1,
+          "fraction_total": 0.00031840373593716834,
+          "top_source_uuid": "625810a2-f456-4681-9db3-114290528942",
+          "top_source_degree": 1,
+          "top_target_uuid": "454a6b8b-d089-4229-b557-2ee394ff5229",
+          "top_target_degree": 2
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00021226915729144556,
+          "top_source_uuid": "6e3e9570-d5d8-46b8-9f39-15664d05850f",
+          "top_source_degree": 1,
+          "top_target_uuid": "5e1e15f1-b7a0-465e-ae72-0b339ca79146",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00021226915729144556,
+          "top_source_uuid": "bbda344f-ad8c-4d81-a07b-2bbc4d10b2bc",
+          "top_source_degree": 1,
+          "top_target_uuid": "592f7611-1669-4328-af9d-f801c8d04271",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00021226915729144556,
+          "top_source_uuid": "d406cabc-2b90-43bb-bddc-4f29184ae004",
+          "top_source_degree": 1,
+          "top_target_uuid": "7fcde90c-a5aa-4d35-b2f5-56aaebf57461",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00021226915729144556,
+          "top_source_uuid": "a0a53f1a-eb66-4233-a707-c06d2d718c7b",
+          "top_source_degree": 1,
+          "top_target_uuid": "84844528-24db-4539-824e-159a7f804396",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.00021226915729144556,
+          "top_source_uuid": "8c33e561-e337-4009-b19b-8b18d820b99b",
+          "top_source_degree": 1,
+          "top_target_uuid": "804f4cb0-6346-4df6-991f-ceb775555e68",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 9030,
+        "total_islands": 9022,
+        "singleton_islands": 9017,
+        "multi_islands": [
+          {
+            "size": 3,
+            "fraction": 0.0003322259136212625,
+            "size_total": 4,
+            "top_uuid": "14b272fb-0534-4e4b-be9b-5eb1bfdca5a1",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0003322259136212625,
+            "size_total": 4,
+            "top_uuid": "7f755770-8395-4810-a756-33508f4367f3",
+            "top_degree": 1
+          },
+          {
+            "size": 3,
+            "fraction": 0.0003322259136212625,
+            "size_total": 4,
+            "top_uuid": "6ccfb4b2-8b04-484a-bf0f-767ac6c5f5e1",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.00022148394241417498,
+            "size_total": 4,
+            "top_uuid": "40afe705-7aaf-4d84-b708-d3bf0e4e3247",
+            "top_degree": 2
+          },
+          {
+            "size": 2,
+            "fraction": 0.00022148394241417498,
+            "size_total": 3,
+            "top_uuid": "625810a2-f456-4681-9db3-114290528942",
+            "top_degree": 1
+          }
+        ]
+      },
+      "target": {
+        "total_nodes": 392,
+        "total_islands": 391,
+        "singleton_islands": 390,
+        "multi_islands": [
+          {
+            "size": 2,
+            "fraction": 0.00510204081632653,
+            "size_total": 4,
+            "top_uuid": "2982d8a4-a60a-4f9f-8391-2bb0648f5203",
+            "top_degree": 2
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": [
+    {
+      "technicalName": "Gen_Profil_Rel_kod_metais",
+      "name": "Kód vzťahu MetaIS",
+      "description": "Kód vzťahu MetaIS",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    },
+    {
+      "technicalName": "Gen_Profil_Rel_poznamka",
+      "name": "Poznámka",
+      "description": "Poznámka pri vzťahoch je nepovinný údaj. Používateľ ho vypĺňa, iba keď potrebuje k vytváranej väzbe zaevidovať nejakú informáciu.",
+      "mandatory": "none",
+      "attributeTypeEnum": "STRING"
+    }
+  ]
+}

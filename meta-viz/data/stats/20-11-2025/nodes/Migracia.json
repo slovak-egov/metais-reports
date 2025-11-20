@@ -1,0 +1,146 @@
+{
+  "type": "Migracia",
+  "count": 3,
+  "attributes": [
+    {
+      "name": "uuid",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "type",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "IKT_Profil_Schvalenie_schvalenie_vo_faze_planovania",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Gen_Profil_kod_metais",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Schvalenie_stav_migracie",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Gen_Profil_zdroj",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "Gen_Profil_nazov",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_ref_id",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Schvalenie_schvalenie_vo_faze_analyzy",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "meta.owner",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.state",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 1,
+      "unique_pct": 33.33333333333333
+    },
+    {
+      "name": "meta.createdBy",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.createdAt",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedBy",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "meta.lastModifiedAt",
+      "count": 3,
+      "pct": 100.0,
+      "unique_count": 3,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_popis",
+      "count": 1,
+      "pct": 33.33333333333333,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "IKT_Profil_Migracia_vydavky_na_migraciu",
+      "count": 1,
+      "pct": 33.33333333333333,
+      "unique_count": 1,
+      "unique_pct": 100.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_nazov",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_anglicky_popis",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    },
+    {
+      "name": "Gen_Profil_poznamka",
+      "count": 0,
+      "pct": 0.0,
+      "unique_count": 0,
+      "unique_pct": 0.0
+    }
+  ]
+}

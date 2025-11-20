@@ -1,0 +1,2736 @@
+{
+  "relation_name": "ReferenceRegisterItem_has_ReferenceRegisterItemSourceReferenceHolder",
+  "name": "Referenčný údaj má zdrojovú informáciu",
+  "description": "Definuje prepojenie referenčného údaja s ISVS a PO ako zdrojovým registrom a jeho registrátorom.",
+  "engDescription": "Defines connection between reference item and source register and its registrar.",
+  "type": "system",
+  "source_type": "ReferenceRegisterItem",
+  "source_name": "Polozka referencneho registra",
+  "target_type": "ReferenceRegisterItemSourceReferenceHolder",
+  "target_name": "Zdrojový register a registrátor",
+  "sourceCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "targetCardinality": {
+    "min": 0,
+    "max": null
+  },
+  "stats": {
+    "edges_total": 218,
+    "unique_pairs": 218,
+    "duplicate_edges": 0,
+    "pairs_with_duplicates": 0,
+    "parallel_edges": 0,
+    "parallel_max": 1,
+    "source_total": 152,
+    "target_total": 218,
+    "source_connected": 78,
+    "target_connected": 218,
+    "cardinality": "one-to-many",
+    "ambiguous_pairs": 0,
+    "degree_source": {
+      "min": 1,
+      "max": 11,
+      "avg": 2.7948717948717947,
+      "median": 1.0,
+      "p90": 11,
+      "p99": 11
+    },
+    "degree_target": {
+      "min": 1,
+      "max": 1,
+      "avg": 1.0,
+      "median": 1.0,
+      "p90": 1,
+      "p99": 1
+    },
+    "top_source": [
+      {
+        "uuid": "09501238-4e0b-41e7-b795-e9d810b705e3",
+        "degree": 11,
+        "name": "štatutárny orgán právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "cbeaedb4-1b5b-42bb-9b17-b86497d61069",
+        "degree": 11,
+        "name": "predmet činnosti, účel zriadenia, úlohy a ciele alebo predmet podnikania právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "e6c50cde-df33-4f9d-a85b-6a7b4f172bab",
+        "degree": 11,
+        "name": "právny stav právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "12ef1fba-9cb2-4dc2-9f61-dc9b23a165ff",
+        "degree": 11,
+        "name": "iné právne skutočnosti týkajúce sa právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "faf4c7c2-64b7-45aa-9c52-2c5fda4c94df",
+        "degree": 11,
+        "name": "zainteresovaná osoba pre právnickú osobu",
+        "code": null
+      },
+      {
+        "uuid": "b73b79b9-9360-43fc-bb52-6d663910943f",
+        "degree": 11,
+        "name": "dátum zániku právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "8cb2b948-d66b-4fc7-8058-28c3a70480b8",
+        "degree": 11,
+        "name": "akcie pre právnickú osobu",
+        "code": null
+      },
+      {
+        "uuid": "cc81516e-7644-4a50-af88-4fb50c7ba3ae",
+        "degree": 11,
+        "name": "adresa prevádzkarne, ak je odlišná od adresy sídla právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "b8148f2d-fbc5-4f1f-a1fe-38a5818198b1",
+        "degree": 11,
+        "name": "adresa sídla právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "95238213-2506-494e-8759-3a2fa2e25496",
+        "degree": 11,
+        "name": "právna forma právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "a3de3cb0-ff7d-4695-88a5-d8ea13c7ad85",
+        "degree": 11,
+        "name": "základné imanie alebo iný obdobný majetok právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "7d85a799-0526-4465-af84-30a385667414",
+        "degree": 11,
+        "name": "obchodné meno alebo názov právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "e77fe1ff-339e-4858-a3ab-ce9af6c50c9d",
+        "degree": 11,
+        "name": "vklady alebo podiely pre právnickú osobu",
+        "code": null
+      },
+      {
+        "uuid": "7eac2efb-7749-4a44-851b-33b85aaebd1c",
+        "degree": 10,
+        "name": "dátum vzniku právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "bf53feeb-7ebc-4fd6-a3cd-c1f6cd306c1e",
+        "degree": 2,
+        "name": "spôsob, akým osoba, ktorá je štatutárnym orgánom, členom štatutárneho orgánu alebo prokuristom ktorá koná v mene právnickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "f49f8cfa-d6c8-40ee-9d07-98dea23688a3",
+        "degree": 1,
+        "name": "predmet podnikania pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "7e839584-e73f-4f8d-9dc8-3b1516a7d5c2",
+        "degree": 1,
+        "name": "Trvalý pobyt",
+        "code": null
+      },
+      {
+        "uuid": "3a714af1-7687-4ba8-892d-44082d318c7d",
+        "degree": 1,
+        "name": "Pohlavie",
+        "code": null
+      },
+      {
+        "uuid": "6a3a9831-d7c1-4d7e-8fdb-dc781c27e1dc",
+        "degree": 1,
+        "name": "Názov časti obce",
+        "code": null
+      },
+      {
+        "uuid": "f197feaa-c9c6-48aa-9bcf-436d2339ba09",
+        "degree": 1,
+        "name": "obchodné meno fyzickej osoby – podnikateľa",
+        "code": null
+      },
+      {
+        "uuid": "04f25334-469f-4f05-bf79-5d94cbf3b40e",
+        "degree": 1,
+        "name": "Rodné priezvisko",
+        "code": null
+      },
+      {
+        "uuid": "0cd24cf6-afd3-4393-ad3f-5fb926356fa3",
+        "degree": 1,
+        "name": "Identifikátor adresy",
+        "code": null
+      },
+      {
+        "uuid": "f5d9da7f-c3e5-4ed2-8146-1b261781eade",
+        "degree": 1,
+        "name": "Dátum úmrtia",
+        "code": null
+      },
+      {
+        "uuid": "b76e66dc-8ff3-4e09-a0e1-2a76279f466f",
+        "degree": 1,
+        "name": "Pohlavie",
+        "code": null
+      },
+      {
+        "uuid": "90b9babf-f9df-4e5b-9a9b-9a13a78c25d3",
+        "degree": 1,
+        "name": "štatistický kód hlavnej ekonomickej činnosti",
+        "code": null
+      },
+      {
+        "uuid": "88bd6e80-340c-43aa-b10c-aed4e1f32a48",
+        "degree": 1,
+        "name": "Dátum začiatku trvalého pobytu",
+        "code": null
+      },
+      {
+        "uuid": "e97384c0-bb92-47e0-a877-5bae73705640",
+        "degree": 1,
+        "name": "Číslo a druh cestovného dokladu",
+        "code": null
+      },
+      {
+        "uuid": "298aa654-dd92-409f-b296-4999a385cfb9",
+        "degree": 1,
+        "name": "Rodné číslo",
+        "code": null
+      },
+      {
+        "uuid": "45b32b90-81d1-4efd-9870-31759974fe35",
+        "degree": 1,
+        "name": "štatistický kód inštitucionálneho sektora",
+        "code": null
+      },
+      {
+        "uuid": "097c94cd-1c68-4cc9-aa24-2fd33fb699b0",
+        "degree": 1,
+        "name": "dátum vzniku oprávnenia na podnikanie alebo dátum vzniku oprávnenia na výkon činnosti pre fyzickú osobu - podnikateľa",
+        "code": null
+      },
+      {
+        "uuid": "fcb9c65c-c099-44c5-b47e-1b8d12a65dae",
+        "degree": 1,
+        "name": "Meno",
+        "code": null
+      },
+      {
+        "uuid": "12010f42-14a9-4821-8bb5-aa261ceaf678",
+        "degree": 1,
+        "name": "Miesto narodenia",
+        "code": null
+      },
+      {
+        "uuid": "ab862c7a-88f3-4d0a-a4a0-782633fc856c",
+        "degree": 1,
+        "name": "Priezvisko",
+        "code": null
+      },
+      {
+        "uuid": "ac386717-58aa-4958-8715-661f99dcc25b",
+        "degree": 1,
+        "name": "Priezvisko",
+        "code": null
+      },
+      {
+        "uuid": "769f6a8b-00e8-4a81-b8cd-9265a99a897b",
+        "degree": 1,
+        "name": "Dátum narodenia",
+        "code": null
+      },
+      {
+        "uuid": "255726dd-6576-4565-9703-5b8888344344",
+        "degree": 1,
+        "name": "identifikačné údaje fyzickej osoby",
+        "code": null
+      },
+      {
+        "uuid": "d7cb4cf6-dbe1-47cf-8cbd-24d2b622cac5",
+        "degree": 1,
+        "name": "adresa miesta činnosti pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "412fa073-4b5b-4cd9-9bad-9c863f420074",
+        "degree": 1,
+        "name": "adresa prevádzkarne, ak je odlišná od adresy miesta činnosti pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "c231af42-fcce-45af-b5db-c8b72f76a19d",
+        "degree": 1,
+        "name": "Orientačné číslo",
+        "code": null
+      },
+      {
+        "uuid": "c4568ad1-4bdb-429c-b435-2166ea827cd4",
+        "degree": 1,
+        "name": "Osobné údaje matky",
+        "code": null
+      },
+      {
+        "uuid": "58d15051-d93b-4d8b-8cfc-31ecd81bc304",
+        "degree": 1,
+        "name": "Dátum skončenia prechodného pobytu",
+        "code": null
+      },
+      {
+        "uuid": "d414d67f-df99-4130-9843-f987f8d77fde",
+        "degree": 1,
+        "name": "Miesto úmrtia",
+        "code": null
+      },
+      {
+        "uuid": "7b9b1607-d4f7-4678-99d6-23b3f680880b",
+        "degree": 1,
+        "name": "Názov kraja",
+        "code": null
+      },
+      {
+        "uuid": "69655d88-7b2b-4d33-8112-fd1aa9494b30",
+        "degree": 1,
+        "name": "adresa miesta podnikania alebo adresa výkonu činnosti fyzickej osoby - podnikateľa",
+        "code": null
+      },
+      {
+        "uuid": "15a8d816-9efb-4aa7-bdfd-b822fbf5c14d",
+        "degree": 1,
+        "name": "obchodné meno pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "a67582c8-f4f9-4d28-b796-62156f1c6a21",
+        "degree": 1,
+        "name": "Dátum narodenia",
+        "code": null
+      },
+      {
+        "uuid": "ed6b69b2-1327-4cee-a1e2-23f3cc9a3423",
+        "degree": 1,
+        "name": "Miesto narodenia",
+        "code": null
+      },
+      {
+        "uuid": "4bb5058f-9a3c-436b-8ec0-d0b58f8505b5",
+        "degree": 1,
+        "name": "zriaďovateľ fyzická osoba pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "5a933271-c91d-461f-8a7d-d39fd6dac802",
+        "degree": 1,
+        "name": "Rodinný stav",
+        "code": null
+      },
+      {
+        "uuid": "97188b2c-2531-415a-a045-a7565d4be657",
+        "degree": 1,
+        "name": "Názov ulice",
+        "code": null
+      },
+      {
+        "uuid": "95d64d9f-4884-4399-b84a-f71230bb0f4a",
+        "degree": 1,
+        "name": "Pobyt na území Slovenskej republiky",
+        "code": null
+      },
+      {
+        "uuid": "17fc72dc-4bf4-4e8f-9e3e-fbde664e4cea",
+        "degree": 1,
+        "name": "spôsob, akým fyzická osoba, ktorá je vedúcim  alebo prokuristom, koná v mene podniku pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "366af9a2-a04d-45c3-bc1c-8d2a6cd80482",
+        "degree": 1,
+        "name": "zriaďovateľ právnická osoba pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "74495b48-83f0-4f2e-9990-1321852aa6b8",
+        "degree": 1,
+        "name": "dátum zriadenia pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "35a0513d-a8cb-4ed6-be8b-94475d1c9ad6",
+        "degree": 1,
+        "name": "Názov okresu",
+        "code": null
+      },
+      {
+        "uuid": "5921e6bb-a3e9-4a08-93ad-f193bcd2188c",
+        "degree": 1,
+        "name": "Názov obce",
+        "code": null
+      },
+      {
+        "uuid": "0697d860-b371-4a50-baeb-19786cd0bdfd",
+        "degree": 1,
+        "name": "Prechodný pobyt",
+        "code": null
+      },
+      {
+        "uuid": "5ef4a3c6-0197-4453-af9d-a847c9be5287",
+        "degree": 1,
+        "name": "predmet podnikania alebo predmet činnosti fyzickej osoby - podnikateľa",
+        "code": null
+      },
+      {
+        "uuid": "b25c5e25-8eea-4d8c-9e49-606f71b71fcc",
+        "degree": 1,
+        "name": "právna forma fyzickej osoby - podnikateľa",
+        "code": null
+      },
+      {
+        "uuid": "f7682b4f-43cb-4d6b-8f4a-774401471732",
+        "degree": 1,
+        "name": "vedúci alebo prokurista pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "16e6e236-2b0c-47e4-b2d0-d7ee590a709a",
+        "degree": 1,
+        "name": "právny stav fyzickej osoby - podnikateľa",
+        "code": null
+      },
+      {
+        "uuid": "41434c3d-ea8e-4ee5-ba25-8450dacdf5ca",
+        "degree": 1,
+        "name": "Osobné údaje dieťaťa",
+        "code": null
+      },
+      {
+        "uuid": "b95c8ac0-dd69-41c5-9507-8befe29547cd",
+        "degree": 1,
+        "name": "Dátum skončenia trvalého pobytu",
+        "code": null
+      },
+      {
+        "uuid": "690e7742-f835-4937-87db-fc4f81d78eac",
+        "degree": 1,
+        "name": "Dátum začiatku prechodného pobytu",
+        "code": null
+      },
+      {
+        "uuid": "15097509-0910-4f08-a7b9-f80cb08f8ccf",
+        "degree": 1,
+        "name": "Osobné údaje manžela (manželky)",
+        "code": null
+      },
+      {
+        "uuid": "7ddc4dec-b770-4447-bd2d-614c31224581",
+        "degree": 1,
+        "name": "Dátum prihlásenia na pobyt na území Slovenskej republiky",
+        "code": null
+      },
+      {
+        "uuid": "c0157319-ee3b-4265-a20a-28e5de53a8e3",
+        "degree": 1,
+        "name": "Skrátený názov obce",
+        "code": null
+      },
+      {
+        "uuid": "5a7e94da-9c99-403c-bf75-08ba212559fc",
+        "degree": 1,
+        "name": "právna forma pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      },
+      {
+        "uuid": "98d1998c-d702-4ca1-9c6e-bdc500c4245d",
+        "degree": 1,
+        "name": "Štátna príslušnosť",
+        "code": null
+      },
+      {
+        "uuid": "cd0df2c0-3f15-48bb-acb9-5896c8720e3e",
+        "degree": 1,
+        "name": "Skrátený názov okresu",
+        "code": null
+      },
+      {
+        "uuid": "8ead91ca-7e61-4794-a1e9-7f404b30f0f3",
+        "degree": 1,
+        "name": "dátum zániku oprávnenia na podnikanie alebo dátum zániku oprávnenia na výkon činnosti pre fyzickú osobu - podnikateľa",
+        "code": null
+      },
+      {
+        "uuid": "38d295d7-e313-4c6e-9a15-347ade5e8db2",
+        "degree": 1,
+        "name": "adresa prevádzkarne, ak je odlišná od adresy miesta podnikania alebo adresy výkonu činnosti fyzickej osoby - podnikateľa",
+        "code": null
+      },
+      {
+        "uuid": "975a37cd-0f4c-44c2-a59b-353ef0271f49",
+        "degree": 1,
+        "name": "Číslo a séria občianskeho preukazu",
+        "code": null
+      },
+      {
+        "uuid": "7fb8d314-f700-4b45-ae9f-0e577c7b3cf4",
+        "degree": 1,
+        "name": "Meno",
+        "code": null
+      },
+      {
+        "uuid": "b4d7fb87-e6cb-497c-926c-275bc1ba82f2",
+        "degree": 1,
+        "name": "Osobné údaje otca",
+        "code": null
+      },
+      {
+        "uuid": "09447fd3-0a32-4649-a5f9-90da9123e28c",
+        "degree": 1,
+        "name": "Rodné číslo",
+        "code": null
+      },
+      {
+        "uuid": "78e79394-bb3a-4954-933a-e61319568cdd",
+        "degree": 1,
+        "name": "Súpisné číslo",
+        "code": null
+      },
+      {
+        "uuid": "d9daa351-56a2-4cfe-b44b-7141898966e7",
+        "degree": 1,
+        "name": "dátum zrušenia pre podnik zahraničnej osoby a organizačná zložka podniku zahraničnej osoby",
+        "code": null
+      }
+    ],
+    "top_target": [
+      {
+        "uuid": "0065c966-a359-46ef-a0ce-561867a93e68",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "01309ae7-4d9f-4f69-9ec5-299a920d5421",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "0181f370-b01e-4760-a8ba-2cf6df87bc32",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "029861a3-3e58-4521-befa-0acc64cbbed6",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "031b14d2-ba89-4a98-a4fd-cf14fca6d46d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "031cef1a-37e6-46bf-8272-521279c6dd0d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "03e5db43-23e2-47d4-8d3a-ebc662db9b96",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "0915f98f-be19-4b42-a536-bc8fcf019923",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "0987fc99-9d29-4cb8-9ddb-0e987f4b938c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "0a7fcd08-a963-458b-bd0c-b1e0d15f7f36",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "0b34c48e-0a75-4758-ab8d-3f195cd75794",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "0caf25a8-17b5-4a9e-8179-95af776f009c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "12a1657f-6037-41c5-bbfe-d3d84e89d790",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "13ccfea1-2be2-46bf-b087-9f2ae54266e9",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "16838090-6838-4127-b8b0-8d437c93e39a",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "17444c5d-3b90-47de-9adb-d777b05948de",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "192182ba-cd61-4d05-953f-1f0037118d4b",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "1a3b97b3-d27b-4e9c-8f8a-cba698240dd5",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "1b7cbaec-e748-4119-81cf-a46219260db5",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "1b8c1b9c-2587-411b-8726-5924f53b5c1a",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "1b9fb1ff-9f5b-42a6-a974-b9859b7407ee",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "1e29ffc8-e981-4552-b586-c6c40ecbc12d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "1eb61488-769e-4996-a092-3a53096379ce",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "2001301a-0fc0-4f4a-97c5-1f290dad673d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "211a827c-9279-40dd-9cd7-27fc57897ca9",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "2136d549-b143-4384-afc8-c89b7431351e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "22bf7429-7919-44f3-bc66-2c090fef5cdd",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "246acca8-5e54-4352-8828-17bafb15eee7",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "24ddf60d-40bb-45ad-9771-bbe3e2f6106b",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "27eaa091-5ef7-4df3-a12b-7b4f3e07024f",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "286c41a6-9ac4-4638-98fe-5dbbb6220b34",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "2c83e601-e8a8-4c11-a797-678e133924c0",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "2d531031-7d6a-47a2-8269-17ba50d2150f",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "2dcb4131-0d69-4dc0-8aa6-463c02da9638",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "2faa63dc-698e-44cb-9ad4-cbb3e6f88882",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "3056dc65-6936-4d7e-82f0-50f3764af43a",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "333596e5-6017-4c7b-bb5f-f095784bf3f3",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "35186f29-d225-422a-a225-fdef1412f029",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "363d8a69-103a-4f3f-b2e8-b54ce881a4ce",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "36903089-e91d-446f-aae3-36f9e5371573",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "38b176d3-7190-4509-a59a-61fec65a206b",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "39c2e28a-ac56-4df9-a7dc-bbd6714440b8",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "3a0a87ec-08cd-4ba4-91e1-0e0ac22b406a",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "3b566752-0e7b-438c-87fc-6a0edf8dec97",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "42df3972-6e49-446e-be53-e1448e49c28d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "43779b22-4432-4221-9042-dbdf25fca23a",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "43bb2350-c69b-4483-ac8f-30efc6b5a433",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "442391c6-123a-44a7-be93-fdad1ef80a6e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "460b0c9f-e29e-42d5-97c1-2a6fe2e01b21",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "4761fe67-ae09-4d9a-a5c2-9f83851e6119",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "47d80906-f42f-4319-8371-392fd2ca5157",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "487d4c5e-ab1c-44c1-9e8d-b1fab9a4fb63",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "4d6afe38-6bc6-4fc8-a4b1-3942e9da842c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "4dcec655-1917-4814-8819-073760f25324",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "4eca67d2-7fe5-46fe-9445-bb58a9bbf0c4",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "50e039cb-dd1f-4300-aa36-5504af081af7",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5234625d-a169-45bb-ba9d-10e2efd4b29c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "52733cfa-9b30-46a9-b719-64eacbdb9f48",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "535e1ed1-4a79-4d3f-a8b9-9652b114b577",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "567ca741-a850-46ca-9d7a-dd508b681f04",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "579c0276-aeea-4b8d-9012-d3ad1d5be371",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "592b1415-833a-483a-9b90-dc37ee774e8b",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5add90f8-438c-46c5-9f34-550ce1941531",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5b3ccecf-592f-446c-9d32-dc767ae3ca69",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5bc132f1-d9d5-41dd-8577-f8e0c62e9ae7",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5c3a35cb-676e-4507-9c2e-f2d71407599b",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5c5fd03b-5b88-4695-a822-3042ec4227d1",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5e83a49d-6cf1-41c8-a8f5-b0db557048d0",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5ef6c6f6-5f1d-410b-9841-675a546c0ee8",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5f6f360c-c04e-42c0-8ce2-09a7e5ad937e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5f969c13-1b31-4446-a706-a4c49861a051",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "5fa05693-af20-4f65-9f68-a5f7e1d5303f",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "6836a9a1-762e-476d-957c-6b39330b605e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "68d31aa5-e63e-4342-9a85-0e33681a6ce2",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "69834277-6d74-4d10-8f8a-f49979ed5933",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "6a71a6b1-4bcb-4498-9ffe-0c81e3fd6b08",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "6a7754ff-8d24-430c-a4f3-d3e9783ba691",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "6aa7b73d-7583-4f42-86b6-c5f22d193158",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "6d41282e-7343-4324-b800-7d26401f3425",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "6f08ab44-d716-4590-b861-11a686cca6de",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "702fbc12-0098-4260-834a-1e72b812deb8",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7119139b-18c6-4cc3-8e20-8a8ca7481fe6",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "71ba08c0-2ae3-45f8-b1d5-7676e991ba47",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "72d6e424-55b0-41f0-97ea-15c536479c5b",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "73e4a3a1-da71-45c3-9a65-b6f52e23fb40",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "769249b9-feac-468e-ad2e-eca52714abfc",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "77ae0f8f-dcf3-42be-ac51-5bd2f8000ed6",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "77e39c1c-afc4-4574-a3a9-8647f8dc5c5c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "78f29529-6642-4303-92ad-80a4e07ff4b0",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "797211eb-8958-4b57-bf90-5e3aab422744",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "79ac6b93-d229-43ea-8214-07c4056842ce",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "79d98d39-4b53-44ff-9c86-b1d4cf646bac",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "79feac75-4ca0-4d1e-bfa5-5de7c0ae15c2",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7a31471e-2a76-4405-91e4-d7d72bd7df08",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7a476321-6a62-4092-b266-eba8ac73f034",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7a8e77c5-e3d4-4af2-b419-af1740e88b25",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7b0a8426-099f-46e2-b35b-b2dcdd2cd10d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7b9c59c0-0745-4b8b-a074-29e1e2fe6016",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7c715490-0a4c-411d-87ef-21e5c0266f98",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7ed476b5-a3b5-4f62-91d2-b5ec4b95e7a2",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7f222a84-40be-4579-a742-4308163fbe54",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "7f4d59b4-f8af-4322-94d4-ce5982125510",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "80e4968a-7f7b-419f-82d8-f15641c69663",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "82dded46-a816-4e69-a6e3-a394377fd9cc",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "82e2096f-fa46-4bae-9568-04fcc45874a5",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "834fd7cf-93aa-4058-9cd5-96e26d71ae49",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "86c44b3b-6c4e-4743-885f-6b4e415d3535",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "88bbf0f0-1696-40be-91cd-9d7ac4e20f56",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "8a6475bf-3b7a-4162-ab1a-c9ed1ab28202",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "8bd2d0e1-cad1-4833-ad20-49933837d739",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "8deea9f5-997b-4d8f-a69c-80ea884f5c78",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "8ea752c3-3dbd-456b-91d4-58b272fe90d0",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "922a7b50-993b-4f17-9e0a-45761ddf91ab",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "932178db-41aa-4d07-a99a-2a3871587ec4",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "9348edb8-b12e-4503-b2e2-b047b94510ea",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "9358be15-6e2e-4583-b9a1-503dfd23351c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "944e28ac-2ac9-4135-be3c-6eaa6c3fd0ac",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "96375da6-7318-4050-b639-593e7835a68b",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "96785d91-bc5d-430d-be40-0efe81ded500",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "971f163b-e8b2-4ccb-87ac-a1df14db5313",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "97210b8a-a4b2-406a-86c5-196229618df1",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "9a193cf1-75ae-44ed-86bc-b66cf390abda",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "9d38e4d6-515d-4fcf-832d-fd67e7bb2a19",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "9db4ff21-05d8-4d77-82f5-ddff2249b9c7",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "9ec23b9e-27db-4345-9133-35aa9a40a92e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "9f2bd557-7bb5-4af3-9749-0202e7fd1455",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a024a734-ce49-435c-9c62-dcb68522c489",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a190eb7a-9c4c-4083-bfa5-16ccd97ff96d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a2afb7de-7942-4a2b-b60f-a82af32cace4",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a41be27e-050e-4eb7-a2f2-25917d871257",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a4b579e9-8f55-4e62-a8a9-a7354e1f9438",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a5c6428f-583d-4982-adf6-254122d18b9c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a6c7e6cd-614d-4185-8014-0b96f55ea731",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a6d46393-7fbe-49f9-bc19-51b0839e037d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a8417123-2ff7-4970-b976-2acf746f4dce",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a9035255-c4b2-4dcd-87cb-e7929ff9947e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "a94b8bbe-0c09-4cb9-8f5c-7934bd026c1e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "aa83a12c-0bc0-4222-96bd-c0b04373d763",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "aaa1b5c1-eae6-4cd4-8b36-d15328fff1ba",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "aaafab4e-8daf-43ab-92da-52c9ee2a5369",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "aadd21d3-a61e-4161-b889-d872b797f9d3",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "aaf015d8-6565-408f-89ed-a286786fd95d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "ad6f879c-3162-432a-9efd-02049f6c6f03",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "afb18da4-e993-478b-9169-37ee749783b9",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b0132dad-473a-475d-af16-00c9beba1bc9",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b08e203b-d40f-44c2-b016-79cac99f52fe",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b13a2b30-e772-4e96-a7b2-0d2d2e6b1b16",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b190d50c-4db5-477d-b470-fe9a305ca470",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b405cb24-f714-41b9-a94e-eed3430e8f87",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b4e3395e-f13f-4247-8d2c-f1c9308ed3dc",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b5900861-7833-4550-b343-4152f4cf1672",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b878092c-89d3-4a1b-b886-c98f00a2bb28",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b8f65b03-c702-400e-a1ff-e1aa6acbbb5e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "b9bf117a-3e07-46b0-a6d7-d4e31da2aa74",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "bc0a37db-c4d7-4a15-9cbc-3a2d80f4961e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "bdf5835b-e158-48f4-a19e-2ef4f7906baa",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "be7e391d-34b6-424b-aee4-1c646cfc7dd9",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c03851ca-53f2-4faa-b7b5-beabbcf5c36a",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c08cfda1-41b1-4084-8a9f-9e21dde35ac8",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c204be67-09ff-4d03-9a92-4ffb741dc56d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c237eaab-e9c5-4a26-b563-cd9d5a0fe844",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c2719493-c2d6-4a33-82bf-cf9b8d107cf7",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c3c98453-e243-4c49-93e5-7507308c50d7",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c520284e-e5e1-4032-ac94-ae8340904d0d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c59652c2-2a85-4ebc-96c6-9b3a152af282",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c6eb9911-2163-4d7b-83af-72ac94efe38d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "c8cde2a6-3ae5-4e5c-bb19-f56693f90b84",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cae77621-7b80-46a4-98ff-d619a6d1d556",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cb60e1c4-0750-4d6e-bb58-6a4966dbb6d2",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cb824c4c-a011-49b3-b9e4-4ac6b05af272",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cbba3cb5-a961-4e8b-9b28-c13a9d96244a",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cbbb97dc-94c6-4fab-b331-fdf33937ab7b",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cc19d649-ba5c-4c61-afeb-132fb0469928",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cc84fabc-68a9-4329-ac72-8cced4e74a58",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cd04a65a-2b57-4103-b321-8c68d46ff0f2",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "cd3578a0-35ea-44f4-925b-49aa0fc9bbc6",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "d1220eb9-0596-4dbf-9ce8-6584cdea3083",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "d3baf357-3843-47ec-875f-ef0b6c0f159d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "d402c067-d6f7-4944-824b-964a30d4afd8",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "d6096bc2-ee10-48e4-883c-accf5ad4b162",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "d672b970-cc65-4631-8b95-33a126d3bf50",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "d6b97efa-9735-49e1-b4df-ee2c76125cf8",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "dc65a894-1509-47d2-879d-f38a130c5842",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "dcc57cd3-6300-4240-ba76-3d14fedea0ba",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "dcf4775e-7e7c-43bc-bea9-568999a1eb90",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "dcf6c461-eebb-4615-8efb-91c9a9356b74",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e05d795a-9198-475c-ac53-70505b2c20c0",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e0948436-9cbd-4404-a015-7e1e1dfe383c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e1cd6889-b47f-4596-811e-2d0eabb183e0",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e32f39db-e9ea-4a6a-8ff9-0fe9cdafebb8",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e372a500-859f-4f6d-b685-709a9c3af77a",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e466bb34-a085-498b-b2fd-5b7d0f7593ab",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e4f2fa79-ce38-4a43-a1d6-2416a860663c",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e6c55567-fef0-4950-b799-8e660de00fb3",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e6c6e42e-679b-469d-8936-4534ac1b6efe",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "e7b8d767-1429-4abd-9b1a-9fd601da1217",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "ebf89af0-555b-46e2-88aa-6f8c96dc520d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "ecc29459-a4c6-4e4f-9688-ca58f54d3150",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "ecf8609b-8123-4d69-89e8-85c4d425ff7d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "ed709bb6-8c5e-48b8-b2d2-4ebb1600f245",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "edb21d88-5fb5-40dd-ab13-cc51b6ccdad2",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "f45ac57a-50d3-496e-81fe-19da5ec331bf",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "f52643ba-e9d7-4fdc-8d1d-ba6b1e341790",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "f627241e-c434-489f-9b2b-faf6309316e7",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "f655432c-29a1-489f-ace1-0e8cc1d6b5b7",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "f6a312b5-9300-4cd8-bd47-bdabc5b9143d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "f74b2175-e639-4c9d-80cf-f7b90721475e",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "f7816183-ae9c-4d81-a307-4d32de7afe30",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "f99c6aac-6e91-4861-8e7f-02c75e7844f0",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "fb150cf0-37bf-4ccd-9b74-abe6864ae8a1",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "fb381dcd-ad03-46c4-a45f-6d6f9ce9d761",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "fc1c49bb-6d39-4172-9361-6eeb0651e742",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "fc4d4fee-d613-40b2-83f3-ecadb3e61774",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "fdb1b22c-bc15-4f78-82d1-5133de17d9ab",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "fdd6d9a4-f708-4234-82e3-6167d98d7fc9",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "fe51dc16-386f-4952-868a-40e7193ca0c0",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "feb33c09-8193-4025-a357-cda1ee4fad4d",
+        "degree": 1,
+        "name": null,
+        "code": null
+      },
+      {
+        "uuid": "ff2b4a0d-2e10-4fb5-8f29-d6d7f2b1d6a5",
+        "degree": 1,
+        "name": null,
+        "code": null
+      }
+    ],
+    "islands": {
+      "total_nodes": 370,
+      "total_islands": 152,
+      "singleton_islands": 74,
+      "multi_islands": [
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "cc81516e-7644-4a50-af88-4fb50c7ba3ae",
+          "top_source_degree": 11,
+          "top_target_uuid": "1b7cbaec-e748-4119-81cf-a46219260db5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "e77fe1ff-339e-4858-a3ab-ce9af6c50c9d",
+          "top_source_degree": 11,
+          "top_target_uuid": "52733cfa-9b30-46a9-b719-64eacbdb9f48",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "09501238-4e0b-41e7-b795-e9d810b705e3",
+          "top_source_degree": 11,
+          "top_target_uuid": "1b9fb1ff-9f5b-42a6-a974-b9859b7407ee",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "faf4c7c2-64b7-45aa-9c52-2c5fda4c94df",
+          "top_source_degree": 11,
+          "top_target_uuid": "50e039cb-dd1f-4300-aa36-5504af081af7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "cbeaedb4-1b5b-42bb-9b17-b86497d61069",
+          "top_source_degree": 11,
+          "top_target_uuid": "0181f370-b01e-4760-a8ba-2cf6df87bc32",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "8cb2b948-d66b-4fc7-8058-28c3a70480b8",
+          "top_source_degree": 11,
+          "top_target_uuid": "ebf89af0-555b-46e2-88aa-6f8c96dc520d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "95238213-2506-494e-8759-3a2fa2e25496",
+          "top_source_degree": 11,
+          "top_target_uuid": "5b3ccecf-592f-446c-9d32-dc767ae3ca69",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "b8148f2d-fbc5-4f1f-a1fe-38a5818198b1",
+          "top_source_degree": 11,
+          "top_target_uuid": "b878092c-89d3-4a1b-b886-c98f00a2bb28",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "e6c50cde-df33-4f9d-a85b-6a7b4f172bab",
+          "top_source_degree": 11,
+          "top_target_uuid": "7119139b-18c6-4cc3-8e20-8a8ca7481fe6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "7d85a799-0526-4465-af84-30a385667414",
+          "top_source_degree": 11,
+          "top_target_uuid": "7f4d59b4-f8af-4322-94d4-ce5982125510",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "b73b79b9-9360-43fc-bb52-6d663910943f",
+          "top_source_degree": 11,
+          "top_target_uuid": "0987fc99-9d29-4cb8-9ddb-0e987f4b938c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "a3de3cb0-ff7d-4695-88a5-d8ea13c7ad85",
+          "top_source_degree": 11,
+          "top_target_uuid": "2faa63dc-698e-44cb-9ad4-cbb3e6f88882",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 12,
+          "size_source": 1,
+          "size_target": 11,
+          "fraction_total": 0.032432432432432434,
+          "top_source_uuid": "12ef1fba-9cb2-4dc2-9f61-dc9b23a165ff",
+          "top_source_degree": 11,
+          "top_target_uuid": "a41be27e-050e-4eb7-a2f2-25917d871257",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 11,
+          "size_source": 1,
+          "size_target": 10,
+          "fraction_total": 0.02972972972972973,
+          "top_source_uuid": "7eac2efb-7749-4a44-851b-33b85aaebd1c",
+          "top_source_degree": 10,
+          "top_target_uuid": "0065c966-a359-46ef-a0ce-561867a93e68",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 3,
+          "size_source": 1,
+          "size_target": 2,
+          "fraction_total": 0.008108108108108109,
+          "top_source_uuid": "bf53feeb-7ebc-4fd6-a3cd-c1f6cd306c1e",
+          "top_source_degree": 2,
+          "top_target_uuid": "3b566752-0e7b-438c-87fc-6a0edf8dec97",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "975a37cd-0f4c-44c2-a59b-353ef0271f49",
+          "top_source_degree": 1,
+          "top_target_uuid": "fb381dcd-ad03-46c4-a45f-6d6f9ce9d761",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "45b32b90-81d1-4efd-9870-31759974fe35",
+          "top_source_degree": 1,
+          "top_target_uuid": "5f6f360c-c04e-42c0-8ce2-09a7e5ad937e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "d9daa351-56a2-4cfe-b44b-7141898966e7",
+          "top_source_degree": 1,
+          "top_target_uuid": "ff2b4a0d-2e10-4fb5-8f29-d6d7f2b1d6a5",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "b95c8ac0-dd69-41c5-9507-8befe29547cd",
+          "top_source_degree": 1,
+          "top_target_uuid": "cb824c4c-a011-49b3-b9e4-4ac6b05af272",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "35a0513d-a8cb-4ed6-be8b-94475d1c9ad6",
+          "top_source_degree": 1,
+          "top_target_uuid": "aaf015d8-6565-408f-89ed-a286786fd95d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "74495b48-83f0-4f2e-9990-1321852aa6b8",
+          "top_source_degree": 1,
+          "top_target_uuid": "aadd21d3-a61e-4161-b889-d872b797f9d3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "ed6b69b2-1327-4cee-a1e2-23f3cc9a3423",
+          "top_source_degree": 1,
+          "top_target_uuid": "96375da6-7318-4050-b639-593e7835a68b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "12010f42-14a9-4821-8bb5-aa261ceaf678",
+          "top_source_degree": 1,
+          "top_target_uuid": "6aa7b73d-7583-4f42-86b6-c5f22d193158",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "7ddc4dec-b770-4447-bd2d-614c31224581",
+          "top_source_degree": 1,
+          "top_target_uuid": "d1220eb9-0596-4dbf-9ce8-6584cdea3083",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "c0157319-ee3b-4265-a20a-28e5de53a8e3",
+          "top_source_degree": 1,
+          "top_target_uuid": "d6096bc2-ee10-48e4-883c-accf5ad4b162",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "98d1998c-d702-4ca1-9c6e-bdc500c4245d",
+          "top_source_degree": 1,
+          "top_target_uuid": "e32f39db-e9ea-4a6a-8ff9-0fe9cdafebb8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "b4d7fb87-e6cb-497c-926c-275bc1ba82f2",
+          "top_source_degree": 1,
+          "top_target_uuid": "fc4d4fee-d613-40b2-83f3-ecadb3e61774",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "f197feaa-c9c6-48aa-9bcf-436d2339ba09",
+          "top_source_degree": 1,
+          "top_target_uuid": "0caf25a8-17b5-4a9e-8179-95af776f009c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "5a7e94da-9c99-403c-bf75-08ba212559fc",
+          "top_source_degree": 1,
+          "top_target_uuid": "d6b97efa-9735-49e1-b4df-ee2c76125cf8",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "5921e6bb-a3e9-4a08-93ad-f193bcd2188c",
+          "top_source_degree": 1,
+          "top_target_uuid": "ad6f879c-3162-432a-9efd-02049f6c6f03",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "fcb9c65c-c099-44c5-b47e-1b8d12a65dae",
+          "top_source_degree": 1,
+          "top_target_uuid": "69834277-6d74-4d10-8f8a-f49979ed5933",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "4bb5058f-9a3c-436b-8ec0-d0b58f8505b5",
+          "top_source_degree": 1,
+          "top_target_uuid": "971f163b-e8b2-4ccb-87ac-a1df14db5313",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "0697d860-b371-4a50-baeb-19786cd0bdfd",
+          "top_source_degree": 1,
+          "top_target_uuid": "b4e3395e-f13f-4247-8d2c-f1c9308ed3dc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "15a8d816-9efb-4aa7-bdfd-b822fbf5c14d",
+          "top_source_degree": 1,
+          "top_target_uuid": "9358be15-6e2e-4583-b9a1-503dfd23351c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "ab862c7a-88f3-4d0a-a4a0-782633fc856c",
+          "top_source_degree": 1,
+          "top_target_uuid": "72d6e424-55b0-41f0-97ea-15c536479c5b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "f5d9da7f-c3e5-4ed2-8146-1b261781eade",
+          "top_source_degree": 1,
+          "top_target_uuid": "333596e5-6017-4c7b-bb5f-f095784bf3f3",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "58d15051-d93b-4d8b-8cfc-31ecd81bc304",
+          "top_source_degree": 1,
+          "top_target_uuid": "7a8e77c5-e3d4-4af2-b419-af1740e88b25",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "412fa073-4b5b-4cd9-9bad-9c863f420074",
+          "top_source_degree": 1,
+          "top_target_uuid": "79feac75-4ca0-4d1e-bfa5-5de7c0ae15c2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "0cd24cf6-afd3-4393-ad3f-5fb926356fa3",
+          "top_source_degree": 1,
+          "top_target_uuid": "2c83e601-e8a8-4c11-a797-678e133924c0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "7b9b1607-d4f7-4678-99d6-23b3f680880b",
+          "top_source_degree": 1,
+          "top_target_uuid": "86c44b3b-6c4e-4743-885f-6b4e415d3535",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "f7682b4f-43cb-4d6b-8f4a-774401471732",
+          "top_source_degree": 1,
+          "top_target_uuid": "c204be67-09ff-4d03-9a92-4ffb741dc56d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "09447fd3-0a32-4649-a5f9-90da9123e28c",
+          "top_source_degree": 1,
+          "top_target_uuid": "fdd6d9a4-f708-4234-82e3-6167d98d7fc9",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "298aa654-dd92-409f-b296-4999a385cfb9",
+          "top_source_degree": 1,
+          "top_target_uuid": "5c3a35cb-676e-4507-9c2e-f2d71407599b",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "366af9a2-a04d-45c3-bc1c-8d2a6cd80482",
+          "top_source_degree": 1,
+          "top_target_uuid": "aaa1b5c1-eae6-4cd4-8b36-d15328fff1ba",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "b25c5e25-8eea-4d8c-9e49-606f71b71fcc",
+          "top_source_degree": 1,
+          "top_target_uuid": "c03851ca-53f2-4faa-b7b5-beabbcf5c36a",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "255726dd-6576-4565-9703-5b8888344344",
+          "top_source_degree": 1,
+          "top_target_uuid": "77ae0f8f-dcf3-42be-ac51-5bd2f8000ed6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "e97384c0-bb92-47e0-a877-5bae73705640",
+          "top_source_degree": 1,
+          "top_target_uuid": "579c0276-aeea-4b8d-9012-d3ad1d5be371",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "ac386717-58aa-4958-8715-661f99dcc25b",
+          "top_source_degree": 1,
+          "top_target_uuid": "73e4a3a1-da71-45c3-9a65-b6f52e23fb40",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "b76e66dc-8ff3-4e09-a0e1-2a76279f466f",
+          "top_source_degree": 1,
+          "top_target_uuid": "35186f29-d225-422a-a225-fdef1412f029",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "d7cb4cf6-dbe1-47cf-8cbd-24d2b622cac5",
+          "top_source_degree": 1,
+          "top_target_uuid": "77e39c1c-afc4-4574-a3a9-8647f8dc5c5c",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "16e6e236-2b0c-47e4-b2d0-d7ee590a709a",
+          "top_source_degree": 1,
+          "top_target_uuid": "c59652c2-2a85-4ebc-96c6-9b3a152af282",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "90b9babf-f9df-4e5b-9a9b-9a13a78c25d3",
+          "top_source_degree": 1,
+          "top_target_uuid": "363d8a69-103a-4f3f-b2e8-b54ce881a4ce",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "a67582c8-f4f9-4d28-b796-62156f1c6a21",
+          "top_source_degree": 1,
+          "top_target_uuid": "944e28ac-2ac9-4135-be3c-6eaa6c3fd0ac",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "f49f8cfa-d6c8-40ee-9d07-98dea23688a3",
+          "top_source_degree": 1,
+          "top_target_uuid": "03e5db43-23e2-47d4-8d3a-ebc662db9b96",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "769f6a8b-00e8-4a81-b8cd-9265a99a897b",
+          "top_source_degree": 1,
+          "top_target_uuid": "769249b9-feac-468e-ad2e-eca52714abfc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "690e7742-f835-4937-87db-fc4f81d78eac",
+          "top_source_degree": 1,
+          "top_target_uuid": "cc19d649-ba5c-4c61-afeb-132fb0469928",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "04f25334-469f-4f05-bf79-5d94cbf3b40e",
+          "top_source_degree": 1,
+          "top_target_uuid": "246acca8-5e54-4352-8828-17bafb15eee7",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "7e839584-e73f-4f8d-9dc8-3b1516a7d5c2",
+          "top_source_degree": 1,
+          "top_target_uuid": "0915f98f-be19-4b42-a536-bc8fcf019923",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "95d64d9f-4884-4399-b84a-f71230bb0f4a",
+          "top_source_degree": 1,
+          "top_target_uuid": "a6d46393-7fbe-49f9-bc19-51b0839e037d",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "c231af42-fcce-45af-b5db-c8b72f76a19d",
+          "top_source_degree": 1,
+          "top_target_uuid": "7a31471e-2a76-4405-91e4-d7d72bd7df08",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "c4568ad1-4bdb-429c-b435-2166ea827cd4",
+          "top_source_degree": 1,
+          "top_target_uuid": "7a476321-6a62-4092-b266-eba8ac73f034",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "3a714af1-7687-4ba8-892d-44082d318c7d",
+          "top_source_degree": 1,
+          "top_target_uuid": "0a7fcd08-a963-458b-bd0c-b1e0d15f7f36",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "15097509-0910-4f08-a7b9-f80cb08f8ccf",
+          "top_source_degree": 1,
+          "top_target_uuid": "cd3578a0-35ea-44f4-925b-49aa0fc9bbc6",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "7fb8d314-f700-4b45-ae9f-0e577c7b3cf4",
+          "top_source_degree": 1,
+          "top_target_uuid": "fc1c49bb-6d39-4172-9361-6eeb0651e742",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "41434c3d-ea8e-4ee5-ba25-8450dacdf5ca",
+          "top_source_degree": 1,
+          "top_target_uuid": "c8cde2a6-3ae5-4e5c-bb19-f56693f90b84",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "69655d88-7b2b-4d33-8112-fd1aa9494b30",
+          "top_source_degree": 1,
+          "top_target_uuid": "9348edb8-b12e-4503-b2e2-b047b94510ea",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "97188b2c-2531-415a-a045-a7565d4be657",
+          "top_source_degree": 1,
+          "top_target_uuid": "a2afb7de-7942-4a2b-b60f-a82af32cace4",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "78e79394-bb3a-4954-933a-e61319568cdd",
+          "top_source_degree": 1,
+          "top_target_uuid": "fe51dc16-386f-4952-868a-40e7193ca0c0",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "38d295d7-e313-4c6e-9a15-347ade5e8db2",
+          "top_source_degree": 1,
+          "top_target_uuid": "f74b2175-e639-4c9d-80cf-f7b90721475e",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "cd0df2c0-3f15-48bb-acb9-5896c8720e3e",
+          "top_source_degree": 1,
+          "top_target_uuid": "edb21d88-5fb5-40dd-ab13-cc51b6ccdad2",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "097c94cd-1c68-4cc9-aa24-2fd33fb699b0",
+          "top_source_degree": 1,
+          "top_target_uuid": "5f969c13-1b31-4446-a706-a4c49861a051",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "88bd6e80-340c-43aa-b10c-aed4e1f32a48",
+          "top_source_degree": 1,
+          "top_target_uuid": "567ca741-a850-46ca-9d7a-dd508b681f04",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "5a933271-c91d-461f-8a7d-d39fd6dac802",
+          "top_source_degree": 1,
+          "top_target_uuid": "9a193cf1-75ae-44ed-86bc-b66cf390abda",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "6a3a9831-d7c1-4d7e-8fdb-dc781c27e1dc",
+          "top_source_degree": 1,
+          "top_target_uuid": "0b34c48e-0a75-4758-ab8d-3f195cd75794",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "17fc72dc-4bf4-4e8f-9e3e-fbde664e4cea",
+          "top_source_degree": 1,
+          "top_target_uuid": "a8417123-2ff7-4970-b976-2acf746f4dce",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "5ef4a3c6-0197-4453-af9d-a847c9be5287",
+          "top_source_degree": 1,
+          "top_target_uuid": "b9bf117a-3e07-46b0-a6d7-d4e31da2aa74",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "d414d67f-df99-4130-9843-f987f8d77fde",
+          "top_source_degree": 1,
+          "top_target_uuid": "82dded46-a816-4e69-a6e3-a394377fd9cc",
+          "top_target_degree": 1
+        },
+        {
+          "size_total": 2,
+          "size_source": 1,
+          "size_target": 1,
+          "fraction_total": 0.005405405405405406,
+          "top_source_uuid": "8ead91ca-7e61-4794-a1e9-7f404b30f0f3",
+          "top_source_degree": 1,
+          "top_target_uuid": "f52643ba-e9d7-4fdc-8d1d-ba6b1e341790",
+          "top_target_degree": 1
+        }
+      ],
+      "source": {
+        "total_nodes": 152,
+        "total_islands": 152,
+        "singleton_islands": 152,
+        "multi_islands": []
+      },
+      "target": {
+        "total_nodes": 218,
+        "total_islands": 78,
+        "singleton_islands": 63,
+        "multi_islands": [
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "1b7cbaec-e748-4119-81cf-a46219260db5",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "52733cfa-9b30-46a9-b719-64eacbdb9f48",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "1b9fb1ff-9f5b-42a6-a974-b9859b7407ee",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "50e039cb-dd1f-4300-aa36-5504af081af7",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "0181f370-b01e-4760-a8ba-2cf6df87bc32",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "ebf89af0-555b-46e2-88aa-6f8c96dc520d",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "5b3ccecf-592f-446c-9d32-dc767ae3ca69",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "b878092c-89d3-4a1b-b886-c98f00a2bb28",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "7119139b-18c6-4cc3-8e20-8a8ca7481fe6",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "7f4d59b4-f8af-4322-94d4-ce5982125510",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "0987fc99-9d29-4cb8-9ddb-0e987f4b938c",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "2faa63dc-698e-44cb-9ad4-cbb3e6f88882",
+            "top_degree": 1
+          },
+          {
+            "size": 11,
+            "fraction": 0.05045871559633028,
+            "size_total": 12,
+            "top_uuid": "a41be27e-050e-4eb7-a2f2-25917d871257",
+            "top_degree": 1
+          },
+          {
+            "size": 10,
+            "fraction": 0.045871559633027525,
+            "size_total": 11,
+            "top_uuid": "0065c966-a359-46ef-a0ce-561867a93e68",
+            "top_degree": 1
+          },
+          {
+            "size": 2,
+            "fraction": 0.009174311926605505,
+            "size_total": 3,
+            "top_uuid": "3b566752-0e7b-438c-87fc-6a0edf8dec97",
+            "top_degree": 1
+          }
+        ]
+      }
+    },
+    "parallel_pairs_detail": []
+  },
+  "attributes": []
+}
