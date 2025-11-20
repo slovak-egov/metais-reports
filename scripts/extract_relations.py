@@ -129,8 +129,9 @@ def run_cmd(cmd: str) -> tuple[bool, list[str], str, str]:
     reason:
       - "ok"
       - "subprocess-timeout"
-      - "exit-<code>"
+      - "token-missing"
       - "http-<code>"  (parsed from stderr lines like 'HTTP ERROR: 401 ...')
+      - "exit-<code>"
     """
     wrote_files: list[str] = []
     stderr_buf: list[str] = []
@@ -181,13 +182,19 @@ def run_cmd(cmd: str) -> tuple[bool, list[str], str, str]:
                 print(line, file=sys.stderr)
 
         stderr_text = "\n".join(stderr_buf)
+
+        # 1) explicit message from run.sh
+        if "TOKEN env var is required" in stderr_text:
+            return False, wrote_files, "token-missing", stderr_text
+
+        # 2) HTTP ERROR: <code> from core.sh
         m = re.search(r"HTTP ERROR:\s+(\d+)", stderr_text)
         if m:
-            reason = f"http-{m.group(1)}"
-        else:
-            reason = f"exit-{e.returncode}"
+            code = m.group(1)
+            return False, wrote_files, f"http-{code}", stderr_text
 
-        return False, wrote_files, reason, stderr_text
+        # 3) generic non-zero exit
+        return False, wrote_files, f"exit-{e.returncode}", stderr_text
 
 
 def load_json(path: str | Path):
@@ -332,6 +339,9 @@ def fetch_relation_page(central: str, outer: str, relation: str,
                         limit: int, offset: int) -> list[dict]:
     """
     Fetch a single page of {source, target} for given spec.
+
+    If TOKEN is missing/expired (token-missing, http-401, http-403) and we're
+    in an interactive TTY, prompt for a new TOKEN and retry this page.
     """
     page_dir = DATE_ROOT / "relations_parts" / relation
     page_dir.mkdir(parents=True, exist_ok=True)
@@ -345,19 +355,52 @@ def fetch_relation_page(central: str, outer: str, relation: str,
         outdir=str(page_dir),
     )
 
-    ok, wrote, reason, stderr_text = run_cmd(cmd)
-    if not ok:
-        raise RuntimeError(f"Page fetch failed for {relation} ({outer}->{central}) "
-                           f"offset={offset}, limit={limit}: {reason}")
+    while True:
+        print(f"[PAGE] {relation} ({outer}->{central}): limit={limit}, offset={offset}")
+        ok, wrote, reason, stderr_text = run_cmd(cmd)
 
-    if not wrote:
-        raise RuntimeError(f"Page fetch produced no output files for {relation} offset={offset}")
+        # success
+        if ok and wrote:
+            break
 
+        # token problems → interactive fix if possible
+        if reason in ("token-missing", "http-401", "http-403") and sys.stdin.isatty():
+            print(
+                "\n[AUTH] The MetaIS runner reported an authorization problem "
+                f"({reason}).\n"
+                "This usually means your TOKEN is missing or expired.\n"
+            )
+            print(
+                "If you want, paste a new TOKEN now (input will be visible in this shell).\n"
+                "Press Enter on an empty line to abort."
+            )
+            try:
+                new_token = input("New TOKEN: ").strip()
+            except EOFError:
+                new_token = ""
+
+            if new_token:
+                os.environ["TOKEN"] = new_token
+                print("[INFO] TOKEN updated in this process; retrying the same page…")
+                # loop again with the new TOKEN
+                continue
+            else:
+                raise RuntimeError(
+                    f"TOKEN required but not provided for {relation} "
+                    f"({outer}->{central}) offset={offset}."
+                )
+
+        # non-auth error or non-interactive → fail this page
+        raise RuntimeError(
+            f"Page fetch failed for {relation} ({outer}->{central}) "
+            f"offset={offset}, limit={limit}: {reason}"
+        )
+
+    # we have a successful run with at least one written file
     last_path = wrote[-1]
     part = load_json(last_path)
 
-    # Your Groovy template returns a bare list of {source,target} maps;
-    # But allow {"result":[...]} as well just in case.
+    # template can return bare list or {"result":[...]}
     if isinstance(part, dict) and "result" in part:
         return part["result"]
     if isinstance(part, list):

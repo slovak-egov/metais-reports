@@ -116,15 +116,20 @@ def fetch_json_with_retries(url: str) -> dict | list:
             time.sleep(CONN_RETRY_DELAY)
             attempt += 1
 
-
-def run_cmd(cmd: str) -> tuple[bool, list[str]]:
+def run_cmd(cmd: str) -> tuple[bool, list[str], str, str]:
     """
-    Run a shell command, return (ok, wrote_files).
+    Run a shell command, return (ok, wrote_files, reason, stderr_text).
 
-    We rely on raw.sh printing lines like:
-       Wrote: /path/to/file.json
+    reason:
+      - "ok"
+      - "token-missing"
+      - "http-401", "http-403", or "http-<code>"
+      - "subprocess-timeout"
+      - "exit-<code>"
     """
     wrote_files: list[str] = []
+    stderr_buf: list[str] = []
+
     try:
         p = subprocess.run(
             cmd,
@@ -134,6 +139,7 @@ def run_cmd(cmd: str) -> tuple[bool, list[str]]:
             check=True,
             timeout=SUBPROC_TIMEOUT,
         )
+
         # stdout
         for line in p.stdout.splitlines():
             if line.startswith("Wrote:"):
@@ -142,26 +148,49 @@ def run_cmd(cmd: str) -> tuple[bool, list[str]]:
                 wrote_files.append(path)
             else:
                 print(line)
+
         # stderr
         if p.stderr:
             for line in p.stderr.splitlines():
+                stderr_buf.append(line)
                 print(line, file=sys.stderr)
-        return True, wrote_files
+
+        return True, wrote_files, "ok", "\n".join(stderr_buf)
+
     except subprocess.TimeoutExpired as e:
         print(f"[ERROR] Subprocess timeout after {SUBPROC_TIMEOUT}s.")
         if e.stdout:
             print(e.stdout)
         if e.stderr:
+            stderr_buf.append(e.stderr)
             print(e.stderr, file=sys.stderr)
-        return False, wrote_files
+        return False, wrote_files, "subprocess-timeout", "\n".join(stderr_buf)
+
     except subprocess.CalledProcessError as e:
         print("[ERROR] Subprocess failed.")
         if e.stdout:
             print(e.stdout)
         if e.stderr:
-            print(e.stderr, file=sys.stderr)
-        return False, wrote_files
+            for line in e.stderr.splitlines():
+                stderr_buf.append(line)
+                print(line, file=sys.stderr)
 
+        stderr_text = "\n".join(stderr_buf)
+
+        # 1) Explicit message from run.sh
+        if "TOKEN env var is required" in stderr_text:
+            return False, wrote_files, "token-missing", stderr_text
+
+        # 2) HTTP ERROR: <code> from core.sh
+        m = re.search(r"HTTP ERROR:\s+(\d+)", stderr_text)
+        if m:
+            code = m.group(1)
+            if code in ("401", "403"):
+                return False, wrote_files, f"http-{code}", stderr_text
+            return False, wrote_files, f"http-{code}", stderr_text
+
+        # 3) Generic non-zero exit
+        return False, wrote_files, f"exit-{e.returncode}", stderr_text
 
 def load_json(path: str | Path):
     with open(path, "r", encoding="utf-8") as f:
@@ -175,33 +204,6 @@ def write_raw_json(path: Path, items: list[dict]):
         json.dump(payload, f, ensure_ascii=False)
     print(f"Wrote: {path} ({path.stat().st_size} bytes)")
 
-
-def write_nodes_streaming(ctype: str, limit: int):
-    out_path = NODES_DIR / f"{ctype}.json"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-
-    with out_path.open("w", encoding="utf-8") as f:
-        f.write('{"type":"RAW","result":[')
-        first = True
-        page_index = 0
-
-        while True:
-            offset = page_index * limit
-            items = fetch_node_page(ctype, limit, offset)
-            if not items:
-                print(f"[PAGE] {ctype}: empty page at offset={offset}; done.")
-                break
-
-            for it in items:
-                if not first:
-                    f.write(",")
-                json.dump(it, f, ensure_ascii=False)
-                first = False
-
-            page_index += 1
-
-        f.write("]}")
-    print(f"[OK] {ctype}: written streaming JSON to {out_path}")
 
 # ----------------------------------------------------------------------
 # METADATA: CITYPE LIST + PER-CITYPE DETAIL
@@ -292,8 +294,9 @@ def fetch_node_page(ctype: str, limit: int, offset: int) -> list[dict]:
     """
     Run raw.sh for a single page and return the list of node objects.
 
-    We ask raw.sh to write into a scratch subdirectory so the final stitched
-    RAW file can be written by this script.
+    If TOKEN is missing / expired (401/403), and we're in an interactive TTY,
+    prompt the user for a new TOKEN and retry this page once (or until
+    a non-empty token is provided).
     """
     page_dir = DATE_ROOT / "nodes_parts" / ctype
     page_dir.mkdir(parents=True, exist_ok=True)
@@ -304,11 +307,48 @@ def fetch_node_page(ctype: str, limit: int, offset: int) -> list[dict]:
         offset=offset,
         outdir=str(page_dir),
     )
-    print(f"[PAGE] {ctype}: limit={limit}, offset={offset}")
-    ok, wrote = run_cmd(cmd)
-    if not ok or not wrote:
-        raise RuntimeError(f"Page fetch failed for {ctype} offset={offset} limit={limit}")
 
+    print(f"[PAGE] {ctype}: limit={limit}, offset={offset}")
+
+    while True:
+        ok, wrote, reason, stderr_text = run_cmd(cmd)
+
+        # Success path
+        if ok and wrote:
+            break
+
+        # Token-related problems → interactive fix if possible
+        if reason in ("token-missing", "http-401", "http-403") and sys.stdin.isatty():
+            print(
+                "\n[AUTH] The MetaIS runner reported an authorization problem "
+                f"({reason}).\n"
+                "This usually means your TOKEN is missing or expired.\n"
+            )
+            print(
+                "If you want, paste a new TOKEN now (input will be visible in this shell).\n"
+                "Press Enter on an empty line to abort."
+            )
+            try:
+                new_token = input("New TOKEN: ").strip()
+            except EOFError:
+                new_token = ""
+
+            if new_token:
+                os.environ["TOKEN"] = new_token
+                print("[INFO] TOKEN updated in this process; retrying the same page…")
+                # Loop again: rerun cmd with new TOKEN
+                continue
+            else:
+                raise RuntimeError(
+                    f"TOKEN required but not provided for {ctype} (offset={offset})."
+                )
+        else:
+            # Non-auth error, or non-interactive run → fail this page
+            raise RuntimeError(
+                f"Page fetch failed for {ctype} offset={offset} limit={limit} ({reason})"
+            )
+
+    # At this point we have a successful run and at least one written file
     last_path = wrote[-1]
     part = load_json(last_path)
 
@@ -319,25 +359,33 @@ def fetch_node_page(ctype: str, limit: int, offset: int) -> list[dict]:
 
     raise ValueError(f"Unexpected page output shape for {ctype} at offset={offset}")
 
+def write_nodes_streaming(ctype: str, limit: int):
+    out_path = NODES_DIR / f"{ctype}.json"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
-def fetch_all_nodes_for_type(ctype: str, limit: int) -> list[dict]:
-    """Fetch all pages for a given citype until an empty page is encountered."""
-    all_items: list[dict] = []
-    page_index = 0
+    with out_path.open("w", encoding="utf-8") as f:
+        f.write('{"type":"RAW","result":[')
+        first = True
+        page_index = 0
 
-    while True:
-        offset = page_index * limit
-        items = fetch_node_page(ctype, limit, offset)
-        if not items:
-            print(f"[PAGE] {ctype}: empty page at offset={offset}; done.")
-            break
-        all_items.extend(items)
-        page_index += 1
+        while True:
+            offset = page_index * limit
+            items = fetch_node_page(ctype, limit, offset)
+            if not items:
+                print(f"[PAGE] {ctype}: empty page at offset={offset}; done.")
+                break
 
-    print(f"[OK] {ctype}: fetched {len(all_items)} items in total.")
-    return all_items
+            for it in items:
+                if not first:
+                    f.write(",")
+                json.dump(it, f, ensure_ascii=False)
+                first = False
 
+            page_index += 1
 
+        f.write("]}")
+    print(f"[OK] {ctype}: written streaming JSON to {out_path}")
+    
 # ----------------------------------------------------------------------
 # MAIN
 # ----------------------------------------------------------------------

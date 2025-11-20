@@ -9,7 +9,7 @@ usage() {
 TYPE="${1:-}"; shift || true
 [[ -z "${TYPE}" ]] && usage
 
-TPL="groovy/templates/extract_raw_template.groovy"
+TPL="groovy/templates/node_template.groovy"
 LIMIT=""
 OFFSET=""
 OUTDIR="output/nodes"
