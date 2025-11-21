@@ -8,6 +8,7 @@ from pathlib import Path
 from datetime import date
 
 import requests
+import re
 
 from config_env import (
     load_env_file,
@@ -67,13 +68,16 @@ CONN_RETRY_DELAY = float(os.getenv("CONNECTION_RETRY_DELAY", "0.5"))
 FETCH_TIMEOUT    = float(os.getenv("METAIS_FETCH_TIMEOUT", "60"))
 SUBPROC_TIMEOUT  = float(os.getenv("METAIS_SUBPROC_TIMEOUT", "180"))
 
+# NEW: retry settings for *paged* node fetches (raw.sh / curl issues etc.)
+NODE_PAGE_MAX_RETRIES = int(os.getenv("NODE_PAGE_MAX_RETRIES", "10"))
+NODE_PAGE_RETRY_DELAY = float(os.getenv("NODE_PAGE_RETRY_DELAY", "1.0"))
+
 INCLUDE_TYPES   = get_include_types("INCLUDE_TYPES", "application,system,codelist")
 VALID_FLAG_MASK = get_valid_flag("VALID_FLAG", "both")
 
 INCLUDE_REGEX = os.getenv("METAIS_INCLUDE_REGEX", "")
 EXCLUDE_REGEX = os.getenv("METAIS_EXCLUDE_REGEX", "")
 
-import re
 include_re = re.compile(INCLUDE_REGEX) if INCLUDE_REGEX else None
 exclude_re = re.compile(EXCLUDE_REGEX) if EXCLUDE_REGEX else None
 
@@ -101,7 +105,6 @@ RAW_CMD_TEMPLATE = os.getenv(
 
 def fetch_json_with_retries(url: str) -> dict | list:
     """Simple HTTP fetch with retries for metadata endpoints."""
-
     attempt = 1
     while CONN_MAX_RETRIES <= 0 or attempt <= CONN_MAX_RETRIES:
         try:
@@ -115,6 +118,7 @@ def fetch_json_with_retries(url: str) -> dict | list:
                   f"{attempt}/{CONN_MAX_RETRIES}: {e}; retrying in {CONN_RETRY_DELAY}s...")
             time.sleep(CONN_RETRY_DELAY)
             attempt += 1
+
 
 def run_cmd(cmd: str) -> tuple[bool, list[str], str, str]:
     """
@@ -185,12 +189,11 @@ def run_cmd(cmd: str) -> tuple[bool, list[str], str, str]:
         m = re.search(r"HTTP ERROR:\s+(\d+)", stderr_text)
         if m:
             code = m.group(1)
-            if code in ("401", "403"):
-                return False, wrote_files, f"http-{code}", stderr_text
             return False, wrote_files, f"http-{code}", stderr_text
 
         # 3) Generic non-zero exit
         return False, wrote_files, f"exit-{e.returncode}", stderr_text
+
 
 def load_json(path: str | Path):
     with open(path, "r", encoding="utf-8") as f:
@@ -250,7 +253,6 @@ def build_node_type_list(citypes: list[dict]) -> list[str]:
     Apply INCLUDE_TYPES / VALID_FLAG / regex to decide which technicalName(s)
     we will actually fetch as RAW nodes.
     """
-
     reports: list[str] = []
     seen = set()
 
@@ -273,7 +275,6 @@ def build_node_type_list(citypes: list[dict]) -> list[str]:
             continue
 
         if include_re and not include_re.search(tech):
-            # not included explicitly
             continue
         if exclude_re and exclude_re.search(tech):
             continue
@@ -295,8 +296,8 @@ def fetch_node_page(ctype: str, limit: int, offset: int) -> list[dict]:
     Run raw.sh for a single page and return the list of node objects.
 
     If TOKEN is missing / expired (401/403), and we're in an interactive TTY,
-    prompt the user for a new TOKEN and retry this page once (or until
-    a non-empty token is provided).
+    prompt the user for a new TOKEN and retry this page until a non-empty
+    token is provided or the user aborts.
     """
     page_dir = DATE_ROOT / "nodes_parts" / ctype
     page_dir.mkdir(parents=True, exist_ok=True)
@@ -336,17 +337,16 @@ def fetch_node_page(ctype: str, limit: int, offset: int) -> list[dict]:
             if new_token:
                 os.environ["TOKEN"] = new_token
                 print("[INFO] TOKEN updated in this process; retrying the same page…")
-                # Loop again: rerun cmd with new TOKEN
                 continue
             else:
                 raise RuntimeError(
                     f"TOKEN required but not provided for {ctype} (offset={offset})."
                 )
-        else:
-            # Non-auth error, or non-interactive run → fail this page
-            raise RuntimeError(
-                f"Page fetch failed for {ctype} offset={offset} limit={limit} ({reason})"
-            )
+
+        # Non-auth error → let caller decide about retries
+        raise RuntimeError(
+            f"Page fetch failed for {ctype} offset={offset} limit={limit} ({reason})"
+        )
 
     # At this point we have a successful run and at least one written file
     last_path = wrote[-1]
@@ -359,18 +359,77 @@ def fetch_node_page(ctype: str, limit: int, offset: int) -> list[dict]:
 
     raise ValueError(f"Unexpected page output shape for {ctype} at offset={offset}")
 
-def write_nodes_streaming(ctype: str, limit: int):
+
+def write_nodes_streaming(ctype: str, limit: int, start_offset: int = 0):
+    """
+    Stream all pages for a given citype into a single RAW JSON file.
+
+    Includes retry logic for non-auth failures on individual pages,
+    controlled by NODE_PAGE_MAX_RETRIES / NODE_PAGE_RETRY_DELAY.
+
+    If start_offset > 0, we assume that NODES_DIR/<ctype>.json already
+    contains all records up to that offset, in the same streaming format
+    (header + JSON objects, but probably without the final "]}" if a
+    previous run crashed). We then open the file in append mode and
+    continue writing new records starting at start_offset.
+    """
     out_path = NODES_DIR / f"{ctype}.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with out_path.open("w", encoding="utf-8") as f:
+    if start_offset < 0:
+        raise ValueError(f"start_offset must be >= 0, got {start_offset}")
+
+    if start_offset % limit != 0:
+        raise ValueError(
+            f"start_offset {start_offset} is not a multiple of page size {limit}"
+        )
+
+    # Calculate starting page index from offset
+    page_index = start_offset // limit
+
+    # Open file: new run vs resume
+    if start_offset == 0:
+        # Fresh run: overwrite and write header
+        f = out_path.open("w", encoding="utf-8")
         f.write('{"type":"RAW","result":[')
         first = True
-        page_index = 0
+    else:
+        # Resume: file must already exist with previously streamed data
+        if not out_path.exists():
+            raise RuntimeError(
+                f"Requested resume for {ctype} at offset {start_offset}, "
+                f"but {out_path} does not exist."
+            )
+        # Append directly; previous run already wrote header + some records
+        f = out_path.open("a", encoding="utf-8")
+        # We KNOW there is at least the header; assume we already have
+        # at least one record, so the next record should be preceded by a comma.
+        first = False
 
+    try:
         while True:
             offset = page_index * limit
-            items = fetch_node_page(ctype, limit, offset)
+
+            # Retry this page on RuntimeError (e.g. curl EXIT 56)
+            attempt = 1
+            while True:
+                try:
+                    items = fetch_node_page(ctype, limit, offset)
+                    break  # success
+                except RuntimeError as e:
+                    if NODE_PAGE_MAX_RETRIES > 0 and attempt >= NODE_PAGE_MAX_RETRIES:
+                        print(
+                            f"[ERROR] {ctype}: giving up on page at offset={offset} "
+                            f"after {attempt} attempts: {e}"
+                        )
+                        raise
+                    print(
+                        f"[WARN] {ctype}: page offset={offset} attempt "
+                        f"{attempt}/{NODE_PAGE_MAX_RETRIES} failed: {e}"
+                    )
+                    attempt += 1
+                    time.sleep(NODE_PAGE_RETRY_DELAY)
+
             if not items:
                 print(f"[PAGE] {ctype}: empty page at offset={offset}; done.")
                 break
@@ -383,16 +442,50 @@ def write_nodes_streaming(ctype: str, limit: int):
 
             page_index += 1
 
+        # Close the JSON array/object
         f.write("]}")
-    print(f"[OK] {ctype}: written streaming JSON to {out_path}")
-    
+        print(f"[OK] {ctype}: written streaming JSON to {out_path}")
+    finally:
+        f.close()
+
+
 # ----------------------------------------------------------------------
 # MAIN
 # ----------------------------------------------------------------------
 
 
 def main():
-    if SKIP_COMPLETE and COMPLETE_FLAG.exists():
+    # CLI parsing:
+    #   python extract_nodes.py          -> all types (with SKIP_COMPLETE)
+    #   python extract_nodes.py KS       -> only KS from offset 0
+    #   python extract_nodes.py KS 292000 -> only KS, resume at offset 292000
+    #   python extract_nodes.py KS AS    -> KS and AS from offset 0
+    raw_args = [arg.strip() for arg in sys.argv[1:] if arg.strip()]
+
+    cli_types: list[str] = []
+    resume_offset: int = 0
+
+    if raw_args:
+        # If the last arg is an integer, treat it as resume offset for a single type
+        if len(raw_args) >= 2 and raw_args[-1].isdigit():
+            resume_offset = int(raw_args[-1])
+            cli_types = raw_args[:-1]
+        else:
+            cli_types = raw_args
+
+    # If user requested multiple types AND a resume offset, that's ambiguous → error
+    if resume_offset > 0 and len(cli_types) > 1:
+        print(
+            "[ERROR] Resume offset is only supported when a single node type "
+            "is requested (e.g. `extract_nodes.py KS 292000`).",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    # If user explicitly requested node types, ignore .complete
+    skip_complete = SKIP_COMPLETE and not cli_types
+
+    if skip_complete and COMPLETE_FLAG.exists():
         print(f"[INFO] Nodes already marked complete ({COMPLETE_FLAG}), nothing to do.")
         return
 
@@ -410,13 +503,34 @@ def main():
 
     # Decide which types we actually dump as RAW nodes
     reports = build_node_type_list(citypes)
+
+    # If user specified types on CLI, restrict to those
+    if cli_types:
+        # special-case "all" / "*" → ignore filtering and keep full reports list
+        if not (len(cli_types) == 1 and cli_types[0].lower() in ("all", "*")):
+            wanted = set(cli_types)
+            available = set(reports)
+            missing = sorted(wanted - available)
+            if missing:
+                print(
+                    "[WARN] Some requested types are not in the allowed list: "
+                    + ", ".join(missing),
+                    file=sys.stderr,
+                )
+            reports = [t for t in reports if t in wanted]
+            if not reports:
+                print("[ERROR] None of the requested node types are available.", file=sys.stderr)
+                sys.exit(1)
+
     print(f"[INFO] Will process {len(reports)} node types: {', '.join(reports) if reports else '(none)'}")
 
     failures = 0
     for i, ctype in enumerate(reports, start=1):
         print(f"\n=== Downloading raw nodes {ctype} ({i}/{len(reports)}) ===")
+        # Only apply resume_offset if there is exactly one report and CLI provided an offset
+        this_offset = resume_offset if (resume_offset > 0 and len(reports) == 1) else 0
         try:
-            write_nodes_streaming(ctype, PAGE_SIZE)
+            write_nodes_streaming(ctype, PAGE_SIZE, start_offset=this_offset)
         except Exception as e:
             print(f"[ERROR] Failed to fetch nodes for {ctype}: {e}")
             failures += 1
