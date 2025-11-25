@@ -224,7 +224,7 @@ def fetch_citype_list() -> list[dict]:
     else:
         results = data
 
-    out_path = METADATA_ROOT / "citype_list.json"
+    out_path = METADATA_ROOT / "citypes_list.json"
     with out_path.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
     print(f"[META] Cached citype list -> {out_path}")
