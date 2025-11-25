@@ -75,7 +75,7 @@ INCLUDE_TYPES   = get_include_types("INCLUDE_TYPES", "application,system,codelis
 VALID_FLAG_MASK = get_valid_flag("VALID_FLAG", "both")
 
 INCLUDE_REGEX = os.getenv("METAIS_REL_INCLUDE_REGEX", "")
-EXCLUDE_REGEX = os.getenv("METAIS_REL_EXCLUDE_REGEX", r"^(CMDB_|LATEST_REQUEST|PREVIOUS_REQUEST)$")
+EXCLUDE_REGEX = os.getenv("METAIS_REL_EXCLUDE_REGEX", "")
 
 include_re = re.compile(INCLUDE_REGEX) if INCLUDE_REGEX else None
 exclude_re = re.compile(EXCLUDE_REGEX) if EXCLUDE_REGEX else None
@@ -269,9 +269,13 @@ def fetch_reltypes_list_and_details() -> dict[str, dict]:
 
     return rel_meta
 
+def endpoint_allowed(ep_valid: bool) -> bool:
+    bit = 0 if ep_valid else 1
+    return bool(VALID_FLAG_MASK & (1 << bit))
 
 def build_rel_specs(rel_meta: dict[str, dict]) -> list[dict]:
-    specs: list[dict] = []
+    specs  : list[dict] = []
+    broken : list[dict] = []
 
     for tech, meta in rel_meta.items():
         if not tech:
@@ -297,20 +301,34 @@ def build_rel_specs(rel_meta: dict[str, dict]) -> list[dict]:
         if not (VALID_FLAG_MASK & (1 << valid_bit)):
             continue
 
-        sources = [s["technicalName"] for s in meta.get("sources", []) if s.get("valid", True)]
-        targets = [t["technicalName"] for t in meta.get("targets", []) if t.get("valid", True)]
+        sources_all = meta.get("sources", []) or []
+        targets_all = meta.get("targets", []) or []
+
+        sources = [s["technicalName"] for s in sources_all if endpoint_allowed(s.get("valid", True))]
+        targets = [t["technicalName"] for t in targets_all if endpoint_allowed(t.get("valid", True))]
 
         if not sources or not targets:
+            broken.append({
+                "relation": tech,
+                "type": meta.get("type"),
+                "valid": meta.get("valid"),
+                "n_sources": len(sources_all),
+                "n_targets": len(targets_all),
+            })
             continue
 
         source = sources[0]
         target = targets[0]
 
         specs.append({
-            "source": source,
-            "target": target,
+            "source": sources[0],
+            "target": targets[0],
             "relation": tech,
         })
+    broken_path = METADATA_ROOT / "broken_reltypes.json"
+    with broken_path.open("w", encoding="utf-8") as f:
+        json.dump(broken, f, ensure_ascii=False, indent=2)
+    print(f"[META] Recorded {len(broken)} broken/incomplete reltypes -> {broken_path}")
 
     specs.sort(key=lambda s: (s["target"], s["relation"], s["source"]))
     return specs
