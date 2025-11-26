@@ -5,7 +5,7 @@
 }
 
 :root {
-  --sidebar-width: min(30rem, 20%);
+  --sidebar-width: 300px;
   --header-height: 15vh;
 
   --tile-padding: 1vh;
@@ -87,6 +87,174 @@ html, body {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+/* sidebar content */
+.sidebar-section {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-section-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #aaa;
+}
+
+/* snapshot controls */
+.snapshot-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.snapshot-label {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.snapshot-select {
+  width: 100%;
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--border-color);
+  background: #171717;
+  color: #eee;
+  font-size: 0.9rem;
+}
+
+.snapshot-select:focus {
+  outline: none;
+  border-color: #4c89d9;
+}
+
+.snapshot-sort {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.sort-btn {
+  flex: 1;
+  padding: 0.25rem 0.4rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: #1a1a1a;
+  color: #ccc;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.sort-btn-active {
+  border-color: #4c89d9;
+  color: #e0f0ff;
+  background: #172335;
+}
+
+/* categories / instances accordion */
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.category {
+  border-radius: 0.6rem;
+  border: 1px solid var(--border-color);
+  background: #171717;
+  overflow: hidden;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.category-title {
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+.category-toggle {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.instance-list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+
+.category.expanded .instance-list {
+  max-height: 300px;
+}
+
+.instance-list-inner {
+  padding: 0.3rem 0.6rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.instance-item {
+  padding: 0.25rem 0.4rem;
+  border-radius: 0.35rem;
+  font-size: 0.85rem;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.instance-item:hover {
+  background: #222;
+}
+
+/* active instance "badge" style */
+.instance-item-active {
+  background: #1d2838;
+  color: #eaf0ff;
+}
+
+/* tile grid in report area */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1rem;
+  padding: 0.5rem;
+  height: 100%;
+  align-content: start;
+}
+
+.tile {
+  border-radius: 0.8rem;
+  border: 1px solid var(--border-color);
+  background: #050505;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.tile-header {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #e5e5e5;
+}
+
+.tile-meta {
+  font-size: 0.75rem;
+  color: #999;
+  margin-bottom: 0.4rem;
+}
+
+.tile-body {
+  flex: 1;
+  font-size: 0.85rem;
+  color: #ccc;
 }
 
 /* report area style */

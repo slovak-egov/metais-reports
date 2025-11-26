@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>meta-viz</title>
+  <title>MetaViz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Main layout styles -->
   <link rel="stylesheet" href="assets/layout.css" />
 </head>
 <body>
@@ -15,7 +14,7 @@
     <!-- Top Header -->
     <header class="app-header">
       <div class="app-logo">
-        <img src="sprites/website_logo.svg" alt="MetaVIZ logo">
+        <img src="sprites/website_logo.svg" alt="MetaViz logo">
       </div>
     </header>
 
@@ -24,14 +23,48 @@
       <!-- Left Sidebar -->
       <aside class="sidebar-wrapper">
         <div class="sidebar">
-          <!-- sidebar content -->
+
+          <!-- Snapshot/date selection -->
+          <section class="sidebar-section">
+            <h2 class="sidebar-section-title">Snapshot</h2>
+
+            <div class="snapshot-controls">
+              <label for="snapshot-select" class="snapshot-label">
+                Date
+              </label>
+              <select id="snapshot-select" class="snapshot-select">
+                <!-- JS will populate -->
+              </select>
+
+              <div class="snapshot-sort">
+                <button type="button" data-sort="newest" class="sort-btn sort-btn-active">
+                  Newest
+                </button>
+                <button type="button" data-sort="oldest" class="sort-btn">
+                  Oldest
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Categories / instances -->
+          <section class="sidebar-section">
+            <h2 class="sidebar-section-title">Reports</h2>
+
+            <div id="category-list" class="category-list">
+              <!-- JS will insert accordion sections for dataset / graph / ... -->
+            </div>
+          </section>
+
         </div>
       </aside>
 
       <!-- Main report area -->
       <section class="report-wrapper">
         <div class="report-area" id="report-area">
-          <!-- report content -->
+          <div id="tile-grid" class="tile-grid">
+            <!-- JS will create tiles here -->
+          </div>
         </div>
       </section>
 
@@ -39,5 +72,7 @@
 
   </div>
 
+  <!-- Main JS -->
+  <script type="module" src="assets/main.js"></script>
 </body>
 </html>
