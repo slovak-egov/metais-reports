@@ -6,10 +6,10 @@ def run(ctx):
     dup_records: dict[str, list[tuple[str, str]]] = {}
 
     # global pool ONLY for entities we actually touch
-    # uuid -> {"type", "uuid", "attributes", "metaAttributes", "relations"?}
+    # uuid -> {"type", "uuid", "attributes", "metaAttributes", ...}
     all_entities: dict[str, dict] = {}
 
-    # --------- PASS 1: detect duplicates (no full records yet) ----------
+    # --------- PHASE 1: detect duplicates only ----------
     for citype_record in entity.get("types", []):
         citype_name = citype_record.get("technicalName")
         if not citype_name:
@@ -23,7 +23,7 @@ def run(ctx):
             if uuid is None:
                 continue
 
-            # Only grab the MetaIS code, nothing else.
+            # only grab the MetaIS code
             try:
                 metais_code = ctx.get_entity_attr(
                     citype_name,
@@ -32,7 +32,10 @@ def run(ctx):
                 )
             except KeyError:
                 # attribute doesn't exist on this type or uuid not found
-                print(f"[WARNING] metais code not available for uuid {uuid}, entity type: {citype_name}")
+                print(
+                    f"[WARNING] metais code not available for uuid {uuid}, "
+                    f"entity type: {citype_name}"
+                )
                 continue
 
             if not metais_code:
@@ -46,7 +49,7 @@ def run(ctx):
 
     groups: list[dict] = []
 
-    # --------- PASS 2: for each code with duplicates, build entities & relations ----------
+    # --------- PHASE 2: build entities (primaries + neighbors) ----------
     for metais_code, entries in dup_records.items():
         # Only real duplicates
         if len(entries) <= 1:
@@ -60,14 +63,6 @@ def run(ctx):
             # materialize primary entity if not already present
             if my_uuid not in all_entities:
                 all_entities[my_uuid] = ctx.get_entity_record(ctype, my_uuid)
-
-            record = all_entities[my_uuid]
-
-            # reuse existing relations if we’ve enriched this entity already
-            entity_relations = record.get("relations")
-            if entity_relations is None:
-                entity_relations = {}
-                record["relations"] = entity_relations
 
             # relation info for this type
             node_rel_info = relation["by_node"].get(ctype)
@@ -95,23 +90,7 @@ def run(ctx):
                     if not neighbor_uuids:
                         continue
 
-                    # ensure bucket for this reltype on the entity
-                    rel_entry = entity_relations.get(reltype_name)
-                    if rel_entry is None:
-                        rel_entry = {
-                            "entity_role":   entity_role,
-                            "related_type":  related_type,
-                            "related_uuids": [],
-                        }
-                        entity_relations[reltype_name] = rel_entry
-
-                    rel_uuids = rel_entry["related_uuids"]
-
                     for related_uuid in neighbor_uuids:
-                        # keep list unique per reltype
-                        if related_uuid not in rel_uuids:
-                            rel_uuids.append(related_uuid)
-
                         # ensure neighbor entity exists in global pool
                         if related_uuid not in all_entities:
                             try:
@@ -121,7 +100,10 @@ def run(ctx):
                                 )
                             except KeyError:
                                 # neighbor not present in entity dump; skip
-                                print(f"[WARKING] uuid {related_uuid} not found in entity dump")
+                                print(
+                                    f"[WARNING] uuid {related_uuid} "
+                                    f"not found in entity dump"
+                                )
                                 continue
 
         # build deterministic per-group uuid list
@@ -136,10 +118,45 @@ def run(ctx):
     # sort groups by size descending
     groups.sort(key=lambda g: g["count"], reverse=True)
 
+    # --------- PHASE 3: build top-level relations ----------
+    # Only relations between entities that actually appear in all_entities
+    entity_uuid_set = set(all_entities.keys())
+
+    relations: dict[str, dict] = {}
+    for reltype_name, rel_info in relation["by_rel"].items():
+        by_src = rel_info.get("by_src", {})
+        if not by_src:
+            continue
+
+        pair_set: set[tuple[str, str]] = set()
+
+        for src_uuid, tgt_list in by_src.items():
+            if src_uuid not in entity_uuid_set:
+                continue
+            for tgt_uuid in tgt_list:
+                if tgt_uuid not in entity_uuid_set:
+                    continue
+                pair_set.add((src_uuid, tgt_uuid))
+
+        if not pair_set:
+            continue
+
+        # store direction explicitly: src -> tgt
+        relations[reltype_name] = {
+            "source_type": rel_info["source_type"],
+            "target_type": rel_info["target_type"],
+            "pairs": [
+                [src, tgt]
+                for (src, tgt) in sorted(pair_set)
+            ],
+        }
+
     out = {
-        "date":     ctx.date,
-        "entities": all_entities,
-        "count":    len(groups),
-        "groups":   groups,
+        "date":      ctx.date,
+        "name":      "MetaIS code duplicity",
+        "count":     len(groups),
+        "groups":    groups,       # [{metais_code, count, entity_uuids}]
+        "entities":  all_entities, # {uuid: {type, uuid, attributes, metaAttributes}}
+        "relations": relations,    # {reltype: {source_type, target_type, pairs:[[src,tgt],...]}}
     }
     return out
