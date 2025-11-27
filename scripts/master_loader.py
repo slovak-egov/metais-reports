@@ -1,12 +1,14 @@
+#!/usr/bin/env python3
 import sys, os
+from sys import intern as _intern
 from datetime import datetime
 from pathlib import Path
 import importlib.util
 import json
 from typing import Any
 from tqdm import tqdm
-from collections import defaultdict
 import argparse
+import gzip
 
 # ---------- helpers ----------
 
@@ -16,6 +18,7 @@ def check_date(date_str: str) -> None:
     except ValueError:
         print(f"Invalid date '{date_str}': expected format dd-mm-yyyy and a real calendar date")
         sys.exit(1)
+
 
 def parse_loadout_file(path: Path) -> dict[str, set[str]]:
     """
@@ -44,12 +47,12 @@ def parse_loadout_file(path: Path) -> dict[str, set[str]]:
         for raw in f:
             line = raw.rstrip("\n")
             if not line.strip():
-                continue  # skip blank lines
+                continue  # blank
             if line.lstrip().startswith("#"):
-                continue  # comments
+                continue  # comment
 
             if line[0].isspace():
-                # module name
+                # module name under current category
                 if current_category is None:
                     continue
                 mod_name = line.strip()
@@ -64,17 +67,20 @@ def parse_loadout_file(path: Path) -> dict[str, set[str]]:
 
     return mapping
 
-# for saving the packed entities/relations to the drive
+
+# for saving the packed relations (sets) to the drive
 class SetEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, set):
             return {"__set__": list(obj)}
         return json.JSONEncoder.default(self, obj)
 
+
 def set_decoder(obj):
     if "__set__" in obj:
         return set(obj["__set__"])
     return obj
+
 
 # ---------- paths that don't depend on args ----------
 
@@ -94,7 +100,7 @@ else:
 # ---------- CLI args ----------
 
 parser = argparse.ArgumentParser(
-    description="MetaIS snapshot processor + meta-viz data generator"
+    description="MetaIS snapshot processor + meta-viz data generator (raw-ish entity)"
 )
 parser.add_argument(
     "date",
@@ -142,25 +148,62 @@ NODES_META_ROOT = DATA_DIR_ROOT / "metadata"
 NODES_META_DIR  = NODES_META_ROOT / "nodes"
 RELS_META_DIR   = NODES_META_ROOT / "relations"
 
-PACKED_ENTITY_PATH   = DATA_DIR_ROOT / "packed_entity.json"
-PACKED_RELATION_PATH = DATA_DIR_ROOT / "packed_relation.json"
+PACKED_ENTITY_PATH   = DATA_DIR_ROOT / "packed_entity_raw.json.gz"
+PACKED_RELATION_PATH = DATA_DIR_ROOT / "packed_relation.json.gz"
 
 exists = True
-
-for dir in [NODES_DIR, RELS_DIR, NODES_META_DIR, RELS_META_DIR]:
-    if not os.path.isdir(dir):
-        print(f"Directory {dir} does not exist")
+for dir_ in [NODES_DIR, RELS_DIR, NODES_META_DIR, RELS_META_DIR]:
+    if not os.path.isdir(dir_):
+        print(f"Directory {dir_} does not exist")
         exists = False
 
 if not exists:
     print("One of the directories does not exist. Aborting")
-    sys.exit()
-
+    sys.exit(1)
 
 ### load data ###
-def load_json(path: Path) -> Any:
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+
+def open_json_or_gz(path: Path, mode: str = "rt", encoding: str = "utf-8"):
+    """
+    Open a JSON file that might be plain .json or gzipped (.gz).
+    If `path` has a suffix .gz, we use gzip; otherwise normal open().
+    """
+    if path.suffix == ".gz":
+        return gzip.open(path, mode, encoding=encoding)
+    return path.open(mode, encoding=encoding)
+
+
+def load_json_or_gz(path: Path, stem: str | None = None) -> Any:
+    """
+    Load JSON from either a .json or .json.gz file.
+
+    Usage:
+      - load_json_or_gz(Path(".../KS.json"))
+      - load_json_or_gz(dir_path, "KS")  -> dir_path/KS.json or KS.json.gz
+    """
+    if stem is not None:
+        base = path.parent / stem
+    else:
+        base = path
+        if base.suffix == ".gz":
+            base = base.with_suffix("")  # KS.json.gz -> KS.json
+
+    json_path = base
+    if json_path.suffix != ".json":
+        json_path = json_path.with_suffix(".json")
+
+    gz_path = json_path.with_suffix(json_path.suffix + ".gz")  # .json.gz
+
+    if json_path.is_file():
+        with json_path.open("r", encoding="utf-8") as f:
+            return json.load(f)
+
+    if gz_path.is_file():
+        with gzip.open(gz_path, "rt", encoding="utf-8") as f:
+            return json.load(f)
+
+    raise FileNotFoundError(f"Neither {json_path} nor {gz_path} exists")
+
 
 def get_result_array(doc: Any):
     if isinstance(doc, dict) and isinstance(doc.get("result"), list):
@@ -171,6 +214,27 @@ def get_result_array(doc: Any):
         return doc
     raise ValueError("Unrecognized raw JSON format")
 
+
+def intern_all_strings(obj: Any) -> Any:
+    """
+    Recursively intern all string objects in a nested structure of dicts/lists.
+    """
+    if isinstance(obj, str):
+        return _intern(obj)
+    if isinstance(obj, list):
+        return [intern_all_strings(x) for x in obj]
+    if isinstance(obj, dict):
+        new = {}
+        for k, v in obj.items():
+            if isinstance(k, str):
+                k2 = _intern(k)
+            else:
+                k2 = k
+            new[k2] = intern_all_strings(v)
+        return new
+    return obj
+
+
 entity: dict = {}
 relation: dict = {}
 
@@ -180,20 +244,26 @@ use_cache = (
     and PACKED_RELATION_PATH.is_file()
 )
 
+# ---------- build or load ENTITY + RELATION ----------
+
 if use_cache:
     print(f"[cache] Loading packed entity and relation for {DATE}")
-    with PACKED_ENTITY_PATH.open("r", encoding="utf-8") as f:
-        entity = json.load(f, object_hook=set_decoder)
-    with PACKED_RELATION_PATH.open("r", encoding="utf-8") as f:
+    with gzip.open(PACKED_ENTITY_PATH, "rt", encoding="utf-8") as f:
+        entity = json.load(f)
+    entity = intern_all_strings(entity)
+
+    with gzip.open(PACKED_RELATION_PATH, "rt", encoding="utf-8") as f:
         relation = json.load(f, object_hook=set_decoder)
+    relation = intern_all_strings(relation)
 
 else:
     print(f"[cache] No valid cache for {DATE} (or --repack given); building from raw files")
 
-    # ---------- ENTITIES (your existing code) ----------
+    # ---------- ENTITIES: raw-ish structure ----------
+
     citypes_path = NODES_META_ROOT / "citypes_list.json"
-    if citypes_path.exists():
-        citypes_list = get_result_array(load_json(citypes_path))
+    if citypes_path.exists() or (citypes_path.with_suffix(".json.gz")).exists():
+        citypes_list = get_result_array(load_json_or_gz(citypes_path))
         if citypes_list == []:
             print(f"WARNING: {citypes_path} exists but contains no 'results'")
     else:
@@ -206,95 +276,87 @@ else:
             node_type = node_file.stem
             citypes_list.append({"technicalName": node_type})
 
-    # helper to share mem
+    entity["types"] = citypes_list
+    entity["by_uuid"] = {}
+    entity["by_type"] = {}
+    entity["citype_metadata"] = {}
+
+    # helper to intern
     def intern_str(x):
         if isinstance(x, str):
-            return sys.intern(x)
+            return _intern(x)
         return x
 
-    entity["types"] = citypes_list
     for citype in tqdm(citypes_list, desc="Loading citypes", position=0):
         citype_name = citype.get("technicalName", "")
-        short_name = (citype_name or "")[:15]
+        if not citype_name:
+            continue
+        citype_name = intern_str(citype_name)
 
-        metadata  = load_json(NODES_META_DIR / (citype_name + ".json"))
-        node_data = get_result_array(load_json(NODES_DIR / (citype_name + ".json")))
+        short_name = citype_name[:15]
 
-        # ---------- PASS 1: build attribute schema ----------
-        columns: list[str] = []
-        index_by_name: dict[str, int] = {}
+        metadata  = load_json_or_gz(NODES_META_DIR / f"{citype_name}.json")
+        node_data = get_result_array(
+            load_json_or_gz(NODES_DIR / f"{citype_name}.json")
+        )
 
-        meta_keys: list[str] = []
-        meta_schema: dict[str, int] = {}
+        entity["citype_metadata"][citype_name] = metadata
+        by_type_list = entity["by_type"].setdefault(citype_name, [])
+        by_uuid = entity["by_uuid"]
 
-        for node_entity in node_data:
-            for entry in node_entity.get("attributes", []):
-                attr_name = entry.get("technicalName") or entry.get("name")
-                if not attr_name:
-                    continue
-                if attr_name not in index_by_name:
-                    index_by_name[attr_name] = len(columns)
-                    columns.append(attr_name)
-
-            meta = node_entity.get("metaAttributes") or {}
-            for mk in meta.keys():
-                if mk not in meta_schema:
-                    meta_schema[mk] = len(meta_keys)
-                    meta_keys.append(mk)
-
-        n_rows = len(node_data)
-
-        cols: list[list] = [[None] * n_rows for _ in columns]
-        uuids: list[str | None] = [None] * n_rows
-        uuid_to_index: dict[str, int] = {}
-        meta_cols: list[list] = [[None] * n_rows for _ in meta_keys]
-
-        for row_idx, node_entity in enumerate(
-            tqdm(node_data, desc=f"  {short_name}", leave=False, position=1)
+        for node_entity in tqdm(
+            node_data,
+            desc=f"  {short_name}",
+            leave=False,
+            position=1,
         ):
-            entity_uuid = node_entity.get("uuid")
-            if not entity_uuid:
+            uuid = node_entity.get("uuid")
+            if not uuid:
                 continue
+            uuid = intern_str(uuid)
 
-            entity_uuid = intern_str(entity_uuid)
-            uuids[row_idx] = entity_uuid
-            uuid_to_index[entity_uuid] = row_idx
+            raw_attrs = node_entity.get("attributes") or []
+            raw_meta  = node_entity.get("metaAttributes") or {}
 
-            for entry in node_entity.get("attributes", []):
+            # convert attributes list -> dict
+            attr_dict: dict[str, Any] = {}
+            for entry in raw_attrs:
+                if not isinstance(entry, dict):
+                    continue
                 attr_name = entry.get("technicalName") or entry.get("name")
                 if not attr_name:
                     continue
-                col_idx = index_by_name.get(attr_name)
-                if col_idx is None:
-                    continue
-                value = intern_str(entry.get("value"))
-                cols[col_idx][row_idx] = value
+                attr_name = intern_str(attr_name)
+                val = entry.get("value")
+                if isinstance(val, str):
+                    val = intern_str(val)
+                attr_dict[attr_name] = val
 
-            meta = node_entity.get("metaAttributes") or {}
-            for mk, mv in meta.items():
-                col_idx = meta_schema.get(mk)
-                if col_idx is None:
-                    continue
-                meta_cols[col_idx][row_idx] = intern_str(mv) if mv is not None else None
+            meta_dict: dict[str, Any] = {}
+            for mk, mv in (raw_meta or {}).items():
+                if isinstance(mk, str):
+                    mk = intern_str(mk)
+                if isinstance(mv, str):
+                    mv = intern_str(mv)
+                meta_dict[mk] = mv
+
+            rec = {
+                "type": citype_name,
+                "uuid": uuid,
+                "attributes": attr_dict,
+                "metaAttributes": meta_dict,
+            }
+
+            by_uuid[uuid] = rec
+            by_type_list.append(uuid)
 
         del node_data
 
-        entity[citype_name] = {
-            "metadata": metadata,
-            "columns": columns,
-            "schema": index_by_name,
-            "uuids": uuids,
-            "uuid_to_index": uuid_to_index,
-            "cols": cols,
-            "meta_keys": meta_keys,
-            "meta_schema": meta_schema,
-            "meta_cols": meta_cols,
-        }
+    # ---------- RELATIONS: keep by_rel / by_node structure ----------
 
-    # ---------- RELATIONS (your existing code) ----------
     reltypes_path = NODES_META_ROOT / "reltypes_list.json"
     if reltypes_path.exists():
-        reltypes_list = get_result_array(load_json(reltypes_path))
+        reltypes_list = get_result_array(load_json_or_gz(reltypes_path))
         if reltypes_list == []:
             print("WARNING: reltypes_list.json exists but contains no 'results'")
     else:
@@ -314,10 +376,11 @@ else:
         reltype_name = reltype.get("technicalName", "")
         if not reltype_name:
             continue
+        reltype_name = intern_str(reltype_name)
 
-        short_name = (reltype_name or "")[:15]
+        short_name = reltype_name[:15]
 
-        metadata = load_json(RELS_META_DIR / f"{reltype_name}.json")
+        metadata = load_json_or_gz(RELS_META_DIR / f"{reltype_name}.json")
         sources = metadata.get("sources") or []
         targets = metadata.get("targets") or []
         if not sources or not targets:
@@ -326,6 +389,10 @@ else:
 
         source_type = sources[0].get("technicalName")
         target_type = targets[0].get("technicalName")
+        if isinstance(source_type, str):
+            source_type = intern_str(source_type)
+        if isinstance(target_type, str):
+            target_type = intern_str(target_type)
 
         relation["by_rel"][reltype_name] = {
             "metadata": metadata,
@@ -342,8 +409,11 @@ else:
         relation["by_node"][source_type]["by_src"].add(reltype_name)
         relation["by_node"][target_type]["by_tgt"].add(reltype_name)
 
-        rel_doc = load_json(RELS_DIR / f"{reltype_name}.json")
+        rel_doc = load_json_or_gz(RELS_DIR / f"{reltype_name}.json")
         rows = rel_doc.get("result", [])
+
+        by_src = relation["by_rel"][reltype_name]["by_src"]
+        by_tgt = relation["by_rel"][reltype_name]["by_tgt"]
 
         for relation_pair in tqdm(
             rows,
@@ -355,24 +425,29 @@ else:
             sid = relation_pair.get("source")
             if not sid or not tid:
                 continue
+            if isinstance(sid, str):
+                sid = intern_str(sid)
+            if isinstance(tid, str):
+                tid = intern_str(tid)
 
-            src_map = relation["by_rel"][reltype_name]["by_src"]
-            tgt_map = relation["by_rel"][reltype_name]["by_tgt"]
+            by_src.setdefault(sid, []).append(tid)
+            by_tgt.setdefault(tid, []).append(sid)
 
-            src_map.setdefault(sid, []).append(tid)
-            tgt_map.setdefault(tid, []).append(sid)
+        del rel_doc
 
     # ---------- SAVE CACHE ----------
+
     try:
-        with PACKED_ENTITY_PATH.open("w", encoding="utf-8") as f:
-            json.dump(entity, f, ensure_ascii=False, indent=2, cls=SetEncoder)
-        with PACKED_RELATION_PATH.open("w", encoding="utf-8") as f:
-            json.dump(relation, f, ensure_ascii=False, indent=2, cls=SetEncoder)
+        with gzip.open(PACKED_ENTITY_PATH, "wt", encoding="utf-8") as f:
+            json.dump(entity, f, ensure_ascii=False, separators=(",", ":"))
+        with gzip.open(PACKED_RELATION_PATH, "wt", encoding="utf-8") as f:
+            json.dump(relation, f, ensure_ascii=False, separators=(",", ":"), cls=SetEncoder)
         print(f"[cache] Wrote {PACKED_ENTITY_PATH} and {PACKED_RELATION_PATH}")
     except Exception as e:
         print(f"[cache] WARNING: failed to write packed cache: {e}")
 
-# measure size
+# ---------- small size introspection (optional) ----------
+
 def deep_size(obj, seen=None):
     if seen is None:
         seen = set()
@@ -390,82 +465,61 @@ def deep_size(obj, seen=None):
         size += sum(deep_size(i, seen) for i in obj)
 
     return size
-
+'''
 print("entity size:", deep_size(entity) / 1024**2, "MB")
 print("relation size:", deep_size(relation) / 1024**2, "MB")
 
-# load data into context
+def mb(x): return deep_size(x) / 1024**2
+
+print("---- entity breakdown ----")
+print("types:", mb(entity.get("types", [])), "MB")
+print("by_uuid:", mb(entity.get("by_uuid", {})), "MB")
+print("by_type:", mb(entity.get("by_type", {})), "MB")
+print("citype_metadata:", mb(entity.get("citype_metadata", {})), "MB")
+print("--------------------------")
+'''
+# ---------- Context over raw-like structure ----------
+
 class Context:
     def __init__(self, date, entity, relation):
         self.date = date
         self.entity = entity
         self.relation = relation
 
-    def get_entity_attr(self, ctype, uuid, attr_name):
-        data = self.entity[ctype]
-        idx = data["uuid_to_index"][uuid]
-        col_idx = data["schema"][attr_name]
-        return data["cols"][col_idx][idx]
+    def get_entity_type(self, uuid: str) -> str:
+        return self.entity["by_uuid"][uuid]["type"]
 
-    def get_entity_metaAttr(self, ctype, uuid, metaAttr_name):
-        """
-        Return a single metaAttribute value, or None if
-        that meta key doesn't exist for this citype / entity.
-        """
-        data = self.entity[ctype]
-        idx = data["uuid_to_index"][uuid]
+    def get_entity_attr(self, ctype: str, uuid: str, attr_name: str):
+        rec = self.entity["by_uuid"].get(uuid)
+        if not rec:
+            raise KeyError(f"UUID {uuid} not found")
+        # optional sanity check
+        # if rec["type"] != ctype:
+        #     raise KeyError(f"UUID {uuid} is not of type {ctype} (has {rec['type']})")
+        return rec.get("attributes", {}).get(attr_name)
 
-        meta_schema = data.get("meta_schema", {})
-        col_idx = meta_schema.get(metaAttr_name)
-        if col_idx is None:
-            return None
+    def get_entity_metaAttr(self, ctype: str, uuid: str, metaAttr_name: str):
+        rec = self.entity["by_uuid"].get(uuid)
+        if not rec:
+            raise KeyError(f"UUID {uuid} not found")
+        return rec.get("metaAttributes", {}).get(metaAttr_name)
 
-        meta_cols = data.get("meta_cols", [])
-        if col_idx >= len(meta_cols):
-            return None
+    def get_entity_record(self, ctype: str, uuid: str, include_null: bool = False):
+        rec = self.entity["by_uuid"].get(uuid)
+        if not rec:
+            raise KeyError(f"UUID {uuid} not found")
+        # Same note as before: we don't have the full schema,
+        # so include_null doesn't really change anything.
+        # We just return the stored record.
+        return rec
 
-        return meta_cols[col_idx][idx]
-
-    def get_entity_record(self, ctype, uuid, include_null=False):
-        """
-        Return a dict with:
-          - type
-          - uuid
-          - attributes: {attr_name: value}
-          - metaAttributes: {meta_key: value}
-        """
-        data = self.entity[ctype]
-        idx = data["uuid_to_index"][uuid]
-
-        # attributes
-        attrs = {}
-        for attr_name, col_idx in data["schema"].items():
-            val = data["cols"][col_idx][idx]
-            if val is None and not include_null:
-                continue
-            attrs[attr_name] = val
-
-        # metaAttributes
-        meta = {}
-        meta_schema = data.get("meta_schema", {})
-        meta_cols   = data.get("meta_cols", [])
-
-        for mk, col_idx in meta_schema.items():
-            if col_idx >= len(meta_cols):
-                continue
-            val = meta_cols[col_idx][idx]
-            if val is None and not include_null:
-                continue
-            meta[mk] = val
-
-        return {
-            "type": ctype,
-            "uuid": uuid,
-            "attributes": attrs,
-            "metaAttributes": meta,
-        }
+    def iter_uuids_of_type(self, ctype: str):
+        for uuid in self.entity["by_type"].get(ctype, []):
+            yield uuid
 
 ctx = Context(DATE, entity, relation)
+
+# ---------- module loading & execution ----------
 
 def load_module_from_path(path: Path):
     module_name = path.stem   # "filename" from "filename.extension"
@@ -482,7 +536,7 @@ for module_dir in MODULES_DIR.iterdir():
     module_type = module_dir.name
     print(module_type)
 
-    # create per-module-type output dir: data/<DATE>/<module_type>/
+    # create per-module-type output dir: meta-viz/data/<DATE>/<module_type>/
     out_dir = METAVIZ_OUTPUT / module_type
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -494,7 +548,6 @@ for module_dir in MODULES_DIR.iterdir():
 
         # Skip module if restricted by loadout
         if allowed_for_type is not None and module_name not in allowed_for_type:
-            # e.g. print(f"  Skipping {module_type}/{module_name} (not in loadout)")
             continue
 
         print(f"  Loading module {module_type}/{py_file.name}")
