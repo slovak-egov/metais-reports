@@ -6,7 +6,7 @@ import time
 import subprocess
 from pathlib import Path
 from datetime import date, datetime
-
+import gzip
 import requests
 import re
 
@@ -79,6 +79,8 @@ EXCLUDE_REGEX = os.getenv("METAIS_REL_EXCLUDE_REGEX", "")
 
 include_re = re.compile(INCLUDE_REGEX) if INCLUDE_REGEX else None
 exclude_re = re.compile(EXCLUDE_REGEX) if EXCLUDE_REGEX else None
+
+USE_GZIP_RAW = os.getenv("METAIS_GZIP_RAW", "False").lower() in ("1", "true", "yes")
 
 # Groovy template for relations
 # SOURCE ---RELATION---> TARGET, LIMIT, OFFSET
@@ -205,9 +207,16 @@ def load_json(path: str | Path):
 def write_raw_rel_json(path: Path, items: list[dict]):
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {"type": "RAW_REL", "result": items}
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False)
-    print(f"Wrote: {path} ({path.stat().st_size} bytes)")
+
+    if USE_GZIP_RAW:
+        gz_path = path.with_suffix(path.suffix + ".gz")  # e.g. .json.gz
+        with gzip.open(gz_path, "wt", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False)
+        print(f"Wrote: {gz_path} ({gz_path.stat().st_size} bytes)")
+    else:
+        with path.open("w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False)
+        print(f"Wrote: {path} ({path.stat().st_size} bytes)")
 
 
 # ----------------------------------------------------------------------

@@ -6,7 +6,9 @@ import time
 import subprocess
 from pathlib import Path
 from datetime import date
-
+import gzip
+import shutil
+from typing import Any
 import requests
 import re
 
@@ -80,6 +82,8 @@ EXCLUDE_REGEX = os.getenv("METAIS_EXCLUDE_REGEX", "")
 
 include_re = re.compile(INCLUDE_REGEX) if INCLUDE_REGEX else None
 exclude_re = re.compile(EXCLUDE_REGEX) if EXCLUDE_REGEX else None
+
+USE_GZIP_RAW_NODES = os.getenv("METAIS_GZIP_RAW", "False").lower() in ("1", "true", "yes")
 
 # RAW command template:
 #   - __TYPE__  -> citype technicalName
@@ -198,6 +202,31 @@ def run_cmd(cmd: str) -> tuple[bool, list[str], str, str]:
 def load_json(path: str | Path):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+def open_json_or_gz(path: Path, mode: str = "rt", encoding: str = "utf-8"):
+    """
+    Open a JSON file that might be plain .json or gzipped (.gz).
+    """
+    if path.suffix == ".gz":
+        return gzip.open(path, mode, encoding=encoding)
+    return path.open(mode, encoding=encoding)
+
+def load_json_or_gz(base_dir: Path, stem: str) -> Any:
+    """
+    Prefer <stem>.json; if missing, try <stem>.json.gz.
+    """
+    json_path = base_dir / f"{stem}.json"
+    gz_path   = base_dir / f"{stem}.json.gz"
+
+    if json_path.is_file():
+        with open_json_or_gz(json_path, "rt") as f:
+            return json.load(f)
+
+    if gz_path.is_file():
+        with open_json_or_gz(gz_path, "rt") as f:
+            return json.load(f)
+
+    raise FileNotFoundError(f"No .json or .json.gz for {stem} in {base_dir}")
 
 
 def write_raw_json(path: Path, items: list[dict]):
@@ -453,6 +482,35 @@ def write_nodes_streaming(ctype: str, limit: int, start_offset: int = 0):
 # MAIN
 # ----------------------------------------------------------------------
 
+# helper to replace stitched json with gzip
+def gzip_node_file(ctype: str):
+    """
+    Compress NODES_DIR/<ctype>.json -> NODES_DIR/<ctype>.json.gz
+    and delete the original .json file.
+
+    If the .json file does not exist (e.g. already gzipped), do nothing.
+    """
+    src = NODES_DIR / f"{ctype}.json"
+    if not src.exists():
+        print(f"[GZIP] No raw JSON file for {ctype} to compress ({src} missing).")
+        return
+
+    dst = src.with_suffix(src.suffix + ".gz")  # .json.gz
+
+    if dst.exists():
+        print(f"[GZIP] Target already exists, not overwriting: {dst}")
+        return
+
+    print(f"[GZIP] Compressing {src.name} -> {dst.name}")
+    with src.open("rb") as f_in, gzip.open(dst, "wb") as f_out:
+        shutil.copyfileobj(f_in, f_out)
+
+    size_orig = src.stat().st_size
+    size_gz   = dst.stat().st_size
+    print(f"[GZIP] {ctype}: {size_orig} -> {size_gz} bytes")
+
+    src.unlink()
+    print(f"[GZIP] Deleted original raw file: {src}")
 
 def main():
     # CLI parsing:
@@ -531,6 +589,11 @@ def main():
         this_offset = resume_offset if (resume_offset > 0 and len(reports) == 1) else 0
         try:
             write_nodes_streaming(ctype, PAGE_SIZE, start_offset=this_offset)
+
+            # If streaming finished successfully, optionally gzip the file
+            if USE_GZIP_RAW_NODES:
+                gzip_node_file(ctype)
+
         except Exception as e:
             print(f"[ERROR] Failed to fetch nodes for {ctype}: {e}")
             failures += 1
