@@ -1,7 +1,11 @@
 def run(ctx):
     entity   = ctx.entity
     relation = ctx.relation
-
+'''
+    print("[DEBUG] total uuids:", len(entity.get("by_uuid", {})))
+    print("[DEBUG] first few types:",
+        [t.get("technicalName") for t in entity.get("types", [])][:10])
+'''
     # metais_code -> list of (ctype, uuid)
     dup_records: dict[str, list[tuple[str, str]]] = {}
 
@@ -14,12 +18,8 @@ def run(ctx):
         citype_name = citype_record.get("technicalName")
         if not citype_name:
             continue
-        if citype_name not in entity:
-            continue
 
-        citype_data = entity[citype_name]
-
-        for uuid in citype_data["uuids"]:
+        for uuid in ctx.iter_uuids_of_type(citype_name):
             if uuid is None:
                 continue
 
@@ -31,7 +31,7 @@ def run(ctx):
                     "Gen_Profil_kod_metais",
                 )
             except KeyError:
-                # attribute doesn't exist on this type or uuid not found
+                # uuid not found in uuid_to_index
                 print(
                     f"[WARNING] metais code not available for uuid {uuid}, "
                     f"entity type: {citype_name}"
@@ -49,6 +49,14 @@ def run(ctx):
 
     groups: list[dict] = []
 
+'''
+    # --- DEBUG: summarize what we actually saw ---
+    num_codes = len(dup_records)
+    num_real_duplicates = sum(1 for v in dup_records.values() if len(v) > 1)
+
+    print("[DEBUG] metais codes seen (distinct):", num_codes)
+    print("[DEBUG] real duplicate codes (len>1):", num_real_duplicates)
+'''
     # --------- PHASE 2: build entities (primaries + neighbors) ----------
     for metais_code, entries in dup_records.items():
         # Only real duplicates
@@ -99,7 +107,6 @@ def run(ctx):
                                     related_uuid,
                                 )
                             except KeyError:
-                                # neighbor not present in entity dump; skip
                                 print(
                                     f"[WARNING] uuid {related_uuid} "
                                     f"not found in entity dump"
@@ -119,7 +126,6 @@ def run(ctx):
     groups.sort(key=lambda g: g["count"], reverse=True)
 
     # --------- PHASE 3: build top-level relations ----------
-    # Only relations between entities that actually appear in all_entities
     entity_uuid_set = set(all_entities.keys())
 
     relations: dict[str, dict] = {}
@@ -141,7 +147,6 @@ def run(ctx):
         if not pair_set:
             continue
 
-        # store direction explicitly: src -> tgt
         relations[reltype_name] = {
             "source_type": rel_info["source_type"],
             "target_type": rel_info["target_type"],
@@ -155,8 +160,8 @@ def run(ctx):
         "date":      ctx.date,
         "name":      "MetaIS code duplicity",
         "count":     len(groups),
-        "groups":    groups,       # [{metais_code, count, entity_uuids}]
-        "entities":  all_entities, # {uuid: {type, uuid, attributes, metaAttributes}}
-        "relations": relations,    # {reltype: {source_type, target_type, pairs:[[src,tgt],...]}}
+        "groups":    groups,
+        "entities":  all_entities,
+        "relations": relations,
     }
     return out
