@@ -6,7 +6,7 @@ let currentDate = null;
 
 const snapshotSelect = document.getElementById('snapshot-select');
 const categoryList   = document.getElementById('category-list');
-const tileGrid       = document.getElementById('tile-grid');
+const reportArea       = document.getElementById('report-area'); // where report goes!
 const sortButtons    = document.querySelectorAll('.sort-btn');
 
 async function fetchIndex() {
@@ -159,8 +159,8 @@ function rebuildCategories() {
 }
 
 // Clear all tiles or maybe only ones for same instance?
-function clearTiles() {
-  tileGrid.innerHTML = '';
+function clearReport() {
+  reportArea.innerHTML = '';
 }
 
 // Core instance loader:
@@ -171,8 +171,8 @@ async function loadInstance(categoryName, technicalName, displayName) {
   const date = currentDate;
   if (!date) return;
 
-  const dataUrl    = `data/${date}/${categoryName}/${technicalName}.json`;
-  const moduleUrl  = new URL(`./${categoryName}/${technicalName}.js`, import.meta.url);
+  const dataUrl   = `data/${date}/${categoryName}/${technicalName}.json`;
+  const moduleUrl = new URL(`./${categoryName}/${technicalName}.js`, import.meta.url);
 
   try {
     const res = await fetch(dataUrl);
@@ -181,27 +181,14 @@ async function loadInstance(categoryName, technicalName, displayName) {
     }
     const data = await res.json();
 
-    // Create tile container
-    const tile = document.createElement('article');
-    tile.className = 'tile';
+    // wipe previous report
+    reportArea.innerHTML = '';
 
-    const header = document.createElement('div');
-    header.className = 'tile-header';
-    header.textContent = displayName || technicalName;
+    // a root div the module can own (optional, but nice)
+    const root = document.createElement('div');
+    root.className = 'report-root';
+    reportArea.appendChild(root);
 
-    const meta = document.createElement('div');
-    meta.className = 'tile-meta';
-    meta.textContent = `${categoryName} · ${date}`;
-
-    const body = document.createElement('div');
-    body.className = 'tile-body';
-
-    tile.appendChild(header);
-    tile.appendChild(meta);
-    tile.appendChild(body);
-    tileGrid.appendChild(tile);
-
-    // Dynamically import the instance-specific module
     let mod;
     try {
       mod = await import(moduleUrl);
@@ -210,20 +197,19 @@ async function loadInstance(categoryName, technicalName, displayName) {
     }
 
     if (mod && typeof mod.render === 'function') {
-      mod.render(body, data, {
+      mod.render(root, data, {
         date,
         category: categoryName,
         instance: technicalName,
         displayName: displayName || technicalName,
       });
     } else {
-      // Fallback: raw JSON dump
-      body.textContent = JSON.stringify(data, null, 2);
-      body.style.whiteSpace = 'pre';
-      body.style.fontFamily = 'monospace';
-      body.style.fontSize = '0.75rem';
+      // Fallback: raw JSON
+      root.textContent = JSON.stringify(data, null, 2);
+      root.style.whiteSpace = 'pre';
+      root.style.fontFamily = 'monospace';
+      root.style.fontSize = '0.75rem';
     }
-
   } catch (err) {
     console.error(err);
     alert(`Failed to load instance "${displayName || technicalName}": ${err.message}`);
