@@ -184,31 +184,33 @@ async function loadInstance(categoryName, technicalName, displayName) {
     // wipe previous report
     reportArea.innerHTML = '';
 
-    // a root div the module can own (optional, but nice)
-    const root = document.createElement('div');
-    root.className = 'report-root';
-    reportArea.appendChild(root);
-
     let mod;
     try {
       mod = await import(moduleUrl);
     } catch (e) {
+      console.error('Failed to import module', moduleUrl, e);
       console.warn(`No module found at ${moduleUrl}; using fallback renderer.`);
     }
 
+    const ctx = {
+      date,
+      category: categoryName,
+      instance: technicalName,
+      displayName: displayName || technicalName,
+    };
+
     if (mod && typeof mod.render === 'function') {
-      mod.render(root, data, {
-        date,
-        category: categoryName,
-        instance: technicalName,
-        displayName: displayName || technicalName,
-      });
+      // render directly into reportArea – no report-root wrapper
+      mod.render(reportArea, data, ctx);
     } else {
       // Fallback: raw JSON
-      root.textContent = JSON.stringify(data, null, 2);
-      root.style.whiteSpace = 'pre';
-      root.style.fontFamily = 'monospace';
-      root.style.fontSize = '0.75rem';
+      const pre = document.createElement('pre');
+      pre.textContent = JSON.stringify(data, null, 2);
+      pre.style.whiteSpace = 'pre';
+      pre.style.fontFamily = 'monospace';
+      pre.style.fontSize   = '0.75rem';
+      pre.style.margin     = '0.5rem';
+      reportArea.appendChild(pre);
     }
   } catch (err) {
     console.error(err);

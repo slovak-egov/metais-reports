@@ -1,0 +1,128 @@
+/* assets/common/graph-ui.css */
+
+/* High-level graph panel (wrapper used by modules) */
+.graph-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  min-height: 0;
+}
+
+.graph-panel-controls {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.graph-panel-main {
+  flex: 1 1 auto;
+  display: flex;
+  min-height: 0;
+}
+
+/* NOTE: .graph-root / .graph-canvas stay in assets/common/graph.css */
+
+/* Hover tooltip for nodes */
+.graph-hover-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(236, 233, 178, 0.95);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  color: #000000;
+  border: 1px solid rgba(255,255,255,0.1);
+  max-width: 260px;
+  z-index: 50;
+}
+
+.graph-tooltip-title {
+  font-weight: 600;
+}
+
+.graph-tooltip-id {
+  font-family: monospace;
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+/* Tooltip shown when hovering over an edge */
+.graph-edge-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(180, 200, 255, 0.92);   /* light bluish tint */
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 260px;
+  z-index: 60;  /* above node tooltip */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+.graph-edge-title {
+  font-weight: bold;
+  margin-bottom: 0.15rem;
+}
+
+.graph-edge-types {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+/* Persistent bubble for clicked node */
+.graph-selected-bubble {
+  position: absolute;
+  max-width: 520px;
+  max-height: 260px;
+  overflow: auto;
+
+  background: rgba(10, 10, 10, 0.95);
+  color: #f4f4f4;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.75rem;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,0.4),
+    0 10px 25px rgba(0,0,0,0.55);
+  z-index: 60;
+}
+
+.graph-selected-title {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.graph-selected-id {
+  font-family: monospace;
+  font-size: 0.7rem;
+  opacity: 0.8;
+  word-break: break-all;
+}
+
+.graph-selected-attrs {
+  margin-top: 0.25rem;
+}
+
+.graph-selected-row {
+  margin-bottom: 0.15rem;
+}
+
+.graph-selected-key {
+  font-weight: 500;
+}
+
+.graph-selected-sep {
+  opacity: 0.7;
+}
+
+.graph-selected-val {
+  font-family: monospace;
+  font-size: 0.75rem;
+  word-break: break-word;
+}
