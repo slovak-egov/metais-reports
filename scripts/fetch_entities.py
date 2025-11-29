@@ -391,20 +391,20 @@ def fetch_node_page(ctype: str, limit: int, offset: int) -> list[dict]:
 
 def write_nodes_streaming(ctype: str, limit: int, start_offset: int = 0):
     """
-    Stream all pages for a given citype into a single RAW JSON file.
+    Stream all pages for a given citype into two RAW JSON files:
+
+      - NODES_DIR/<ctype>.json           → non-invalidated (state != "INVALIDATED")
+      - NODES_DIR/<ctype>_invalid.json   → invalidated (state == "INVALIDATED")
 
     Includes retry logic for non-auth failures on individual pages,
     controlled by NODE_PAGE_MAX_RETRIES / NODE_PAGE_RETRY_DELAY.
 
-    If start_offset > 0, we assume that NODES_DIR/<ctype>.json already
-    contains all records up to that offset, in the same streaming format
+    If start_offset > 0, we assume that the valid/invalid JSON files already
+    contain all records up to that offset, in the same streaming format
     (header + JSON objects, but probably without the final "]}" if a
-    previous run crashed). We then open the file in append mode and
+    previous run crashed). We then open the files in append mode and
     continue writing new records starting at start_offset.
     """
-    out_path = NODES_DIR / f"{ctype}.json"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-
     if start_offset < 0:
         raise ValueError(f"start_offset must be >= 0, got {start_offset}")
 
@@ -413,27 +413,50 @@ def write_nodes_streaming(ctype: str, limit: int, start_offset: int = 0):
             f"start_offset {start_offset} is not a multiple of page size {limit}"
         )
 
+    out_valid   = NODES_DIR / f"{ctype}.json"
+    out_invalid = NODES_DIR / f"{ctype}_invalid.json"
+    out_valid.parent.mkdir(parents=True, exist_ok=True)
+
     # Calculate starting page index from offset
     page_index = start_offset // limit
 
-    # Open file: new run vs resume
+    f_valid = None
+    f_invalid = None
+    first_valid = True
+    first_invalid = True
+
+    # Open files: new run vs resume
     if start_offset == 0:
-        # Fresh run: overwrite and write header
-        f = out_path.open("w", encoding="utf-8")
-        f.write('{"type":"RAW","result":[')
-        first = True
+        # Fresh run: overwrite and write header for the "valid" file.
+        f_valid = out_valid.open("w", encoding="utf-8")
+        f_valid.write('{"type":"RAW","result":[')
+        first_valid = True
+
+        # For "invalid" we create lazily when we first see an INVALIDATED entity.
+        f_invalid = None
+        first_invalid = True
     else:
-        # Resume: file must already exist with previously streamed data
-        if not out_path.exists():
+        # Resume: valid file must exist with previously streamed data
+        if not out_valid.exists():
             raise RuntimeError(
                 f"Requested resume for {ctype} at offset {start_offset}, "
-                f"but {out_path} does not exist."
+                f"but {out_valid} does not exist."
             )
-        # Append directly; previous run already wrote header + some records
-        f = out_path.open("a", encoding="utf-8")
-        # We KNOW there is at least the header; assume we already have
-        # at least one record, so the next record should be preceded by a comma.
-        first = False
+
+        # Append directly; previous run already wrote header + some records.
+        f_valid = out_valid.open("a", encoding="utf-8")
+        first_valid = False  # assume at least one record exists, like before
+
+        # For invalid file:
+        #   - if it exists, append and assume at least one record (first_invalid=False)
+        #   - if it doesn't, we will create/initialize it lazily when we first
+        #     encounter an INVALIDATED entity.
+        if out_invalid.exists():
+            f_invalid = out_invalid.open("a", encoding="utf-8")
+            first_invalid = False
+        else:
+            f_invalid = None
+            first_invalid = True
 
     try:
         while True:
@@ -464,19 +487,43 @@ def write_nodes_streaming(ctype: str, limit: int, start_offset: int = 0):
                 break
 
             for it in items:
-                if not first:
-                    f.write(",")
-                json.dump(it, f, ensure_ascii=False)
-                first = False
+                meta = it.get("metaAttributes") or {}
+                state = meta.get("state")
+
+                is_invalid = (state == "INVALIDATED")
+
+                if is_invalid:
+                    # Lazily create the invalid file (on first invalid entity).
+                    if f_invalid is None:
+                        f_invalid = out_invalid.open("w", encoding="utf-8")
+                        f_invalid.write('{"type":"RAW","result":[')
+                        first_invalid = True
+
+                    if not first_invalid:
+                        f_invalid.write(",")
+                    json.dump(it, f_invalid, ensure_ascii=False)
+                    first_invalid = False
+                else:
+                    if not first_valid:
+                        f_valid.write(",")
+                    json.dump(it, f_valid, ensure_ascii=False)
+                    first_valid = False
 
             page_index += 1
 
-        # Close the JSON array/object
-        f.write("]}")
-        print(f"[OK] {ctype}: written streaming JSON to {out_path}")
-    finally:
-        f.close()
+        # Close the JSON array/object(s)
+        f_valid.write("]}")
+        print(f"[OK] {ctype}: written streaming JSON to {out_valid}")
 
+        if f_invalid is not None:
+            f_invalid.write("]}")
+            print(f"[OK] {ctype}: written streaming JSON of INVALIDATED nodes to {out_invalid}")
+
+    finally:
+        if f_valid is not None and not f_valid.closed:
+            f_valid.close()
+        if f_invalid is not None and not f_invalid.closed:
+            f_invalid.close()
 
 # ----------------------------------------------------------------------
 # MAIN
