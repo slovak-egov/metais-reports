@@ -144,12 +144,14 @@ METAVIZ_OUTPUT  = METAVIZ_OUTPUT_ROOT / DATE
 DATA_DIR_ROOT   = PROJECT_ROOT / OUTPUT_DIR_NAME / DATE
 NODES_DIR       = DATA_DIR_ROOT / "nodes"
 RELS_DIR        = DATA_DIR_ROOT / "relations"
-NODES_META_ROOT = DATA_DIR_ROOT / "metadata"
-NODES_META_DIR  = NODES_META_ROOT / "nodes"
-RELS_META_DIR   = NODES_META_ROOT / "relations"
+METADATA_ROOT   = DATA_DIR_ROOT / "metadata"
+NODES_META_DIR  = METADATA_ROOT / "nodes"
+RELS_META_DIR   = METADATA_ROOT / "relations"
 
 PACKED_ENTITY_PATH   = DATA_DIR_ROOT / "packed_entity_raw.json.gz"
 PACKED_RELATION_PATH = DATA_DIR_ROOT / "packed_relation.json.gz"
+
+ENUMS_MERGED_PATH = METADATA_ROOT / "enums_merged.json"
 
 exists = True
 for dir_ in [NODES_DIR, RELS_DIR, NODES_META_DIR, RELS_META_DIR]:
@@ -238,6 +240,20 @@ def intern_all_strings(obj: Any) -> Any:
 entity: dict = {}
 relation: dict = {}
 
+try:
+    enums_merged_raw = load_json_or_gz(ENUMS_MERGED_PATH)
+    if isinstance(enums_merged_raw, dict):
+        enums_merged = enums_merged_raw
+    else:
+        print(f"[enums] WARNING: {ENUMS_MERGED_PATH} is not a dict, ignoring")
+        enums_merged = {}
+except FileNotFoundError:
+    print(f"[enums] WARNING: {ENUMS_MERGED_PATH} not found, enums_merged will be empty")
+    enums_merged = {}
+except Exception as e:
+    print(f"[enums] WARNING: failed to load {ENUMS_MERGED_PATH}: {e}")
+    enums_merged = {}
+
 use_cache = (
     (not cli_args.repack)
     and PACKED_ENTITY_PATH.is_file()
@@ -261,7 +277,7 @@ else:
 
     # ---------- ENTITIES: raw-ish structure ----------
 
-    citypes_path = NODES_META_ROOT / "citypes_list.json"
+    citypes_path = METADATA_ROOT / "citypes_list.json"
     if citypes_path.exists() or (citypes_path.with_suffix(".json.gz")).exists():
         citypes_list = get_result_array(load_json_or_gz(citypes_path))
         if citypes_list == []:
@@ -354,7 +370,7 @@ else:
 
     # ---------- RELATIONS: keep by_rel / by_node structure ----------
 
-    reltypes_path = NODES_META_ROOT / "reltypes_list.json"
+    reltypes_path = METADATA_ROOT / "reltypes_list.json"
     if reltypes_path.exists():
         reltypes_list = get_result_array(load_json_or_gz(reltypes_path))
         if reltypes_list == []:
@@ -481,10 +497,11 @@ print("--------------------------")
 # ---------- Context over raw-like structure ----------
 
 class Context:
-    def __init__(self, date, entity, relation):
+    def __init__(self, date, entity, relation, enums):
         self.date = date
         self.entity = entity
         self.relation = relation
+        self.enums = enums_merged
 
     def get_entity_type(self, uuid: str) -> str:
         return self.entity["by_uuid"][uuid]["type"]
@@ -517,7 +534,7 @@ class Context:
         for uuid in self.entity["by_type"].get(ctype, []):
             yield uuid
 
-ctx = Context(DATE, entity, relation)
+ctx = Context(DATE, entity, relation, enums_merged)
 
 # ---------- module loading & execution ----------
 
