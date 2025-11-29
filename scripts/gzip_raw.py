@@ -55,7 +55,7 @@ def gzip_file(path: Path) -> None:
 
     size_before = path.stat().st_size
 
-    print(f"[GZIP] {path.name} → {gz_path.name}")
+    print(f"[GZIP] {path.name} -> {gz_path.name}")
     with path.open("rb") as f_in, gzip.open(gz_path, "wb") as f_out:
         shutil.copyfileobj(f_in, f_out)
 
