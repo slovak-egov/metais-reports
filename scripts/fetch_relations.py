@@ -45,6 +45,8 @@ RELS_DIR        = DATE_ROOT / "relations"
 METADATA_ROOT   = DATE_ROOT / "metadata"
 META_REL_DIR    = METADATA_ROOT / "relations"
 
+NODES_DIR       = DATE_ROOT / "nodes"
+
 RELS_DIR.mkdir(parents=True, exist_ok=True)
 METADATA_ROOT.mkdir(parents=True, exist_ok=True)
 META_REL_DIR.mkdir(parents=True, exist_ok=True)
@@ -220,6 +222,98 @@ def write_raw_rel_json(path: Path, items: list[dict]):
 
 
 # ----------------------------------------------------------------------
+# NODE UUID LOOKUP (VALID ENTITIES ONLY)
+# ----------------------------------------------------------------------
+
+NODE_UUID_CACHE: dict[str, set[str]] = {}
+
+
+def open_json_or_gz(path: Path, mode: str = "rt", encoding: str = "utf-8"):
+    """
+    Open a JSON file that might be plain .json or gzipped (.gz).
+    """
+    if path.suffix == ".gz":
+        return gzip.open(path, mode, encoding=encoding)
+    return path.open(mode, encoding=encoding)
+
+
+def load_valid_uuid_set(citype: str) -> set[str]:
+    """
+    Load the set of UUIDs for a given citype from NODES_DIR/<citype>.json
+    or NODES_DIR/<citype>.json.gz. Only the "valid" nodes file is used
+    (we *do not* open <citype>_invalid.json*).
+
+    Result is cached in NODE_UUID_CACHE[citype].
+    """
+    if citype in NODE_UUID_CACHE:
+        return NODE_UUID_CACHE[citype]
+
+    base = NODES_DIR / f"{citype}.json"
+    gz   = NODES_DIR / f"{citype}.json.gz"
+
+    if base.is_file():
+        path = base
+    elif gz.is_file():
+        path = gz
+    else:
+        print(
+            f"[WARN] No node file found for citype {citype} in {NODES_DIR}; "
+            "treating all endpoints for this citype as invalid."
+        )
+        NODE_UUID_CACHE[citype] = set()
+        return NODE_UUID_CACHE[citype]
+
+    with open_json_or_gz(path, "rt") as f:
+        data = json.load(f)
+
+    if isinstance(data, dict) and "result" in data:
+        records = data["result"]
+    elif isinstance(data, list):
+        records = data
+    else:
+        print(
+            f"[WARN] Unexpected node file shape for {citype} at {path}; "
+            "no UUIDs loaded."
+        )
+        records = []
+
+    uuids = {rec.get("uuid") for rec in records if isinstance(rec, dict) and rec.get("uuid")}
+    NODE_UUID_CACHE[citype] = uuids
+    print(f"[META] Loaded {len(uuids)} UUIDs for citype {citype} from {path.name}")
+    return uuids
+
+def extract_relation_uuids(edge: dict) -> tuple[str | None, str | None]:
+    """
+    Extract source/target UUIDs from a relation edge.
+
+    For current MetaIS relations, edges look like:
+      { "source": "<uuid>", "target": "<uuid>" }
+
+    We still keep some gentle fallbacks in case it ever changes.
+    """
+    # primary expected shape
+    s_uuid = edge.get("source")
+    t_uuid = edge.get("target")
+    if s_uuid and t_uuid:
+        return s_uuid, t_uuid
+
+    # optional future/alt shapes
+    s_uuid = edge.get("sourceUuid") or edge.get("sourceUUID") or edge.get("sourceId")
+    t_uuid = edge.get("targetUuid") or edge.get("targetUUID") or edge.get("targetId")
+    if s_uuid and t_uuid:
+        return s_uuid, t_uuid
+
+    # last resort: nested objects with .uuid
+    src = edge.get("source") or {}
+    tgt = edge.get("target") or {}
+    if isinstance(src, dict) or isinstance(tgt, dict):
+        s_uuid = (src if isinstance(src, dict) else {}).get("uuid")
+        t_uuid = (tgt if isinstance(tgt, dict) else {}).get("uuid")
+        return s_uuid, t_uuid
+
+    return None, None
+
+# ----------------------------------------------------------------------
 # METADATA: CITYPES + RELATIONTYPES
 # ----------------------------------------------------------------------
 
@@ -330,9 +424,10 @@ def build_rel_specs(rel_meta: dict[str, dict]) -> list[dict]:
         target = targets[0]
 
         specs.append({
-            "source": sources[0],
-            "target": targets[0],
+            "source": source,
+            "target": target,
             "relation": tech,
+            "valid": bool(meta.get("valid", True)),
         })
     broken_path = METADATA_ROOT / "broken_reltypes.json"
     with broken_path.open("w", encoding="utf-8") as f:
@@ -448,14 +543,71 @@ def run_one_spec(spec: dict, idx: int, total: int) -> bool:
     label = f"{spec['relation']} ({spec['source']} -> {spec['target']})"
     print(f"\n=== Generating relation {label} ({idx}/{total}) ===")
 
+    rel_is_valid = bool(spec.get("valid", True))
+    relation_name = spec["relation"]
+    source_type = spec["source"]
+    target_type = spec["target"]
+
     attempt = 1
     while attempt <= MAX_RETRIES:
         try:
+            # Fetch all edges for this (source, relation, target)
             edges = fetch_all_relations_for_spec(spec, PAGE_SIZE)
-            out_path = RELS_DIR / f"{spec['relation']}.json"
-            write_raw_rel_json(out_path, edges)
-            print(f"[OK] {label}")
+
+            if not edges:
+                # still write an empty "valid" file for consistency
+                out_valid = RELS_DIR / f"{relation_name}.json"
+                write_raw_rel_json(out_valid, [])
+                print(f"[OK] {label}: 0 edges.")
+                return True
+
+            if not rel_is_valid:
+                # Entire relation type is invalid → everything goes into *_invalid.json
+                out_invalid = RELS_DIR / f"{relation_name}_invalid.json"
+                write_raw_rel_json(out_invalid, edges)
+                print(
+                    f"[OK] {label}: relation type INVALID, "
+                    f"stored {len(edges)} edges in {out_invalid.name}"
+                )
+                return True
+
+            # Relation type is valid → split edges by endpoint validity
+            src_valid_uuids = load_valid_uuid_set(source_type)
+            tgt_valid_uuids = load_valid_uuid_set(target_type)
+
+            valid_edges: list[dict] = []
+            invalid_edges: list[dict] = []
+
+            for edge in edges:
+                s_uuid, t_uuid = extract_relation_uuids(edge)
+
+                # If we can't determine UUIDs, treat as invalid
+                if not s_uuid or not t_uuid:
+                    invalid_edges.append(edge)
+                    continue
+
+                if (s_uuid in src_valid_uuids) and (t_uuid in tgt_valid_uuids):
+                    valid_edges.append(edge)
+                else:
+                    invalid_edges.append(edge)
+
+            out_valid = RELS_DIR / f"{relation_name}.json"
+            write_raw_rel_json(out_valid, valid_edges)
+            print(
+                f"[OK] {label}: {len(valid_edges)} valid edges "
+                f"→ {out_valid.name}"
+            )
+
+            if invalid_edges:
+                out_invalid = RELS_DIR / f"{relation_name}_invalid.json"
+                write_raw_rel_json(out_invalid, invalid_edges)
+                print(
+                    f"[OK] {label}: {len(invalid_edges)} edges with invalid "
+                    f"endpoints → {out_invalid.name}"
+                )
+
             return True
+
         except RuntimeError as e:
             # Most likely a subprocess issue; we can retry a few times.
             print(f"[WARN] {label}: attempt {attempt}/{MAX_RETRIES} failed: {e}")
