@@ -5,24 +5,22 @@
   <title>MetaViz</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <!-- THIS is what makes main.css load -->
   <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 <body>
-
   <div class="app-shell">
-
-    <!-- Top Header -->
-    <header class="app-header">
-      <div class="app-logo">
-        <img src="sprites/website_logo.svg" alt="MetaViz logo">
-      </div>
-    </header>
-
     <main class="app-main">
 
       <!-- Left Sidebar -->
       <aside class="sidebar-wrapper">
         <div class="sidebar">
+
+          <!-- Logo at top -->
+          <div class="sidebar-logo">
+            <img src="sprites/website_logo.svg" alt="MetaViz logo">
+          </div>
+          <div class="sidebar-separator"></div>
 
           <!-- Snapshot/date selection -->
           <section class="sidebar-section">
@@ -47,12 +45,12 @@
             </div>
           </section>
 
-          <!-- categories / instances - main js fills stuff here -->
+          <!-- categories / instances -->
           <section class="sidebar-section">
             <h2 class="sidebar-section-title">Reports</h2>
 
             <div id="category-list" class="category-list">
-              <!-- JS will insert accordion sections for dataset / graph / ... -->
+              <!-- JS will insert accordion sections -->
             </div>
           </section>
 
@@ -67,7 +65,6 @@
       </section>
 
     </main>
-
   </div>
 
   <!-- main JS (controls selection menu) -->
