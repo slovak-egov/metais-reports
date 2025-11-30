@@ -18,7 +18,7 @@ function quantizeIconSizePx(iconSize) {
     return Math.round(key);
 }*/
 
-const SPRITE_SIZES = [128, 512];
+const SPRITE_SIZES = [64, 128, 256, 512, 1024];
 
 function quantizeIconSizePx(iconSize) {
   const desired = Math.max(SPRITE_SIZES[0], Math.min(iconSize, SPRITE_SIZES[SPRITE_SIZES.length - 1]));
@@ -197,6 +197,8 @@ export class GraphViewport {
 
       getNodeGlow: null,
 
+      getNodeSpriteStyle: null,
+
       // interaction callbacks
       onNodeHover:       null,
       onNodeHoverEnd:    null,
@@ -207,6 +209,8 @@ export class GraphViewport {
       onEdgeHoverEnd: null,
     
       onAfterDraw: null,
+
+      onNodeContextMenu: null,
     
       ...options,
     };
@@ -670,16 +674,43 @@ export class GraphViewport {
         const sx = w / 2 + this.offsetX + this.zoom * node.x;
         const sy = h / 2 + this.offsetY + this.zoom * node.y;
 
-        const scale    = this.options.getNodeScale(node) ?? 1;
+        // --- hard guards on positions ---
+        if (!Number.isFinite(sx) || !Number.isFinite(sy)) {
+          console.warn('[Glow] Non-finite position', { node, sx, sy });
+          return;
+        }
+
+        const scale = this.options.getNodeScale(node) ?? 1;
+        if (!Number.isFinite(scale) || scale <= 0) {
+          console.warn('[Glow] Non-finite scale', { node, scale });
+          return;
+        }
+
         const iconSize = iconWorldSize * this.zoom * scale;
+        if (!Number.isFinite(iconSize) || iconSize <= 0) {
+          console.warn('[Glow] Bad iconSize', { node, iconSize, zoom: this.zoom });
+          return;
+        }
 
         const radiusFactor = glow.radiusFactor ?? 1.8;
         const alpha        = glow.alpha ?? 0.35;
-        const softness     = glow.softness ?? 0.8; // 0 = hard, 1 = very soft
+        const softness     = glow.softness ?? 0.8;
 
-        const rGlow  = 0.5 * iconSize * radiusFactor;
-        const ctx    = this.ctx;
-        const oldA   = ctx.globalAlpha;
+        if (!Number.isFinite(radiusFactor) || radiusFactor <= 0 ||
+            !Number.isFinite(alpha)        || alpha < 0 ||
+            !Number.isFinite(softness)) {
+          console.warn('[Glow] Bad glow params', { glow });
+          return;
+        }
+
+        const rGlow = 0.5 * iconSize * radiusFactor;
+        if (!Number.isFinite(rGlow) || rGlow <= 0) {
+          console.warn('[Glow] Bad rGlow', { node, rGlow, iconSize, radiusFactor });
+          return;
+        }
+
+        const ctx  = this.ctx;
+        const oldA = ctx.globalAlpha;
 
         const innerStop = Math.max(0, Math.min(1, 1 - softness));
 
@@ -720,6 +751,20 @@ export class GraphViewport {
       const widthTiles = style.widthTiles;
       const widthPx = (widthTiles != null ? widthTiles * tilePx : (style.width ?? 1));
 
+      // NEW: alpha + dash support
+      const alpha = (typeof style.alpha === 'number') ? style.alpha : 1.0;
+      const dash  = style.dash || null;
+
+      const oldAlpha = g.globalAlpha;
+      const oldDash  = g.getLineDash ? g.getLineDash() : [];
+
+      g.globalAlpha = alpha;
+      if (dash && g.setLineDash) {
+        g.setLineDash(dash);
+      } else if (g.setLineDash) {
+        g.setLineDash([]); // solid
+      }
+
       g.strokeStyle = color;
       g.fillStyle   = color;
       g.lineWidth   = widthPx / this.devicePixelRatioUsed;
@@ -757,12 +802,24 @@ export class GraphViewport {
         g.lineTo(clipped.ex, clipped.ey);
         g.stroke();
       }
+
+      // restore state so nodes/grid aren’t dashed/faded
+      if (g.setLineDash) {
+        g.setLineDash(oldDash);
+      }
+      g.globalAlpha = oldAlpha;
     });
 
     // ==============================================================
     // PASS 3: node sprites (TOP)
     // ==============================================================
+    const savedFilter = this.ctx.filter;
+    const savedAlpha  = this.ctx.globalAlpha;
+
     nodes.forEach(node => {
+      const prevFilter = this.ctx.filter;
+      const prevAlpha  = this.ctx.globalAlpha;
+
       const sx = w / 2 + this.offsetX + this.zoom * node.x;
       const sy = h / 2 + this.offsetY + this.zoom * node.y;
 
@@ -807,6 +864,18 @@ export class GraphViewport {
 
       const halfDraw = iconSize / 2;
 
+      const styleFn = this.options.getNodeSpriteStyle;
+      const spriteStyle = styleFn ? styleFn(node) : null;
+
+      if (spriteStyle) {
+        if (spriteStyle.grayscale) {
+          this.ctx.filter = 'grayscale(100%)';
+        }
+        if (typeof spriteStyle.alpha === 'number') {
+          this.ctx.globalAlpha = prevAlpha * spriteStyle.alpha;
+        }
+      }
+
       // IMPORTANT:
       //   - source: always [0..sizeKey]
       //   - dest:   scaled to *smooth* iconSize (no size jumps, only texel resolution jumps)
@@ -816,7 +885,13 @@ export class GraphViewport {
         sx - halfDraw, sy - halfDraw,
         iconSize, iconSize
       );
+
+      this.ctx.filter      = prevFilter;
+      this.ctx.globalAlpha = prevAlpha;
     });
+
+    this.ctx.filter      = savedFilter;
+    this.ctx.globalAlpha = savedAlpha;
 
     // --- debug overlay / onAfterDraw stay as you had them ---
     if (this.options.debug && this.debugEl) {
@@ -934,6 +1009,21 @@ export class GraphViewport {
       this.offsetY += dy;
 
       this.draw();
+    });
+
+    // Right-click context menu on nodes
+    this.canvas.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+
+      const rect = this.canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+
+      const hitNode = this._hitTestNode(mx, my);
+
+      if (this.options.onNodeContextMenu) {
+        this.options.onNodeContextMenu(hitNode, e);
+      }
     });
 
     // Click: now only opens bubble if we *didn't* drag

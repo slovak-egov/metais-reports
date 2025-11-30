@@ -67,6 +67,13 @@ const EDGE_STYLE_CONFIG = {
       headTiles:  0.40,
       offsetFraction: 0.25,
     },
+    "Has similar name": {
+      color: '#ffffffff',
+      arrow: true,
+      widthTiles: 0.15,
+      headTiles:  0.50,
+      offsetFraction: 0.15,
+    },
   },
 
   // Generic per "kind" fallback (edge.kind)
@@ -95,20 +102,59 @@ const EDGE_STYLE_CONFIG = {
 
 // Factory that turns the config into a getEdgeStyle function
 export function makeMetaisEdgeStyle() {
-  const cfg = EDGE_STYLE_CONFIG;
+  return (edge, n1, n2) => {
+    // --- 1) start from your config (colors, arrow, widths, etc.) ---
+    const relCfg  = EDGE_STYLE_CONFIG.relationTypes[edge.relName];
+    const kindCfg = EDGE_STYLE_CONFIG.kinds[edge.kind];
+    const baseCfg = relCfg || kindCfg || EDGE_STYLE_CONFIG.fallback;
 
-  return (edge) => {
-    const relConf  = edge.relName && cfg.relationTypes[edge.relName];
-    const kindConf = cfg.kinds[edge.kind];
+    const baseStyle = {
+      color:          baseCfg.color,
+      arrow:          baseCfg.arrow ?? false,
+      widthTiles:     baseCfg.widthTiles ?? 0.04,
+      headTiles:      baseCfg.headTiles,
+      offsetFraction: baseCfg.offsetFraction,
+    };
 
-    const base = relConf || kindConf || cfg.fallback;
+    // --- 2) Special case: duplicate edges ---
+    if (edge.kind === 'duplicate') {
+      return {
+        ...baseStyle,
+        color: '#ccccff',
+        alpha: 0.35,
+        dash:  null,
+      };
+    }
+
+    // --- 3) Distance-based styling for relation edges ---
+    let d = edge.distance;
+    if (!Number.isFinite(d) || d < 0) d = Infinity;
+
+    let alpha = 0.9;
+    let dash  = null;
+
+    if (d === 0) {
+      // strongest
+      alpha = 1.0;
+      dash  = null;
+    } else if (d === 1) {
+      // dashed
+      alpha = 0.5;
+      dash  = [6, 4];
+    } else if (d === 2) {
+      // dotted-ish
+      alpha = 0.35;
+      dash  = [2, 4];
+    } else {
+      // unreachable / deep distance
+      alpha = 0.2;
+      dash  = [1, 6];
+    }
 
     return {
-      color: base.color,
-      arrow: base.arrow ?? true,
-      widthTiles: base.widthTiles,
-      headTiles:  base.headTiles,
-      offsetFraction: base.offsetFraction,
+      ...baseStyle,
+      alpha,
+      dash,
     };
   };
 }

@@ -126,3 +126,194 @@
   font-size: 0.75rem;
   word-break: break-word;
 }
+
+/* --- Generic floating pill menu for graph overlays ----------------------- */
+
+/* Bar that holds the pills (e.g. Groups / Hubs / Islands) */
+.dup-pill-bar {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 25; /* above graph, below tooltips/bubbles */
+}
+
+/* One pill (button + dropdown) */
+.dup-pill {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* The clickable pill button */
+.dup-pill-button {
+  border-radius: 999px;
+  border: var(--border-width) solid var(--border-color, #444);
+  background: #171717;
+  color: #ddd;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  position: relative;
+  z-index: 2;           /* >>> keep button above its own panel <<< */
+}
+
+/* Tiny caret */
+.dup-pill-button::after {
+  content: '▾';
+  font-size: 0.7em;
+  opacity: 0.75;
+}
+
+.dup-pill-button:hover {
+  background: #222;
+  border-color: #888;
+}
+
+/* Expanded panel below the pill button */
+.dup-pill-panel {
+  position: absolute;
+  top: calc(100% + 0.3rem);  /* sit just under the button */
+  left: 0;
+
+  min-width: 260px;
+  max-width: 420px;
+
+  /* Constrain height and scroll *inside* the panel */
+  max-height: min(22rem, 70vh);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 0.5rem 0.7rem;
+  background: #101010;
+  border-radius: 0.75rem;
+  border: 1px solid #444;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  z-index: 1;          /* below the button */
+}
+
+.dup-pill.dup-pill-open .dup-pill-panel {
+  display: flex;
+}
+
+/* Header row: title + controls (right-aligned) */
+.dup-pill-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+  min-height: 1.4rem;     /* <<< ensures chips are pushed down a bit */
+}
+
+.dup-pill-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #bbb;
+  white-space: nowrap;
+}
+
+/* Controls row (Select all, toggles, layer chips, etc.) */
+.dup-pill-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: flex-end;
+}
+
+/* Chip area for groups/hubs/islands */
+.dup-pill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  max-height: 32vh;
+  overflow-y: auto;
+}
+
+/* Optional scrollbar styling */
+.dup-pill-chips::-webkit-scrollbar {
+  width: 6px;
+}
+.dup-pill-chips::-webkit-scrollbar-track {
+  margin: 4px 0;
+}
+.dup-pill-chips::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+
+.hub-layer-chip-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hub-layers-label {
+  font-size: 0.75rem;
+  color: #ccc;
+  white-space: nowrap;
+}
+
+.dup-pill-global-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dup-pill-bar {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 25;
+}
+
+.graph-context-menu {
+  background: #111;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  font-size: 0.8rem;
+  min-width: 180px;
+  padding: 0.2rem 0;
+}
+
+.graph-context-item {
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.graph-context-item:hover {
+  background: #222;
+}
+
+.graph-context-item-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.graph-context-separator {
+  height: 1px;
+  background: #333;
+  margin: 0.2rem 0.1rem;
+}

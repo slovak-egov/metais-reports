@@ -161,6 +161,7 @@ function rebuildCategories() {
 // Clear all tiles or maybe only ones for same instance?
 function clearReport() {
   reportArea.innerHTML = '';
+  document.body.classList.remove('metais-dup-collapsed-header');
 }
 
 // Core instance loader:
@@ -182,7 +183,7 @@ async function loadInstance(categoryName, technicalName, displayName) {
     const data = await res.json();
 
     // wipe previous report
-    reportArea.innerHTML = '';
+    clearReport();
 
     let mod;
     try {

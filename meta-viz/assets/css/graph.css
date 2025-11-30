@@ -2,22 +2,25 @@
   position: relative;
   width: 100%;
   height: 100%;
-  inset: 0;               /* fill the container */
+  inset: 0;
   background: #050505;
   border-radius: inherit;
   overflow: hidden;
   flex: 1 1 auto;
 }
 
+/* Graph canvas: grab to pan */
 .graph-canvas {
   width: 100%;
   height: 100%;
   display: block;
   cursor: grab;
+  cursor: -webkit-grab;
 }
 
 .graph-canvas.graph-dragging {
   cursor: grabbing;
+  cursor: -webkit-grabbing;
 }
 
 .graph-debug {
@@ -26,9 +29,232 @@
   left: 8px;
   padding: 4px 6px;
   background: rgba(0, 0, 0, 0.6);
-  color: #ccc;               /* override that global black */
+  color: #ccc;
   font-size: 12px;
   font-family: monospace;
   pointer-events: none;
   z-index: 50;
+}
+
+/* Make the graph panel itself stretch inside .report-area */
+.graph-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.graph-panel-main {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Floating physics controls in bottom-right corner */
+.physics-overlay {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Tiny 20–24px handle that is always visible */
+.physics-handle {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #181818;
+  border: 1px solid #555;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  color: #ddd;
+
+  cursor: grab;
+  cursor: -webkit-grab;
+
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+}
+
+.physics-handle:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+.physics-handle:hover {
+  background: #222;
+  border-color: #888;
+}
+
+/* The expanded panel with sliders */
+.physics-panel {
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+
+  min-width: 260px;
+  max-width: 340px;
+  max-height: none;
+  overflow: visible;
+
+  padding: 0.5rem 0.75rem;
+  background: #101010;
+  border-radius: 0.75rem;
+  border: 1px solid #444;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition:
+    opacity 0.15s ease-out,
+    transform 0.15s ease-out;
+}
+
+.physics-panel-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #bbb;
+  margin-bottom: 0.25rem;
+}
+
+/* Physics controls: layout rows vertically (used in floating panel) */
+.physics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-content: stretch;
+}
+
+/* Rows: label + control (toggle or slider) on one line */
+.physics-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Left-side label */
+.physics-label {
+  font-size: 0.75rem;
+  opacity: 0.75;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  color: #ccc;
+}
+
+/* Slightly wider label for sliders so text doesn’t wrap ugly */
+.physics-row-slider .physics-label {
+  min-width: 6rem;
+}
+
+/* Right-side control area for sliders */
+.physics-slider-wrap {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* The numeric value next to slider */
+.physics-value {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  min-width: 2.5rem;
+  text-align: right;
+  color: #ccc;
+}
+
+/* Toggle row: label + chip button, horizontally aligned */
+.physics-row-toggle .physics-label {
+  min-width: 6rem;
+}
+
+/* Grabby cursor for physics toggle buttons & sliders */
+.physics-toggle,
+.physics-slider {
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+
+.physics-toggle:active,
+.physics-slider:active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/* Slider styling: dark rail + light round knob */
+.physics-slider {
+  flex: 1 1 auto;
+  appearance: none;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #1f1f1f;
+  outline: none;
+}
+
+/* Track */
+.physics-slider::-webkit-slider-runnable-track {
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #202020;
+}
+
+.physics-slider::-moz-range-track {
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #202020;
+}
+
+/* Thumb (knob) */
+.physics-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-top: -0.175rem;
+  border-radius: 999px;
+  background: #d0d0d0;
+  border: 2px solid #ffffff;
+}
+
+.physics-slider::-moz-range-thumb {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 999px;
+  background: #d0d0d0;
+  border: 2px solid #ffffff;
+}
+
+/* Selection / caret suppression */
+.physics-handle {
+  user-select: none;
+}
+
+.physics-panel,
+.physics-panel * {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* Show when explicitly opened via JS */
+.physics-overlay.physics-open .physics-panel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
