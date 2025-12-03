@@ -85,27 +85,34 @@ exclude_re = re.compile(EXCLUDE_REGEX) if EXCLUDE_REGEX else None
 
 USE_GZIP_RAW_NODES = os.getenv("METAIS_GZIP_RAW", "False").lower() in ("1", "true", "yes")
 
-# RAW command template:
-#   - __TYPE__  -> citype technicalName
-#   - __LIMIT__ / __OFFSET__ from Python
-#   - __OUTDIR__ scratch dir for each page
-NODE_TEMPLATE = os.getenv(
-    "METAIS_NODE_TEMPLATE",
-    "groovy/template/node_template.groovy"
+INCLUDE_INVALID = os.getenv("INCLUDE_INVALID", "true").strip().lower() in (
+    "1", "true", "yes", "y", "on", "all"
 )
 
-RAW_CMD_TEMPLATE = os.getenv(
-    "METAIS_RAW_CMD",
-    '"%s" {type} --template %s --limit {limit} --offset {offset} --outdir "{outdir}" --no-csv' % (
-        RAW_SH,
-        NODE_TEMPLATE,
-    ),
+# Two template paths: "all nodes" vs "valid-only"
+NODE_TEMPLATE_ALL = os.getenv(
+    "METAIS_NODE_TEMPLATE_ALL",
+    "groovy/template/node_template_all.groovy",
+)
+NODE_TEMPLATE_VALID_ONLY = os.getenv(
+    "METAIS_NODE_TEMPLATE_VALID_ONLY",
+    "groovy/template/node_template_valid_only.groovy",
 )
 
 # ----------------------------------------------------------------------
 # HELPERS
 # ----------------------------------------------------------------------
 
+def build_raw_cmd(ctype: str, limit: int, offset: int, outdir: str) -> str:
+    """
+    Build the raw.sh command, choosing the Groovy template based on
+    global INCLUDE_INVALID flag.
+    """
+    template = NODE_TEMPLATE_ALL if INCLUDE_INVALID else NODE_TEMPLATE_VALID_ONLY
+    return (
+        f'"{RAW_SH}" {ctype} --template {template} '
+        f'--limit {limit} --offset {offset} --outdir "{outdir}" --no-csv'
+    )
 
 def fetch_json_with_retries(url: str) -> dict | list:
     """Simple HTTP fetch with retries for metadata endpoints."""
@@ -331,12 +338,7 @@ def fetch_node_page(ctype: str, limit: int, offset: int) -> list[dict]:
     page_dir = DATE_ROOT / "nodes_parts" / ctype
     page_dir.mkdir(parents=True, exist_ok=True)
 
-    cmd = RAW_CMD_TEMPLATE.format(
-        type=ctype,
-        limit=limit,
-        offset=offset,
-        outdir=str(page_dir),
-    )
+    cmd = build_raw_cmd(ctype, limit, offset, str(page_dir))
 
     print(f"[PAGE] {ctype}: limit={limit}, offset={offset}")
 
@@ -489,9 +491,23 @@ def write_nodes_streaming(ctype: str, limit: int, start_offset: int = 0):
             for it in items:
                 meta = it.get("metaAttributes") or {}
                 state = meta.get("state")
-
                 is_invalid = (state == "INVALIDATED")
 
+                # Case 1: we are *not* including invalid nodes at all.
+                # The Groovy template should already have filtered them, but we can be safe:
+                if not INCLUDE_INVALID:
+                    if is_invalid:
+                        # Sanity: log and skip if something slipped through
+                        print(f"[WARN] {ctype}: got INVALIDATED node despite valid-only template; skipping.")
+                        continue
+
+                    if not first_valid:
+                        f_valid.write(",")
+                    json.dump(it, f_valid, ensure_ascii=False)
+                    first_valid = False
+                    continue
+
+                # Case 2: we *are* including invalid nodes → split into two files (old behaviour)
                 if is_invalid:
                     # Lazily create the invalid file (on first invalid entity).
                     if f_invalid is None:

@@ -84,20 +84,18 @@ exclude_re = re.compile(EXCLUDE_REGEX) if EXCLUDE_REGEX else None
 
 USE_GZIP_RAW = os.getenv("METAIS_GZIP_RAW", "False").lower() in ("1", "true", "yes")
 
-# Groovy template for relations
-# SOURCE ---RELATION---> TARGET, LIMIT, OFFSET
-REL_TEMPLATE = os.getenv(
-    "METAIS_REL_TEMPLATE",
-    "groovy/template/relation_template.groovy"
+INCLUDE_INVALID = os.getenv("INCLUDE_INVALID", "true").strip().lower() in (
+    "1", "true", "yes", "y", "on", "all"
 )
 
-RAW_CMD_TEMPLATE = os.getenv(
-    "METAIS_REL_CMD",
-    '"%s" {target} {source} {relation} '
-    '--template %s --limit {limit} --offset {offset} --outdir "{outdir}" --no-csv' % (
-        REL_SH,
-        REL_TEMPLATE,
-    ),
+# Two templates: "all relations" vs "valid-only"
+REL_TEMPLATE_ALL = os.getenv(
+    "METAIS_REL_TEMPLATE_ALL",
+    "groovy/template/relation_template_all.groovy",
+)
+REL_TEMPLATE_VALID_ONLY = os.getenv(
+    "METAIS_REL_TEMPLATE_VALID_ONLY",
+    "groovy/template/relation_template_valid_only.groovy",
 )
 
 MAX_RETRIES = int(os.getenv("METAIS_MAX_RETRIES", "10"))
@@ -107,6 +105,17 @@ RETRY_DELAY = float(os.getenv("METAIS_RETRY_DELAY", "0.25"))
 # HELPERS
 # ----------------------------------------------------------------------
 
+def build_rel_cmd(source: str, target: str, relation: str,
+                  limit: int, offset: int, outdir: str) -> str:
+    """
+    Build the relation.sh command, choosing the Groovy template based on
+    the global INCLUDE_INVALID flag.
+    """
+    template = REL_TEMPLATE_ALL if INCLUDE_INVALID else REL_TEMPLATE_VALID_ONLY
+    return (
+        f'"{REL_SH}" {target} {source} {relation} '
+        f'--template {template} --limit {limit} --offset {offset} --outdir "{outdir}" --no-csv'
+    )
 
 def fetch_json_with_retries(url: str) -> dict | list:
     attempt = 1
@@ -455,14 +464,7 @@ def fetch_relation_page(source: str, target: str, relation: str,
     page_dir = DATE_ROOT / "relations_parts" / relation
     page_dir.mkdir(parents=True, exist_ok=True)
 
-    cmd = RAW_CMD_TEMPLATE.format(
-        target=target,
-        source=source,
-        relation=relation,
-        limit=limit,
-        offset=offset,
-        outdir=str(page_dir),
-    )
+    cmd = build_rel_cmd(source, target, relation, limit, offset, str(page_dir))
 
     while True:
         print(f"[PAGE] {relation} ({source}->{target}): limit={limit}, offset={offset}")
