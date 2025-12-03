@@ -3,10 +3,15 @@ from difflib import SequenceMatcher
 from tqdm import tqdm
 
 SIMILAR_NAME_RELTYPE   = "Has similar name"
+SAME_CODE_RELTYPE      = "Has same MetaIS code"
 SIMILAR_NAME_THRESHOLD = 0.9
 
 # toggle whether similar-name search uses only valid entities
 SIMILAR_NAME_ONLY_VALID = True
+
+# MetaIS citype name for public organizations
+PO_CITYPE_NAME = "PO"
+
 
 def run(ctx):
     entity   = ctx.entity
@@ -53,7 +58,6 @@ def run(ctx):
     def is_invalidated(rec: dict) -> bool:
         meta = rec.get("metaAttributes") or {}
         return meta.get("state") == "INVALIDATED"
-
 
     def transform_attributes(citype_name: str, attrs: dict):
         """
@@ -363,7 +367,7 @@ def run(ctx):
         if ctype and isinstance(attrs, dict):
             rec["attributes"] = transform_attributes(ctype, attrs)
 
-    # --------- PHASE 3: build top-level relations (REAL relations only) ----------
+    # --------- PHASE 3: build top-level relations (REAL + synthetic) ----------
 
     entity_uuid_set = set(all_entities.keys())
 
@@ -416,11 +420,53 @@ def run(ctx):
             merged = old_pairs | pair_set
             existing["pairs"] = [[src, tgt] for (src, tgt) in sorted(merged)]
 
-    # ------------------------------------------------------------------
-    # PHASE 4 – adjacency graph (undirected)
-    # ------------------------------------------------------------------
-    adjacency: dict[str, set[str]] = defaultdict(set)
+    # --------- PHASE 3c: synthetic "Has same MetaIS code" relations ----------
 
+    same_code_pairs: set[tuple[str, str]] = set()
+
+    for g in groups:
+        uuids = g.get("entity_uuids", [])
+        if len(uuids) < 2:
+            continue
+
+        # connect primaries in this group; for now, use a chain u0–u1, u1–u2, ...
+        # (this is enough to keep them in one connected component and is cheaper than a full clique)
+        for u, v in zip(uuids, uuids[1:]):
+            if not u or not v:
+                continue
+            # store undirected pair in canonical (min, max) order to avoid duplicates
+            pair = (u, v) if u < v else (v, u)
+            same_code_pairs.add(pair)
+
+    if same_code_pairs:
+        # symmetric relation; we keep source/target_type as None so UI can show "? ↔ ?"
+        relations[SAME_CODE_RELTYPE] = {
+            "source_type": None,
+            "target_type": None,
+            "pairs": [[src, tgt] for (src, tgt) in sorted(same_code_pairs)],
+        }
+
+
+    # ------------------------------------------------------------------
+    # PHASE 4 – adjacency graph + distances
+    # ------------------------------------------------------------------
+
+    # Helper sets for later
+    duplicated_uuids: set[str] = set()
+    for g in groups:
+        duplicated_uuids.update(g.get("entity_uuids", []))
+
+    # full adjacency (all edges), undirected
+    adjacency: dict[str, set[str]] = defaultdict(set)
+    # adjacency using only distance-0 edges (elementary islands)
+    adjacency0: dict[str, set[str]] = defaultdict(set)
+
+    # Make sure every entity appears in adjacency (even if isolated)
+    for uuid in entity_uuid_set:
+        adjacency.setdefault(uuid, set())
+        adjacency0.setdefault(uuid, set())
+
+    # 4a) Build adjacency FROM raw relations (before distances)
     for rel_info in relations.values():
         for pair in rel_info.get("pairs", []):
             if len(pair) < 2:
@@ -429,29 +475,7 @@ def run(ctx):
             adjacency[src].add(tgt)
             adjacency[tgt].add(src)
 
-    # Make sure every entity appears in adjacency (even if isolated)
-    for uuid in entity_uuid_set:
-        adjacency.setdefault(uuid, set())
-
-    # having the same metais code counts as a "relation" here
-    for g in groups:
-        uuids = g.get("entity_uuids", [])
-        if len(uuids) < 2:
-            continue
-
-        # connect u0–u1, u1–u2, ... u(n-2)–u(n-1)
-        for u, v in zip(uuids, uuids[1:]):
-            adjacency[u].add(v)
-            adjacency[v].add(u)
-
-    # Helper sets for later
-    duplicated_uuids: set[str] = set()
-    for g in groups:
-        duplicated_uuids.update(g.get("entity_uuids", []))
-
-    # ------------------------------------------------------------------
-    # PHASE 4b – distance from nearest duplicity primary (node level)
-    # ------------------------------------------------------------------
+    # 4b) distances from nearest duplicity primary (node level)
     node_distance: dict[str, int] = {}
     q = deque()
 
@@ -469,9 +493,7 @@ def run(ctx):
                 node_distance[v] = du + 1
                 q.append(v)
 
-    # ------------------------------------------------------------------
-    # PHASE 3c – attach edge distance from nearest primary (edge level)
-    # ------------------------------------------------------------------
+    # 4c) attach edge distance from nearest primary (edge level)
     for reltype_name, rel_info in relations.items():
         old_pairs = rel_info.get("pairs", [])
         new_pairs = []
@@ -489,17 +511,19 @@ def run(ctx):
             d_candidates = [d for d in (d_src, d_tgt) if d is not None]
             if d_candidates:
                 edge_dist = min(d_candidates)
-                new_pairs.append([src, tgt, edge_dist])
             else:
                 # no path to any primary
-                new_pairs.append([src, tgt, -1])
+                edge_dist = -1
+
+            new_pairs.append([src, tgt, edge_dist])
+
+            # distance-0 edges: primary↔primary or primary↔neighbor
+            if edge_dist == 0:
+                adjacency0[src].add(tgt)
+                adjacency0[tgt].add(src)
 
         rel_info["pairs"] = new_pairs
 
-    # Precompute group->set(primaries)
-    group_primaries: list[set[str]] = [
-        set(g.get("entity_uuids", [])) for g in groups
-    ]
 
     # ------------------------------------------------------------------
     # PHASE 5 – ORPHANS (groups with no external relations)
@@ -529,92 +553,27 @@ def run(ctx):
             })
 
     # ------------------------------------------------------------------
-    # PHASE 6 – HUBS with layered neighborhoods
-    # ------------------------------------------------------------------
-    hubs: list[dict] = []
-    hub_uuids: set[str] = set()
-
-    # A hub is any node that:
-    #   - is NOT a duplicity primary
-    #   - has at least one neighbor that IS a duplicity primary
-    for u in entity_uuid_set:
-        if u in duplicated_uuids:
-            continue
-        neighs = adjacency.get(u, ())
-        if any(v in duplicated_uuids for v in neighs):
-            hub_uuids.add(u)
-
-    # For each hub, BFS to get layers (distance rings)
-    for hub_uuid in tqdm(
-        sorted(hub_uuids),
-        desc="metais_dup: hub layers",
-        leave=False,
-    ):
-        # BFS distances from hub
-        dist: dict[str, int] = {hub_uuid: 0}
-        q = deque([hub_uuid])
-
-        while q:
-            cur = q.popleft()
-            for nb in adjacency.get(cur, ()):
-                if nb not in dist:
-                    dist[nb] = dist[cur] + 1
-                    q.append(nb)
-
-        # Build layers by distance (1, 2, 3, ...)
-        layers_by_dist: dict[int, list[str]] = defaultdict(list)
-        for node_uuid, d in dist.items():
-            if d == 0:
-                continue  # skip the hub itself
-            layers_by_dist[d].append(node_uuid)
-
-        # Sort uuids in each layer for determinism
-        layers = []
-        max_d = max(layers_by_dist.keys(), default=0)
-        for d in range(1, max_d + 1):
-            layer_nodes = sorted(layers_by_dist.get(d, []))
-            if not layer_nodes:
-                continue
-            layers.append({
-                "count": len(layer_nodes),
-                "uuids": layer_nodes,
-            })
-
-        # Immediate neighbors (first layer) count
-        immediate_count = len(layers[0]["uuids"]) if layers else 0
-
-        hubs.append({
-            "hub_uuid": hub_uuid,
-            "count": immediate_count,  # number of immediate neighbors (layer 1)
-            "layers": layers,          # union of all layers = island around this hub
-        })
-
-    # Sort hubs by descending immediate neighbor count
-    hubs.sort(key=lambda h: h["count"], reverse=True)
-
-    # ------------------------------------------------------------------
-    # PHASE 7 – ISLANDS (connected components, mapped to hubs)
+    # PHASE 6 – ELEMENTARY ISLANDS (distance-0 connectivity)
     # ------------------------------------------------------------------
     islands: list[dict] = []
     visited: set[str] = set()
 
     for start in tqdm(
         entity_uuid_set,
-        desc="metais_dup: islands BFS",
+        desc="metais_dup: islands (distance 0)",
         leave=False,
     ):
         if start in visited:
             continue
 
-        # BFS / DFS to get one connected component
         queue = deque([start])
         visited.add(start)
-        component: list[str] = []
+        component: set[str] = set()
 
         while queue:
             u = queue.popleft()
-            component.append(u)
-            for v in adjacency.get(u, ()):
+            component.add(u)
+            for v in adjacency0.get(u, ()):
                 if v not in visited:
                     visited.add(v)
                     queue.append(v)
@@ -622,18 +581,69 @@ def run(ctx):
         if not component:
             continue
 
-        # Which hubs live in this island?
-        hubs_in_island = sorted(u for u in component if u in hub_uuids)
+        # Which duplicity groups live in this island?
+        comp_groups: list[int] = []
+        for idx, primaries in enumerate(group_primaries):
+            if primaries & component:
+                comp_groups.append(idx)
 
-        # We only record islands that actually contain hubs.
-        if hubs_in_island:
+        if comp_groups:
             islands.append({
                 "count": len(component),
-                "uuids": hubs_in_island,   # only hub uuids for this island
+                "group_indices": sorted(comp_groups),
             })
 
     # Sort islands by size descending
     islands.sort(key=lambda isl: isl["count"], reverse=True)
+
+    # ------------------------------------------------------------------
+    # PHASE 7 – PO view: which non-primary POs touch which groups?
+    # ------------------------------------------------------------------
+    po_view: list[dict] = []
+
+    # find all POs that are not duplicity primaries
+    po_uuids: set[str] = set()
+    for uuid, rec in all_entities.items():
+        ctype = rec.get("type")
+        if ctype == PO_CITYPE_NAME and uuid not in duplicated_uuids:
+            po_uuids.add(uuid)
+
+    # po_uuid -> set(group_idx)
+    po_to_groups: dict[str, set[int]] = defaultdict(set)
+
+    # scan all relations for distance-0 edges primary<->PO
+    for rel_info in relations.values():
+        for pair in rel_info.get("pairs", []):
+            if len(pair) < 3:
+                continue
+            src, tgt, edge_dist = pair
+            if edge_dist != 0:
+                continue   # we only care about direct neighborhood of primaries
+
+            # primary -> PO
+            if src in duplicated_uuids and tgt in po_uuids:
+                gidx = primary_to_group_idx.get(src)
+                if gidx is not None:
+                    po_to_groups[tgt].add(gidx)
+
+            # PO -> primary
+            if tgt in duplicated_uuids and src in po_uuids:
+                gidx = primary_to_group_idx.get(tgt)
+                if gidx is not None:
+                    po_to_groups[src].add(gidx)
+
+    # materialize PO entries – we keep ALL that touch at least one duplicity group
+    for po_uuid, group_indices in po_to_groups.items():
+        rec = all_entities.get(po_uuid, {"type": None, "attributes": [], "metaAttributes": {}})
+        po_view.append({
+            "po_uuid": po_uuid,
+            "identifier": get_entity_identifier(po_uuid, rec),
+            "group_indices": sorted(group_indices),
+            "group_count": len(group_indices),
+        })
+
+    # sort POs by how many groups they touch (descending)
+    po_view.sort(key=lambda h: h["group_count"], reverse=True)
 
     # ------------------------------------------------------------------
     # FINAL OUTPUT
@@ -643,9 +653,9 @@ def run(ctx):
         "name":      "MetaIS code duplicity",
         "count":     len(groups),
         "groups":    groups,
-        "orphans":   orphans,   # groups with no external neighbors
-        "hubs":      hubs,      # hubs with layered neighborhoods
-        "islands":   islands,   # islands described by which hubs they contain
+        "orphans":   orphans,
+        "islands":   islands,
+        "po_view":   po_view,
         "entities":  all_entities,
         "relations": relations,
     }
