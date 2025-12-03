@@ -396,6 +396,16 @@ else:
 
         short_name = reltype_name[:15]
 
+        # skip reltypes that don't have a valid relations file
+        rel_json = RELS_DIR / f"{reltype_name}.json"
+        rel_gz   = RELS_DIR / f"{reltype_name}.json.gz"
+        if not rel_json.is_file() and not rel_gz.is_file():
+            print(
+                f"[WARN] No relations file found for {reltype_name} in {RELS_DIR}, "
+                "skipping this relation type."
+            )
+            continue
+
         metadata = load_json_or_gz(RELS_META_DIR / f"{reltype_name}.json")
         sources = metadata.get("sources") or []
         targets = metadata.get("targets") or []
