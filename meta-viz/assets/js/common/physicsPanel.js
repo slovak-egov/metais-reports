@@ -5,6 +5,7 @@ import {
   SPRING_DEFAULTS,
   DAMPING,
   SPRING_DAMPING,
+  FRICTION,
 } from './physicsParams.js';
 
 import {
@@ -167,9 +168,19 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
   });
 
   createSliderRow(physicsContainer, {
+    labelText: 'Friction mu.',
+    min: 0.1,
+    max: 3.0,
+    step: 0.05,
+    initial: FRICTION.muK,
+    decimals: 2,
+    onChange: (v) => { FRICTION.muK = v; },
+  });
+
+  createSliderRow(physicsContainer, {
     labelText: 'Time scale',
     min: 0.1,
-    max: 5.0,
+    max: 8.0,
     step: 0.05,
     initial: physics.timeScale,
     decimals: 2,

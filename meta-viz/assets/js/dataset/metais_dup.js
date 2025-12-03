@@ -566,7 +566,7 @@ export function render(container, data, ctx) {
       .sort((a, b) => b.size - a.size)
       .map(g => g.idx);
 
-    const STEP_MS = 50;
+    const STEP_MS = 200;
 
     ordered.forEach((idx, step) => {
       const handle = setTimeout(() => {
@@ -788,7 +788,7 @@ export function render(container, data, ctx) {
 
   const physics = new PhysicsSystem({
     timeScale: 1.0,
-    maxDt: 0.03,
+    maxDt: 1.0,
     isSpringEdge: (edge) =>
       edge.kind === 'relation' || edge.kind === 'duplicate',
   });
@@ -936,10 +936,11 @@ export function render(container, data, ctx) {
   let lastTime = performance.now();
 
   function tick(now) {
-    const dt = (now - lastTime) / 1000;
+    const dtRaw = (now - lastTime) / 1000;
     lastTime = now;
 
-    physics.step(dt);
+    const dt = physics.step(dtRaw);
+    //console.log(dt);
     viewport.draw();
 
     requestAnimationFrame(tick);

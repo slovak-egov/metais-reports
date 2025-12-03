@@ -9,10 +9,18 @@ export const MASS_CONFIG = {
   PO:      25.0,   // POs heavier so they move less / pull more
 };
 
-export function getNodeMass(node) {
-  const t = node?.type;
-  if (!t) return MASS_CONFIG.default;
-  return MASS_CONFIG[t] ?? MASS_CONFIG.default;
+export function getNodeMass(node, degree = 0) {
+  // Simple linear: 1 relation → m=1, 10 relations → m=10 (plus base)
+  const base   = 1.0;
+  const factor = 1.0;
+
+  const m = base + factor * degree;
+
+  // Hard guards
+  if (!Number.isFinite(m) || m <= 0) {
+    return 1.0;
+  }
+  return m;
 }
 
 // --- Spring configuration for relations --------------------------------
@@ -22,7 +30,7 @@ export function getNodeMass(node) {
 //   - restLength: rest distance in world units
 
 export const SPRING_DEFAULTS = {
-  k: 50.0,          // base spring stiffness
+  k: 20.0,          // base spring stiffness
   restFactor: 1.5, // restLength ≈ restFactor * (r1 + r2)
   restLengthDistanceFactor: 4,
   springDistanceFactor: 8
@@ -76,7 +84,7 @@ export function getSpringParams(edge, n1, n2) {
 export const REPULSION_DEFAULTS = {
   enabled: true,
   buffer : 7.5,   // multiplier on “size” threshold
-  k      : 12.0,   // strength
+  k      : 7.0,   // strength
   scale  : 1.3
 };
 
@@ -104,10 +112,15 @@ export const CENTER_FORCE = {
 //
 // Simple velocity damping: F_damp = -gamma * v
 export const DAMPING = {
-  gamma: 5.0,
+  gamma: 0.5,
+};
+
+// Simple kinetic friction: F_damp = -gamma * unit(v)
+export const FRICTION = {
+  muK: 0.5,
 };
 
 // damping along edges
 export const SPRING_DAMPING = {
-  gamma: 10.0,
+  gamma: 1.0,
 };
