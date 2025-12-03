@@ -17,6 +17,7 @@ from config_env import (
     VALID_BOTH,
     VALID_ONLY,
     INVALID_ONLY,
+    find_project_root
 )
 
 # ----------------------------------------------------------------------
@@ -24,14 +25,6 @@ from config_env import (
 # ----------------------------------------------------------------------
 
 load_env_file()
-
-def find_project_root(start: Path) -> Path:
-    current = start
-    while current != current.parent:
-        if (current / ".git").exists():
-            return current
-        current = current.parent
-    return start
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = find_project_root(SCRIPT_DIR)

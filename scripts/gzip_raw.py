@@ -8,7 +8,7 @@ import argparse
 from datetime import datetime
 from pathlib import Path
 
-from config_env import load_env_file  # same as in extract_nodes/relations
+from config_env import (load_env_file, find_project_root)
 
 
 # ------------------------------------------------------------
@@ -21,19 +21,6 @@ def check_date(date_str: str) -> None:
     except ValueError:
         print(f"Invalid date '{date_str}': expected format dd-mm-yyyy and a real calendar date")
         sys.exit(1)
-
-
-def find_project_root(start: Path) -> Path:
-    """
-    Same logic you use elsewhere: walk up until we find .git
-    or fall back to the starting directory.
-    """
-    current = start
-    while current != current.parent:
-        if (current / ".git").exists():
-            return current
-        current = current.parent
-    return start
 
 
 def gzip_file(path: Path) -> None:

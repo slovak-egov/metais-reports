@@ -9,6 +9,7 @@ from typing import Any
 from tqdm import tqdm
 import argparse
 import gzip
+from config_env import find_project_root
 
 # ---------- helpers ----------
 
@@ -84,8 +85,8 @@ def set_decoder(obj):
 
 # ---------- paths that don't depend on args ----------
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SCRIPT_DIR   = Path(__file__).resolve().parent
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = find_project_root(SCRIPT_DIR)
 MODULES_DIR_NAME = os.getenv("MODULES_DIR_NAME", "modules")
 MODULES_DIR      = SCRIPT_DIR / MODULES_DIR_NAME
 

@@ -9,6 +9,20 @@ INVALID_ONLY   = 0b10   # 2
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
+def find_project_root(start: Path | None = None) -> Path:
+    """
+    Walk up from start (or this file) until we find a .git directory.
+    Fallback: the last directory if nothing is found.
+    """
+    if start is None:
+        start = Path(__file__).resolve().parent
+    current = start
+    while current != current.parent:
+        if (current / ".git").exists():
+            return current
+        current = current.parent
+    return start
+
 def parse_valid_flag(value: str, default: str = "both") -> int:
     """
     Parse a VALID_FLAG-like string into a bitmask.

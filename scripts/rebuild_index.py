@@ -5,6 +5,7 @@ from pathlib import Path
 from datetime import datetime
 import json
 from typing import Any, Dict, List, Optional
+from config_env import find_project_root
 
 
 # ---------- Helpers shared with master_loader ----------
@@ -25,8 +26,8 @@ def load_json(path: Path) -> Any:
 
 # ---------- Paths ----------
 
-THIS_FILE     = Path(__file__).resolve()
-PROJECT_ROOT  = THIS_FILE.parents[1]
+SCRIPT_DIR   = Path(__file__).resolve().parent
+PROJECT_ROOT = find_project_root(SCRIPT_DIR)
 
 env_path = os.getenv("META_VIZ_DATA_ROOT")
 if env_path:
