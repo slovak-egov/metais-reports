@@ -2,8 +2,15 @@ from collections import defaultdict, deque
 from difflib import SequenceMatcher
 from tqdm import tqdm
 
-SIMILAR_NAME_RELTYPE   = "Has similar name"
-SAME_CODE_RELTYPE      = "Has same MetaIS code"
+# technical relation names for synthetic relations (not in the database, we made these up)
+SIMILAR_NAME_RELTYPE_KEY = "has_similar_name"
+SAME_CODE_RELTYPE_KEY    = "share_same_metaid"
+
+# human-friendly labels for those synthetic relations
+SIMILAR_NAME_LABEL = "Has similar name"
+SAME_CODE_LABEL    = "Share a common MetaIS code"
+
+# fuzzy string match
 SIMILAR_NAME_THRESHOLD = 0.9
 
 # toggle whether similar-name search uses only valid entities
@@ -390,37 +397,61 @@ def run(ctx):
         if not pair_set:
             continue
 
+        # pull human-readable labels from metadata if available
+        meta = (rel_info.get("metadata") or {})
+        human_name = meta.get("name") or reltype_name
+        eng_name   = meta.get("engName")
+
         relations[reltype_name] = {
+            # meta about the relation type itself
+            "technicalName": reltype_name,
+            "name":          human_name,
+            "engName":       eng_name,
+
+            # type pair (as before)
             "source_type": rel_info["source_type"],
             "target_type": rel_info["target_type"],
+
+            # edge list
             "pairs": [
                 [src, tgt]
                 for (src, tgt) in sorted(pair_set)
             ],
         }
 
-    # --------- PHASE 3b: add synthetic "Has similar name" relations ----------
+    # --------- PHASE 3b: add synthetic "has_similar_name" relations ----------
 
     if similar_name_pairs:
         # deduplicate in case we found the same pair multiple times
         pair_set = {(src, tgt) for (src, tgt) in similar_name_pairs}
 
-        existing = relations.get(SIMILAR_NAME_RELTYPE)
+        existing = relations.get(SIMILAR_NAME_RELTYPE_KEY)
         if existing is None:
-            # We don't have a single canonical source/target type,
-            # so leave them unknown – the front-end will show "? -> ?".
-            relations[SIMILAR_NAME_RELTYPE] = {
+            relations[SIMILAR_NAME_RELTYPE_KEY] = {
+                "technicalName": SIMILAR_NAME_RELTYPE_KEY,
+                "name":          SIMILAR_NAME_LABEL,
+                "engName":       SIMILAR_NAME_LABEL,  # we don't have a separate engName, reuse
+
+                # no single canonical type pair – front-end may show "? → ?"
                 "source_type": None,
                 "target_type": None,
                 "pairs": [[src, tgt] for (src, tgt) in sorted(pair_set)],
             }
         else:
-            # merge with any existing synthetic pairs
             old_pairs = {(p[0], p[1]) for p in existing.get("pairs", []) if len(p) >= 2}
             merged = old_pairs | pair_set
             existing["pairs"] = [[src, tgt] for (src, tgt) in sorted(merged)]
 
-    # --------- PHASE 3c: synthetic "Has same MetaIS code" relations ----------
+    # --------- PHASE 3c: synthetic "share_same_metaid" relations ----------
+
+    # Precompute group->set(primaries) and primary->group index
+    group_primaries: list[set[str]] = []
+    primary_to_group_idx: dict[str, int] = {}
+    for idx, g in enumerate(groups):
+        primaries = set(g.get("entity_uuids", []))
+        group_primaries.append(primaries)
+        for u in primaries:
+            primary_to_group_idx[u] = idx
 
     same_code_pairs: set[tuple[str, str]] = set()
 
@@ -429,23 +460,31 @@ def run(ctx):
         if len(uuids) < 2:
             continue
 
-        # connect primaries in this group; for now, use a chain u0–u1, u1–u2, ...
-        # (this is enough to keep them in one connected component and is cheaper than a full clique)
-        for u, v in zip(uuids, uuids[1:]):
-            if not u or not v:
+        # full clique: connect every pair u_i – u_j, i < j
+        n = len(uuids)
+        for i in range(n):
+            u = uuids[i]
+            if not u:
                 continue
-            # store undirected pair in canonical (min, max) order to avoid duplicates
-            pair = (u, v) if u < v else (v, u)
-            same_code_pairs.add(pair)
+            for j in range(i + 1, n):
+                v = uuids[j]
+                if not v:
+                    continue
+                # keep canonical ordering so (u,v) and (v,u) don't both appear
+                pair = (u, v) if u < v else (v, u)
+                same_code_pairs.add(pair)
 
     if same_code_pairs:
-        # symmetric relation; we keep source/target_type as None so UI can show "? ↔ ?"
-        relations[SAME_CODE_RELTYPE] = {
+        relations[SAME_CODE_RELTYPE_KEY] = {
+            "technicalName": SAME_CODE_RELTYPE_KEY,
+            "name":          SAME_CODE_LABEL,
+            "engName":       SAME_CODE_LABEL,
+
+            # symmetric relation, no fixed type pair
             "source_type": None,
             "target_type": None,
             "pairs": [[src, tgt] for (src, tgt) in sorted(same_code_pairs)],
         }
-
 
     # ------------------------------------------------------------------
     # PHASE 4 – adjacency graph + distances
@@ -493,6 +532,9 @@ def run(ctx):
                 node_distance[v] = du + 1
                 q.append(v)
 
+    # how far does the “duplicity influence” reach?
+    max_node_dist = max(node_distance.values()) if node_distance else 0
+
     # 4c) attach edge distance from nearest primary (edge level)
     for reltype_name, rel_info in relations.items():
         old_pairs = rel_info.get("pairs", [])
@@ -524,6 +566,17 @@ def run(ctx):
 
         rel_info["pairs"] = new_pairs
 
+    # 4d) determine maximum edge distance
+    edge_dists: set[int] = set()
+    for rel_info in relations.values():
+        for pair in rel_info.get("pairs", []):
+            if len(pair) < 3:
+                continue
+            d = pair[2]
+            if isinstance(d, int) and d >= 0:
+                edge_dists.add(d)
+
+    max_edge_dist = max(edge_dists) if edge_dists else 0
 
     # ------------------------------------------------------------------
     # PHASE 5 – ORPHANS (groups with no external relations)
@@ -553,48 +606,90 @@ def run(ctx):
             })
 
     # ------------------------------------------------------------------
-    # PHASE 6 – ELEMENTARY ISLANDS (distance-0 connectivity)
+    # PHASE 6 – ISLANDS FOR MULTIPLE DISTANCES 0..max_edge_dist
     # ------------------------------------------------------------------
-    islands: list[dict] = []
-    visited: set[str] = set()
 
-    for start in tqdm(
-        entity_uuid_set,
-        desc="metais_dup: islands (distance 0)",
-        leave=False,
-    ):
-        if start in visited:
-            continue
+    def compute_islands_for_maxdist(max_dist: int) -> list[dict]:
+        """
+        Build islands using all relation edges whose edge_dist satisfies
+          0 <= edge_dist <= max_dist.
 
-        queue = deque([start])
-        visited.add(start)
-        component: set[str] = set()
+        Returns a list of dicts
+          {
+            "count":  <size of connected component (nodes)>,
+            "groups": [list of duplicity group indices],
+          }
 
-        while queue:
-            u = queue.popleft()
-            component.add(u)
-            for v in adjacency0.get(u, ()):
-                if v not in visited:
-                    visited.add(v)
-                    queue.append(v)
+        Only components that contain at least one duplicity group are kept.
+        """
+        adjacency_d: dict[str, set[str]] = defaultdict(set)
 
-        if not component:
-            continue
+        # Build adjacency from relation pairs
+        for rel_info in relations.values():
+            for pair in rel_info.get("pairs", []):
+                if len(pair) < 3:
+                    continue
+                src, tgt, edge_dist = pair
 
-        # Which duplicity groups live in this island?
-        comp_groups: list[int] = []
-        for idx, primaries in enumerate(group_primaries):
-            if primaries & component:
-                comp_groups.append(idx)
+                if edge_dist is None or edge_dist < 0 or edge_dist > max_dist:
+                    continue
 
-        if comp_groups:
-            islands.append({
-                "count": len(component),
-                "group_indices": sorted(comp_groups),
-            })
+                adjacency_d[src].add(tgt)
+                adjacency_d[tgt].add(src)
 
-    # Sort islands by size descending
-    islands.sort(key=lambda isl: isl["count"], reverse=True)
+        # Ensure every entity is present so isolated primaries form size-1 components
+        for uuid in entity_uuid_set:
+            adjacency_d.setdefault(uuid, set())
+
+        islands_level: list[dict] = []
+        visited: set[str] = set()
+
+        for start in tqdm(
+            entity_uuid_set,
+            desc=f"metais_dup: islands (max_dist={max_dist})",
+            leave=False,
+        ):
+            if start in visited:
+                continue
+
+            queue = deque([start])
+            visited.add(start)
+            component: set[str] = set()
+
+            while queue:
+                u = queue.popleft()
+                component.add(u)
+                for v in adjacency_d.get(u, ()):
+                    if v not in visited:
+                        visited.add(v)
+                        queue.append(v)
+
+            if not component:
+                continue
+
+            # Which duplicity groups live in this island?
+            comp_groups: list[int] = []
+            for idx, primaries in enumerate(group_primaries):
+                if primaries & component:
+                    comp_groups.append(idx)
+
+            if comp_groups:
+                islands_level.append({
+                    "count":  len(component),
+                    "groups": sorted(comp_groups),
+                })
+
+        # largest islands first
+        islands_level.sort(key=lambda isl: isl["count"], reverse=True)
+        return islands_level
+
+    # Compute islands for all distances 0..max_edge_dist
+    islands_by_dist: dict[str, list[dict]] = {}
+    for d in range(0, max_edge_dist + 1):
+        islands_by_dist[str(d)] = compute_islands_for_maxdist(d)
+
+    # can't sort a dict
+    # islands_by_dist.sort(key=lambda isl: isl["count"], reverse=True)
 
     # ------------------------------------------------------------------
     # PHASE 7 – PO view: which non-primary POs touch which groups?
@@ -654,7 +749,7 @@ def run(ctx):
         "count":     len(groups),
         "groups":    groups,
         "orphans":   orphans,
-        "islands":   islands,
+        "islands":   islands_by_dist,
         "po_view":   po_view,
         "entities":  all_entities,
         "relations": relations,
