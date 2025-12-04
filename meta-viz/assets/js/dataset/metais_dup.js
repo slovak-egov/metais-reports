@@ -1,12 +1,15 @@
 const DUP_GLOW_RADIUS_FACTOR = 3.0;
-const DUP_GLOW_ALPHA         = 0.5;
+const DUP_GLOW_ALPHA         = 0.7;
 const DUP_GLOW_BLUR_TILES    = 0.9;
-const HUB_HIGHLIGHT_COLOR    = '#ffffff7c';
 
-import { buildRelationEdges, buildDuplicateCliqueEdges, buildAdjacency, collectNeighborsWithin, buildSceneForNodeSetBase } from '../common/graphOps.js';
+import {
+  buildRelationEdges,
+  buildAdjacency,
+  collectNeighborsWithin,
+  buildSceneForNodeSetBase,
+} from '../common/graphOps.js';
 
 import { renderControlsRow } from '../common/controlsRenderer.js';
-
 import { createPillMenu } from '../common/pillMenu.js';
 
 import {
@@ -24,17 +27,8 @@ import {
 } from '../common/graphStyles.js';
 
 import { PhysicsSystem } from '../common/entityPhysics.js';
-import {
-  REPULSION_DEFAULTS,
-  CENTER_FORCE,
-  SPRING_DEFAULTS,
-  DAMPING,
-  SPRING_DAMPING,
-} from '../common/physicsParams.js';
-
 import { attachPhysicsPanel } from '../common/physicsPanel.js';
-
-import { showContextMenu, closeContextMenu } from '../common/contextMenu.js';
+import { showContextMenu } from '../common/contextMenu.js';
 
 function ensureCssLoaded() {
   ensureCssLink('metais-graph-css-link',    'assets/css/graph.css');
@@ -90,16 +84,32 @@ function colorForGroupIndex(idx) {
  * @param {Object} ctx            - { date, category, instance, displayName }
  */
 export function render(container, data, ctx) {
-  // Make this report use the full height (hide header row)
-  // document.body.classList.add('metais-dup-collapsed-header');
-
   // ---- PRECOMPUTED STRUCTURES ----
   const groups   = data.groups   || [];
-  const orphans  = data.orphans  || []; // [{group_index, metais_code, count, uuids}]
-  const hubsData = data.hubs     || []; // [{hub_uuid, count, layers:[{count,uuids:[]}, ...]}]
-  const islands  = data.islands  || []; // [{count, uuids:[hub_uuid,...]}]
+  const orphans  = data.orphans  || [];
+  const poView   = data.po_view  || [];
+  const islandsRaw  = data.islands  || [];
   const entities = data.entities || {};
   const relsRaw  = data.relations || {};
+
+  const islandsByLevel = Array.isArray(islandsRaw)
+    ? { '0': islandsRaw }
+    : islandsRaw;
+
+  // numeric distance keys we actually have (e.g. ["0","1","2","3"] -> [0,1,2,3])
+  const numericDistanceKeys = Object.keys(islandsByLevel)
+    .filter(k => !Number.isNaN(Number(k)))
+    .map(k => Number(k))
+    .sort((a, b) => a - b);
+
+  const availableDistances = numericDistanceKeys.length ? numericDistanceKeys : [0];
+  const maxAvailableDistance =
+    availableDistances[availableDistances.length - 1];
+
+  function getIslandsForCurrentDistance() {
+    const key = String(state.maxRelationDistance);
+    return islandsByLevel[key] || [];
+  }
 
   const primaryGroupIndexByUuid = new Map();
   groups.forEach((g, idx) => {
@@ -109,8 +119,6 @@ export function render(container, data, ctx) {
       }
     });
   });
-
-  const hubById = new Map(hubsData.map(h => [h.hub_uuid, h]));
 
   const orphanGroupIndices = orphans
     .map(o => o.group_index)
@@ -139,68 +147,16 @@ export function render(container, data, ctx) {
   }
 
   const allRelationEdges  = buildRelationEdges(relsRaw);
-  const allDuplicateEdges = buildDuplicateCliqueEdges(groups);
   const adjacency         = buildAdjacency(allRelationEdges);
-
-  function showDupContextMenu(node, event) {
-    const items = [];
-
-    items.push({
-      label: 'Limit selection to this element',
-      onClick: () => {
-        //console.log('[Dup] menu: limit to element', node.id);
-        limitSelectionTo(node.id, 0);
-      },
-    });
-
-    [0, 1, 2, 3, Infinity].forEach(dist => {
-      const label =
-        dist === Infinity
-          ? 'Limit selection: element and all related'
-          : `Limit selection: element and related up to ${dist}`;
-      items.push({
-        label,
-        onClick: () => {
-          //console.log('[Dup] menu: limit selection around', { id: node.id, dist });
-          limitSelectionTo(node.id, dist);
-        },
-      });
-    });
-
-    items.push({ type: 'separator' });
-
-    [0, 1, 2, 3, Infinity].forEach(dist => {
-      const label =
-        dist === Infinity
-          ? 'Remove: element and all related'
-          : `Remove: element and related up to ${dist}`;
-      items.push({
-        label,
-        onClick: () => {
-          //console.log('[Dup] menu: remove selection around', { id: node.id, dist });
-          removeSelectionAround(node.id, dist);
-        },
-      });
-    });
-
-    // ⬇ important: pass the real PointerEvent
-    showContextMenu(graphPanel, event, items);
-  }
-
-  const maxHubLayers = hubsData.reduce(
-    (m, h) => Math.max(m, (h.layers || []).length),
-    0
-  );
 
   // ---- VIEW / SELECTION STATE ----
   const state = {
-    mode: 'groups',             // 'groups' | 'hubs' | 'islands'
+    mode: 'groups',             // 'groups' | 'po' | 'islands'
     selectedGroups:  new Set(),
-    selectedHubs:    new Set(),
+    selectedPOs:     new Set(),
     selectedIslands: new Set(),
     includeOrphans:  false,
-    hubLayerDepth:   Infinity,
-    maxRelationDistance: Infinity,
+    maxRelationDistance: maxAvailableDistance,
     focusSet: null,
   };
 
@@ -210,11 +166,10 @@ export function render(container, data, ctx) {
   }
 
   let lastScene = { nodes: [], edges: [] };
-  let lastSelectedGroups = new Set();
 
-  // chip containers will be assigned after createChipSection
+  // chip containers will be assigned after createPillMenu
   let groupChipContainer   = null;
-  let hubChipContainer     = null;
+  let poChipContainer      = null;
   let islandChipContainer  = null;
 
   const selectAllTimers = [];
@@ -228,35 +183,32 @@ export function render(container, data, ctx) {
 
   // ---- SCENE BUILDERS ----
 
-  function buildSceneForNodeSet(uuidSet, { highlightHubs = false, groupColorByUuid = null } = {}) {
+  function buildSceneForNodeSet(uuidSet, { groupColorByUuid = null } = {}) {
     const baseScene = buildSceneForNodeSetBase({
       uuidSet,
       baseNodes,
-      allEdges: [...allRelationEdges, ...allDuplicateEdges],
+      allEdges: allRelationEdges,
       prevScene: lastScene,
     });
 
     for (const node of baseScene.nodes) {
       const base = baseNodes.get(node.id);
-      const isHub     = hubById.has(node.id);
       const isPrimary = base.isPrimary;
 
       let highlightColor = null;
 
       if (groupColorByUuid && groupColorByUuid.has(node.id)) {
         highlightColor = groupColorByUuid.get(node.id);
-      } else if (highlightHubs && isHub) {
-        highlightColor = HUB_HIGHLIGHT_COLOR;
       } else if (isPrimary) {
+        // give primaries a subtle neutral highlight when not color-coded
         highlightColor = '#888888';
       }
       node.highlightColor = highlightColor;
     }
 
-    // relation distance filter is also MetaIS-specific
+    // relation distance filter
     const filteredEdges = baseScene.edges.filter(e => {
       if (e.kind !== 'relation') return true;
-      if (state.maxRelationDistance === Infinity) return true;
       const d = e.distance;
       return typeof d === 'number' && d >= 0 && d <= state.maxRelationDistance;
     });
@@ -285,63 +237,103 @@ export function render(container, data, ctx) {
       });
     });
 
-    // neighbors = any node that shares an edge with a primary
+    // neighbors = any node that shares a relation edge with a primary
     const uuidSet = new Set(primarySet);
     for (const e of allRelationEdges) {
       if (primarySet.has(e.source)) uuidSet.add(e.target);
       if (primarySet.has(e.target)) uuidSet.add(e.source);
     }
 
-    // duplicate edges use allDuplicateEdges; no need to special-case here
     return buildSceneForNodeSet(uuidSet, {
-      highlightHubs: false,
       groupColorByUuid,
     });
   }
 
-  // HUBS / ISLANDS MODE: hubs + layers (+ optional orphans)
-  function buildSceneForHubsAndIslands() {
+  // PO VIEW: POs + primaries in groups they touch (+ optional orphans)
+  function buildSceneForPOView() {
+    if (!state.selectedPOs.size) return { nodes: [], edges: [] };
+
     const uuidSet = new Set();
 
-    // hubs + their layers
-    state.selectedHubs.forEach(hid => {
-      const hub = hubById.get(hid);
-      if (!hub) return;
+    const poByUuid = new Map(poView.map(p => [p.po_uuid, p]));
+    state.selectedPOs.forEach(poUuid => {
+      uuidSet.add(poUuid);
+      const entry = poByUuid.get(poUuid);
+      if (!entry) return;
 
-      uuidSet.add(hid);
-
-      const layers = hub.layers || [];
-      if (!layers.length) return;
-
-      const maxIdx = (state.hubLayerDepth === Infinity)
-        ? layers.length - 1
-        : Math.min(state.hubLayerDepth - 1, layers.length - 1);
-
-      for (let li = 0; li <= maxIdx; li++) {
-        (layers[li].uuids || []).forEach(u => uuidSet.add(u));
-      }
+      (entry.group_indices || []).forEach(gIdx => {
+        const g = groups[gIdx];
+        if (!g) return;
+        (g.entity_uuids || []).forEach(u => uuidSet.add(u));
+      });
     });
 
-    // orphans
     if (state.includeOrphans) {
       orphans.forEach(o => {
         (o.uuids || []).forEach(u => uuidSet.add(u));
       });
     }
 
-    if (!uuidSet.size) return { nodes: [], edges: [] };
-
-    // color primaries by their duplicity group even in hubs/islands
+    // color primaries by their duplicity group
     const groupColorByUuid = new Map();
     uuidSet.forEach(u => {
       if (!duplicatedPrimaries.has(u)) return;
       const gIdx = primaryGroupIndexByUuid.get(u);
       if (gIdx == null) return;
-      groupColorByUuid.set(u, colorForGroupIndex(gIdx));
+      const color = colorForGroupIndex(gIdx);
+      if (!groupColorByUuid.has(u)) {
+        groupColorByUuid.set(u, color);
+      }
     });
 
     return buildSceneForNodeSet(uuidSet, {
-      highlightHubs: true,
+      groupColorByUuid,
+    });
+  }
+
+  // ISLANDS VIEW: all primaries from groups in selected islands
+  function buildSceneForIslands() {
+    if (!state.selectedIslands.size) return { nodes: [], edges: [] };
+
+    const currentIslands = getIslandsForCurrentDistance();
+
+    const primarySet = new Set();
+    const groupColorByUuid = new Map();
+
+    state.selectedIslands.forEach(idx => {
+      const isl = currentIslands[idx];
+      if (!isl) return;
+
+      const groupIdxs = isl.groups || isl.group_indices || [];
+      groupIdxs.forEach(gIdx => {
+        const g = groups[gIdx];
+        if (!g) return;
+        const color = colorForGroupIndex(gIdx);
+        (g.entity_uuids || []).forEach(u => {
+          primarySet.add(u);
+          if (!groupColorByUuid.has(u)) {
+            groupColorByUuid.set(u, color);
+          }
+        });
+      });
+    });
+
+    if (!primarySet.size) return { nodes: [], edges: [] };
+
+    // neighbours = any node that shares a relation edge with a primary
+    const uuidSet = new Set(primarySet);
+    for (const e of allRelationEdges) {
+      if (primarySet.has(e.source)) uuidSet.add(e.target);
+      if (primarySet.has(e.target)) uuidSet.add(e.source);
+    }
+
+    if (state.includeOrphans) {
+      orphans.forEach(o => {
+        (o.uuids || []).forEach(u => uuidSet.add(u));
+      });
+    }
+
+    return buildSceneForNodeSet(uuidSet, {
       groupColorByUuid,
     });
   }
@@ -352,14 +344,15 @@ export function render(container, data, ctx) {
     let scene;
 
     if (state.focusSet && state.focusSet.size) {
-      // explicit node subset
-      scene = buildSceneForNodeSet(state.focusSet, {
-        highlightHubs: true,
-      });
+      scene = buildSceneForNodeSet(state.focusSet);
     } else if (state.mode === 'groups') {
       scene = buildSceneForGroups(state.selectedGroups);
+    } else if (state.mode === 'po') {
+      scene = buildSceneForPOView();
+    } else if (state.mode === 'islands') {
+      scene = buildSceneForIslands();
     } else {
-      scene = buildSceneForHubsAndIslands();
+      scene = { nodes: [], edges: [] };
     }
 
     viewport.setScene(scene);
@@ -368,38 +361,65 @@ export function render(container, data, ctx) {
   }
 
   function limitSelectionTo(nodeId, maxDist) {
-    //console.log('[Dup] limitSelectionTo()', { nodeId, maxDist });
-    //console.time('[Dup] collectNeighbors(limit)');
     const nb = collectNeighborsWithin(adjacency, nodeId, maxDist);
-    //console.timeEnd('[Dup] collectNeighbors(limit)');
-    //console.log('[Dup] focusSet size', nb.size);
-
     state.focusSet = nb;
     updateScene();
   }
 
   function removeSelectionAround(nodeId, maxDist) {
-    //console.log('[Dup] removeSelectionAround()', { nodeId, maxDist });
-
     if (!state.focusSet) {
       const baseSet = new Set();
       (lastScene.nodes || []).forEach(n => baseSet.add(n.id));
       state.focusSet = baseSet;
-      //console.log('[Dup] initialized focusSet from lastScene, size', state.focusSet.size);
     }
 
-    //console.time('[Dup] collectNeighbors(remove)');
     const toRemove = collectNeighborsWithin(adjacency, nodeId, maxDist);
-    //console.timeEnd('[Dup] collectNeighbors(remove)');
-    //console.log('[Dup] toRemove size', toRemove.size);
-
     toRemove.forEach(id => state.focusSet.delete(id));
-    //console.log('[Dup] focusSet size after removal', state.focusSet.size);
-
     updateScene();
   }
 
-  // ---------- CHIP UI LOGIC (groups / hubs / islands) ----------
+  // we need graphPanel for the context menu callback
+  ensureCssLoaded();
+  container.innerHTML = '';
+  const graphPanel = container;
+  graphPanel.classList.add('graph-panel');
+
+  function showDupContextMenu(node, event) {
+    const items = [];
+
+    items.push({
+      label: 'Limit selection to this element',
+      onClick: () => limitSelectionTo(node.id, 0),
+    });
+
+    [0, 1, 2, 3, Infinity].forEach(dist => {
+      const label =
+        dist === Infinity
+          ? 'Limit selection: element and all related'
+          : `Limit selection: element and related up to ${dist}`;
+      items.push({
+        label,
+        onClick: () => limitSelectionTo(node.id, dist),
+      });
+    });
+
+    items.push({ type: 'separator' });
+
+    [0, 1, 2, 3, Infinity].forEach(dist => {
+      const label =
+        dist === Infinity
+          ? 'Remove: element and all related'
+          : `Remove: element and related up to ${dist}`;
+      items.push({
+        label,
+        onClick: () => removeSelectionAround(node.id, dist),
+      });
+    });
+
+    showContextMenu(graphPanel, event, items);
+  }
+
+  // ---------- CHIP UI LOGIC (groups / PO / islands) ----------
   function getGroupLabel(g, idx) {
     const code =
       g.metais_code ||
@@ -427,12 +447,13 @@ export function render(container, data, ctx) {
       }
 
       chip.addEventListener('click', () => {
+        state.focusSet = null;
         // switch to groups mode
         if (state.mode !== 'groups') {
           state.mode = 'groups';
-          state.selectedHubs.clear();
+          state.selectedPOs.clear();
           state.selectedIslands.clear();
-          renderHubChips();
+          renderPOChips();
           renderIslandChips();
         }
 
@@ -458,41 +479,45 @@ export function render(container, data, ctx) {
     });
   }
 
-  function renderHubChips() {
-    if (!hubChipContainer) return;
-    hubChipContainer.innerHTML = '';
+  function renderPOChips() {
+    if (!poChipContainer) return;
+    poChipContainer.innerHTML = '';
 
-    hubsData.forEach((hub) => {
+    poView.forEach((entry) => {
       const chip = document.createElement('button');
       chip.type = 'button';
       chip.className = 'app-header-chip';
-      chip.textContent = `${hub.hub_uuid} (${hub.count})`;
 
-      if (state.selectedHubs.has(hub.hub_uuid)) {
+      const label = entry.identifier || entry.po_uuid;
+      const gCount = entry.group_count ?? (entry.group_indices || []).length;
+      chip.textContent = `${label} (${gCount} groups)`;
+
+      if (state.selectedPOs.has(entry.po_uuid)) {
         chip.classList.add('app-header-chip-active');
       }
 
       chip.addEventListener('click', () => {
-        // switch to hubs mode
-        if (state.mode !== 'hubs' && state.mode !== 'islands') {
-          state.mode = 'hubs';
+        state.focusSet = null;
+        // switch to PO mode
+        if (state.mode !== 'po') {
+          state.mode = 'po';
           state.selectedGroups.clear();
           state.selectedIslands.clear();
           renderGroupChips();
           renderIslandChips();
         }
 
-        if (state.selectedHubs.has(hub.hub_uuid)) {
-          state.selectedHubs.delete(hub.hub_uuid);
+        if (state.selectedPOs.has(entry.po_uuid)) {
+          state.selectedPOs.delete(entry.po_uuid);
         } else {
-          state.selectedHubs.add(hub.hub_uuid);
+          state.selectedPOs.add(entry.po_uuid);
         }
 
-        renderHubChips();
+        renderPOChips();
         updateScene();
       });
 
-      hubChipContainer.appendChild(chip);
+      poChipContainer.appendChild(chip);
     });
   }
 
@@ -500,23 +525,44 @@ export function render(container, data, ctx) {
     if (!islandChipContainer) return;
     islandChipContainer.innerHTML = '';
 
-    islands.forEach((island, idx) => {
+    const currentIslands = getIslandsForCurrentDistance();
+
+    currentIslands.forEach((island, idx) => {
       const chip = document.createElement('button');
       chip.type = 'button';
       chip.className = 'app-header-chip';
 
-      const hubsCount = (island.uuids || []).length;
-      chip.textContent = `Island ${idx + 1} (${island.count} nodes, ${hubsCount} hubs)`;
+      const groupIdxs = island.groups || island.group_indices || [];
+      const sampleCodes = groupIdxs
+        .map(gIdx => groups[gIdx])
+        .filter(Boolean)
+        .map(g => g.metais_code || '')
+        .filter(Boolean)
+        .slice(0, 3);
+
+      const extra = groupIdxs.length - sampleCodes.length;
+
+      let text = `Island ${idx + 1} (${island.count ?? '?'} nodes`;
+      if (sampleCodes.length) {
+        text += `; groups: ${sampleCodes.join(', ')}`;
+        if (extra > 0) text += ` +${extra}`;
+      }
+      text += ')';
+
+      chip.textContent = text;
 
       if (state.selectedIslands.has(idx)) {
         chip.classList.add('app-header-chip-active');
       }
 
       chip.addEventListener('click', () => {
+        state.focusSet = null;
         // switch to islands mode
         state.mode = 'islands';
         state.selectedGroups.clear();
+        state.selectedPOs.clear();
         renderGroupChips();
+        renderPOChips();
 
         if (state.selectedIslands.has(idx)) {
           state.selectedIslands.delete(idx);
@@ -524,17 +570,7 @@ export function render(container, data, ctx) {
           state.selectedIslands.add(idx);
         }
 
-        // hubs in selected islands
-        state.selectedHubs.clear();
-        state.selectedIslands.forEach(i => {
-          (islands[i]?.uuids || []).forEach(hid => state.selectedHubs.add(hid));
-        });
-
-        // show all layers for islands by default
-        state.hubLayerDepth = Infinity;
-
         renderIslandChips();
-        renderHubChips();
         updateScene();
       });
 
@@ -609,9 +645,7 @@ export function render(container, data, ctx) {
     },
   ];
 
-  const HUBS_CONTROLS = [];
-
-  const ISLAND_CONTROLS = [];
+  const ISLAND_CONTROLS = []; // nothing special (for now)
 
   const GLOBAL_CONTROLS = [
     {
@@ -621,11 +655,12 @@ export function render(container, data, ctx) {
       onClick: () => {
         cancelSelectAllTimers();
         state.selectedGroups.clear();
-        state.selectedHubs.clear();
+        state.selectedPOs.clear();
         state.selectedIslands.clear();
+        state.focusSet = null;
 
         renderGroupChips();
-        renderHubChips();
+        renderPOChips();
         renderIslandChips();
         updateScene();
       },
@@ -638,9 +673,9 @@ export function render(container, data, ctx) {
         // “Select all” means: go to groups mode and gradually select all groups
         if (state.mode !== 'groups') {
           state.mode = 'groups';
-          state.selectedHubs.clear();
+          state.selectedPOs.clear();
           state.selectedIslands.clear();
-          renderHubChips();
+          renderPOChips();
           renderIslandChips();
         }
         selectAllGradual();
@@ -650,66 +685,73 @@ export function render(container, data, ctx) {
       type: 'chipGroup',
       id: 'relationDistance',
       label: 'Relations up to:',
-      items: () => [0, 1, 2, 3, 'All'],
-      isActive: (v) =>
-        v === 'All'
-          ? state.maxRelationDistance === Infinity
-          : state.maxRelationDistance === v,
+      items: () => availableDistances,
+      isActive: (v) => state.maxRelationDistance === v,
       onSelect: (v) => {
-        state.maxRelationDistance = (v === 'All' ? Infinity : v);
-        updateScene();
-      },
-    },
-    {
-      type: 'chipGroup',
-      id: 'hubLayers',
-      label: 'Layers:',
-      items: () => {
-        if (maxHubLayers <= 0) return ['All'];
-        const arr = [];
-        for (let d = 1; d <= maxHubLayers; d++) arr.push(`L${d}`);
-        arr.push('All');
-        return arr;
-      },
-      isActive: (v) => {
-        if (v === 'All') return state.hubLayerDepth === Infinity;
-        const depth = Number(v.slice(1)); // "L3" -> 3
-        return state.hubLayerDepth === depth;
-      },
-      onSelect: (v) => {
-        state.hubLayerDepth = (v === 'All' ? Infinity : Number(v.slice(1)));
-        if (state.mode === 'hubs' || state.mode === 'islands' || state.mode === 'groups') {
-          updateScene();
+        // 1) remember which groups are represented by currently selected islands
+        const oldIslands = getIslandsForCurrentDistance();
+        const selectedGroups = new Set();
+        state.selectedIslands.forEach(idx => {
+          const isl = oldIslands[idx];
+          if (!isl) return;
+          const groupIdxs = isl.groups || isl.group_indices || [];
+          groupIdxs.forEach(g => selectedGroups.add(g));
+        });
+
+        // 2) update distance (pure number; max = “all”)
+        state.maxRelationDistance = v;
+
+        // 3) if we are in islands mode, remap selection onto new islands;
+        //    otherwise clear island selection.
+        if (state.mode === 'islands') {
+          const newIslands = getIslandsForCurrentDistance();
+          state.selectedIslands.clear();
+
+          newIslands.forEach((isl, idx) => {
+            const groupIdxs = isl.groups || isl.group_indices || [];
+            const intersects = groupIdxs.some(g => selectedGroups.has(g));
+            if (intersects) {
+              state.selectedIslands.add(idx);
+            }
+          });
+        } else {
+          state.selectedIslands.clear();
         }
+
+        renderIslandChips();
+        updateScene();
       },
     },
   ];
 
   // ---- DOM + UI ----
 
-  ensureCssLoaded();
-  container.innerHTML = '';
+  // Main graph row + canvas
+  const mainRow = document.createElement('div');
+  mainRow.className = 'graph-panel-main';
+  graphPanel.appendChild(mainRow);
 
-  const graphPanel = container;
-  graphPanel.classList.add('graph-panel');
+  const root = document.createElement('div');
+  root.className = 'graph-root';
+  mainRow.appendChild(root);
 
-  // --- Floating pill bar: Groups / Hubs / Islands ---
+  // --- Floating pill bar: Groups / PO view / Islands ---
   const { bar: pillBar } = createPillMenu(graphPanel, [
     {
       id: 'groups',
       label: 'Groups',
       build: ({ controlsEl, chipsEl }) => {
-        // wire controls + chip container
         renderControlsRow(GROUPS_CONTROLS, controlsEl);
         groupChipContainer = chipsEl;
       },
     },
     {
-      id: 'hubs',
-      label: 'Hubs',
+      id: 'po',
+      label: 'PO view',
       build: ({ controlsEl, chipsEl }) => {
-        renderControlsRow(HUBS_CONTROLS, controlsEl);
-        hubChipContainer = chipsEl;
+        renderControlsRow([], controlsEl); // no extra PO-specific controls (for now)
+        poChipContainer = chipsEl;
+        renderPOChips();
       },
     },
     {
@@ -728,18 +770,7 @@ export function render(container, data, ctx) {
   pillBar.appendChild(globalControlsEl);
   renderControlsRow(GLOBAL_CONTROLS, globalControlsEl);
 
-  // Main graph row + canvas
-  const mainRow = document.createElement('div');
-  mainRow.className = 'graph-panel-main';
-  graphPanel.appendChild(mainRow);
-
-  const root = document.createElement('div');
-  root.className = 'graph-root';
-  mainRow.appendChild(root);
-
-  // ... pills ...
-
-  const getEdgeStyle   = makeMetaisEdgeStyle();
+  const getEdgeStyle    = makeMetaisEdgeStyle();
   const rawGetNodeScale = makeMetaisNodeScale();
 
   const getNodeScale = (node) => {
@@ -764,7 +795,7 @@ export function render(container, data, ctx) {
         color:        node.highlightColor,
         radiusFactor: DUP_GLOW_RADIUS_FACTOR,
         alpha:        DUP_GLOW_ALPHA,
-        blurTiles:    DUP_GLOW_BLUR_TILES,
+        softness:    DUP_GLOW_BLUR_TILES,
       };
     },
 
@@ -780,7 +811,6 @@ export function render(container, data, ctx) {
     },
 
     onNodeContextMenu: (node, evt) => {
-      //console.log('[Dup] onNodeContextMenu fired', node && node.id, evt);
       if (!node || !evt) return;
       showDupContextMenu(node, evt);
     },
@@ -823,15 +853,20 @@ export function render(container, data, ctx) {
 
       // duplicate edges
       if (edge.kind === 'duplicate') {
+        const relInfo = data.relations?.share_same_metaid || {};
+        const titleText =
+          relInfo.name ||
+          edge.relName ||
+          'Share a common MetaIS code';
+
         const srcEnt = data.entities?.[edge.source] || {};
         const dstEnt = data.entities?.[edge.target] || {};
-
         const srcType = srcEnt.type || 'Any';
         const dstType = dstEnt.type || 'Any';
 
         const title = document.createElement('div');
         title.className = 'graph-edge-title';
-        title.textContent = edge.relName || 'Has same MetaIS code';
+        title.textContent = titleText;
 
         const types = document.createElement('div');
         types.className = 'graph-edge-types';
@@ -843,8 +878,11 @@ export function render(container, data, ctx) {
       }
 
       // normal relations
-      const relName = edge.relName || '(neznámy vzťah)';
       const relInfo = data.relations?.[edge.relName] || {};
+      const humanName =
+        relInfo.name ||
+        edge.relName ||
+        '(neznámy vzťah)';
 
       const srcEnt = data.entities?.[edge.source] || {};
       const dstEnt = data.entities?.[edge.target] || {};
@@ -861,7 +899,7 @@ export function render(container, data, ctx) {
 
       const title = document.createElement('div');
       title.className = 'graph-edge-title';
-      title.textContent = relName;
+      title.textContent = humanName;
 
       const types = document.createElement('div');
       types.className = 'graph-edge-types';
@@ -928,7 +966,7 @@ export function render(container, data, ctx) {
 
   // ---------- initial UI + scene ----------
   renderGroupChips();
-  renderHubChips();
+  renderPOChips();
   renderIslandChips();
   updateScene();
 
@@ -939,8 +977,7 @@ export function render(container, data, ctx) {
     const dtRaw = (now - lastTime) / 1000;
     lastTime = now;
 
-    const dt = physics.step(dtRaw);
-    //console.log(dt);
+    physics.step(dtRaw);
     viewport.draw();
 
     requestAnimationFrame(tick);

@@ -67,12 +67,18 @@ const EDGE_STYLE_CONFIG = {
       headTiles:  0.40,
       offsetFraction: 0.25,
     },
-    "Has similar name": {
+    has_similar_name: {
       color: '#ffffffff',
       arrow: true,
       widthTiles: 0.15,
       headTiles:  0.50,
       offsetFraction: 0.15,
+    },
+    share_same_metaid: {
+      color: '#666666',
+      arrow: false,
+      widthTiles: 0.03,
+      offsetFraction: 0.1,
     },
   },
 
@@ -84,11 +90,6 @@ const EDGE_STYLE_CONFIG = {
       widthTiles: 0.06,
       headTiles:  0.40,
       offsetFraction: 0.2,
-    },
-    duplicate: {
-      color: '#666666',
-      arrow: false,
-      widthTiles: 0.03,
     },
   },
 
@@ -103,7 +104,7 @@ const EDGE_STYLE_CONFIG = {
 // Factory that turns the config into a getEdgeStyle function
 export function makeMetaisEdgeStyle() {
   return (edge, n1, n2) => {
-    // --- 1) start from your config (colors, arrow, widths, etc.) ---
+    // start from your config (colors, arrow, widths, etc.)
     const relCfg  = EDGE_STYLE_CONFIG.relationTypes[edge.relName];
     const kindCfg = EDGE_STYLE_CONFIG.kinds[edge.kind];
     const baseCfg = relCfg || kindCfg || EDGE_STYLE_CONFIG.fallback;
@@ -116,17 +117,7 @@ export function makeMetaisEdgeStyle() {
       offsetFraction: baseCfg.offsetFraction,
     };
 
-    // --- 2) Special case: duplicate edges ---
-    if (edge.kind === 'duplicate') {
-      return {
-        ...baseStyle,
-        color: '#ccccff',
-        alpha: 0.35,
-        dash:  null,
-      };
-    }
-
-    // --- 3) Distance-based styling for relation edges ---
+    // distance-based styling for relation edges
     let d = edge.distance;
     if (!Number.isFinite(d) || d < 0) d = Infinity;
 

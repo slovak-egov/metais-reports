@@ -152,7 +152,7 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
     min: 0,
     max: 10.0,
     step: 0.05,
-    initial: DAMPING.gamma,
+    initial: 2.0,
     decimals: 2,
     onChange: (v) => { DAMPING.gamma = v; },
   });
@@ -162,7 +162,7 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
     min: 0,
     max: 10.0,
     step: 0.05,
-    initial: SPRING_DAMPING.gamma,
+    initial: 5.0,
     decimals: 2,
     onChange: (v) => { SPRING_DAMPING.gamma = v; },
   });
@@ -172,7 +172,7 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
     min: 0.1,
     max: 3.0,
     step: 0.05,
-    initial: FRICTION.muK,
+    initial: 1.0,
     decimals: 2,
     onChange: (v) => { FRICTION.muK = v; },
   });
@@ -182,7 +182,7 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
     min: 0.1,
     max: 8.0,
     step: 0.05,
-    initial: physics.timeScale,
+    initial: 5.0,
     decimals: 2,
     onChange: (v) => { physics.timeScale = v; },
   });

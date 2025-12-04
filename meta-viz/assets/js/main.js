@@ -18,16 +18,28 @@ async function fetchIndex() {
   snapshots = data.snapshots || [];
 }
 
+function parseDateStr(d) {
+  // d = "dd-mm-yyyy"
+  const [dd, mm, yyyy] = d.split('-').map(Number);
+  // JS Date: month is 0-based
+  return new Date(yyyy, mm - 1, dd);
+}
+
 // sort snapshots according to currentSort
 function getSortedSnapshots() {
   const sorted = [...snapshots];
+
   sorted.sort((a, b) => {
+    const da = parseDateStr(a.date);
+    const db = parseDateStr(b.date);
+
     if (currentSort === 'newest') {
-      return b.date.localeCompare(a.date);
+      return db - da; // newest first
     } else {
-      return a.date.localeCompare(b.date);
+      return da - db; // oldest first
     }
   });
+
   return sorted;
 }
 
@@ -43,7 +55,7 @@ function populateSnapshotSelect() {
   }
 
   if (!currentDate && sorted.length > 0) {
-    currentDate = sorted[0].date; // default to newest
+    currentDate = sorted[0].date;
   }
   if (currentDate) {
     snapshotSelect.value = currentDate;
