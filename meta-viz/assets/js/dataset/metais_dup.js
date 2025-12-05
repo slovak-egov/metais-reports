@@ -972,13 +972,19 @@ export function render(container, data, ctx) {
 
   // --- Animation loop: physics + redraw ---
   let lastTime = performance.now();
+  let frameCounter = 0;
+  const RENDER_EVERY = 3;
 
   function tick(now) {
     const dtRaw = (now - lastTime) / 1000;
     lastTime = now;
 
     physics.step(dtRaw);
-    viewport.draw();
+
+    frameCounter++;
+    if (frameCounter % RENDER_EVERY === 0) {
+      viewport.draw();
+    }
 
     requestAnimationFrame(tick);
   }
