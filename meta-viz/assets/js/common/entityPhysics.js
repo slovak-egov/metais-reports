@@ -296,14 +296,14 @@ export class PhysicsSystem {
     const L = 1.0;
 
     // Velocity CFL: node shouldn’t travel more than ~CFL_VEL * L per step
-    const CFL_VEL = 0.3;
+    const CFL_VEL = 0.4;
     if (vmax > 0) {
       const dtVel = CFL_VEL * L / vmax;
       dt = Math.min(dt, dtVel);
     }
 
     // Acceleration-based: 0.5 a dt² <= CFL_ACC * L
-    const CFL_ACC = 0.001;
+    const CFL_ACC = 0.1;
     if (amax > 0) {
       const dtAcc = Math.sqrt((2 * CFL_ACC * L) / amax);
       dt = Math.min(dt, dtAcc);
