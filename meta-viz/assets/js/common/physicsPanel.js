@@ -142,7 +142,7 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
     min: 0,
     max: 10.0,
     step: 0.02,
-    initial: CENTER_FORCE.k,
+    initial: 0.6,
     decimals: 2,
     onChange: (v) => { CENTER_FORCE.k = v; },
   });
@@ -150,9 +150,9 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
   createSliderRow(physicsContainer, {
     labelText: 'Global damp.',
     min: 0,
-    max: 10.0,
+    max: 50.0,
     step: 0.05,
-    initial: 2.0,
+    initial: 50.0,
     decimals: 2,
     onChange: (v) => { DAMPING.gamma = v; },
   });
@@ -160,9 +160,9 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
   createSliderRow(physicsContainer, {
     labelText: 'Spring damp.',
     min: 0,
-    max: 10.0,
+    max: 100.0,
     step: 0.05,
-    initial: 5.0,
+    initial: 100.0,
     decimals: 2,
     onChange: (v) => { SPRING_DAMPING.gamma = v; },
   });
@@ -172,7 +172,7 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
     min: 0.1,
     max: 3.0,
     step: 0.05,
-    initial: 1.0,
+    initial: 0.7,
     decimals: 2,
     onChange: (v) => { FRICTION.muK = v; },
   });
@@ -182,7 +182,7 @@ export function attachPhysicsPanel({ parent, physics, title = 'Physics controls'
     min: 0.1,
     max: 8.0,
     step: 0.05,
-    initial: 5.0,
+    initial: 8.0,
     decimals: 2,
     onChange: (v) => { physics.timeScale = v; },
   });
