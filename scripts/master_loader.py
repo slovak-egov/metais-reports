@@ -9,7 +9,13 @@ from typing import Any
 from tqdm import tqdm
 import argparse
 import gzip
-from config_env import find_project_root
+from json_writer import dump_json_smart
+from config_env import find_project_root, load_env_file
+load_env_file()
+
+PRETTY_JSON = os.getenv("META_VIZ_PRETTY_JSON", "1").strip().lower() in ("1", "true", "yes", "y")
+JSON_INDENT = 2 if PRETTY_JSON else None
+JSON_SEPARATORS = (",", ": ") if PRETTY_JSON else (",", ":")
 
 # ---------- helpers ----------
 
@@ -19,7 +25,6 @@ def check_date(date_str: str) -> None:
     except ValueError:
         print(f"Invalid date '{date_str}': expected format dd-mm-yyyy and a real calendar date")
         sys.exit(1)
-
 
 def parse_loadout_file(path: Path) -> dict[str, set[str]]:
     """
@@ -82,6 +87,73 @@ def set_decoder(obj):
         return set(obj["__set__"])
     return obj
 
+class AttributeLabeler:
+    """
+    Shared attribute-label dictionary with optional interactive prompting.
+
+    - labels: mapping technicalName -> human-readable label
+    - interactive: whether to ask user for missing labels
+    - path: where to persist the mapping as JSON
+    """
+
+    def __init__(self, labels: dict[str, str], interactive: bool, path: Path):
+        self.labels = labels
+        self.interactive = interactive
+        self.path = path
+        self.dirty = False
+
+    def get_label(
+        self,
+        technical_name: str,
+        metadata_label: str | None = None,
+    ) -> str:
+        """
+        Resolution order:
+
+          1) If metadata_label is provided -> always use that (ground truth)
+          2) Else, if we have a stored custom label -> use that
+          3) Else, if interactive + TTY -> prompt user and store
+          4) Else, fall back to technical_name
+        """
+
+        # 1) metadata is the source of truth – never override it
+        if metadata_label:
+            return metadata_label
+
+        # 2) user-defined label (for attributes *without* metadata)
+        if technical_name in self.labels:
+            return self.labels[technical_name]
+
+        # 3) prompt if interactive
+        fallback = technical_name
+        if self.interactive and sys.stdin.isatty():
+            print(
+                f'\n[attr-labels] Human-readable "name" not found for {technical_name}.'
+            )
+            print(
+                '  Enter a suitable label (e.g. "Metóda riadenia projektu")\n'
+                "  or press Enter to keep the technical name."
+            )
+            user_input = input("  -> ").strip()
+            if user_input:
+                self.labels[technical_name] = user_input
+                self.dirty = True
+                return user_input
+
+        # 4) final fallback
+        return fallback
+
+    def save_if_dirty(self):
+        if not self.dirty:
+            return
+        try:
+            with self.path.open("w", encoding="utf-8") as f:
+                json.dump(self.labels, f, ensure_ascii=False, indent=2)
+            print(f"[attr-labels] Updated {self.path}")
+            self.dirty = False
+        except Exception as e:
+            print(f"[attr-labels] WARNING: failed to write {self.path}: {e}")
+
 
 # ---------- paths that don't depend on args ----------
 
@@ -97,6 +169,29 @@ if env_path:
     METAVIZ_OUTPUT_ROOT = (PROJECT_ROOT / env_path).resolve()
 else:
     METAVIZ_OUTPUT_ROOT = PROJECT_ROOT / "meta-viz" / "data"
+
+
+
+INTERACTIVE_ATTRIBUTES = os.getenv("INTERACTIVE_ATTRIBUTES", "false").strip().lower() in (
+    "1", "true", "yes", "y"
+)
+ATTR_LABELS_PATH = PROJECT_ROOT / "params" / "attribute_labels.json"
+ATTR_LABELS_PATH.parent.mkdir(parents=True, exist_ok=True)
+try:
+    if ATTR_LABELS_PATH.is_file():
+        with ATTR_LABELS_PATH.open("r", encoding="utf-8") as f:
+            attribute_labels: dict[str, str] = json.load(f)
+    else:
+        attribute_labels = {}
+except Exception as e:
+    print(f"[attr-labels] WARNING: failed to load {ATTR_LABELS_PATH}: {e}")
+    attribute_labels = {}
+
+attr_labeler = AttributeLabeler(
+    labels=attribute_labels,
+    interactive=INTERACTIVE_ATTRIBUTES,
+    path=ATTR_LABELS_PATH,
+)
 
 # ---------- CLI args ----------
 
@@ -508,11 +603,34 @@ print("--------------------------")
 # ---------- Context over raw-like structure ----------
 
 class Context:
-    def __init__(self, date, entity, relation, enums):
+    def __init__(self, date, entity, relation, enums, attr_labeler):
         self.date = date
         self.entity = entity
         self.relation = relation
-        self.enums = enums_merged
+        self.enums = enums
+        self.attr_labeler = attr_labeler
+
+    def get_entity_identifier(
+        self,
+        uuid: str,
+        rec: dict,
+        name_attr: str = "Gen_Profil_nazov",
+        code_attr: str = "Gen_Profil_kod_metais",
+    ) -> str:
+        """
+        Human-readable identifier:
+          1) name_attr (default: Gen_Profil_nazov)
+          2) code_attr (default: Gen_Profil_kod_metais)
+          3) uuid
+        """
+        name = self.get_attr_value_any(rec, name_attr)
+        code = self.get_attr_value_any(rec, code_attr)
+
+        if name:
+            return str(name)
+        if code:
+            return str(code)
+        return uuid
 
     def get_entity_type(self, uuid: str) -> str:
         return self.entity["by_uuid"][uuid]["type"]
@@ -541,11 +659,139 @@ class Context:
         # We just return the stored record.
         return rec
 
+    def get_attr_value_any(self, rec: dict, technical_name: str):
+        """
+        Get an attribute value from either:
+          - raw dict rec["attributes"][technical_name]
+          - normalized list rec["attributes"] = [{attributeTechnicalName, value}, ...]
+        """
+        attrs = rec.get("attributes")
+        if isinstance(attrs, dict):
+            return attrs.get(technical_name)
+        if isinstance(attrs, list):
+            for a in attrs:
+                if a.get("attributeTechnicalName") == technical_name:
+                    return a.get("value")
+        return None
+
+    def normalize_attributes(self, citype_name: str, attrs: dict):
+        """
+        Convert a raw attributes dict into an ordered list with labels:
+
+          { "Gen_Profil_nazov": "...", ... }
+
+        ->
+
+          [
+            {
+              "attributeTechnicalName": "Gen_Profil_nazov",
+              "attributeName": "Názov",
+              "value": "...",
+            },
+            ...
+          ]
+
+        Uses attributes + attributeProfiles[*].attributes from metadata.
+        """
+        from typing import Any
+
+        if not isinstance(attrs, dict):
+            return attrs
+
+        meta_defs = list(self.iter_all_attr_defs_for_citype(citype_name))
+        result: list[dict[str, Any]] = []
+        used: set[str] = set()
+
+        # 1) follow metadata order
+        for attr_def in meta_defs:
+            tech = attr_def.get("technicalName")
+            if not tech or tech not in attrs:
+                continue
+
+            meta_label = (
+                attr_def.get("name")
+                or attr_def.get("engName")
+                or tech
+            )
+
+            raw_value = attrs[tech]
+            value = self.resolve_enum_value(raw_value)
+
+            result.append({
+                "attributeTechnicalName": tech,
+                "attributeName": self.get_attribute_label(tech, meta_label),
+                "value": value,
+            })
+            used.add(tech)
+
+        # 2) leftover attributes (no metadata)
+        for tech in sorted(k for k in attrs.keys() if k not in used):
+            raw_value = attrs[tech]
+            value = self.resolve_enum_value(raw_value)
+
+            result.append({
+                "attributeTechnicalName": tech,
+                "attributeName": self.get_attribute_label(tech, None),
+                "value": value,
+            })
+
+        return result
+
     def iter_uuids_of_type(self, ctype: str):
         for uuid in self.entity["by_type"].get(ctype, []):
             yield uuid
 
-ctx = Context(DATE, entity, relation, enums_merged)
+    def get_citype_metadata(self, citype_name: str) -> dict:
+        """
+        Return raw metadata dict for a citype, or {} if missing.
+        """
+        return (self.entity.get("citype_metadata") or {}).get(citype_name, {}) or {}
+
+    def iter_all_attr_defs_for_citype(self, citype_name: str):
+        """
+        Yield all attribute definition dicts for a given citype from:
+          - metadata['attributes']
+          - metadata['attributeProfiles'][*]['attributes']
+        """
+        meta = self.get_citype_metadata(citype_name)
+
+        # 1) top-level attributes
+        for attr in meta.get("attributes") or []:
+            yield attr
+
+        # 2) attributes under profiles (EA_Profil_ISVS, etc.)
+        for profile in meta.get("attributeProfiles") or []:
+            for attr in profile.get("attributes") or []:
+                yield attr
+
+    def get_attribute_label(self, technical_name: str, metadata_label: str | None = None) -> str:
+        """
+        Central helper for human-readable attribute names.
+
+        Resolution order (inside AttributeLabeler):
+
+          1) metadata_label (if provided)
+          2) params file (attribute_labels.json)
+          3) interactive prompt (if enabled)
+          4) technical_name
+        """
+        return self.attr_labeler.get_label(technical_name, metadata_label)
+
+    def resolve_enum_value(self, val):
+        """
+        Optional central enum resolver if you want to use it from modules.
+        """
+        from collections.abc import Iterable
+
+        if isinstance(val, str):
+            if val.startswith("c_"):
+                return self.enums.get(val, val)
+            return val
+        if isinstance(val, list):
+            return [self.resolve_enum_value(x) for x in val]
+        return val
+
+ctx = Context(DATE, entity, relation, enums_merged, attr_labeler)
 
 # ---------- module loading & execution ----------
 
@@ -578,23 +824,31 @@ for module_dir in MODULES_DIR.iterdir():
         if allowed_for_type is not None and module_name not in allowed_for_type:
             continue
 
-        print(f"  Loading module {module_type}/{py_file.name}")
+        print(f"         Loading module {module_type}/{py_file.name}")
 
         mod = load_module_from_path(py_file)
 
         if hasattr(mod, "run"):
-            print(f"  Running module {module_type}/{py_file.name}")
+            print(f"         Running module {module_type}/{py_file.name}")
             run_result = mod.run(ctx)
 
             out_path = out_dir / f"{py_file.stem}.json"
             try:
                 with out_path.open("w", encoding="utf-8") as f:
-                    json.dump(run_result, f, ensure_ascii=False, indent=2)
-                print(f"    -> wrote {out_path}")
+                    print(f"Saving module output to {module_type}/{module_name}.json")
+                    if dump_json_smart is not None:
+                        # global smart writer – you can tune max_width / indent here
+                        dump_json_smart(run_result, f, max_width=80, indent=2, ensure_ascii=False)
+                    else:
+                        # fallback if json_writer not available
+                        json.dump(run_result, f, ensure_ascii=False, indent=2)
+                    print(f"    -> wrote {out_path}")
             except TypeError as e:
                 print(f"    !! FAILED to JSON-serialize result from {py_file}: {e}")
         else:
             print(f"    WARNING: {py_file.name} has no run(ctx)")
+
+attr_labeler.save_if_dirty()
 
 from rebuild_index import rebuild_index
 rebuild_index(DATE)

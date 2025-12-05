@@ -24,135 +24,15 @@ def run(ctx):
     entity   = ctx.entity
     relation = ctx.relation
     enum     = ctx.enums
+    resolve_enum_value = ctx.resolve_enum_value
 
     # Metadata is pre-attached in the context:
     # entity["citype_metadata"][citype_name] -> full metadata json for that type
     citype_meta = entity.get("citype_metadata", {})
 
-    # Simple cache so we don't re-parse metadata for every entity
-    attr_defs_cache = {}
-
-    def get_attr_defs_for_citype(citype_name: str):
-        """
-        Return the 'attributes' list from citype metadata for this type,
-        in the original order from MetaIS metadata.
-        """
-        if citype_name in attr_defs_cache:
-            return attr_defs_cache[citype_name]
-
-        meta = citype_meta.get(citype_name) or {}
-        defs = meta.get("attributes") or []
-        # keep original ordering from metadata; do not sort here
-        attr_defs_cache[citype_name] = defs
-        return defs
-
-    def resolve_enum_value(val):
-        """
-        If val is:
-          - a string starting with 'c_' and present in enum_map,
-            return the human-readable value
-          - a list, map recursively on elements
-          - otherwise, return as-is
-        """
-        if isinstance(val, str):
-            if val.startswith("c_"):
-                return enum.get(val, val)
-            return val
-        if isinstance(val, list):
-            return [resolve_enum_value(x) for x in val]
-        return val
-
     def is_invalidated(rec: dict) -> bool:
         meta = rec.get("metaAttributes") or {}
         return meta.get("state") == "INVALIDATED"
-
-    def transform_attributes(citype_name: str, attrs: dict):
-        """
-        Convert:
-          { "Gen_Profil_nazov": "...", "Gen_Profil_zdroj": "c_zdroj.1", ... }
-
-        into an ordered list:
-          [
-            {
-              "attributeTechnicalName": "Gen_Profil_nazov",
-              "attributeName": "Názov",
-              "value": "..."
-            },
-            ...
-          ]
-
-        Ordering:
-          1) attributes in the order from metadata/nodes/<citype>.json
-          2) remaining attributes not present in metadata, appended
-             sorted by technical name.
-        """
-        if not isinstance(attrs, dict):
-            # Already transformed or unexpected shape; leave as is
-            return attrs
-
-        meta_defs = get_attr_defs_for_citype(citype_name)
-        result = []
-        used = set()
-
-        # 1) follow metadata order
-        for attr_def in meta_defs:
-            tech = attr_def.get("technicalName")
-            if not tech or tech not in attrs:
-                continue
-
-            # prefer Slovak label; fall back to English or technical name
-            raw_label = attr_def.get("name") or attr_def.get("engName") or tech
-            label = str(raw_label).strip()
-
-            raw_value = attrs[tech]
-            value = resolve_enum_value(raw_value)
-
-            result.append({
-                "attributeTechnicalName": tech,
-                "attributeName": label,
-                "value": value,
-            })
-            used.add(tech)
-
-        # 2) any attributes not defined in metadata
-        for tech in sorted(k for k in attrs.keys() if k not in used):
-            raw_value = attrs[tech]
-            value = resolve_enum_value(raw_value)
-
-            result.append({
-                "attributeTechnicalName": tech,
-                "attributeName": tech,  # no better label available
-                "value": value,
-            })
-
-        return result
-
-    # Helper to pull an attribute value from *normalized* attributes list
-    def get_attr_value(rec: dict, technical_name: str):
-        attrs = rec.get("attributes")
-        if not isinstance(attrs, list):
-            return None
-        for a in attrs:
-            if a.get("attributeTechnicalName") == technical_name:
-                return a.get("value")
-        return None
-
-    # Helper to get a human-readable identifier for an entity
-    def get_entity_identifier(uuid: str, rec: dict):
-        """
-        Priority:
-          1) Gen_Profil_nazov (name)
-          2) Gen_Profil_kod_metais (code)
-          3) UUID
-        """
-        name = get_attr_value(rec, "Gen_Profil_nazov")
-        metais_code = get_attr_value(rec, "Gen_Profil_kod_metais")
-
-        if name:
-            return str(name)
-        if metais_code:
-            return str(metais_code)
-        return uuid
 
     # metais_code -> list of (ctype, uuid)
     dup_records: dict[str, list[tuple[str, str]]] = {}
@@ -160,6 +40,50 @@ def run(ctx):
     # global pool ONLY for entities we actually touch
     # uuid -> {"type", "uuid", "attributes", "metaAttributes", ...}
     all_entities: dict[str, dict] = {}
+
+    def materialize_neighbors_for(ctype: str, uuids: set[str]):
+        """
+        For each uuid of this ctype, pull in its neighbors via real relations
+        into all_entities. (Same logic as in PHASE 2 for primaries.)
+        """
+        node_rel_info = relation["by_node"].get(ctype)
+        if not node_rel_info:
+            return
+
+        for my_uuid in uuids:
+            # entity_role: "src" or "tgt"
+            for entity_role in ("src", "tgt"):
+                rel_set = node_rel_info.get("by_" + entity_role, set())
+                if not rel_set:
+                    continue
+
+                for reltype_name in rel_set:
+                    rel_info = relation["by_rel"][reltype_name]
+
+                    if entity_role == "src":
+                        related_type  = rel_info["target_type"]
+                        neighbors_map = rel_info["by_src"]
+                    else:
+                        related_type  = rel_info["source_type"]
+                        neighbors_map = rel_info["by_tgt"]
+
+                    neighbor_uuids = neighbors_map.get(my_uuid, [])
+                    if not neighbor_uuids:
+                        continue
+
+                    for related_uuid in neighbor_uuids:
+                        if related_uuid not in all_entities:
+                            try:
+                                all_entities[related_uuid] = ctx.get_entity_record(
+                                    related_type,
+                                    related_uuid,
+                                )
+                            except KeyError:
+                                print(
+                                    f"[WARNING] uuid {related_uuid} "
+                                    f"not found in entity dump"
+                                )
+                                continue
 
     # --------- PHASE 0: precompute name candidates in the whole DB ----------
 
@@ -365,6 +289,22 @@ def run(ctx):
                             f"not found in entity dump"
                         )
 
+    # --------- PHASE 2c: pull neighbors of similar-name entities ----------
+
+    similar_name_entities_by_type: dict[str, set[str]] = defaultdict(set)
+
+    for _, sim_uuid in similar_name_pairs:
+        rec = all_entities.get(sim_uuid) or entity_by_uuid.get(sim_uuid)
+        if not rec:
+            continue
+        ctype = rec.get("type")
+        if not ctype:
+            continue
+        similar_name_entities_by_type[ctype].add(sim_uuid)
+
+    for ctype, uuids in similar_name_entities_by_type.items():
+        materialize_neighbors_for(ctype, uuids)
+
     # --------- NORMALIZE ENTITY ATTRIBUTES ----------
 
     # Convert attributes dict -> ordered list with human-readable labels
@@ -372,7 +312,7 @@ def run(ctx):
         ctype = rec.get("type")
         attrs = rec.get("attributes")
         if ctype and isinstance(attrs, dict):
-            rec["attributes"] = transform_attributes(ctype, attrs)
+            rec["attributes"] = ctx.normalize_attributes(ctype, attrs)
 
     # --------- PHASE 3: build top-level relations (REAL + synthetic) ----------
 
@@ -432,7 +372,7 @@ def run(ctx):
                 "name":          SIMILAR_NAME_LABEL,
                 "engName":       SIMILAR_NAME_LABEL,  # we don't have a separate engName, reuse
 
-                # no single canonical type pair – front-end may show "? → ?"
+                # no single canonical type pair – front-end may show "? -> ?"
                 "source_type": None,
                 "target_type": None,
                 "pairs": [[src, tgt] for (src, tgt) in sorted(pair_set)],
@@ -732,7 +672,7 @@ def run(ctx):
         rec = all_entities.get(po_uuid, {"type": None, "attributes": [], "metaAttributes": {}})
         po_view.append({
             "po_uuid": po_uuid,
-            "identifier": get_entity_identifier(po_uuid, rec),
+            "identifier": ctx.get_entity_identifier(po_uuid, rec),
             "group_indices": sorted(group_indices),
             "group_count": len(group_indices),
         })
