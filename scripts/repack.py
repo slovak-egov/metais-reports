@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-repack_packed.py
+repack.py
 
 Repack a subset of an existing "packed" MetaIS dataset into a new packed/ directory.
 
@@ -1044,6 +1044,57 @@ def _repack_relations(
         entry["asTarget"].sort(key=lambda d: (d["reltype"], d["otherType"]))
 
     return rel_index_entries, index_by_reltype, ctype_index, total_pairs
+
+def run_repack(
+    *,
+    source_root: Path,
+    dest_dir: Path,
+    profile: str = "repack",
+    entity_uuids: Set[str] | None = None,
+    relation_types: Set[str] | None = None,
+    only_valid: bool | None = None,
+) -> None:
+    """
+    Thin wrapper used by master_loader.
+
+    - source_root: path to existing packed/ directory (with dict, nodes, relations, ...)
+    - dest_dir: where to write the new packed/ subset
+    - profile: manifest['profile']
+    - entity_uuids: subset of UUID *strings* to keep (optional)
+    - relation_types: subset of reltype names to keep (optional)
+    - only_valid:
+        * True  -> entity_validity = "valid"
+        * False/None -> entity_validity = "all"
+    """
+    import uuid as _uuid
+
+    # Map only_valid → entity_validity enum
+    if only_valid is True:
+        entity_validity = "valid"
+    else:
+        entity_validity = "all"
+
+    # For now, keep all relations that match relation_types
+    relation_validity = "all"
+
+    # Convert UUID strings → bytes for uuid_allowlist
+    uuid_allowlist_bytes = None
+    if entity_uuids is not None:
+        uuid_allowlist_bytes = {_uuid.UUID(u).bytes for u in entity_uuids}
+
+    spec = RepackSpec(
+        source_packed=source_root,
+        dest_packed=dest_dir,
+        entity_types=None,                     # we restrict by uuid_allowlist instead
+        entity_validity=entity_validity,       # type: ignore[arg-type]
+        relation_types=relation_types,         # already set or None
+        relation_validity=relation_validity,   # type: ignore[arg-type]
+        uuid_allowlist=uuid_allowlist_bytes,
+        include_relations_if_both_endpoints_in_allowlist=True,
+        profile_name=profile,
+        source_dump_date=None,  # repack() will pull from manifest if present
+    )
+    repack(spec)
 
 
 # ---------------------------------------------------------------------------
