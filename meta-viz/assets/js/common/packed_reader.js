@@ -4,7 +4,7 @@
 // Usage:
 //   import { createPackedStore } from './packedStore.js';
 //
-//   const store = await createPackedStore('/data/repack_po_as_ks_isvs');
+//   const store = await createPackedStore('/data/repack_project'); // e.g.
 //   const types = store.listTypes();          // ['PO','AS','KS','ISVS','Projekt']
 //   const projekt = await store.openType('Projekt');
 //   for await (const [uuid, attrs] of projekt.iterRecords(['Gen_Profil_nazov'])) {
