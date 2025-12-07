@@ -576,14 +576,23 @@ def run_one_spec(spec: dict, idx: int, total: int) -> bool:
             for edge in edges:
                 s_uuid, t_uuid = extract_relation_uuids(edge)
 
-                # If we can't determine UUIDs, treat as invalid
+                # relation state from Groovy templates (new field)
+                state = edge.get("state") or edge.get("rel_state")
+                is_invalid_state = (state == "INVALIDATED")
+
+                # If we can't determine UUIDs at all → invalid bucket
                 if not s_uuid or not t_uuid:
                     invalid_edges.append(edge)
                     continue
 
-                if (s_uuid in src_valid_uuids) and (t_uuid in tgt_valid_uuids):
+                src_ok = s_uuid in src_valid_uuids
+                tgt_ok = t_uuid in tgt_valid_uuids
+
+                if src_ok and tgt_ok and not is_invalid_state:
+                    # fully valid: both endpoints valid AND relation not INVALIDATED
                     valid_edges.append(edge)
                 else:
+                    # anything else → invalid bucket
                     invalid_edges.append(edge)
 
             out_valid = RELS_DIR / f"{relation_name}.json"

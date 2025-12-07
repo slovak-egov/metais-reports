@@ -21,11 +21,19 @@ def q = base.match(
 
 def query = q.returns(
     prop("source", qi_source.prop("\$cmdb_id")),
-    prop("target", qi_target.prop("\$cmdb_id"))
-).limit(__LIMIT__).offset(__OFFSET__)
+    prop("target", qi_target.prop("\$cmdb_id")),
+    // relation meta state ("DRAFT", "INVALIDATED", ...)
+    prop("state",  qi_rel.prop("\$cmdb_state"))
+)
+.orderBy(qi_rel.prop("\$cmdb_id"), OrderDirection.ASC)
+.limit(__LIMIT__).offset(__OFFSET__)
 
 def res = Neo4j.execute(query)
 
 return res.data.collect { row ->
-    [ source: row.source, target: row.target ]
+    [
+        source: row.source,
+        target: row.target,
+        state:  row.state
+    ]
 }
