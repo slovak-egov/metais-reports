@@ -200,20 +200,64 @@ class TypeView:
         self.int_bytes: int = int(meta["intBytes"])
         self.endianness: str = meta["endianness"]
         self.missing: int = int(meta["missingSentinel"])
-        self.attributes: List[str] = list(meta["attributes"])
+
+        raw_attrs = meta["attributes"]
+
+        # attributes = list of technical names (columns in bin file)
+        self.attributes: List[str] = []
+        # attr_meta = extra info per technical name
+        self.attr_meta: Dict[str, Dict[str, Optional[str]]] = {}
+
+        if raw_attrs and isinstance(raw_attrs[0], list):
+            # NEW format: [technicalName, humanName, description]
+            for triple in raw_attrs:
+                technical = triple[0] if len(triple) > 0 else None
+                human     = triple[1] if len(triple) > 1 else None
+                desc      = triple[2] if len(triple) > 2 else None
+                if not technical:
+                    continue
+                self.attributes.append(technical)
+                self.attr_meta[technical] = {
+                    "name": human,
+                    "description": desc,
+                }
+
+        elif raw_attrs and isinstance(raw_attrs[0], dict):
+            # Future-proof: object format with keys like technicalName/name/description
+            for item in raw_attrs:
+                technical = item.get("technicalName")
+                if not technical:
+                    continue
+                human = item.get("name")
+                desc  = item.get("description")
+                self.attributes.append(technical)
+                self.attr_meta[technical] = {
+                    "name": human,
+                    "description": desc,
+                }
+
+        else:
+            # OLD format: just ["Gen_Profil_nazov", "EA_Profil_AS_charakter_as", ...]
+            self.attributes = list(raw_attrs)
+            self.attr_meta = {
+                name: {"name": None, "description": None}
+                for name in self.attributes
+            }
+
+        # Map technical name -> column index
+        self.attr_index: Dict[str, int] = {
+            name: idx for idx, name in enumerate(self.attributes)
+        }
 
         if self.int_bytes != 4:
             raise ValueError("Currently only intBytes=4 is supported")
         if self.endianness != "LE":
             raise ValueError("Currently only little-endian is supported")
 
-        self.attr_index: Dict[str, int] = {
-            name: idx for idx, name in enumerate(self.attributes)
-        }
-
         self._bin_path = bin_path
         self._uuids_path = uuid_path
         self._i32 = INT32
+
 
     def list_attributes(self) -> List[str]:
         return self.attributes
@@ -355,6 +399,85 @@ class TypeView:
 
                 yield uuid_str, attrs
 
+# ---------------------------------------------------------------------
+# UUID -> type mapping
+# ---------------------------------------------------------------------
+
+class UuidTypeIndex:
+    """
+    Parallel index to UuidIndex: for each global UUID ID, store a small type code.
+
+    Layout in uuid_types/:
+
+      types.bin   : recordCount * bytesPerCode, int codes
+      meta.json   : {
+                       "recordCount": N,
+                       "bytesPerCode": 2,
+                       "endianness": "LE",
+                       "types": [{ "code": 0, "typeName": "AS" }, ...]
+                    }
+    """
+
+    def __init__(self, uuid_types_dir: Path):
+        meta_path = uuid_types_dir / "meta.json"
+        types_path = uuid_types_dir / "types.bin"
+
+        if not meta_path.is_file() or not types_path.is_file():
+            raise FileNotFoundError(f"Missing uuid_types files under {uuid_types_dir}")
+
+        with meta_path.open("r", encoding="utf-8") as f:
+            meta = json.load(f)
+
+        self.record_count: int = int(meta["recordCount"])
+        self.bytes_per_code: int = int(meta.get("bytesPerCode", 2))
+        self.endianness: str = meta.get("endianness", "LE")
+
+        if self.endianness != "LE":
+            raise ValueError("UuidTypeIndex currently only supports LE")
+
+        # Build code -> typeName and typeName -> code
+        self.code_to_type: Dict[int, str] = {}
+        self.type_to_code: Dict[str, int] = {}
+
+        for entry in meta.get("types", []):
+            code = int(entry["code"])
+            tname = entry["typeName"]
+            self.code_to_type[code] = tname
+            self.type_to_code[tname] = code
+
+        if self.bytes_per_code == 1:
+            self._struct = struct.Struct("<B")
+        elif self.bytes_per_code == 2:
+            self._struct = struct.Struct("<H")
+        elif self.bytes_per_code == 4:
+            self._struct = struct.Struct("<I")
+        else:
+            raise ValueError(f"Unsupported bytesPerCode: {self.bytes_per_code}")
+
+        self._types_f = types_path.open("rb", buffering=0)
+
+    def close(self) -> None:
+        self._types_f.close()
+
+    def _read_code_at(self, idx: int) -> int:
+        if idx < 0 or idx >= self.record_count:
+            raise IndexError("uuid type index out of range")
+
+        offset = idx * self.bytes_per_code
+        self._types_f.seek(offset)
+        raw = self._types_f.read(self.bytes_per_code)
+        if len(raw) != self.bytes_per_code:
+            raise IOError("Unexpected EOF in uuid_types/types.bin")
+        (code,) = self._struct.unpack(raw)
+        return code
+
+    def get_type_by_id(self, id_: int) -> Optional[str]:
+        code = self._read_code_at(id_)
+        return self.code_to_type.get(code)
+
+    def get_code_for_type(self, type_name: str) -> Optional[int]:
+        return self.type_to_code.get(type_name)
+
 
 # ---------------------------------------------------------------------
 # Relations: single file view
@@ -378,6 +501,10 @@ class RelationFile:
         self.record_count: int = int(meta["recordCount"])
         self.layout: List[str] = meta.get("layout", ["src", "tgt"])
         self.sorted_by: List[str] = meta.get("sortedBy", self.layout)
+
+        self.technical_name: Optional[str] = meta.get("technicalName")
+        self.name: Optional[str] = meta.get("name")
+        self.description: Optional[str] = meta.get("description")
 
         if meta.get("intBytes", 4) != 4:
             raise ValueError("RelationFile currently only supports int32 entries")
@@ -471,6 +598,13 @@ class RelationFile:
                     hi = mid - 1
         return False
 
+    def iter_all_pairs(self) -> Iterator[Tuple[int, int]]:
+        """
+        Iterate all (first, second) pairs stored in this relation file
+        """
+        with self._open_bin() as f:
+            for i in range(self.record_count):
+                yield self._read_pair_at(f, i)
 
 # ---------------------------------------------------------------------
 # Relation store (both orientations + UUID conversion)
@@ -495,6 +629,7 @@ class RelationStore:
         self.uuid_index = uuid_index
         self._relations: Dict[str, Dict[str, RelationFile]] = {}
         self._load_all_relations()
+        self._ctype_index: Dict[str, Dict[str, List[Dict[str, str]]]] = self._load_ctype_index()
 
     def _load_all_relations(self) -> None:
         rel_dir = self.base_dir / "relations"
@@ -539,6 +674,25 @@ class RelationStore:
             return self.uuid_index.get_uuid(i)
         except Exception:
             return None
+
+    def _load_ctype_index(self) -> Dict[str, Dict[str, List[Dict[str, str]]]]:
+        """
+        Load packed/relations/index_by_ctype.json if it exists.
+
+        Shape:
+          {
+            "PO": {
+              "asSource": [{"reltype": "...", "otherType": "..."}, ...],
+              "asTarget": [...]
+            },
+            ...
+          }
+        """
+        idx_path = self.base_dir / "relations" / "index_by_ctype.json"
+        if not idx_path.is_file():
+            return {}
+        with idx_path.open("r", encoding="utf-8") as f:
+            return json.load(f)
 
     # ---- public graph API ----
 
@@ -630,6 +784,60 @@ class RelationStore:
 
         return res
 
+    def list_relations_for_ctype(
+        self,
+        ctype: str,
+        role: str = "any",
+    ) -> List[Dict[str, str]]:
+        """
+        Return a list of relation descriptors for a given citype.
+
+        role:
+          - "asSource": relations where this ctype appears on the src side
+          - "asTarget": relations where this ctype appears on the tgt side
+          - "any"     : both of the above concatenated
+
+        Each descriptor is:
+          {"reltype": <technicalName>, "otherType": <ctype_on_other_side>}
+        """
+        entry = self._ctype_index.get(ctype)
+        if not entry:
+            return []
+
+        if role == "asSource":
+            return list(entry.get("asSource", []))
+        elif role == "asTarget":
+            return list(entry.get("asTarget", []))
+        else:
+            # "any"
+            return list(entry.get("asSource", [])) + list(entry.get("asTarget", []))
+
+    def list_relations_between_ctypes(
+        self,
+        ctype1: str,
+        ctype2: str,
+    ) -> List[str]:
+        """
+        Return all reltypes that connect ctype1 and ctype2 in ANY direction.
+
+        i.e. reltypes where:
+          - ctype1 --reltype--> ctype2   OR
+          - ctype2 --reltype--> ctype1
+
+        Result is a sorted list of reltype technicalNames.
+        """
+        rels: set[str] = set()
+        entry1 = self._ctype_index.get(ctype1)
+        if entry1:
+            for item in entry1.get("asSource", []):
+                if item.get("otherType") == ctype2:
+                    rels.add(item["reltype"])
+            for item in entry1.get("asTarget", []):
+                if item.get("otherType") == ctype2:
+                    rels.add(item["reltype"])
+
+        # You *could* also inspect entry2, but it's symmetric based on how we built the index
+        return sorted(rels)
 
 # ---------------------------------------------------------------------
 # Top-level store
@@ -659,25 +867,51 @@ class PackedStore:
         if not uuid_index_dir.is_dir():
             raise FileNotFoundError(f"Missing uuid_index directory: {uuid_index_dir}")
 
+        uuid_types_dir = base_dir / "uuid_types"
+        if not uuid_types_dir.is_dir():
+            raise FileNotFoundError(f"Missing uuid_types directory: {uuid_types_dir}")
+
         self.global_dict = StreamingGlobalDict(dict_dir)
         self.uuid_index = UuidIndex(uuid_index_dir)
+        self.uuid_types = UuidTypeIndex(uuid_types_dir)   # 👈 new
+
+        # Optionally cross-check recordCount
+        if self.uuid_types.record_count != self.uuid_index.record_count:
+            raise ValueError(
+                "UuidIndex and UuidTypeIndex have different recordCount values"
+            )
+
         self.relations = RelationStore(base_dir, self.uuid_index)
 
     def close(self) -> None:
         self.global_dict.close()
         self.uuid_index.close()
+        self.uuid_types.close()
 
     # ---- nodes ----
 
+    def get_ctype_for_uuid(self, uuid_str: str) -> Optional[str]:
+        """
+        Return the node type (citype) for a given UUID string.
+        Uses global uuid_index + uuid_types.
+        """
+        id_ = self.uuid_index.get_id(uuid_str)
+        if id_ is None:
+            return None
+        return self.uuid_types.get_type_by_id(id_)
+
     def list_types(self) -> List[str]:
         """
-        List all available node types (based on *.bin in nodes/).
+        List all available node types (based on *.meta.json in nodes/).
+
+        This deliberately ignores helper files like *.uuids.bin.
         """
         nodes_dir = self.base_dir / "nodes"
         types: List[str] = []
         if nodes_dir.is_dir():
-            for p in nodes_dir.glob("*.bin"):
-                types.append(p.stem)
+            for meta_path in nodes_dir.glob("*.meta.json"):
+                # AS.meta.json -> "AS"
+                types.append(meta_path.stem)
         return sorted(types)
 
     def open_type(self, type_name: str) -> TypeView:
