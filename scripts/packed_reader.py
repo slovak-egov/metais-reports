@@ -11,8 +11,18 @@ from typing import Any, Dict, Iterable, Iterator, List, Optional, Tuple
 # Common struct
 # ---------------------------------------------------------------------
 
-INT32 = struct.Struct("<i")
-
+from bin_formats import (
+    UUID_BYTES,
+    ATTR_INDEX_BYTES,
+    DICT_INDEX_BYTES,
+    ROW_OFFSET_BYTES,
+    REL_INT_BYTES,
+    REL_PAIR_BYTES,
+    INT32_LE,
+    U16_LE,
+    U64_LE,
+    get_uint_le_struct
+)
 
 # ---------------------------------------------------------------------
 # Global dictionary (nodes)
@@ -49,7 +59,7 @@ class StreamingGlobalDict:
 
         self._offsets_f = offsets_path.open("rb", buffering=0)
         self._values_f = values_path.open("rb", buffering=0)
-        self._u64 = struct.Struct("<Q")
+        self._u64 = U64_LE
 
     def close(self) -> None:
         self._offsets_f.close()
@@ -58,9 +68,9 @@ class StreamingGlobalDict:
     def _read_offset(self, idx: int) -> int:
         if idx < 0 or idx > self.value_count:
             raise IndexError(f"offset index out of range: {idx}")
-        self._offsets_f.seek(idx * 8)
-        raw = self._offsets_f.read(8)
-        if len(raw) != 8:
+        self._offsets_f.seek(idx * self._u64.size)
+        raw = self._offsets_f.read(self._u64.size)
+        if len(raw) != self._u64.size:
             raise IOError("Unexpected EOF in dict.offsets.bin")
         (off,) = self._u64.unpack(raw)
         return off
@@ -95,7 +105,7 @@ class UuidIndex:
     """
     Global UUID <-> int32 ID mapping, backed by:
 
-      uuid_index/uuids.bin  (16 bytes * N, sorted by UUID bytes)
+      uuid_index/uuids.bin  (UUID_BYTES (16) bytes * N, sorted by UUID bytes)
       uuid_index/meta.json  (recordCount, uuidBytes, ...)
     """
 
@@ -110,10 +120,10 @@ class UuidIndex:
             meta = json.load(f)
 
         self.record_count: int = int(meta["recordCount"])
-        self.uuid_bytes: int = int(meta.get("uuidBytes", 16))
+        self.uuid_bytes: int = int(meta.get("uuidBytes", UUID_BYTES))
 
-        if self.uuid_bytes != 16:
-            raise ValueError("UuidIndex currently only supports 16-byte UUIDs")
+        if self.uuid_bytes != UUID_BYTES:
+            raise ValueError(f"UuidIndex currently only supports {UUID_BYTES}-byte UUIDs")
 
         self._uuids_path = uuids_path
         self._uuids_f = uuids_path.open("rb", buffering=0)
@@ -169,10 +179,23 @@ class TypeView:
     """
     View onto a single node type (e.g. "KS").
 
-    Uses:
-      nodes/<TYPE>.bin
-      nodes/<TYPE>.meta.json
-      nodes/<TYPE>.uuids.bin
+    Two possible layouts:
+
+    1) grid (old):
+         nodes/TYPE.bin
+         nodes/TYPE.meta.json (has blockSize, missingSentinel, ...)
+         nodes/TYPE.uuids.bin
+
+       Fixed-size blocks of int32 indices with a missing sentinel.
+
+    2) dense (new):
+         nodes/TYPE.rows.bin
+         nodes/TYPE.rows.offsets.bin
+         nodes/TYPE.meta.json (layout="dense", attrIndexBytes, dictIndexBytes)
+         nodes/TYPE.uuids.bin
+
+       Variable-length rows; each row stores only non-missing attributes:
+         k:uint16 + (attrIndex:uint16, dictIndex:int32)*k
     """
 
     def __init__(self, type_name: str, base_dir: Path, global_dict: StreamingGlobalDict):
@@ -182,13 +205,10 @@ class TypeView:
 
         nodes_dir = base_dir / "nodes"
         meta_path = nodes_dir / f"{type_name}.meta.json"
-        bin_path = nodes_dir / f"{type_name}.bin"
         uuid_path = nodes_dir / f"{type_name}.uuids.bin"
 
         if not meta_path.is_file():
             raise FileNotFoundError(f"Missing meta for type {type_name}: {meta_path}")
-        if not bin_path.is_file():
-            raise FileNotFoundError(f"Missing bin for type {type_name}: {bin_path}")
         if not uuid_path.is_file():
             raise FileNotFoundError(f"Missing uuids for type {type_name}: {uuid_path}")
 
@@ -196,20 +216,29 @@ class TypeView:
             meta = json.load(f)
 
         self.record_count: int = int(meta["recordCount"])
-        self.block_size: int = int(meta["blockSize"])
-        self.int_bytes: int = int(meta["intBytes"])
-        self.endianness: str = meta["endianness"]
-        self.missing: int = int(meta["missingSentinel"])
+        self.endianness: str = meta.get("endianness", "LE")
+        if self.endianness != "LE":
+            raise ValueError("Currently only little-endian is supported")
+
+        # Layout: "grid" (default / legacy) vs "dense"
+        self.layout: str = meta.get("layout", "grid")
+
+        if self.layout == "grid":
+            self._get_attr_index_impl = self._get_attr_index_grid
+            self._iter_records_impl   = self._iter_records_grid
+            self._get_all_attrs_impl  = self._get_all_non_missing_attrs_grid
+        else:  # dense
+            self._get_attr_index_impl = self._get_attr_index_dense
+            self._iter_records_impl   = self._iter_records_dense
+            self._get_all_attrs_impl  = self._get_all_non_missing_attrs_dense
 
         raw_attrs = meta["attributes"]
 
-        # attributes = list of technical names (columns in bin file)
+        # attributes & attr_meta as before...
         self.attributes: List[str] = []
-        # attr_meta = extra info per technical name
         self.attr_meta: Dict[str, Dict[str, Optional[str]]] = {}
 
         if raw_attrs and isinstance(raw_attrs[0], list):
-            # NEW format: [technicalName, humanName, description]
             for triple in raw_attrs:
                 technical = triple[0] if len(triple) > 0 else None
                 human     = triple[1] if len(triple) > 1 else None
@@ -221,9 +250,7 @@ class TypeView:
                     "name": human,
                     "description": desc,
                 }
-
         elif raw_attrs and isinstance(raw_attrs[0], dict):
-            # Future-proof: object format with keys like technicalName/name/description
             for item in raw_attrs:
                 technical = item.get("technicalName")
                 if not technical:
@@ -235,29 +262,62 @@ class TypeView:
                     "name": human,
                     "description": desc,
                 }
-
         else:
-            # OLD format: just ["Gen_Profil_nazov", "EA_Profil_AS_charakter_as", ...]
             self.attributes = list(raw_attrs)
             self.attr_meta = {
                 name: {"name": None, "description": None}
                 for name in self.attributes
             }
 
-        # Map technical name -> column index
         self.attr_index: Dict[str, int] = {
             name: idx for idx, name in enumerate(self.attributes)
         }
 
-        if self.int_bytes != 4:
-            raise ValueError("Currently only intBytes=4 is supported")
-        if self.endianness != "LE":
-            raise ValueError("Currently only little-endian is supported")
-
-        self._bin_path = bin_path
         self._uuids_path = uuid_path
-        self._i32 = INT32
+        self._i32 = INT32_LE
 
+        if self.layout == "grid":
+            # Old fixed-size block layout
+            bin_path = nodes_dir / f"{type_name}.bin"
+            if not bin_path.is_file():
+                raise FileNotFoundError(f"Missing bin for type {type_name}: {bin_path}")
+
+            self._bin_path = bin_path
+            self.block_size: int = int(meta["blockSize"])
+            self.int_bytes: int = int(meta["intBytes"])
+            self.missing: int = int(meta["missingSentinel"])
+
+            if self.int_bytes != GRID_INT_BYTES:
+                raise ValueError(
+                    f"Currently only intBytes={GRID_INT_BYTES} is supported for grid layout"
+                )
+
+        elif self.layout == "dense":
+            # New dense layout: rows.bin + rows.offsets.bin
+            rows_file = meta.get("rowsFile", f"{type_name}.rows.bin")
+            offs_file = meta.get("rowOffsetsFile", f"{type_name}.rows.offsets.bin")
+
+            self._rows_path = nodes_dir / rows_file
+            self._row_offsets_path = nodes_dir / offs_file
+
+            if not self._rows_path.is_file():
+                raise FileNotFoundError(f"Missing rows.bin for type {type_name}: {self._rows_path}")
+            if not self._row_offsets_path.is_file():
+                raise FileNotFoundError(f"Missing rows.offsets.bin for type {type_name}: {self._row_offsets_path}")
+
+            self.attr_index_bytes: int = int(meta.get("attrIndexBytes", ATTR_INDEX_BYTES))
+            self.dict_index_bytes: int = int(meta.get("dictIndexBytes", DICT_INDEX_BYTES))
+
+            if self.attr_index_bytes != ATTR_INDEX_BYTES:
+                raise ValueError(
+                    f"Dense layout currently only supports attrIndexBytes={ATTR_INDEX_BYTES}"
+                )
+            if self.dict_index_bytes != DICT_INDEX_BYTES:
+                raise ValueError(
+                    f"Dense layout currently only supports dictIndexBytes={DICT_INDEX_BYTES}"
+                )
+        else:
+            raise ValueError(f"Unknown node layout '{self.layout}' for type {type_name}")
 
     def list_attributes(self) -> List[str]:
         return self.attributes
@@ -268,6 +328,12 @@ class TypeView:
     def _open_uuids(self):
         return self._uuids_path.open("rb", buffering=0)
 
+    def _open_rows(self):
+        return self._rows_path.open("rb", buffering=0)
+
+    def _open_row_offsets(self):
+        return self._row_offsets_path.open("rb", buffering=0)
+
     # ---- UUID helpers ----
 
     def get_uuid(self, record_idx: int) -> str:
@@ -275,9 +341,9 @@ class TypeView:
             raise IndexError("record index out of range")
 
         with self._open_uuids() as f:
-            f.seek(record_idx * 16)
-            raw = f.read(16)
-            if len(raw) != 16:
+            f.seek(record_idx * UUID_BYTES)
+            raw = f.read(UUID_BYTES)
+            if len(raw) != UUID_BYTES:
                 raise IOError("Unexpected EOF in uuids.bin")
             return str(uuid.UUID(bytes=raw))
 
@@ -288,9 +354,9 @@ class TypeView:
         with self._open_uuids() as f:
             while lo <= hi:
                 mid = (lo + hi) // 2
-                f.seek(mid * 16)
-                raw = f.read(16)
-                if len(raw) != 16:
+                f.seek(mid * UUID_BYTES)
+                raw = f.read(UUID_BYTES)
+                if len(raw) != UUID_BYTES:
                     break
 
                 if raw == target:
@@ -307,26 +373,81 @@ class TypeView:
     def _read_int_at(self, f, record_idx: int, col_idx: int) -> int:
         if record_idx < 0 or record_idx >= self.record_count:
             raise IndexError("record index out of range")
-        if col_idx < 0 or col_idx >= self.block_size:
+        if col_idx < 0 or col_idx >= getattr(self, "block_size", 0):
             raise IndexError("column index out of range")
 
         offset = (record_idx * self.block_size + col_idx) * self.int_bytes
         f.seek(offset)
-        raw = f.read(4)
-        if len(raw) != 4:
+        raw = f.read(self.int_bytes)
+        if len(raw) != self.int_bytes:
             raise IOError("Unexpected EOF in bin file")
         (val,) = self._i32.unpack(raw)
         return val
 
-    def get_attr_index(self, record_idx: int, attr_name: str) -> Optional[int]:
-        col = self.attr_index.get(attr_name)
-        if col is None:
-            raise KeyError(f"Attribute not found for type {self.type_name}: {attr_name}")
+    def _read_row_offset(self, f_off, idx: int) -> int:
+        if idx < 0 or idx > self.record_count:
+            raise IndexError("row offset index out of range")
+        f_off.seek(idx * ROW_OFFSET_BYTES)
+        raw = f_off.read(ROW_OFFSET_BYTES)
+        if len(raw) != ROW_OFFSET_BYTES:
+            raise IOError("Unexpected EOF in rows.offsets.bin")
+        (off,) = U64_LE.unpack(raw)
+        return off
+
+    def _get_dense_dict_index(self, record_idx: int, col_idx: int) -> Optional[int]:
+        """
+        For dense layout: return dictIndex for (record_idx, col_idx), or None if missing.
+        """
+        if record_idx < 0 or record_idx >= self.record_count:
+            raise IndexError("record index out of range")
+
+        with self._open_row_offsets() as f_off, self._open_rows() as f_rows:
+            start = self._read_row_offset(f_off, record_idx)
+            end   = self._read_row_offset(f_off, record_idx + 1)
+            length = end - start
+            if length < 0:
+                raise ValueError(f"Negative row length for record {record_idx}")
+
+            f_rows.seek(start)
+            raw = f_rows.read(length)
+            if len(raw) != length:
+                raise IOError("Unexpected EOF in rows.bin")
+
+            (k,) = U16_LE.unpack_from(raw, 0)
+            pos = U16_LE.size  # after k
+
+            lo, hi = 0, k - 1
+            pair_size = self.attr_index_bytes + self.dict_index_bytes
+
+            while lo <= hi:
+                mid = (lo + hi) // 2
+                off = pos + mid * pair_size
+                attr_i = U16_LE.unpack_from(raw, off)[0]  # size ATTR_INDEX_BYTES
+                if attr_i == col_idx:
+                    dict_idx = INT32_LE.unpack_from(raw, off + self.attr_index_bytes)[0]
+                    return dict_idx
+                elif attr_i < col_idx:
+                    lo = mid + 1
+                else:
+                    hi = mid - 1
+
+            return None
+
+    def _get_attr_index_grid(self, record_idx: int, col_idx: int) -> Optional[int]:
         with self._open_bin() as f:
-            idx = self._read_int_at(f, record_idx, col)
+            idx = self._read_int_at(f, record_idx, col_idx)
         if idx == self.missing:
             return None
         return idx
+
+    def get_attr_index(self, record_idx: int, attr_name: str) -> Optional[int]:
+        col = self.attr_index.get(attr_name)
+        if col is None:
+            raise KeyError(f"Unknown attribute for type {self.type_name}: {attr_name}")
+        return self._get_attr_index_impl(record_idx, col)
+
+    def _get_attr_index_dense(self, record_idx: int, col_idx: int) -> Optional[int]:
+        return self._get_dense_dict_index(record_idx, col_idx)
 
     def get_attr_value(self, record_idx: int, attr_name: str) -> Any:
         dict_idx = self.get_attr_index(record_idx, attr_name)
@@ -334,7 +455,7 @@ class TypeView:
             return None
         return self.global_dict.get(dict_idx)
 
-    def get_all_non_missing_attrs(self, record_idx: int) -> Dict[str, Any]:
+    def _get_all_non_missing_attrs_grid(self, record_idx: int) -> Dict[str, Any]:
         res: Dict[str, Any] = {}
         with self._open_bin() as f:
             offset = record_idx * self.block_size * self.int_bytes
@@ -350,54 +471,139 @@ class TypeView:
                 name = self.attributes[col]
                 res[name] = self.global_dict.get(idx)
         return res
+            
+    def _get_all_non_missing_attrs_dense(self, record_idx: int) -> Dict[str, Any]:
+        res: Dict[str, Any] = {}
+        with self._open_row_offsets() as f_off, self._open_rows() as f_rows:
+            start = self._read_row_offset(f_off, record_idx)
+            end   = self._read_row_offset(f_off, record_idx + 1)
+            length = end - start
+            if length < 0:
+                raise ValueError(f"Negative row length for record {record_idx}")
+
+            f_rows.seek(start)
+            raw = f_rows.read(length)
+            if len(raw) != length:
+                raise IOError("Unexpected EOF in rows.bin")
+
+            (k,) = U16_LE.unpack_from(raw, 0)
+            pos = U16_LE.size
+            pair_size = self.attr_index_bytes + self.dict_index_bytes
+
+            for _ in range(k):
+                attr_i = U16_LE.unpack_from(raw, pos)[0]
+                dict_i = INT32_LE.unpack_from(raw, pos + self.attr_index_bytes)[0]
+                pos += pair_size
+
+                name = self.attributes[attr_i]
+                res[name] = self.global_dict.get(dict_i)
+
+        return res
+
+    def get_all_non_missing_attrs(self, record_idx: int) -> Dict[str, Any]:
+        return self._get_all_attrs_impl(record_idx)
 
     # ---- sequential iteration ----
 
-    def iter_records(
+    def _iter_records_grid(
         self,
         attr_names: Optional[Iterable[str]] = None,
     ) -> Iterator[Tuple[str, Dict[str, Any]]]:
-        """
-        Yield (uuid_string, attrs_dict) for each record.
-
-        If attr_names is provided, only those attributes are resolved
-        (much cheaper than resolving all).
-        """
         if attr_names is None:
-            cols = list(range(self.block_size))
-            col_to_name = {i: self.attributes[i] for i in cols}
+            wanted_cols: Optional[set[int]] = None
         else:
-            cols = []
-            col_to_name = {}
+            wanted_cols = set()
             for name in attr_names:
                 col = self.attr_index.get(name)
                 if col is None:
                     raise KeyError(f"Attribute not found for type {self.type_name}: {name}")
-                cols.append(col)
-                col_to_name[col] = name
+                wanted_cols.add(col)
 
-        block_bytes = self.block_size * self.int_bytes
+        # UUIDs are always the same
+        with self._open_uuids() as f_uuid:
+            block_bytes = self.block_size * self.int_bytes
+            with self._open_bin() as f_bin:
+                for _ in range(self.record_count):
+                    raw_uuid = f_uuid.read(UUID_BYTES)
+                    if len(raw_uuid) != UUID_BYTES:
+                        raise IOError("Unexpected EOF in uuids.bin")
+                    uuid_str = str(uuid.UUID(bytes=raw_uuid))
 
-        with self._open_bin() as f_bin, self._open_uuids() as f_uuid:
-            for _ in range(self.record_count):
-                raw_uuid = f_uuid.read(16)
-                if len(raw_uuid) != 16:
-                    raise IOError("Unexpected EOF in uuids.bin")
-                uuid_str = str(uuid.UUID(bytes=raw_uuid))
+                    raw_block = f_bin.read(block_bytes)
+                    if len(raw_block) != block_bytes:
+                        raise IOError("Unexpected EOF in bin file")
 
-                raw_block = f_bin.read(block_bytes)
-                if len(raw_block) != block_bytes:
-                    raise IOError("Unexpected EOF in bin file")
+                    attrs: Dict[str, Any] = {}
 
-                attrs: Dict[str, Any] = {}
-                for col in cols:
-                    (idx,) = self._i32.unpack_from(raw_block, col * self.int_bytes)
-                    if idx == self.missing:
-                        continue
-                    name = col_to_name[col]
-                    attrs[name] = self.global_dict.get(idx)
+                    if wanted_cols is None:
+                        cols = range(self.block_size)
+                    else:
+                        cols = wanted_cols
 
-                yield uuid_str, attrs
+                    for col in cols:
+                        (idx,) = self._i32.unpack_from(raw_block, col * self.int_bytes)
+                        if idx == self.missing:
+                            continue
+                        name = self.attributes[col]
+                        attrs[name] = self.global_dict.get(idx)
+
+                    yield uuid_str, attrs
+
+    def _iter_records_dense(
+            self,
+            attr_names: Optional[Iterable[str]] = None,
+        ) -> Iterator[Tuple[str, Dict[str, Any]]]:
+            if attr_names is None:
+                wanted_cols: Optional[set[int]] = None
+            else:
+                wanted_cols = set()
+                for name in attr_names:
+                    col = self.attr_index.get(name)
+                    if col is None:
+                        raise KeyError(f"Attribute not found for type {self.type_name}: {name}")
+                    wanted_cols.add(col)
+
+            # UUIDs are always the same
+            with self._open_uuids() as f_uuid:
+                with self._open_row_offsets() as f_off, self._open_rows() as f_rows:
+                    for record_idx in range(self.record_count):
+                        raw_uuid = f_uuid.read(UUID_BYTES)
+                        if len(raw_uuid) != UUID_BYTES:
+                            raise IOError("Unexpected EOF in uuids.bin")
+                        uuid_str = str(uuid.UUID(bytes=raw_uuid))
+
+                        start = self._read_row_offset(f_off, record_idx)
+                        end   = self._read_row_offset(f_off, record_idx + 1)
+                        length = end - start
+                        if length < 0:
+                            raise ValueError(f"Negative row length for record {record_idx}")
+
+                        f_rows.seek(start)
+                        raw = f_rows.read(length)
+                        if len(raw) != length:
+                            raise IOError("Unexpected EOF in rows.bin")
+
+                        (k,) = U16_LE.unpack_from(raw, 0)
+                        pos = U16_LE.size
+                        pair_size = self.attr_index_bytes + self.dict_index_bytes
+
+                        attrs: Dict[str, Any] = {}
+
+                        for _ in range(k):
+                            attr_i = U16_LE.unpack_from(raw, pos)[0]
+                            dict_i = INT32_LE.unpack_from(raw, pos + self.attr_index_bytes)[0]
+                            pos += pair_size
+
+                            if wanted_cols is not None and attr_i not in wanted_cols:
+                                continue
+
+                            name = self.attributes[attr_i]
+                            attrs[name] = self.global_dict.get(dict_i)
+
+                        yield uuid_str, attrs
+
+    def iter_records(self, attr_names: Optional[Iterable[str]] = None):
+        yield from self._iter_records_impl(attr_names)
 
 # ---------------------------------------------------------------------
 # UUID -> type mapping
@@ -445,14 +651,7 @@ class UuidTypeIndex:
             self.code_to_type[code] = tname
             self.type_to_code[tname] = code
 
-        if self.bytes_per_code == 1:
-            self._struct = struct.Struct("<B")
-        elif self.bytes_per_code == 2:
-            self._struct = struct.Struct("<H")
-        elif self.bytes_per_code == 4:
-            self._struct = struct.Struct("<I")
-        else:
-            raise ValueError(f"Unsupported bytesPerCode: {self.bytes_per_code}")
+        self._struct = get_uint_le_struct(self.bytes_per_code)
 
         self._types_f = types_path.open("rb", buffering=0)
 
@@ -506,8 +705,9 @@ class RelationFile:
         self.name: Optional[str] = meta.get("name")
         self.description: Optional[str] = meta.get("description")
 
-        if meta.get("intBytes", 4) != 4:
-            raise ValueError("RelationFile currently only supports int32 entries")
+        if meta.get("intBytes", REL_INT_BYTES) != REL_INT_BYTES:
+            raise ValueError(f"RelationFile currently only supports {REL_INT_BYTES}-byte int entries")
+
         if meta.get("endianness", "LE") != "LE":
             raise ValueError("RelationFile currently only supports little-endian")
 
@@ -526,13 +726,13 @@ class RelationFile:
         if idx < 0 or idx >= self.record_count:
             raise IndexError("relation record index out of range")
 
-        offset = idx * 8  # 8 bytes per pair: 2 × int32
+        offset = idx * REL_PAIR_BYTES  # 2 × REL_INT_BYTES
         f.seek(offset)
-        raw = f.read(8)
-        if len(raw) != 8:
+        raw = f.read(REL_PAIR_BYTES)
+        if len(raw) != REL_PAIR_BYTES:
             raise IOError("Unexpected EOF in relation .bin")
-        first = INT32.unpack_from(raw, 0)[0]
-        second = INT32.unpack_from(raw, 4)[0]
+        first = INT32_LE.unpack_from(raw, 0)[0]
+        second = INT32_LE.unpack_from(raw, REL_INT_BYTES)[0]
         return first, second
 
     def _lower_bound_first(self, f, key: int) -> int:

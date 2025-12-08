@@ -33,9 +33,18 @@ from config_env import (
 # CONSTANTS
 # ----------------------------------------------------------------------
 
-MISSING_SENTINEL = -1
-INT32 = struct.Struct("<i")
-U64   = struct.Struct("<Q")
+from bin_formats import (
+    UUID_BYTES,
+    ATTR_INDEX_BYTES,
+    DICT_INDEX_BYTES,
+    ROW_OFFSET_BYTES,
+    REL_INT_BYTES,
+    REL_PAIR_BYTES,
+    INT32_LE,
+    U16_LE,
+    U64_LE,
+    MISSING_SENTINEL
+)
 
 ALLOWED_META_ATTRS = [
     "owner",
@@ -43,7 +52,7 @@ ALLOWED_META_ATTRS = [
     "createdBy",
     "createdAt",
     "lastModifiedBy",
-    "lastModifiedAt",
+    "lastModifiedAt"
 ]
 
 # ----------------------------------------------------------------------
@@ -671,7 +680,7 @@ def write_global_dict(global_values: List[Any]) -> Dict[str, int]:
 
     with offsets_path.open("wb") as f_off:
         for off in offsets:
-            f_off.write(U64.pack(off))
+            f_off.write(U64_LE.pack(off))
 
     offsets_size = offsets_path.stat().st_size
 
@@ -853,7 +862,7 @@ def pack_node_type_streaming(
     int_bytes  = 4
 
     attr_index: Dict[str, int] = {name: idx for idx, name in enumerate(attr_order)}
-    pack_i32 = INT32.pack
+    pack_i32 = INT32_LE.pack
 
     seen_uuids_for_type: set[bytes] = set()
 
@@ -992,6 +1001,7 @@ def pack_node_type_streaming(
 
     meta = {
         "recordCount": total_records,
+        "layout": "grid",
         "blockSize": block_size,
         "intBytes": int_bytes,
         "endianness": "LE",
@@ -1428,7 +1438,7 @@ def pack_relations_from_uuid_pairs(
     pairs_root = TMP_DIR / "rels_pairs"
 
     stats_list: List[Dict[str, Any]] = []
-    pack_i32 = INT32.pack
+    pack_i32 = INT32_LE.pack
 
     # reltype -> {"srcTypes": set(str), "tgtTypes": set(str)}
     rel_endpoints: Dict[str, Dict[str, Set[str]]] = {}
@@ -1841,6 +1851,7 @@ def fetch_all() -> None:
         filters={
             "onlyValid": not INCLUDE_INVALID,
             "includedTypes": None,
+            "nodeLayout": "grid"
         },
     )
 
