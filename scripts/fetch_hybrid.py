@@ -1181,6 +1181,7 @@ def convert_node_type_grid_to_dense(type_name: str, stats: Dict[str, Any]) -> Di
     with meta_path.open("r", encoding="utf-8") as f:
         meta = json.load(f)
 
+    row_header_bytes = U16_LE.size
     record_count = int(meta.get("recordCount", stats.get("recordCount", 0)))
     block_size   = int(meta.get("blockSize", stats.get("blockSize", 0)))
     int_bytes    = int(meta.get("intBytes", 4))
