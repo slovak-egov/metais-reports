@@ -16,6 +16,7 @@ from bin_formats import (
     ATTR_INDEX_BYTES,
     DICT_INDEX_BYTES,
     ROW_OFFSET_BYTES,
+    GRID_INT_BYTES,
     REL_INT_BYTES,
     REL_PAIR_BYTES,
     INT32_LE,
