@@ -14,6 +14,27 @@
 const TEXT_DECODER = new TextDecoder('utf-8');
 
 // ---------------------------------------------------------
+// Binary format constants (mirrors bin_formats.py)
+// ---------------------------------------------------------
+
+const TYPE_CODE_BYTES   = 2;
+
+// UUIDs
+const UUID_BYTES        = 16;
+
+// Dense row layout
+const ATTR_INDEX_BYTES  = 2;
+const DICT_INDEX_BYTES  = 4;
+const ROW_OFFSET_BYTES  = 8;
+
+// Grid layout
+const GRID_INT_BYTES    = 4;
+
+// Relations
+const REL_INT_BYTES     = 4;
+const REL_PAIR_BYTES    = 2 * REL_INT_BYTES;
+
+// ---------------------------------------------------------
 // Small fetch helpers
 // ---------------------------------------------------------
 
@@ -35,19 +56,23 @@ async function fetchArrayBuffer(url) {
 
 class StreamingGlobalDictJS {
   constructor(valuesBuffer, offsetsBuffer, meta) {
-    this.valueCount = Number(meta.valueCount);
-    this.valuesBuffer = valuesBuffer;
+    this.valueCount    = Number(meta.valueCount);
+    this.valuesBuffer  = valuesBuffer;
     this.offsetsBuffer = offsetsBuffer;
-    this.offsetView = new DataView(offsetsBuffer);
+    this.offsetView    = new DataView(offsetsBuffer);
+
+    // Light cache of decoded JSON values
+    this._cache        = new Map();   // idx -> value
+    this._maxCacheSize = 50000;       // tweak if needed
   }
 
   _readOffset(idx) {
     if (idx < 0 || idx > this.valueCount) {
       throw new RangeError(`offset index out of range: ${idx}`);
     }
-    // uint64 little endian → we assume offsets fit into JS Number
-    const lo = this.offsetView.getUint32(idx * 8, true);
-    const hi = this.offsetView.getUint32(idx * 8 + 4, true);
+    const base = idx * ROW_OFFSET_BYTES;       // 8 bytes = uint64 LE
+    const lo   = this.offsetView.getUint32(base, true);
+    const hi   = this.offsetView.getUint32(base + 4, true);
     return hi * 2 ** 32 + lo;
   }
 
@@ -55,16 +80,31 @@ class StreamingGlobalDictJS {
     if (idx < 0 || idx >= this.valueCount) {
       throw new RangeError(`dict index out of range: ${idx}`);
     }
-    const start = this._readOffset(idx);
-    const end   = this._readOffset(idx + 1);
+
+    // cache hit
+    if (this._cache.has(idx)) {
+      return this._cache.get(idx);
+    }
+
+    const start  = this._readOffset(idx);
+    const end    = this._readOffset(idx + 1);
     const length = end - start;
     if (length < 0) {
       throw new Error(`Negative length for idx ${idx}: ${length}`);
     }
 
     const bytes = new Uint8Array(this.valuesBuffer, start, length);
-    const s = TEXT_DECODER.decode(bytes);
-    return JSON.parse(s);
+    const s     = TEXT_DECODER.decode(bytes);
+    const value = JSON.parse(s);
+
+    // light LRU-ish eviction
+    if (this._cache.size >= this._maxCacheSize) {
+      const firstKey = this._cache.keys().next().value;
+      this._cache.delete(firstKey);
+    }
+    this._cache.set(idx, value);
+
+    return value;
   }
 }
 
@@ -75,9 +115,9 @@ class StreamingGlobalDictJS {
 class UuidIndexJS {
   constructor(uuidsBuffer, meta) {
     this.recordCount = Number(meta.recordCount);
-    this.uuidBytes   = Number(meta.uuidBytes || 16);
-    if (this.uuidBytes !== 16) {
-      throw new Error('UuidIndexJS only supports 16-byte UUIDs');
+    this.uuidBytes   = Number(meta.uuidBytes || UUID_BYTES);
+    if (this.uuidBytes !== UUID_BYTES) {
+      throw new Error(`UuidIndexJS only supports ${UUID_BYTES}-byte UUIDs`);
     }
     this.buffer = uuidsBuffer;
     this.view   = new DataView(uuidsBuffer);
@@ -207,16 +247,15 @@ class TypeViewJS {
     this.globalDict = globalDict;
 
     this.recordCount = Number(meta.recordCount);
-    this.blockSize   = Number(meta.blockSize);
-    this.intBytes    = Number(meta.intBytes);
     this.endianness  = meta.endianness || 'LE';
-    this.missing     = Number(meta.missingSentinel);
-
-    if (this.intBytes !== 4 || this.endianness !== 'LE') {
-      throw new Error(`TypeViewJS(${typeName}) only supports intBytes=4, LE`);
+    if (this.endianness !== 'LE') {
+      throw new Error('TypeViewJS only supports little-endian (LE)');
     }
 
-    // Parse attributes like Python
+    // Layout: "grid" (default / legacy) vs "dense" (new)
+    this.layout = meta.layout || 'grid';
+
+    // ---------- attributes + metadata ----------
     const rawAttrs = meta.attributes || [];
     this.attributes = [];
     this.attrMeta   = {};
@@ -253,23 +292,77 @@ class TypeViewJS {
 
     this.attrIndex = new Map(this.attributes.map((name, idx) => [name, idx]));
 
-    this._binUrl   = `${baseUrl}/nodes/${typeName}.bin`;
-    this._uuidsUrl = `${baseUrl}/nodes/${typeName}.uuids.bin`;
-
-    this._binBuffer   = null;
-    this._binView     = null;
+    // UUIDs (shared for both layouts)
+    this._uuidsUrl    = `${baseUrl}/nodes/${typeName}.uuids.bin`;
     this._uuidsBuffer = null;
     this._uuidsView   = null;
+
+    // Layout-specific fields
+    if (this.layout === 'grid') {
+      // Old fixed-size block layout
+      this.blockSize = Number(meta.blockSize);
+      this.intBytes  = Number(meta.intBytes);
+      this.missing   = Number(meta.missingSentinel);
+
+      if (this.intBytes !== GRID_INT_BYTES) {
+        throw new Error(
+          `TypeViewJS(${typeName}) grid layout only supports intBytes=${GRID_INT_BYTES}`
+        );
+      }
+
+      this._binUrl     = `${baseUrl}/nodes/${typeName}.bin`;
+      this._binBuffer  = null;
+      this._binView    = null;
+    } else if (this.layout === 'dense') {
+      // New dense layout
+      this.attrIndexBytes = Number(meta.attrIndexBytes || ATTR_INDEX_BYTES);
+      this.dictIndexBytes = Number(meta.dictIndexBytes || DICT_INDEX_BYTES);
+
+      if (this.attrIndexBytes !== ATTR_INDEX_BYTES) {
+        throw new Error(
+          `Dense layout currently only supports attrIndexBytes=${ATTR_INDEX_BYTES}`
+        );
+      }
+      if (this.dictIndexBytes !== DICT_INDEX_BYTES) {
+        throw new Error(
+          `Dense layout currently only supports dictIndexBytes=${DICT_INDEX_BYTES}`
+        );
+      }
+
+      const rowsFile = meta.rowsFile       || `${typeName}.rows.bin`;
+      const offsFile = meta.rowOffsetsFile || `${typeName}.rows.offsets.bin`;
+
+      this._rowsUrl        = `${baseUrl}/nodes/${rowsFile}`;
+      this._rowOffsetsUrl  = `${baseUrl}/nodes/${offsFile}`;
+      this._rowsBuffer     = null;
+      this._rowsView       = null;
+      this._rowOffsetsBuf  = null;
+      this._rowOffsetsView = null;
+    } else {
+      throw new Error(`Unknown node layout '${this.layout}' for type ${typeName}`);
+    }
   }
 
   async _ensureLoaded() {
-    if (!this._binBuffer) {
-      this._binBuffer = await fetchArrayBuffer(this._binUrl);
-      this._binView   = new DataView(this._binBuffer);
-    }
     if (!this._uuidsBuffer) {
       this._uuidsBuffer = await fetchArrayBuffer(this._uuidsUrl);
       this._uuidsView   = new DataView(this._uuidsBuffer);
+    }
+
+    if (this.layout === 'grid') {
+      if (!this._binBuffer) {
+        this._binBuffer = await fetchArrayBuffer(this._binUrl);
+        this._binView   = new DataView(this._binBuffer);
+      }
+    } else if (this.layout === 'dense') {
+      if (!this._rowsBuffer) {
+        this._rowsBuffer = await fetchArrayBuffer(this._rowsUrl);
+        this._rowsView   = new DataView(this._rowsBuffer);
+      }
+      if (!this._rowOffsetsBuf) {
+        this._rowOffsetsBuf  = await fetchArrayBuffer(this._rowOffsetsUrl);
+        this._rowOffsetsView = new DataView(this._rowOffsetsBuf);
+      }
     }
   }
 
@@ -284,11 +377,11 @@ class TypeViewJS {
     if (recordIdx < 0 || recordIdx >= this.recordCount) {
       throw new RangeError('record index out of range');
     }
-    const start = recordIdx * 16;
-    const bytes = new Uint8Array(this._uuidsBuffer, start, 16);
-    // Reuse logic from UuidIndexJS
+    const start = recordIdx * UUID_BYTES;
+    const bytes = new Uint8Array(this._uuidsBuffer, start, UUID_BYTES);
+
     let hex = '';
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < UUID_BYTES; i++) {
       hex += bytes[i].toString(16).padStart(2, '0');
     }
     return (
@@ -304,8 +397,8 @@ class TypeViewJS {
     await this._ensureLoaded();
     const normalized = uuidStr.replace(/-/g, '').toLowerCase();
     if (normalized.length !== 32) return null;
-    const target = new Uint8Array(16);
-    for (let i = 0; i < 16; i++) {
+    const target = new Uint8Array(UUID_BYTES);
+    for (let i = 0; i < UUID_BYTES; i++) {
       target[i] = parseInt(normalized.slice(i * 2, i * 2 + 2), 16);
     }
 
@@ -313,12 +406,12 @@ class TypeViewJS {
     let hi = this.recordCount - 1;
 
     while (lo <= hi) {
-      const mid = (lo + hi) >> 1;
-      const start = mid * 16;
-      const bytes = new Uint8Array(this._uuidsBuffer, start, 16);
+      const mid   = (lo + hi) >> 1;
+      const start = mid * UUID_BYTES;
+      const bytes = new Uint8Array(this._uuidsBuffer, start, UUID_BYTES);
 
       let cmp = 0;
-      for (let i = 0; i < 16; i++) {
+      for (let i = 0; i < UUID_BYTES; i++) {
         const a = bytes[i];
         const b = target[i];
         if (a < b) { cmp = -1; break; }
@@ -333,18 +426,76 @@ class TypeViewJS {
     return null;
   }
 
-  // ---- attribute helpers ----
+  // -----------------------------------------------------
+  // Layout-specific helpers
+  // -----------------------------------------------------
 
-  _readIntAt(recordIdx, colIdx) {
+  // grid: read int at (recordIdx, colIdx)
+  _readGridIntAt(recordIdx, colIdx) {
     if (recordIdx < 0 || recordIdx >= this.recordCount) {
       throw new RangeError('record index out of range');
     }
     if (colIdx < 0 || colIdx >= this.blockSize) {
       throw new RangeError('column index out of range');
     }
-    const offset = (recordIdx * this.blockSize + colIdx) * this.intBytes;
+    const offset = (recordIdx * this.blockSize + colIdx) * GRID_INT_BYTES;
     return this._binView.getInt32(offset, true);
   }
+
+  // dense: read rowOffset[i]
+  _readRowOffset(idx) {
+    if (idx < 0 || idx > this.recordCount) {
+      throw new RangeError('row offset index out of range');
+    }
+    const base = idx * ROW_OFFSET_BYTES;
+    const lo   = this._rowOffsetsView.getUint32(base, true);
+    const hi   = this._rowOffsetsView.getUint32(base + 4, true);
+    return hi * 2 ** 32 + lo;
+  }
+
+  // dense: get dictIndex for (recordIdx, colIdx), or null
+  _getDenseDictIndex(recordIdx, colIdx) {
+    if (recordIdx < 0 || recordIdx >= this.recordCount) {
+      throw new RangeError('record index out of range');
+    }
+
+    const start  = this._readRowOffset(recordIdx);
+    const end    = this._readRowOffset(recordIdx + 1);
+    const length = end - start;
+    if (length < 0) {
+      throw new Error(`Negative row length for record ${recordIdx}`);
+    }
+
+    const rowBytes = new Uint8Array(this._rowsBuffer, start, length);
+    const rowView  = new DataView(rowBytes.buffer, rowBytes.byteOffset, rowBytes.byteLength);
+
+    const k = rowView.getUint16(0, true);  // number of pairs
+    let pos = 2;                           // after k
+    const pairSize = this.attrIndexBytes + this.dictIndexBytes;
+
+    // binary search over sorted attrIndex
+    let lo = 0;
+    let hi = k - 1;
+
+    while (lo <= hi) {
+      const mid = (lo + hi) >> 1;
+      const off = pos + mid * pairSize;
+      const attrIdx = rowView.getUint16(off, true);
+      if (attrIdx === colIdx) {
+        const dictIdx = rowView.getInt32(off + this.attrIndexBytes, true);
+        return dictIdx;
+      } else if (attrIdx < colIdx) {
+        lo = mid + 1;
+      } else {
+        hi = mid - 1;
+      }
+    }
+    return null;
+  }
+
+  // -----------------------------------------------------
+  // Public attribute helpers (layout-agnostic)
+  // -----------------------------------------------------
 
   async getAttrIndex(recordIdx, attrName) {
     await this._ensureLoaded();
@@ -352,8 +503,15 @@ class TypeViewJS {
     if (col == null) {
       throw new Error(`Attribute not found for type ${this.typeName}: ${attrName}`);
     }
-    const val = this._readIntAt(recordIdx, col);
-    return val === this.missing ? null : val;
+
+    if (this.layout === 'grid') {
+      const val = this._readGridIntAt(recordIdx, col);
+      return val === this.missing ? null : val;
+    } else {
+      // dense
+      const dictIdx = this._getDenseDictIndex(recordIdx, col);
+      return dictIdx == null ? null : dictIdx;
+    }
   }
 
   async getAttrValue(recordIdx, attrName) {
@@ -365,31 +523,62 @@ class TypeViewJS {
   async getAllNonMissingAttrs(recordIdx) {
     await this._ensureLoaded();
     const res = {};
-    const blockBytes = this.blockSize * this.intBytes;
-    const offset = recordIdx * blockBytes;
-    for (let col = 0; col < this.blockSize; col++) {
-      const val = this._binView.getInt32(offset + col * this.intBytes, true);
-      if (val === this.missing) continue;
-      const name = this.attributes[col];
-      res[name] = this.globalDict.get(val);
+
+    if (this.layout === 'grid') {
+      const blockBytes = this.blockSize * GRID_INT_BYTES;
+      const offset     = recordIdx * blockBytes;
+      for (let col = 0; col < this.blockSize; col++) {
+        const val = this._binView.getInt32(offset + col * GRID_INT_BYTES, true);
+        if (val === this.missing) continue;
+        const name = this.attributes[col];
+        res[name] = this.globalDict.get(val);
+      }
+    } else {
+      // dense
+      const start  = this._readRowOffset(recordIdx);
+      const end    = this._readRowOffset(recordIdx + 1);
+      const length = end - start;
+      if (length < 0) {
+        throw new Error(`Negative row length for record ${recordIdx}`);
+      }
+
+      const rowBytes = new Uint8Array(this._rowsBuffer, start, length);
+      const rowView  = new DataView(rowBytes.buffer, rowBytes.byteOffset, rowBytes.byteLength);
+
+      const k = rowView.getUint16(0, true);
+      let pos = 2;
+      const pairSize = this.attrIndexBytes + this.dictIndexBytes;
+
+      for (let i = 0; i < k; i++) {
+        const attrIdx = rowView.getUint16(pos, true);
+        const dictIdx = rowView.getInt32(pos + this.attrIndexBytes, true);
+        pos += pairSize;
+
+        const name = this.attributes[attrIdx];
+        res[name]  = this.globalDict.get(dictIdx);
+      }
     }
+
     return res;
   }
 
-  // ---- sequential iteration ----
+  // -----------------------------------------------------
+  // Sequential iteration
+  // -----------------------------------------------------
 
   async *iterRecords(attrNames = null) {
     await this._ensureLoaded();
 
+    // Precompute which columns we want (for both layouts)
     let cols, colToName;
     if (attrNames == null) {
-      cols = [...Array(this.blockSize).keys()];
+      cols      = [...this.attributes.keys()].map(i => i);
       colToName = {};
-      for (let i = 0; i < this.blockSize; i++) {
+      for (let i = 0; i < this.attributes.length; i++) {
         colToName[i] = this.attributes[i];
       }
     } else {
-      cols = [];
+      cols      = [];
       colToName = {};
       for (const name of attrNames) {
         const col = this.attrIndex.get(name);
@@ -401,34 +590,85 @@ class TypeViewJS {
       }
     }
 
-    const blockBytes = this.blockSize * this.intBytes;
+    if (this.layout === 'grid') {
+      const blockBytes = this.blockSize * GRID_INT_BYTES;
 
-    for (let idx = 0; idx < this.recordCount; idx++) {
-      // UUID
-      const uuidStart = idx * 16;
-      const uuidBytes = new Uint8Array(this._uuidsBuffer, uuidStart, 16);
-      let hex = '';
-      for (let i = 0; i < 16; i++) {
-        hex += uuidBytes[i].toString(16).padStart(2, '0');
+      for (let idx = 0; idx < this.recordCount; idx++) {
+        // UUID
+        const uuidStart = idx * UUID_BYTES;
+        const uuidBytes = new Uint8Array(this._uuidsBuffer, uuidStart, UUID_BYTES);
+        let hex = '';
+        for (let i = 0; i < UUID_BYTES; i++) {
+          hex += uuidBytes[i].toString(16).padStart(2, '0');
+        }
+        const uuidStr =
+          hex.slice(0, 8) + '-' +
+          hex.slice(8, 12) + '-' +
+          hex.slice(12, 16) + '-' +
+          hex.slice(16, 20) + '-' +
+          hex.slice(20);
+
+        const rowOffset = idx * blockBytes;
+        const attrs = {};
+        for (const col of cols) {
+          const val = this._binView.getInt32(rowOffset + col * GRID_INT_BYTES, true);
+          if (val === this.missing) continue;
+          const name = colToName[col];
+          attrs[name] = this.globalDict.get(val);
+        }
+
+        yield [uuidStr, attrs];
       }
-      const uuidStr =
-        hex.slice(0, 8) + '-' +
-        hex.slice(8, 12) + '-' +
-        hex.slice(12, 16) + '-' +
-        hex.slice(16, 20) + '-' +
-        hex.slice(20);
+    } else {
+      // dense
+      const pairSize = this.attrIndexBytes + this.dictIndexBytes;
 
-      // Attributes
-      const rowOffset = idx * blockBytes;
-      const attrs = {};
-      for (const col of cols) {
-        const val = this._binView.getInt32(rowOffset + col * this.intBytes, true);
-        if (val === this.missing) continue;
-        const name = colToName[col];
-        attrs[name] = this.globalDict.get(val);
+      for (let idx = 0; idx < this.recordCount; idx++) {
+        // UUID
+        const uuidStart = idx * UUID_BYTES;
+        const uuidBytes = new Uint8Array(this._uuidsBuffer, uuidStart, UUID_BYTES);
+        let hex = '';
+        for (let i = 0; i < UUID_BYTES; i++) {
+          hex += uuidBytes[i].toString(16).padStart(2, '0');
+        }
+        const uuidStr =
+          hex.slice(0, 8) + '-' +
+          hex.slice(8, 12) + '-' +
+          hex.slice(12, 16) + '-' +
+          hex.slice(16, 20) + '-' +
+          hex.slice(20);
+
+        const start  = this._readRowOffset(idx);
+        const end    = this._readRowOffset(idx + 1);
+        const length = end - start;
+        if (length < 0) {
+          throw new Error(`Negative row length for record ${idx}`);
+        }
+
+        const rowBytes = new Uint8Array(this._rowsBuffer, start, length);
+        const rowView  = new DataView(rowBytes.buffer, rowBytes.byteOffset, rowBytes.byteLength);
+
+        const k = rowView.getUint16(0, true);
+        let pos = 2;
+
+        const wanted = attrNames == null ? null : new Set(cols);
+        const attrs = {};
+
+        for (let i = 0; i < k; i++) {
+          const attrIdx = rowView.getUint16(pos, true);
+          const dictIdx = rowView.getInt32(pos + this.attrIndexBytes, true);
+          pos += pairSize;
+
+          if (wanted && !wanted.has(attrIdx)) {
+            continue;
+          }
+
+          const name = this.attributes[attrIdx];
+          attrs[name] = this.globalDict.get(dictIdx);
+        }
+
+        yield [uuidStr, attrs];
       }
-
-      yield [uuidStr, attrs];
     }
   }
 }
@@ -442,15 +682,16 @@ class RelationFileJS {
     this.buffer = binBuffer;
     this.view   = new DataView(binBuffer);
 
-    this.recordCount = Number(meta.recordCount);
-    this.layout      = meta.layout || ['src', 'tgt'];
-    this.sortedBy    = meta.sortedBy || this.layout;
+    this.recordCount   = Number(meta.recordCount);
+    this.layout        = meta.layout || ['src', 'tgt'];
+    this.sortedBy      = meta.sortedBy || this.layout;
     this.technicalName = meta.technicalName || null;
-    this.name        = meta.name || null;
-    this.description = meta.description || null;
+    this.name          = meta.name || null;
+    this.description   = meta.description || null;
 
-    if (meta.intBytes !== 4 || meta.endianness !== 'LE') {
-      throw new Error('RelationFileJS only supports int32 LE');
+    const intBytes = meta.intBytes ?? REL_INT_BYTES;
+    if (intBytes !== REL_INT_BYTES || meta.endianness !== 'LE') {
+      throw new Error(`RelationFileJS only supports int${REL_INT_BYTES * 8} LE`);
     }
   }
 
@@ -458,9 +699,9 @@ class RelationFileJS {
     if (idx < 0 || idx >= this.recordCount) {
       throw new RangeError('relation record index out of range');
     }
-    const offset = idx * 8;
+    const offset = idx * REL_PAIR_BYTES;
     const first  = this.view.getInt32(offset, true);
-    const second = this.view.getInt32(offset + 4, true);
+    const second = this.view.getInt32(offset + REL_INT_BYTES, true);
     return [first, second];
   }
 
