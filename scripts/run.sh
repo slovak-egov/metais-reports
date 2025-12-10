@@ -5,6 +5,7 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 . "${SCRIPT_DIR}/lib.sh"
 
 # Defaults
+RUN_STDOUT=0
 OUTPUT_BASE="output"
 SCRIPT_PATH="groovy/script.groovy"
 PARAMS_PATH="params/params.json"
@@ -27,6 +28,7 @@ while (( "$#" )); do
     -k|--insecure) RUN_INSECURE=1; shift ;;
     --params)      PARAMS_PATH="${2:-}"; shift 2 ;;
     --no-csv)      RUN_CONVERT=0; shift ;;
+    --stdout)      RUN_STDOUT=1; shift ;;
     -h|-H|--help)  print_help; exit 0 ;;
     *) echo "Unknown option: $1"; echo "Try --help"; exit 1 ;;
   esac
@@ -62,9 +64,17 @@ if [[ -z "${OUTPUT_BASE:-}" || "$OUTPUT_BASE" == "output" ]]; then
   fi
 fi
 
-compute_outputs "$OUTPUT_BASE"
-OUT_JSON="${OUTDIR}/$(basename "$OUT_JSON")"
-OUT_CSV="${OUTDIR}/$(basename "$OUT_CSV")"
+# Decide how we handle outputs
+if [[ "$RUN_STDOUT" -eq 1 ]]; then
+  # Stream JSON to stdout, no CSV
+  OUT_JSON="-"
+  RUN_CONVERT=0
+else
+  # Classic file-based mode
+  compute_outputs "$OUTPUT_BASE"
+  OUT_JSON="${OUTDIR}/$(basename "$OUT_JSON")"
+  OUT_CSV="${OUTDIR}/$(basename "$OUT_CSV")"
+fi
 
 normalize_paging "$PAGE_SET" "$PAGE_VAL" "$PERPAGE_SET" "$PERPAGE_VAL"
 
@@ -73,10 +83,14 @@ export APIURI SCRIPT_PATH SCRIPT_CONTENT PARAMS_PATH OUT_JSON PAGE_JSON PERPAGE_
 
 # --- run core ---
 "${SCRIPT_DIR}/core.sh"
-echo "Wrote: $OUT_JSON"
 
-# --- optional convert ---
-if (( RUN_CONVERT )); then
+# Only log file writes if we actually wrote a file
+if [[ "$OUT_JSON" != "-" ]]; then
+  echo "Wrote: $OUT_JSON"
+fi
+
+# --- optional convert (only in file mode) ---
+if (( RUN_CONVERT )) && [[ "$OUT_JSON" != "-" ]]; then
   # Only convert if it's a TABLE payload
   if jq -e '.type? == "TABLE"' "$OUT_JSON" > /dev/null 2>&1; then
     if [[ -x "${SCRIPT_DIR}/convert.sh" ]]; then

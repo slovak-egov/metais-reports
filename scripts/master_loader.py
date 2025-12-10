@@ -6,7 +6,7 @@ import importlib.util
 import json
 from typing import Any
 import argparse
-
+from typing import Dict, List
 from tqdm import tqdm
 
 from json_writer import dump_json_smart
@@ -204,6 +204,8 @@ cli_args = parser.parse_args()
 DATE = cli_args.date
 check_date(DATE)
 
+snapshot_categories: Dict[str, List[Dict[str, str]]] = {}
+
 # determine loadout path (if any)
 loadout_path: Path | None = None
 if cli_args.loadout:
@@ -365,7 +367,7 @@ class Context:
 
 try:
     # adjust this constructor to match your reader implementation
-    store = PackedStore(PACKED_DIR)
+    store = PackedStore(PACKED_DIR, eager = True)
     print(f"[packed] Loaded PackedStore from {PACKED_DIR}")
 except FileNotFoundError as e:
     print(f"[packed] ERROR: {e}")
@@ -426,25 +428,36 @@ for module_dir in MODULES_DIR.iterdir():
 
         module_out_dir = ctx.get_module_output_dir(module_type, module_name)
 
-        # NEW WORLD: modules are responsible for their own I/O.
-        # Convention: run(ctx, out_dir) and return value is ignored.
         try:
+            # NEW WORLD: modules are responsible for their own I/O.
+            # Convention: run(ctx, out_dir) and return value is ignored.
             mod.run(ctx, module_out_dir)
         except TypeError as e:
-            # Helpful error if someone still has an old-style signature.
             print(f"    ERROR: {py_file.name} run() signature must be run(ctx, out_dir). Got TypeError: {e}")
         except Exception as e:
             print(f"    ERROR: exception while running {py_file.name}: {e}")
+        else:
+            # --- ONLY if run() succeeded, record this module in the snapshot ---
+            human_name = (
+                getattr(mod, "HUMAN_NAME", None)
+                or getattr(mod, "NAME", None)
+                or getattr(mod, "TITLE", None)
+                or module_name
+            )
 
+            snapshot_categories.setdefault(module_type, []).append({
+                "technicalName": module_name,
+                "name": human_name,
+            })
 
-# ---------- save attribute labels if needed ----------
+snapshot_doc = {
+    "date": DATE,
+    "categories": snapshot_categories,
+}
 
-attr_labeler.save_if_dirty()
-
-# ---------- rebuild index ----------
-
-from rebuild_index import rebuild_index
-rebuild_index(DATE)
+snapshot_path = METAVIZ_OUTPUT / "_modules_snapshot.json"
+with snapshot_path.open("w", encoding="utf-8") as f:
+    json.dump(snapshot_doc, f, ensure_ascii=False, indent=2)
 
 if ctx.repack_jobs:
     print(f"[repack] {len(ctx.repack_jobs)} repack job(s) requested")

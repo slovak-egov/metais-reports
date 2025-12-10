@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import io
 from pathlib import Path
 import json
 import struct
@@ -25,6 +26,22 @@ from bin_formats import (
     get_uint_le_struct
 )
 
+
+# ---------------------------------------------------------------------
+# Misc helpers
+# ---------------------------------------------------------------------
+    
+def interpret_meta_state(state_val) -> bool:
+    """
+    Return True if entity is considered valid based on __meta__state value.
+    None or missing -> valid.
+    INVALIDATED     -> invalid.
+    """
+    if state_val is None:
+        return True
+    s = str(state_val).strip().upper()
+    return s != "INVALIDATED"
+
 # ---------------------------------------------------------------------
 # Global dictionary (nodes)
 # ---------------------------------------------------------------------
@@ -42,7 +59,7 @@ class StreamingGlobalDict:
     We never load the whole thing into memory – we seek per value.
     """
 
-    def __init__(self, dict_dir: Path):
+    def __init__(self, dict_dir: Path, eager: bool = False):
         meta_path = dict_dir / "dict.meta.json"
         offsets_path = dict_dir / "dict.offsets.bin"
         values_path = dict_dir / "dict.values.bin"
@@ -61,26 +78,43 @@ class StreamingGlobalDict:
         self._offsets_f = offsets_path.open("rb", buffering=0)
         self._values_f = values_path.open("rb", buffering=0)
         self._u64 = U64_LE
+        self._eager = eager
+
+        if eager:
+            # fully load into memory
+            self._offsets_bytes = offsets_path.read_bytes()
+            self._values_bytes = values_path.read_bytes()
+            self._offsets_f = None
+            self._values_f = None
+        else:
+            self._offsets_f = offsets_path.open("rb", buffering=0)
+            self._values_f = values_path.open("rb", buffering=0)
 
     def close(self) -> None:
-        self._offsets_f.close()
-        self._values_f.close()
+        if not getattr(self, "_eager", False):
+            self._offsets_f.close()
+            self._values_f.close()
 
     def _read_offset(self, idx: int) -> int:
         if idx < 0 or idx > self.value_count:
             raise IndexError(f"offset index out of range: {idx}")
-        self._offsets_f.seek(idx * self._u64.size)
-        raw = self._offsets_f.read(self._u64.size)
-        if len(raw) != self._u64.size:
-            raise IOError("Unexpected EOF in dict.offsets.bin")
+
+        if self._eager:
+            size = self._u64.size
+            start = idx * size
+            end = start + size
+            raw = self._offsets_bytes[start:end]
+            if len(raw) != size:
+                raise IOError("Unexpected EOF in dict.offsets.bin (in-memory)")
+        else:
+            self._offsets_f.seek(idx * self._u64.size)
+            raw = self._offsets_f.read(self._u64.size)
+            if len(raw) != self._u64.size:
+                raise IOError("Unexpected EOF in dict.offsets.bin")
         (off,) = self._u64.unpack(raw)
         return off
 
     def get(self, idx: int) -> Any:
-        """
-        Return the original JSON value for dict index idx.
-        Can be str, int, bool, list, dict, etc.
-        """
         if idx < 0 or idx >= self.value_count:
             raise IndexError(f"dict index out of range: {idx}")
 
@@ -90,10 +124,16 @@ class StreamingGlobalDict:
         if length < 0:
             raise ValueError(f"Negative length for idx {idx}: {length}")
 
-        self._values_f.seek(start)
-        raw = self._values_f.read(length)
-        if len(raw) != length:
-            raise IOError("Unexpected EOF in dict.values.bin")
+        if self._eager:
+            raw = self._values_bytes[start:end]
+            if len(raw) != length:
+                raise IOError("Unexpected EOF in dict.values.bin (in-memory)")
+        else:
+            self._values_f.seek(start)
+            raw = self._values_f.read(length)
+            if len(raw) != length:
+                raise IOError("Unexpected EOF in dict.values.bin")
+
         s = raw.decode("utf-8")
         return json.loads(s)
 
@@ -110,7 +150,7 @@ class UuidIndex:
       uuid_index/meta.json  (recordCount, uuidBytes, ...)
     """
 
-    def __init__(self, uuid_index_dir: Path):
+    def __init__(self, uuid_index_dir: Path, eager: bool = False):
         meta_path = uuid_index_dir / "meta.json"
         uuids_path = uuid_index_dir / "uuids.bin"
 
@@ -126,30 +166,55 @@ class UuidIndex:
         if self.uuid_bytes != UUID_BYTES:
             raise ValueError(f"UuidIndex currently only supports {UUID_BYTES}-byte UUIDs")
 
+        self._eager = eager
         self._uuids_path = uuids_path
         self._uuids_f = uuids_path.open("rb", buffering=0)
 
+        if eager:
+            self._uuids_bytes = uuids_path.read_bytes()
+            self._uuids_f = None
+        else:
+            self._uuids_f = uuids_path.open("rb", buffering=0)
+
     def close(self) -> None:
-        self._uuids_f.close()
+        if not self._eager and self._uuids_f is not None:
+            self._uuids_f.close()
 
     # ---- ID -> UUID string ----
 
     def get_uuid(self, id_: int) -> str:
         if id_ < 0 or id_ >= self.record_count:
             raise IndexError("uuid id out of range")
-        self._uuids_f.seek(id_ * self.uuid_bytes)
-        raw = self._uuids_f.read(self.uuid_bytes)
-        if len(raw) != self.uuid_bytes:
-            raise IOError("Unexpected EOF in uuid_index/uuids.bin")
+
+        if self._eager:
+            start = id_ * self.uuid_bytes
+            end = start + self.uuid_bytes
+            raw = self._uuids_bytes[start:end]
+            if len(raw) != self.uuid_bytes:
+                raise IOError("Unexpected EOF in uuid_index/uuids.bin (in-memory)")
+        else:
+            self._uuids_f.seek(id_ * self.uuid_bytes)
+            raw = self._uuids_f.read(self.uuid_bytes)
+            if len(raw) != self.uuid_bytes:
+                raise IOError("Unexpected EOF in uuid_index/uuids.bin")
+
         return str(uuid.UUID(bytes=raw))
 
     def _read_uuid_bytes(self, idx: int) -> bytes:
         if idx < 0 or idx >= self.record_count:
             raise IndexError("uuid index out of range")
-        self._uuids_f.seek(idx * self.uuid_bytes)
-        raw = self._uuids_f.read(self.uuid_bytes)
-        if len(raw) != self.uuid_bytes:
-            raise IOError("Unexpected EOF in uuid_index/uuids.bin")
+
+        if self._eager:
+            start = idx * self.uuid_bytes
+            end = start + self.uuid_bytes
+            raw = self._uuids_bytes[start:end]
+            if len(raw) != self.uuid_bytes:
+                raise IOError("Unexpected EOF in uuid_index/uuids.bin (in-memory)")
+        else:
+            self._uuids_f.seek(idx * self.uuid_bytes)
+            raw = self._uuids_f.read(self.uuid_bytes)
+            if len(raw) != self.uuid_bytes:
+                raise IOError("Unexpected EOF in uuid_index/uuids.bin")
         return raw
 
     # ---- UUID string -> ID (binary search) ----
@@ -199,10 +264,11 @@ class TypeView:
          k:uint16 + (attrIndex:uint16, dictIndex:int32)*k
     """
 
-    def __init__(self, type_name: str, base_dir: Path, global_dict: StreamingGlobalDict):
+    def __init__(self, type_name: str, base_dir: Path, global_dict: StreamingGlobalDict, in_memory: bool = False):
         self.type_name = type_name
         self.base_dir = base_dir
         self.global_dict = global_dict
+        self._in_memory = in_memory
 
         nodes_dir = base_dir / "nodes"
         meta_path = nodes_dir / f"{type_name}.meta.json"
@@ -223,15 +289,6 @@ class TypeView:
 
         # Layout: "grid" (default / legacy) vs "dense"
         self.layout: str = meta.get("layout", "grid")
-
-        if self.layout == "grid":
-            self._get_attr_index_impl = self._get_attr_index_grid
-            self._iter_records_impl   = self._iter_records_grid
-            self._get_all_attrs_impl  = self._get_all_non_missing_attrs_grid
-        else:  # dense
-            self._get_attr_index_impl = self._get_attr_index_dense
-            self._iter_records_impl   = self._iter_records_dense
-            self._get_all_attrs_impl  = self._get_all_non_missing_attrs_dense
 
         raw_attrs = meta["attributes"]
 
@@ -277,24 +334,49 @@ class TypeView:
         self._uuids_path = uuid_path
         self._i32 = INT32_LE
 
+        # initialise paths / buffers so attributes always exist
+        self._bin_path = None
+        self._bin_bytes = None
+        self._rows_path = None
+        self._row_offsets_path = None
+        self._rows_bytes = None
+        self._row_offsets_bytes = None
+        self._uuids_bytes = None
+
+        # ---- layout-specific setup ----
         if self.layout == "grid":
-            # Old fixed-size block layout
+            # Method pointers
+            self._get_attr_index_impl = self._get_attr_index_grid
+            self._iter_records_impl   = self._iter_records_grid
+            self._get_all_attrs_impl  = self._get_all_non_missing_attrs_grid
+
+            # Files
             bin_path = nodes_dir / f"{type_name}.bin"
             if not bin_path.is_file():
                 raise FileNotFoundError(f"Missing bin for type {type_name}: {bin_path}")
-
             self._bin_path = bin_path
-            self.block_size: int = int(meta["blockSize"])
-            self.int_bytes: int = int(meta["intBytes"])
-            self.missing: int = int(meta["missingSentinel"])
+
+            self.block_size = int(meta["blockSize"])
+            self.int_bytes  = int(meta["intBytes"])
+            self.missing    = int(meta["missingSentinel"])
 
             if self.int_bytes != GRID_INT_BYTES:
                 raise ValueError(
                     f"Currently only intBytes={GRID_INT_BYTES} is supported for grid layout"
                 )
 
+            # Eager-load
+            if in_memory:
+                self._uuids_bytes = uuid_path.read_bytes()
+                self._bin_bytes = bin_path.read_bytes()
+
         elif self.layout == "dense":
-            # New dense layout: rows.bin + rows.offsets.bin
+            # Method pointers
+            self._get_attr_index_impl = self._get_attr_index_dense
+            self._iter_records_impl   = self._iter_records_dense
+            self._get_all_attrs_impl  = self._get_all_non_missing_attrs_dense
+
+            # Files
             rows_file = meta.get("rowsFile", f"{type_name}.rows.bin")
             offs_file = meta.get("rowOffsetsFile", f"{type_name}.rows.offsets.bin")
 
@@ -302,12 +384,16 @@ class TypeView:
             self._row_offsets_path = nodes_dir / offs_file
 
             if not self._rows_path.is_file():
-                raise FileNotFoundError(f"Missing rows.bin for type {type_name}: {self._rows_path}")
+                raise FileNotFoundError(
+                    f"Missing rows.bin for type {type_name}: {self._rows_path}"
+                )
             if not self._row_offsets_path.is_file():
-                raise FileNotFoundError(f"Missing rows.offsets.bin for type {type_name}: {self._row_offsets_path}")
+                raise FileNotFoundError(
+                    f"Missing rows.offsets.bin for type {type_name}: {self._row_offsets_path}"
+                )
 
-            self.attr_index_bytes: int = int(meta.get("attrIndexBytes", ATTR_INDEX_BYTES))
-            self.dict_index_bytes: int = int(meta.get("dictIndexBytes", DICT_INDEX_BYTES))
+            self.attr_index_bytes = int(meta.get("attrIndexBytes", ATTR_INDEX_BYTES))
+            self.dict_index_bytes = int(meta.get("dictIndexBytes", DICT_INDEX_BYTES))
 
             if self.attr_index_bytes != ATTR_INDEX_BYTES:
                 raise ValueError(
@@ -317,22 +403,39 @@ class TypeView:
                 raise ValueError(
                     f"Dense layout currently only supports dictIndexBytes={DICT_INDEX_BYTES}"
                 )
+
+            # Eager-load
+            if in_memory:
+                self._uuids_bytes = uuid_path.read_bytes()
+                self._rows_bytes = self._rows_path.read_bytes()
+                self._row_offsets_bytes = self._row_offsets_path.read_bytes()
+
         else:
             raise ValueError(f"Unknown node layout '{self.layout}' for type {type_name}")
 
     def list_attributes(self) -> List[str]:
         return self.attributes
 
-    def _open_bin(self):
-        return self._bin_path.open("rb", buffering=0)
-
     def _open_uuids(self):
+        if self._in_memory:
+            return io.BytesIO(self._uuids_bytes)
         return self._uuids_path.open("rb", buffering=0)
 
+    def _open_bin(self):
+        if self.layout != "grid":
+            raise RuntimeError("bin not available for non-grid layout")
+        if self._in_memory:
+            return io.BytesIO(self._bin_bytes)
+        return self._bin_path.open("rb", buffering=0)
+
     def _open_rows(self):
+        if self._in_memory:
+            return io.BytesIO(self._rows_bytes)
         return self._rows_path.open("rb", buffering=0)
 
     def _open_row_offsets(self):
+        if self._in_memory:
+            return io.BytesIO(self._row_offsets_bytes)
         return self._row_offsets_path.open("rb", buffering=0)
 
     # ---- UUID helpers ----
@@ -625,7 +728,7 @@ class UuidTypeIndex:
                     }
     """
 
-    def __init__(self, uuid_types_dir: Path):
+    def __init__(self, uuid_types_dir: Path, eager: bool = False):
         meta_path = uuid_types_dir / "meta.json"
         types_path = uuid_types_dir / "types.bin"
 
@@ -656,18 +759,34 @@ class UuidTypeIndex:
 
         self._types_f = types_path.open("rb", buffering=0)
 
+        self._eager = eager
+
+        if eager:
+            self._types_bytes = types_path.read_bytes()
+            self._types_f = None
+        else:
+            self._types_f = types_path.open("rb", buffering=0)
+
     def close(self) -> None:
-        self._types_f.close()
+        if not self._eager and self._types_f is not None:
+            self._types_f.close()
 
     def _read_code_at(self, idx: int) -> int:
         if idx < 0 or idx >= self.record_count:
             raise IndexError("uuid type index out of range")
 
         offset = idx * self.bytes_per_code
-        self._types_f.seek(offset)
-        raw = self._types_f.read(self.bytes_per_code)
-        if len(raw) != self.bytes_per_code:
-            raise IOError("Unexpected EOF in uuid_types/types.bin")
+        if self._eager:
+            end = offset + self.bytes_per_code
+            raw = self._types_bytes[offset:end]
+            if len(raw) != self.bytes_per_code:
+                raise IOError("Unexpected EOF in uuid_types/types.bin (in-memory)")
+        else:
+            self._types_f.seek(offset)
+            raw = self._types_f.read(self.bytes_per_code)
+            if len(raw) != self.bytes_per_code:
+                raise IOError("Unexpected EOF in uuid_types/types.bin")
+
         (code,) = self._struct.unpack(raw)
         return code
 
@@ -692,8 +811,9 @@ class RelationFile:
     sorted by the FIRST component (src or tgt depending on file).
     """
 
-    def __init__(self, bin_path: Path, meta_path: Path):
+    def __init__(self, bin_path: Path, meta_path: Path, eager: bool = False):
         self.bin_path = bin_path
+        self._eager = eager
 
         with meta_path.open("r", encoding="utf-8") as f:
             meta = json.load(f)
@@ -715,7 +835,12 @@ class RelationFile:
         if len(self.layout) != 2:
             raise ValueError("RelationFile expects 2-element layout (pairs)")
 
+        if self._eager:
+            self._bin_bytes = bin_path.read_bytes()
+
     def _open_bin(self):
+        if self._eager:
+            return io.BytesIO(self._bin_bytes)
         return self.bin_path.open("rb", buffering=0)
 
     # -- low-level read helpers --
@@ -825,24 +950,24 @@ class RelationStore:
           <RELTYPE>.tgt.src.meta.json
     """
 
-    def __init__(self, base_dir: Path, uuid_index: UuidIndex):
+    def __init__(self, base_dir: Path, uuid_index: UuidIndex, eager: bool = False):
         self.base_dir = base_dir
         self.uuid_index = uuid_index
         self._relations: Dict[str, Dict[str, RelationFile]] = {}
+        self._eager = eager
         self._load_all_relations()
         self._ctype_index: Dict[str, Dict[str, List[Dict[str, str]]]] = self._load_ctype_index()
 
     def _load_all_relations(self) -> None:
         rel_dir = self.base_dir / "relations"
         if not rel_dir.is_dir():
-            # It's valid to have no relations in some datasets; don't crash
             self._relations = {}
             return
 
         rel_map: Dict[str, Dict[str, RelationFile]] = {}
 
         for bin_path in rel_dir.glob("*.bin"):
-            stem = bin_path.stem  # e.g. PO_je_gestor_KS.src.tgt
+            stem = bin_path.stem
             if stem.endswith(".src.tgt"):
                 relname = stem[:-len(".src.tgt")]
                 kind = "src.tgt"
@@ -850,14 +975,13 @@ class RelationStore:
                 relname = stem[:-len(".tgt.src")]
                 kind = "tgt.src"
             else:
-                # ignore unexpected patterns
                 continue
 
             meta_path = bin_path.with_suffix(".meta.json")
             if not meta_path.is_file():
                 raise FileNotFoundError(f"Missing meta for relation {bin_path}")
 
-            rel_file = RelationFile(bin_path, meta_path)
+            rel_file = RelationFile(bin_path, meta_path, eager=self._eager)
             rel_map.setdefault(relname, {})[kind] = rel_file
 
         self._relations = rel_map
@@ -1057,8 +1181,9 @@ class PackedStore:
         relations/...
     """
 
-    def __init__(self, base_dir: Path):
+    def __init__(self, base_dir: Path, *, eager: bool = False):
         self.base_dir = base_dir
+        self.eager = eager
 
         dict_dir = base_dir / "dict"
         if not dict_dir.is_dir():
@@ -1072,9 +1197,50 @@ class PackedStore:
         if not uuid_types_dir.is_dir():
             raise FileNotFoundError(f"Missing uuid_types directory: {uuid_types_dir}")
 
-        self.global_dict = StreamingGlobalDict(dict_dir)
-        self.uuid_index = UuidIndex(uuid_index_dir)
-        self.uuid_types = UuidTypeIndex(uuid_types_dir)   # 👈 new
+        self.global_dict = StreamingGlobalDict(dict_dir, eager=eager)
+        self.uuid_index = UuidIndex(uuid_index_dir, eager=eager)
+        self.uuid_types = UuidTypeIndex(uuid_types_dir, eager=eager)
+
+        self.manifest: dict[str, Any] = {}
+        self._node_types_from_manifest: list[str] | None = None
+        self._rel_types_from_manifest: list[str] | None = None
+
+        manifest_path = base_dir / "manifest.json"
+        if manifest_path.is_file():
+            try:
+                with manifest_path.open("r", encoding="utf-8") as f:
+                    self.manifest = json.load(f)
+
+                node_types = self.manifest.get("nodeTypes")
+                if isinstance(node_types, list):
+                    # dedupe, keep order
+                    seen = set()
+                    self._node_types_from_manifest = []
+                    for t in node_types:
+                        if not isinstance(t, str):
+                            continue
+                        if t in seen:
+                            continue
+                        seen.add(t)
+                        self._node_types_from_manifest.append(t)
+
+                rel_types = self.manifest.get("relationTypes")
+                if isinstance(rel_types, list):
+                    seen = set()
+                    self._rel_types_from_manifest = []
+                    for r in rel_types:
+                        if not isinstance(r, str):
+                            continue
+                        if r in seen:
+                            continue
+                        seen.add(r)
+                        self._rel_types_from_manifest.append(r)
+
+            except Exception as e:
+                print(f"[packed] WARNING: failed to load manifest.json: {e}")
+                self.manifest = {}
+                self._node_types_from_manifest = None
+                self._rel_types_from_manifest = None
 
         # Optionally cross-check recordCount
         if self.uuid_types.record_count != self.uuid_index.record_count:
@@ -1082,7 +1248,7 @@ class PackedStore:
                 "UuidIndex and UuidTypeIndex have different recordCount values"
             )
 
-        self.relations = RelationStore(base_dir, self.uuid_index)
+        self.relations = RelationStore(base_dir, self.uuid_index, eager=eager)
 
     def close(self) -> None:
         self.global_dict.close()
@@ -1101,19 +1267,61 @@ class PackedStore:
             return None
         return self.uuid_types.get_type_by_id(id_)
 
+    def is_valid_entity(self, uuid_str: str) -> bool:
+        """
+        Returns True if entity is not INVALIDATED.
+        Missing __meta__state => treat as valid.
+        Unknown UUID         => False.
+        """
+        # Step 1: Convert UUID -> global ID
+        id_ = self.uuid_index.get_id(uuid_str)
+        if id_ is None:
+            return False
+
+        # Step 2: Get the ctype
+        ctype = self.uuid_types.get_type_by_id(id_)
+        if ctype is None:
+            return False
+
+        # Step 3: Open the correct type view
+        tv = self.open_type(ctype)
+
+        # Step 4: Find record index inside that type
+        record_idx = tv.find_record_index_by_uuid(uuid_str)
+        if record_idx is None:
+            return False
+
+        # Step 5: Read __meta__state attribute
+        try:
+            state_val = tv.get_attr_value(record_idx, "__meta__state")
+        except KeyError:
+            return True
+
+        return interpret_meta_state(state_val)
+
     def list_types(self) -> List[str]:
         """
-        List all available node types (based on *.meta.json in nodes/).
+        List all available node types.
 
-        This deliberately ignores helper files like *.uuids.bin.
+        Priority:
+          1) nodeTypes from manifest.json (if present)
+          2) Fallback: infer from nodes/*.meta.json, ignoring helper files.
         """
+        # Prefer manifest
+        if self._node_types_from_manifest is not None:
+            return list(self._node_types_from_manifest)
+
+        # Fallback – old behavior, but slightly safer
         nodes_dir = self.base_dir / "nodes"
         types: List[str] = []
         if nodes_dir.is_dir():
             for meta_path in nodes_dir.glob("*.meta.json"):
-                # AS.meta.json -> "AS"
-                types.append(meta_path.stem)
+                stem = meta_path.stem  # e.g. "AS" or "AS.meta"
+                # Ignore helper/metadata files like "AS.meta.json"
+                if stem.endswith(".meta"):
+                    continue
+                types.append(stem)
         return sorted(types)
 
     def open_type(self, type_name: str) -> TypeView:
-        return TypeView(type_name, self.base_dir, self.global_dict)
+        return TypeView(type_name, self.base_dir, self.global_dict, in_memory=self.eager)

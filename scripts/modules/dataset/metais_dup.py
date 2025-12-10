@@ -1,697 +1,293 @@
+# metais_dup.py
+from __future__ import annotations
+
 from collections import defaultdict, deque
 from difflib import SequenceMatcher
+from pathlib import Path
+from typing import Dict, List, Set, Tuple
+
 from tqdm import tqdm
 
-# technical relation names for synthetic relations (not in the database, we made these up)
+from json_writer import dump_json_smart
+
+import packed_reader
+
+# technical relation names for synthetic relations
 SIMILAR_NAME_RELTYPE_KEY = "has_similar_name"
 SAME_CODE_RELTYPE_KEY    = "share_same_metaid"
 
-# human-friendly labels for those synthetic relations
 SIMILAR_NAME_LABEL = "Has similar name"
 SAME_CODE_LABEL    = "Share a common MetaIS code"
 
-# fuzzy string match
-SIMILAR_NAME_THRESHOLD = 0.9
+SIMILAR_NAME_THRESHOLD   = 0.9
+SIMILAR_NAME_ONLY_VALID  = True
 
-# toggle whether similar-name search uses only valid entities
-SIMILAR_NAME_ONLY_VALID = True
-
-# MetaIS citype name for public organizations
 PO_CITYPE_NAME = "PO"
 
 
-def run(ctx):
-    entity   = ctx.entity
-    relation = ctx.relation
-    enum     = ctx.enums
-    resolve_enum_value = ctx.resolve_enum_value
+def run(ctx, out_dir: Path):
+    """
+    New-style module entrypoint: run(ctx, out_dir).
 
-    # Metadata is pre-attached in the context:
-    # entity["citype_metadata"][citype_name] -> full metadata json for that type
-    citype_meta = entity.get("citype_metadata", {})
+    Responsibilities (new world):
+      1) Scan packed nodes to find groups of UUIDs that share Gen_Profil_kod_metais.
+      2) Build synthetic relations:
+           - share_same_metaid (clique within each group),
+           - has_similar_name (best fuzzy match outside the group, same citype).
+      3) Compute a UUID set for repacking:
+           - all primaries (duplicate nodes)
+           - all 1-hop neighbors over REAL relations
+      4) Request repack via ctx.request_repack(...)
+      5) Write a JSON summary to out_dir/metais_dup.json
+         (groups + basic synthetic relations; no heavy islands/PO view here).
+    """
 
-    def is_invalidated(rec: dict) -> bool:
-        meta = rec.get("metaAttributes") or {}
-        return meta.get("state") == "INVALIDATED"
+    store = ctx.store
 
-    # metais_code -> list of (ctype, uuid)
-    dup_records: dict[str, list[tuple[str, str]]] = {}
+    # ------------------------------------------------------------
+    # STEP 0 – helpers
+    # ------------------------------------------------------------
+    
+    def entity_valid(state_val):
+        return packed_reader.interpret_meta_state(state_val)
 
-    # global pool ONLY for entities we actually touch
-    # uuid -> {"type", "uuid", "attributes", "metaAttributes", ...}
-    all_entities: dict[str, dict] = {}
+    # ------------------------------------------------------------
+    # STEP 1 – first pass: collect metais_code -> [uuid]
+    #          and name candidates for fuzzy search
+    # ------------------------------------------------------------
+    dup_records: Dict[str, List[str]] = defaultdict(list)  # metais_code -> [uuid]
+    name_candidates_by_citype: Dict[str, List[Tuple[str, str]]] = defaultdict(list)
+    all_citypes = list(store.list_types())  # or list_citypes(), adapt if needed
 
-    def materialize_neighbors_for(ctype: str, uuids: set[str]):
-        """
-        For each uuid of this ctype, pull in its neighbors via real relations
-        into all_entities. (Same logic as in PHASE 2 for primaries.)
-        """
-        node_rel_info = relation["by_node"].get(ctype)
-        if not node_rel_info:
-            return
+    for ctype in tqdm(all_citypes, desc="metais_dup: scanning nodes", leave=True):
+        tv = store.open_type(ctype)  # adjust if API differs
 
-        for my_uuid in uuids:
-            # entity_role: "src" or "tgt"
-            for entity_role in ("src", "tgt"):
-                rel_set = node_rel_info.get("by_" + entity_role, set())
-                if not rel_set:
-                    continue
+        for uuid, attrs in tv.iter_records():  # (uuid_str, attrs_dict)
+            # validity for "similar name" purposes
+            state_val = attrs.get("__meta__state")
+            record_is_valid = entity_valid(state_val)
 
-                for reltype_name in rel_set:
-                    rel_info = relation["by_rel"][reltype_name]
+            # 1a) MetaIS code
+            metais_code = attrs.get("Gen_Profil_kod_metais")
+            if metais_code:
+                dup_records[str(metais_code)].append(uuid)
 
-                    if entity_role == "src":
-                        related_type  = rel_info["target_type"]
-                        neighbors_map = rel_info["by_src"]
-                    else:
-                        related_type  = rel_info["source_type"]
-                        neighbors_map = rel_info["by_tgt"]
-
-                    neighbor_uuids = neighbors_map.get(my_uuid, [])
-                    if not neighbor_uuids:
-                        continue
-
-                    for related_uuid in neighbor_uuids:
-                        if related_uuid not in all_entities:
-                            try:
-                                all_entities[related_uuid] = ctx.get_entity_record(
-                                    related_type,
-                                    related_uuid,
-                                )
-                            except KeyError:
-                                print(
-                                    f"[WARNING] uuid {related_uuid} "
-                                    f"not found in entity dump"
-                                )
-                                continue
-
-    # --------- PHASE 0: precompute name candidates in the whole DB ----------
-
-    # ctype -> list of (uuid, name_lower)
-    candidates_by_citype: dict[str, list[tuple[str, str]]] = defaultdict(list)
-
-    entity_by_uuid = entity.get("by_uuid", {})
-    for uuid, rec in tqdm(
-        entity_by_uuid.items(),
-        desc="metais_dup: collecting name candidates",
-        leave=False,
-    ):
-        ctype = rec.get("type")
-        if not ctype:
-            continue
-
-        if SIMILAR_NAME_ONLY_VALID and is_invalidated(rec):
-            continue
-
-        attrs = rec.get("attributes") or {}
-        name = attrs.get("Gen_Profil_nazov")
-        if not name:
-            continue
-        name_str = str(name).strip()
-        if not name_str:
-            continue
-        candidates_by_citype[ctype].append((uuid, name_str.lower()))
-
-    # --------- PHASE 1: detect duplicates only ----------
-
-    for citype_record in tqdm(
-        entity.get("types", []),
-        desc="metais_dup: scanning MetaIS codes",
-        leave=False,
-    ):
-        citype_name = citype_record.get("technicalName")
-        if not citype_name:
-            continue
-
-        for uuid in ctx.iter_uuids_of_type(citype_name):
-            if uuid is None:
+            # 1b) name candidates per citype
+            if SIMILAR_NAME_ONLY_VALID and not record_is_valid:
                 continue
 
-            # only grab the MetaIS code
-            try:
-                metais_code = ctx.get_entity_attr(
-                    citype_name,
-                    uuid,
-                    "Gen_Profil_kod_metais",
-                )
-            except KeyError:
-                # uuid not found in uuid_to_index
-                print(
-                    f"[WARNING] metais code not available for uuid {uuid}, "
-                    f"entity type: {citype_name}"
-                )
-                continue
-
-            if not metais_code:
-                continue
-
-            bucket = dup_records.get(metais_code)
-            if bucket is None:
-                bucket = []
-                dup_records[metais_code] = bucket
-            bucket.append((citype_name, uuid))
-
-    groups: list[dict] = []
-
-    # --------- PHASE 2: build entities (primaries + neighbors) ----------
-
-    for metais_code, entries in dup_records.items():
-        # Only real duplicates
-        if len(entries) <= 1:
-            continue
-
-        primary_uuids: set[str] = set()
-
-        for ctype, my_uuid in entries:
-            primary_uuids.add(my_uuid)
-
-            # materialize primary entity if not already present
-            if my_uuid not in all_entities:
-                all_entities[my_uuid] = ctx.get_entity_record(ctype, my_uuid)
-
-            # relation info for this type
-            node_rel_info = relation["by_node"].get(ctype)
-            if not node_rel_info:
-                # no relations for this type
-                continue
-
-            # entity_role: "src" or "tgt"
-            for entity_role in ("src", "tgt"):
-                rel_set = node_rel_info.get("by_" + entity_role, set())
-                if not rel_set:
-                    continue
-
-                for reltype_name in rel_set:
-                    rel_info = relation["by_rel"][reltype_name]
-
-                    if entity_role == "src":
-                        related_type  = rel_info["target_type"]
-                        neighbors_map = rel_info["by_src"]  # my_uuid -> [target_uuids]
-                    else:
-                        related_type  = rel_info["source_type"]
-                        neighbors_map = rel_info["by_tgt"]  # my_uuid -> [source_uuids]
-
-                    neighbor_uuids = neighbors_map.get(my_uuid, [])
-                    if not neighbor_uuids:
-                        continue
-
-                    for related_uuid in neighbor_uuids:
-                        # ensure neighbor entity exists in global pool
-                        if related_uuid not in all_entities:
-                            try:
-                                all_entities[related_uuid] = ctx.get_entity_record(
-                                    related_type,
-                                    related_uuid,
-                                )
-                            except KeyError:
-                                print(
-                                    f"[WARNING] uuid {related_uuid} "
-                                    f"not found in entity dump"
-                                )
-                                continue
-
-        # build deterministic per-group uuid list
-        uuids_sorted = sorted(primary_uuids)
-
-        groups.append({
-            "metais_code":  metais_code,
-            "count":        len(uuids_sorted),
-            "entity_uuids": uuids_sorted,
-        })
-
-    # sort groups by size descending
-    groups.sort(key=lambda g: g["count"], reverse=True)
-
-    # --------- PHASE 2b: "similar name" external matches for primaries ----------
-
-    similar_name_pairs: list[tuple[str, str]] = []  # (primary_uuid, similar_uuid)
-
-    for metais_code, entries in tqdm(
-        dup_records.items(),
-        desc="metais_dup: similar-name search",
-        leave=False,
-    ):
-        # Skip non-duplicate codes
-        if len(entries) <= 1:
-            continue
-
-        # set of primary uuids for this group – we don't want to match inside this set
-        group_primary_uuids = {uuid for (ctype, uuid) in entries}
-
-        for ctype, my_uuid in entries:
-            # require that this primary is actually in our all_entities pool
-            if my_uuid not in all_entities:
-                continue
-
-            # get its name from the full DB record (attributes dict)
-            db_rec = entity_by_uuid.get(my_uuid)
-            if not db_rec:
-                continue
-            if SIMILAR_NAME_ONLY_VALID and is_invalidated(db_rec):
-                continue
-            db_attrs = db_rec.get("attributes") or {}
-            name_val = db_attrs.get("Gen_Profil_nazov")
+            name_val = attrs.get("Gen_Profil_nazov")
             if not name_val:
                 continue
             name_str = str(name_val).strip().lower()
             if not name_str:
                 continue
 
-            candidates = candidates_by_citype.get(ctype, [])
+            name_candidates_by_citype[ctype].append((uuid, name_str))
+
+    # ------------------------------------------------------------
+    # STEP 2 – build groups of primaries (real duplicates)
+    # ------------------------------------------------------------
+    groups: List[Dict] = []
+    primary_uuids: Set[str] = set()
+
+    for metais_code, uuids in dup_records.items():
+        # only keep real duplicates (>= 2 entities with the same code)
+        uniq = sorted(set(uuids))
+        if len(uniq) <= 1:
+            continue
+
+        primary_uuids.update(uniq)
+
+        groups.append({
+            "metais_code": metais_code,
+            "count":       len(uniq),
+            "entity_uuids": uniq,
+        })
+
+    # sort groups by size descending
+    groups.sort(key=lambda g: g["count"], reverse=True)
+
+    # ------------------------------------------------------------
+    # STEP 3 – similar-name synthetic relations (has_similar_name)
+    #          For each primary, find best external match with same citype.
+    # ------------------------------------------------------------
+    similar_name_pairs: Set[Tuple[str, str]] = set()
+
+    # citype for each UUID – read lazily
+    uuid_to_ctype: Dict[str, str] = {}
+
+    for ctype in all_citypes:
+        tv = store.open_type(ctype)
+        for uuid, _attrs in tv.iter_records():
+            uuid_to_ctype[uuid] = ctype
+
+    # precompute groups per code for quick membership checks
+    code_groups_by_uuid: Dict[str, Set[str]] = defaultdict(set)
+    for g in groups:
+        uuids = g["entity_uuids"]
+        for u in uuids:
+            code_groups_by_uuid[u].add(g["metais_code"])
+
+    # now search similar names
+    for g in tqdm(groups, desc="metais_dup: similar-name search", leave=True):
+        metais_code = g["metais_code"]
+        group_uuids = set(g["entity_uuids"])
+
+        for u in g["entity_uuids"]:
+            ctype = uuid_to_ctype.get(u)
+            if not ctype:
+                continue
+
+            # we need the name for this primary
+            tv = store.open_type(ctype)
+            # For efficiency, you might add a get_record(uuid) helper to PackedStore;
+            # here we just scan once and cache names.
+            # To keep this example simple, we build a small per-ctype cache of names.
+
+    # For practicality, build a cache: (ctype, uuid) -> name_str
+    name_cache: Dict[Tuple[str, str], str] = {}
+    for ctype in all_citypes:
+        tv = store.open_type(ctype)
+        for uuid, attrs in tv.iter_records():
+            name_val = attrs.get("Gen_Profil_nazov")
+            if not name_val:
+                continue
+            name_str = str(name_val).strip().lower()
+            if name_str:
+                name_cache[(ctype, uuid)] = name_str
+
+    # Now do the real similar-name search
+    for g in tqdm(groups, desc="metais_dup: similar-name search", leave=True):
+        metais_code = g["metais_code"]
+        group_uuids = set(g["entity_uuids"])
+
+        # group citypes may differ, so we just look up for each primary separately
+        for u in g["entity_uuids"]:
+            ctype = uuid_to_ctype.get(u)
+            if not ctype:
+                continue
+
+            name_str = name_cache.get((ctype, u))
+            if not name_str:
+                continue
+
+            candidates = name_candidates_by_citype.get(ctype, [])
             if not candidates:
                 continue
 
             best_uuid = None
             best_ratio = 0.0
 
-            for cand_uuid, cand_name_lower in candidates:
-                if cand_uuid == my_uuid:
+            for cand_uuid, cand_name in candidates:
+                if cand_uuid == u:
                     continue
-                # don't match to another member of the same duplicate group
-                if cand_uuid in group_primary_uuids:
+                # do not match with another entity from the *same* metais_code group
+                if cand_uuid in group_uuids:
                     continue
 
-                ratio = SequenceMatcher(None, name_str, cand_name_lower).ratio()
-                if ratio > best_ratio:
-                    best_ratio = ratio
+                r = SequenceMatcher(None, name_str, cand_name).ratio()
+                if r > best_ratio:
+                    best_ratio = r
                     best_uuid = cand_uuid
 
             if best_uuid is not None and best_ratio >= SIMILAR_NAME_THRESHOLD:
-                similar_name_pairs.append((my_uuid, best_uuid))
+                # canonicalize ordering for dedupe
+                pair = (u, best_uuid)
+                similar_name_pairs.add(pair)
 
-                # ensure the similar-name entity is materialized in all_entities
-                if best_uuid not in all_entities:
-                    try:
-                        all_entities[best_uuid] = ctx.get_entity_record(ctype, best_uuid)
-                    except KeyError:
-                        print(
-                            f"[WARNING] similar-name uuid {best_uuid} "
-                            f"not found in entity dump"
-                        )
+    # ------------------------------------------------------------
+    # STEP 4 – synthetic relations data structures
+    # ------------------------------------------------------------
+    synthetic_relations: Dict[str, Dict] = {}
 
-    # --------- PHASE 2c: pull neighbors of similar-name entities ----------
-
-    similar_name_entities_by_type: dict[str, set[str]] = defaultdict(set)
-
-    for _, sim_uuid in similar_name_pairs:
-        rec = all_entities.get(sim_uuid) or entity_by_uuid.get(sim_uuid)
-        if not rec:
-            continue
-        ctype = rec.get("type")
-        if not ctype:
-            continue
-        similar_name_entities_by_type[ctype].add(sim_uuid)
-
-    for ctype, uuids in similar_name_entities_by_type.items():
-        materialize_neighbors_for(ctype, uuids)
-
-    # --------- NORMALIZE ENTITY ATTRIBUTES ----------
-
-    # Convert attributes dict -> ordered list with human-readable labels
-    for uuid, rec in all_entities.items():
-        ctype = rec.get("type")
-        attrs = rec.get("attributes")
-        if ctype and isinstance(attrs, dict):
-            rec["attributes"] = ctx.normalize_attributes(ctype, attrs)
-
-    # --------- PHASE 3: build top-level relations (REAL + synthetic) ----------
-
-    entity_uuid_set = set(all_entities.keys())
-
-    relations: dict[str, dict] = {}
-    for reltype_name, rel_info in relation["by_rel"].items():
-        by_src = rel_info.get("by_src", {})
-        if not by_src:
-            continue
-
-        pair_set: set[tuple[str, str]] = set()
-
-        for src_uuid, tgt_list in by_src.items():
-            if src_uuid not in entity_uuid_set:
-                continue
-            for tgt_uuid in tgt_list:
-                if tgt_uuid not in entity_uuid_set:
-                    continue
-                pair_set.add((src_uuid, tgt_uuid))
-
-        if not pair_set:
-            continue
-
-        # pull human-readable labels from metadata if available
-        meta = (rel_info.get("metadata") or {})
-        human_name = meta.get("name") or reltype_name
-        eng_name   = meta.get("engName")
-
-        relations[reltype_name] = {
-            # meta about the relation type itself
-            "technicalName": reltype_name,
-            "name":          human_name,
-            "engName":       eng_name,
-
-            # type pair (as before)
-            "source_type": rel_info["source_type"],
-            "target_type": rel_info["target_type"],
-
-            # edge list
-            "pairs": [
-                [src, tgt]
-                for (src, tgt) in sorted(pair_set)
-            ],
-        }
-
-    # --------- PHASE 3b: add synthetic "has_similar_name" relations ----------
-
-    if similar_name_pairs:
-        # deduplicate in case we found the same pair multiple times
-        pair_set = {(src, tgt) for (src, tgt) in similar_name_pairs}
-
-        existing = relations.get(SIMILAR_NAME_RELTYPE_KEY)
-        if existing is None:
-            relations[SIMILAR_NAME_RELTYPE_KEY] = {
-                "technicalName": SIMILAR_NAME_RELTYPE_KEY,
-                "name":          SIMILAR_NAME_LABEL,
-                "engName":       SIMILAR_NAME_LABEL,  # we don't have a separate engName, reuse
-
-                # no single canonical type pair – front-end may show "? -> ?"
-                "source_type": None,
-                "target_type": None,
-                "pairs": [[src, tgt] for (src, tgt) in sorted(pair_set)],
-            }
-        else:
-            old_pairs = {(p[0], p[1]) for p in existing.get("pairs", []) if len(p) >= 2}
-            merged = old_pairs | pair_set
-            existing["pairs"] = [[src, tgt] for (src, tgt) in sorted(merged)]
-
-    # --------- PHASE 3c: synthetic "share_same_metaid" relations ----------
-
-    # Precompute group->set(primaries) and primary->group index
-    group_primaries: list[set[str]] = []
-    primary_to_group_idx: dict[str, int] = {}
-    for idx, g in enumerate(groups):
-        primaries = set(g.get("entity_uuids", []))
-        group_primaries.append(primaries)
-        for u in primaries:
-            primary_to_group_idx[u] = idx
-
-    same_code_pairs: set[tuple[str, str]] = set()
-
+    # 4a) share_same_metaid – full clique inside each group
+    same_code_pairs: Set[Tuple[str, str]] = set()
     for g in groups:
-        uuids = g.get("entity_uuids", [])
-        if len(uuids) < 2:
-            continue
-
-        # full clique: connect every pair u_i – u_j, i < j
+        uuids = g["entity_uuids"]
         n = len(uuids)
+        if n < 2:
+            continue
         for i in range(n):
             u = uuids[i]
-            if not u:
-                continue
             for j in range(i + 1, n):
                 v = uuids[j]
-                if not v:
+                if not u or not v:
                     continue
-                # keep canonical ordering so (u,v) and (v,u) don't both appear
                 pair = (u, v) if u < v else (v, u)
                 same_code_pairs.add(pair)
 
     if same_code_pairs:
-        relations[SAME_CODE_RELTYPE_KEY] = {
+        synthetic_relations[SAME_CODE_RELTYPE_KEY] = {
             "technicalName": SAME_CODE_RELTYPE_KEY,
             "name":          SAME_CODE_LABEL,
             "engName":       SAME_CODE_LABEL,
-
-            # symmetric relation, no fixed type pair
             "source_type": None,
             "target_type": None,
-            "pairs": [[src, tgt] for (src, tgt) in sorted(same_code_pairs)],
+            "pairs": [[u, v] for (u, v) in sorted(same_code_pairs)],
         }
 
-    # ------------------------------------------------------------------
-    # PHASE 4 – adjacency graph + distances
-    # ------------------------------------------------------------------
+    # 4b) has_similar_name – from similar_name_pairs
+    if similar_name_pairs:
+        synthetic_relations[SIMILAR_NAME_RELTYPE_KEY] = {
+            "technicalName": SIMILAR_NAME_RELTYPE_KEY,
+            "name":          SIMILAR_NAME_LABEL,
+            "engName":       SIMILAR_NAME_LABEL,
+            "source_type": None,
+            "target_type": None,
+            "pairs": [[u, v] for (u, v) in sorted(similar_name_pairs)],
+        }
 
-    # Helper sets for later
-    duplicated_uuids: set[str] = set()
-    for g in groups:
-        duplicated_uuids.update(g.get("entity_uuids", []))
+    # ------------------------------------------------------------
+    # STEP 5 – figure out which UUIDs to repack
+    #          (primaries + 1-hop neighbors via REAL relations)
+    # ------------------------------------------------------------
+    uuids_to_repack: Set[str] = set(primary_uuids)
 
-    # full adjacency (all edges), undirected
-    adjacency: dict[str, set[str]] = defaultdict(set)
-    # adjacency using only distance-0 edges (elementary islands)
-    adjacency0: dict[str, set[str]] = defaultdict(set)
+    # Build 1-hop adjacency for *all* relations in the packed store
+    rel_store = store.relations
+    all_reltypes = list(rel_store.list_relation_types())
 
-    # Make sure every entity appears in adjacency (even if isolated)
-    for uuid in entity_uuid_set:
-        adjacency.setdefault(uuid, set())
-        adjacency0.setdefault(uuid, set())
+    for reltype in tqdm(all_reltypes, desc="metais_dup: building repack neighborhood", leave=True):
+        rv = rel_store.open(reltype)
+        for src_uuid, tgt_uuid in rv.iter_pairs():
+            # if either endpoint is a primary, include both endpoints in repack set
+            if src_uuid in primary_uuids or tgt_uuid in primary_uuids:
+                uuids_to_repack.add(src_uuid)
+                uuids_to_repack.add(tgt_uuid)
 
-    # 4a) Build adjacency FROM raw relations (before distances)
-    for rel_info in relations.values():
-        for pair in rel_info.get("pairs", []):
-            if len(pair) < 2:
-                continue
-            src, tgt = pair[0], pair[1]
-            adjacency[src].add(tgt)
-            adjacency[tgt].add(src)
+    # Note:
+    #  If you want multi-hop closure instead of just 1-hop, you can:
+    #    - repeat passes until no new uuids are added, or
+    #    - do a BFS over adjacency.
+    #  For now, we keep it to 1-hop, which is usually a good compromise.
 
-    # 4b) distances from nearest duplicity primary (node level)
-    node_distance: dict[str, int] = {}
-    q = deque()
+    # ------------------------------------------------------------
+    # STEP 6 – ask master_loader for a repack
+    # ------------------------------------------------------------
+    #   - entity_uuids: all uuids_to_repack
+    #   - relation_types: None (keep all relation types)
+    #   - only_valid: None (let repacker decide; or True if you want only-valid)
+    ctx.request_repack(
+        profile="metais_dup",
+        entity_uuids=uuids_to_repack,
+        relation_types=None,      # ALL relations, filtered by endpoints
+        only_valid=None,          # None -> "all" in run_repack
+    )
 
-    # multi-source BFS from all primaries
-    for u in duplicated_uuids:
-        if u in adjacency:          # just in case
-            node_distance[u] = 0
-            q.append(u)
-
-    while q:
-        u = q.popleft()
-        du = node_distance[u]
-        for v in adjacency.get(u, ()):
-            if v not in node_distance:
-                node_distance[v] = du + 1
-                q.append(v)
-
-    # how far does the “duplicity influence” reach?
-    max_node_dist = max(node_distance.values()) if node_distance else 0
-
-    # 4c) attach edge distance from nearest primary (edge level)
-    for reltype_name, rel_info in relations.items():
-        old_pairs = rel_info.get("pairs", [])
-        new_pairs = []
-
-        for pair in old_pairs:
-            # keep backward compatibility: allow [src, tgt] or [src, tgt, ...]
-            if len(pair) >= 2:
-                src, tgt = pair[0], pair[1]
-            else:
-                continue  # malformed, skip
-
-            d_src = node_distance.get(src)
-            d_tgt = node_distance.get(tgt)
-
-            d_candidates = [d for d in (d_src, d_tgt) if d is not None]
-            if d_candidates:
-                edge_dist = min(d_candidates)
-            else:
-                # no path to any primary
-                edge_dist = -1
-
-            new_pairs.append([src, tgt, edge_dist])
-
-            # distance-0 edges: primary↔primary or primary↔neighbor
-            if edge_dist == 0:
-                adjacency0[src].add(tgt)
-                adjacency0[tgt].add(src)
-
-        rel_info["pairs"] = new_pairs
-
-    # 4d) determine maximum edge distance
-    edge_dists: set[int] = set()
-    for rel_info in relations.values():
-        for pair in rel_info.get("pairs", []):
-            if len(pair) < 3:
-                continue
-            d = pair[2]
-            if isinstance(d, int) and d >= 0:
-                edge_dists.add(d)
-
-    max_edge_dist = max(edge_dists) if edge_dists else 0
-
-    # ------------------------------------------------------------------
-    # PHASE 5 – ORPHANS (groups with no external relations)
-    # ------------------------------------------------------------------
-    orphans: list[dict] = []
-
-    for idx, g in enumerate(groups):
-        primaries = group_primaries[idx]
-        if not primaries:
-            continue
-
-        has_external = False
-        for u in primaries:
-            for v in adjacency.get(u, ()):
-                if v not in primaries:
-                    has_external = True
-                    break
-            if has_external:
-                break
-
-        if not has_external:
-            orphans.append({
-                "group_index": idx,
-                "metais_code": g.get("metais_code"),
-                "count": g.get("count", len(primaries)),
-                "uuids": g.get("entity_uuids", []),
-            })
-
-    # ------------------------------------------------------------------
-    # PHASE 6 – ISLANDS FOR MULTIPLE DISTANCES 0..max_edge_dist
-    # ------------------------------------------------------------------
-
-    def compute_islands_for_maxdist(max_dist: int) -> list[dict]:
-        """
-        Build islands using all relation edges whose edge_dist satisfies
-          0 <= edge_dist <= max_dist.
-
-        Returns a list of dicts
-          {
-            "count":  <size of connected component (nodes)>,
-            "groups": [list of duplicity group indices],
-          }
-
-        Only components that contain at least one duplicity group are kept.
-        """
-        adjacency_d: dict[str, set[str]] = defaultdict(set)
-
-        # Build adjacency from relation pairs
-        for rel_info in relations.values():
-            for pair in rel_info.get("pairs", []):
-                if len(pair) < 3:
-                    continue
-                src, tgt, edge_dist = pair
-
-                if edge_dist is None or edge_dist < 0 or edge_dist > max_dist:
-                    continue
-
-                adjacency_d[src].add(tgt)
-                adjacency_d[tgt].add(src)
-
-        # Ensure every entity is present so isolated primaries form size-1 components
-        for uuid in entity_uuid_set:
-            adjacency_d.setdefault(uuid, set())
-
-        islands_level: list[dict] = []
-        visited: set[str] = set()
-
-        for start in tqdm(
-            entity_uuid_set,
-            desc=f"metais_dup: islands (max_dist={max_dist})",
-            leave=False,
-        ):
-            if start in visited:
-                continue
-
-            queue = deque([start])
-            visited.add(start)
-            component: set[str] = set()
-
-            while queue:
-                u = queue.popleft()
-                component.add(u)
-                for v in adjacency_d.get(u, ()):
-                    if v not in visited:
-                        visited.add(v)
-                        queue.append(v)
-
-            if not component:
-                continue
-
-            # Which duplicity groups live in this island?
-            comp_groups: list[int] = []
-            for idx, primaries in enumerate(group_primaries):
-                if primaries & component:
-                    comp_groups.append(idx)
-
-            if comp_groups:
-                islands_level.append({
-                    "count":  len(component),
-                    "groups": sorted(comp_groups),
-                })
-
-        # largest islands first
-        islands_level.sort(key=lambda isl: isl["count"], reverse=True)
-        return islands_level
-
-    # Compute islands for all distances 0..max_edge_dist
-    islands_by_dist: dict[str, list[dict]] = {}
-    for d in range(0, max_edge_dist + 1):
-        islands_by_dist[str(d)] = compute_islands_for_maxdist(d)
-
-    # can't sort a dict
-    # islands_by_dist.sort(key=lambda isl: isl["count"], reverse=True)
-
-    # ------------------------------------------------------------------
-    # PHASE 7 – PO view: which non-primary POs touch which groups?
-    # ------------------------------------------------------------------
-    po_view: list[dict] = []
-
-    # find all POs that are not duplicity primaries
-    po_uuids: set[str] = set()
-    for uuid, rec in all_entities.items():
-        ctype = rec.get("type")
-        if ctype == PO_CITYPE_NAME and uuid not in duplicated_uuids:
-            po_uuids.add(uuid)
-
-    # po_uuid -> set(group_idx)
-    po_to_groups: dict[str, set[int]] = defaultdict(set)
-
-    # scan all relations for distance-0 edges primary<->PO
-    for rel_info in relations.values():
-        for pair in rel_info.get("pairs", []):
-            if len(pair) < 3:
-                continue
-            src, tgt, edge_dist = pair
-            if edge_dist != 0:
-                continue   # we only care about direct neighborhood of primaries
-
-            # primary -> PO
-            if src in duplicated_uuids and tgt in po_uuids:
-                gidx = primary_to_group_idx.get(src)
-                if gidx is not None:
-                    po_to_groups[tgt].add(gidx)
-
-            # PO -> primary
-            if tgt in duplicated_uuids and src in po_uuids:
-                gidx = primary_to_group_idx.get(tgt)
-                if gidx is not None:
-                    po_to_groups[src].add(gidx)
-
-    # materialize PO entries – we keep ALL that touch at least one duplicity group
-    for po_uuid, group_indices in po_to_groups.items():
-        rec = all_entities.get(po_uuid, {"type": None, "attributes": [], "metaAttributes": {}})
-        po_view.append({
-            "po_uuid": po_uuid,
-            "identifier": ctx.get_entity_identifier(po_uuid, rec),
-            "group_indices": sorted(group_indices),
-            "group_count": len(group_indices),
-        })
-
-    # sort POs by how many groups they touch (descending)
-    po_view.sort(key=lambda h: h["group_count"], reverse=True)
-
-    # ------------------------------------------------------------------
-    # FINAL OUTPUT
-    # ------------------------------------------------------------------
+    # ------------------------------------------------------------
+    # STEP 7 – write JSON summary for meta-viz
+    # ------------------------------------------------------------
     out = {
-        "date":      ctx.date,
-        "name":      "MetaIS code duplicity",
-        "count":     len(groups),
-        "groups":    groups,
-        "orphans":   orphans,
-        "islands":   islands_by_dist,
-        "po_view":   po_view,
-        "entities":  all_entities,
-        "relations": relations,
+        "date":     ctx.date,
+        "name":     "MetaIS code duplicity",
+        "count":    len(groups),
+        "groups":   groups,
+        "synthetic_relations": synthetic_relations,
     }
+
+    out_path = out_dir / "metais_dup.json"
+    dump_json_smart(out_path, out)
+
+    # return value is ignored by master_loader, but we keep it for debugging
     return out

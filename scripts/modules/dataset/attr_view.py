@@ -1,11 +1,15 @@
 from collections import Counter
 from tqdm import tqdm
+from packed_reader import interpret_meta_state
 
 TOP_VALUES_LIMIT = 20  # how many most-frequent values to keep per attribute / metaAttr
 
 def classify_validity(raw):
-    """state -> 'valid' / 'invalid'"""
-    return "invalid" if raw == "INVALIDATED" else "valid"
+    """
+      - None / anything not INVALIDATED -> valid
+      - INVALIDATED                     -> invalid
+    """
+    return "valid" if interpret_meta_state(raw) else "invalid"
 
 TOGGLE_CONFIG = {
     "*": [  # all citypes
@@ -48,13 +52,9 @@ def get_toggle_specs_for_citype(citype_name: str):
     specs.extend(TOGGLE_CONFIG.get(citype_name, []))
     return specs
 
-def run(ctx):
-    entity = ctx.entity
-    enum   = ctx.enums or {}
+def run(ctx, out_dir):
+    store = ctx.store # (PackedStore)
     resolve_enum_value = ctx.resolve_enum_value
-
-    citype_meta     = entity.get("citype_metadata", {})
-    entity_by_uuid  = entity.get("by_uuid", {})
 
     # ---------- helpers ----------
 
@@ -376,14 +376,16 @@ def run(ctx):
 
     citypes_out = []
 
-    # ---------- main loop over types ----------
-
-    for citype_record in entity.get("types", []):
-        citype_name = citype_record.get("technicalName")
+    # ---------- main loop over types (from packed store) ----------
+    for citype_name in store.list_types():
         if not citype_name:
             continue
 
-        meta_info = ctx.get_citype_metadata(citype_name)
+        # try to get nice label if ctx still has citype metadata; else fallback
+        try:
+            meta_info = ctx.get_citype_metadata(citype_name)
+        except AttributeError:
+            meta_info = {}
         citype_label = meta_info.get("name") or citype_name
 
         # which toggles apply to this citype?
@@ -392,30 +394,19 @@ def run(ctx):
         # per-dimension set of actually seen values (for UI)
         dim_values = {spec["id"]: set() for spec in toggle_specs}
 
-        # base attribute stats template from metadata
+        # open packed type view
+        tv = store.open_type(citype_name)
+
+        # base attribute stats template from TypeView metadata
         base_attr_template = {}
+        for attr_tech in tv.attributes:
+            meta = tv.attr_meta.get(attr_tech, {})
+            attrName = meta.get("name") or attr_tech
+            attrDesc = meta.get("description")
+            attrValid = True   # we don't have a 'valid' flag in packed meta; assume True
 
-        # initialize attribute stats from node metadata (for labels/valid/description)
-        for attribute in ctx.iter_all_attr_defs_for_citype(citype_name):
-            attrTechName = attribute.get("technicalName")
-            if not attrTechName:
-                continue
-
-            meta_label = (
-                attribute.get("name")
-                or attribute.get("engName")
-                or attrTechName
-            )
-            attrName   = ctx.get_attribute_label(attrTechName, meta_label)
-            attrDesc  = attribute.get("description")
-            valid_raw = attribute.get("valid")
-            if isinstance(valid_raw, str):
-                attrValid = valid_raw.strip().lower() in ("valid", "true", "1", "yes")
-            else:
-                attrValid = bool(valid_raw)
-
-            base_attr_template[attrTechName] = {
-                "technicalName": attrTechName,
+            base_attr_template[attr_tech] = {
+                "technicalName": attr_tech,
                 "name":          attrName,
                 "description":   attrDesc,
                 "valid":         attrValid,
@@ -427,22 +418,32 @@ def run(ctx):
         stats_by_filter = {}
         stats_by_filter[None] = make_empty_bucket(base_attr_template)
 
-        # iterate over entities of this type
-        for uuid in tqdm(
-            ctx.iter_uuids_of_type(citype_name),
+        # iterate over entities of this type using packed_reader
+        for uuid, attrs in tqdm(
+            tv.iter_records(),
             desc=f"attr_view: {citype_name}",
             leave=False,
         ):
             if uuid is None:
                 continue
 
-            try:
-                rec = ctx.get_entity_record(citype_name, uuid)
-            except KeyError:
-                # entity may not be present in the dump – be defensive
-                rec = entity_by_uuid.get(uuid)
-                if not rec:
-                    continue
+            # Split packed attributes into regular + meta
+            regular_attrs = {}
+            meta_attrs = {}
+
+            for key, value in attrs.items():
+                if key.startswith("__meta__"):
+                    meta_key = key[len("__meta__"):]    # "__meta__state" -> "state"
+                    meta_attrs[meta_key] = value
+                else:
+                    regular_attrs[key] = value
+
+            rec = {
+                "type": citype_name,
+                "uuid": uuid,
+                "attributes": regular_attrs,
+                "metaAttributes": meta_attrs,
+            }
 
             # --- compute filter key for this record (once) ---
             filter_key, values_by_id = get_filter_values_for_rec(rec, toggle_specs)
@@ -679,4 +680,11 @@ def run(ctx):
         "name":    "Attribute & metaAttribute statistics",
         "citypes": citypes_out,
     }
-    return out
+    
+    # write to meta-viz/data/<DATE>/dataset/attr_view.json (or similar)
+    from json_writer import dump_json_smart
+    out_path = out_dir / "attr_view.json"
+    with out_path.open("w", encoding="utf-8") as f:
+        dump_json_smart(out, f)
+
+    return out  # optional, for debugging/tests

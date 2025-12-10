@@ -456,8 +456,12 @@ def repack(spec: RepackSpec) -> None:
         raise FileNotFoundError(f"source_packed not found: {src}")
 
     if dst.exists() and any(dst.iterdir()):
-        raise RuntimeError(f"dest_packed {dst} already exists and is not empty")
-
+        print(f"[repack] WARNING: dest_packed {dst} already exists and is not empty; removing it")
+        shutil.rmtree(dst)
+    else:
+        # parent dirs may not exist yet
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        
     dst.mkdir(parents=True, exist_ok=True)
 
     src_nodes_dir    = src / "nodes"

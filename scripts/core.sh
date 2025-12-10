@@ -64,7 +64,11 @@ http_code="$(curl "${curl_flags[@]}")"
 
 if [[ "$http_code" == "200" ]]; then
   if jq -e . "$_resp_tmp" > /dev/null 2>&1; then
-    mv -f "$_resp_tmp" "$OUT_JSON"
+    if [[ "$OUT_JSON" == "-" ]]; then
+      cat "$_resp_tmp"
+    else
+      mv -f "$_resp_tmp" "$OUT_JSON"
+    fi
   else
     echo "ERROR: API returned non-JSON despite 200 OK. Refusing to write $OUT_JSON." >&2
     echo "------ Response (first 200 chars) ------" >&2
