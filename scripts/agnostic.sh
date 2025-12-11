@@ -62,7 +62,7 @@ if [[ -z "${TPL}" ]]; then
   if [[ "${KIND}" == "node" ]]; then
     TPL="${GROOVY_DIR}/entity_template_agnostic_all.groovy"
   else
-    TPL="${GROOVY_DIR}/relation_template_agnostic_uuid.groovy"
+    TPL="${GROOVY_DIR}/relation_template_agnostic_all.groovy"
   fi
 fi
 
