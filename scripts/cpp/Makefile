@@ -16,6 +16,7 @@ MAIN_BIN      := metais_fetch
 MAIN_SRCS := $(SRC_DIR)/main.cpp \
              $(SRC_DIR)/fetch_http.cpp \
              $(SRC_DIR)/fetch_enums.cpp \
+			 $(SRC_DIR)/fetch_metadata.cpp \
 			 $(SRC_DIR)/fetch_http.cpp
 
 # Objects (same .o reused where possible)

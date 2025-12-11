@@ -8,6 +8,7 @@
 #include <filesystem>
 
 #include "../include/fetch_enums.h"
+#include "../include/fetch_metadata.h"
 
 namespace fs = std::filesystem;
 
@@ -42,8 +43,8 @@ int main() {
         layout.create_all();
 
         // 6 fetch enums and metadata
-
         fetch_enums(layout, uri_cfg);
+        fetch_metadata(layout, uri_cfg);
 
         /*
         std::cout << "[info] date_root      = " << layout.date_root      << "\n";

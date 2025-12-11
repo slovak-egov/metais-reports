@@ -21,7 +21,7 @@ struct DirectoryLayout {
     fs::path date_root;      // raw_root / dump_date
 
     fs::path metadata_root;  // date_root / metadata_root
-    fs::path enums_root;      // date_root / enums_root
+    fs::path enums_root;     // date_root / enums_root
     fs::path nodes_meta_dir; // metadata_root / nodes_root
     fs::path rels_meta_dir;  // metadata_root / rels_root
 
