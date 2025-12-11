@@ -1,0 +1,12 @@
+{
+  "meta-instance": "prod",
+
+  "enum_list": "api/enums-repo/enums/list",
+  "enum_detail_base": "api/enums-repo/enums/enum/valid",
+
+  "citype_list": "api/types-repo/citypes/list",
+  "citype_detail_base": "api/types-repo/citypes/citype",
+
+  "reltype_list": "api/types-repo/relationshiptypes/list",
+  "reltype_detail_base": "api/types-repo/relationshiptypes/relationshiptype"
+}
