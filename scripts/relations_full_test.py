@@ -38,6 +38,7 @@ TEMPLATE_ALL = Path(GROOVY_DIR) / "relation_template_agnostic_all.groovy"
 TEMPLATE_UUID = Path(GROOVY_DIR) / "relation_template_agnostic_uuid.groovy"
 
 PAGE_SIZE = int(os.getenv("REL_PAGE_SIZE", "4096"))
+MIN_PAGE_SIZE_FOR_SHRINK = 1
 SUBPROC_TIMEOUT = float(os.getenv("METAIS_SUBPROC_TIMEOUT", "180"))
 PAGE_MAX_RETRIES = int(os.getenv("PAGE_MAX_RETRIES", "10"))
 PAGE_RETRY_DELAY = float(os.getenv("PAGE_RETRY_DELAY", "0.5"))
@@ -126,6 +127,10 @@ def _prompt_for_new_token() -> bool:
         print("[AUTH] No TOKEN provided, aborting current request.", file=sys.stderr)
         return False
 
+def _is_server_500(stderr_text: str) -> bool:
+    s = (stderr_text or "").lower()
+    return "http error:" in s and " 500" in s
+
 def run_rel_page(
     limit: int,
     offset: int,
@@ -134,16 +139,10 @@ def run_rel_page(
     """
     Call agnostic.sh for relations with given limit/offset and GROOVY template.
 
-    This version:
-      - Retries transient failures up to PAGE_MAX_RETRIES.
-      - Detects auth/TOKEN problems and lets you paste a new TOKEN interactively.
-      - Only returns (ok=False, err) if the error persists *after* retries
-        and any requested TOKEN refreshes.
-
     Returns:
         (ok, items_or_None, error_text_if_any)
 
-    - ok=True → items is a list (possibly empty).
+    - ok=True  → items is a list (possibly empty).
     - ok=False → items is None, error_text has stderr from agnostic.sh/core.sh.
     """
     env = os.environ.copy()
@@ -191,7 +190,7 @@ def run_rel_page(
             f"limit={limit}, offset={offset})\n{stderr}"
         )
 
-        # Success path
+        # --- success path ----------------------------------------------------
         if proc.returncode == 0:
             if not stdout.strip():
                 # Treat empty stdout as empty page
@@ -219,20 +218,39 @@ def run_rel_page(
 
             return True, items, ""
 
-        # Non-zero return code:
-        # 1) Is it clearly an auth/TOKEN problem?
+        # --- non-zero return code -------------------------------------------
+
+        # 1) Auth/TOKEN problem?
         if _is_auth_error(stderr):
             if _prompt_for_new_token():
-                # User updated TOKEN; try again *without* counting it as a transient attempt
                 env["TOKEN"] = os.environ["TOKEN"]
+                # retry *without* counting as a transient attempt
                 continue
             else:
-                # User refused / not interactive → hard failure
                 return False, None, last_err_text
 
-        # 2) Not an auth problem → treat as transient up to PAGE_MAX_RETRIES
+        # 2) 504 Gateway Time-out – server choking on big window.
+        #    No retries here; caller will shrink limit.
+        is_504 = ("HTTP ERROR: 504" in stderr) or ("504 Gateway Time-out" in stderr)
+        if is_504:
+            return False, None, last_err_text
+
+        # 3) 500 script error (gnr500 / rpt05 / ScriptException).
+        #    This is almost certainly a deterministic bad relation, not a transient.
+        is_500_script = (
+            "HTTP ERROR: 500" in stderr
+            or " status=500 INTERNAL_SERVER_ERROR" in stderr
+            or "type=rpt05" in stderr
+            or "type=gnr500" in stderr
+            or "ScriptingException" in stderr
+        )
+        if is_500_script:
+            # Do NOT retry here. Let the caller (coarse scan / binary search)
+            # handle it as a real data problem.
+            return False, None, last_err_text
+
+        # 4) Other errors → transient, respect PAGE_MAX_RETRIES
         if PAGE_MAX_RETRIES > 0 and attempt >= PAGE_MAX_RETRIES:
-            # Now we consider this a "real" failure (e.g. broken relation)
             return False, None, last_err_text
 
         print(
@@ -350,52 +368,113 @@ def inspect_bad_index_with_uuid_template(bad_index: int) -> Tuple[Optional[str],
 # Top-level scan: walk all relations until empty page
 # ---------------------------------------------------------------------
 
-def scan_all_relations() -> List[BrokenRelationRecord]:
+def scan_all_relations(start_offset: int = 0) -> List[BrokenRelationRecord]:
     """
     Linear scan over all relations ordered by createdAt using TEMPLATE_ALL.
 
-    - Moves in coarse windows of PAGE_SIZE.
-    - On HTTP 500 in a coarse window, runs binary search to find the first bad index.
-    - Uses TEMPLATE_UUID to extract source/target UUIDs.
-    - Skips that index and continues scanning until we hit an empty page.
+    - Moves in windows of size `window_limit` (initially PAGE_SIZE).
+    - On HTTP 504 in a coarse window, shrinks `window_limit` (e.g. halved) and retries.
+    - On "too slow" OK windows (runtime > REL_SOFT_TIME_LIMIT), also shrinks window_limit.
+    - On true 500/script errors, runs binary search inside [offset, offset + window_limit)
+      to find the first bad index, records it, and skips past it.
+    - Stops on the first empty OK page.
 
     Returns a list of BrokenRelationRecord objects.
     """
     broken: List[BrokenRelationRecord] = []
-    offset = 0
 
-    print(f"[INFO] Starting global relation scan with PAGE_SIZE={PAGE_SIZE}")
+    # dynamic window size, starts at PAGE_SIZE and only shrinks
+    window_limit = PAGE_SIZE
+    max_limit = PAGE_SIZE
+
+    # how long is "too long" for an OK page before we decide window is too big?
+    SOFT_TIME_LIMIT = float(os.getenv("REL_SOFT_TIME_LIMIT", "55"))
+
+    offset = start_offset
+
+    print(f"[INFO] Starting global relation scan with PAGE_SIZE={PAGE_SIZE}, start_offset={start_offset}")
     print(f"[INFO] Using templates:\n  ALL  = {TEMPLATE_ALL}\n  UUID = {TEMPLATE_UUID}\n")
+    print(f"[INFO] Initial window_limit={window_limit}, SOFT_TIME_LIMIT={SOFT_TIME_LIMIT}s\n")
 
     while True:
-        print(f"\n[SCAN] Probing coarse window offset={offset}, limit={PAGE_SIZE}")
+        print(f"\n[SCAN] Probing coarse window offset={offset}, limit={window_limit}")
+
+        t0 = time.monotonic()
         ok, items, err = run_rel_page(
-            limit=PAGE_SIZE,
+            limit=window_limit,
             offset=offset,
             template=TEMPLATE_ALL,
         )
+        elapsed = time.monotonic() - t0
 
+        # ------------------------------------------------------------
+        # Success: OK page
+        # ------------------------------------------------------------
         if ok:
-            # Successful window: if empty, we're done.
             count = len(items)
-            print(f"[SCAN] OK, count={count}")
+            print(f"[SCAN] OK, count={count}, limit={window_limit}, time={elapsed:.1f}s")
+
             if count == 0:
                 print("[SCAN] Empty page reached; scan complete.")
                 break
 
-            # We don't need to keep these; just mark them as good.
-            # Move offset by *PAGE_SIZE* — safe even if last page shorter.
-            offset += PAGE_SIZE
+            # If the request took too long but succeeded, shrink the window
+            # so we don't flirt with the 60s timeout.
+            if elapsed > 55 and window_limit > 1:
+                new_limit = max(1, int(0.9 * window_limit))
+                print(
+                    f"[SCAN] Page took {elapsed:.1f}s (> 55s). "
+                    f"Shrinking window_limit {window_limit} → {new_limit} for future pages."
+                )
+                window_limit = new_limit
+
+            if elapsed < 45:
+                new_limit = max(1, int(1.2 * window_limit))
+                print(
+                    f"[SCAN] Page took {elapsed:.1f}s (< 15s). "
+                    f"Raising window_limit {window_limit} → {new_limit} for future pages."
+                )
+                window_limit = new_limit
+
+            # Advance by what we actually requested, not the original PAGE_SIZE
+            offset += window_limit
             continue
 
-        # Coarse window failed: binary search inside [offset, offset+PAGE_SIZE)
+        # ------------------------------------------------------------
+        # Failure: not OK
+        # Decide if it's a 504 (performance) or a real 500/script error
+        # ------------------------------------------------------------
+        err_lower = (err or "").lower()
+        is_504 = ("http error: 504" in err) or ("504 gateway time-out" in err_lower)
+
+        # 504: server timed out → shrink window and retry *same* offset
+        if is_504 and window_limit > 1:
+            new_limit = max(1, window_limit // 2)
+            print(
+                f"[SCAN] 504 on coarse window offset={offset}, limit={window_limit}. "
+                f"Shrinking window_limit → {new_limit} and retrying same offset."
+            )
+            window_limit = new_limit
+            # no offset change; just retry with smaller limit
+            continue
+
+        # If it's 504 and we're already at limit==1, there's nothing more we can do
+        if is_504 and window_limit == 1:
+            raise RuntimeError(
+                f"[SCAN] 504 Gateway Time-out even with window_limit=1 at offset={offset}. "
+                f"Can't progress further."
+            )
+
+        # For non-504 errors here, we expect true script / data errors (500 etc).
         print(
-            f"[SCAN] HTTP error in coarse window offset={offset}, "
-            f"limit={PAGE_SIZE}. Starting binary search..."
+            f"[SCAN] Non-504 error in coarse window offset={offset}, "
+            f"limit={window_limit}. Starting binary search..."
         )
+
+        # Use the *current* window_limit as [lo, hi) range for binary search.
         bad_index, err_text = find_failing_index_in_window(
             lo=offset,
-            hi=offset + PAGE_SIZE,
+            hi=offset + window_limit,
         )
 
         print(f"[RESULT] Found failing relation at global index={bad_index}")
@@ -421,7 +500,7 @@ def scan_all_relations() -> List[BrokenRelationRecord]:
             f"target={record.target}, state={record.state}"
         )
 
-        # IMPORTANT: skip past this bad index so we don't hit it again
+        # Skip past this bad index so we don't hit it again
         offset = bad_index + 1
 
     return broken
@@ -432,6 +511,13 @@ def scan_all_relations() -> List[BrokenRelationRecord]:
 # ---------------------------------------------------------------------
 
 def main() -> None:
+    resume_offset = 0
+
+    # simple manual arg parsing
+    if len(sys.argv) >= 3 and sys.argv[1] == "--resume":
+        resume_offset = int(sys.argv[2])
+        print(f"[INFO] Resuming scan from offset={resume_offset}")
+
     # Quick sanity checks
     if not AGNOSTIC_SH.is_file():
         print(f"[ERROR] agnostic.sh not found at {AGNOSTIC_SH}", file=sys.stderr)
@@ -445,7 +531,7 @@ def main() -> None:
         print(f"[ERROR] TEMPLATE_UUID not found at {TEMPLATE_UUID}", file=sys.stderr)
         sys.exit(1)
 
-    broken = scan_all_relations()
+    broken = scan_all_relations(resume_offset)
 
     data = [asdict(r) for r in broken]
     with SUMMARY_PATH.open("w", encoding="utf-8") as f:
