@@ -46,8 +46,8 @@ if [[ -z "${KIND}" ]]; then
   usage
 fi
 
-if [[ "${KIND}" != "node" && "${KIND}" != "rel" ]]; then
-  echo "[ERROR] --kind must be 'node' or 'rel', got '${KIND}'" >&2
+if [[ "${KIND}" != "node" && "${KIND}" != "rel" && "${KIND}" != "relnotype" ]]; then
+  echo "[ERROR] --kind must be 'node', 'rel', or 'relnotype', got '${KIND}'" >&2
   usage
 fi
 
@@ -61,6 +61,8 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 if [[ -z "${TPL}" ]]; then
   if [[ "${KIND}" == "node" ]]; then
     TPL="${GROOVY_DIR}/entity_template_agnostic_all.groovy"
+  elif [[ "${KIND}" == "relnotype" ]]; then
+    TPL="${GROOVY_DIR}/relation_template_agnostic_notype.groovy"
   else
     TPL="${GROOVY_DIR}/relation_template_agnostic_all.groovy"
   fi
