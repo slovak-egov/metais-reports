@@ -13,11 +13,7 @@ BUILD_DIR := build
 MAIN_BIN      := metais_fetch
 
 # Sources
-MAIN_SRCS := $(SRC_DIR)/main.cpp \
-             $(SRC_DIR)/fetch_http.cpp \
-             $(SRC_DIR)/fetch_enums.cpp \
-			 $(SRC_DIR)/fetch_metadata.cpp \
-			 $(SRC_DIR)/fetch_http.cpp
+MAIN_SRCS := $(wildcard $(SRC_DIR)/*.cpp)
 
 # Objects (same .o reused where possible)
 MAIN_OBJS       := $(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(MAIN_SRCS))

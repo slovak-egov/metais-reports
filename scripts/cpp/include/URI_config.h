@@ -28,6 +28,8 @@ struct URIConfig {
     std::string reltype_list_path;
     std::string reltype_detail_base_path;
 
+    std::string report_run_path;
+
     // Convenience full URLs
     std::string enum_list_url() const {
         return base_url + "/" + enum_list_path;
@@ -48,6 +50,10 @@ struct URIConfig {
     }
     std::string reltype_detail_base_url() const {
         return base_url + "/" + reltype_detail_base_path;
+    }
+
+    std::string report_run_url() const {
+        return base_url + "/" + report_run_path;
     }
 };
 
@@ -86,6 +92,8 @@ inline URIConfig load_uri_config(const fs::path& uri_json_path) {
     cfg.reltype_list_path          = "api/types-repo/relationshiptypes/list";
     cfg.reltype_detail_base_path   = "api/types-repo/relationshiptypes/relationshiptype";
 
+    cfg.report_run_path = "api/report/reports/run?lang=sk";
+
     try {
         json j = load_json_file(uri_json_path.string());
 
@@ -94,6 +102,8 @@ inline URIConfig load_uri_config(const fs::path& uri_json_path) {
             cfg.meta_instance = j["meta-instance"].get<std::string>();
         }
 
+
+        
         // override individual paths if present
         if (j.contains("enum_list")) {
             cfg.enum_list_path = j["enum_list"].get<std::string>();
@@ -102,12 +112,16 @@ inline URIConfig load_uri_config(const fs::path& uri_json_path) {
             cfg.enum_detail_base_path = j["enum_detail_base"].get<std::string>();
         }
 
+
+
         if (j.contains("citype_list")) {
             cfg.citype_list_path = j["citype_list"].get<std::string>();
         }
         if (j.contains("citype_detail_base")) {
             cfg.citype_detail_base_path = j["citype_detail_base"].get<std::string>();
         }
+
+
 
         if (j.contains("reltype_list")) {
             cfg.reltype_list_path = j["reltype_list"].get<std::string>();
@@ -116,9 +130,15 @@ inline URIConfig load_uri_config(const fs::path& uri_json_path) {
             cfg.reltype_detail_base_path = j["reltype_detail_base"].get<std::string>();
         }
 
+
+
+        if (j.contains("apiuri") && j["apiuri"].is_string()) {
+            cfg.report_run_path = j["apiuri"].get<std::string>();
+        }
+
     } catch (const std::exception& e) {
         std::cerr << "[URI_config] WARNING: " << e.what()
-                  << " – using default URIs.\n";
+                  << " - using default URIs.\n";
     }
 
     cfg.base_url = resolve_base_url(cfg.meta_instance);

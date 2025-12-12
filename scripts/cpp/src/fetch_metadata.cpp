@@ -17,10 +17,12 @@ namespace metais {
     // -----------------------------
 
     std::vector<std::string>
-    fetch_citype_list(const DirectoryLayout& layout, const URIConfig& uri_cfg)
+    fetch_citype_list(const DirectoryLayout& layout,
+                      const URIConfig& uri_cfg,
+                      const HTTPConfig& http_cfg)
     {
         const std::string list_url = uri_cfg.citype_list_url();
-        json raw = extract_result_array(http::GET_json(list_url, ""));
+        json raw = extract_result_array(http::GET_json(list_url, http_cfg));
 
         std::cout << "[META] Citype list: received " << raw.size()
                   << " raw entries from " << list_url << "\n";
@@ -64,10 +66,11 @@ namespace metais {
 
     void fetch_citype_detail(const DirectoryLayout& layout,
                              const URIConfig& uri_cfg,
+                             const HTTPConfig& http_cfg,
                              const std::string& citype_code)
     {
         const std::string url = uri_cfg.citype_detail_base_url() + "/" + citype_code;
-        json detail = http::GET_json(url, "");
+        json detail = http::GET_json(url, http_cfg);
 
         fs::path out_dir = layout.nodes_meta_dir;
         std::error_code ec;
@@ -100,10 +103,12 @@ namespace metais {
     // -----------------------------
 
     std::vector<std::string>
-    fetch_reltype_list(const DirectoryLayout& layout, const URIConfig& uri_cfg)
+    fetch_reltype_list(const DirectoryLayout& layout,
+                       const URIConfig& uri_cfg,
+                       const HTTPConfig& http_cfg)
     {
         const std::string list_url = uri_cfg.reltype_list_url();
-        json raw = extract_result_array(http::GET_json(list_url, ""));
+        json raw = extract_result_array(http::GET_json(list_url, http_cfg));
 
         std::cout << "[META] Reltype list: received " << raw.size()
                   << " raw entries from " << list_url << "\n";
@@ -146,10 +151,11 @@ namespace metais {
 
     void fetch_reltype_detail(const DirectoryLayout& layout,
                               const URIConfig& uri_cfg,
+                              const HTTPConfig& http_cfg,
                               const std::string& reltype_code)
     {
         const std::string url = uri_cfg.reltype_detail_base_url() + "/" + reltype_code;
-        json detail = http::GET_json(url, "");
+        json detail = http::GET_json(url, http_cfg);
 
         fs::path out_dir = layout.rels_meta_dir;
         std::error_code ec;
@@ -181,7 +187,9 @@ namespace metais {
     // Orchestrator
     // -----------------------------
 
-    void fetch_metadata(const DirectoryLayout& layout, const URIConfig& uri_cfg)
+    void fetch_metadata(const DirectoryLayout& layout,
+                        const URIConfig& uri_cfg,
+                        const HTTPConfig& http_cfg)
     {
         fs::path meta_root = layout.metadata_root;
 
@@ -189,19 +197,20 @@ namespace metais {
             std::cout << "[META] .done marker present in " << meta_root << " - skipping." << std::endl;
             return;
         }
+        
         // CITYPES
         {
             fs::path nodes_meta_root = layout.nodes_meta_dir;
             if (is_done(nodes_meta_root)) {
                 std::cout << "[META] .done present in " << nodes_meta_root
-                          << " – skipping citype metadata.\n";
+                          << " - skipping citype metadata.\n";
             } else {
-                auto citypes = fetch_citype_list(layout, uri_cfg);
+                auto citypes = fetch_citype_list(layout, uri_cfg, http_cfg);
                 std::cout << "[META] Will fetch metadata for "
                           << citypes.size() << " citypes.\n";
 
                 for (const auto& code : citypes) {
-                    fetch_citype_detail(layout, uri_cfg, code);
+                    fetch_citype_detail(layout, uri_cfg, http_cfg, code);
                 }
 
                 mark_done(nodes_meta_root);
@@ -213,14 +222,14 @@ namespace metais {
             fs::path rels_meta_root = layout.rels_meta_dir;
             if (is_done(rels_meta_root)) {
                 std::cout << "[META] .done present in " << rels_meta_root
-                          << " – skipping reltype metadata.\n";
+                          << " - skipping reltype metadata.\n";
             } else {
-                auto reltypes = fetch_reltype_list(layout, uri_cfg);
+                auto reltypes = fetch_reltype_list(layout, uri_cfg, http_cfg);
                 std::cout << "[META] Will fetch metadata for "
                           << reltypes.size() << " reltypes.\n";
 
                 for (const auto& code : reltypes) {
-                    fetch_reltype_detail(layout, uri_cfg, code);
+                    fetch_reltype_detail(layout, uri_cfg, http_cfg, code);
                 }
 
                 mark_done(rels_meta_root);

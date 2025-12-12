@@ -8,5 +8,7 @@
   "citype_detail_base": "api/types-repo/citypes/citype",
 
   "reltype_list": "api/types-repo/relationshiptypes/list",
-  "reltype_detail_base": "api/types-repo/relationshiptypes/relationshiptype"
+  "reltype_detail_base": "api/types-repo/relationshiptypes/relationshiptype",
+
+  "apiuri": "api/report/reports/run?lang=sk"
 }

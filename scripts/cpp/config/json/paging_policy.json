@@ -1,0 +1,14 @@
+{
+  "initial_limit": 2000,
+  "min_limit": 10,
+  "max_limit": 20000,
+
+  "grow_if_under_seconds": 30.0,
+  "shrink_if_over_seconds": 45.0,
+
+  "grow_factor": 1.2,
+  "shrink_factor": 0.8,
+  "timeout_factor": 0.5,
+
+  "quantize_step": 1
+}

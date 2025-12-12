@@ -1,0 +1,30 @@
+{
+  "auth": {
+    "mode": "bearer_env",
+    "env_var": "METAIS_TOKEN",
+    "token_prefix": "Bearer ",
+    "required": true
+  },
+
+  "timeouts": {
+    "connect_seconds": 10,
+    "total_seconds": 60
+  },
+
+  "retries": {
+    "max_attempts": 5,
+    "base_delay_ms": 500,
+    "max_delay_ms": 8000,
+    "jitter_ms": 250,
+    "retry_http": [408, 429, 500, 502, 503, 504],
+    "retry_curl": ["timeout", "couldnt_connect", "couldnt_resolve_host"]
+  },
+
+  "paging": {
+    "enabled": true,
+    "page_size": 2000,
+    "max_pages": 100000,
+    "offset_param": "offset",
+    "limit_param": "limit"
+  }
+}

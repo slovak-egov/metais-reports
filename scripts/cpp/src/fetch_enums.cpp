@@ -2,7 +2,6 @@
 #include "../include/json_utils.h"
 #include "../include/fetch_http.h"
 #include "../include/step_marker.h"
-#include "../include/URI_config.h"
 
 #include <fstream>
 #include <iostream>
@@ -13,11 +12,13 @@ namespace metais {
     using json = nlohmann::json;
     namespace fs = std::filesystem;
 
-    std::vector<std::string> fetch_enum_list(const DirectoryLayout& dir_layout, const URIConfig& uri_cfg) {
+    std::vector<std::string> fetch_enum_list(const DirectoryLayout& dir_layout,
+                const URIConfig& uri_cfg,
+                const HTTPConfig& http_cfg) {
 
         std::string enum_list_uri = uri_cfg.enum_list_url();
 
-        json enum_list = extract_result_array(http::GET_json(enum_list_uri, ""));
+        json enum_list = extract_result_array(http::GET_json(enum_list_uri, http_cfg));
 
         std::cout << "[ENUMS] received " << enum_list.size()
                   << " raw entries from " << enum_list_uri << "\n";
@@ -54,11 +55,12 @@ namespace metais {
 
     void fetch_enum(const DirectoryLayout& layout,
                 const URIConfig& uri_cfg,
+                const HTTPConfig& http_cfg,
                 const std::string& enum_name,
                 std::map<std::string, std::vector<std::string>>& enum_merged) {
 
         std::string enum_uri = uri_cfg.enum_detail_base_url() + "/" + enum_name;
-        json detail = http::GET_json(enum_uri, "");
+        json detail = http::GET_json(enum_uri, http_cfg);
         json enum_items = detail.value("enumItems", json::array());
 
         std::cout << "[ENUM] received " << enum_name
@@ -136,7 +138,9 @@ namespace metais {
         return enum_collisions;
     }
 
-    void fetch_enums(const DirectoryLayout& dir_layout, const URIConfig& uri_cfg) {
+    void fetch_enums(const DirectoryLayout& dir_layout,
+                const URIConfig& uri_cfg,
+                const HTTPConfig& http_cfg) {
 
         fs::path enums_root = dir_layout.enums_root;
 
@@ -145,22 +149,22 @@ namespace metais {
             return;
         }
 
-        std::vector<std::string> enum_codes = fetch_enum_list(dir_layout, uri_cfg);
+        std::vector<std::string> enum_codes = fetch_enum_list(dir_layout, uri_cfg, http_cfg);
 
         std::map<std::string, std::vector<std::string>> enum_merged;
         for (const std::string& enum_name : enum_codes) {
-            fetch_enum(dir_layout, uri_cfg, enum_name, enum_merged);
+            fetch_enum(dir_layout, uri_cfg, http_cfg, enum_name, enum_merged);
         }
 
         auto enum_collisions = handle_merged_enums(enum_merged);
 
-        json merged_json = json::object();
+        json merged_js = json::object();
         for (const auto& kv : enum_merged) {
             const std::string& key = kv.first;
             const std::vector<std::string>& vec = kv.second;
             if (vec.size() >= 2) {
                 const std::string& value = vec[1];
-                merged_json[key] = value;
+                merged_js[key] = value;
             }
         }
 
@@ -171,14 +175,14 @@ namespace metais {
                 "Failed to write enums_merged.json at " + merged_path.string()
             );
         }
-        out << merged_json.dump(2);
+        out << merged_js.dump(2);
         out.close();
 
         std::cout << "[ENUMS] Saved enums_merged.json -> "
                   << merged_path << "\n";
 
         if (!enum_collisions.empty()) {
-            nlohmann::json collisions_json = nlohmann::json::array();
+            nlohmann::json collisions_js = nlohmann::json::array();
 
             for (const auto& kv : enum_collisions) {
                 const std::string& key = kv.first;
@@ -197,7 +201,7 @@ namespace metais {
                 }
 
                 entry["sources"] = sources;
-                collisions_json.push_back(entry);
+                collisions_js.push_back(entry);
             }
 
             fs::path collisions_path = dir_layout.enums_root / "enums_collisions.json";
@@ -207,7 +211,7 @@ namespace metais {
                     "Failed to write enums_collisions.json at " + collisions_path.string()
                 );
             }
-            out << collisions_json.dump(2);
+            out << collisions_js.dump(2);
             out.close();
 
             std::cout << "[ENUMS] Saved enums_collisions.json -> "

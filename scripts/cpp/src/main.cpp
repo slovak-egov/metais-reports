@@ -1,14 +1,17 @@
 #include "../include/date.h"
 #include "../include/paths_config.h"
+#include "../include/http_config.h"
 #include "../include/directory_layout.h"
 #include "../include/project_root.h"
 #include "../include/step_marker.h"
+#include "../include/binary_sink.h"
 
 #include <iostream>
 #include <filesystem>
 
 #include "../include/fetch_enums.h"
 #include "../include/fetch_metadata.h"
+#include "../include/fetch_raw.h"
 
 namespace fs = std::filesystem;
 
@@ -19,8 +22,9 @@ int main() {
         std::cout << "[info] dump date = " << dump_date << "\n";
 
         // Load paths config (with fallbacks)
-        auto path_cfg = metais::load_paths_config("config/paths.json");
-        auto uri_cfg  = metais::load_uri_config("config/URI.json");
+        auto path_cfg = metais::load_paths_config("config/json/paths.json");
+        auto uri_cfg  = metais::load_uri_config("config/json/URI.json");
+        auto http_cfg = metais::load_http_settings("config/json/http_config.json");
 
         // Decide project root.
         // we're at: .../metais-reports/scripts/cpp
@@ -42,9 +46,16 @@ int main() {
         // 5) Create directories on disk
         layout.create_all();
 
+        metais::NdjsonSink nodes_sink(layout.raw_nodes_dir / "nodes.ndjson");
+        metais::NdjsonSink rels_sink (layout.raw_rels_dir  / "rels.ndjson");
+
         // 6 fetch enums and metadata
-        fetch_enums(layout, uri_cfg);
-        fetch_metadata(layout, uri_cfg);
+        fetch_enums(layout, uri_cfg, http_cfg);
+        fetch_metadata(layout, uri_cfg, http_cfg);
+
+        // 7 fetch all data
+        fetch_raw_nodes(layout, uri_cfg, http_cfg, nodes_sink);
+        fetch_raw_rels(layout, uri_cfg, http_cfg, rels_sink);
 
         /*
         std::cout << "[info] date_root      = " << layout.date_root      << "\n";

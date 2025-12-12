@@ -3,9 +3,11 @@
 #include <filesystem>
 #include <string>
 #include <vector>
+#include <map>
 
 #include "directory_layout.h"
 #include "URI_config.h"
+#include "http_config.h"
 
 namespace fs = std::filesystem;
 
@@ -25,10 +27,13 @@ namespace fs = std::filesystem;
 
 namespace metais {
 
-    void fetch_enums(const DirectoryLayout& layout, const URIConfig& uri_cfg);
-    std::vector<std::string> fetch_enum_list(const DirectoryLayout& layout, const URIConfig& uri_cfg);
+    void fetch_enums(const DirectoryLayout& layout, const URIConfig& uri_cfg, const HTTPConfig& http_cfg);
+    std::vector<std::string> fetch_enum_list(const DirectoryLayout& layout,
+                const URIConfig& uri_cfg,
+                const HTTPConfig& http_cfg);
     void fetch_enum(const DirectoryLayout& layout,
                 const URIConfig& uri_cfg,
+                const HTTPConfig& http_cfg,
                 const std::string& enum_name,
                 std::map<std::string, std::vector<std::string>>& enum_merged);
 
