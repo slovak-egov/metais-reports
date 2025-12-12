@@ -6,9 +6,14 @@
 #include "../include/adaptive_pager.h"
 #include "../include/pager_policy.h"
 #include "../include/auth.h"
+#include "../include/parallel_state.h"
 
 #include <iostream>
 #include <curl/curl.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <iomanip>
+#include <fstream>
 
 using json = nlohmann::json;
 
@@ -42,6 +47,235 @@ namespace metais {
         // Should never happen because extract_result_array returns array,
         // but keep a hard guard anyway:
         throw std::runtime_error("[" + tag + "] Could not extract result array from JSON.\nJSON:\n" + j.dump(2));
+    }
+
+    static json fetch_one_page_array(
+        const std::string& tag,
+        const std::string& groovy_code,
+        const std::string& bearer_token,
+        const std::string& report_api_url,
+        const HTTPConfig& http_cfg
+    ) {
+        ReportRunOptions opt;
+        opt.api_url      = report_api_url;
+        opt.bearer_token = bearer_token;
+
+        HttpResponse r = run_report_groovy(opt, http_cfg, groovy_code);
+
+        if (r.status == 401 || r.status == 403) {
+            throw std::runtime_error("AUTH"); // caller decides prompt+retry
+        }
+
+        if (r.status == 0) {
+            // curl failure; caller decides shrink/retry
+            throw std::runtime_error("CURL:" + r.body);
+        }
+
+        if (r.status < 200 || r.status >= 300) {
+            throw std::runtime_error("HTTP " + std::to_string(r.status) + ": " + r.body);
+        }
+
+        return parse_results_or_throw(r.body, tag); // uses extract_result_array ✅
+    }
+
+    static void write_page_ndjson(
+        const std::filesystem::path& out_dir,
+        const std::string& base,
+        long offset,
+        const json& arr
+    ) {
+        const long n   = (long)arr.size();
+        const long end = (n > 0) ? (offset + n - 1) : offset;
+
+        std::ostringstream name;
+        name << base << "."
+            << std::setw(9) << std::setfill('0') << offset << "."
+            << std::setw(9) << std::setfill('0') << end
+            << ".ndjson";
+
+        const auto tmp = out_dir / (name.str() + ".tmp");
+        const auto fin = out_dir / name.str();
+
+        {
+            std::ofstream f(tmp, std::ios::binary);
+            if (!f) throw std::runtime_error("Cannot open: " + tmp.string());
+            for (const auto& obj : arr) {
+                if (obj.is_object()) f << obj.dump() << "\n";
+            }
+        }
+        std::filesystem::rename(tmp, fin); // atomic finalize
+    }
+
+    static int worker_loop_parallel_fixed(
+        const std::string& tag,
+        const std::filesystem::path& pages_dir,
+        const std::filesystem::path& state_dir,
+        const std::string& report_api_url,
+        const HTTPConfig& http_cfg,
+        const std::string& tpl
+    ) {
+        const int base_limit = http_cfg.paging.page_size;
+
+        while (true) {
+            long stop_at = -1;
+            if (get_stop_at(state_dir, stop_at)) {
+                // if stop_at defined, and next job would be beyond, quit
+                // (we check after claim too; either way ok)
+            }
+
+            long offset = claim_next_offset(state_dir, base_limit);
+
+            if (get_stop_at(state_dir, stop_at) && offset >= stop_at) {
+                return 0;
+            }
+
+            int limit = base_limit;
+
+            while (true) {
+                std::string token = read_shared_token(state_dir);
+                if (token.empty()) {
+                    // token not available => parent probably refreshing; wait briefly
+                    usleep(200 * 1000);
+                    continue;
+                }
+
+                std::string groovy_code = groovy::inject_limit_offset(tpl, limit, offset);
+
+                try {
+                    json arr = fetch_one_page_array(tag, groovy_code, token, report_api_url, http_cfg);
+                    const long n = (long)arr.size();
+
+                    if (n == 0) {
+                        // first empty page => record stop boundary
+                        set_stop_at(state_dir, offset);
+                        return 0;
+                    }
+
+                    // Write shard
+                    write_page_ndjson(pages_dir, (tag == "NODES" ? "nodes" : "rels"), offset, arr);
+                    std::cout << "[" << tag << "/W] offset=" << offset << " limit=" << limit
+                            << " got=" << n << "\n";
+                    break; // success: go claim another offset
+                } catch (const std::runtime_error& e) {
+                    std::string msg = e.what();
+
+                    if (msg == "AUTH") {
+                        return 42; // signal parent to refresh token
+                    }
+
+                    // timeout-like: shrink immediately and retry same offset
+                    if (msg.rfind("CURL:", 0) == 0) {
+                        // Could inspect curl_code instead, but msg is ok for now.
+                        limit = std::max(100, limit / 2);
+                        std::cerr << "[" << tag << "/W] curl fail at offset=" << offset
+                                << " -> limit=" << limit << " retry\n";
+                        continue;
+                    }
+
+                    // HTTP retryable
+                    if (msg.rfind("HTTP 408", 0) == 0 || msg.rfind("HTTP 504", 0) == 0 ||
+                        msg.rfind("HTTP 502", 0) == 0 || msg.rfind("HTTP 503", 0) == 0) {
+                        limit = std::max(100, limit / 2);
+                        std::cerr << "[" << tag << "/W] retryable HTTP at offset=" << offset
+                                << " -> limit=" << limit << " retry\n";
+                        continue;
+                    }
+
+                    throw; // other errors: bubble up and crash worker
+                }
+            }
+        }
+    }
+
+    static void run_parallel_fixed(
+        const std::string& tag,
+        const DirectoryLayout& layout,
+        const URIConfig& uri_cfg,
+        const HTTPConfig& http_cfg,
+        const std::string& tpl
+    ) {
+        std::filesystem::path base_dir = (tag == "NODES") ? layout.raw_nodes_dir : layout.raw_rels_dir;
+        std::filesystem::path pages_dir = base_dir / "pages";
+        std::filesystem::path state_dir = layout.tmp_dir / "paging" / tag;
+
+        std::filesystem::create_directories(pages_dir);
+        std::filesystem::create_directories(state_dir);
+
+        // Parent resolves/prompt token once and stores it.
+        std::string token = resolve_bearer_token_noninteractive(http_cfg);
+        if (http_cfg.auth.mode != "none" && token.empty()) {
+            token = prompt_bearer_token();
+            if (token.empty()) throw std::runtime_error("No token provided.");
+        }
+        write_shared_token(state_dir, token);
+
+        const std::string report_api_url = uri_cfg.report_run_url();
+        const int W = std::max(1, http_cfg.paging.parallel_workers);
+
+        auto spawn_workers = [&](std::vector<pid_t>& pids) {
+            pids.clear();
+            pids.reserve(W);
+            for (int i = 0; i < W; ++i) {
+                pid_t pid = fork();
+                if (pid < 0) throw std::runtime_error("fork() failed");
+                if (pid == 0) {
+                    // child
+                    try {
+                        int rc = worker_loop_parallel_fixed(tag, pages_dir, state_dir, report_api_url, http_cfg, tpl);
+                        _exit(rc);
+                    } catch (const std::exception& e) {
+                        std::cerr << "[" << tag << "/W] fatal: " << e.what() << "\n";
+                        _exit(2);
+                    }
+                }
+                pids.push_back(pid);
+            }
+        };
+
+        std::vector<pid_t> pids;
+        spawn_workers(pids);
+
+        while (true) {
+            bool any_auth = false;
+            bool any_fatal = false;
+            int exited = 0;
+
+            for (pid_t pid : pids) {
+                int st = 0;
+                pid_t w = waitpid(pid, &st, 0);
+                if (w < 0) throw std::runtime_error("waitpid failed");
+
+                ++exited;
+
+                if (WIFEXITED(st)) {
+                    int code = WEXITSTATUS(st);
+                    if (code == 42) any_auth = true;
+                    else if (code != 0) any_fatal = true;
+                } else {
+                    any_fatal = true;
+                }
+            }
+
+            if (any_fatal) {
+                throw std::runtime_error("One or more workers died unexpectedly.");
+            }
+
+            if (any_auth) {
+                // refresh token, respawn workers continuing from same next_offset file
+                std::cerr << "[auth] Token expired. Paste a new token:\n";
+                std::string newtok = prompt_bearer_token();
+                if (newtok.empty()) throw std::runtime_error("No token provided.");
+                write_shared_token(state_dir, newtok);
+
+                spawn_workers(pids);
+                continue;
+            }
+
+            // All workers exited cleanly (most likely stop_at reached)
+            break;
+        }
+
+        // We *do not* mark_done in parallel fixed mode; pages/ is your truth.
     }
 
     template <typename MakeGroovy>
@@ -169,7 +403,11 @@ namespace metais {
             throw std::runtime_error("Groovy template is empty: " + tpl_path.string());
         }
 
-        run_paged("NODES", layout, uri_cfg, http_cfg, sink,
+        if (http_cfg.paging.mode == "parallel_fixed") {
+            // parallel writes shards into <raw_dir>/pages/
+            run_parallel_fixed(tag, layout, uri_cfg, http_cfg, /*tpl*/ groovy_template_string);
+        }
+        else run_paged("NODES", layout, uri_cfg, http_cfg, sink,
             [&](int limit, long offset) {
                 return groovy::inject_limit_offset(tpl, limit, offset);
             }
@@ -190,7 +428,11 @@ namespace metais {
             throw std::runtime_error("Groovy template is empty: " + tpl_path.string());
         }
 
-        run_paged("RELS", layout, uri_cfg, http_cfg, sink,
+        if (http_cfg.paging.mode == "parallel_fixed") {
+            // parallel writes shards into <raw_dir>/pages/
+            run_parallel_fixed(tag, layout, uri_cfg, http_cfg, /*tpl*/ groovy_template_string);
+        }
+        else run_paged("RELS", layout, uri_cfg, http_cfg, sink,
             [&](int limit, long offset) {
                 return groovy::inject_limit_offset(tpl, limit, offset);
             }

@@ -6,7 +6,7 @@ using json = nlohmann::json;
 
 namespace metais {
 
-    static void load_auth(const json& j, HttpAuthSettings& a) {
+    static void load_auth(const json& j, HTTPAuthConfig& a) {
         if (!j.is_object()) return;
         if (j.contains("mode"))
             a.mode = j.value("mode", a.mode);
@@ -18,15 +18,17 @@ namespace metais {
             a.token_file = j.value("token_file", a.token_file);
         if (j.contains("required") && j["required"].is_boolean())
             a.required = j["required"].get<bool>();
+        if (j.contains("mode")) cfg.j.mode = j["mode"].get<std::string>();
+        if (j.contains("parallel_workers")) cfg.j.parallel_workers = j["parallel_workers"].get<int>();
     }
 
-    static void load_timeouts(const json& j, TimeoutSettings& t) {
+    static void load_timeouts(const json& j, TimeoutConfig& t) {
         if (!j.is_object()) return;
         t.connect_seconds = j.value("connect_seconds", t.connect_seconds);
         t.total_seconds   = j.value("total_seconds", t.total_seconds);
     }
 
-    static void load_retries(const json& j, RetrySettings& r) {
+    static void load_retries(const json& j, RetryConfig& r) {
         if (!j.is_object()) return;
         r.max_attempts = j.value("max_attempts", r.max_attempts);
         r.base_delay_ms= j.value("base_delay_ms", r.base_delay_ms);
@@ -43,7 +45,7 @@ namespace metais {
         }
     }
 
-    static void load_paging(const json& j, PagingSettings& p) {
+    static void load_paging(const json& j, PagingConfig& p) {
         if (!j.is_object()) return;
         p.enabled     = j.value("enabled", p.enabled);
         p.page_size   = j.value("page_size", p.page_size);
