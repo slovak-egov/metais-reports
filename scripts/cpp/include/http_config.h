@@ -9,7 +9,7 @@ namespace metais {
         std::string env_var;
         std::string token_prefix;
         bool required = true;
-        std::string token_file; // if you already have it
+        std::string token_file;
     };
 
     struct HTTPTimeoutsConfig {
@@ -27,8 +27,8 @@ namespace metais {
     };
 
     struct HTTPPagingConfig {
-        std::string mode = "serial_adaptive"; // NEW: "serial_adaptive" | "parallel_fixed"
-        int parallel_workers = 1;             // NEW
+        std::string mode = "serial_adaptive";
+        int parallel_workers = 1;
         bool enabled = true;
         int page_size = 1000;
         long max_pages = 100000;

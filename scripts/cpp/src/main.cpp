@@ -5,9 +5,13 @@
 #include "../include/project_root.h"
 #include "../include/step_marker.h"
 #include "../include/binary_sink.h"
+#include "../include/sharded_ndjson_sink.h"
+#include "../include/null_sink.h"
 
 #include <iostream>
 #include <filesystem>
+#include <memory>
+#include <functional>
 
 #include "../include/fetch_enums.h"
 #include "../include/fetch_metadata.h"
@@ -35,42 +39,43 @@ int main() {
         std::cout << "[info] cwd          = " << cwd << "\n";
         std::cout << "[info] project_root = " << project_root << "\n";
 
-        // Build directory layout
-        metais::DirectoryLayout layout(path_cfg, dump_date, project_root);
+        // Build directory ladir_layoutout
+        metais::DirectoryLayout dir_layout(path_cfg, dump_date, project_root);
 
-        if (metais::is_done(layout.date_root)) {
-            std::cout << "[info] Directory with date " << dump_date << " already exists and marked finished. Erase the .done from " << layout.date_root << " and restart the script to overwrite existing data." << std::endl;
+        if (metais::is_done(dir_layout.date_root)) {
+            std::cout << "[info] Directory with date " << dump_date << " already exists and marked finished. Erase the .done from " << dir_layout.date_root << " and restart the script to overwrite existing data." << std::endl;
             return 0;
         }
 
         // 5) Create directories on disk
-        layout.create_all();
+        dir_layout.create_all();
 
-        metais::NdjsonSink nodes_sink(layout.raw_nodes_dir / "nodes.ndjson");
-        metais::NdjsonSink rels_sink (layout.raw_rels_dir  / "rels.ndjson");
+        std::unique_ptr<metais::BinarySink> nodes_sink;
+        std::unique_ptr<metais::BinarySink> rels_sink;
+
+        if (http_cfg.paging.mode == "parallel_fixed") {
+            // parallel mode writes shards itself; sink is unused but must exist
+            nodes_sink = std::make_unique<metais::NullSink>();
+            rels_sink  = std::make_unique<metais::NullSink>();
+        } else {
+            // serial adaptive -> sharded pages (still adaptive paging!)
+            nodes_sink = std::make_unique<metais::ShardedNdjsonSink>(
+                dir_layout.raw_nodes_dir / "pages",
+                "nodes"
+            );
+            rels_sink = std::make_unique<metais::ShardedNdjsonSink>(
+                dir_layout.raw_rels_dir / "pages",
+                "rels"
+            );
+        }
 
         // 6 fetch enums and metadata
-        fetch_enums(layout, uri_cfg, http_cfg);
-        fetch_metadata(layout, uri_cfg, http_cfg);
+        fetch_enums(dir_layout, uri_cfg, http_cfg);
+        fetch_metadata(dir_layout, uri_cfg, http_cfg);
 
         // 7 fetch all data
-        fetch_raw_nodes(layout, uri_cfg, http_cfg, nodes_sink);
-        fetch_raw_rels(layout, uri_cfg, http_cfg, rels_sink);
-
-        /*
-        std::cout << "[info] date_root      = " << layout.date_root      << "\n";
-        std::cout << "[info] metadata_root  = " << layout.metadata_root  << "\n";
-        std::cout << "[info] enums_dir      = " << layout.enums_dir      << "\n";
-        std::cout << "[info] nodes_meta_dir = " << layout.nodes_meta_dir << "\n";
-        std::cout << "[info] rels_meta_dir  = " << layout.rels_meta_dir  << "\n";
-        std::cout << "[info] packed_root    = " << layout.packed_root    << "\n";
-        std::cout << "[info] dict_dir       = " << layout.dict_dir       << "\n";
-        std::cout << "[info] nodes_packed   = " << layout.nodes_packed   << "\n";
-        std::cout << "[info] uuid_index_dir = " << layout.uuid_index_dir << "\n";
-        std::cout << "[info] uuid_types_dir = " << layout.uuid_types_dir << "\n";
-        std::cout << "[info] rels_packed    = " << layout.rels_packed    << "\n";
-        std::cout << "[info] tmp_dir        = " << layout.tmp_dir        << "\n";
-        */
+        fetch_raw_nodes(dir_layout, uri_cfg, http_cfg, *nodes_sink);
+        fetch_raw_rels (dir_layout, uri_cfg, http_cfg, *rels_sink);
 
     } catch (const std::exception& e) {
         std::cerr << "[ERROR] " << e.what() << "\n";

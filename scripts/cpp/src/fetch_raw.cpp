@@ -7,6 +7,7 @@
 #include "../include/pager_policy.h"
 #include "../include/auth.h"
 #include "../include/parallel_state.h"
+#include "../include/sharded_ndjson_sink.h"
 
 #include <iostream>
 #include <curl/curl.h>
@@ -49,8 +50,7 @@ namespace metais {
         throw std::runtime_error("[" + tag + "] Could not extract result array from JSON.\nJSON:\n" + j.dump(2));
     }
 
-    static json fetch_one_page_array(
-        const std::string& tag,
+    static HttpResponse fetch_one_page_response(
         const std::string& groovy_code,
         const std::string& bearer_token,
         const std::string& report_api_url,
@@ -59,51 +59,7 @@ namespace metais {
         ReportRunOptions opt;
         opt.api_url      = report_api_url;
         opt.bearer_token = bearer_token;
-
-        HttpResponse r = run_report_groovy(opt, http_cfg, groovy_code);
-
-        if (r.status == 401 || r.status == 403) {
-            throw std::runtime_error("AUTH"); // caller decides prompt+retry
-        }
-
-        if (r.status == 0) {
-            // curl failure; caller decides shrink/retry
-            throw std::runtime_error("CURL:" + r.body);
-        }
-
-        if (r.status < 200 || r.status >= 300) {
-            throw std::runtime_error("HTTP " + std::to_string(r.status) + ": " + r.body);
-        }
-
-        return parse_results_or_throw(r.body, tag); // uses extract_result_array ✅
-    }
-
-    static void write_page_ndjson(
-        const std::filesystem::path& out_dir,
-        const std::string& base,
-        long offset,
-        const json& arr
-    ) {
-        const long n   = (long)arr.size();
-        const long end = (n > 0) ? (offset + n - 1) : offset;
-
-        std::ostringstream name;
-        name << base << "."
-            << std::setw(9) << std::setfill('0') << offset << "."
-            << std::setw(9) << std::setfill('0') << end
-            << ".ndjson";
-
-        const auto tmp = out_dir / (name.str() + ".tmp");
-        const auto fin = out_dir / name.str();
-
-        {
-            std::ofstream f(tmp, std::ios::binary);
-            if (!f) throw std::runtime_error("Cannot open: " + tmp.string());
-            for (const auto& obj : arr) {
-                if (obj.is_object()) f << obj.dump() << "\n";
-            }
-        }
-        std::filesystem::rename(tmp, fin); // atomic finalize
+        return run_report_groovy(opt, http_cfg, groovy_code);
     }
 
     static int worker_loop_parallel_fixed(
@@ -115,74 +71,82 @@ namespace metais {
         const std::string& tpl
     ) {
         const int base_limit = http_cfg.paging.page_size;
+        const int limit = base_limit; // fixed window in parallel mode
+        const std::string base_name = (tag == "NODES") ? "nodes" : "rels";
 
         while (true) {
             long stop_at = -1;
-            if (get_stop_at(state_dir, stop_at)) {
-                // if stop_at defined, and next job would be beyond, quit
-                // (we check after claim too; either way ok)
+            if (get_stop_at(state_dir, stop_at) && stop_at >= 0) {
+                // cheap early exit check (real check after claim too)
             }
 
             long offset = claim_next_offset(state_dir, base_limit);
 
-            if (get_stop_at(state_dir, stop_at) && offset >= stop_at) {
+            if (get_stop_at(state_dir, stop_at) && stop_at >= 0 && offset >= stop_at) {
                 return 0;
             }
 
-            int limit = base_limit;
+            // if already written (restart/rewind), skip
+            const auto fin = shard_path(pages_dir, base_name, offset);
+            if (std::filesystem::exists(fin)) {
+                continue;
+            }
 
-            while (true) {
+            for (;;) {
                 std::string token = read_shared_token(state_dir);
                 if (token.empty()) {
-                    // token not available => parent probably refreshing; wait briefly
                     usleep(200 * 1000);
                     continue;
                 }
 
                 std::string groovy_code = groovy::inject_limit_offset(tpl, limit, offset);
+                HttpResponse r = fetch_one_page_response(groovy_code, token, report_api_url, http_cfg);
 
-                try {
-                    json arr = fetch_one_page_array(tag, groovy_code, token, report_api_url, http_cfg);
-                    const long n = (long)arr.size();
-
-                    if (n == 0) {
-                        // first empty page => record stop boundary
-                        set_stop_at(state_dir, offset);
-                        return 0;
-                    }
-
-                    // Write shard
-                    write_page_ndjson(pages_dir, (tag == "NODES" ? "nodes" : "rels"), offset, arr);
-                    std::cout << "[" << tag << "/W] offset=" << offset << " limit=" << limit
-                            << " got=" << n << "\n";
-                    break; // success: go claim another offset
-                } catch (const std::runtime_error& e) {
-                    std::string msg = e.what();
-
-                    if (msg == "AUTH") {
-                        return 42; // signal parent to refresh token
-                    }
-
-                    // timeout-like: shrink immediately and retry same offset
-                    if (msg.rfind("CURL:", 0) == 0) {
-                        // Could inspect curl_code instead, but msg is ok for now.
-                        limit = std::max(100, limit / 2);
-                        std::cerr << "[" << tag << "/W] curl fail at offset=" << offset
-                                << " -> limit=" << limit << " retry\n";
-                        continue;
-                    }
-
-                    // HTTP retryable
-                    if (msg.rfind("HTTP 408", 0) == 0 || msg.rfind("HTTP 504", 0) == 0 ||
-                        msg.rfind("HTTP 502", 0) == 0 || msg.rfind("HTTP 503", 0) == 0) {
-                        limit = std::max(100, limit / 2);
-                        std::cerr << "[" << tag << "/W] retryable HTTP at offset=" << offset
-                                << " -> limit=" << limit << " retry\n";
-                        continue;
-                    }
-
-                    throw; // other errors: bubble up and crash worker
+                // token expired -> parent refresh + rewind
+                if (r.status == 401 || r.status == 403) {
+                    record_failed_offset(state_dir, offset);
+                    return 42;
                 }
+
+                // curl-level failure after report_client retries
+                if (r.status == 0) {
+                    if (get_stop_at(state_dir, stop_at) && stop_at >= 0 && offset >= stop_at) return 0;
+
+                    std::cerr << "[" << tag << "/W] curl error at offset=" << offset
+                            << " (curl_code=" << r.curl_code << "): " << r.body
+                            << " -> retry\n";
+                    usleep(500 * 1000);
+                    continue;
+                }
+
+                // retryable HTTP after report_client retries
+                if (r.status == 408 || r.status == 429 || r.status == 500 ||
+                    r.status == 502 || r.status == 503 || r.status == 504) {
+                    std::cerr << "[" << tag << "/W] HTTP " << r.status
+                            << " at offset=" << offset << " -> retry\n";
+                    usleep(500 * 1000);
+                    continue;
+                }
+
+                if (r.status < 200 || r.status >= 300) {
+                    throw std::runtime_error("[" + tag + "/W] HTTP " + std::to_string(r.status) +
+                                            " at offset=" + std::to_string(offset) +
+                                            " body:\n" + r.body);
+                }
+
+                json arr = parse_results_or_throw(r.body, tag);
+                const long n = (long)arr.size();
+
+                if (n == 0) {
+                    set_stop_at(state_dir, offset);
+                    return 0;
+                }
+
+                write_shard_ndjson(pages_dir, base_name, offset, arr);
+
+                std::cout << "[" << tag << "/W] offset=" << offset
+                        << " limit=" << limit << " got=" << n << "\n";
+                break; // success -> next offset
             }
         }
     }
@@ -194,34 +158,40 @@ namespace metais {
         const HTTPConfig& http_cfg,
         const std::string& tpl
     ) {
-        std::filesystem::path base_dir = (tag == "NODES") ? layout.raw_nodes_dir : layout.raw_rels_dir;
-        std::filesystem::path pages_dir = base_dir / "pages";
-        std::filesystem::path state_dir = layout.tmp_dir / "paging" / tag;
+        namespace fs = std::filesystem;
 
-        std::filesystem::create_directories(pages_dir);
-        std::filesystem::create_directories(state_dir);
+        fs::path base_dir  = (tag == "NODES") ? layout.raw_nodes_dir : layout.raw_rels_dir;
+        fs::path pages_dir = base_dir / "pages";
+        fs::path state_dir = layout.tmp_dir / "paging" / tag;
 
-        // Parent resolves/prompt token once and stores it.
-        std::string token = resolve_bearer_token_noninteractive(http_cfg);
-        if (http_cfg.auth.mode != "none" && token.empty()) {
-            token = prompt_bearer_token();
-            if (token.empty()) throw std::runtime_error("No token provided.");
-        }
-        write_shared_token(state_dir, token);
+        fs::create_directories(pages_dir);
+        fs::create_directories(state_dir);
+
+        auto refresh_token = [&]() {
+            std::string tok = resolve_bearer_token_noninteractive(http_cfg);
+            if (http_cfg.auth.mode != "none" && tok.empty()) {
+                tok = prompt_bearer_token();
+                if (tok.empty()) throw std::runtime_error("No token provided.");
+            }
+            write_shared_token(state_dir, tok);
+        };
+
+        refresh_token();
 
         const std::string report_api_url = uri_cfg.report_run_url();
         const int W = std::max(1, http_cfg.paging.parallel_workers);
 
         auto spawn_workers = [&](std::vector<pid_t>& pids) {
             pids.clear();
-            pids.reserve(W);
             for (int i = 0; i < W; ++i) {
                 pid_t pid = fork();
                 if (pid < 0) throw std::runtime_error("fork() failed");
                 if (pid == 0) {
-                    // child
                     try {
-                        int rc = worker_loop_parallel_fixed(tag, pages_dir, state_dir, report_api_url, http_cfg, tpl);
+                        int rc = worker_loop_parallel_fixed(
+                            tag, pages_dir, state_dir,
+                            report_api_url, http_cfg, tpl
+                        );
                         _exit(rc);
                     } catch (const std::exception& e) {
                         std::cerr << "[" << tag << "/W] fatal: " << e.what() << "\n";
@@ -236,46 +206,65 @@ namespace metais {
         spawn_workers(pids);
 
         while (true) {
-            bool any_auth = false;
-            bool any_fatal = false;
-            int exited = 0;
+            bool need_auth = false;
+            bool fatal = false;
 
-            for (pid_t pid : pids) {
-                int st = 0;
-                pid_t w = waitpid(pid, &st, 0);
-                if (w < 0) throw std::runtime_error("waitpid failed");
+            while (!pids.empty()) {
+                for (auto it = pids.begin(); it != pids.end(); ) {
+                    int st = 0;
+                    pid_t w = waitpid(*it, &st, WNOHANG);
+                    if (w == 0) { ++it; continue; }
+                    if (w < 0) throw std::runtime_error("waitpid failed");
 
-                ++exited;
+                    if (WIFEXITED(st)) {
+                        int code = WEXITSTATUS(st);
+                        if (code == 42) need_auth = true;
+                        else if (code != 0) fatal = true;
+                    } else {
+                        fatal = true;
+                    }
 
-                if (WIFEXITED(st)) {
-                    int code = WEXITSTATUS(st);
-                    if (code == 42) any_auth = true;
-                    else if (code != 0) any_fatal = true;
-                } else {
-                    any_fatal = true;
+                    it = pids.erase(it);
                 }
+
+                if (need_auth || fatal) break;
+                usleep(100 * 1000);
             }
 
-            if (any_fatal) {
+            if (fatal) {
+                for (pid_t pid : pids) kill(pid, SIGKILL);
                 throw std::runtime_error("One or more workers died unexpectedly.");
             }
 
-            if (any_auth) {
-                // refresh token, respawn workers continuing from same next_offset file
+            if (need_auth) {
+                // stop remaining workers
+                for (pid_t pid : pids) kill(pid, SIGKILL);
+
+                // reap them (avoid zombies)
+                for (pid_t pid : pids) {
+                    int st = 0;
+                    waitpid(pid, &st, 0);
+                }
+                pids.clear();
+
                 std::cerr << "[auth] Token expired. Paste a new token:\n";
-                std::string newtok = prompt_bearer_token();
-                if (newtok.empty()) throw std::runtime_error("No token provided.");
-                write_shared_token(state_dir, newtok);
+                refresh_token();
+
+                long mn_fail = -1;
+                if (read_and_clear_min_failed_offset(state_dir, mn_fail)) {
+                    write_next_offset_if_smaller(state_dir, mn_fail);
+                    std::cerr << "[auth] rewinding next_offset to " << mn_fail << "\n";
+                }
 
                 spawn_workers(pids);
                 continue;
             }
 
-            // All workers exited cleanly (most likely stop_at reached)
+            // all workers exited cleanly
             break;
         }
 
-        // We *do not* mark_done in parallel fixed mode; pages/ is your truth.
+        // no mark_done: pages/ is authoritative
     }
 
     template <typename MakeGroovy>
@@ -330,19 +319,21 @@ namespace metais {
             opt.limit         = limit;
             opt.offset        = offset;
 
-            HttpResponse r;
-            try {
-                r = run_report_groovy(opt, http_cfg, groovy_code);
-            } catch (const std::exception& e) {
-                std::string msg = e.what();
-                if (msg.find("Timeout was reached") != std::string::npos ||
-                    msg.find("timed out") != std::string::npos) {
-                    std::cerr << "[" << tag << "] curl timeout at offset=" << offset
-                            << " limit=" << limit << " -> shrinking and retrying\n";
-                    pager.on_timeout_like();   // halves (or whatever your timeout_factor is)
-                    continue;                  // retry SAME offset
-                }
-                throw; // non-timeout exception: bubble up
+            HttpResponse r = run_report_groovy(opt, http_cfg, groovy_code);
+
+            if (r.status == 0 && r.curl_code == (int)CURLE_OPERATION_TIMEDOUT) {
+                std::cerr << "[" << tag << "] curl timeout at offset=" << offset
+                        << " limit=" << limit << " -> shrinking and retrying\n";
+                pager.on_timeout_like();
+                continue;
+            }
+            if (r.status == 0) {
+                std::cerr << "[" << tag << "] curl failure at offset=" << offset
+                        << " limit=" << limit << " (curl_code=" << r.curl_code
+                        << "): " << r.body << " -> retry\n";
+                // maybe small sleep/backoff
+                usleep(300 * 1000);
+                continue;
             }
 
             // Auth failure
@@ -381,7 +372,7 @@ namespace metais {
             pager.on_success(r.seconds);
 
             if (n == 0) break;
-            if ((int)n < limit) break;
+            //if ((int)n < limit) break;
 
             offset += (long)n;
         }
@@ -396,7 +387,7 @@ namespace metais {
         BinarySink& sink
     ) {
 
-        const auto tpl_path = layout.project_root / "scripts/cpp/config/groovy/nodes.groovy";
+        const auto tpl_path = layout.project_root / "scripts/cpp/config/groovy/node.groovy";
         std::cout << "[NODES] template path: " << tpl_path << "\n";
         const std::string tpl = groovy::load_template_file(tpl_path);
         if (tpl.empty()) {
@@ -404,8 +395,8 @@ namespace metais {
         }
 
         if (http_cfg.paging.mode == "parallel_fixed") {
-            // parallel writes shards into <raw_dir>/pages/
-            run_parallel_fixed(tag, layout, uri_cfg, http_cfg, /*tpl*/ groovy_template_string);
+            run_parallel_fixed("NODES", layout, uri_cfg, http_cfg, tpl);
+            return;
         }
         else run_paged("NODES", layout, uri_cfg, http_cfg, sink,
             [&](int limit, long offset) {
@@ -421,7 +412,7 @@ namespace metais {
         BinarySink& sink
     ) {
 
-        const auto tpl_path = layout.project_root / "scripts/cpp/config/groovy/rels_all.groovy";
+        const auto tpl_path = layout.project_root / "scripts/cpp/config/groovy/relation.groovy";
         std::cout << "[RELS] template path: " << tpl_path << "\n";
         const std::string tpl = groovy::load_template_file(tpl_path);
         if (tpl.empty()) {
@@ -429,8 +420,8 @@ namespace metais {
         }
 
         if (http_cfg.paging.mode == "parallel_fixed") {
-            // parallel writes shards into <raw_dir>/pages/
-            run_parallel_fixed(tag, layout, uri_cfg, http_cfg, /*tpl*/ groovy_template_string);
+            run_parallel_fixed("RELS", layout, uri_cfg, http_cfg, tpl);
+            return;
         }
         else run_paged("RELS", layout, uri_cfg, http_cfg, sink,
             [&](int limit, long offset) {

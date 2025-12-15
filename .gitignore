@@ -3,3 +3,10 @@ __pycache__/
 
 output/
 meta-viz/data
+scripts/cpp/build/
+scripts/cpp/metais_fetch
+test/
+*.o
+*.a
+*.so
+*.dSYM/

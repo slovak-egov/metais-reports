@@ -38,6 +38,15 @@ int compute_backoff_ms(const metais::HTTPConfig& cfg, int attempt) {
 
 namespace metais {
 
+    static bool should_retry_curl(CURLcode rc, const HTTPConfig& cfg) {
+        for (const auto& s : cfg.retries.retry_curl) {
+            if (s == "timeout" && rc == CURLE_OPERATION_TIMEDOUT) return true;
+            if (s == "couldnt_connect" && rc == CURLE_COULDNT_CONNECT) return true;
+            if (s == "couldnt_resolve_host" && rc == CURLE_COULDNT_RESOLVE_HOST) return true;
+        }
+        return false;
+    }
+    
     bool should_retry_http(long status, const HTTPConfig& cfg) {
         return contains_status(cfg.retries.retry_http, status);
     }
@@ -108,6 +117,10 @@ namespace metais {
 
             // curl-level failures (timeouts, DNS, connect, etc.)
             if (rc != CURLE_OK) {
+                if (should_retry_curl(rc, http_cfg) && attempt + 1 < http_cfg.retries.max_attempts) {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(compute_backoff_ms(http_cfg, attempt)));
+                    continue;
+                }
                 HttpResponse r;
                 r.status = 0;
                 r.curl_code = (int)rc;
@@ -116,8 +129,12 @@ namespace metais {
                 return r;
             }
 
-            // http-level errors
+            // HTTP retryable
             if (http_code < 200 || http_code >= 300) {
+                if (should_retry_http(http_code, http_cfg) && attempt + 1 < http_cfg.retries.max_attempts) {
+                    std::this_thread::sleep_for(std::chrono::milliseconds(compute_backoff_ms(http_cfg, attempt)));
+                    continue;
+                }
                 HttpResponse r;
                 r.status = http_code;
                 r.body = std::move(buffer);
@@ -125,6 +142,7 @@ namespace metais {
                 return r;
             }
 
+            // OK
             HttpResponse ok;
             ok.status = http_code;
             ok.body = std::move(buffer);

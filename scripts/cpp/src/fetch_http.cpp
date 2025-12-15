@@ -1,4 +1,5 @@
 #include "../include/fetch_http.h"
+#include "../include/http_config.h"
 #include <curl/curl.h>
 
 #include <cstdlib>
@@ -41,7 +42,7 @@ namespace {
         return std::find(v.begin(), v.end(), s) != v.end();
     }
 
-    int compute_backoff_ms(const metais::RetrySettings& r, int attempt_index_0based) {
+    int compute_backoff_ms(const metais::HTTPRetriesConfig& r, int attempt_index_0based) {
         // exponential backoff: base * 2^attempt
         long long delay = (long long)r.base_delay_ms * (1LL << attempt_index_0based);
         if (delay > r.max_delay_ms) delay = r.max_delay_ms;

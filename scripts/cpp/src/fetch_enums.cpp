@@ -2,87 +2,41 @@
 #include "../include/json_utils.h"
 #include "../include/fetch_http.h"
 #include "../include/step_marker.h"
+#include "../include/fetch_open.h"
 
 #include <fstream>
 #include <iostream>
 #include <unordered_map>
 
-namespace metais {
+using json = nlohmann::json;
+namespace fs = std::filesystem;
 
-    using json = nlohmann::json;
-    namespace fs = std::filesystem;
+namespace {
 
-    std::vector<std::string> fetch_enum_list(const DirectoryLayout& dir_layout,
-                const URIConfig& uri_cfg,
-                const HTTPConfig& http_cfg) {
-
-        std::string enum_list_uri = uri_cfg.enum_list_url();
-
-        json enum_list = extract_result_array(http::GET_json(enum_list_uri, http_cfg));
-
-        std::cout << "[ENUMS] received " << enum_list.size()
-                  << " raw entries from " << enum_list_uri << "\n";
-
-        fs::path list_path = dir_layout.enums_root / "enums_list.json";
-        
-        std::ofstream out(list_path);
-        if (!out.is_open()) {
-            throw std::runtime_error("Failed to write enums_list.json at " + list_path.string());
-        }
-
-        out << enum_list.dump(2);
-        out.close();
-
-        std::cout << "[ENUMS] Saved enum list -> " << list_path << "\n";
-
-        std::vector<std::string> enum_codes;
-        enum_codes.reserve(enum_list.size());
-
-        for (const auto& item : enum_list) {
-            if (!item.is_object()) continue;
-
-            bool valid = item.value("valid", false);
-            if (!valid) continue;
-
-            std::string code = item.value("code", "");
-            if (code.empty()) continue;
-
-            enum_codes.push_back(code);
-        }
-
-        return enum_codes;
+    std::optional<std::string> extract_enum_code_valid_only(const json& item) {
+        if (!item.value("valid", false)) return std::nullopt;
+        auto code = item.value("code", "");
+        if (code.empty()) return std::nullopt;
+        return code;
     }
 
-    void fetch_enum(const DirectoryLayout& layout,
-                const URIConfig& uri_cfg,
-                const HTTPConfig& http_cfg,
-                const std::string& enum_name,
-                std::map<std::string, std::vector<std::string>>& enum_merged) {
-
-        std::string enum_uri = uri_cfg.enum_detail_base_url() + "/" + enum_name;
-        json detail = http::GET_json(enum_uri, http_cfg);
-        json enum_items = detail.value("enumItems", json::array());
-
-        std::cout << "[ENUM] received " << enum_name
-                  << " from " << enum_uri << "\n";
-
-        fs::path valid_dir = layout.enums_root / "valid";
-        std::error_code ec;
-        fs::create_directories(valid_dir, ec);
-
-        fs::path enum_path = valid_dir / (enum_name + ".json");
-        
-        std::ofstream out(enum_path);
-        if (!out.is_open()) {
-            throw std::runtime_error("Failed to write " + enum_name + ".json at " + enum_path.string());
+    void merge_enum_items_into(
+        const std::string& enum_name,
+        const json& enum_items, // array of {code,value,...}
+        std::map<std::string, std::vector<std::string>>& enum_merged // map of key: [enum1 where the key appeared, value1, enum2 where the key appeared, value2, ...] <- even length
+    ) {
+        if (!enum_items.is_array()) {
+            throw std::runtime_error(
+                "[ENUMS] Expected enumItems array for " + enum_name +
+                ", got type=" + std::string(enum_items.type_name())
+            );
         }
 
-        out << enum_items.dump(2);
-        out.close();
+        for (const auto& enum_item : enum_items) {
+            if (!enum_item.is_object()) continue;
 
-        for (auto& enum_item : enum_items) {
-            std::string enum_key = enum_item.value("code", "");
-            std::string enum_value = enum_item.value("value", "");
+            const std::string enum_key   = enum_item.value("code", "");
+            const std::string enum_value = enum_item.value("value", "");
 
             if (enum_key.empty()) {
                 std::cout << "[WARNING] Empty string in enum key. Skipping";
@@ -90,10 +44,14 @@ namespace metais {
             }
 
             auto& vec = enum_merged[enum_key];
-            vec.push_back(enum_name); // to track where this one came from
+            vec.push_back(enum_name);
             vec.push_back(enum_value);
         }
     }
+
+}
+
+namespace metais {
 
     std::map<std::string, std::vector<std::string>>
     handle_merged_enums(std::map<std::string, std::vector<std::string>>& enum_merged) {
@@ -149,11 +107,31 @@ namespace metais {
             return;
         }
 
-        std::vector<std::string> enum_codes = fetch_enum_list(dir_layout, uri_cfg, http_cfg);
+        HTTPConfig open_cfg = http_cfg;
+        open_cfg.auth.mode = "none";
+        open_cfg.auth.required = false;
 
+        OpenFetchingSpec s;
+        s.out_dir = dir_layout.enums_root;
+        s.out_filename = "enums_list.json";
+        s.list_url = uri_cfg.enum_list_url();
+        s.base_url = uri_cfg.enum_detail_base_url();
+        s.tag = "ENUM";
+        s.kind = "Enum";
+        s.label = "Enum list";
+        s.strict_mkdir = true;
+        s.transform = [](const json& d){
+            return d.value("enumItems", json::array());
+        };
+
+        auto enum_codes = fetch_element_list(s, open_cfg, extract_enum_code_valid_only);
+
+        s.out_dir = dir_layout.enums_root / "valid";
+        s.out_filename = "";
         std::map<std::string, std::vector<std::string>> enum_merged;
         for (const std::string& enum_name : enum_codes) {
-            fetch_enum(dir_layout, uri_cfg, http_cfg, enum_name, enum_merged);
+            json enum_items = fetch_detail(enum_name, open_cfg, s);
+            merge_enum_items_into(enum_name, enum_items, enum_merged);
         }
 
         auto enum_collisions = handle_merged_enums(enum_merged);

@@ -2,11 +2,14 @@
 #include <nlohmann/json.hpp>
 #include <string>
 #include <fstream>
+#include <iostream>
 #include <stdexcept>
 
 namespace metais {
 
 using json = nlohmann::json;
+
+inline constexpr std::size_t kMaxJsonPreview = 200;
 
 // Load a JSON file from disk into a nlohmann::json object.
 inline json load_json_file(const std::string& filepath) {
@@ -32,21 +35,31 @@ inline json load_json_file(const std::string& filepath) {
 // - else → return empty []
 inline json extract_result_array(const json& j) {
     if (j.is_object()) {
-        auto it = j.find("result");
-        if (it != j.end() && it->is_array()) {
-            return *it;
-        }
-        it = j.find("results");
-        if (it != j.end() && it->is_array()) {
-            return *it;
-        }
+        if (auto it = j.find("result"); it != j.end() && it->is_array()) return *it;
+        if (auto it = j.find("results"); it != j.end() && it->is_array()) return *it;
+
+        std::string preview;
+        try { preview = j.dump(); } catch (...) { preview = "<dump failed>"; }
+        if (preview.size() > kMaxJsonPreview) preview.resize(kMaxJsonPreview);
+
+        throw std::runtime_error(
+            "[JSON-extract_result_array] object without \"result\"/\"results\" arrays. preview: " + preview
+        );
     }
 
     if (j.is_array()) {
+        std::cout << "[JSON-extract_result_array] object is already array - returning";
         return j;
     }
 
-    return json::array();
+    std::string preview;
+    try { preview = j.dump(); } catch (...) { preview = "<dump failed>"; }
+    if (preview.size() > kMaxJsonPreview) preview.resize(kMaxJsonPreview);
+
+    throw std::runtime_error(
+        "[JSON-extract_result_array] expected array or object with \"result\"/\"results\" arrays; got type=" +
+        std::string(j.type_name()) + " preview: " + preview
+    );
 }
 
 }
