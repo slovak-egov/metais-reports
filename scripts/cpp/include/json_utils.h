@@ -47,10 +47,7 @@ inline json extract_result_array(const json& j) {
         );
     }
 
-    if (j.is_array()) {
-        std::cout << "[JSON-extract_result_array] object is already array - returning";
-        return j;
-    }
+    if (j.is_array()) return j;
 
     std::string preview;
     try { preview = j.dump(); } catch (...) { preview = "<dump failed>"; }

@@ -6,15 +6,22 @@
 
 namespace metais {
 
-    class BinarySink {
+    class PageSink {
     public:
-        virtual ~BinarySink() = default;
+        virtual ~PageSink() = default;
         virtual void begin_page(long offset, int limit) = 0;
         virtual void write_item(const nlohmann::json& obj) = 0;
         virtual void end_page(std::size_t received) = 0;
     };
+    
+    class NullSink final : public PageSink {
+    public:
+        void begin_page(long, int) override {}
+        void write_item(const nlohmann::json&) override {}
+        void end_page(std::size_t) override {}
+    };
 
-    class NdjsonSink final : public BinarySink {
+    class NdjsonSink final : public PageSink {
     public:
         explicit NdjsonSink(std::filesystem::path out_path)
             : out_path_(std::move(out_path))

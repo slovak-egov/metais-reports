@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../include/json_utils.h"
-#include "../include/fetch_http.h"
-#include "../include/http_config.h"
+#include "json_utils.h"
+#include "fetch_http.h"
+#include "http_config.h"
 
 #include <filesystem>
 #include <fstream>
@@ -51,7 +51,7 @@ namespace metais {
         const std::function<std::optional<std::string>(const json&)>& extract_id
     );
     
-    // Fetch detail JSON, transform, save to <out_dir>/<code>.json, return the final path.
+    // Fetch detail JSON, transform, save to <out_dir>/<code>.json, return the payload
     json fetch_detail(
         const std::string& detail_api_code,
         const HTTPConfig& http_cfg,

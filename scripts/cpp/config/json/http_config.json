@@ -21,8 +21,6 @@
   },
 
   "paging": {
-    "mode": "serial_adaptive",
-    "parallel_workers": 8,
     "enabled": true,
     "page_size": 1000,
     "max_pages": 100000,

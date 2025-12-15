@@ -27,8 +27,6 @@ namespace metais {
     };
 
     struct HTTPPagingConfig {
-        std::string mode = "serial_adaptive";
-        int parallel_workers = 1;
         bool enabled = true;
         int page_size = 1000;
         long max_pages = 100000;

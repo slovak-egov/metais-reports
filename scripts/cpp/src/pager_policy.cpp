@@ -1,0 +1,63 @@
+#include "../include/pager_policy.h"
+
+#include <filesystem>
+#include <iostream>
+#include <stdexcept>
+
+#include "../include/json_utils.h"
+
+namespace metais {
+
+    PagerPolicy load_pager_policy(const std::filesystem::path& path) {
+        PagerPolicy p;
+
+        if (path.empty()) return p;
+        if (!std::filesystem::exists(path)) {
+            std::cerr << "[pager] policy file not found: " << path << " (using defaults)\n";
+            return p;
+        }
+
+        try {
+            auto j = load_json_file(path.string());
+
+            auto get_i = [&](const char* k, int& dst) {
+                auto it = j.find(k);
+                if (it != j.end() && it->is_number_integer()) dst = it->get<int>();
+            };
+            auto get_d = [&](const char* k, double& dst) {
+                auto it = j.find(k);
+                if (it != j.end() && it->is_number()) dst = it->get<double>();
+            };
+
+            get_i("min_limit", p.min_limit);
+            get_i("max_limit", p.max_limit);
+
+            get_d("grow_if_under_seconds", p.grow_if_under_seconds);
+            get_d("grow_factor",           p.grow_factor);
+
+            get_d("shrink_if_over_seconds", p.shrink_if_over_seconds);
+            get_d("shrink_factor",          p.shrink_factor);
+
+            get_d("timeout_factor",         p.timeout_factor);
+
+            get_i("quantize_step",          p.quantize_step);
+
+            // sanity (avoid footguns)
+            if (p.min_limit < 1) p.min_limit = 1;
+            if (p.max_limit < p.min_limit) p.max_limit = p.min_limit;
+
+            if (p.grow_factor < 1.0)  p.grow_factor = 1.0;
+            if (p.shrink_factor <= 0.0 || p.shrink_factor >= 1.0) p.shrink_factor = 0.9;
+            if (p.timeout_factor <= 0.0 || p.timeout_factor >= 1.0) p.timeout_factor = 0.5;
+
+            if (p.quantize_step < 1) p.quantize_step = 1;
+
+            return p;
+        } catch (const std::exception& e) {
+            std::cerr << "[pager] failed to load policy " << path
+                    << ": " << e.what() << " (using defaults)\n";
+            return p;
+        }
+    }
+
+}

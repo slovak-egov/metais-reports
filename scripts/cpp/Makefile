@@ -27,10 +27,6 @@ all: $(MAIN_BIN)
 $(MAIN_BIN): $(MAIN_OBJS)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
 
-# Test binary for fetch_http (using src/test.cpp)
-$(TEST_FETCH_BIN): $(TEST_FETCH_OBJS)
-	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDLIBS)
-
 # Generic rule for compiling any .cpp in src/ to build/*.o
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -41,4 +37,4 @@ $(BUILD_DIR):
 
 # Cleanup
 clean:
-	rm -rf $(BUILD_DIR) $(MAIN_BIN) $(TEST_FETCH_BIN)
+	rm -rf $(BUILD_DIR) $(MAIN_BIN)

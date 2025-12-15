@@ -4,9 +4,8 @@
 #include "../include/directory_layout.h"
 #include "../include/project_root.h"
 #include "../include/step_marker.h"
-#include "../include/binary_sink.h"
+#include "../include/page_sink.h"
 #include "../include/sharded_ndjson_sink.h"
-#include "../include/null_sink.h"
 
 #include <iostream>
 #include <filesystem>
@@ -50,24 +49,11 @@ int main() {
         // 5) Create directories on disk
         dir_layout.create_all();
 
-        std::unique_ptr<metais::BinarySink> nodes_sink;
-        std::unique_ptr<metais::BinarySink> rels_sink;
+        std::unique_ptr<metais::PageSink> nodes_sink =
+            std::make_unique<metais::ShardedNdjsonSink>(dir_layout.raw_nodes_dir / "pages", "nodes");
 
-        if (http_cfg.paging.mode == "parallel_fixed") {
-            // parallel mode writes shards itself; sink is unused but must exist
-            nodes_sink = std::make_unique<metais::NullSink>();
-            rels_sink  = std::make_unique<metais::NullSink>();
-        } else {
-            // serial adaptive -> sharded pages (still adaptive paging!)
-            nodes_sink = std::make_unique<metais::ShardedNdjsonSink>(
-                dir_layout.raw_nodes_dir / "pages",
-                "nodes"
-            );
-            rels_sink = std::make_unique<metais::ShardedNdjsonSink>(
-                dir_layout.raw_rels_dir / "pages",
-                "rels"
-            );
-        }
+        std::unique_ptr<metais::PageSink> rels_sink =
+            std::make_unique<metais::ShardedNdjsonSink>(dir_layout.raw_rels_dir / "pages", "rels");
 
         // 6 fetch enums and metadata
         fetch_enums(dir_layout, uri_cfg, http_cfg);

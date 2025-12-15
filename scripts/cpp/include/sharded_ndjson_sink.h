@@ -1,5 +1,5 @@
 #pragma once
-#include "binary_sink.h"
+#include "page_sink.h"
 
 #include <filesystem>
 #include <fstream>
@@ -8,22 +8,7 @@
 
 namespace metais {
 
-    // Shared helper for deterministic shard naming (e.g., nodes.000000000.ndjson).
-    std::filesystem::path shard_path(
-        const std::filesystem::path& dir,
-        const std::string& base,
-        long offset
-    );
-
-    // Shared helper for atomic shard writes with temp + rename.
-    void write_shard_ndjson(
-        const std::filesystem::path& out_dir,
-        const std::string& base,
-        long offset,
-        const nlohmann::json& arr
-    );
-
-    class ShardedNdjsonSink : public BinarySink {
+    class ShardedNdjsonSink : public PageSink {
     public:
         ShardedNdjsonSink(
             std::filesystem::path pages_dir,

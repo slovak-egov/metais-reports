@@ -1,5 +1,6 @@
 #include "../include/fetch_http.h"
 #include "../include/http_config.h"
+#include "../include/http_retry.h"
 #include <curl/curl.h>
 
 #include <cstdlib>
@@ -42,20 +43,6 @@ namespace {
         return std::find(v.begin(), v.end(), s) != v.end();
     }
 
-    int compute_backoff_ms(const metais::HTTPRetriesConfig& r, int attempt_index_0based) {
-        // exponential backoff: base * 2^attempt
-        long long delay = (long long)r.base_delay_ms * (1LL << attempt_index_0based);
-        if (delay > r.max_delay_ms) delay = r.max_delay_ms;
-
-        // jitter
-        if (r.jitter_ms > 0) {
-            static thread_local std::mt19937 rng{std::random_device{}()};
-            std::uniform_int_distribution<int> dist(0, r.jitter_ms);
-            delay += dist(rng);
-        }
-        return (int)delay;
-    }
-
     std::string resolve_bearer_token(const metais::HTTPConfig& settings) {
         const auto& a = settings.auth;
 
@@ -81,7 +68,7 @@ namespace {
 
 }
 
-    namespace http {
+namespace http {
 
     // -------------------------
     // LOW-LEVEL GET (no retries)
@@ -193,7 +180,7 @@ namespace {
                     );
                 }
 
-                const int delay = compute_backoff_ms(settings.retries, attempt - 1);
+                const int delay = metais::compute_backoff_ms(settings.retries, attempt - 1);
                 std::cerr << "[HTTP] curl error (" << key << ") attempt " << attempt
                         << "/" << settings.retries.max_attempts
                         << " -> retry in " << delay << " ms\n";
@@ -215,7 +202,7 @@ namespace {
                 throw HttpError(http_code, url, buffer);
             }
 
-            const int delay = compute_backoff_ms(settings.retries, attempt - 1);
+            const int delay = metais::compute_backoff_ms(settings.retries, attempt - 1);
             std::cerr << "[HTTP] HTTP " << http_code << " attempt " << attempt
                     << "/" << settings.retries.max_attempts
                     << " -> retry in " << delay << " ms\n";

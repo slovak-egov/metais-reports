@@ -6,9 +6,9 @@
 
 namespace fs = std::filesystem;
 
-namespace metais {
+namespace {
 
-    fs::path shard_path(
+    static fs::path shard_path(
         const fs::path& dir,
         const std::string& base,
         long offset
@@ -20,24 +20,9 @@ namespace metais {
         return dir / name.str();
     }
 
-    void write_shard_ndjson(
-        const fs::path& out_dir,
-        const std::string& base,
-        long offset,
-        const nlohmann::json& arr
-    ) {
-        const auto fin = shard_path(out_dir, base, offset);
-        const fs::path tmp = fin.string() + ".tmp";
+}
 
-        {
-            std::ofstream f(tmp, std::ios::binary);
-            if (!f) throw std::runtime_error("Cannot open: " + tmp.string());
-            for (const auto& obj : arr) {
-                f << obj.dump() << "\n";
-            }
-        }
-        fs::rename(tmp, fin); // atomic finalize
-    }
+namespace metais {
 
     ShardedNdjsonSink::ShardedNdjsonSink(
         fs::path pages_dir,
@@ -55,6 +40,8 @@ namespace metais {
         final_path_ = shard_path(pages_dir_, base_name_, offset);
         tmp_path_   = final_path_;
         tmp_path_  += ".tmp";
+
+        if (fs::exists(tmp_path_)) fs::remove(tmp_path_);
 
         // Idempotency: if page already exists, skip silently
         if (fs::exists(final_path_)) {

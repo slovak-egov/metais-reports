@@ -48,9 +48,6 @@ namespace metais {
     static void load_paging(const json& j, HTTPPagingConfig& p) {
         if (!j.is_object()) return;
 
-        if (j.contains("mode"))             p.mode = j["mode"].get<std::string>();
-        if (j.contains("parallel_workers")) p.parallel_workers = j["parallel_workers"].get<int>();
-
         p.enabled      = j.value("enabled",      p.enabled);
         p.page_size    = j.value("page_size",    p.page_size);
         p.max_pages    = j.value("max_pages",    p.max_pages);
