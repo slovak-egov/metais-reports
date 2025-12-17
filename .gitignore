@@ -5,6 +5,8 @@ output/
 meta-viz/data
 scripts/cpp/build/
 scripts/cpp/metais_fetch
+scripts/cpp/metais_converter
+scripts/cpp/metais_fetch
 test/
 *.o
 *.a
