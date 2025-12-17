@@ -7,9 +7,9 @@
 
 #include "paths_config.h"
 
-namespace metais {
+namespace fs = std::filesystem;
 
-    namespace fs = std::filesystem;
+namespace metais {
 
     struct DirectoryLayout {
         PathsConfig cfg;
@@ -28,15 +28,24 @@ namespace metais {
         fs::path packed_root;
         fs::path dict_dir;
         fs::path nodes_packed;
-        fs::path uuid_index_dir;
-        fs::path uuid_types_dir;
+        fs::path uuids_dir;
         fs::path rels_packed;
+
+        // raw json dumps
+        fs::path raw_nodes_dir;
+        fs::path raw_rels_dir;
+        
+        fs::path raw_nodes_pages_dir;
+        fs::path raw_rels_pages_dir;
+        fs::path raw_nodes_errors_dir;
+        fs::path raw_rels_errors_dir;
 
         fs::path tmp_dir;
 
-        // NEW: optional raw JSON dumps (unpacked)
-        fs::path raw_nodes_dir;   // date_root / cfg.nodes_root
-        fs::path raw_rels_dir;    // date_root / cfg.rels_root
+        // file paths
+        fs::path rels_index_json;
+        fs::path citypes_list_json;
+        fs::path reltypes_list_json;
 
         DirectoryLayout(const PathsConfig& cfg_,
                         const std::string& dump_date_,
@@ -51,20 +60,29 @@ namespace metais {
             metadata_root  = date_root / cfg.metadata_root;
             enums_root     = date_root / cfg.enums_root;
 
-            nodes_meta_dir = metadata_root / cfg.nodes_root; // metadata/nodes
-            rels_meta_dir  = metadata_root / cfg.rels_root;  // metadata/relations
+            nodes_meta_dir = metadata_root / cfg.nodes_root;
+            rels_meta_dir  = metadata_root / cfg.rels_root;
 
-            raw_nodes_dir  = date_root / cfg.nodes_root;     // DATE/nodes
-            raw_rels_dir   = date_root / cfg.rels_root;      // DATE/relations
+            raw_nodes_dir  = date_root / cfg.nodes_root;
+            raw_rels_dir   = date_root / cfg.rels_root;
 
             packed_root    = date_root / cfg.packed_root;
             dict_dir       = packed_root / "dict";
             nodes_packed   = packed_root / "nodes";
-            uuid_index_dir = packed_root / "uuid_index";
-            uuid_types_dir = packed_root / "uuid_types";
+            uuids_dir      = packed_root / "uuids";
             rels_packed    = packed_root / "relations";
 
+            rels_index_json = rels_packed / "rels.json";
+
+            raw_nodes_pages_dir = date_root / cfg.nodes_root / "pages";
+            raw_rels_pages_dir  = date_root / cfg.rels_root  / "pages";
+            raw_nodes_errors_dir = raw_nodes_pages_dir / "errors";
+            raw_rels_errors_dir = raw_rels_pages_dir / "errors";
+
             tmp_dir = date_root / "tmp";
+
+            citypes_list_json  = metadata_root / "citypes_list.json";
+            reltypes_list_json = metadata_root / "reltypes_list.json";
         }
 
         void create_all(bool verbose = true) const {
@@ -74,15 +92,13 @@ namespace metais {
                 nodes_meta_dir,
                 rels_meta_dir,
 
-                // raw dumps (cheap to create even if you don't use them)
                 raw_nodes_dir,
                 raw_rels_dir,
 
                 packed_root,
                 dict_dir,
                 nodes_packed,
-                uuid_index_dir,
-                uuid_types_dir,
+                uuids_dir,
                 rels_packed,
                 tmp_dir
             };

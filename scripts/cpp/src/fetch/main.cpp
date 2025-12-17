@@ -1,20 +1,20 @@
-#include "../include/date.h"
-#include "../include/paths_config.h"
-#include "../include/http_config.h"
-#include "../include/directory_layout.h"
-#include "../include/project_root.h"
-#include "../include/step_marker.h"
-#include "../include/page_sink.h"
-#include "../include/sharded_ndjson_sink.h"
+#include "date.h"
+#include "paths_config.h"
+#include "http_config.h"
+#include "directory_layout.h"
+#include "project_root.h"
+#include "step_marker.h"
+#include "page_sink.h"
+#include "sharded_ndjson_sink.h"
 
 #include <iostream>
 #include <filesystem>
 #include <memory>
 #include <functional>
 
-#include "../include/fetch_enums.h"
-#include "../include/fetch_metadata.h"
-#include "../include/fetch_raw.h"
+#include "fetch_enums.h"
+#include "fetch_metadata.h"
+#include "fetch_raw.h"
 
 namespace fs = std::filesystem;
 

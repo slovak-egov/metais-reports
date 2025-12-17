@@ -1,11 +1,11 @@
-#include "../include/fetch_post.h"
+#include "fetch_post.h"
 
 #include <curl/curl.h>
 #include <chrono>
 #include <stdexcept>
 #include <utility>
 
-#include "../include/curl_common.h"
+#include "curl_common.h"
 
 namespace metais {
 

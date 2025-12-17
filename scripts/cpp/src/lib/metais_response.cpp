@@ -1,5 +1,6 @@
-#include "../include/metais_response.h"
-#include "../include/json_utils.h"
+#include "metais_response.h"
+#include "json_utils.h"
+
 #include <stdexcept>
 #include <algorithm>
 
@@ -37,6 +38,20 @@ namespace metais {
         }
     }
 
+    json parse_json_or_throw(std::string_view body, const std::string& tag) {
+        // nlohmann::json::parse wants iterators; this avoids allocating a std::string
+        try {
+            return json::parse(body.begin(), body.end());
+        } catch (const std::exception& e) {
+            // reuse your preview logic by materializing only for the error path
+            std::string s(body);
+            throw std::runtime_error(
+                "[" + tag + "] Response was not valid JSON: " + std::string(e.what()) +
+                "\nBody preview:\n" + preview_body(s)
+            );
+        }
+    }
+    
     json extract_results_array_or_throw(const json& j, const std::string& tag) {
         if (j.is_object() && j.contains("type") && j.contains("message")) {
             throw std::runtime_error(

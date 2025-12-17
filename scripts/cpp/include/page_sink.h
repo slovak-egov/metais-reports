@@ -6,19 +6,26 @@
 
 namespace metais {
 
+    struct PageStats {
+        long offset = 0;
+        int limit = 0;
+        std::size_t received = 0;
+        double seconds = 0.0;
+    };
+
     class PageSink {
     public:
         virtual ~PageSink() = default;
         virtual void begin_page(long offset, int limit) = 0;
         virtual void write_item(const nlohmann::json& obj) = 0;
-        virtual void end_page(std::size_t received) = 0;
+        virtual void end_page(const PageStats& stats) = 0;
     };
     
     class NullSink final : public PageSink {
     public:
         void begin_page(long, int) override {}
         void write_item(const nlohmann::json&) override {}
-        void end_page(std::size_t) override {}
+        void end_page(const PageStats&) override {}
     };
 
     class NdjsonSink final : public PageSink {
@@ -36,7 +43,7 @@ namespace metais {
         void write_item(const nlohmann::json& obj) override {
             out_ << obj.dump() << "\n";
         }
-        void end_page(std::size_t) override {
+        void end_page(const PageStats&) override {
             out_.flush();
         }
 

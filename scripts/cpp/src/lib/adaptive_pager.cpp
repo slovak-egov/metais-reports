@@ -1,4 +1,5 @@
-#include "../include/adaptive_pager.h"
+#include "adaptive_pager.h"
+
 #include <algorithm>
 #include <iostream>
 

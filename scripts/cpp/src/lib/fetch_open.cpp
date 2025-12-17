@@ -1,9 +1,9 @@
-#include "../include/fetch_open.h"
+#include "fetch_open.h"
+
+using json = nlohmann::json;
+namespace fs = std::filesystem;
 
 namespace metais {
-
-    using json = nlohmann::json;
-    namespace fs = std::filesystem;
 
     static void ensure_dir(const fs::path& dir, bool strict, bool warn_if_created, const std::string& tag) {
         if (fs::exists(dir)) return;

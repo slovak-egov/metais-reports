@@ -1,6 +1,6 @@
-#include "../include/fetch_http.h"
-#include "../include/http_config.h"
-#include "../include/http_retry.h"
+#include "fetch_http.h"
+#include "http_config.h"
+#include "http_retry.h"
 #include <curl/curl.h>
 
 #include <cstdlib>

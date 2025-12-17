@@ -1,5 +1,6 @@
-#include "../include/http_config.h"
-#include "../include/json_utils.h"   // your load_json_file(...)
+#include "http_config.h"
+#include "json_utils.h"
+
 #include <nlohmann/json.hpp>
 #include <stdexcept>
 
@@ -56,8 +57,8 @@ namespace metais {
     }
 
     HTTPConfig load_http_settings(const std::string& path) {
-        HTTPConfig s;                  // uses defaults from http_config.h
-        json j = load_json_file(path); // your helper
+        HTTPConfig s;
+        json j = load_json_file(path);
 
         if (!j.is_object()) {
             throw std::runtime_error("http_config must be a JSON object: " + path);

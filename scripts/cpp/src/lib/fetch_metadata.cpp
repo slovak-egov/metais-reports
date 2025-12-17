@@ -1,16 +1,18 @@
-#include "../include/fetch_metadata.h"
-#include "../include/json_utils.h"
-#include "../include/fetch_http.h"
-#include "../include/step_marker.h"
-#include "../include/fetch_open.h"
+#include "fetch_metadata.h"
+#include "json_utils.h"
+#include "fetch_http.h"
+#include "step_marker.h"
+#include "fetch_open.h"
 
 #include <filesystem>
 #include <fstream>
 #include <iostream>
 
-namespace {
-    using json = nlohmann::json;
+using json = nlohmann::json;
+namespace fs = std::filesystem;
 
+namespace {
+    
     std::optional<std::string> pick_first_string_field(
         const json& obj,
         std::initializer_list<const char*> keys
@@ -35,9 +37,6 @@ namespace {
 }
 
 namespace metais {
-
-    using json = nlohmann::json;
-    namespace fs = std::filesystem;
 
     // -----------------------------
     // Orchestrator

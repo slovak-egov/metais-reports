@@ -1,8 +1,8 @@
-#include "../include/fetch_enums.h"
-#include "../include/json_utils.h"
-#include "../include/fetch_http.h"
-#include "../include/step_marker.h"
-#include "../include/fetch_open.h"
+#include "fetch_enums.h"
+#include "json_utils.h"
+#include "fetch_http.h"
+#include "step_marker.h"
+#include "fetch_open.h"
 
 #include <fstream>
 #include <iostream>

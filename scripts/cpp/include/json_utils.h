@@ -29,10 +29,10 @@ inline json load_json_file(const std::string& filepath) {
 
 // Normalize MetaIS-style responses:
 //
-// - if object with "result" (array) → return j["result"]
-// - else if object with "results" (array) → return j["results"]
-// - else if array → return j
-// - else → return empty []
+// - if object with "result" (array) -> return j["result"]
+// - else if object with "results" (array) -> return j["results"]
+// - else if array -> return j
+// - else -> throw an error, it's not what we expected
 inline json extract_result_array(const json& j) {
     if (j.is_object()) {
         if (auto it = j.find("result"); it != j.end() && it->is_array()) return *it;

@@ -1,10 +1,10 @@
-#include "../include/pager_policy.h"
+#include "pager_policy.h"
 
 #include <filesystem>
 #include <iostream>
 #include <stdexcept>
 
-#include "../include/json_utils.h"
+#include "json_utils.h"
 
 namespace metais {
 

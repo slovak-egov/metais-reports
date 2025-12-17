@@ -13,4 +13,6 @@ namespace metais {
 
     // Convenience: parse + validate + extract result array.
     json parse_results_or_throw(const std::string& body, const std::string& tag);
+
+    json parse_json_or_throw(std::string_view body, const std::string& tag);
 }

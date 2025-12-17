@@ -1,6 +1,45 @@
-#include "../include/auth.h"
+#include "auth.h"
 
 namespace metais {
+    
+    AuthDecision handle_auth_challenge(
+        const HTTPConfig& cfg,
+        const HttpResponse& r,
+        std::string& bearer_token,
+        bool interactive_allowed
+    ) {
+        if (!(r.status == 401 || r.status == 403)) return AuthDecision::Ignore;
+
+        // If auth disabled, auth failures are unexpected: fail hard
+        if (cfg.auth.mode == "none") return AuthDecision::FailHard;
+
+        // 403 often means "token valid but insufficient rights".
+        // Retrying the same identity usually won't help.
+        // If you later add a "refresh via client credentials", you can branch here.
+        if (r.status == 403) {
+            // You *may* still want to allow interactive override in dev,
+            // but default should be fail in non-interactive contexts.
+            if (!interactive_allowed) return AuthDecision::FailHard;
+        }
+
+        // First attempt: re-resolve non-interactively (env/file) in case token rotated
+        std::string tok = resolve_bearer_token_noninteractive(cfg);
+        if (!tok.empty() && tok != bearer_token) {
+            bearer_token = tok;
+            return AuthDecision::Retry;
+        }
+
+        // Interactive fallback
+        if (interactive_allowed) {
+            tok = prompt_bearer_token();
+            if (!tok.empty() && tok != bearer_token) {
+                bearer_token = tok;
+                return AuthDecision::Retry;
+            }
+        }
+
+        return AuthDecision::FailHard;
+    }
 
     std::string read_file_trim(const std::filesystem::path& p) {
         std::ifstream in(p);

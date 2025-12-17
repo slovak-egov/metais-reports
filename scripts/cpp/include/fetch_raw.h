@@ -1,13 +1,18 @@
 #pragma once
 
-#include <string>
-#include <filesystem>
-
 #include "directory_layout.h"
 #include "page_sink.h"
 #include "URI_config.h"
 #include "http_config.h"
 #include "http_response.h"
+
+namespace {
+    struct ResumePoint {
+        long next_offset = 0;
+        int  last_limit = 0;
+        bool found = false;
+    };
+}
 
 namespace metais {
 

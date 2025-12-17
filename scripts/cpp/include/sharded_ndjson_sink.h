@@ -8,6 +8,8 @@
 
 namespace metais {
 
+    inline constexpr int kShardPad = 9;
+
     class ShardedNdjsonSink : public PageSink {
     public:
         ShardedNdjsonSink(
@@ -17,7 +19,7 @@ namespace metais {
 
         void begin_page(long offset, int limit) override;
         void write_item(const nlohmann::json& obj) override;
-        void end_page(std::size_t n) override;
+        void end_page(const PageStats& stats) override;
 
     private:
         std::filesystem::path pages_dir_;

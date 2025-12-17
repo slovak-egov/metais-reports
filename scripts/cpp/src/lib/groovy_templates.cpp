@@ -1,4 +1,5 @@
-#include "../include/groovy_templates.h"
+#include "groovy_templates.h"
+
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
