@@ -24,47 +24,25 @@ int main() {
     PrepassResult pre;
 
     prepass("nodes", layout, pre, false);
+    prepass("rels",  layout, pre, false);
 
-    std::cout << "Dictionary values: " << pretty_u64(pre.dict.seen.size()) << "/" << pretty_u64(pre.dict.total_seen) << " total seen\n";
-    std::cout << "Objects total: " << pre.total_records << ", missing type: " << pre.missing_type << ", missing attributes: " << pre.missing_attributes << ", bad attributes type: " << pre.bad_attributes_type << "\n";
-    pre.total_records = 0; pre.missing_type = 0; pre.missing_attributes = 0; pre.bad_attributes_type = 0;
+    std::cout << "Dictionary values: " << pretty_u64(pre.dict.seen.size())
+            << "/" << pretty_u64(pre.dict.total_seen) << " total seen\n";
 
-    prepass("rels", layout, pre, false);
-    
-    std::cout << "Dictionary values: " << pretty_u64(pre.dict.seen.size()) << "/" << pretty_u64(pre.dict.total_seen) << " total seen\n";
-    std::cout << "Relations total: " << pre.total_records << ", missing type: " << pre.missing_type << ", missing attributes: " << pre.missing_attributes << ", bad attributes type: " << pre.bad_attributes_type << "\n";
+    std::cout << "Nodes total: " << pretty_u64(pre.nodes.total_records)
+            << ", missing type: " << pretty_u64(pre.nodes.missing_type)
+            << ", missing attrs: " << pretty_u64(pre.nodes.missing_attributes)
+            << ", bad attr type: " << pretty_u64(pre.nodes.bad_attributes_type)
+            << ", missing uuid: " << pretty_u64(pre.nodes.missing_uuid)
+            << ", bad uuid: " << pretty_u64(pre.nodes.bad_uuid)
+            << "\n";
 
-    auto& cat_ent = pre.attrs_ent;
-    auto& cat_rel = pre.attrs_rel;
-    auto& dct = pre.dict;
+    std::cout << "Rels total: " << pretty_u64(pre.rels.total_records)
+            << ", missing type: " << pretty_u64(pre.rels.missing_type)
+            << ", missing attrs: " << pretty_u64(pre.rels.missing_attributes)
+            << ", bad attr type: " << pretty_u64(pre.rels.bad_attributes_type)
+            << "\n";
 
-    dct.finalize_sorted();
+    pre.dict.finalize_sorted();
 
-    std::cout << "Citypes seen: " << cat_ent.object_count_by_type.size() << "\n";
-    std::uint64_t ent_ct = 0;
-    for (const auto& [t, n] : cat_ent.object_count_by_type) {
-        ent_ct += n;
-
-        std::size_t attr_n = 0;
-        if (auto it = cat_ent.seen_attrs_by_type.find(t); it != cat_ent.seen_attrs_by_type.end())
-            attr_n = it->second.size();
-
-        std::cout << t << ": " << pretty_u64(n)
-                << " objects, " << pretty_u64(attr_n) << " attrs\n";
-    }
-    std::cout << "Total number of objects: " << pretty_u64(ent_ct) << "\n";
-
-    std::cout << "Reltypes seen: " << cat_rel.object_count_by_type.size() << "\n";
-    std::uint64_t rel_ct = 0;
-    for (const auto& [t, n] : cat_rel.object_count_by_type) {
-        rel_ct += n;
-
-        std::size_t attr_n = 0;
-        if (auto it = cat_rel.seen_attrs_by_type.find(t); it != cat_rel.seen_attrs_by_type.end())
-            attr_n = it->second.size();
-
-        std::cout << t << ": " << pretty_u64(n)
-                << " relations, " << pretty_u64(attr_n) << " attrs\n";
-    }
-    std::cout << "Total number of relations: " << pretty_u64(rel_ct) << "\n";
 }

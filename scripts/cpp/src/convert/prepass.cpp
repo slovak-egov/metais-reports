@@ -1,61 +1,107 @@
 #include "prepass.h"
 #include "traverse_raw.h"
 #include "progress.h"
+#include "canonical_value.h"
 
 namespace metais {
 
-    void prepass(std::string tag, const DirectoryLayout& layout, PrepassResult& prepass_result, bool skip_bad_json) {
+    void prepass(std::string tag, const DirectoryLayout& layout, PrepassResult& out, bool skip_bad_json) {
+        bool parsingNodes = false;
+
+        PrepassStats* stats = nullptr;
         AttributeCatalog* cat = nullptr;
-        auto& dct = prepass_result.dict;
+        AttributeCatalog* metaCat = nullptr;
+        std::vector<Uuid128>* uuids = nullptr;
 
         std::filesystem::path pages_dir;
-        if ((tag == "node") || (tag == "nodes") || (tag == "entity") || (tag == "entities")) {
-            pages_dir = layout.raw_nodes_dir / "pages";
-            tag = "nodes";
-            cat = &prepass_result.attrs_ent;
-        }
-        else {
-            pages_dir = layout.raw_rels_dir / "pages";
-            tag = "rels";
-            cat = &prepass_result.attrs_rel;
-        }
-        const auto shards = list_shards_by_meta(pages_dir, tag);
 
+        if ((tag == "node") || (tag == "nodes") || (tag == "entity") || (tag == "entities")) {
+            pages_dir    = layout.raw_nodes_dir / "pages";
+            tag          = "nodes";
+            parsingNodes = true;
+
+            stats   = &out.nodes;
+            cat     = &out.attrs_ent;
+            metaCat = &out.metaAttrs_ent;
+            uuids   = &out.uuids_ent;
+        } else {
+            pages_dir = layout.raw_rels_dir / "pages";
+            tag       = "rels";
+
+            stats   = &out.rels;
+            cat     = &out.attrs_rel;
+            metaCat = &out.metaAttrs_rel;
+            // uuids = &out.uuids_rel; // if you ever collect rel uuids
+        }
+
+        auto& dct = out.dict;
+
+        const auto shards = list_shards_by_meta(pages_dir, tag);
         ProgressBar shard_bar(tag + " shards", shards.size());
 
         std::size_t last_shard = (std::size_t)-1;
 
         for (auto&& rec : ndjson_json_range(pages_dir, tag, skip_bad_json)) {
-            ++prepass_result.total_records;
+            ++stats->total_records;
+
             if (rec.shard_index != last_shard) {
                 last_shard = rec.shard_index;
                 shard_bar.update(rec.shard_index + 1);
-                //std::cout << "  (offset=" << rec.shard_offset << ")\n";
             }
 
             const auto& j = rec.obj;
 
             if (!j.contains("type") || !j["type"].is_string()) {
-                ++prepass_result.missing_type;
+                ++stats->missing_type;
                 continue;
             }
             const std::string citype = j["type"].get<std::string>();
-            cat->note_entity(citype);
+            cat->note_object(citype);
 
+            // ---- UUID (nodes only) ----
+            if (parsingNodes) {
+                if (!j.contains("uuid") || !j["uuid"].is_string()) {
+                    ++stats->missing_uuid;
+                } else {
+                    const auto& s = j["uuid"].get_ref<const std::string&>();
+                    try {
+                        uuids->push_back(uuid_from_string(std::string_view{s}));
+                    } catch (...) {
+                        ++stats->bad_uuid;
+                    }
+                }
+            }
+
+            // ---- Attributes ----
             if (j.contains("attributes") && j["attributes"].is_array()) {
                 for (const auto& a : j["attributes"]) {
                     if (!a.is_object()) {
-                        ++prepass_result.bad_attributes_type;
+                        ++stats->bad_attributes_type;
                         continue;
                     }
-                    if (!a.contains("name") || !a["name"].is_string()) continue;
-                    cat->note_attr(citype, a["name"].get<std::string>());
+                    if (!a.contains("name") || !a["name"].is_string()) {
+                        continue;
+                    }
+                    const std::string name = a["name"].get<std::string>();
+                    cat->note_attr(citype, name);
+
                     if (!a.contains("value")) continue;
-                    dct.note(a["value"].dump());
+                    dct.note(canonical_value(a["value"]));
+                }
+            } else {
+                ++stats->missing_attributes;
+            }
+
+            // ---- MetaAttributes (optional but I’d start capturing now) ----
+            if (j.contains("metaAttributes") && j["metaAttributes"].is_object()) {
+                const auto& m = j["metaAttributes"];
+                for (auto it = m.begin(); it != m.end(); ++it) {
+                    metaCat->note_attr(citype, it.key());
+                    dct.note(canonical_value(it.value()));
                 }
             }
-            else ++prepass_result.missing_attributes;
         }
+
         shard_bar.finish();
     }
 
