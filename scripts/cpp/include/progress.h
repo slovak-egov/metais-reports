@@ -30,6 +30,10 @@ namespace metais {
         return fallback;
     }
 
+    inline void phase(const std::string& msg) {
+        std::cerr << "\r\033[2K" << msg << "\n";
+    }
+    
     struct ProgressBar {
         std::string label;
         std::size_t cur = 0;

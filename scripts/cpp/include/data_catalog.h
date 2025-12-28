@@ -11,14 +11,14 @@
 namespace metais {
 
     struct AttributeCatalog {
-        // citype -> set(attribute technicalName)
+        // (ci/rel)type -> set(attribute technicalName)
         std::unordered_map<std::string, std::unordered_set<std::string>> seen_attrs_by_type;
 
-        // citype -> number of objects processed
+        // (ci/rel)type -> number of objects processed
         std::unordered_map<std::string, std::uint64_t> object_count_by_type;
 
-        void note_object(const std::string& citype) { ++object_count_by_type[citype]; }
-        void note_attr(const std::string& citype, const std::string& tech) { seen_attrs_by_type[citype].insert(tech); }
+        void note_object(const std::string& type) { ++object_count_by_type[type]; }
+        void note_attr(const std::string& type, const std::string& tech) { seen_attrs_by_type[type].insert(tech); }
     };
 
     struct ValueDictionary {
@@ -44,16 +44,21 @@ namespace metais {
         // Call once after prepass
         void finalize_sorted() {
             if (finalized) return;
-            values.assign(seen.begin(), seen.end());
-            std::sort(values.begin(), values.end()); // deterministic across runs
-            index_of.reserve(values.size());
-            for (std::uint32_t i = 0; i < values.size(); ++i) {
-                index_of.emplace(values[i], i);
-            }
-            finalized = true;
 
-            // optional: free RAM from the set if you won’t need it anymore
+            std::cerr << "[dict] finalize: unique=" << seen.size()
+                    << ", total_seen=" << total_seen << "\n";
+
+            values.assign(seen.begin(), seen.end());
+            std::sort(values.begin(), values.end());
+
+            index_of.reserve(values.size());
+            for (std::uint32_t i = 0; i < values.size(); ++i) index_of.emplace(values[i], i);
+
+            finalized = true;
             std::unordered_set<std::string>().swap(seen);
+
+            std::cerr << "[dict] finalize: values=" << values.size()
+                    << ", index_of=" << index_of.size() << "\n";
         }
 
         std::uint32_t get_index(const std::string& v) const {

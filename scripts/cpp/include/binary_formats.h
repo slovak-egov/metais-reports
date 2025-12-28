@@ -9,8 +9,39 @@
 #include <string_view>
 #include <array>
 #include <cctype>
+#include <filesystem>
+#include <fstream>
+#include <system_error>
 
 namespace metais {
+
+    namespace fs = std::filesystem;
+
+    inline void atomic_rename(const fs::path& tmp, const fs::path& final) {
+        std::error_code ec;
+        fs::rename(tmp, final, ec);
+        if (!ec) return;
+        fs::remove(final, ec);
+        ec.clear();
+        fs::rename(tmp, final, ec);
+        if (ec) throw std::runtime_error("rename failed: " + final.string() + ": " + ec.message());
+    }
+
+    inline void write_atomic_bytes(const fs::path& path, const void* data, std::size_t n) {
+        fs::create_directories(path.parent_path());
+        fs::path tmp = path; tmp += ".tmp";
+        {
+            std::ofstream os(tmp, std::ios::binary);
+            if (!os) throw std::runtime_error("open failed: " + tmp.string());
+            os.write(reinterpret_cast<const char*>(data), (std::streamsize)n);
+            if (!os) throw std::runtime_error("write failed: " + tmp.string());
+        }
+        atomic_rename(tmp, path);
+    }
+
+    inline void write_atomic_string(const fs::path& path, const std::string& s) {
+        write_atomic_bytes(path, s.data(), s.size());
+    }
 
     // -------------------------
     // Semantic aliases
@@ -18,7 +49,8 @@ namespace metais {
     using DictIndex   = std::uint32_t;
     using GlobalId    = std::uint32_t;
     using LocalIndex  = std::uint32_t;
-    using CitypeIndex = std::uint16_t; // don't paint yourself into U8
+    using CitypeIndex = std::uint16_t; // up to 65535 different citypes
+    using AttrIndex   = std::uint16_t; // for dense layout (U16 attrIndex), up to 65535 attributes
 
     static constexpr std::int32_t kMissingI32 = -1;
 
@@ -97,6 +129,29 @@ namespace metais {
             | ((std::uint64_t)b[5] << 40)
             | ((std::uint64_t)b[6] << 48)
             | ((std::uint64_t)b[7] << 56);
+    }
+
+    inline void write_atomic_u32le_file(const fs::path& path, const std::vector<std::uint32_t>& v) {
+        fs::create_directories(path.parent_path());
+        fs::path tmp = path; tmp += ".tmp";
+        {
+            std::ofstream os(tmp, std::ios::binary);
+            if (!os) throw std::runtime_error("open failed: " + tmp.string());
+            for (std::uint32_t x : v) write_u32_le(os, x);
+            if (!os) throw std::runtime_error("write failed: " + tmp.string());
+        }
+        atomic_rename(tmp, path);
+    }
+
+    inline void write_atomic_u64le_file(const fs::path& path, const std::vector<std::uint64_t>& v) {
+        fs::create_directories(path.parent_path());
+        fs::path tmp = path; tmp += ".tmp";
+        {
+            std::ofstream os(tmp, std::ios::binary);
+            if (!os) throw std::runtime_error("open failed: " + tmp.string());
+            for (std::uint64_t x : v) write_u64_le(os, x);
+        }
+        atomic_rename(tmp, path);
     }
 
     // -------------------------
@@ -205,6 +260,18 @@ namespace metais {
         be64_to_8(u.lo, b + 8);
         os.write(reinterpret_cast<const char*>(b), 16);
         if (!os) throw std::runtime_error("write_uuid_raw16 failed");
+    }
+
+    inline void write_atomic_uuid16_file(const fs::path& path, const std::vector<Uuid128>& v) {
+        fs::create_directories(path.parent_path());
+        fs::path tmp = path; tmp += ".tmp";
+        {
+            std::ofstream os(tmp, std::ios::binary);
+            if (!os) throw std::runtime_error("open failed: " + tmp.string());
+            for (const auto& u : v) write_uuid_raw16(os, u);
+            if (!os) throw std::runtime_error("write failed: " + tmp.string());
+        }
+        atomic_rename(tmp, path);
     }
 
     inline Uuid128 read_uuid_raw16(std::istream& is) {

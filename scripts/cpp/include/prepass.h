@@ -28,10 +28,11 @@ namespace metais {
         AttributeCatalog attrs_ent, attrs_rel;
         AttributeCatalog metaAttrs_ent, metaAttrs_rel;
 
-        ValueDictionary  dict;
+        ValueDictionary dict;
 
         std::vector<Uuid128> uuids_ent;
-        // (optional later) std::vector<Uuid128> uuids_rel;
+        
+        std::unordered_map<std::string, std::vector<Uuid128>> uuids_by_citype;
     };
 
     void prepass(std::string tag, const DirectoryLayout& layout, PrepassResult& out, bool skip_bad_json);

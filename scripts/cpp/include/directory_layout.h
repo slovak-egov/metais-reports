@@ -11,6 +11,17 @@ namespace fs = std::filesystem;
 
 namespace metais {
 
+    static void mkdir_all(const std::vector<fs::path>& dirs, bool verbose=true) {
+        for (const auto& d : dirs) {
+            std::error_code ec;
+            fs::create_directories(d, ec);
+            if (ec) {
+                throw std::runtime_error("Failed to create directory '" + d.string() + "': " + ec.message());
+            }
+            if (verbose) std::cout << "[mkdir] " << d << "\n";
+        }
+    }
+
     struct DirectoryLayout {
         PathsConfig cfg;
         fs::path project_root;
@@ -85,33 +96,25 @@ namespace metais {
             reltypes_list_json = metadata_root / "reltypes_list.json";
         }
 
-        void create_all(bool verbose = true) const {
+        void create_fetch_dirs(bool verbose=true) const {
             std::vector<fs::path> dirs = {
-                metadata_root,
-                enums_root,
-                nodes_meta_dir,
-                rels_meta_dir,
-
-                raw_nodes_dir,
-                raw_rels_dir,
-
-                packed_root,
-                dict_dir,
-                nodes_packed,
-                uuids_dir,
-                rels_packed,
+                metadata_root, enums_root, nodes_meta_dir, rels_meta_dir,
+                raw_nodes_dir, raw_rels_dir,
+                raw_nodes_pages_dir, raw_rels_pages_dir,
+                raw_nodes_errors_dir, raw_rels_errors_dir,
                 tmp_dir
             };
-
-            for (const auto& d : dirs) {
-                std::error_code ec;
-                fs::create_directories(d, ec);
-                if (ec) {
-                    throw std::runtime_error("Failed to create directory '" + d.string() + "': " + ec.message());
-                }
-                if (verbose) std::cout << "[mkdir] " << d << "\n";
-            }
+            mkdir_all(dirs, verbose);
         }
+
+        void create_convert_dirs(bool verbose=true) const {
+            std::vector<fs::path> dirs = {
+                packed_root, dict_dir, nodes_packed, uuids_dir, rels_packed,
+                tmp_dir
+            };
+            mkdir_all(dirs, verbose);
+        }
+
     };
 
 }

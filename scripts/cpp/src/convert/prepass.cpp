@@ -6,6 +6,9 @@
 namespace metais {
 
     void prepass(std::string tag, const DirectoryLayout& layout, PrepassResult& out, bool skip_bad_json) {
+        auto t0 = std::chrono::steady_clock::now();
+        std::uint64_t last_report = 0;
+
         bool parsingNodes = false;
 
         PrepassStats* stats = nullptr;
@@ -65,7 +68,14 @@ namespace metais {
                 } else {
                     const auto& s = j["uuid"].get_ref<const std::string&>();
                     try {
-                        uuids->push_back(uuid_from_string(std::string_view{s}));
+                        Uuid128 u = uuid_from_string(std::string_view{s});
+
+                        // existing flat list (optional but fine)
+                        uuids->push_back(u);
+
+                        // per-citype ownership
+                        out.uuids_by_citype[citype].push_back(u);
+
                     } catch (...) {
                         ++stats->bad_uuid;
                     }

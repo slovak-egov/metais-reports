@@ -4,8 +4,10 @@
 #include <nlohmann/json.hpp>
 
 namespace metais {
+
     inline std::string canonical_value(const nlohmann::json& v) {
-        if (v.is_string()) return v.get<std::string>();
-        else return v.dump();
+        // ensure_ascii=false keeps UTF-8 (no \uXXXX spam)
+        return v.dump(-1, ' ', /*ensure_ascii=*/false);
     }
+    
 }
