@@ -1,7 +1,8 @@
 __pycache__/
 *.pyc
 
-output/
+# output is a symlink (dir-only patterns like /output/ won't match)
+/output
 meta-viz/data
 scripts/cpp/build/
 scripts/cpp/metais_fetch
