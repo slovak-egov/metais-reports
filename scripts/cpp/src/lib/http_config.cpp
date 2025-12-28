@@ -15,6 +15,20 @@ namespace metais {
         if (j.contains("token_prefix")) a.token_prefix = j["token_prefix"].get<std::string>();
         if (j.contains("required"))     a.required     = j["required"].get<bool>();
         if (j.contains("token_file"))   a.token_file   = j["token_file"].get<std::string>();
+
+        if (j.contains("user_env"))       a.user_env = j["user_env"].get<std::string>();
+        if (j.contains("pass_env"))       a.pass_env = j["pass_env"].get<std::string>();
+        if (j.contains("interactive"))    a.interactive = j["interactive"].get<bool>();
+
+        if (j.contains("client_id"))      a.client_id = j["client_id"].get<std::string>();
+        if (j.contains("redirect_path"))  a.redirect_path = j["redirect_path"].get<std::string>();
+        if (j.contains("scope"))          a.scope = j["scope"].get<std::string>();
+
+        if (j.contains("authorize_path")) a.authorize_path = j["authorize_path"].get<std::string>();
+        if (j.contains("token_path"))     a.token_path     = j["token_path"].get<std::string>();
+        if (j.contains("login_path"))     a.login_path     = j["login_path"].get<std::string>();
+
+        if (j.contains("user_agent"))     a.user_agent = j["user_agent"].get<std::string>();
     }
 
     static void load_timeouts(const json& j, HTTPTimeoutsConfig& t) {

@@ -295,7 +295,7 @@ namespace metais {
 
         const std::string report_api_url = uri_cfg.report_run_url();
 
-        std::string bearer_token = resolve_bearer_token_noninteractive(http_cfg);
+        std::string bearer_token = resolve_bearer_token_noninteractive(http_cfg, http_cfg.auth.required, uri_cfg.base_url);
         if (http_cfg.auth.mode != "none" && bearer_token.empty()) {
             if (!http_cfg.auth.required) {
                 throw std::runtime_error("Bearer token missing (auth.required=false; not prompting)");
@@ -365,7 +365,7 @@ namespace metais {
 
             // Auth failure
             if (r.status == 401 || r.status == 403) {
-                auto d = handle_auth_challenge(http_cfg, r, bearer_token, interactive_allowed);
+                auto d = handle_auth_challenge(http_cfg, r, bearer_token, interactive_allowed, uri_cfg.base_url);
                 if (d == AuthDecision::Retry) {
                     continue; // retry same offset with new token
                 }
@@ -402,7 +402,7 @@ namespace metais {
                 HttpResponse r_single = try_run(single, http_cfg, make_groovy);
                 int auth_tries = 0;
                 while ((r_single.status == 401 || r_single.status == 403) && auth_tries++ < 2) {
-                    auto d = handle_auth_challenge(http_cfg, r_single, bearer_token, interactive_allowed);
+                    auto d = handle_auth_challenge(http_cfg, r_single, bearer_token, interactive_allowed, uri_cfg.base_url);
                     if (d != AuthDecision::Retry) break;
                     base_opt.bearer_token = bearer_token;
                     single.bearer_token = bearer_token;

@@ -5,11 +5,28 @@
 namespace metais {
 
     struct HTTPAuthConfig {
-        std::string mode;
-        std::string env_var;
+        std::string mode;          // "none", "bearer_env", "oidc_userpass_pkce"
+        std::string env_var;       // bearer token env var (for bearer_env)
         std::string token_prefix;
         bool required = true;
         std::string token_file;
+
+        // username/password for oidc_userpass_pkce
+        std::string user_env = "METAIS_USER";
+        std::string pass_env = "METAIS_PASS";
+        bool interactive = true;
+
+        // OIDC knobs (host comes from URIConfig.base_url) 
+        std::string client_id = "webPortalClient";
+        std::string redirect_path = "/auth-success";         // not full URL
+        std::string scope = "openid";
+
+        // IAM paths are stable, but keep them configurable if you want:
+        std::string authorize_path = "/iam/authorize";
+        std::string token_path     = "/iam/token";
+        std::string login_path     = "/iam/usernamePassLogin";
+
+        std::string user_agent = "metais-cpp-fetcher/1.0";
     };
 
     struct HTTPTimeoutsConfig {

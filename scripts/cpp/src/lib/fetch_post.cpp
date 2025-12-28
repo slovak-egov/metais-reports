@@ -31,7 +31,7 @@ namespace metais {
         curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, spec.follow_redirects ? 1L : 0L);
         curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, http_cfg.timeouts.connect_seconds);
         curl_easy_setopt(curl, CURLOPT_TIMEOUT, http_cfg.timeouts.total_seconds);
-        curl_easy_setopt(curl, CURLOPT_USERAGENT, "metais-cpp-fetcher/1.0");
+        curl_easy_setopt(curl, CURLOPT_USERAGENT, http_cfg.auth.user_agent.c_str());
 
         CurlSlist headers;
         headers.add("Accept: application/json");

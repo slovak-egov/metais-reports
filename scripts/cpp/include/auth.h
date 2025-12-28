@@ -5,10 +5,12 @@
 #include <sstream>
 #include <iostream>
 #include <cstdlib>
+#include <stdexcept>
 #include <filesystem>
 
 #include "http_config.h"
 #include "http_response.h"
+#include "oidc_login.h"
 
 namespace metais {
     
@@ -24,13 +26,14 @@ namespace metais {
         const HTTPConfig& cfg,
         const HttpResponse& r,
         std::string& bearer_token,
-        bool interactive_allowed
+        bool interactive_allowed,
+        const std::string& base_url
     );
 
     std::string read_file_trim(const std::filesystem::path& p);
 
     // Non-interactive: env -> file -> "" (if not required) or throw (if required)
-    std::string resolve_bearer_token_noninteractive(const HTTPConfig& cfg);
+    std::string resolve_bearer_token_noninteractive(const HTTPConfig& cfg, bool interactive_allowed, const std::string& base_url);
 
     // Interactive fallback ONLY when needed (e.g. after 401/403)
     std::string prompt_bearer_token();

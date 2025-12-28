@@ -1,9 +1,18 @@
 {
   "auth": {
-    "mode": "bearer_env",
-    "env_var": "METAIS_TOKEN",
+    "mode": "oidc_userpass_pkce",
+    "required": true,
+
+    "user_env": "METAIS_USER",
+    "pass_env": "METAIS_PASS",
+    "interactive": true,
+
+    "client_id": "webPortalClient",
+    "redirect_path": "/auth-success",
+    "scope": "openid",
+
     "token_prefix": "Bearer ",
-    "required": true
+    "user_agent": "metais-cpp-fetcher/1.0"
   },
 
   "timeouts": {

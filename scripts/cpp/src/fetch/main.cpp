@@ -47,7 +47,7 @@ int main() {
         }
 
         // 5) Create directories on disk
-        dir_layout.create_all();
+        dir_layout.create_fetch_dirs();
 
         std::unique_ptr<metais::PageSink> nodes_sink =
             std::make_unique<metais::ShardedNdjsonSink>(dir_layout.raw_nodes_dir / "pages", "nodes");
