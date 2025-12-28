@@ -18,7 +18,10 @@ namespace metais {
         std::unordered_map<std::string, std::uint64_t> object_count_by_type;
 
         void note_object(const std::string& type) { ++object_count_by_type[type]; }
-        void note_attr(const std::string& type, const std::string& tech) { seen_attrs_by_type[type].insert(tech); }
+        void note_attr(const std::string& type, const std::string& tech) {
+            note_object(type);                 // ensures type exists in object_count_by_type
+            seen_attrs_by_type[type].insert(tech);
+        }
     };
 
     struct ValueDictionary {
