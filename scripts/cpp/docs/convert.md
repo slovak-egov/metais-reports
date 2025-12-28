@@ -81,7 +81,7 @@ Files:
     - value = dict index
     - missing sentinel = -1
 
-- Dense layout:
+- Sparse layout:
   - attributes.bin
     - packed list of (attribute index, value index)
     - only non-missing attributes stored
@@ -120,9 +120,9 @@ Files:
 
 - format.json
   - {
-      "attributeLayout": "grid" | "dense",
+      "attributeLayout": "grid" | "sparse",
       "attributeCount": N,
-      "denseEntrySize": 6,
+      "sparseEntrySize": 6,
       "metaAttributeCount": 6
     }
 
@@ -142,33 +142,64 @@ Files:
   - no uuids.bin needed for relations
 
 ### Attributes
-- same grid / dense logic as nodes
+- same grid / sparse logic as nodes
 - attributes.bin may be omitted if no attributes exist
 - metaAttributes.bin always exists (same 6)
+- if attributeLayout = "sparse", write attribute_offsets.bin (U32 × (N_relations + 1)) same as nodes.
 
-### Relation edges (GLOBAL IDs)
+### Relation edges (GLOBAL IDs, finalized in Pass 3)
+
+Relations may connect **multiple source types and/or target types**.
+To preserve type correctness and enable fast traversal, edges are split
+by concrete endpoint type pairs.
+
+Inside:
+  root/relations/<reltype>/edges/
+
+Each unique (source_citype, target_citype) pair gets its own directory:
+
+  <SRC>__<TGT>/
+
+Example:
+  CI_HAS_DOCUMENT/edges/
+    AS__Dokument/
+    KS__Dokument/
+    ISVS__Dokument/
+    ...
+
+### Inside each <SRC>__<TGT>/ directory:
+
 - src.tgt.bin
   - pairs: (source_global_id, target_global_id)
   - each entry: U32 + U32
-  - sorted by source_global_id
-
-- src.tgt.offsets.bin
-  - U32 offsets per source_global_id
-  - enables fast adjacency lookup
+  - sorted lexicographically by (source_global_id, target_global_id)
 
 - tgt.src.bin
   - pairs: (target_global_id, source_global_id)
-  - sorted by target_global_id
+  - each entry: U32 + U32
+  - sorted lexicographically by (target_global_id, source_global_id)
 
-- tgt.src.offsets.bin
-  - U32 offsets per target_global_id
+- src.tgt.relid.bin
+  - relation local indices corresponding 1:1 to src.tgt.bin rows
+  - each entry: U32
+  - relid = index into relation attributes.bin / metaAttributes.bin
+
+- tgt.src.relid.bin
+  - same relation indices as above, reordered to match tgt.src.bin
 
 - meta.json
   - {
-      "attributeLayout": "grid" | "dense",
-      "sourceTypes": ["PO", ...],
-      "targetTypes": ["KS", ...]
+      "reltype": "<RELTYPE>",
+      "sourceType": "<SRC>",
+      "targetType": "<TGT>",
+      "relationCount": N,
+      "attributeLayout": "grid" | "sparse"
     }
+
+Notes:
+- No offsets files are required.
+- Adjacency lookup uses binary search on src.tgt.bin or tgt.src.bin.
+- relid preserves the mapping to relation attribute rows.
 
 ### Relation index helpers
 - rels.json
@@ -193,9 +224,15 @@ Core primitives:
 - local index:             4 bytes (U32)
 - citype index:            2 bytes (U16) - currently we have 103 citypes and 230 reltypes. Future proofing.
 - reltype_index:           2 bytes (U16) - future proof
-- offset entry:            8 bytes (U64)
+- offset entry (small):    4 bytes (U32)  // sparse attribute_offsets.bin
+- offset entry (large):    8 bytes (U64)  // dict.offsets.bin (and any >4GiB streams)
 - grid attribute cell:     4 bytes (INT32)
-- dense attribute entry:   6 bytes (U16 + U32)
+- sparse attribute entry:   6 bytes (U16 + U32)
+
+Notes on offsets:
+- Dictionary offsets are U64 (dict.offsets.bin) because dict.bin can exceed 4 GiB.
+- Sparse attribute offsets are currently U32 (attribute_offsets.bin), since they index into
+  per-type attributes.bin and are expected to fit within 4 GiB; this can be upgraded to U64 later if needed.
 
 Key files (per million nodes, rough):
 
@@ -311,7 +348,7 @@ For each citype and reltype:
     {
       "attributeLayout": "grid",
       "attributeCount": A,
-      "denseEntrySize": 6,
+      "sparseEntrySize": 6,
       "metaAttributeCount": 6
     }
 
@@ -367,7 +404,7 @@ format for both attributes and metaAttributes.
 Rationale:
 - Grid is fixed-width per entity and supports easy random-write by local index.
 - Sorting/densification decisions can be made later (offline).
-- Dense requires variable-length packing; defer until after ordering is finalized.
+- Sparse requires variable-length packing; defer until after ordering is finalized.
 
 A) Nodes (per citype)
 For each citype:
@@ -412,11 +449,13 @@ For each reltype:
 - Pack attributes + meta in grid layout like nodes, keyed by relation local index
   (encounter order). Relation UUID lookup is not required.
 
-In parallel, collect edges for adjacency:
+In parallel, collect raw edges:
 - For each relation:
-  - resolve startUuid/endUuid to global_node_id using root/uuids/uuids.bin (binary search)
-  - append to a temp edges file:
-    - root/relations/<reltype>/tmp.edges.bin  (U32 src, U32 tgt) in encounter order
+  - resolve startUuid/endUuid to global_node_id using root/uuids/uuids.bin
+  - append to:
+    - root/relations/<reltype>/tmp.edges.bin
+      - (U32 src_global_id, U32 tgt_global_id)
+      - encounter order defines relation local index (relid)
 
 ------------------------------------------------
 | Pass 3: Finalize (no raw read; sort/rewrite) |
@@ -424,23 +463,70 @@ In parallel, collect edges for adjacency:
 
 This pass performs offline sorting and optional format conversion.
 
-A) Relation edge adjacency (required)
-For each reltype:
-- Read tmp.edges.bin (pairs src,tgt)
-- Produce:
-  - src.tgt.bin
-    - sort by (src_global_id, tgt_global_id)
-  - src.tgt.offsets.bin
-    - offsets per src_global_id for adjacency lookup
-  - tgt.src.bin
-    - sort by (tgt_global_id, src_global_id)
-  - tgt.src.offsets.bin
-    - offsets per tgt_global_id
-- Write reltype meta.json with:
-  - attributeLayout ("grid" initially; updated if densified)
-  - sourceTypes / targetTypes (from observed endpoints)
+A) Relation edge finalization (required)
 
-B) Grid vs Dense decision (optional per type)
+For each reltype:
+
+1) Read:
+   - tmp.edges.bin
+     - pairs (src_global_id, tgt_global_id)
+     - index in file = relation local index (relid)
+
+2) Determine endpoint types:
+   - src_citype = citype_index_of(src_global_id)
+   - tgt_citype = citype_index_of(tgt_global_id)
+
+3) Partition relations by (src_citype, tgt_citype).
+
+4) For each unique (SRC, TGT) pair:
+   - create directory:
+       root/relations/<reltype>/edges/<SRC>__<TGT>/
+
+   - build src.tgt list:
+       vector of (src_global_id, tgt_global_id, relid)
+       sorted by (src_global_id, tgt_global_id)
+
+   - write:
+       src.tgt.bin       (U32 src, U32 tgt)
+       src.tgt.relid.bin (U32 relid)
+
+   - build tgt.src by swapping and resorting:
+       tgt.src.bin
+       tgt.src.relid.bin
+
+   - write meta.json with:
+       {
+         "reltype": "<RELTYPE>",
+         "sourceType": "<SRC>",
+         "targetType": "<TGT>",
+         "relationCount": N,
+         "attributeLayout": "grid" | "sparse"
+       }
+
+5) Delete tmp.edges.bin only after successful finalization.
+
+Warnings:
+- If a reltype has multiple source or target types, this is recorded
+  but does not abort conversion.
+
+B) Relation attribute mapping invariant
+
+- Relation attributes.bin and metaAttributes.bin remain indexed
+  by relation local index (relid), defined by Pass 2 encounter order.
+
+- Any edge row produced in Pass 3 carries a relid:
+  - src.tgt.relid.bin
+  - tgt.src.relid.bin
+
+- To access relation attributes:
+  - read relid
+  - seek to relid-th row in attributes.bin / metaAttributes.bin
+
+This guarantees:
+- edge reordering does not break attribute association
+- no duplication of attribute storage
+
+C) Grid vs Sparse decision
 For each citype / reltype, compute attribute storage sizes:
 
 Let:
@@ -451,24 +537,24 @@ Let:
 Grid bytes:
 - grid_bytes = N * A * 4
 
-Dense bytes:
-- dense_bytes = 6*M + 4*(N + 1)
+Sparse bytes:
+- sparse_bytes = 6*M + 4*(N + 1)
   - 6 bytes per (attrIndex U16 + dictIndex U32)
   - 4 bytes per entity offset entry in attribute_offsets.bin
 
 Decision:
-- if dense_bytes < grid_bytes:
-  - convert attributes.bin grid -> dense:
+- if sparse_bytes < grid_bytes:
+  - convert attributes.bin grid -> sparse:
     - write attributes.bin (pairs) and attribute_offsets.bin in local-index order
-    - update format.json attributeLayout = "dense"
+    - update format.json attributeLayout = "sparse"
 - else keep grid:
   - update format.json attributeLayout = "grid"
 MetaAttributes remain grid always.
 
-C) Summary / invariants
+D) Summary / invariants
 - Packed schema indices (citype_index, attrIndex, dictIndex) are deterministic.
 - UUID resolver enables:
   - uuid -> (citype_index, local_index, global_node_id)
   - (citype + uuid) -> global_node_id via per-citype uuids.bin + global_ids.bin
-- Relations are stored as global-id edges with adjacency offsets.
+- Relations are stored as global-id edge lists sorted for fast binary-search-based adjacency lookup.
 - Packed outputs are restart-safe: atomic writes, no partial finalized files.

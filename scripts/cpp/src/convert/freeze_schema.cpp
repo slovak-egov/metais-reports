@@ -28,7 +28,7 @@ namespace metais {
         for (const auto& kv : pre.uuids_by_citype) total += kv.second.size();
         return total;
     }
-    
+
     // -------------------------
     // Atomic write helpers
     // -------------------------
@@ -159,7 +159,6 @@ namespace metais {
         json fmt;
         fmt["attributeLayout"] = "grid";
         fmt["attributeCount"] = (std::uint64_t)names.size();
-        fmt["denseEntrySize"] = 6;
         fmt["metaAttributeCount"] = 6;
 
         write_atomic_json(out_dir / "attributes.json", attrs);
@@ -466,15 +465,24 @@ namespace metais {
 
         clear_done(layout.packed_root, ".pass1_5.done");
 
+        static const std::unordered_set<std::string> empty_attrs;
+
         // A) Per-citype schema files (nodes)
         phase("[freeze] Writing citype schemas...");
-        ProgressBar pb_nodes("freeze node schemas", pre.attrs_ent.seen_attrs_by_type.size());
+
+        // IMPORTANT: use uuids_by_citype, not seen_attrs_by_type
+        ProgressBar pb_nodes("freeze node schemas", pre.uuids_by_citype.size());
         std::size_t i = 0;
-        for (const auto& it : pre.attrs_ent.seen_attrs_by_type) {
+
+        for (const auto& kv : pre.uuids_by_citype) {
             pb_nodes.update(++i);
 
-            const std::string& citype = it.first;
-            const auto& observed = it.second;
+            const std::string& citype = kv.first;
+
+            auto it = pre.attrs_ent.seen_attrs_by_type.find(citype);
+            const auto& observed = (it != pre.attrs_ent.seen_attrs_by_type.end())
+                ? it->second
+                : empty_attrs;
 
             const fs::path out_dir = layout.nodes_packed / citype;
             const fs::path meta_file = layout.nodes_meta_dir / (citype + ".json");
@@ -485,15 +493,28 @@ namespace metais {
 
         // B) Per-reltype schema files (relations)
         phase("[freeze] Writing reltype schemas...");
-        ProgressBar pb_rels("freeze relation schemas", pre.attrs_rel.seen_attrs_by_type.size());
+
+        // Drive off reltypes that actually exist in the dump (even if they have 0 attrs)
+        ProgressBar pb_rels("freeze relation schemas", pre.attrs_rel.object_count_by_type.size());
         std::size_t j = 0;
-        for (const auto& it : pre.attrs_rel.seen_attrs_by_type) {
+
+        // Deterministic order (unordered_map iteration order is not deterministic)
+        std::vector<std::string> reltypes;
+        reltypes.reserve(pre.attrs_rel.object_count_by_type.size());
+        for (const auto& kv : pre.attrs_rel.object_count_by_type) {
+            reltypes.push_back(kv.first);
+        }
+        std::sort(reltypes.begin(), reltypes.end());
+
+        for (const auto& reltype : reltypes) {
             pb_rels.update(++j);
 
-            const std::string& reltype = it.first;
-            const auto& observed = it.second;
+            auto it = pre.attrs_rel.seen_attrs_by_type.find(reltype);
+            const auto& observed = (it != pre.attrs_rel.seen_attrs_by_type.end())
+                ? it->second
+                : empty_attrs;
 
-            const fs::path out_dir = layout.rels_packed / reltype;
+            const fs::path out_dir   = layout.rels_packed / reltype;
             const fs::path meta_file = layout.rels_meta_dir / (reltype + ".json");
 
             write_type_schema_files(out_dir, meta_file, observed);
