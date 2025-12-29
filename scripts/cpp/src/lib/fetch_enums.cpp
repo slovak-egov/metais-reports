@@ -115,7 +115,7 @@ namespace metais {
         s.out_dir = dir_layout.enums_root;
         s.out_filename = "enums_list.json";
         s.list_url = uri_cfg.enum_list_url();
-        s.base_url = uri_cfg.enum_detail_base_url();
+        s.detail_url_tpl = uri_cfg.enum_detail_url_tpl();
         s.tag = "ENUM";
         s.kind = "Enum";
         s.label = "Enum list";

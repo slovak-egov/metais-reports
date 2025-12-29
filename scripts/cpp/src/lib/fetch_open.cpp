@@ -1,5 +1,7 @@
 #include "fetch_open.h"
 
+#include "URI_config.h"
+
 using json = nlohmann::json;
 namespace fs = std::filesystem;
 
@@ -71,7 +73,7 @@ namespace metais {
         const HTTPConfig& http_cfg,
         const OpenFetchingSpec& spec
     ) {
-        const std::string url = spec.base_url + "/" + detail_api_code;
+        const std::string url = replace_all(spec.detail_url_tpl, "{name}", detail_api_code);
         json detail = http::GET_json(url, http_cfg);
 
         if (spec.log_received) {

@@ -68,7 +68,7 @@ namespace metais {
                 s.out_dir = layout.metadata_root;
                 s.out_filename = "citypes_list.json";
                 s.list_url = uri_cfg.citype_list_url();
-                s.base_url = uri_cfg.citype_detail_base_url();
+                s.detail_url_tpl = uri_cfg.citype_detail_url_tpl();
                 s.tag = "META";
                 s.kind = "Citype";
                 s.label = "Citype list";
@@ -97,7 +97,7 @@ namespace metais {
                 s.out_dir = layout.metadata_root;
                 s.out_filename = "reltypes_list.json";
                 s.list_url = uri_cfg.reltype_list_url();
-                s.base_url = uri_cfg.reltype_detail_base_url();
+                s.detail_url_tpl = uri_cfg.reltype_detail_url_tpl();
                 s.tag = "META";
                 s.kind = "Reltype";
                 s.label = "Reltype list";
@@ -114,7 +114,12 @@ namespace metais {
                 mark_done(rels_meta_root);
             }
         }
-        mark_done(meta_root);
+        if (is_done(layout.nodes_meta_dir) && is_done(layout.rels_meta_dir)) {
+            mark_done(meta_root);
+        } else {
+            std::cout << "[META] Not marking " << meta_root
+                    << " done because some substeps are incomplete.\n";
+        }
     }
 
 }

@@ -27,7 +27,7 @@ namespace metais {
 
         // endpoints
         std::string list_url;   // for list fetch
-        std::string base_url;   // for detail fetch: base_url + "/" + code
+        std::string detail_url_tpl; // e.g. "https://.../something/{name}"
 
         // logging
         std::string tag;        // e.g. "ENUMS", "META", "ENUM"

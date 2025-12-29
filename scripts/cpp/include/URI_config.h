@@ -11,6 +11,24 @@ namespace metais {
     namespace fs = std::filesystem;
     using json = nlohmann::json;
 
+    inline std::string replace_all(std::string s, const std::string& from, const std::string& to) {
+        if (from.empty()) return s;
+        std::size_t pos = 0;
+        while ((pos = s.find(from, pos)) != std::string::npos) {
+            s.replace(pos, from.size(), to);
+            pos += to.size();
+        }
+        return s;
+    }
+
+    inline std::string join_base_and_path(const std::string& base, const std::string& path) {
+        if (path.empty()) return base;
+        if (base.empty()) return path;
+        if (base.back() == '/' && path.front() == '/') return base + path.substr(1);
+        if (base.back() != '/' && path.front() != '/') return base + "/" + path;
+        return base + path;
+    }
+
     // ---------------------------------------------------------
     // URIConfig: holds base_url + all endpoint URLs
     // ---------------------------------------------------------
@@ -20,40 +38,67 @@ namespace metais {
 
         // Paths (from JSON or defaults), without host
         std::string enum_list_path;
-        std::string enum_detail_base_path;
+        std::string enum_detail_path_tpl;   // contains {name}
+
+        std::string codelist_headers_list_path;
+        std::string codelist_items_path_tpl; // contains {name}
 
         std::string citype_list_path;
-        std::string citype_detail_base_path;
+        std::string citype_detail_path_tpl; // contains {name}
 
         std::string reltype_list_path;
-        std::string reltype_detail_base_path;
+        std::string reltype_detail_path_tpl; // contains {name}
 
         std::string report_run_path;
 
         // Convenience full URLs
         std::string enum_list_url() const {
-            return base_url + "/" + enum_list_path;
+            return join_base_and_path(base_url, enum_list_path);
         }
-        std::string enum_detail_base_url() const {
-            return base_url + "/" + enum_detail_base_path;
+        std::string enum_detail_url(const std::string& name) const {
+            return join_base_and_path(base_url, replace_all(enum_detail_path_tpl, "{name}", name));
         }
+        std::string enum_detail_url_tpl() const {
+            return join_base_and_path(base_url, enum_detail_path_tpl);
+        }
+
 
         std::string citype_list_url() const {
-            return base_url + "/" + citype_list_path;
+            return join_base_and_path(base_url, citype_list_path);
         }
-        std::string citype_detail_base_url() const {
-            return base_url + "/" + citype_detail_base_path;
+        std::string citype_detail_url(const std::string& name) const {
+            return join_base_and_path(base_url, replace_all(citype_detail_path_tpl, "{name}", name));
         }
+        std::string citype_detail_url_tpl() const {
+            return join_base_and_path(base_url, citype_detail_path_tpl);
+        }
+
 
         std::string reltype_list_url() const {
-            return base_url + "/" + reltype_list_path;
+            return join_base_and_path(base_url, reltype_list_path);
         }
-        std::string reltype_detail_base_url() const {
-            return base_url + "/" + reltype_detail_base_path;
+        std::string reltype_detail_url(const std::string& name) const {
+            return join_base_and_path(base_url, replace_all(reltype_detail_path_tpl, "{name}", name));
+        }
+        std::string reltype_detail_url_tpl() const {
+            return join_base_and_path(base_url, reltype_detail_path_tpl);
         }
 
+
+        std::string codelist_headers_list_url() const {
+            return join_base_and_path(base_url, codelist_headers_list_path);
+        }
+        std::string codelist_items_url(const std::string& code) const {
+            return join_base_and_path(base_url, replace_all(codelist_items_path_tpl, "{name}", code));
+        }
+        std::string codelist_items_url_tpl() const {
+            return join_base_and_path(base_url, codelist_items_path_tpl);
+        }
+
+
+
         std::string report_run_url() const {
-            return base_url + "/" + report_run_path;
+            return join_base_and_path(base_url, report_run_path);
         }
     };
 
@@ -83,14 +128,20 @@ namespace metais {
 
         // Defaults for paths (no host)
         cfg.meta_instance              = "prod";
-        cfg.enum_list_path             = "api/enums-repo/enums/list";
-        cfg.enum_detail_base_path      = "api/enums-repo/enums/enum/valid";
 
-        cfg.citype_list_path           = "api/types-repo/citypes/list";
-        cfg.citype_detail_base_path    = "api/types-repo/citypes/citype";
+        cfg.enum_list_path        = "api/enums-repo/enums/list";
+        cfg.enum_detail_path_tpl  = "api/enums-repo/enums/enum/valid/{name}";
 
-        cfg.reltype_list_path          = "api/types-repo/relationshiptypes/list";
-        cfg.reltype_detail_base_path   = "api/types-repo/relationshiptypes/relationshiptype";
+        cfg.citype_list_path      = "api/types-repo/citypes/list";
+        cfg.citype_detail_path_tpl= "api/types-repo/citypes/citype/{name}";
+
+        cfg.reltype_list_path     = "api/types-repo/relationshiptypes/list";
+        cfg.reltype_detail_path_tpl= "api/types-repo/relationshiptypes/relationshiptype/{name}";
+
+        cfg.codelist_headers_list_path =
+            "api/codelist-repo/codelists/codelistheaders?language=sk&pageNumber=1&perPage=1000";
+        cfg.codelist_items_path_tpl =
+            "api/codelist-repo/codelists/codelistheaders/{name}/codelistitems?language=sk&pageNumber=1&perPage=10000";
 
         cfg.report_run_path            = "api/report/reports/run?lang=sk";
 
@@ -105,31 +156,22 @@ namespace metais {
 
             
             // override individual paths if present
-            if (j.contains("enum_list")) {
-                cfg.enum_list_path = j["enum_list"].get<std::string>();
-            }
-            if (j.contains("enum_detail_base")) {
-                cfg.enum_detail_base_path = j["enum_detail_base"].get<std::string>();
-            }
+            if (j.contains("enum_list"))   cfg.enum_list_path = j["enum_list"].get<std::string>();
+            if (j.contains("enum_detail")) cfg.enum_detail_path_tpl = j["enum_detail"].get<std::string>();
 
 
-
-            if (j.contains("citype_list")) {
-                cfg.citype_list_path = j["citype_list"].get<std::string>();
-            }
-            if (j.contains("citype_detail_base")) {
-                cfg.citype_detail_base_path = j["citype_detail_base"].get<std::string>();
-            }
+            if (j.contains("citype_list"))   cfg.citype_list_path = j["citype_list"].get<std::string>();
+            if (j.contains("citype_detail")) cfg.citype_detail_path_tpl = j["citype_detail"].get<std::string>();
 
 
+            if (j.contains("reltype_list"))   cfg.reltype_list_path = j["reltype_list"].get<std::string>();
+            if (j.contains("reltype_detail")) cfg.reltype_detail_path_tpl = j["reltype_detail"].get<std::string>();
 
-            if (j.contains("reltype_list")) {
-                cfg.reltype_list_path = j["reltype_list"].get<std::string>();
-            }
-            if (j.contains("reltype_detail_base")) {
-                cfg.reltype_detail_base_path = j["reltype_detail_base"].get<std::string>();
-            }
 
+            if (j.contains("codelist_headers_list"))
+                cfg.codelist_headers_list_path = j["codelist_headers_list"].get<std::string>();
+            if (j.contains("codelist_items"))
+                cfg.codelist_items_path_tpl = j["codelist_items"].get<std::string>();
 
 
             if (j.contains("apiuri") && j["apiuri"].is_string()) {
