@@ -30,12 +30,18 @@ namespace metais {
         fs::path raw_root;
         fs::path date_root;
 
-        // existing
+        // enums (open API)
         fs::path metadata_root;
         fs::path enums_root;
         fs::path nodes_meta_dir;
         fs::path rels_meta_dir;
 
+        // codelists (open API)
+        fs::path codelists_root;
+        fs::path codelists_items_dir;
+        fs::path codelists_headers_json;
+
+        // top level
         fs::path packed_root;
         fs::path dict_dir;
         fs::path nodes_packed;
@@ -71,6 +77,10 @@ namespace metais {
             metadata_root  = date_root / cfg.metadata_root;
             enums_root     = date_root / cfg.enums_root;
 
+            codelists_root        = date_root / cfg.codelists_root;
+            codelists_items_dir   = codelists_root / "codelistitems";
+            codelists_headers_json = codelists_root / "codelistheaders.json";
+
             nodes_meta_dir = metadata_root / cfg.nodes_root;
             rels_meta_dir  = metadata_root / cfg.rels_root;
 
@@ -99,6 +109,7 @@ namespace metais {
         void create_fetch_dirs(bool verbose=true) const {
             std::vector<fs::path> dirs = {
                 metadata_root, enums_root, nodes_meta_dir, rels_meta_dir,
+                codelists_root, codelists_items_dir,
                 raw_nodes_dir, raw_rels_dir,
                 raw_nodes_pages_dir, raw_rels_pages_dir,
                 raw_nodes_errors_dir, raw_rels_errors_dir,

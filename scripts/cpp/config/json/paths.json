@@ -2,6 +2,7 @@
     "output_root": "output",
     "metadata_root": "metadata",
     "enums_root": "enums",
+    "codelists_root": "codelists",
     "nodes_root": "nodes",
     "rels_root": "relations",
     "packed_root": "packed"
