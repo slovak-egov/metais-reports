@@ -78,9 +78,9 @@ namespace metais {
     HttpResponse run_report_groovy(
         const ReportRunOptions& opt,
         const HTTPConfig& http_cfg,
-        const std::string& groovy_code
+        const std::string& groovy_code,
+        const json& params
     ) {
-        json params = load_json_file("config/params/params.json");
         json payload;
         payload["body"] = groovy_code;
         payload["parameters"] = params;
@@ -181,10 +181,11 @@ namespace metais {
     static HttpResponse try_run(
         const ReportRunOptions& base_opt,
         const HTTPConfig& http_cfg,
+        const json& params,
         MakeGroovy make_groovy
     ) {
         const std::string code = make_groovy(base_opt.limit, base_opt.offset);
-        return metais::run_report_groovy(base_opt, http_cfg, code);
+        return metais::run_report_groovy(base_opt, http_cfg, code, params);
     }
 
     template <typename MakeGroovyFull>
@@ -192,6 +193,7 @@ namespace metais {
         const std::string&, // tag
         const HTTPConfig& http_cfg,
         const ReportRunOptions& base_opt,
+        const json& params,
         MakeGroovyFull make_full
     ) {
         long off = base_opt.offset;
@@ -211,7 +213,7 @@ namespace metais {
                 ReportRunOptions opt = base_opt;
                 opt.offset = off;
                 opt.limit  = left;
-                HttpResponse r = try_run(opt, http_cfg, make_full);
+                HttpResponse r = try_run(opt, http_cfg, params, make_full);
 
                 if (is_hard_page_error(r)) {
                     // culprit is in left half
@@ -233,12 +235,13 @@ namespace metais {
         const std::string& tag,
         const HTTPConfig& http_cfg,
         const ReportRunOptions& base_opt,
+        const json& params,
         MakeGroovyUuid make_uuid
     ) {
         ReportRunOptions opt = base_opt;
         opt.limit = 1;
 
-        HttpResponse r = try_run(opt, http_cfg, make_uuid);
+        HttpResponse r = try_run(opt, http_cfg, params, make_uuid);
         if (r.status < 200 || r.status >= 300) return std::nullopt;
 
         // Your parse_results_or_throw expects normal shape.
@@ -276,6 +279,7 @@ namespace metais {
         const URIConfig& uri_cfg,
         const HTTPConfig& http_cfg,
         PageSink& sink,
+        const json& params,
         MakeGroovyFull make_groovy,
         MakeGroovySafe make_groovy_safe
     ) {
@@ -346,7 +350,7 @@ namespace metais {
             opt.limit         = limit;
             opt.offset        = offset;
 
-            HttpResponse r = run_report_groovy(opt, http_cfg, groovy_code);
+            HttpResponse r = run_report_groovy(opt, http_cfg, groovy_code, params);
 
             if (r.status == 0 && r.curl_code == (int)CURLE_OPERATION_TIMEDOUT) {
                 std::cerr << "[" << tag << "] curl timeout at offset=" << offset
@@ -392,21 +396,21 @@ namespace metais {
                 // 1) bisect to find bad offset
                 long bad_offset;
                 if (limit == 1) { bad_offset = offset; }
-                else { bad_offset = bisect_bad_offset(tag, http_cfg, base_opt, make_groovy); }
+                else { bad_offset = bisect_bad_offset(tag, http_cfg, base_opt, params, make_groovy); }
 
                 // 1b) capture the isolated failing response (full template, limit=1)
                 ReportRunOptions single = base_opt;
                 single.offset = bad_offset;
                 single.limit  = 1;
 
-                HttpResponse r_single = try_run(single, http_cfg, make_groovy);
+                HttpResponse r_single = try_run(single, http_cfg, params, make_groovy);
                 int auth_tries = 0;
                 while ((r_single.status == 401 || r_single.status == 403) && auth_tries++ < 2) {
                     auto d = handle_auth_challenge(http_cfg, r_single, bearer_token, interactive_allowed, uri_cfg.base_url);
                     if (d != AuthDecision::Retry) break;
                     base_opt.bearer_token = bearer_token;
                     single.bearer_token = bearer_token;
-                    r_single = try_run(single, http_cfg, make_groovy);
+                    r_single = try_run(single, http_cfg, params, make_groovy);
                 }
 
                 // 2) attempt uuid-only at bad_offset
@@ -414,7 +418,7 @@ namespace metais {
                 base_opt.limit  = 1;
                 base_opt.bearer_token = bearer_token;
                 single.bearer_token   = bearer_token;
-                auto bad_uuid = fetch_uuid_at(tag, http_cfg, base_opt, make_groovy_safe);
+                auto bad_uuid = fetch_uuid_at(tag, http_cfg, base_opt, params, make_groovy_safe);
 
                 // 3) write error report
                 json report;
@@ -495,7 +499,15 @@ namespace metais {
         if (tpl.empty()) throw std::runtime_error("Groovy template is empty: " + tpl_path.string());
         if (tpl_safe.empty()) throw std::runtime_error("Safe Groovy template is empty: " + tpl_path_safe.string());
 
-        run_paged(tag, layout, uri_cfg, http_cfg, sink,
+        const fs::path params_path = layout.project_root / "scripts/cpp/config/params/params.json";
+
+        if (!fs::exists(params_path)) {
+            throw std::runtime_error("params.json not found: " + params_path.string());
+        }
+
+        json params = load_json_file(params_path.string());
+
+        run_paged(tag, layout, uri_cfg, http_cfg, sink, params,
             [&](int limit, long offset) {
                 return groovy::inject_limit_offset(tpl, limit, offset);
             },
