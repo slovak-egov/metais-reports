@@ -13,13 +13,6 @@
 #include <iostream>
 #include <cstdint>
 
-inline std::string pretty_u64(std::uint64_t v) {
-    std::string s = std::to_string(v);
-    for (std::ptrdiff_t i = (std::ptrdiff_t)s.size() - 3; i > 0; i -= 3)
-        s.insert((size_t)i, ",");
-    return s;
-}
-
 static bool pass1_5_outputs_ok(const metais::DirectoryLayout& layout) {
     using namespace std::filesystem;
     return exists(layout.dict_dir / "dict.bin")

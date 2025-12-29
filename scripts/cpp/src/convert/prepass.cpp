@@ -6,9 +6,6 @@
 namespace metais {
 
     void prepass(std::string tag, const DirectoryLayout& layout, PrepassResult& out, bool skip_bad_json) {
-        auto t0 = std::chrono::steady_clock::now();
-        std::uint64_t last_report = 0;
-
         bool parsingNodes = false;
 
         PrepassStats* stats = nullptr;
