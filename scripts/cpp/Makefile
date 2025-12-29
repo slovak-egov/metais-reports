@@ -5,10 +5,10 @@ LDLIBS   := -lcurl -lssl -lcrypto
 
 BUILD_DIR := build
 
-FETCH_BIN  := metais_fetch
+FETCH_BIN  := fetch
 FETCH_MAIN := src/fetch/main.cpp
 
-CONVERTER_BIN  := metais_converter
+CONVERTER_BIN  := convert
 CONVERTER_MAIN := src/convert/main.cpp
 
 LIB_SRCS := $(wildcard src/lib/*.cpp)
