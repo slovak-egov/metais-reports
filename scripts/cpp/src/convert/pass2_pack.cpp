@@ -94,7 +94,7 @@ namespace metais {
         }
 
         // atomic write
-        fs::path final = rels_root / "rels.json";
+        fs::path final = rels_root / "relations.json";
         fs::path tmp   = final; tmp += ".tmp";
         {
             std::ofstream os(tmp, std::ios::binary);
@@ -113,19 +113,37 @@ namespace metais {
             throw std::runtime_error("Pass 2 requires Pass 1.5 outputs");
         }
 
+        if (is_done(layout.packed_root, ".pass2.done")) {
+            std::cerr << "[pass2] already done; skipping\n";
+            return;
+        }
+        
+        std::cerr << "[pass2] loading dict...\n";
         DictLookup dict;
         dict.load(layout.dict_dir);
+        std::cerr << "[pass2] dict loaded\n";
 
+        std::cerr << "[pass2] loading global uuids...\n";
         GlobalUuidIndex gu;
         gu.load(layout.uuids_dir / "uuids.bin");
+        std::cerr << "[pass2] uuids loaded, N=" << gu.size() << "\n";
 
+        std::cerr << "[pass2] loading resolver...\n";
         GlobalResolverIndex gr;
         gr.load(layout.uuids_dir / "resolver.bin", gu.size());
+        std::cerr << "[pass2] resolver loaded\n";
 
+        std::cerr << "[pass2] loading citypes...\n";
         auto citypes = load_citypes_vec_local(layout.uuids_dir / "citypes.json");
+        std::cerr << "[pass2] citypes loaded, n=" << citypes.size() << "\n";
 
+        std::cerr << "[pass2] constructing node_packer...\n";
         NodeGridPacker node_packer(layout, dict);
+        std::cerr << "[pass2] node_packer ok\n";
+
+        std::cerr << "[pass2] constructing rel_packer...\n";
         RelationGridPacker rel_packer(layout, dict, gu, gr, citypes);
+        std::cerr << "[pass2] rel_packer ok\n";
 
         // ---- nodes ----
         if (!is_done(layout.packed_root, ".pass2.nodes.done")) {
