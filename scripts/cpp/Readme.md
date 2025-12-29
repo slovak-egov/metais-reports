@@ -13,5 +13,4 @@ Key properties:
 It is part of the larger `metais-reports` toolchain and is invoked as `metais_fetch`.
 
 needs these tools to run:
-- sudo apt-get install libcurl4-openssl-dev
-- sudo apt install nlohmann-json3-dev
+- sudo apt install nlohmann-json3-dev libcurl4-openssl-dev libssl-dev

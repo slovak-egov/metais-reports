@@ -122,7 +122,7 @@ Files:
   - {
       "attributeLayout": "grid" | "sparse",
       "attributeCount": N,
-      "sparseEntrySize": 6,
+      "sparseEntryByteSize": 6, // only for "sparse" format
       "metaAttributeCount": 6
     }
 
@@ -201,17 +201,6 @@ Notes:
 - Adjacency lookup uses binary search on src.tgt.bin or tgt.src.bin.
 - relid preserves the mapping to relation attribute rows.
 
-### Relation index helpers
-- rels.json
-  - {
-      "bySource": {
-        "PO": ["PO_je_gestor_KS", ...]
-      },
-      "byTarget": {
-        "KS": ["PO_je_gestor_KS", ...]
-      }
-    }
-
 ------------
 | ## SIZES |
 ------------
@@ -253,7 +242,7 @@ The converter runs in **two raw-reading passes** plus an **offline finalize pass
 Goals:
 - deterministic indices (attributes, citypes, UUID ordering)
 - restart-safe artifacts (atomic writes)
-- pack nodes/relations in a form that supports fast lookup and later densification
+- pack nodes/relations in a form that supports fast lookup and later convert grid->sparse where advantageous
 
 --------------------------------
 | Pass 0: Bootstrap (no reads) |
@@ -346,9 +335,8 @@ For each citype and reltype:
   - root/relations/<reltype>/format.json
   - During first implementation we default to grid:
     {
-      "attributeLayout": "grid",
+      "attributeLayout": "grid", // and no "sparseEntryByteSize"!
       "attributeCount": A,
-      "sparseEntrySize": 6,
       "metaAttributeCount": 6
     }
 
@@ -457,6 +445,17 @@ In parallel, collect raw edges:
       - (U32 src_global_id, U32 tgt_global_id)
       - encounter order defines relation local index (relid)
 
+C) At the end of pass, the relation index helper is created:
+- relations.json
+  - {
+      "bySource": {
+        "PO": ["PO_je_gestor_KS", ...]
+      },
+      "byTarget": {
+        "KS": ["PO_je_gestor_KS", ...]
+      }
+    }
+
 ------------------------------------------------
 | Pass 3: Finalize (no raw read; sort/rewrite) |
 ------------------------------------------------
@@ -546,7 +545,13 @@ Decision:
 - if sparse_bytes < grid_bytes:
   - convert attributes.bin grid -> sparse:
     - write attributes.bin (pairs) and attribute_offsets.bin in local-index order
-    - update format.json attributeLayout = "sparse"
+    - update format.json attributeLayout = "sparse", add entry "sparseEntryByteSize": 6:
+    {
+      "attributeLayout": "sparse",
+      "attributeCount": A,
+      "sparseEntryByteSize": 6,
+      "metaAttributeCount": 6
+    }
 - else keep grid:
   - update format.json attributeLayout = "grid"
 MetaAttributes remain grid always.
