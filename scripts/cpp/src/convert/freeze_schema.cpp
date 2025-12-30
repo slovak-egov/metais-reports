@@ -238,30 +238,31 @@ namespace metais {
         return out;
     }
 
-    static void write_citypes(const DirectoryLayout& layout, const PrepassResult& pre) {
+    static std::vector<std::string> write_citypes(const DirectoryLayout& layout, const PrepassResult& pre) {
         // observed fallback / supplement
         const auto observed = observed_citypes_from_pre(pre);
 
         // source-of-truth list if present
-        auto final = load_citypes_list_keep_order(layout.citypes_list_json);
+        auto final_list = load_citypes_list_keep_order(layout.citypes_list_json);
 
-        if (!final.empty()) {
-            std::unordered_set<std::string> already(final.begin(), final.end());
+        if (!final_list.empty()) {
+            std::unordered_set<std::string> already(final_list.begin(), final_list.end());
             for (const auto& c : observed) {
-                if (!already.count(c)) final.push_back(c); // observed extras appended
+                if (!already.count(c)) final_list.push_back(c); // observed extras appended
             }
         } else {
-            final = observed; // fallback: deterministic sort
+            final_list = observed; // fallback: deterministic sort
         }
 
         std::cerr << "[citypes] metadata list: " << (fs::exists(layout.citypes_list_json) ? "yes" : "no")
                 << ", observed=" << observed.size()
-                << ", final=" << final.size()
+                << ", final=" << final_list.size()
                 << "\n";
 
-        write_atomic_json(layout.uuids_dir / "citypes.json", json(final));
-
+        write_atomic_json(layout.uuids_dir / "citypes.json", json(final_list));
         std::cerr << "[citypes] wrote " << (layout.uuids_dir / "citypes.json") << "\n";
+
+        return final_list;
     }
 
     static std::unordered_map<std::string, CitypeIndex>
@@ -458,6 +459,28 @@ namespace metais {
         std::cerr << "[uuids] wrote global_ids.bin for " << idx_to_citype.size() << " citypes\n";
     }
 
+    static void write_nodes_manifest(const DirectoryLayout& layout,
+                                    const std::vector<std::string>& citypes_final) {
+        json j;
+        j["citypes"] = citypes_final;
+        j["count"] = (std::uint64_t)citypes_final.size();
+        j["schemaEpochUtc"] = now_utc_epoch();
+        j["formatVersion"] = 1;
+
+        write_atomic_json(layout.nodes_packed / "citypes_manifest.json", j);
+    }
+
+    static void write_reltypes_manifest(const DirectoryLayout& layout,
+                                        const std::vector<std::string>& reltypes_final) {
+        json j;
+        j["reltypes"] = reltypes_final;
+        j["count"] = (std::uint64_t)reltypes_final.size();
+        j["schemaEpochUtc"] = now_utc_epoch();
+        j["formatVersion"] = 1;
+
+        write_atomic_json(layout.rels_packed / "reltypes_manifest.json", j);
+    }
+
     // -------------------------
     // Pass 1.5 entry
     // -------------------------
@@ -523,13 +546,15 @@ namespace metais {
 
         write_dict_files(layout, pre.dict);
 
-        write_citypes(layout, pre);
+        const auto citypes_final = write_citypes(layout, pre);
 
         write_citype_uuids(layout, pre);
-
         write_global_uuid_resolver(layout, pre);
-
         write_citype_global_ids(layout, pre);
+
+        // nodes.json and relations.json listing all final citypes and reltypes (that exist)
+        write_nodes_manifest(layout, citypes_final);
+        write_reltypes_manifest(layout, reltypes);
 
         const std::uint64_t n_citypes = (std::uint64_t)pre.uuids_by_citype.size();
         const std::uint64_t n_nodes   = count_total_nodes(pre);
