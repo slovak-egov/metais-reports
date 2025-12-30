@@ -13,10 +13,17 @@
 #include <fstream>
 #include <system_error>
 #include <vector>
+#include <utility>
 
 namespace metais {
 
     namespace fs = std::filesystem;
+
+    inline void seek_or_throw(std::istream& is, std::uint64_t pos, const fs::path& p) {
+        is.clear();
+        is.seekg(static_cast<std::streamoff>(pos), std::ios::beg);
+        if (!is) throw std::runtime_error("seek failed: " + p.string());
+    }
 
     inline void atomic_rename(const fs::path& tmp, const fs::path& final) {
         std::error_code ec;
@@ -47,6 +54,22 @@ namespace metais {
     // -------------------------
     // Semantic aliases (wire + semantic)
     // -------------------------
+
+    static constexpr std::uint64_t kUuidBytes = 16;
+    static constexpr std::uint64_t kU16Bytes  = 2;
+    static constexpr std::uint64_t kU32Bytes  = 4;
+    static constexpr std::uint64_t kU64Bytes  = 8;
+
+    // resolver.bin row layout (Pass 1.5 spec): citype_index(U16) + local_index(U32)
+    static constexpr std::uint64_t kResolverRowBytes = kU16Bytes + kU32Bytes; // 6
+
+    // metaAttributes grid width (fixed by schema)
+    static constexpr std::uint64_t kMetaAttrCount = 6;
+    static constexpr std::uint64_t kI32Bytes = 4;
+
+    // sparse attribute entry
+    static constexpr std::uint64_t kSparseAttrEntryBytes = kU16Bytes + kU32Bytes; // 6
+
     using WireU32 = std::uint32_t;
     using WireU16 = std::uint16_t;
 
@@ -263,6 +286,14 @@ namespace metais {
         }
     };
 
+    struct Uuid128Hash {
+        std::size_t operator()(const Uuid128& u) const noexcept {
+            // simple 128->64 mix (good enough for cache keys)
+            std::uint64_t x = u.hi ^ (u.lo + 0x9e3779b97f4a7c15ull + (u.hi << 6) + (u.hi >> 2));
+            return (std::size_t)x;
+        }
+    };
+
     inline std::uint64_t be64_from_8(const unsigned char* p) {
         return (std::uint64_t)p[0] << 56
             | (std::uint64_t)p[1] << 48
@@ -369,6 +400,26 @@ namespace metais {
         u.hi = be64_from_8(b);
         u.lo = be64_from_8(b + 8);
         return u;
+    }
+
+    inline std::uint32_t read_u32_le_at(std::ifstream& is, const fs::path& p, std::uint64_t pos) {
+        seek_or_throw(is, pos, p);
+        return read_u32_le(is);
+    }
+
+    inline std::uint16_t read_u16_le_at(std::ifstream& is, const fs::path& p, std::uint64_t pos) {
+        seek_or_throw(is, pos, p);
+        return read_u16_le(is);
+    }
+
+    inline std::int32_t read_i32_le_at(std::ifstream& is, const fs::path& p, std::uint64_t pos) {
+        seek_or_throw(is, pos, p);
+        return read_i32_le(is);
+    }
+
+    inline Uuid128 read_uuid16_at(std::ifstream& is, const fs::path& p, std::uint64_t pos) {
+        seek_or_throw(is, pos, p);
+        return read_uuid_raw16(is);
     }
 
 }
