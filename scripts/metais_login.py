@@ -1,20 +1,28 @@
 #!/usr/bin/env python3
-"""
-MetaIS interactive OIDC login → access_token (Bearer token)
+'''
+MetaIS interactive OIDC login -> access_token (Bearer token)
 
-This script automates the same flow your browser does (in broad strokes):
-  - Start an OIDC Authorization Code + PKCE flow at /iam/authorize
+Old method of authorization:
+  - log in to metais in browser, look at network -> fetch in dev tools
+  - copy out bearer token
+  - pass the bearer token to any API calls that need it
+
+This script automates the same flow:
+  - Start an OIDC Authorization Code + PKCE flow at /iam/authorize (Identity & Access Management)
   - Follow redirects to the login form
+  - GET on /iam/usernamePassLogin returns a page with hidden csrf token
   - Submit username/password to /iam/usernamePassLogin (with CSRF)
   - Follow redirects until we reach redirect_uri?code=...
   - Exchange code + PKCE verifier at /iam/token to obtain access_token
-  - iam stands for Identity & Access Management
 
 Security notes:
-  - Password is read from a prompt (not echoed).
-  - Do NOT commit tokens, passwords, or logs containing them to git.
-"""
+  - Password is read from an env variable or prompted (without echoeing) if not found.
+  - No passwords are commited to the repo
+  - we can commit a sha256 hash of the technical user's password to the repo and salt it. The salt can also be stored as a secret (?)
+  - script would unhash it with the salt at runtime. Never done this, not sure if secure.
+'''
 
+import math
 import base64
 import getpass
 import hashlib
@@ -36,20 +44,24 @@ DEFAULT_CLIENT_ID = "webPortalClient"
 DEFAULT_REDIRECT_URI = f"{BASE}/auth-success"
 
 
+#########################################################
+#######################  Helpers  #######################
+#########################################################
+
+# Base64url without '=' padding, as required by PKCE.
 def b64url(raw: bytes) -> str:
-    """Base64url without '=' padding, as required by PKCE."""
     return base64.urlsafe_b64encode(raw).decode().rstrip("=")
 
 
-def make_pkce():
-    """
-    PKCE (Proof Key for Code Exchange):
-      - code_verifier: a random secret the client keeps locally
-      - code_challenge: SHA256(code_verifier) base64url-encoded, sent to /authorize
+'''
+PKCE (Proof Key for Code Exchange):
+    - code_verifier: a random secret the client keeps locally
+    - code_challenge: SHA256(code_verifier) base64url-encoded, sent to /authorize
 
-    Later, /token checks that the verifier matches the earlier challenge.
-    This prevents an attacker who steals the authorization code from redeeming it.
-    """
+Later, /token checks that the verifier matches the earlier challenge.
+This prevents an attacker who steals the authorization code from redeeming it.
+'''
+def make_pkce():
     # i)  os.urandom(32) produces 32 bytes (256 bits) of cryptographically secure random data
     #     - raw bytes b'\x9f\x03\xa8\x1c\xef\x91...'
     #     - 32 because we need "sufficient entropy"
@@ -69,17 +81,17 @@ def make_pkce():
     # code_challenge = deterministic, public hash of that secret
     return verifier, challenge
 
+# URL-safe, already base64-like
 def rand_token(nbytes: int = 32) -> str:
-    # URL-safe, already base64-like
     return secrets.token_urlsafe(nbytes)
 
+'''
+The login POST expects a CSRF token.
+Different login pages embed it differently; we support:
+    - hidden input: <input type="hidden" name="_csrf" value="...">
+    - meta tag:     <meta name="_csrf" content="...">
+'''
 def extract_csrf(html: str) -> str:
-    """
-    The login POST expects a CSRF token.
-    Different login pages embed it differently; we support:
-      - hidden input: <input type="hidden" name="_csrf" value="...">
-      - meta tag:     <meta name="_csrf" content="...">
-    """
     m = re.search(r'name=["\']_csrf["\'][^>]*value=["\']([^"\']+)["\']', html)
     if m:
         return m.group(1)
@@ -91,11 +103,11 @@ def extract_csrf(html: str) -> str:
     raise RuntimeError("Could not find CSRF token in HTML.")
 
 
+'''
+Read value from env var if present; otherwise prompt interactively.
+secret=True uses getpass (no echo).
+'''
 def prompt_if_missing(env_key: str, label: str, secret: bool = False) -> str:
-    """
-    Read value from env var if present; otherwise prompt interactively.
-    secret=True uses getpass (no echo).
-    """
     v = os.environ.get(env_key)
     if v:
         return v
@@ -104,6 +116,45 @@ def prompt_if_missing(env_key: str, label: str, secret: bool = False) -> str:
         return getpass.getpass(f"{label}: ")
     return input(f"{label}: ").strip()
 
+def sec_to_readable(seconds: float) -> str:
+    whole_hrs = int(math.floor(seconds / 3600))
+    remainder = seconds - 3600 * whole_hrs
+    whole_min = int(math.floor(remainder / 60))
+    remainder = remainder - 60 * whole_min
+    whole_s = int(math.floor(remainder))
+    remainder_ms = int(1000*(remainder - whole_s))
+
+    res = ""
+
+    if whole_hrs > 0:
+        if res == "":
+            res = res + str(whole_hrs) + "h"
+        else:
+            res = res + ", " + str(whole_hrs) + "h"
+
+    if whole_min > 0:
+        if res == "":
+            res = res + str(whole_min) + "min"
+        else:
+            res = res + ", " + str(whole_min) + "min"
+
+    if whole_s > 0:
+        if res == "":
+            res = res + str(whole_s) + "s"
+        else:
+            res = res + ", " + str(whole_s) + "s"
+
+    if remainder_ms > 0:
+        if res == "":
+            res = res + str(remainder_ms) + "ms"
+        else:
+            res = res + ", " + str(remainder_ms) + "ms"
+
+    return res
+
+#########################################################
+######################  Main flow  ######################
+#########################################################
 
 def main() -> int:
     # --- Interactive credentials (env first, prompt second) ---
@@ -177,7 +228,7 @@ def main() -> int:
     if "/iam/usernamePassLogin" not in r.url: # skip the menu, take me to the password form
         r = s.get(f"{BASE}/iam/usernamePassLogin", allow_redirects=True, timeout=30)
 
-    # Save for debugging (optional).
+    # Save for debugging
     open("/tmp/metais_login_userpass.html", "w", encoding="utf-8").write(r.text)
 
     # cross-site request forgery protection
@@ -274,8 +325,8 @@ def main() -> int:
 
     j = token.json()
 
-    # This is the thing you use as:
-    #   Authorization: Bearer <access_token>
+    # This is the thing used as:
+    # Authorization: Bearer <access_token>
     access_token = j.get("access_token", "")
     if not access_token:
         raise RuntimeError(f"No access_token in token response keys={list(j.keys())}")
@@ -283,9 +334,9 @@ def main() -> int:
     print("\nACCESS TOKEN (Bearer):")
     print(access_token)
 
-    # Optional: print safe metadata
-    # print("expires_in:", j.get("expires_in"))
-    # print("scope:", j.get("scope"))
+    # print token metadata
+    print("expires_in:", sec_to_readable(j.get("expires_in")))
+    print("scope:", j.get("scope"))
 
     return 0
 
