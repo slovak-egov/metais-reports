@@ -1,0 +1,15 @@
+{
+  "initial_limit": 2000,
+  "min_limit": 10,
+  "max_limit": 50000,
+
+  "target_seconds": 35.0,
+  "tolerance_seconds": 1.0,
+
+  "gain": 1.0,
+  "min_step_factor": 0.5,
+  "max_step_factor": 2.0,
+
+  "timeout_factor": 0.5,
+  "quantize_step": 1
+}

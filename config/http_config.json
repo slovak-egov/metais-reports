@@ -1,0 +1,35 @@
+{
+  "auth": {
+    "mode": "user_pass",
+    "interactive": true,
+
+    "user_env": "METAIS_USER",
+    "pass_env": "METAIS_PASS",
+
+    "client_id_env": "METAIS_CLIENT_ID",
+    "client_secret_env": "METAIS_CLIENT_SECRET",
+
+    "user_agent": "metais-py-fetcher/1.0"
+  },
+
+  "timeouts": {
+    "connect_seconds": 10,
+    "read_seconds": 60
+  },
+
+  "retries": {
+    "max_attempts": 5,
+    "base_delay_ms": 500,
+    "max_delay_ms": 8000,
+    "jitter_ms": 250,
+    "retry_http": [408, 429, 500, 502, 503, 504]
+  },
+
+  "paging": {
+    "enabled": true,
+    "page_size": 1000,
+    "max_pages": 100000,
+    "offset_param": "offset",
+    "limit_param": "limit"
+  }
+}
