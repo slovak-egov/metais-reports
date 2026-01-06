@@ -40,7 +40,7 @@ Files:
 - uuids.bin
   - U128 × N_nodes
   - sorted by UUID
-- meta.bin (parallel arrays or struct-of-arrays)
+- resolver.bin (parallel arrays or struct-of-arrays)
   - global_node_id: U32
   - citype_index:   U16 (index into citypes.json)
   - local_index:    U32 (index inside citype)
@@ -147,7 +147,7 @@ Files:
 - metaAttributes.bin always exists (same 6)
 - if attributeLayout = "sparse", write attribute_offsets.bin (U32 × (N_relations + 1)) same as nodes.
 
-### Relation edges (GLOBAL IDs, finalized in Pass 3)
+### Relation edges (GLOBAL in tmp, LOCAL in finalized partitions)
 
 Relations may connect **multiple source types and/or target types**.
 To preserve type correctness and enable fast traversal, edges are split
@@ -198,7 +198,7 @@ Example:
 
 Notes:
 - No offsets files are required.
-- Adjacency lookup uses binary search on src.tgt.bin or tgt.src.bin.
+- Adjacency lookup uses binary search on src.tgt.bin / tgt.src.bin by local_index, then maps neighbor local_index → neighbor gid via global_ids.bin.
 - relid preserves the mapping to relation attribute rows.
 
 ------------
@@ -216,20 +216,20 @@ Core primitives:
 - offset entry (small):    4 bytes (U32)  // sparse attribute_offsets.bin
 - offset entry (large):    8 bytes (U64)  // dict.offsets.bin (and any >4GiB streams)
 - grid attribute cell:     4 bytes (INT32)
-- sparse attribute entry:   6 bytes (U16 + U32)
+- sparse attribute entry:  6 bytes (U16 + U32)
 
 Notes on offsets:
 - Dictionary offsets are U64 (dict.offsets.bin) because dict.bin can exceed 4 GiB.
 - Sparse attribute offsets are currently U32 (attribute_offsets.bin), since they index into
   per-type attributes.bin and are expected to fit within 4 GiB; this can be upgraded to U64 later if needed.
 
-Key files (per million nodes, rough):
+Key files (worst cases):
 
-- global/uuids.bin:        16 MB
-- global/meta.bin:         ~9 MB (packed arrays)
-- <citype>/uuids.bin:      16 MB × share
-- <citype>/global_ids.bin:  4 MB × share
-- relations src.tgt.bin:    8 bytes × N_relations
+- uuids/uuids.bin:         ~12 MB
+- uuids/resolver.bin:      ~5 MB (packed arrays)
+- <citype>/uuids.bin:      ~5 MB
+- <citype>/global_ids.bin: ~2 MB
+- relations src.tgt.bin:   ~5 MB
 
 
 
@@ -382,6 +382,11 @@ For each citype, using the globally assigned IDs:
 
 All writes are atomic.
 
+G) The converter also writes /packed/nodes/citype_manifest.json:
+{"citypes":[...], "count": ciN, "formatVersion": ver, "schemaEpochUtc":...}
+and /packed/relations/reltypes_manifest.json:
+(similar, but all reltypes in this pack)
+
 -------------------------------------------------
 | Pass 2: Pack to GRID (raw read #2, streaming) |
 -------------------------------------------------
@@ -439,11 +444,11 @@ For each reltype:
 
 In parallel, collect raw edges:
 - For each relation:
-  - resolve startUuid/endUuid to global_node_id using root/uuids/uuids.bin
+  - resolve startUuid/endUuid to gid using root/uuids/uuids.bin
   - append to:
     - root/relations/<reltype>/tmp.edges.bin
-      - (U32 src_global_id, U32 tgt_global_id)
-      - encounter order defines relation local index (relid)
+      - (U32 src_gid, U32 tgt_gid)
+      - encounter order defines relid (index in tmp file, row in relation attributes/metaAttributes)
 
 C) At the end of pass, the relation index helper is created:
 - relations.json
@@ -481,25 +486,34 @@ For each reltype:
    - create directory:
        root/relations/<reltype>/edges/<SRC>__<TGT>/
 
-   - build src.tgt list:
-       vector of (src_global_id, tgt_global_id, relid)
-       sorted by (src_global_id, tgt_global_id)
+   - src.tgt.bin
+     - pairs: (src_local_index, tgt_local_index)
+     - each entry: U32 + U32
+     - sorted lexicographically by (src_local_index, tgt_local_index)
+   - tgt.src.bin
+     - pairs: (tgt_local_index, src_local_index)
+     - each entry: U32 + U32
+     - sorted lexicographically by (tgt_local_index, src_local_index)
+   - src.tgt.relid.bin
+     - U32 relid aligned 1:1 with src.tgt.bin rows
+   - tgt.src.relid.bin
+     - same relid values, reordered to match tgt.src.bin
 
-   - write:
-       src.tgt.bin       (U32 src, U32 tgt)
-       src.tgt.relid.bin (U32 relid)
-
-   - build tgt.src by swapping and resorting:
-       tgt.src.bin
-       tgt.src.relid.bin
+ Important note for traversal:
+   - To traverse from a global node id gid:
+    1. use the global resolver to get (citype, local_index)
+    2. pick the matching <SRC>__<TGT> partitions for that citype
+    3. binary search using local_index in src.tgt.bin (or tgt.src.bin)
+    4. convert neighbor local_index back to neighbor gid using:
+      - root/nodes/<CITYPE>/global_ids.bin (local → gid)
+  This is exactly why this change is good: adjacency lists become naturally keyed by local index, and relation readers no longer need anything sized by global max_gid.
 
    - write meta.json with:
        {
          "reltype": "<RELTYPE>",
          "sourceType": "<SRC>",
          "targetType": "<TGT>",
-         "relationCount": N,
-         "attributeLayout": "grid" | "sparse"
+         "relationCount": N
        }
 
 5) Delete tmp.edges.bin only after successful finalization.
