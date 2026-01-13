@@ -14,7 +14,7 @@
 
   "timeouts": {
     "connect_seconds": 10,
-    "read_seconds": 60
+    "read_seconds": 300
   },
 
   "retries": {
