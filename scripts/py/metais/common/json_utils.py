@@ -7,6 +7,23 @@ from typing import Any, Union, List, Dict, Sequence
 K_MAX_JSON_PREVIEW = 200
 
 
+def _utf8_sort_key(s: str) -> bytes:
+    return s.encode("utf-8")
+
+def _canonicalize_obj(v: Any) -> Any:
+    if isinstance(v, dict):
+        return {k: _canonicalize_obj(v[k]) for k in sorted(v.keys(), key=_utf8_sort_key)}
+    if isinstance(v, list):
+        return [_canonicalize_obj(x) for x in v]
+    if isinstance(v, tuple):
+        return [_canonicalize_obj(x) for x in v]
+    return v
+
+def canonical_value(v: Any) -> str:
+    vv = _canonicalize_obj(v)
+    return json.dumps(vv, ensure_ascii=False, separators=(",", ":"), sort_keys=False)
+
+
 def _preview_json(obj: Any, max_len: int = K_MAX_JSON_PREVIEW) -> str:
     try:
         s = json.dumps(obj, ensure_ascii=False)
