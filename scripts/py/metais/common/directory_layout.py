@@ -33,7 +33,8 @@ class DirectoryLayout:
     packed_root: Path = field(init=False)
     dict_dir: Path = field(init=False)
     nodes_packed: Path = field(init=False)
-    uuids_dir: Path = field(init=False)
+    nodes_uuids_dir: Path = field(init=False)
+    rels_uuids_dir: Path = field(init=False)
     rels_packed: Path = field(init=False)
 
     # raw json dumps
@@ -45,7 +46,7 @@ class DirectoryLayout:
     raw_nodes_errors_dir: Path = field(init=False)
     raw_rels_errors_dir: Path = field(init=False)
 
-    tmp_dir: Path = field(init=False)
+    #tmp_dir: Path = field(init=False)
 
     # file paths
     rels_index_json: Path = field(init=False)
@@ -75,17 +76,16 @@ class DirectoryLayout:
         self.packed_root = self.date_root / cfg.packed_root
         self.dict_dir = self.packed_root / "dict"
         self.nodes_packed = self.packed_root / "nodes"
-        self.uuids_dir = self.packed_root / "uuids"
+        self.nodes_uuids_dir = self.packed_root / "nodes_uuids"
+        self.rels_uuids_dir = self.packed_root / "relations_uuids"
         self.rels_packed = self.packed_root / "relations"
 
-        self.rels_index_json = self.rels_packed / "rels.json"
+        self.rels_index_json = self.rels_packed / "relations.json"
 
         self.raw_nodes_pages_dir = self.date_root / cfg.nodes_root / "pages"
         self.raw_rels_pages_dir = self.date_root / cfg.rels_root / "pages"
         self.raw_nodes_errors_dir = self.raw_nodes_pages_dir / "errors"
         self.raw_rels_errors_dir = self.raw_rels_pages_dir / "errors"
-
-        self.tmp_dir = self.date_root / "tmp"
 
         self.citypes_list_json = self.metadata_root / "citypes_list.json"
         self.reltypes_list_json = self.metadata_root / "reltypes_list.json"
@@ -97,13 +97,14 @@ class DirectoryLayout:
             self.raw_nodes_dir, self.raw_rels_dir,
             self.raw_nodes_pages_dir, self.raw_rels_pages_dir,
             self.raw_nodes_errors_dir, self.raw_rels_errors_dir,
-            self.tmp_dir,
         ]
         mkdir_all(dirs, strict=True, verbose_ok=verbose, tag="mkdir")
 
     def create_convert_dirs(self, verbose: bool = True) -> None:
         dirs = [
-            self.packed_root, self.dict_dir, self.nodes_packed, self.uuids_dir, self.rels_packed,
-            self.tmp_dir,
+            self.packed_root,
+            self.dict_dir,
+            self.nodes_packed, self.nodes_uuids_dir,
+            self.rels_packed, self.rels_uuids_dir,
         ]
         mkdir_all(dirs, strict=True, verbose_ok=verbose, tag="mkdir")
