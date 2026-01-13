@@ -1,7 +1,7 @@
 def qi_rel = qi("rel")
 
 def q = match(
-    path().node().rel(qi_rel).node()
+    path().node().rel(qi_rel, RelationshipDirection.IN).node()
 )
 .returns(prop("rel_uuid",  qi_rel.prop("\$cmdb_id")))
 .orderBy(qi_rel.prop("\$cmdb_createdAt"), OrderDirection.ASC)
