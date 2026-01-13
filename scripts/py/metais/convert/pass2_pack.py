@@ -11,31 +11,16 @@ from typing import Any, Dict, Iterable, Iterator, Optional, Tuple, Union
 from metais.common.binary_io import (
     I32_LE,
     i32_sentinel_row,
-    UUID_U128_BE,
     UUID_BYTES,
-    RESOLVER_ROW,
-    RESOLVER_ROW_BYTES,
 )
+from metais.packed_reader.resolver import GlobalResolver
 from metais.common.atomic_write import atomic_write_with
 from metais.common.step_marker import is_done, mark_done
 from metais.common.uuid_search import find_uuid_index_u
 from metais.common.shards import list_shards_by_meta
 from metais.common.packed_spec import load_meta_keys_strict
 from .ndjson_stream import ndjson_json_range
-
-
-##################
-# Spec constants #
-##################
-
-SPEC_META_KEYS_6 = (
-    "owner",
-    "state",
-    "createdBy",
-    "createdAt",
-    "lastModifiedBy",
-    "lastModifiedAt",
-)
+from metais.common.json_utils import canonical_value
 
 
 #############
@@ -160,114 +145,8 @@ class DictLookup:
         yield json.dumps(obj, ensure_ascii=True, separators=(",", ":")).encode("utf-8")
 
     def index(self, obj: Any) -> Optional[int]:
-        if self._dict_mm is None:
-            raise RuntimeError("DictLookup not loaded")
-        for b in self._candidates(obj):
-            v = self._map.get(b)
-            if v is not None:
-                return v
-        return None
-
-
-################################
-# Global UUID + resolver index #
-################################
-
-class GlobalUuidIndex:
-    def __init__(self, uuids_dir: Union[str, Path]):
-        self.uuids_dir = Path(uuids_dir)
-        self._uu_f = None
-        self._uu_mm: Optional[mmap.mmap] = None
-        self.node_count = 0
-
-    def close(self) -> None:
-        if self._uu_mm is not None:
-            try: self._uu_mm.close()
-            finally: self._uu_mm = None
-        if self._uu_f is not None:
-            try: self._uu_f.close()
-            finally: self._uu_f = None
-
-    def __enter__(self): return self
-    def __exit__(self, exc_type, exc, tb):
-        self.close()
-        return False
-
-    def load(self) -> None:
-        p = self.uuids_dir / "uuids.bin"
-        if not p.is_file():
-            raise FileNotFoundError(p)
-        self._uu_f = p.open("rb")
-        self._uu_mm = mmap.mmap(self._uu_f.fileno(), 0, access=mmap.ACCESS_READ)
-        sz = len(self._uu_mm)
-        if sz % UUID_BYTES != 0:
-            raise ValueError(f"uuids.bin size not multiple of {UUID_BYTES}: {sz}")
-        self.node_count = sz // UUID_BYTES
-
-    def find_gid(self, uuid_str: str) -> Optional[int]:
-        if self._uu_mm is None:
-            raise RuntimeError("GlobalUuidIndex not loaded")
-        try:
-            return find_uuid_index_u(self._uu_mm, uuid_str, self.node_count)
-        except Exception:
-            return None
-
-
-class GlobalResolverIndex:
-    def __init__(self, uuids_dir: Union[str, Path], expected_rows: int):
-        self.uuids_dir = Path(uuids_dir)
-        self._res_f = None
-        self._res_mm: Optional[mmap.mmap] = None
-        self.citypes: list[str] = []
-        self.rows = 0
-        self._expected = expected_rows
-
-    def close(self) -> None:
-        if self._res_mm is not None:
-            try: self._res_mm.close()
-            finally: self._res_mm = None
-        if self._res_f is not None:
-            try: self._res_f.close()
-            finally: self._res_f = None
-
-    def __enter__(self): return self
-    def __exit__(self, exc_type, exc, tb):
-        self.close()
-        return False
-
-    def load(self) -> None:
-        citypes_path = self.uuids_dir / "citypes.json"
-        res_path = self.uuids_dir / "resolver.bin"
-        if not citypes_path.is_file():
-            raise FileNotFoundError(citypes_path)
-        if not res_path.is_file():
-            raise FileNotFoundError(res_path)
-
-        self.citypes = json.loads(citypes_path.read_text("utf-8"))
-        if not isinstance(self.citypes, list) or not all(isinstance(x, str) for x in self.citypes):
-            raise TypeError("citypes.json must be list[str]")
-
-        self._res_f = res_path.open("rb")
-        self._res_mm = mmap.mmap(self._res_f.fileno(), 0, access=mmap.ACCESS_READ)
-
-        sz = len(self._res_mm)
-        if sz % RESOLVER_ROW_BYTES != 0:
-            raise ValueError(f"resolver.bin size not multiple of {RESOLVER_ROW_BYTES}: {sz}")
-        self.rows = sz // RESOLVER_ROW_BYTES
-
-        if self._expected and self.rows != self._expected:
-            raise ValueError(f"resolver rows={self.rows} but uuids rows={self._expected}")
-
-    def citype_of_gid(self, gid: int) -> str:
-        if self._res_mm is None:
-            raise RuntimeError("GlobalResolverIndex not loaded")
-        if gid < 0 or gid >= self.rows:
-            raise IndexError(f"gid out of range: {gid}")
-        ci, _li = RESOLVER_ROW.unpack_from(self._res_mm, gid * RESOLVER_ROW_BYTES)
-        ci = int(ci)
-        if ci < 0 or ci >= len(self.citypes):
-            raise ValueError(f"citype index out of range in resolver.bin: {ci}")
-        return self.citypes[ci]
+        b = canonical_value(obj).encode("utf-8")
+        return self._map.get(b)
 
 
 #######################################################
@@ -319,6 +198,59 @@ class _TypeSchema:
     attr_name_to_index: dict[str, int]
     meta_keys: Tuple[str, ...]  # always the 6 from metaAttributes.json
 
+def _preallocate_file_i32_grid(path: Path, rows: int, cols: int) -> None:
+    # allowed to be empty if rows==0 or cols==0
+    if rows == 0 or cols == 0:
+        path.write_bytes(b"")
+        return
+
+    total_i32 = rows * cols
+    total_bytes = total_i32 * 4
+
+    with open(path, "wb") as f:
+        f.truncate(total_bytes)
+        block_i32 = 1 << 16
+        block = b"\xFF\xFF\xFF\xFF" * block_i32
+        remain = total_i32
+        while remain > 0:
+            n = block_i32 if remain >= block_i32 else remain
+            f.write(block[: n * 4])
+            remain -= n
+
+
+def _load_type_schema(dir_: Path, meta_keys: Tuple[str, ...], *, attrs_optional: bool) -> _TypeSchema:
+    fmt = json.loads((dir_ / "format.json").read_text("utf-8"))
+    attr_count = fmt.get("attributeCount")
+    meta_count = fmt.get("metaAttributeCount")
+
+    if not isinstance(attr_count, int) or attr_count < 0:
+        raise ValueError(f"{dir_}/format.json: bad attributeCount")
+    if meta_count != len(meta_keys):
+        raise ValueError(
+            f"{dir_}/format.json: metaAttributeCount={meta_count} "
+            f"but metaAttributes.json has {len(meta_keys)}"
+        )
+
+    name_to_idx: dict[str, int] = {}
+    attrs_path = dir_ / "attributes.json"
+
+    if attrs_path.is_file():
+        attrs = json.loads(attrs_path.read_text("utf-8"))
+        if isinstance(attrs, list) and all(isinstance(x, str) for x in attrs):
+            for i, tn in enumerate(attrs):
+                name_to_idx[tn] = i
+        elif isinstance(attrs, list) and all(isinstance(x, dict) for x in attrs):
+            for i, d in enumerate(attrs):
+                tn = d.get("technicalName") or d.get("name")
+                if isinstance(tn, str) and tn:
+                    name_to_idx[tn] = i
+        else:
+            raise TypeError(f"{attrs_path} must be list[str] or list[dict]")
+    else:
+        if not attrs_optional:
+            raise FileNotFoundError(attrs_path)
+
+    return _TypeSchema(attr_count=attr_count, attr_name_to_index=name_to_idx, meta_keys=meta_keys)
 
 class _CitypeNodeWriter:
     def __init__(self, citype_dir: Path, dict_lookup: DictLookup, meta_keys: Tuple[str, ...], *, verbose: bool):
@@ -326,7 +258,7 @@ class _CitypeNodeWriter:
         self.dict = dict_lookup
         self.verbose = verbose
 
-        self.schema = self._load_schema(citype_dir, meta_keys)
+        self.schema = _load_type_schema(citype_dir, meta_keys, attrs_optional=False)
         self.uuid_index = LocalUuidIndex(citype_dir)
         self.uuid_index.load()
         self.row_count = self.uuid_index.local_count
@@ -373,58 +305,9 @@ class _CitypeNodeWriter:
                     setattr(self, f_name, None)
         self.uuid_index.close()
 
-    def _load_schema(self, citype_dir: Path, meta_keys: Tuple[str, ...]) -> _TypeSchema:
-        fmt = json.loads((citype_dir / "format.json").read_text("utf-8"))
-        attr_count = fmt.get("attributeCount")
-        meta_count = fmt.get("metaAttributeCount")
-
-        if not isinstance(attr_count, int) or attr_count < 0:
-            raise ValueError(f"{citype_dir}/format.json: bad attributeCount")
-        if meta_count != len(meta_keys):
-            raise ValueError(
-                f"{citype_dir}/format.json: metaAttributeCount={meta_count} "
-                f"but metaAttributes.json has {len(meta_keys)}"
-            )
-
-        attrs = json.loads((citype_dir / "attributes.json").read_text("utf-8"))
-        name_to_idx: dict[str, int] = {}
-
-        # freeze_schema may write list[str] or list[dict]
-        if isinstance(attrs, list) and all(isinstance(x, str) for x in attrs):
-            for i, tn in enumerate(attrs):
-                name_to_idx[tn] = i
-        elif isinstance(attrs, list) and all(isinstance(x, dict) for x in attrs):
-            for i, d in enumerate(attrs):
-                tn = d.get("technicalName") or d.get("name")
-                if isinstance(tn, str):
-                    name_to_idx[tn] = i
-        else:
-            raise TypeError(f"{citype_dir}/attributes.json must be list[str] or list[dict]")
-
-        return _TypeSchema(attr_count=attr_count, attr_name_to_index=name_to_idx, meta_keys=meta_keys)
-
-    def _preallocate_file_i32_grid(self, path: Path, rows: int, cols: int) -> None:
-        # attributes.bin is allowed to be empty if cols==0
-        if cols == 0 or rows == 0:
-            path.write_bytes(b"")
-            return
-        total_i32 = rows * cols
-        total_bytes = total_i32 * 4
-
-        with open(path, "wb") as f:
-            f.truncate(total_bytes)
-            block_i32 = 1 << 16
-            block = b"\xFF\xFF\xFF\xFF" * block_i32
-            remain = total_i32
-            while remain > 0:
-                n = block_i32 if remain >= block_i32 else remain
-                f.write(block[: n * 4])
-                remain -= n
-
     def _preallocate_and_mmap(self) -> None:
-        self._preallocate_file_i32_grid(self.attr_path, self.row_count, self.schema.attr_count)
-        # metaAttributes.bin ALWAYS exists and ALWAYS 6 columns
-        self._preallocate_file_i32_grid(self.meta_path, self.row_count, len(self.schema.meta_keys))
+        _preallocate_file_i32_grid(self.attr_path, self.row_count, self.schema.attr_count)
+        _preallocate_file_i32_grid(self.meta_path, self.row_count, len(self.schema.meta_keys))
 
         self._attr_f = open(self.attr_path, "r+b")
         self._meta_f = open(self.meta_path, "r+b")
@@ -499,91 +382,129 @@ class _ReltypeWriter:
         self,
         rel_dir: Path,
         dict_lookup: DictLookup,
-        resolver: GlobalResolverIndex,
         meta_keys: Tuple[str, ...],
         *,
         verbose: bool,
     ):
         self.rel_dir = rel_dir
         self.dict = dict_lookup
-        self.resolver = resolver
         self.verbose = verbose
 
-        self.schema = self._load_schema(rel_dir, meta_keys)
+        self.schema = _load_type_schema(rel_dir, meta_keys, attrs_optional=True)
         self.reltype = rel_dir.name
 
+        # --- reltype local uuid index (drives rel_local_index) ---
+        self.uuid_index = LocalUuidIndex(rel_dir)
+        self.uuid_index.load()
+        self.row_count = self.uuid_index.local_count
+
+        # --- outputs ---
         self.edges_tmp = rel_dir / "tmp.edges.bin"
-        self.meta_tmp = rel_dir / "metaAttributes.bin.tmp"
-        self.attr_tmp = rel_dir / "attributes.bin.tmp"  # only if attr_count > 0
+        self.attr_path = rel_dir / "attributes.bin"
+        self.meta_path = rel_dir / "metaAttributes.bin"
 
         self._edges_f = open(self.edges_tmp, "wb")
-        self._meta_f = open(self.meta_tmp, "wb")
-        self._attr_f = open(self.attr_tmp, "wb") if self.schema.attr_count > 0 else None
+
+        self._attr_f = None
+        self._meta_f = None
+        self._attr_mm: Optional[mmap.mmap] = None
+        self._meta_mm: Optional[mmap.mmap] = None
 
         self._attr_row_width = self.schema.attr_count * 4
-        self._meta_row_width = len(self.schema.meta_keys) * 4  # always 6*4
+        self._meta_row_width = len(self.schema.meta_keys) * 4  # typically 6*4
 
         self._sent_attr_row = b"\xFF\xFF\xFF\xFF" * self.schema.attr_count
         self._sent_meta_row = b"\xFF\xFF\xFF\xFF" * len(self.schema.meta_keys)
 
+        self._seen = bytearray(self.row_count)
+
+        self._preallocate_and_mmap()
+
+        # stats
         self.count = 0
         self.src_types: set[str] = set()
         self.tgt_types: set[str] = set()
-
         self.unknown_attr = 0
         self.missing_dict = 0
+        self.missing_uuid = 0
+        self.not_found_uuid = 0
 
     def close(self) -> None:
-        for f in (self._edges_f, self._meta_f):
-            try:
-                f.close()
-            except Exception:
-                pass
-        if self._attr_f is not None:
-            try:
-                self._attr_f.close()
-            except Exception:
-                pass
+        # flush/close mmaps first
+        for mm_name in ("_attr_mm", "_meta_mm"):
+            mm = getattr(self, mm_name, None)
+            if mm is not None:
+                try:
+                    mm.flush()
+                    mm.close()
+                finally:
+                    setattr(self, mm_name, None)
 
-    def _load_schema(self, rel_dir: Path, meta_keys: Tuple[str, ...]) -> _TypeSchema:
-        fmt = json.loads((rel_dir / "format.json").read_text("utf-8"))
-        attr_count = fmt.get("attributeCount")
-        meta_count = fmt.get("metaAttributeCount")
+        for f_name in ("_attr_f", "_meta_f"):
+            f = getattr(self, f_name, None)
+            if f is not None:
+                try:
+                    f.close()
+                finally:
+                    setattr(self, f_name, None)
 
-        if not isinstance(attr_count, int) or attr_count < 0:
-            raise ValueError(f"{rel_dir}/format.json: bad attributeCount")
-        if meta_count != len(meta_keys):
-            raise ValueError(
-                f"{rel_dir}/format.json: metaAttributeCount={meta_count} "
-                f"but metaAttributes.json has {len(meta_keys)}"
-            )
+        try:
+            self._edges_f.close()
+        except Exception:
+            pass
 
-        attrs_path = rel_dir / "attributes.json"
-        name_to_idx: dict[str, int] = {}
-        if attrs_path.is_file():
-            attrs = json.loads(attrs_path.read_text("utf-8"))
-            if isinstance(attrs, list) and all(isinstance(x, str) for x in attrs):
-                for i, tn in enumerate(attrs):
-                    name_to_idx[tn] = i
-            elif isinstance(attrs, list) and all(isinstance(x, dict) for x in attrs):
-                for i, d in enumerate(attrs):
-                    tn = d.get("technicalName") or d.get("name")
-                    if isinstance(tn, str):
-                        name_to_idx[tn] = i
+        self.uuid_index.close()
 
-        return _TypeSchema(attr_count=attr_count, attr_name_to_index=name_to_idx, meta_keys=meta_keys)
+    def _preallocate_and_mmap(self) -> None:
+        _preallocate_file_i32_grid(self.attr_path, self.row_count, self.schema.attr_count)
+        _preallocate_file_i32_grid(self.meta_path, self.row_count, len(self.schema.meta_keys))
 
-    def ingest(self, raw: dict[str, Any], src_gid: int, tgt_gid: int) -> None:
-        # tmp.edges.bin: (U32 src_gid, U32 tgt_gid) encounter order; relid = row index
-        self._edges_f.write(struct.pack("<II", int(src_gid), int(tgt_gid)))
+        self._attr_f = open(self.attr_path, "r+b")
+        self._meta_f = open(self.meta_path, "r+b")
 
-        # endpoints inference (for relations.json helper)
-        self.src_types.add(self.resolver.citype_of_gid(src_gid))
-        self.tgt_types.add(self.resolver.citype_of_gid(tgt_gid))
+        self._attr_mm = (
+            mmap.mmap(self._attr_f.fileno(), 0, access=mmap.ACCESS_WRITE)
+            if self.row_count > 0 and self.schema.attr_count > 0
+            else None
+        )
+        self._meta_mm = (
+            mmap.mmap(self._meta_f.fileno(), 0, access=mmap.ACCESS_WRITE)
+            if self.row_count > 0 and len(self.schema.meta_keys) > 0
+            else None
+        )
 
-        # attributes row (grid)
-        if self.schema.attr_count > 0 and self._attr_f is not None:
-            buf = bytearray(self._sent_attr_row)
+    def ingest(self, raw: dict[str, Any], rel_uuid: str, src_gid: int, tgt_gid: int, src_type: str, tgt_type: str) -> None:
+        # rel_local_index from reltype/uuids.bin
+        if not isinstance(rel_uuid, str) or not rel_uuid:
+            self.missing_uuid += 1
+            return
+
+        li = self.uuid_index.find_local_index(rel_uuid)
+        if li is None:
+            self.not_found_uuid += 1
+            return
+
+        # tmp.edges.bin triples: (src_gid, tgt_gid, rel_local_index)
+        self._edges_f.write(struct.pack("<III", int(src_gid), int(tgt_gid), int(li)))
+
+        # endpoints inference
+        self.src_types.add(src_type)
+        self.tgt_types.add(tgt_type)
+
+        # reset row if duplicate
+        if self._seen[li]:
+            if self._attr_mm is not None and self._attr_row_width:
+                o = li * self._attr_row_width
+                self._attr_mm[o : o + self._attr_row_width] = self._sent_attr_row
+            if self._meta_mm is not None and self._meta_row_width:
+                o = li * self._meta_row_width
+                self._meta_mm[o : o + self._meta_row_width] = self._sent_meta_row
+        else:
+            self._seen[li] = 1
+
+        # attributes row write at offset li
+        if self._attr_mm is not None and self.schema.attr_count > 0:
+            base = li * self._attr_row_width
             for tn, val in _iter_attribute_pairs(raw):
                 aidx = self.schema.attr_name_to_index.get(tn)
                 if aidx is None:
@@ -593,43 +514,26 @@ class _ReltypeWriter:
                 if didx is None:
                     self.missing_dict += 1
                     continue
-                I32_LE.pack_into(buf, aidx * 4, int(didx))
-            self._attr_f.write(buf)
+                I32_LE.pack_into(self._attr_mm, base + aidx * 4, int(didx))
 
-        # metaAttributes row (ALWAYS 6, grid, separate)
-        meta = _extract_meta_dict(raw)
-        bufm = bytearray(self._sent_meta_row)
-        for col, k in enumerate(self.schema.meta_keys):
-            if k not in meta:
-                continue
-            didx = self.dict.index(meta.get(k))
-            if didx is None:
-                self.missing_dict += 1
-                continue
-            I32_LE.pack_into(bufm, col * 4, int(didx))
-        self._meta_f.write(bufm)
+        # metaAttributes row write at offset li
+        if self._meta_mm is not None:
+            meta = _extract_meta_dict(raw)
+            base = li * self._meta_row_width
+            for col, k in enumerate(self.schema.meta_keys):
+                if k not in meta:
+                    continue
+                didx = self.dict.index(meta.get(k))
+                if didx is None:
+                    self.missing_dict += 1
+                    continue
+                I32_LE.pack_into(self._meta_mm, base + col * 4, int(didx))
 
         self.count += 1
 
     def finalize(self) -> None:
         self.close()
 
-        def _rename(tmp: Path, final: Path) -> None:
-            if final.exists():
-                final.unlink()
-            tmp.replace(final)
-
-        # metaAttributes.bin always exists
-        _rename(self.meta_tmp, self.rel_dir / "metaAttributes.bin")
-
-        # attributes.bin may be omitted if attr_count == 0
-        if self.schema.attr_count > 0:
-            _rename(self.attr_tmp, self.rel_dir / "attributes.bin")
-        else:
-            if self.attr_tmp.exists():
-                self.attr_tmp.unlink(missing_ok=True)
-
-        # endpoints.json (if not already there from metadata, create inferred one)
         ep_path = self.rel_dir / "endpoints.json"
         if not ep_path.is_file():
             obj = {
@@ -703,15 +607,13 @@ class RelationGridPacker:
         self,
         rels_root: Path,
         dict_lookup: DictLookup,
-        gu: GlobalUuidIndex,
-        gr: GlobalResolverIndex,
+        gr: GlobalResolver,
         meta_keys: Tuple[str, ...],
         *,
         verbose: bool,
     ):
         self.rels_root = rels_root
         self.dict = dict_lookup
-        self.gu = gu
         self.gr = gr
         self.meta_keys = meta_keys
         self.verbose = verbose
@@ -734,8 +636,9 @@ class RelationGridPacker:
         if w is not None:
             return w
         rel_dir = self.rels_root / reltype
-        rel_dir.mkdir(parents=True, exist_ok=True)
-        w = _ReltypeWriter(rel_dir, self.dict, self.gr, self.meta_keys, verbose=self.verbose)
+        if not rel_dir.is_dir():
+            raise FileNotFoundError(f"Unknown reltype dir in packed relations: {rel_dir}")
+        w = _ReltypeWriter(rel_dir, self.dict, self.meta_keys, verbose=self.verbose)
         self._writers[reltype] = w
         return w
 
@@ -749,19 +652,26 @@ class RelationGridPacker:
             self.skipped += 1
             return
 
+        ru = obj.get("uuid")
         su = obj.get("startUuid")
         tu = obj.get("endUuid")
-        if not isinstance(su, str) or not su or not isinstance(tu, str) or not tu:
+        if not isinstance(ru, str) or not ru or not isinstance(su, str) or not su or not isinstance(tu, str) or not tu:
             self.bad_uuid += 1
             return
 
-        src_gid = self.gu.find_gid(su)
-        tgt_gid = self.gu.find_gid(tu)
-        if src_gid is None or tgt_gid is None:
+        src = self.gr.resolve_uuid(su)
+        tgt = self.gr.resolve_uuid(tu)
+        if src is None or tgt is None:
             self.bad_uuid += 1
             return
 
-        self._writer_for(reltype).ingest(obj, int(src_gid), int(tgt_gid))
+        src_gid, src_ci, _src_li = src
+        tgt_gid, tgt_ci, _tgt_li = tgt
+
+        src_type = self.gr.type_names[int(src_ci)]
+        tgt_type = self.gr.type_names[int(tgt_ci)]
+
+        self._writer_for(reltype).ingest(obj, ru, int(src_gid), int(tgt_gid), src_type, tgt_type)
         self.seen += 1
 
     def finalize(self) -> None:
@@ -776,10 +686,11 @@ class RelationGridPacker:
 # relations.json helper (bySource/byTarget) #
 #############################################
 
-def write_rels_manifest_atomic(rels_root: Path) -> None:
+def write_rels_manifest_atomic(layout) -> None:
     by_source: dict[str, list[str]] = {}
     by_target: dict[str, list[str]] = {}
 
+    rels_root = Path(layout.rels_packed)
     for ent in rels_root.iterdir():
         if not ent.is_dir():
             continue
@@ -824,7 +735,7 @@ def write_rels_manifest_atomic(rels_root: Path) -> None:
         "byTarget": {k: by_target[k] for k in sorted(by_target.keys())},
     }
 
-    final = rels_root / "relations.json"
+    final = Path(layout.rels_index_json)
 
     def _w(f):
         s = json.dumps(out, ensure_ascii=False, indent=2) + "\n"
@@ -841,7 +752,7 @@ def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bo
     packed_root = Path(getattr(layout, "packed_root", Path(layout.date_root) / "packed"))
 
     dict_dir = Path(getattr(layout, "dict_dir", packed_root / "dict"))
-    uuids_dir = Path(getattr(layout, "uuids_dir", packed_root / "uuids"))
+    uuids_dir = Path(getattr(layout, "nodes_uuids_dir", packed_root / "nodes_uuids"))
     nodes_root = Path(getattr(layout, "nodes_packed", packed_root / "nodes"))
     rels_root = Path(getattr(layout, "rels_packed", packed_root / "relations"))
 
@@ -865,72 +776,61 @@ def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bo
     node_meta_keys = load_meta_keys_strict(nodes_root / "metaAttributes.json")
     rel_meta_keys = load_meta_keys_strict(rels_root / "metaAttributes.json")
 
-    with DictLookup(dict_dir) as dlookup, GlobalUuidIndex(uuids_dir) as gu:
+    with DictLookup(dict_dir) as dlookup, GlobalResolver(uuids_dir, cache_size=65536) as gr:
         dlookup.load(verbose=verbose)
-        gu.load()
         if verbose:
-            print(f"[pass2] uuids loaded, N={gu.node_count}")
+            print(f"[pass2] uuids+resolver loaded, N={gr.node_count}")
 
-        with GlobalResolverIndex(uuids_dir, expected_rows=gu.node_count) as gr:
-            gr.load()
+        # ---- nodes ----
+        if not is_done(packed_root, ".pass2.nodes.done"):
             if verbose:
-                print("[pass2] resolver loaded")
+                print("[pass2] packing nodes")
 
-            # ---- nodes ----
-            if not is_done(packed_root, ".pass2.nodes.done"):
-                if verbose:
-                    print("[pass2] packing nodes")
+            pages_dir = raw_nodes_dir / "pages"
+            shards = list_shards_by_meta(pages_dir, "nodes")
+            if verbose:
+                print(f"[pass2] nodes shards={len(shards)}")
 
-                pages_dir = raw_nodes_dir / "pages"
-                shards = list_shards_by_meta(pages_dir, "nodes")
-                if verbose:
-                    print(f"[pass2] nodes shards={len(shards)}")
+            packer = NodeGridPacker(nodes_root, dlookup, node_meta_keys, verbose=verbose)
+            last_shard = -1
+            for rec in ndjson_json_range(pages_dir, "nodes", skip_bad_json=skip_bad_json):
+                if verbose and rec.shard_index != last_shard:
+                    last_shard = rec.shard_index
+                    print(f"[pass2] nodes shard {last_shard+1}/{rec.shard_count} (offset={rec.shard_offset})")
+                packer.ingest(rec.obj)
+            packer.finalize()
 
-                packer = NodeGridPacker(nodes_root, dlookup, node_meta_keys, verbose=verbose)
-                last_shard = -1
-                for rec in ndjson_json_range(pages_dir, "nodes", skip_bad_json=skip_bad_json):
-                    if verbose and rec.shard_index != last_shard:
-                        last_shard = rec.shard_index
-                        print(f"[pass2] nodes shard {last_shard+1}/{rec.shard_count} (offset={rec.shard_offset})")
-                    packer.ingest(rec.obj)
-                packer.finalize()
+            mark_done(packed_root, ".pass2.nodes.done", "pass=2\nkind=nodes\n")
+            if verbose:
+                print("[pass2] nodes done")
+        else:
+            if verbose:
+                print("[pass2] nodes already done; skipping")
 
-                mark_done(packed_root, ".pass2.nodes.done", "pass=2\nkind=nodes\n")
-                if verbose:
-                    print("[pass2] nodes done")
-            else:
-                if verbose:
-                    print("[pass2] nodes already done; skipping")
+        # ---- relations ----
+        if not is_done(packed_root, ".pass2.rels.done"):
+            if verbose:
+                print("[pass2] packing relations")
 
-            # ---- relations ----
-            if not is_done(packed_root, ".pass2.rels.done"):
-                if verbose:
-                    print("[pass2] packing relations")
+            pages_dir = raw_rels_dir / "pages"
+            shards = list_shards_by_meta(pages_dir, "rels")
+            if verbose:
+                print(f"[pass2] rels shards={len(shards)}")
 
-                pages_dir = raw_rels_dir / "pages"
-                shards = list_shards_by_meta(pages_dir, "rels")
-                if verbose:
-                    print(f"[pass2] rels shards={len(shards)}")
+            rpacker = RelationGridPacker(rels_root, dlookup, gr, rel_meta_keys, verbose=verbose)
+            last_shard = -1
+            for rec in ndjson_json_range(pages_dir, "rels", skip_bad_json=skip_bad_json):
+                if verbose and rec.shard_index != last_shard:
+                    last_shard = rec.shard_index
+                    print(f"[pass2] rels shard {last_shard+1}/{rec.shard_count} (offset={rec.shard_offset})")
+                rpacker.ingest(rec.obj)
+            rpacker.finalize()
 
-                rpacker = RelationGridPacker(rels_root, dlookup, gu, gr, rel_meta_keys, verbose=verbose)
-                last_shard = -1
-                for rec in ndjson_json_range(pages_dir, "rels", skip_bad_json=skip_bad_json):
-                    if verbose and rec.shard_index != last_shard:
-                        last_shard = rec.shard_index
-                        print(f"[pass2] rels shard {last_shard+1}/{rec.shard_count} (offset={rec.shard_offset})")
-                    rpacker.ingest(rec.obj)
-                rpacker.finalize()
+            mark_done(packed_root, ".pass2.rels.done", "pass=2\nkind=rels\n")
+            write_rels_manifest_atomic(layout)
 
-                mark_done(packed_root, ".pass2.rels.done", "pass=2\nkind=rels\n")
-                write_rels_manifest_atomic(rels_root)
-
-                if verbose:
-                    print("[pass2] rels done")
-            else:
-                if verbose:
-                    print("[pass2] rels already done; skipping")
-
-    if is_done(packed_root, ".pass2.nodes.done") and is_done(packed_root, ".pass2.rels.done"):
-        mark_done(packed_root, ".pass2.done", "pass=2\n")
-        if verbose:
-            print("[pass2] done")
+            if verbose:
+                print("[pass2] rels done")
+        else:
+            if verbose:
+                print("[pass2] rels already done; skipping")
