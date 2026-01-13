@@ -6,7 +6,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Optional
 
-from metais.common.json_utils import load_json_file
+from metais.common.json_utils import load_json_file, canonical_value
 from metais.common.atomic_write import atomic_write_json, atomic_write_with
 from metais.common.step_marker import is_done, mark_done
 from metais.common.binary_io import (
@@ -16,7 +16,7 @@ from metais.common.binary_io import (
     write_u64le_file,
     write_uuid16_file,
 )
-
+from metais.common.packed_spec import META_COLS
 from .ndjson_stream import ndjson_json_range
 
 
@@ -58,21 +58,6 @@ def _utf8_sort_key(s: str) -> bytes:
     return s.encode("utf-8")
 
 
-def _canonicalize_obj(v: Any) -> Any:
-    if isinstance(v, dict):
-        return {k: _canonicalize_obj(v[k]) for k in sorted(v.keys(), key=_utf8_sort_key)}
-    if isinstance(v, list):
-        return [_canonicalize_obj(x) for x in v]
-    if isinstance(v, tuple):
-        return [_canonicalize_obj(x) for x in v]
-    return v
-
-
-def canonical_value(v: Any) -> str:
-    vv = _canonicalize_obj(v)
-    return json.dumps(vv, ensure_ascii=False, separators=(",", ":"), sort_keys=False)
-
-
 @dataclass
 class ValueDictionary:
     _set: set[str] = field(default_factory=set)
@@ -101,6 +86,8 @@ class PrepassResult:
     uuids_ent: list[Uuid128] = field(default_factory=list)
     uuids_by_citype: dict[str, list[Uuid128]] = field(default_factory=dict)
 
+    uuids_rel: list[Uuid128] = field(default_factory=list)
+    uuids_by_reltype: dict[str, list[Uuid128]] = field(default_factory=dict)
 
 _LAST_PREPASS: Optional[PrepassResult] = None
 
@@ -240,6 +227,17 @@ def run_prepass(layout: Any, *, force: bool = False, verbose: bool = False, skip
         reltype = typ
         pre.attrs_rel.note_object(reltype)
 
+        u = j.get("uuid")
+        if not isinstance(u, str):
+            pre.rels.missing_uuid += 1
+        else:
+            try:
+                uu = Uuid128.from_string(u)
+                pre.uuids_rel.append(uu)
+                pre.uuids_by_reltype.setdefault(reltype, []).append(uu)
+            except Exception:
+                pre.rels.bad_uuid += 1
+
         attrs = j.get("attributes")
         if isinstance(attrs, list):
             for a in attrs:
@@ -282,9 +280,14 @@ def pass1_5_outputs_ok(layout: Any) -> bool:
         (Path(layout.dict_dir) / "dict.bin").exists()
         and (Path(layout.dict_dir) / "dict.offsets.bin").exists()
         and (Path(layout.dict_dir) / "meta.json").exists()
-        and (Path(layout.uuids_dir) / "citypes.json").exists()
-        and (Path(layout.uuids_dir) / "uuids.bin").exists()
-        and (Path(layout.uuids_dir) / "resolver.bin").exists()
+
+        and (Path(layout.nodes_uuids_dir) / "citypes.json").exists()
+        and (Path(layout.nodes_uuids_dir) / "uuids.bin").exists()
+        and (Path(layout.nodes_uuids_dir) / "resolver.bin").exists()
+
+        and (Path(layout.rels_uuids_dir) / "reltypes.json").exists()
+        and (Path(layout.rels_uuids_dir) / "rel_uuids.bin").exists()
+        and (Path(layout.rels_uuids_dir) / "resolver.bin").exists()
     )
 
 
@@ -293,6 +296,9 @@ class _AttrMeta:
     name: str = ""
     description: str = ""
     hasEnum: str = ""
+    dataType: str = ""                 # attributeTypeEnum ("STRING", "BOOLEAN", ...)
+    valid: Optional[bool] = None       # from valid
+    isArray: Optional[bool] = None     # from isArray/array
     has: bool = False
 
 
@@ -316,6 +322,7 @@ def _index_attr_array(out: dict[str, _AttrMeta], arr: Any) -> None:
         if isinstance(desc, str):
             m.description = desc
 
+        # enumCode -> hasEnum
         cons = a.get("constraints")
         if isinstance(cons, list):
             for c in cons:
@@ -325,6 +332,27 @@ def _index_attr_array(out: dict[str, _AttrMeta], arr: Any) -> None:
                 if isinstance(ec, str):
                     m.hasEnum = ec
                     break
+
+        # attributeTypeEnum -> dataType
+        dt = a.get("attributeTypeEnum")
+        if isinstance(dt, str):
+            m.dataType = dt
+
+        # valid
+        vv = a.get("valid")
+        if isinstance(vv, bool):
+            m.valid = vv
+
+        # isArray (prefer isArray if present; fallback to array)
+        ia = a.get("isArray")
+        ar = a.get("array")
+
+        if isinstance(ia, bool):
+            m.isArray = ia
+        elif isinstance(ar, bool):
+            m.isArray = ar
+        else:
+            m.isArray = None
 
         out[tech] = m
 
@@ -362,31 +390,33 @@ def _write_type_schema_files(out_dir: Path, meta_file: Path, observed_attrs: set
     for tech in names:
         it = meta_idx.get(tech)
         if it and it.has:
-            attrs_out.append(
-                {
-                    "technicalName": tech,
-                    "name": it.name or None,
-                    "description": it.description or None,
-                    "hasEnum": it.hasEnum or None,
-                }
-            )
+            attrs_out.append({
+                "technicalName": tech,
+                "name": it.name or None,
+                "description": it.description or None,
+                "hasEnum": it.hasEnum or None,
+                "dataType": it.dataType or None,
+                "valid": it.valid,
+                "isArray": it.isArray,
+            })
         else:
-            attrs_out.append(
-                {
-                    "technicalName": tech,
-                    "name": None,
-                    "description": None,
-                    "hasEnum": None,
-                }
-            )
+            attrs_out.append({
+                "technicalName": tech,
+                "name": None,
+                "description": None,
+                "hasEnum": None,
+                "dataType": None,
+                "valid": None,
+                "isArray": None,
+            })
+
+    atomic_write_json(out_dir / "attributes.json", attrs_out, ensure_ascii=False, indent=2)
 
     fmt = {
         "attributeLayout": "grid",
         "attributeCount": len(names),
-        "metaAttributeCount": 6,
+        "metaAttributeCount": META_COLS,
     }
-
-    atomic_write_json(out_dir / "attributes.json", attrs_out, ensure_ascii=False, indent=2)
     atomic_write_json(out_dir / "format.json", fmt, ensure_ascii=False, indent=2)
 
 
@@ -421,7 +451,7 @@ def _write_dict_files(layout: Any, dct: ValueDictionary, verbose: bool) -> None:
 
 
 def _observed_citypes(pre: PrepassResult) -> list[str]:
-    return sorted(pre.uuids_by_citype.keys(), key=_utf8_sort_key)
+    return sorted(pre.attrs_ent.object_count_by_type.keys(), key=_utf8_sort_key)
 
 
 def _load_citypes_list_keep_order(p: Path) -> list[str]:
@@ -461,13 +491,39 @@ def _write_citypes(layout: Any, pre: PrepassResult, verbose: bool) -> list[str]:
         print(f"[citypes] metadata_list={'yes' if citypes_list_path.exists() else 'no'} "
               f"observed={len(observed)} final={len(final_list)}")
 
-    atomic_write_json(Path(layout.uuids_dir) / "citypes.json", final_list, ensure_ascii=False, indent=2)
+    atomic_write_json(Path(layout.nodes_uuids_dir) / "citypes.json", final_list, ensure_ascii=False, indent=2)
     return final_list
 
 
 def _build_citype_index_map(citypes: list[str]) -> dict[str, int]:
     return {c: i for i, c in enumerate(citypes)}
 
+def _load_reltypes_list_keep_order(p: Path) -> list[str]:
+    if not p.exists():
+        return []
+    j = load_json_file(p)
+    if not isinstance(j, list):
+        raise RuntimeError("reltypes_list.json must be a JSON array")
+    seen: set[str] = set()
+    out: list[str] = []
+    for x in j:
+        if isinstance(x, str) and x not in seen:
+            seen.add(x)
+            out.append(x)
+    return out
+
+def _write_reltypes(layout: Any, pre: PrepassResult, verbose: bool) -> list[str]:
+    observed = sorted(pre.attrs_rel.object_count_by_type.keys(), key=_utf8_sort_key)
+    final_list = _load_reltypes_list_keep_order(Path(layout.reltypes_list_json))
+    if final_list:
+        already = set(final_list)
+        for r in observed:
+            if r not in already:
+                final_list.append(r)
+    else:
+        final_list = observed
+    atomic_write_json(Path(layout.rels_uuids_dir) / "reltypes.json", final_list, ensure_ascii=False, indent=2)
+    return final_list
 
 def freeze_schema(layout: Any, *, force: bool = False, verbose: bool = False) -> None:
     global _LAST_PREPASS
@@ -493,7 +549,8 @@ def freeze_schema(layout: Any, *, force: bool = False, verbose: bool = False) ->
     empty: set[str] = set()
 
     # A) per-citype schema
-    for citype, uuids in pre.uuids_by_citype.items():
+    citypes = sorted(pre.attrs_ent.object_count_by_type.keys(), key=_utf8_sort_key)
+    for citype in citypes:
         observed = pre.attrs_ent.seen_attrs_by_type.get(citype, empty)
         out_dir = Path(layout.nodes_packed) / citype
         meta_file = nodes_meta_dir / f"{citype}.json"
@@ -542,8 +599,8 @@ def freeze_schema(layout: Any, *, force: bool = False, verbose: bool = False) ->
 
     recs.sort(key=lambda r: r[0])  # Uuid128 ordering
 
-    uuids_out = Path(layout.uuids_dir) / "uuids.bin"
-    resolver_out = Path(layout.uuids_dir) / "resolver.bin"
+    uuids_out = Path(layout.nodes_uuids_dir) / "uuids.bin"
+    resolver_out = Path(layout.nodes_uuids_dir) / "resolver.bin"
 
     def _write_global_uuids(f) -> None:
         for u, _, _ in recs:
@@ -577,6 +634,64 @@ def freeze_schema(layout: Any, *, force: bool = False, verbose: bool = False) ->
         out = Path(layout.nodes_packed) / citype / "global_ids.bin"
         write_u32le_file(out, arr)
 
+
+    # --- Relations UUID indexing (Pass 1.5) ---
+    reltypes_final = _write_reltypes(layout, pre, verbose=verbose)
+    reltype_index_of = {r: i for i, r in enumerate(reltypes_final)}
+
+    # per-reltype uuids.bin (sort + dedupe)
+    for reltype, v in list(pre.uuids_by_reltype.items()):
+        v.sort()
+        dedup: list[Uuid128] = []
+        last: Optional[Uuid128] = None
+        for u in v:
+            if last is None or u != last:
+                dedup.append(u)
+                last = u
+        pre.uuids_by_reltype[reltype] = dedup
+        write_uuid16_file(Path(layout.rels_packed) / reltype / "uuids.bin", dedup)
+
+    # global relation uuids + resolver
+    relrecs: list[tuple[Uuid128, int, int]] = []  # (uuid, reltype_index, local_index)
+    for reltype, v in pre.uuids_by_reltype.items():
+        ri = reltype_index_of[reltype]
+        for li, u in enumerate(v):
+            relrecs.append((u, ri, li))
+
+    relrecs.sort(key=lambda r: r[0])  # by uuid
+
+    rel_uuids_out = Path(layout.rels_uuids_dir) / "rel_uuids.bin"
+    rel_res_out   = Path(layout.rels_uuids_dir) / "resolver.bin"
+
+    def _write_rel_uuids(f):
+        for u, _, _ in relrecs:
+            f.write(u.bytes16)
+
+    def _write_rel_resolver(f):
+        pack = RESOLVER_ROW.pack  # same <HI layout (U16 reltype_index, U32 local_index)
+        for _, ri, li in relrecs:
+            f.write(pack(int(ri), int(li)))
+
+    atomic_write_with(rel_uuids_out, _write_rel_uuids)
+    atomic_write_with(rel_res_out, _write_rel_resolver)
+
+    # per-reltype global_ids.bin (local -> relgid)
+    rel_global_ids: list[list[int]] = [[] for _ in range(len(reltypes_final))]
+    for ri, reltype in enumerate(reltypes_final):
+        v = pre.uuids_by_reltype.get(reltype)
+        if v:
+            rel_global_ids[ri] = [0] * len(v)
+
+    for relgid, (_, ri, li) in enumerate(relrecs):
+        rel_global_ids[ri][li] = relgid
+
+    for ri, reltype in enumerate(reltypes_final):
+        arr = rel_global_ids[ri]
+        if not arr:
+            continue
+        out = Path(layout.rels_packed) / reltype / "global_ids.bin"
+        write_u32le_file(out, arr)
+
     # H) manifests
     epoch = int(time.time())
     atomic_write_json(
@@ -587,7 +702,7 @@ def freeze_schema(layout: Any, *, force: bool = False, verbose: bool = False) ->
     )
     atomic_write_json(
         Path(layout.rels_packed) / "reltypes_manifest.json",
-        {"reltypes": reltypes, "count": len(reltypes), "schemaEpochUtc": str(epoch), "formatVersion": 1},
+        {"reltypes": reltypes_final, "count": len(reltypes_final), "schemaEpochUtc": str(epoch), "formatVersion": 1},
         ensure_ascii=False,
         indent=2,
     )
@@ -599,7 +714,9 @@ def freeze_schema(layout: Any, *, force: bool = False, verbose: bool = False) ->
     ss.append("pass=1.5")
     ss.append(f"date={getattr(layout, 'dump_date', '')}")
     ss.append(f"utc_epoch={epoch}")
-    ss.append(f"citypes={len(pre.uuids_by_citype)}")
+    ss.append(f"citypes={len(citypes_final)}")
+    ss.append(f"reltypes={len(reltypes_final)}")
+    ss.append(f"rels={len(relrecs)}")
     ss.append(f"nodes={n_nodes}")
     ss.append(f"dict_values={dict_vals}")
     mark_done(layout.packed_root, ".pass1_5.done", "\n".join(ss) + "\n")
