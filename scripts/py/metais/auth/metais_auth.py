@@ -353,12 +353,12 @@ def bearer_from_client_credentials_basic(
     Equivalent curl:
 
         curl -sS -X POST "$BASE/iam/token" \
-        -H "Content-Type: application/x-www-form-urlencoded" \
-        -H "User-Agent: metais-bot/1.0" \
-        -u "$CLIENT_ID:$CLIENT_SECRET" \
-        --data-urlencode "grant_type=client_credentials" \
-        --data-urlencode "scope=openid" \
-        --max-time 60
+          -H "Content-Type: application/x-www-form-urlencoded" \
+          -H "User-Agent: metais-bot/1.0" \
+          -u "$CLIENT_ID:$CLIENT_SECRET" \
+          --data-urlencode "grant_type=client_credentials" \
+          --data-urlencode "scope=openid" \
+          --max-time 60
     """
     s = requests.Session()
     s.headers["User-Agent"] = user_agent
@@ -420,13 +420,13 @@ def bearer_from_client_credentials_post(
     Equivalent curl:
 
         curl -sS -X POST "$BASE/iam/token" \
-        -H "Content-Type: application/x-www-form-urlencoded" \
-        -H "User-Agent: metais-bot/1.0" \
-        --data-urlencode "grant_type=client_credentials" \
-        --data-urlencode "scope=openid" \
-        --data-urlencode "client_id=$CLIENT_ID" \
-        --data-urlencode "client_secret=$CLIENT_SECRET" \
-        --max-time 60
+          -H "Content-Type: application/x-www-form-urlencoded" \
+          -H "User-Agent: metais-bot/1.0" \
+          --data-urlencode "grant_type=client_credentials" \
+          --data-urlencode "scope=openid" \
+          --data-urlencode "client_id=$CLIENT_ID" \
+          --data-urlencode "client_secret=$CLIENT_SECRET" \
+          --max-time 60
     """
     s = requests.Session()
     s.headers["User-Agent"] = user_agent
