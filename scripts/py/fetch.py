@@ -19,7 +19,7 @@ from metais.fetch.fetch_metadata import fetch_metadata
 from metais.fetch.fetch_raw import fetch_raw_nodes, fetch_raw_rels
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="MetaIS fetch pipeline (Python rewrite)")
+    ap = argparse.ArgumentParser(description="MetaIS raw data fetch pipeline")
     ap.add_argument("--date", default=None, help="Dump date in DD-MM-YYYY (default: today).")
     ap.add_argument("--project-root", default=None, help="Override auto-detected project root.")
     ap.add_argument("--paths", default=None, help="Override path to paths.json")
