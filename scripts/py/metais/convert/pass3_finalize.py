@@ -90,13 +90,45 @@ def _load_attribute_layout(format_json: Path) -> str:
 # Pass 3A: finalize relation edges #
 ####################################
 
-def _iter_edge_pairs_with_relid(path: Path) -> Iterator[Tuple[int, int, int]]:
+def _iter_tmp_edges(path: Path) -> Iterator[Tuple[int, int, int]]:
     """
-    Stream tmp.edges.bin as (src_gid, tgt_gid, relid) using chunked reads.
+    Stream tmp.edges.bin as (src_gid, tgt_gid, relid).
+    Supports:
+      - NEW format: triples (U32,U32,U32) where relid is already stored
+      - OLD format: pairs (U32,U32) where relid is implied by encounter order
     """
+    sz = path.stat().st_size
+
+    # Prefer triple if it fits exactly
+    if sz % EDGE_TRIPLE_BYTES == 0:
+        rec = EDGE_TRIPLE.size
+        unpack_iter = EDGE_TRIPLE.iter_unpack
+        carry = b""
+        with path.open("rb") as f:
+            while True:
+                chunk = f.read(BUF)
+                if not chunk:
+                    break
+                data = carry + chunk
+                nrec = len(data) // rec
+                rem = len(data) - nrec * rec
+                if rem:
+                    carry = data[-rem:]
+                    data = data[:-rem]
+                else:
+                    carry = b""
+                for a, b, r in unpack_iter(data):
+                    yield int(a), int(b), int(r)
+            if carry:
+                raise EOFError(f"truncated edge record in {path}")
+        return
+
+    # Fallback: legacy pair format
+    if sz % EDGE_PAIR.size != 0:
+        raise RuntimeError(f"tmp.edges.bin size is neither pairs nor triples: {path} ({sz} bytes)")
+
     rec = EDGE_PAIR.size
     unpack_iter = EDGE_PAIR.iter_unpack
-
     relid = 0
     carry = b""
     with path.open("rb") as f:
@@ -112,11 +144,9 @@ def _iter_edge_pairs_with_relid(path: Path) -> Iterator[Tuple[int, int, int]]:
                 data = data[:-rem]
             else:
                 carry = b""
-
             for a, b in unpack_iter(data):
                 yield int(a), int(b), relid
                 relid += 1
-
         if carry:
             raise EOFError(f"truncated edge record in {path}")
 
@@ -161,7 +191,7 @@ def finalize_relations(layout, *, do_finalize: bool = True, verbose: bool = True
     """
     packed_root = Path(getattr(layout, "packed_root", Path(layout.date_root) / "packed"))
     rels_root = Path(getattr(layout, "rels_packed", packed_root / "relations"))
-    uuids_root = Path(getattr(layout, "uuids_dir", packed_root / "uuids"))
+    uuids_root = Path(getattr(layout, "nodes_uuids_dir", packed_root / "nodes_uuids"))
 
     if not do_finalize:
         # You said your reader depends on this; so don’t silently “pretend ok”.
@@ -243,7 +273,7 @@ def finalize_relations(layout, *, do_finalize: bool = True, verbose: bool = True
         # Stream edges and write local-index triples into buckets
         n_edges = 0
         try:
-            for src_gid, tgt_gid, relid in _iter_edge_pairs_with_relid(tmp_edges):
+            for src_gid, tgt_gid, relid in _iter_tmp_edges(tmp_edges):
                 if src_gid >= len(citype_of_gid) or tgt_gid >= len(citype_of_gid):
                     raise RuntimeError(
                         f"edge gid out of range at relid={relid} src={src_gid} tgt={tgt_gid}"
@@ -471,7 +501,7 @@ def _grid_to_sparse_rewrite(
                     continue
 
                 osf.write(pair_pack(int(k) & 0xFFFF, int(v) & 0xFFFFFFFF))
-                cur += META_COLS
+                cur += 6
                 if cur > 0xFFFFFFFF:
                     raise RuntimeError(
                         f"sparse attributes exceeded 4GiB ({cur} bytes); need U64 offsets upgrade"
