@@ -157,6 +157,9 @@ class AttributeReader:
             self.attr_human_names = []
             self.attr_descriptions = []
             self.attr_has_enum = []
+            self.attr_data_types = []
+            self.attr_valid = []
+            self.attr_is_array = []
 
             if all(isinstance(x, str) for x in attributes_json):
                 tech_names = attributes_json
@@ -182,10 +185,25 @@ class AttributeReader:
                     if he is not None and not isinstance(he, str):
                         raise TypeError(f"attributes.json[{i}].hasEnum must be string or null")
 
+                    dt = d.get("dataType")
+                    if dt is not None and not isinstance(dt, str):
+                        raise TypeError(f"attributes.json[{i}].dataType must be string or null")
+
+                    vv = d.get("valid")
+                    if vv is not None and not isinstance(vv, bool):
+                        raise TypeError(f"attributes.json[{i}].valid must be bool or null")
+
+                    ia = d.get("isArray")
+                    if ia is not None and not isinstance(ia, bool):
+                        raise TypeError(f"attributes.json[{i}].isArray must be bool or null")
+
                     self.attr_tech_names.append(tn)
                     self.attr_human_names.append(nm)
                     self.attr_descriptions.append(desc)
                     self.attr_has_enum.append(he)
+                    self.attr_data_types.append(dt)
+                    self.attr_valid.append(vv)
+                    self.attr_is_array.append(ia)
             else:
                 raise TypeError("attributes.json must be list[str] or list[dict] with technicalName")
 
@@ -451,6 +469,23 @@ class AttributeReader:
         if self._get_meta_cached is None:
             raise RuntimeError("AttributeReader is closed")
         return self._get_meta_cached(idx)
+
+    def get_meta_cell(self, idx: int, midx: int) -> int:
+        """
+        Return a single meta cell (I32 dict index) without materializing the whole meta row.
+        Returns -1 for missing (same sentinel as get_meta_row()).
+        """
+        if self._meta_mm is None:
+            raise RuntimeError("AttributeReader is closed")
+        if idx < 0 or idx >= self.row_count:
+            raise IndexError("row index out of range")
+        if midx < 0 or midx >= self._meta_count:
+            raise IndexError("meta index out of range")
+        if self._meta_count == 0:
+            return -1
+        off = idx * self._meta_row_width + midx * I32_LE.size
+        (v,) = I32_LE.unpack_from(self._meta_mm, off)
+        return int(v)
 
     # -------- compatibility helpers --------
 
