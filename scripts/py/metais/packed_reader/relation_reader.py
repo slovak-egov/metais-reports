@@ -220,3 +220,50 @@ class RelationReader:
             raise RuntimeError("RelationReader is closed")
         lo, hi = self._tgt_range(tgt_local)
         return self._iter_neighbors(self._tgt_pairs_mm, self._tgt_relid_mm, lo, hi)
+
+    def iter_edges(self, *, by: str = "src"):
+        """
+        Stream all edges in this partition once.
+
+        by="src": iterate in (src_local, tgt_local) order using src.tgt.bin
+        by="tgt": iterate in (tgt_local, src_local) order using tgt.src.bin,
+                  but we still YIELD (src_local, tgt_local, relid).
+        """
+        by = (by or "src").lower()
+        if by not in ("src", "tgt"):
+            raise ValueError('by must be "src" or "tgt"')
+
+        if by == "src":
+            pairs_mm = self._src_pairs_mm
+            relid_mm = self._src_relid_mm
+            swap = False
+        else:
+            pairs_mm = self._tgt_pairs_mm
+            relid_mm = self._tgt_relid_mm
+            swap = True
+
+        if pairs_mm is None or relid_mm is None:
+            raise RuntimeError("RelationReader is closed")
+
+        pair_unpack = EDGE_PAIR.unpack_from
+        rel_unpack  = U32_LE.unpack_from
+        edge_bytes  = EDGE_REC_BYTES
+        rel_bytes   = RELID_BYTES
+
+        offp = 0
+        offr = 0
+        n = self.row_count
+
+        for _ in range(n):
+            a, b = pair_unpack(pairs_mm, offp)
+            (relid,) = rel_unpack(relid_mm, offr)
+
+            offp += edge_bytes
+            offr += rel_bytes
+
+            if not swap:
+                # src.tgt.bin already stores (src_local, tgt_local)
+                yield int(a), int(b), int(relid)
+            else:
+                # tgt.src.bin stores (tgt_local, src_local) -> swap back
+                yield int(b), int(a), int(relid)
