@@ -21,8 +21,6 @@ if (!safe && sm != null) {
     }
 }
 
-return [ok:true, params: report.parameters]
-
 // --- validOnly mode ---
 def validOnly = false
 def vo = p.validOnly
