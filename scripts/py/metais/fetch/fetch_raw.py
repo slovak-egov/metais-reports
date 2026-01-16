@@ -829,18 +829,33 @@ def _fetch_raw_common(
     *,
     verbose: bool,
 ) -> None:
-    if verbose:
-        print(f"[{tag}] template path: {strip_query(tpl_path)}")
-        print(f"[{tag}] safe template path: {strip_query(tpl_path_safe)}")
+    use_execute = (http_cfg.auth.mode == "report_endpoint")
 
-    tpl = _load_text(tpl_path)
-    tpl_safe = _load_text(tpl_path_safe)
-    if not tpl.strip():
-        raise RuntimeError(f"Groovy template is empty: {tpl_path}")
-    if not tpl_safe.strip():
-        raise RuntimeError(f"Safe Groovy template is empty: {tpl_path_safe}")
+    if not use_execute:
+        if verbose:
+            print(f"[{tag}] template path: {strip_query(tpl_path)}")
+            print(f"[{tag}] safe template path: {strip_query(tpl_path_safe)}")
 
+        tpl = _load_text(tpl_path)
+        tpl_safe = _load_text(tpl_path_safe)
+        if not tpl.strip():
+            raise RuntimeError(f"Groovy template is empty: {tpl_path}")
+        if not tpl_safe.strip():
+            raise RuntimeError(f"Safe Groovy template is empty: {tpl_path_safe}")
+
+        make_g = lambda limit, offset: inject_limit_offset(tpl, limit, offset)
+        make_s = lambda limit, offset: inject_limit_offset(tpl_safe, limit, offset)
+    else:
+        if verbose:
+            print(f"[{tag}] report_endpoint mode: skipping groovy template load")
+
+        # not used in execute mode, but run_paged wants callables
+        make_g = lambda limit, offset: ""
+        make_s = lambda limit, offset: ""
+
+    # params.json still needed (execute endpoint uses parameters)
     params_path = Path(layout.project_root) / "config" / "params.json"
+
     if not params_path.exists():
         raise RuntimeError(f"params.json not found: {params_path}")
 
@@ -855,7 +870,7 @@ def _fetch_raw_common(
         http_cfg=http_cfg,
         sink=sink,
         params=params,
-        make_groovy=lambda limit, offset: inject_limit_offset(tpl, limit, offset),
-        make_groovy_safe=lambda limit, offset: inject_limit_offset(tpl_safe, limit, offset),
+        make_groovy=make_g,
+        make_groovy_safe=make_s,
         verbose=verbose,
     )
