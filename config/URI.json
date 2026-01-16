@@ -13,5 +13,7 @@
   "codelist_headers_list": "api/codelist-repo/codelists/codelistheaders?language=sk&pageNumber=1&perPage=1000",
   "codelist_items": "api/codelist-repo/codelists/codelistheaders/{name}/codelistitems?language=sk&pageNumber=1&perPage=10000",
 
-  "apiuri": "api/report/reports/run?lang=sk"
+  "apiuri": "api/report/reports/run?lang=sk",
+
+  "report_execute_url_env": "METAIS_REPORT_EXEC_URL"
 }
