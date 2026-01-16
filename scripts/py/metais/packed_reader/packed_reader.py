@@ -1077,7 +1077,7 @@ class PackedReader:
         *,
         include_meta: bool = False,
         include_missing: bool = False,
-        meta_prefix: str | None = "meta.",
+        meta_prefix: str | None = None,
         raw_indices: bool = False,
     ) -> dict[str, Any] | tuple[dict[str, Any], dict[str, Any]]:
         self._require_open()
@@ -1152,8 +1152,8 @@ class PackedReader:
         *,
         include_meta: bool = False,
         include_missing: bool = False,
-        meta_prefix: str | None = "meta.",
-        enum_mode: str = "none",
+        meta_prefix: str | None = None,
+        enum_mode: str = "value",             # "none" | "value" | "both"
         return_info: bool = False,
     ):
         self._require_open()
@@ -1346,7 +1346,7 @@ class PackedReader:
         include_attrs: bool = False,
         include_meta: bool = False,
         uuid_format: str = "hi_lo",  # "hi_lo" | "str" | "uuid"
-        scan: bool = False,
+        scan: bool = False,          # no caching
         valid_only: bool = False,
     ) -> Iterator[NodeRecord]:
         self._require_open()
@@ -1501,10 +1501,12 @@ class PackedReader:
         *,
         reltype: Optional[Union[str, Iterable[str]]] = None,
         role: str = "either",
+        neighbor_citype: str | None = None,
         unique: bool = False,
         include_relid: bool = False,
         include_reltype: bool = False,
         include_rel_uuid: bool = False,
+        include_rel_direction: bool = False,
         rel_uuid_format: str = "str",   # "str" | "uuid" | "hi_lo"
         # a bit more expensive
         as_nodes: bool = False,
@@ -1547,7 +1549,15 @@ class PackedReader:
             reltypes = sorted(set(x for x in reltype if isinstance(x, str)))
 
         seen = set() if unique else None
-        citype_to_index = self._ensure_citype_index_map()
+        citype_to_index = self._ensure_citype_index_map() if as_nodes else None
+
+        neighbor_citype = neighbor_citype.strip() if isinstance(neighbor_citype, str) else None
+        if neighbor_citype:
+            citype_to_index = self._ensure_citype_index_map()
+            if neighbor_citype not in citype_to_index:
+                raise KeyError(f"Unknown neighbor_citype (not in global citypes.json): {neighbor_citype}")
+        else:
+            neighbor_citype = None
 
         def make_node_record(nb_gid: int, nb_citype: str, nb_local: int, lr_nb: LocalResolver) -> NodeRecord:
             uu_mm = lr_nb._uu_mm
@@ -1588,7 +1598,7 @@ class PackedReader:
                 return (hi, lo)
             return Uuid128(hi, lo).to_uuid()
 
-        def emit(rt: str, nb, relid: int, rel_uuid_val):
+        def emit(rt: str, nb, relid: int, rel_uuid_val, direction: str):
             items = []
             if include_reltype:
                 items.append(rt)
@@ -1597,6 +1607,8 @@ class PackedReader:
                 items.append(relid)
             if include_rel_uuid:
                 items.append(rel_uuid_val)
+            if include_rel_direction:
+                items.append(direction)
             return items[0] if len(items) == 1 else tuple(items)
 
         for rt in reltypes:
@@ -1607,6 +1619,11 @@ class PackedReader:
             ruidx = self._get_rel_uuid_index(rt) if include_rel_uuid else None
 
             for src, tgt, path in parts:
+                if neighbor_citype is not None:
+                    if role in ("source", "either") and src == citype and tgt != neighbor_citype:
+                        continue
+                    if role in ("target", "either") and tgt == citype and src != neighbor_citype:
+                        continue
                 # gid as source -> neighbors are in tgt
                 if role in ("source", "either") and src == citype:
                     rr = self._get_relation_reader(path)
@@ -1643,8 +1660,8 @@ class PackedReader:
                             seen.add(nb_gid)
 
                         nb_out = make_node_record(nb_gid, tgt, int(nb_local), lr_tgt) if as_nodes else nb_gid
-                        rel_uuid_val = rel_uuid_from_idx(ruidx, relid_i) if include_rel_uuid else None  # type: ignore[arg-type]
-                        yield emit(rt, nb_out, relid_i, rel_uuid_val)
+                        rel_uuid_val = rel_uuid_from_idx(ruidx, relid_i) if ruidx is not None else None
+                        yield emit(rt, nb_out, relid_i, rel_uuid_val, "out")
 
                 # gid as target -> neighbors are in src
                 if role in ("target", "either") and tgt == citype:
@@ -1683,7 +1700,7 @@ class PackedReader:
 
                         nb_out = make_node_record(nb_gid, src, int(nb_local), lr_src) if as_nodes else nb_gid
                         rel_uuid_val = rel_uuid_from_idx(ruidx, relid_i) if include_rel_uuid else None  # type: ignore[arg-type]
-                        yield emit(rt, nb_out, relid_i, rel_uuid_val)
+                        yield emit(rt, nb_out, relid_i, rel_uuid_val, "in")
 
 
     def relation_exists(
@@ -2035,3 +2052,11 @@ class PackedReader:
         src_uuid_s = str(Uuid128(int(src_hi), int(src_lo)).to_uuid())
 
         return self._ui_url(f"relation/{src_citype}/{src_uuid_s}/{rel_uuid_str}")
+
+    def relation_endpoints_gids(self, reltype: str, relid: int) -> tuple[int,int] | None:
+        ep = self._find_relation_endpoints(reltype, relid)
+        if ep is None: return None
+        src_ci, src_li, tgt_ci, tgt_li = ep
+        src_gid = self.get_node_by_local(src_ci, src_li, include_attrs=False, include_meta=False).gid
+        tgt_gid = self.get_node_by_local(tgt_ci, tgt_li, include_attrs=False, include_meta=False).gid
+        return src_gid, tgt_gid

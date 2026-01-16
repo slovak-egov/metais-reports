@@ -46,6 +46,32 @@ def _is_hard_page_error(status: int) -> bool:
         return False
     return not (200 <= status < 300)
 
+def _extract_error_message(body_text: str) -> str:
+    """
+    MetaIS errors are usually JSON objects with a 'message' field.
+    If parse fails, fall back to raw text.
+    """
+    try:
+        doc = pyjson.loads(body_text)
+        if isinstance(doc, dict):
+            m = doc.get("message")
+            if isinstance(m, str) and m.strip():
+                return m
+    except Exception:
+        pass
+    return body_text or ""
+
+
+def _is_retryable_cmdb_backend_500(status: int, body_text: str) -> bool:
+    if status != 500:
+        return False
+    msg_low = _extract_error_message(body_text).lower()
+
+    return (
+        "resourceaccessexception" in msg_low
+        or "connection refused" in msg_low
+        or ("i/o error on post request" in msg_low and "/read/query" in msg_low)
+    )
 
 def _error_path_for(errors_dir: Path, base: str, bad_offset: int) -> Path:
     return errors_dir / f"{base}.{bad_offset:0{K_SHARD_PAD}d}.error.json"
@@ -265,6 +291,36 @@ def run_report_groovy(
 
     return HttpResponse(status=int(r.status_code), seconds=(t1 - t0), body=r.text)
 
+def run_report_execute(
+    *,
+    api_url: str,
+    params: dict,
+    http_cfg: HTTPConfig,
+    verify_tls: bool = True,
+) -> HttpResponse:
+    payload = {"parameters": params}
+
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "User-Agent": http_cfg.auth.user_agent,
+    }
+
+    timeout = (http_cfg.timeouts.connect_seconds, http_cfg.timeouts.read_seconds)
+
+    t0 = time.perf_counter()
+    r = requests.post(
+        api_url,
+        json=payload,
+        headers=headers,
+        timeout=timeout,
+        allow_redirects=True,
+        verify=verify_tls,
+    )
+    t1 = time.perf_counter()
+
+    return HttpResponse(status=int(r.status_code), seconds=(t1 - t0), body=r.text)
+
 
 ########################################################
 # Hard-error isolation helpers (bisection + uuid-only) #
@@ -281,7 +337,25 @@ def _try_run(
     limit: int,
     offset: int,
     verify_tls: bool,
+    use_execute: bool,
+    safe: bool,
 ) -> HttpResponse:
+    if use_execute:
+        page_params = _page_params_for_execute(
+            base_params=params,
+            tag=tag,
+            http_cfg=http_cfg,
+            limit=limit,
+            offset=offset,
+            safe=safe,
+        )
+        return run_report_execute(
+            api_url=api_url,
+            params=page_params,
+            http_cfg=http_cfg,
+            verify_tls=verify_tls,
+        )
+
     code = make_groovy(limit, offset)
     return run_report_groovy(
         api_url=api_url,
@@ -292,6 +366,66 @@ def _try_run(
         verify_tls=verify_tls,
     )
 
+class TransientBisectionError(RuntimeError):
+    pass
+
+
+def _try_run_with_retry(
+    *,
+    tag: str,
+    api_url: str,
+    bearer_token: str,
+    http_cfg: HTTPConfig,
+    params: dict,
+    make_groovy: Callable[[int, int], str],
+    limit: int,
+    offset: int,
+    verify_tls: bool,
+    use_execute: bool,
+    safe: bool,
+) -> HttpResponse:
+    last: Optional[HttpResponse] = None
+
+    for attempt in range(1, http_cfg.retries.max_attempts + 1):
+        try:
+            r = _try_run(
+                tag=tag,
+                api_url=api_url,
+                bearer_token=bearer_token,
+                http_cfg=http_cfg,
+                params=params,
+                make_groovy=make_groovy,
+                limit=limit,
+                offset=offset,
+                verify_tls=verify_tls,
+                use_execute=use_execute,
+                safe=safe,
+            )
+        except (requests.Timeout, requests.ConnectionError) as e:
+            if attempt >= http_cfg.retries.max_attempts:
+                raise TransientBisectionError(
+                    f"[{tag}] transient transport error during bisection at offset={offset} limit={limit}: {e}"
+                ) from e
+            _sleep_backoff_ms(attempt, http_cfg.retries.base_delay_ms, http_cfg.retries.max_delay_ms, http_cfg.retries.jitter_ms)
+            continue
+
+        last = r
+
+        # Treat BOTH timeout-like statuses and your "meh 500" as retryable during bisection
+        if _is_timeout_like_status(r.status) or _is_retryable_cmdb_backend_500(r.status, r.body):
+            if attempt >= http_cfg.retries.max_attempts:
+                msg = _extract_error_message(r.body)[:240].replace("\n", " ")
+                raise TransientBisectionError(
+                    f"[{tag}] transient HTTP {r.status} during bisection at offset={offset} limit={limit}: {msg}"
+                )
+            _sleep_backoff_ms(attempt, http_cfg.retries.base_delay_ms, http_cfg.retries.max_delay_ms, http_cfg.retries.jitter_ms)
+            continue
+
+        return r
+
+    # should be unreachable
+    assert last is not None
+    return last
 
 def bisect_bad_offset(
     *,
@@ -304,6 +438,8 @@ def bisect_bad_offset(
     offset: int,
     limit: int,
     verify_tls: bool,
+    use_execute: bool,
+    safe: bool,
 ) -> int:
     off = int(offset)
     lim = int(limit)
@@ -317,7 +453,7 @@ def bisect_bad_offset(
         left = lim // 2
         right = lim - left
 
-        r_left = _try_run(
+        r_left = _try_run_with_retry(
             tag=tag,
             api_url=api_url,
             bearer_token=bearer_token,
@@ -327,7 +463,10 @@ def bisect_bad_offset(
             limit=left,
             offset=off,
             verify_tls=verify_tls,
+            use_execute=use_execute,
+            safe=safe,
         )
+
         if _is_hard_page_error(r_left.status):
             lim = left
             continue
@@ -348,8 +487,9 @@ def fetch_uuid_at(
     make_uuid: Callable[[int, int], str],
     offset: int,
     verify_tls: bool,
+    use_execute: bool,   # NEW
 ) -> Optional[str]:
-    r = _try_run(
+    r = _try_run_with_retry(
         tag=tag,
         api_url=api_url,
         bearer_token=bearer_token,
@@ -359,6 +499,8 @@ def fetch_uuid_at(
         limit=1,
         offset=offset,
         verify_tls=verify_tls,
+        use_execute=use_execute,
+        safe=True,
     )
     if not (200 <= r.status < 300):
         return None
@@ -383,6 +525,31 @@ def fetch_uuid_at(
 #####################
 # Main paged runner #
 #####################
+
+def _page_params_for_execute(
+    *,
+    base_params: dict,
+    tag: str,
+    http_cfg: HTTPConfig,
+    limit: int,
+    offset: int,
+    safe: bool,
+) -> dict:
+    out = dict(base_params)
+
+    # enforce target based on which pipeline branch is calling
+    out["target"] = "nodes" if tag == "NODES" else "relations"
+
+    # paging keys (configurable)
+    out[http_cfg.paging.limit_param] = int(limit)
+    out[http_cfg.paging.offset_param] = int(offset)
+
+    if safe:
+        out["mode"] = "safe"  # your groovy honors this
+        # optional belt+suspenders:
+        # out["safeMode"] = "TRUE"
+
+    return out
 
 def run_paged(
     *,
@@ -419,12 +586,12 @@ def run_paged(
     errs_dir.mkdir(parents=True, exist_ok=True)
     pages_dir.mkdir(parents=True, exist_ok=True)
 
-    api_url = uri_cfg.report_run_url()
+    use_execute = (http_cfg.auth.mode == "report_endpoint")
+    api_url = uri_cfg.report_execute_url() if use_execute else uri_cfg.report_run_url()
 
-    # Must have bearer
+    # Must have bearer or we're using the open endpoint
     bearer = (http_cfg.auth.bearer_token or "").strip()
-    if http_cfg.auth.mode != "none" and not bearer:
-        # try re-auth using configured mode
+    if (not use_execute) and (http_cfg.auth.mode != "none") and (not bearer):
         resolved = resolve_auth_inputs(http_cfg.auth, verbose=verbose)
         bearer = get_bearer_token(resolved, http_cfg, base=uri_cfg.base_url, verbose=verbose, verify_tls=verify_tls)
 
@@ -460,14 +627,30 @@ def run_paged(
 
         # request
         try:
-            r = run_report_groovy(
-                api_url=api_url,
-                bearer_token=bearer,
-                groovy_code=make_groovy(limit, offset),
-                params=params,
-                http_cfg=http_cfg,
-                verify_tls=verify_tls,
-            )
+            if use_execute:
+                page_params = _page_params_for_execute(
+                    base_params=params,
+                    tag=tag,
+                    http_cfg=http_cfg,
+                    limit=limit,
+                    offset=offset,
+                    safe=False,
+                )
+                r = run_report_execute(
+                    api_url=api_url,
+                    params=page_params,
+                    http_cfg=http_cfg,
+                    verify_tls=verify_tls,
+                )
+            else:
+                r = run_report_groovy(
+                    api_url=api_url,
+                    bearer_token=bearer,
+                    groovy_code=make_groovy(limit, offset),
+                    params=params,
+                    http_cfg=http_cfg,
+                    verify_tls=verify_tls,
+                )
         except (requests.Timeout, requests.ConnectionError) as e:
             if verbose:
                 print(f"[{tag}] transport timeout at offset={offset} limit={limit}: {e} -> shrinking and retrying")
@@ -475,7 +658,7 @@ def run_paged(
             continue
 
         # auth failure: try refresh once or twice
-        if r.status in (401, 403):
+        if (not use_execute) and (r.status in (401, 403)):
             if verbose:
                 print(f"[{tag}] auth HTTP {r.status} at offset={offset} -> refreshing bearer and retrying")
             for _ in range(2):
@@ -496,51 +679,79 @@ def run_paged(
 
         # retryable HTTP
         if not (200 <= r.status < 300):
+            # classic retry statuses
             if _is_timeout_like_status(r.status):
                 if verbose:
                     print(f"[{tag}] HTTP {r.status} at offset={offset} limit={limit} -> shrinking and retrying")
                 pager.on_timeout_like()
                 continue
 
-            # hard error: isolate + log + skip 1
+            # retryable "meh" 500 (CMDB backend refused)
+            if _is_retryable_cmdb_backend_500(r.status, r.body):
+                if verbose:
+                    msg = _extract_error_message(r.body)
+                    preview = msg[:220].replace("\n", " ")
+                    print(f"[{tag}] HTTP 500 (retryable backend hiccup) at offset={offset} limit={limit}: {preview} -> retrying")
+                pager.on_timeout_like()
+                continue
+
+            # otherwise: hard error -> isolate + log + skip 1
             if verbose:
                 print(f"[{tag}] HARD HTTP {r.status} at offset={offset} limit={limit} -> isolating via bisection")
 
-            bad_offset = offset if limit == 1 else bisect_bad_offset(
-                tag=tag,
-                api_url=api_url,
-                bearer_token=bearer,
-                http_cfg=http_cfg,
-                params=params,
-                make_full=make_groovy,
-                offset=offset,
-                limit=limit,
-                verify_tls=verify_tls,
-            )
+
+            try:
+                bad_offset = offset if limit == 1 else bisect_bad_offset(
+                    tag=tag,
+                    api_url=api_url,
+                    bearer_token=bearer,
+                    http_cfg=http_cfg,
+                    params=params,
+                    make_full=make_groovy,
+                    offset=offset,
+                    limit=limit,
+                    verify_tls=verify_tls,
+                    use_execute=use_execute,
+                    safe=False,
+                )
+            except TransientBisectionError as e:
+                if verbose:
+                    print(f"[{tag}] bisection hit transient backend issues: {e} -> retrying page")
+                pager.on_timeout_like()
+                continue
 
             # capture failing single-record response (full template, limit=1)
-            r_single = _try_run(
-                tag=tag,
-                api_url=api_url,
-                bearer_token=bearer,
-                http_cfg=http_cfg,
-                params=params,
-                make_groovy=make_groovy,
-                limit=1,
-                offset=bad_offset,
-                verify_tls=verify_tls,
-            )
+            try:
+                r_single = _try_run_with_retry(
+                    tag=tag,
+                    api_url=api_url,
+                    bearer_token=bearer,
+                    http_cfg=http_cfg,
+                    params=params,
+                    make_groovy=make_groovy,
+                    limit=1,
+                    offset=bad_offset,
+                    verify_tls=verify_tls,
+                    use_execute=use_execute,
+                    safe=False,
+                )
 
-            bad_uuid = fetch_uuid_at(
-                tag=tag,
-                api_url=api_url,
-                bearer_token=bearer,
-                http_cfg=http_cfg,
-                params=params,
-                make_uuid=make_groovy_safe,
-                offset=bad_offset,
-                verify_tls=verify_tls,
-            )
+                bad_uuid = fetch_uuid_at(
+                    tag=tag,
+                    api_url=api_url,
+                    bearer_token=bearer,
+                    http_cfg=http_cfg,
+                    params=params,
+                    make_uuid=make_groovy_safe,
+                    offset=bad_offset,
+                    verify_tls=verify_tls,
+                    use_execute=use_execute,
+                )
+            except TransientBisectionError as e:
+                if verbose:
+                    print(f"[{tag}] transient backend issue while probing bad record: {e} -> retrying page")
+                pager.on_timeout_like()
+                continue
 
             report = {
                 "tag": tag,

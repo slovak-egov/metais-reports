@@ -63,6 +63,8 @@ class URIConfig:
 
     report_run_path: str = "api/report/reports/run?lang=sk"
 
+    report_execute_url_env: str = "METAIS_REPORT_EXEC_URL"
+
     # ---- full URL helpers ----
     def enum_list_url(self) -> str:
         return join_base_and_path(self.base_url, self.enum_list_path)
@@ -103,6 +105,13 @@ class URIConfig:
     def report_run_url(self) -> str:
         return join_base_and_path(self.base_url, self.report_run_path)
 
+    def report_execute_url(self) -> str:
+        v = (os.environ.get(self.report_execute_url_env) or "").strip()
+        if not v:
+            raise RuntimeError(
+                f"[uri_config] Missing env {self.report_execute_url_env} with report execute URL."
+            )
+        return v
 
 def load_uri_config(
     filepath: Optional[Union[str, Path]] = None,
@@ -149,6 +158,8 @@ def load_uri_config(
 
             set_if_str("codelist_headers_list_path", "codelist_headers_list")
             set_if_str("codelist_items_path_tpl", "codelist_items")
+
+            set_if_str("report_execute_url_env", "report_execute_url_env")
 
             # legacy key name
             set_if_str("report_run_path", "apiuri")

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import time
+import hashlib
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Optional
@@ -19,6 +20,14 @@ from metais.common.binary_io import (
 from metais.common.packed_spec import META_COLS
 from .ndjson_stream import ndjson_json_range
 
+def _sha_allow(s: set[str] | None) -> str:
+    if not s:
+        return ""
+    h = hashlib.sha256()
+    for x in sorted(s):
+        h.update(x.encode("utf-8"))
+        h.update(b"\n")
+    return h.hexdigest()
 
 ##########
 # Models #
@@ -27,8 +36,10 @@ from .ndjson_stream import ndjson_json_range
 @dataclass
 class PrepassStats:
     total_records: int = 0
-    missing_type: int = 0
+    kept_records: int = 0
+    skipped_by_allow: int = 0
 
+    missing_type: int = 0
     missing_attributes: int = 0
     bad_attributes_type: int = 0
 
@@ -139,14 +150,33 @@ def _citypes_list_path(layout: Any) -> Path:
 # Pass 1: Prepass / discovery #
 ###############################
 
-def run_prepass(layout: Any, *, force: bool = False, verbose: bool = False, skip_bad_json: bool = False) -> None:
+def run_prepass(
+    layout: Any,
+    *,
+    force: bool = False,
+    verbose: bool = False,
+    skip_bad_json: bool = False,
+    node_uuid_allow: set[str] | None = None,
+    rel_uuid_allow: set[str] | None = None,
+) -> None:
     global _LAST_PREPASS
 
-    if (is_done(layout.packed_root, ".pass1_5.done") and pass1_5_outputs_ok(layout)) and not force:
-        if verbose:
-            print("[pass1] pass1.5 already done; skipping prepass")
-        _LAST_PREPASS = None
-        return
+    marker = Path(layout.packed_root) / ".pass1_5.done"
+    want_node = _sha_allow(node_uuid_allow)
+    want_rel  = _sha_allow(rel_uuid_allow)
+
+    if marker.exists() and pass1_5_outputs_ok(layout) and not force:
+        if node_uuid_allow is None and rel_uuid_allow is None:
+            if verbose:
+                print("[pass1] pass1.5 already done; skipping prepass")
+            _LAST_PREPASS = None
+            return
+        txt = marker.read_text("utf-8", errors="ignore")
+        if f"node_allow_sha256={want_node}" in txt and f"rel_allow_sha256={want_rel}" in txt:
+            if verbose:
+                print("[pass1] pass1.5 already done for same allowlists; skipping prepass")
+            _LAST_PREPASS = None
+            return
 
     pre = PrepassResult()
 
@@ -169,19 +199,29 @@ def run_prepass(layout: Any, *, force: bool = False, verbose: bool = False, skip
             pre.nodes.missing_type += 1
             continue
 
-        citype = typ
-        pre.attrs_ent.note_object(citype)
-
         u = j.get("uuid")
         if not isinstance(u, str):
             pre.nodes.missing_uuid += 1
-        else:
-            try:
-                uu = Uuid128.from_string(u)
-                pre.uuids_ent.append(uu)
-                pre.uuids_by_citype.setdefault(citype, []).append(uu)
-            except Exception:
-                pre.nodes.bad_uuid += 1
+            continue
+
+        # allowlist filter (FAST)
+        if node_uuid_allow is not None and u not in node_uuid_allow:
+            pre.nodes.skipped_by_allow += 1
+            continue
+
+        try:
+            uu = Uuid128.from_string(u)
+        except Exception:
+            pre.nodes.bad_uuid += 1
+            continue
+
+        pre.nodes.kept_records += 1
+        citype = typ
+
+        # now it’s “kept”, so we count schema/dict/etc
+        pre.attrs_ent.note_object(citype)
+        pre.uuids_ent.append(uu)
+        pre.uuids_by_citype.setdefault(citype, []).append(uu)
 
         attrs = j.get("attributes")
         if isinstance(attrs, list):
@@ -224,19 +264,27 @@ def run_prepass(layout: Any, *, force: bool = False, verbose: bool = False, skip
             pre.rels.missing_type += 1
             continue
 
-        reltype = typ
-        pre.attrs_rel.note_object(reltype)
-
         u = j.get("uuid")
         if not isinstance(u, str):
             pre.rels.missing_uuid += 1
-        else:
-            try:
-                uu = Uuid128.from_string(u)
-                pre.uuids_rel.append(uu)
-                pre.uuids_by_reltype.setdefault(reltype, []).append(uu)
-            except Exception:
-                pre.rels.bad_uuid += 1
+            continue
+
+        if rel_uuid_allow is not None and u not in rel_uuid_allow:
+            pre.rels.skipped_by_allow += 1
+            continue
+
+        try:
+            uu = Uuid128.from_string(u)
+        except Exception:
+            pre.rels.bad_uuid += 1
+            continue
+
+        pre.rels.kept_records += 1
+        reltype = typ
+
+        pre.attrs_rel.note_object(reltype)
+        pre.uuids_rel.append(uu)
+        pre.uuids_by_reltype.setdefault(reltype, []).append(uu)
 
         attrs = j.get("attributes")
         if isinstance(attrs, list):
@@ -263,12 +311,10 @@ def run_prepass(layout: Any, *, force: bool = False, verbose: bool = False, skip
     _LAST_PREPASS = pre
 
     if verbose:
-        print("[pass1] done")
-        print(f"  nodes: total={pre.nodes.total_records} missing_type={pre.nodes.missing_type} "
-              f"missing_uuid={pre.nodes.missing_uuid} bad_uuid={pre.nodes.bad_uuid}")
-        print(f"  rels:  total={pre.rels.total_records} missing_type={pre.rels.missing_type}")
-        print(f"  citypes={len(pre.uuids_by_citype)} reltypes={len(pre.attrs_rel.object_count_by_type)} "
-              f"dict_unique={len(pre.value_dict._set)}")
+        print(f"  nodes: total={pre.nodes.total_records} kept={pre.nodes.kept_records} skipped_allow={pre.nodes.skipped_by_allow} "
+            f"missing_uuid={pre.nodes.missing_uuid} bad_uuid={pre.nodes.bad_uuid}")
+        print(f"  rels:  total={pre.rels.total_records} kept={pre.rels.kept_records} skipped_allow={pre.rels.skipped_by_allow} "
+            f"missing_uuid={pre.rels.missing_uuid} bad_uuid={pre.rels.bad_uuid}")
 
 
 #######################################
@@ -525,16 +571,39 @@ def _write_reltypes(layout: Any, pre: PrepassResult, verbose: bool) -> list[str]
     atomic_write_json(Path(layout.rels_uuids_dir) / "reltypes.json", final_list, ensure_ascii=False, indent=2)
     return final_list
 
-def freeze_schema(layout: Any, *, force: bool = False, verbose: bool = False) -> None:
+def freeze_schema(
+    layout: Any,
+    *,
+    force: bool = False,
+    verbose: bool = False,
+    node_uuid_allow: set[str] | None = None,
+    rel_uuid_allow: set[str] | None = None,
+) -> None:
     global _LAST_PREPASS
 
-    if (is_done(layout.packed_root, ".pass1_5.done") and pass1_5_outputs_ok(layout)) and not force:
-        if verbose:
-            print("[pass1.5] already done; skipping")
-        return
+    marker = Path(layout.packed_root) / ".pass1_5.done"
+    want_node = _sha_allow(node_uuid_allow)
+    want_rel  = _sha_allow(rel_uuid_allow)
+
+    if marker.exists() and pass1_5_outputs_ok(layout) and not force:
+        if node_uuid_allow is None and rel_uuid_allow is None:
+            if verbose:
+                print("[pass1.5] already done; skipping")
+            return
+        txt = marker.read_text("utf-8", errors="ignore")
+        if f"node_allow_sha256={want_node}" in txt and f"rel_allow_sha256={want_rel}" in txt:
+            if verbose:
+                print("[pass1.5] already done for same allowlists; skipping")
+            return
 
     if _LAST_PREPASS is None:
-        run_prepass(layout, force=True, verbose=verbose)
+        run_prepass(
+            layout,
+            force=True,
+            verbose=verbose,
+            node_uuid_allow=node_uuid_allow,
+            rel_uuid_allow=rel_uuid_allow,
+        )
 
     pre = _LAST_PREPASS
     if pre is None:
@@ -719,6 +788,8 @@ def freeze_schema(layout: Any, *, force: bool = False, verbose: bool = False) ->
     ss.append(f"rels={len(relrecs)}")
     ss.append(f"nodes={n_nodes}")
     ss.append(f"dict_values={dict_vals}")
+    ss.append(f"node_allow_sha256={_sha_allow(node_uuid_allow)}")
+    ss.append(f"rel_allow_sha256={_sha_allow(rel_uuid_allow)}")
     mark_done(layout.packed_root, ".pass1_5.done", "\n".join(ss) + "\n")
 
     if verbose:

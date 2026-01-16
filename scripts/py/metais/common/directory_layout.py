@@ -13,6 +13,7 @@ class DirectoryLayout:
     cfg: PathsConfig
     dump_date: str
     project_root: Path
+    packed_root_override: Path | None = None
 
     # These are filled in post-init
     output_root: Path = field(init=False)
@@ -73,7 +74,9 @@ class DirectoryLayout:
         self.raw_nodes_dir = self.date_root / cfg.nodes_root
         self.raw_rels_dir = self.date_root / cfg.rels_root
 
-        self.packed_root = self.date_root / cfg.packed_root
+        default_packed = self.date_root / cfg.packed_root
+        self.packed_root = (self.packed_root_override or default_packed)
+        
         self.dict_dir = self.packed_root / "dict"
         self.nodes_packed = self.packed_root / "nodes"
         self.nodes_uuids_dir = self.packed_root / "nodes_uuids"

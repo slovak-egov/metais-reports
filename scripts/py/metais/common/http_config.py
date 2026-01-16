@@ -12,13 +12,13 @@ import copy
 from .json_utils import load_json_file
 from .project_root import find_project_root
 
-AuthMode = Literal["none", "user_pass", "client_credentials"]
+AuthMode = Literal["none", "user_pass", "client_credentials", "report_endpoint"]
 ClientAuthMethod = Literal["client_secret_basic", "client_secret_post"]
 
 
 @dataclass(slots=True)
 class HTTPAuthConfig:
-    mode: AuthMode = "user_pass"
+    mode: AuthMode = "report_endpoint"
     interactive: bool = True
 
     # env var NAMES (not values)
@@ -38,6 +38,8 @@ class HTTPAuthConfig:
     bearer_obtained_at: Optional[float] = None
     bearer_expires_in: Optional[float] = None
     bearer_scope: Optional[str] = None
+
+    report_url_env: str = "METAIS_REPORT_EXEC_URL"
 
 
 @dataclass(slots=True)
@@ -99,6 +101,12 @@ def _env_get(name: str) -> str:
         return ""
     return os.environ.get(name, "") or ""
 
+def get_report_execute_url(http_cfg: HTTPConfig) -> str:
+    key = _require_env_name(http_cfg.auth.report_url_env, "report_url_env")
+    url = (_env_get(key) or "").strip()
+    if not url:
+        raise RuntimeError(f"[report_endpoint] Missing env var {key} with report execute URL.")
+    return url
 
 def load_http_config(
     filepath: Optional[Union[str, Path]] = None,
@@ -136,8 +144,8 @@ def load_http_config(
                 # legacy aliases
                 if mode in ("oidc_userpass_pkce", "userpass"):
                     mode = "user_pass"
-                if mode in ("none", "user_pass", "client_credentials"):
-                    cfg.auth.mode = mode  # type: ignore[assignment]
+                if mode in ("none", "user_pass", "client_credentials", "report_endpoint"):
+                    cfg.auth.mode = mode
                 else:
                     if verbose:
                         print(f"[http_config] WARNING: unknown auth.mode={mode!r}; keeping default.", file=sys.stderr)
@@ -153,6 +161,7 @@ def load_http_config(
                 "client_secret_env",
                 "user_agent",
                 "client_auth_method",
+                "report_url_env",
             ):
                 v = a.get(k)
                 if isinstance(v, str) and v.strip():
@@ -228,8 +237,8 @@ def resolve_auth_inputs(auth: HTTPAuthConfig, *, verbose: bool = True) -> Resolv
     """
     mode = auth.mode
 
-    if mode == "none":
-        return ResolvedAuth(mode="none")
+    if mode in ("none", "report_endpoint"):
+        return ResolvedAuth(mode=mode)
 
     if mode == "user_pass":
         user_key = _require_env_name(auth.user_env, "user_env")

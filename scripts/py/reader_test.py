@@ -31,10 +31,10 @@ def main() -> None:
     sum_neighbors_loop_s = 0.0  # time spent iterating neighbors
 
     with PackedReader(
-        root / "output/06-01-2026/packed",
-        dict_cache_size=16384,
-        attr_cache_size=1024,
-        resolver_cache_size=1024,
+        root / "output/14-01-2026/packed",
+        dict_cache_size=None,
+        attr_cache_size=None,
+        resolver_cache_size=None,
         open_relation_partitions_max=None,
     ) as pr:
         for ci in pr.traverse_all_citypes(include_attrs=True, include_meta=False):

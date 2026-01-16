@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import mmap
 import struct
+import hashlib
 import uuid as _uuid
 from dataclasses import dataclass
 from pathlib import Path
@@ -22,6 +23,27 @@ from metais.common.packed_spec import load_meta_keys_strict
 from .ndjson_stream import ndjson_json_range
 from metais.common.json_utils import canonical_value
 
+def _sha_allow(s: set[str] | None) -> str:
+    if not s:
+        return ""
+    h = hashlib.sha256()
+    for x in sorted(s):
+        h.update(x.encode("utf-8"))
+        h.update(b"\n")
+    return h.hexdigest()
+
+def _marker_has_sha(marker: Path, key: str, want_sha: str) -> bool:
+    if not marker.exists():
+        return False
+    txt = marker.read_text("utf-8", errors="ignore")
+    return f"{key}={want_sha}" in txt
+
+def _should_skip(marker: Path, *, allow_sha_key: str, allow_sha: str, allow_is_none: bool) -> bool:
+    # If no allowlist was used, any existing marker is fine (old behavior).
+    if allow_is_none:
+        return marker.exists()
+    # If allowlist was used, skip ONLY if marker matches sha.
+    return _marker_has_sha(marker, allow_sha_key, allow_sha)
 
 #############
 # Utilities #
@@ -554,7 +576,14 @@ class _ReltypeWriter:
 ###########
 
 class NodeGridPacker:
-    def __init__(self, nodes_root: Path, dict_lookup: DictLookup, meta_keys: Tuple[str, ...], *, verbose: bool):
+    def __init__(
+        self, nodes_root: Path,
+        dict_lookup: DictLookup,
+        meta_keys: Tuple[str, ...],
+        *,
+        verbose: bool,
+        node_uuid_allow: set[str] | None = None
+    ):
         self.nodes_root = nodes_root
         self.dict = dict_lookup
         self.meta_keys = meta_keys
@@ -562,6 +591,8 @@ class NodeGridPacker:
         self._writers: dict[str, _CitypeNodeWriter] = {}
         self.seen = 0
         self.skipped = 0
+        self.skipped_allow = 0
+        self.node_uuid_allow = node_uuid_allow
 
     def close(self) -> None:
         for w in list(self._writers.values()):
@@ -587,12 +618,18 @@ class NodeGridPacker:
         if not isinstance(citype, str) or not citype:
             self.skipped += 1
             return
+        uuid_str = obj.get("uuid")
+        if self.node_uuid_allow is not None:
+            if not isinstance(uuid_str, str) or uuid_str not in self.node_uuid_allow:
+                self.skipped_allow += 1
+                self.skipped += 1
+                return
         self._writer_for(citype).ingest(obj)
         self.seen += 1
 
     def finalize(self) -> None:
         if self.verbose:
-            print(f"[pass2] nodes finalize: writers={len(self._writers)} records={self.seen} skipped={self.skipped}")
+            print(f"[pass2] nodes finalize: writers={len(self._writers)} records={self.seen} skipped={self.skipped} skipped_allow={self.skipped_allow}")
             for citype, w in self._writers.items():
                 if w.unknown_attr or w.missing_uuid or w.not_found_uuid or w.missing_dict:
                     print(
@@ -611,6 +648,7 @@ class RelationGridPacker:
         meta_keys: Tuple[str, ...],
         *,
         verbose: bool,
+        rel_uuid_allow: set[str] | None = None
     ):
         self.rels_root = rels_root
         self.dict = dict_lookup
@@ -622,6 +660,8 @@ class RelationGridPacker:
         self.seen = 0
         self.skipped = 0
         self.bad_uuid = 0
+        self.skipped_allow = 0
+        self.rel_uuid_allow = rel_uuid_allow
 
     def close(self) -> None:
         for w in list(self._writers.values()):
@@ -653,6 +693,12 @@ class RelationGridPacker:
             return
 
         ru = obj.get("uuid")
+        if self.rel_uuid_allow is not None:
+            if not isinstance(ru, str) or ru not in self.rel_uuid_allow:
+                self.skipped_allow += 1
+                self.skipped += 1
+                return
+
         su = obj.get("startUuid")
         tu = obj.get("endUuid")
         if not isinstance(ru, str) or not ru or not isinstance(su, str) or not su or not isinstance(tu, str) or not tu:
@@ -748,7 +794,14 @@ def write_rels_manifest_atomic(layout) -> None:
 # Main entry point #
 ####################
 
-def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bool = True) -> None:
+def pack_nodes_and_relations(
+    layout,
+    *,
+    skip_bad_json: bool = False,
+    verbose: bool = True,
+    node_uuid_allow: set[str] | None = None,
+    rel_uuid_allow: set[str] | None = None,
+) -> None:
     packed_root = Path(getattr(layout, "packed_root", Path(layout.date_root) / "packed"))
 
     dict_dir = Path(getattr(layout, "dict_dir", packed_root / "dict"))
@@ -764,12 +817,19 @@ def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bo
     if verbose:
         print("[pass2] starting")
 
+    node_sha = _sha_allow(node_uuid_allow)
+    rel_sha  = _sha_allow(rel_uuid_allow)
+    node_allow_none = (node_uuid_allow is None)
+    rel_allow_none  = (rel_uuid_allow is None)
+
     if not is_done(packed_root, ".pass1_5.done"):
         raise RuntimeError("Pass 2 requires Pass 1.5 outputs")
 
-    if is_done(packed_root, ".pass2.done"):
+    pass2_marker = packed_root / ".pass2.done"
+    if _should_skip(pass2_marker, allow_sha_key="node_allow_sha256", allow_sha=node_sha, allow_is_none=node_allow_none) \
+    and _should_skip(pass2_marker, allow_sha_key="rel_allow_sha256",  allow_sha=rel_sha,  allow_is_none=rel_allow_none):
         if verbose:
-            print("[pass2] already done; skipping")
+            print("[pass2] already done for same allowlists; skipping")
         return
 
     # meta key order is defined by pass0 outputs and is deterministic
@@ -782,7 +842,8 @@ def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bo
             print(f"[pass2] uuids+resolver loaded, N={gr.node_count}")
 
         # ---- nodes ----
-        if not is_done(packed_root, ".pass2.nodes.done"):
+        nodes_marker = packed_root / ".pass2.nodes.done"
+        if not _should_skip(nodes_marker, allow_sha_key="node_allow_sha256", allow_sha=node_sha, allow_is_none=node_allow_none):
             if verbose:
                 print("[pass2] packing nodes")
 
@@ -791,7 +852,7 @@ def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bo
             if verbose:
                 print(f"[pass2] nodes shards={len(shards)}")
 
-            packer = NodeGridPacker(nodes_root, dlookup, node_meta_keys, verbose=verbose)
+            packer = NodeGridPacker(nodes_root, dlookup, node_meta_keys, verbose=verbose, node_uuid_allow=node_uuid_allow)
             last_shard = -1
             for rec in ndjson_json_range(pages_dir, "nodes", skip_bad_json=skip_bad_json):
                 if verbose and rec.shard_index != last_shard:
@@ -800,15 +861,21 @@ def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bo
                 packer.ingest(rec.obj)
             packer.finalize()
 
-            mark_done(packed_root, ".pass2.nodes.done", "pass=2\nkind=nodes\n")
+            mark_done(
+                packed_root,
+                ".pass2.nodes.done",
+                "pass=2\nkind=nodes\n"
+                f"node_allow_sha256={node_sha}\n"
+            )
             if verbose:
                 print("[pass2] nodes done")
         else:
             if verbose:
-                print("[pass2] nodes already done; skipping")
+                print("[pass2] nodes already done for same allowlist; skipping")
 
         # ---- relations ----
-        if not is_done(packed_root, ".pass2.rels.done"):
+        rels_marker = packed_root / ".pass2.rels.done"
+        if not _should_skip(rels_marker, allow_sha_key="rel_allow_sha256", allow_sha=rel_sha, allow_is_none=rel_allow_none):
             if verbose:
                 print("[pass2] packing relations")
 
@@ -817,7 +884,7 @@ def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bo
             if verbose:
                 print(f"[pass2] rels shards={len(shards)}")
 
-            rpacker = RelationGridPacker(rels_root, dlookup, gr, rel_meta_keys, verbose=verbose)
+            rpacker = RelationGridPacker(rels_root, dlookup, gr, rel_meta_keys, verbose=verbose, rel_uuid_allow=rel_uuid_allow)
             last_shard = -1
             for rec in ndjson_json_range(pages_dir, "rels", skip_bad_json=skip_bad_json):
                 if verbose and rec.shard_index != last_shard:
@@ -826,11 +893,16 @@ def pack_nodes_and_relations(layout, *, skip_bad_json: bool = False, verbose: bo
                 rpacker.ingest(rec.obj)
             rpacker.finalize()
 
-            mark_done(packed_root, ".pass2.rels.done", "pass=2\nkind=rels\n")
+            mark_done(
+                packed_root,
+                ".pass2.rels.done",
+                "pass=2\nkind=rels\n"
+                f"rel_allow_sha256={rel_sha}\n"
+            )
             write_rels_manifest_atomic(layout)
 
             if verbose:
                 print("[pass2] rels done")
         else:
             if verbose:
-                print("[pass2] rels already done; skipping")
+                print("[pass2] rels already done for same allowlist; skipping")

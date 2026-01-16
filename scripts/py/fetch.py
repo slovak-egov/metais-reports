@@ -52,8 +52,14 @@ def main() -> int:
     # prompt for username/password if not in env vars
     auth_payload = resolve_auth_inputs(http_cfg.auth, verbose=verbose)
 
-    if http_cfg.auth.mode != "none":
-        get_bearer_token(auth_payload, http_cfg, base=uri_cfg.base_url, verbose=verbose)
+    if http_cfg.auth.mode not in ("none", "report_endpoint"):
+        bearer = get_bearer_token(
+            auth_payload,
+            http_cfg,
+            base=uri_cfg.base_url,
+            verbose=verbose,
+            verify_tls=True,
+        )
         if verbose:
             print("[auth] bearer OK", file=sys.stderr)
 
