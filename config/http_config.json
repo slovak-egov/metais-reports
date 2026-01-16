@@ -1,6 +1,6 @@
 {
   "auth": {
-    "mode": "user_pass",
+    "mode": "report_endpoint",
     "interactive": true,
 
     "user_env": "METAIS_USER",
@@ -9,6 +9,9 @@
     "client_id_env": "METAIS_CLIENT_ID",
     "client_secret_env": "METAIS_CLIENT_SECRET",
 
+    "user_agent": "metais-py-fetcher/1.0",
+    
+    "report_url_env": "METAIS_REPORT_EXEC_URL",
     "user_agent": "metais-py-fetcher/1.0"
   },
 
