@@ -8,6 +8,7 @@ scripts/cpp/build/
 scripts/cpp/fetch
 scripts/cpp/convert
 test/
+scratch/
 *.o
 *.a
 *.so
