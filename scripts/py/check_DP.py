@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import re
 import json
 import pandas as pd
@@ -7,10 +8,13 @@ from typing import Any, Mapping, Union, List, Dict, Tuple
 from urllib.parse import urlparse
 from datetime import date, datetime
 from openpyxl import load_workbook
-from openpyxl.styles import PatternFill, Border, Side
 from rapidfuzz import process, fuzz
 from collections import defaultdict
+from copy import copy
+from openpyxl.styles import Color, PatternFill, Border, Side
+from openpyxl.cell.rich_text import CellRichText, TextBlock, InlineFont
 
+from metais.common.date import find_latest_dump
 from metais.packed_reader.packed_reader import PackedReader
 from metais.common.json_utils import load_json_file
 from metais.common.project_root import find_project_root
@@ -90,7 +94,7 @@ def accept_match(q: str, m: str, *, first_tok_min_ratio: int = 85) -> bool:
     a = _norm_first_tok(tq[0])
     b = _norm_first_tok(tm[0])
 
-    # allow small differences (iban vs bank should fail here)
+    # allow small differences
     return fuzz.ratio(a, b) >= first_tok_min_ratio
 
 
@@ -148,43 +152,120 @@ def _blend_hex(gray_hex: str, blue_hex: str, t: float) -> str:
     b = _lerp(b1, b2, t)
     return _rgb_to_argb_hex(r, g, b)
 
+def _norm_url_cell(v: Any) -> list[str]:
+    """
+    Cell may contain:
+      - "" (because you blank duplicates)
+      - a single URL
+      - multiple URLs joined by '; '
+    Return normalized list of urls for comparison.
+    """
+    if v is None:
+        return []
+    s = str(v).strip()
+    if not s:
+        return []
+    parts = [p.strip() for p in s.split(";") if p.strip()]
+    # normalize (ignore trailing slash)
+    return [p.rstrip("/") for p in parts]
+
+def _norm_one(v: Any) -> str:
+    if v is None:
+        return ""
+    return str(v).strip().rstrip("/")
+
+def _common_prefix_len(a: str, b: str) -> int:
+    a2 = a.lower()
+    b2 = b.lower()
+    n = min(len(a2), len(b2))
+    i = 0
+    while i < n and a2[i] == b2[i]:
+        i += 1
+    return i
+
+_BLACK = Color(rgb="FF000000")  # ARGB black
+
+def _force_black(cell) -> None:
+    f = copy(cell.font)
+    f.color = _BLACK
+    cell.font = f
+
+def _set_richtext(cell, segments: list[tuple[str, bool]], *, force_black: bool = True) -> None:
+    """
+    segments: [(text, bold), ...]
+    """
+    rt = CellRichText()
+    for txt, is_bold in segments:
+        if not txt:
+            continue
+        if force_black:
+            font = InlineFont(b=bool(is_bold), color=_BLACK)
+        else:
+            font = InlineFont(b=bool(is_bold))
+        rt.append(TextBlock(font, txt))
+    cell.value = rt
+
+    # extra safety: set cell-level font color too (helps some renderers)
+    if force_black:
+        _force_black(cell)
+
 def format_excel(
     path,
     *,
     col_meta: str,
     col_score: str,
+    col_status: str = "Stav registrácie",
+    accepted_status: str = "Akceptovaná registrácia",
+    col_refid: str = "Referencovateľný identifikátor",
+    col_cmu_uri: str = "URI z CMÚ",
+    happy_green_hex: str = "11db4a",
+    unsure_green_hex: str = "9ae7b2",
+    id_match_hex: str = "00B050",
     min_score: int = 70,
     max_score: int = 99,
-    green_hex: str = "77ED81",
-    blue_hex: str = "6BCED4",
-    dark_blue_hex: str = "#A9C4DB",
-    gray_hex: str = "DBDBDB",
+    blue_hex: str = "a1dde2",
+    dark_blue_hex: str = "ccdeda",
+    gray_hex: str = "dbdbdb",
 ) -> None:
     wb = load_workbook(path)
     ws = wb.active
 
     headers = {ws.cell(row=1, column=c).value: c for c in range(1, ws.max_column + 1)}
-    c_meta = headers.get(col_meta)
-    c_score = headers.get(col_score)
+
+    c_meta   = headers.get(col_meta)
+    c_score  = headers.get(col_score)
+    c_status = headers.get(col_status)
+    c_refid  = headers.get(col_refid)
+    c_uri    = headers.get(col_cmu_uri)
+
     if c_meta is None or c_score is None:
         raise KeyError(f"Missing expected columns: {col_meta=} {col_score=}")
 
-    fill_green = PatternFill("solid", fgColor=_rgb_to_argb_hex(*_hex_to_rgb(green_hex)))
+    fill_happy = PatternFill("solid", fgColor=_rgb_to_argb_hex(*_hex_to_rgb(happy_green_hex)))
+    fill_unsure = PatternFill("solid", fgColor=_rgb_to_argb_hex(*_hex_to_rgb(unsure_green_hex)))
     fill_gray  = PatternFill("solid", fgColor=_rgb_to_argb_hex(*_hex_to_rgb(gray_hex)))
+    fill_idmatch = PatternFill("solid", fgColor=_rgb_to_argb_hex(*_hex_to_rgb(id_match_hex)))
 
-    # thin grid border
-    thin = Side(style="thin", color="FFBFBFBF")  # light-ish gray
+    thin = Side(style="thin", color="1e1e1e")
     grid_border = Border(left=thin, right=thin, top=thin, bottom=thin)
 
     lo = int(min_score)
     hi = int(max_score) if max_score > min_score else (min_score + 1)
 
+    last_uri_cell_value = ""  # for duplicate-blanked rows
+
     for r in range(1, ws.max_row + 1):
-        # decide row fill (skip header row if you want: r==1)
         row_fill = None
+
         if r >= 2:
             meta_val = ws.cell(row=r, column=c_meta).value
             score_val = ws.cell(row=r, column=c_score).value
+
+            # keep last non-empty URI
+            if c_uri is not None:
+                uri_cell = ws.cell(row=r, column=c_uri).value
+                if uri_cell is not None and str(uri_cell).strip() != "":
+                    last_uri_cell_value = str(uri_cell)
 
             if meta_val is None or str(meta_val).strip() == "":
                 row_fill = fill_gray
@@ -195,27 +276,103 @@ def format_excel(
                     s = None
 
                 if s == 100:
-                    row_fill = fill_green
+                    # choose green by status (if status column exists)
+                    status_ok = False
+                    if c_status is not None:
+                        st = ws.cell(row=r, column=c_status).value
+                        status_ok = (str(st).strip() == accepted_status) if st is not None else False
+                    row_fill = fill_happy if status_ok else fill_unsure
+
                 elif s is not None:
                     s_clamped = max(lo, min(hi, s))
                     t = (s_clamped - lo) / (hi - lo)
                     color_argb = _blend_hex(dark_blue_hex, blue_hex, t)
                     row_fill = PatternFill("solid", fgColor=color_argb)
 
+        # apply borders + row fill + force font color
         for c in range(1, ws.max_column + 1):
             cell = ws.cell(row=r, column=c)
             cell.border = grid_border
             if row_fill is not None:
                 cell.fill = row_fill
+                if r >= 2:   # keep header as-is
+                    _force_black(cell)
+
+        # highlight + bold common prefix between (Referencovateľný identifikátor) and (URI z CMÚ)
+        if r >= 2 and c_refid is not None and c_uri is not None:
+            ref_cell = ws.cell(row=r, column=c_refid)
+            uri_cell = ws.cell(row=r, column=c_uri)
+
+            ref_raw = ref_cell.value
+            refid_val = _norm_one(ref_raw)  # normalized (rstrip("/"), strip)
+
+            # use last known URI if this row’s URI cell is blank (because you blank duplicates)
+            uri_val_raw = uri_cell.value
+            uri_val_effective = str(uri_val_raw).strip() if (uri_val_raw is not None) else ""
+            if not uri_val_effective:
+                uri_val_effective = last_uri_cell_value
+
+            uris = _norm_url_cell(uri_val_effective)
+
+            if refid_val and uris:
+                # choose the CMU URI that shares the longest prefix with the refid
+                best_uri = max(uris, key=lambda u: _common_prefix_len(u, refid_val))
+                L = _common_prefix_len(best_uri, refid_val)
+
+                # 1) cell background highlight when it is an exact match (your old rule)
+                if refid_val in uris:
+                    ref_cell.fill = fill_idmatch
+                    uri_cell.fill = fill_idmatch
+
+                # 2) bold the common prefix (only if it's "meaningful")
+                # avoids bolding trivial "https://"
+                MIN_BOLD_PREFIX = 20
+                if L >= MIN_BOLD_PREFIX:
+                    # --- RefID cell: bold prefix from start ---
+                    ref_text = "" if ref_raw is None else str(ref_raw)
+                    if ref_text:
+                        L_ref = min(L, len(ref_text))
+                        _set_richtext(ref_cell, [
+                            (ref_text[:L_ref], True),
+                            (ref_text[L_ref:], False),
+                        ])
+
+                    # --- URI cell: bold prefix only inside the matching URL substring ---
+                    # If the URI cell is blank (duplicate rows), don't try to rich-text it
+                    uri_text = "" if uri_val_raw is None else str(uri_val_raw)
+                    if uri_text.strip():
+                        # find the best_uri inside the displayed cell text (may contain multiple URLs)
+                        # (best_uri has rstrip("/") normalization; search both variants)
+                        idx = uri_text.find(best_uri)
+                        if idx < 0:
+                            idx = uri_text.find(best_uri + "/")
+                        if idx >= 0:
+                            # determine the actual substring in the cell we're bolding against
+                            # (use the exact slice from uri_text to keep case/slashes)
+                            # take until next ';' or end
+                            end = uri_text.find(";", idx)
+                            if end < 0:
+                                end = len(uri_text)
+                            chosen = uri_text[idx:end].strip()
+                            L_uri = min(_common_prefix_len(chosen.rstrip("/"), refid_val), len(chosen))
+
+                            pre = uri_text[:idx]
+                            post = uri_text[end:]
+                            _set_richtext(uri_cell, [
+                                (pre, False),
+                                (chosen[:L_uri], True),
+                                (chosen[L_uri:], False),
+                                (post, False),
+                            ])
 
     wb.save(path)
 
 
 def main():
-    date_str = "14-01-2026"
     proj_root = find_project_root()
+    date_str = find_latest_dump(proj_root / "output")
 
-    urls = get_lines(proj_root / "scripts" / "py" / "fin_CMU_new.txt")
+    urls = get_lines(proj_root / "scratch" / "fin_CMU_new.txt")
 
     cmu_urls_by_name: dict[str, list[str]] = defaultdict(list)
     for u in urls:
@@ -251,12 +408,12 @@ def main():
             include_meta=True,
             valid_only=True,
         ):
-            # IMPORTANT: to unpack (attr, meta_attr) you must use meta_prefix=None
+            # to unpack (attr, meta_attr) we must use meta_prefix=None
             attr, meta_attr = pr.get_attributes_typed(
                 DP,
                 include_meta=True,
                 meta_prefix=None,
-                enum_mode="value",   # use labels for enums
+                enum_mode="value",   # use human-readable labels from enums
                 return_info=False,
             )
 
@@ -266,7 +423,7 @@ def main():
 
             idx = len(meta_profiles)
             meta_profiles.append(profil)
-            meta_records.append(attr)  # only node attrs; meta_attr exists if you ever want it
+            meta_records.append(attr)
 
             index_by_profile.setdefault(profil, []).append(idx)
 
@@ -389,13 +546,17 @@ def main():
     df[col_cmu] = df[col_cmu].mask(df[col_cmu].duplicated(), "")
 
     # Save
-    out_path = Path("dp_cmu_vs_metais.xlsx")
+    out_path = proj_root / "scratch" / "dp_cmu_vs_metais.xlsx"
     df.to_excel(out_path, index=False)
 
     format_excel(
         out_path,
         col_meta="Zhodný prvok z MetaIS?",
         col_score="Fuzzy match (%)",
+        col_status="Stav registrácie",
+        accepted_status="Akceptovaná registrácia",
+        col_refid="Referencovateľný identifikátor",
+        col_cmu_uri="URI z CMÚ",
         min_score=70,
     )
 
