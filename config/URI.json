@@ -5,15 +5,19 @@
   "enum_detail": "api/enums-repo/enums/enum/valid/{name}",
 
   "citype_list": "api/types-repo/citypes/list",
-  "citype_detail": "api/types-repo/citypes/citype/{name}",
+  "citype_detail": "api/types-repo/citypes/citype/{type}",
 
   "reltype_list": "api/types-repo/relationshiptypes/list",
-  "reltype_detail": "api/types-repo/relationshiptypes/relationshiptype/{name}",
+  "reltype_detail": "api/types-repo/relationshiptypes/relationshiptype/{type}",
 
   "codelist_headers_list": "api/codelist-repo/codelists/codelistheaders?language=sk&pageNumber=1&perPage=1000",
   "codelist_items": "api/codelist-repo/codelists/codelistheaders/{name}/codelistitems?language=sk&pageNumber=1&perPage=10000",
 
-  "apiuri": "api/report/reports/run?lang=sk",
+  "api_uri": "api/report/reports/run?lang=sk",
 
-  "report_execute_url_env": "METAIS_REPORT_EXEC_URL"
+  "exec_uri": "api/report/reports/execute/{code}/type/typ?lang=sk",
+
+  "report_no_env_prod": "METAIS_REPORT_NUM_PROD",
+
+  "report_no_env_test": "METAIS_REPORT_NUM_TEST"
 }

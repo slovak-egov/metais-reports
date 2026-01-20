@@ -73,7 +73,12 @@ def fetch_detail(
     http_cfg: HTTPConfig,
     spec: OpenFetchingSpec,
 ) -> JsonT:
-    url = spec.detail_url_tpl.replace("{name}", detail_api_code)
+    url = (
+        spec.detail_url_tpl
+        .replace("{name}", detail_api_code)
+        .replace("{type}", detail_api_code)
+        .replace("{code}", detail_api_code)
+    )
     detail = get_json(url, http_cfg)
 
     if spec.log_received:

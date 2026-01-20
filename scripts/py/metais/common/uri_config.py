@@ -56,14 +56,18 @@ class URIConfig:
     )
 
     citype_list_path: str = "api/types-repo/citypes/list"
-    citype_detail_path_tpl: str = "api/types-repo/citypes/citype/{name}"
+    citype_detail_path_tpl: str = "api/types-repo/citypes/citype/{type}"
 
     reltype_list_path: str = "api/types-repo/relationshiptypes/list"
-    reltype_detail_path_tpl: str = "api/types-repo/relationshiptypes/relationshiptype/{name}"
+    reltype_detail_path_tpl: str = "api/types-repo/relationshiptypes/relationshiptype/{type}"
 
     report_run_path: str = "api/report/reports/run?lang=sk"
 
-    report_execute_url_env: str = "METAIS_REPORT_EXEC_URL"
+    report_execute_path: str = "api/report/reports/execute/{code}/type/typ?lang=sk"
+
+    report_no_env: str = "METAIS_REPORT_NUM_PROD"
+
+    report_no: str = ""
 
     # ---- full URL helpers ----
     def enum_list_url(self) -> str:
@@ -79,7 +83,7 @@ class URIConfig:
         return join_base_and_path(self.base_url, self.citype_list_path)
 
     def citype_detail_url(self, name: str) -> str:
-        return join_base_and_path(self.base_url, replace_all(self.citype_detail_path_tpl, "{name}", name))
+        return join_base_and_path(self.base_url, replace_all(self.citype_detail_path_tpl, "{type}", name))
 
     def citype_detail_url_tpl(self) -> str:
         return join_base_and_path(self.base_url, self.citype_detail_path_tpl)
@@ -88,7 +92,7 @@ class URIConfig:
         return join_base_and_path(self.base_url, self.reltype_list_path)
 
     def reltype_detail_url(self, name: str) -> str:
-        return join_base_and_path(self.base_url, replace_all(self.reltype_detail_path_tpl, "{name}", name))
+        return join_base_and_path(self.base_url, replace_all(self.reltype_detail_path_tpl, "{type}", name))
 
     def reltype_detail_url_tpl(self) -> str:
         return join_base_and_path(self.base_url, self.reltype_detail_path_tpl)
@@ -106,12 +110,7 @@ class URIConfig:
         return join_base_and_path(self.base_url, self.report_run_path)
 
     def report_execute_url(self) -> str:
-        v = (os.environ.get(self.report_execute_url_env) or "").strip()
-        if not v:
-            raise RuntimeError(
-                f"[uri_config] Missing env {self.report_execute_url_env} with report execute URL."
-            )
-        return v
+        return join_base_and_path(self.base_url, replace_all(self.report_execute_path, "{code}", self.report_no))
 
 def load_uri_config(
     filepath: Optional[Union[str, Path]] = None,
@@ -140,6 +139,10 @@ def load_uri_config(
             mi = j.get("meta-instance")
             if isinstance(mi, str):
                 cfg.meta_instance = mi
+            
+            if cfg.meta_instance not in ["prod", "test"]:
+                print(f"Unknown MetaIS instance: {cfg.meta_instance}. Must be prod/test. Defaulting to prod")
+                cfg.meta_instance = "prod"
 
             # override individual paths if present
             def set_if_str(attr: str, key: str) -> None:
@@ -159,10 +162,27 @@ def load_uri_config(
             set_if_str("codelist_headers_list_path", "codelist_headers_list")
             set_if_str("codelist_items_path_tpl", "codelist_items")
 
-            set_if_str("report_execute_url_env", "report_execute_url_env")
-
-            # legacy key name
             set_if_str("report_run_path", "apiuri")
+            set_if_str("report_run_path", "api_uri")
+            
+            set_if_str("report_execute_path", "execuri")
+            set_if_str("report_execute_path", "exec_uri")
+            
+            if cfg.meta_instance == "prod":
+                set_if_str("report_no_env", "report_no_env_prod")
+            else:
+                set_if_str("report_no_env", "report_no_env_test")
+            
+            report_no = (os.environ.get(cfg.report_no_env) or "").strip()
+            if not report_no:
+                raise RuntimeError(
+                    f"[uri_config] Missing env {cfg.report_no_env} with report execute URL."
+                )
+            try:
+                int(report_no)
+            except:
+                raise RuntimeError(f"[uri_config] Env variable {cfg.report_no_env} does not contain a valid integer: {report_no}")
+            cfg.report_no = report_no
 
     except Exception as e:
         print(f"[uri_config] WARNING: {e} - using default URIs.", file=sys.stderr)
