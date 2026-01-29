@@ -1,14 +1,23 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-URL="${METAIS_REPORT_EXEC_URL:-}"
-
 usage() {
   cat <<'EOF'
 Usage:
   fetch.sh --target nodes|rels [--safe] [--valid] [--limit N] [--offset N]
            [--type NAME] [--src NAME] [--tgt NAME] [--save FILE]
-           [--url URL]
+           [--url URL] [--prod | --test]
+
+Environment / URL resolution (PROD default):
+- Default behavior is PROD (metais.slovensko.sk).
+- Use --test to switch to TEST (metais-test.slovensko.sk).
+- If --url is provided, it is used directly and env-based resolution is skipped.
+
+When resolving URL from env (no --url):
+- PROD: requires METAIS_REPORT_NUM_PROD (numeric report ID), builds:
+  https://metais.slovensko.sk/api/report/reports/execute/{NUM}/type/typ?lang=sk
+- TEST: requires METAIS_REPORT_NUM_TEST (numeric report ID), builds:
+  https://metais-test.slovensko.sk/api/report/reports/execute/{NUM}/type/typ?lang=sk
 
 Notes:
 - --safe adds {"mode":"safe"}.
@@ -20,6 +29,21 @@ Notes:
 EOF
 }
 
+die() { echo "Error: $*" >&2; exit 2; }
+
+require_cmd() {
+  command -v "$1" >/dev/null 2>&1 || die "$1 not found. Install it (e.g. sudo apt-get install -y $1)."
+}
+
+is_uint() { [[ "${1:-}" =~ ^[0-9]+$ ]]; }
+
+# Inputs
+URL=""
+
+# Environment-provided report IDs
+REPORT_NUM_PROD="${METAIS_REPORT_NUM_PROD:-}"
+REPORT_NUM_TEST="${METAIS_REPORT_NUM_TEST:-}"
+
 TARGET=""
 SAFE=0
 VALID=0
@@ -29,6 +53,12 @@ TYPE=""
 SRC=""
 TGT=""
 SAVE=""
+
+# Env selection (default PROD)
+USE_PROD=1
+USE_TEST=0
+SEEN_PROD=0
+SEEN_TEST=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -42,40 +72,49 @@ while [[ $# -gt 0 ]]; do
     --tgt) TGT="${2:-}"; shift 2;;
     --save) SAVE="${2:-}"; shift 2;;
     --url) URL="${2:-}"; shift 2;;
+    --prod) SEEN_PROD=1; USE_PROD=1; USE_TEST=0; shift;;
+    --test) SEEN_TEST=1; USE_TEST=1; USE_PROD=0; shift;;
     -h|--help) usage; exit 0;;
-    *) echo "Unknown arg: $1" >&2; usage; exit 2;;
+    *) die "Unknown arg: $1 (use --help)";;
   esac
 done
 
-if [[ -z "$URL" ]]; then
-  echo "Missing report execute URL. Set METAIS_REPORT_EXEC_URL or pass --url." >&2
-  exit 2
+if [[ "$SEEN_PROD" -eq 1 && "$SEEN_TEST" -eq 1 ]]; then
+  die "Cannot use both --prod and --test."
 fi
 
-if [[ -z "$TARGET" ]]; then
-  echo "Missing --target" >&2
-  usage
-  exit 2
-fi
+[[ -n "$TARGET" ]] || { usage; die "Missing --target"; }
 
 # normalize target to what your Groovy expects
 case "$TARGET" in
   node|nodes|entity|entities) TARGET="nodes";;
   rel|rels|relation|relations) TARGET="relations";;
-  *) echo "Bad --target: $TARGET (use nodes|rels)" >&2; exit 2;;
+  *) die "Bad --target: $TARGET (use nodes|rels)";;
 esac
 
 # validate numeric args if provided
-if [[ -n "$LIMIT" ]] && ! [[ "$LIMIT" =~ ^[0-9]+$ ]]; then
-  echo "Bad --limit: $LIMIT (must be integer >= 0)" >&2
-  exit 2
+if [[ -n "$LIMIT" ]] && ! is_uint "$LIMIT"; then
+  die "Bad --limit: $LIMIT (must be integer >= 0)"
 fi
-if [[ -n "$OFFSET" ]] && ! [[ "$OFFSET" =~ ^[0-9]+$ ]]; then
-  echo "Bad --offset: $OFFSET (must be integer >= 0)" >&2
-  exit 2
+if [[ -n "$OFFSET" ]] && ! is_uint "$OFFSET"; then
+  die "Bad --offset: $OFFSET (must be integer >= 0)"
 fi
 
-command -v jq >/dev/null || { echo "jq not found. Install: sudo apt-get install -y jq" >&2; exit 2; }
+require_cmd jq
+require_cmd curl
+
+# Resolve URL: either explicit --url, or build from env + (--prod/--test)
+if [[ -z "$URL" ]]; then
+  if [[ "$USE_TEST" -eq 1 ]]; then
+    [[ -n "$REPORT_NUM_TEST" ]] || die "Missing METAIS_REPORT_NUM_TEST (numeric report ID) or pass --url."
+    is_uint "$REPORT_NUM_TEST" || die "Bad METAIS_REPORT_NUM_TEST: $REPORT_NUM_TEST (must be integer >= 0)"
+    URL="https://metais-test.slovensko.sk/api/report/reports/execute/${REPORT_NUM_TEST}/type/typ?lang=sk"
+  else
+    [[ -n "$REPORT_NUM_PROD" ]] || die "Missing METAIS_REPORT_NUM_PROD (numeric report ID) or pass --url."
+    is_uint "$REPORT_NUM_PROD" || die "Bad METAIS_REPORT_NUM_PROD: $REPORT_NUM_PROD (must be integer >= 0)"
+    URL="https://metais.slovensko.sk/api/report/reports/execute/${REPORT_NUM_PROD}/type/typ?lang=sk"
+  fi
+fi
 
 LIMIT_JSON="null";  [[ -n "$LIMIT"  ]] && LIMIT_JSON="$LIMIT"
 OFFSET_JSON="null"; [[ -n "$OFFSET" ]] && OFFSET_JSON="$OFFSET"
