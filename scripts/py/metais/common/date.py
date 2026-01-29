@@ -22,12 +22,15 @@ def today_ddmmyyyy() -> str:
     return datetime.now(TZ).strftime("%d-%m-%Y")
 
 
-def find_latest_dump(root: Pathish) -> str:
+def find_latest_dump(root: Pathish, *, require_subdir: str = "packed") -> str:
     """
     Scan `root` for subdirectories named DD-MM-YYYY and return the latest name as a string.
 
+    If `require_subdir` is not empty, only consider dumps that contain
+    <dump>/<require_subdir> as a directory (e.g. "packed").
+
     Example:
-        latest_dump_dir_name(project_root / "output") -> "17-01-2026"
+        find_latest_dump(project_root / "output") -> "17-01-2026"
     """
     root_p = Path(root)
 
@@ -56,14 +59,19 @@ def find_latest_dump(root: Pathish) -> str:
         try:
             d = date(yy, mm, dd)
         except ValueError:
-            # skip invalid dates like 32-13-2026
             continue
+
+        if require_subdir:
+            req = child / require_subdir
+            if not req.is_dir():
+                continue
 
         if best_date is None or d > best_date:
             best_date = d
             best_name = child.name
 
     if best_name is None:
-        raise RuntimeError(f"No DD-MM-YYYY subdirectories found under: {root_p}")
+        extra = f" with subdir {require_subdir!r}" if require_subdir else ""
+        raise RuntimeError(f"No DD-MM-YYYY dump directories found under: {root_p}{extra}")
 
     return best_name
