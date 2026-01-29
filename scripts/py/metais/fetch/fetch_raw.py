@@ -321,6 +321,43 @@ def run_report_execute(
 
     return HttpResponse(status=int(r.status_code), seconds=(t1 - t0), body=r.text)
 
+_HEADERS_DEFAULT: dict[str, str] = {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "User-Agent": "oCDK_fetcher_agent",
+}
+
+def fetch_simple(
+    api_url: str,
+    payload: dict[str, Any],
+    headers: dict[str, str] | None = None,
+    timeout: tuple[float, float] = (60.0, 60.0),  # (connect, read)
+    *,
+    verify_tls: bool = True,
+) -> Any:
+    # merge defaults + caller overrides, without mutating the shared default
+    hdrs = dict(_HEADERS_DEFAULT)
+    if headers:
+        hdrs.update(headers)
+
+    r = requests.post(
+        api_url,
+        json=payload,
+        headers=hdrs,
+        timeout=timeout,
+        allow_redirects=False,
+        verify=verify_tls,
+    )
+    r.raise_for_status()
+
+    try:
+        return r.json()
+    except ValueError as e:
+        raise RuntimeError(
+            "Response was not valid JSON. "
+            f"Content-Type={r.headers.get('Content-Type')!r}. "
+            f"First 200 chars:\n{(r.text or '')[:200]}"
+        ) from e
 
 ########################################################
 # Hard-error isolation helpers (bisection + uuid-only) #
