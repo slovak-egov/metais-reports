@@ -114,10 +114,9 @@ if ((target == "node") || (target == "nodes") || (target == "entity") || (target
     def qi_src = qi("src")
     def qi_tgt = qi("tgt")
 
-    // Build the path incrementally without exploding branches
+    // Build path for (src)-[rel]->(tgt) with optional types
     def pth = path()
 
-    // start node (with or without type)
     if (hasSourceType) {
         def type_SRC = type(sourceType)
         pth = pth.node(qi_src, type_SRC)
@@ -125,7 +124,6 @@ if ((target == "node") || (target == "nodes") || (target == "entity") || (target
         pth = pth.node(qi_src)
     }
 
-    // relationship (with or without type)
     if (hasReltype) {
         def type_REL = type(reltype)
         pth = pth.rel(qi_rel, RelationshipDirection.IN, type_REL)
@@ -133,7 +131,6 @@ if ((target == "node") || (target == "nodes") || (target == "entity") || (target
         pth = pth.rel(qi_rel, RelationshipDirection.IN)
     }
 
-    // end node (with or without type)
     if (hasTargetType) {
         def type_TGT = type(targetType)
         pth = pth.node(qi_tgt, type_TGT)
@@ -141,13 +138,19 @@ if ((target == "node") || (target == "nodes") || (target == "entity") || (target
         pth = pth.node(qi_tgt)
     }
 
-    def q = match(pth)
-
-    // validOnly filter (src, rel, tgt)
+    // --- Build query in "base + match" style ---
+    def base = match(path().node(qi_src))
     if (validOnly) {
-        q = q.where(not(qi_src.filter(state(StateEnum.INVALIDATED))))
-             .where(not(qi_rel.filter(state(StateEnum.INVALIDATED))))
-             .where(not(qi_tgt.filter(state(StateEnum.INVALIDATED))))
+        base = base.where(not(qi_src.filter(state(StateEnum.INVALIDATED))))
+    }
+
+    def q = base.match(pth)
+
+    if (validOnly) {
+        q = q.where(and(
+            not(qi_rel.filter(state(StateEnum.INVALIDATED))),
+            not(qi_tgt.filter(state(StateEnum.INVALIDATED)))
+        ))
     }
 
     if (safe) {
