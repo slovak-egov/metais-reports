@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 from uuid import UUID
 
-from rapidfuzz import fuzz, process  # we assume this exists
+from rapidfuzz import fuzz, process
 
 from metais.packed_reader.packed_reader import PackedReader
 from metais.common.project_root import find_project_root
@@ -81,7 +81,7 @@ def _approx_text_px(s: str, font_size: float) -> float:
     Rough pixel width estimate for Segoe UI / Arial-ish fonts.
     Works well enough for ellipsizing.
     """
-    # Average glyph width ~0.55–0.60 of font size. Tune if needed.
+    # Average glyph width ~0.55–0.60 of font size
     return len(s) * font_size * 0.56
 
 def ellipsize_px(s: str, max_px: float, font_size: float, suffix: str = "...") -> str:
@@ -137,7 +137,7 @@ def _jaccard(a: str, b: str) -> float:
     return inter / uni if uni else 0.0
 
 def _custom_score(a: str, b: str) -> float:
-    # Base similarity (no partial “freebies”)
+    # Base similarity (no partial freebies)
     ts = float(fuzz.token_sort_ratio(a, b))  # 0..100
 
     # Penalize “same tail but lots of extra stuff”
@@ -286,7 +286,7 @@ def place_dcom_nodes_even_grid(
     nodes_all: Dict[int, LayNode],
     *,
     min_gap: float = 14.0,
-    phase_frac: float = 0.5,  # 0.0 = same rows as KS, 0.5 = between rows (recommended)
+    phase_frac: float = 0.5,  # 0.0 = same rows as KS, 0.5 = between rows
 ) -> None:
     """
     Place DCOM nodes on an evenly spaced grid derived from KS row spacing.
@@ -297,7 +297,7 @@ def place_dcom_nodes_even_grid(
     - Unmatched go after all matched, continuing the same grid.
     """
 
-    # Ensure DCOM boxes known (optional, but keeps sizes consistent if you later use them)
+    # Ensure DCOM boxes known
     for n in nodes_all.values():
         if n.bucket == "DCOM" and (n.w <= 0 or n.h <= 0):
             n.w, n.h = estimate_box(n.label, (n.dcom_group or "").strip())
@@ -655,7 +655,7 @@ def add_dcom_column(
     *,
     ts_threshold: float = 95.0,
     jacc_threshold: float = 0.70,
-    second_match_delta: float = 0.7,   # compare EFFECTIVE scores
+    second_match_delta: float = 0.7,   # compare effective scores
 ) -> List[Tuple[int, int]]:
     arr = dcom_data.get("arr", [])
     services: List[Tuple[str, str, str]] = []  # (group, name, link)
@@ -769,8 +769,8 @@ def main() -> None:
 
         print(f"KS nodes: {sum(1 for n in nodes.values() if n.bucket in ('OAM','DEUS'))}, "
               f"DCOM nodes: {sum(1 for n in nodes.values() if n.bucket == 'DCOM')}")
-        print(f"Solid edges (KS_realizuje_KS): {len(edges_solid)}")
-        print(f"Dashed inferred edges (DCOM->KS): {len(edges_dashed)}")
+        print(f"KS_realizuje_KS rels: {len(edges_solid)}")
+        print(f"Matching name (DCOM->KS): {len(edges_dashed)}")
 
         # layout KS columns first
         ks_only = {gid: n for gid, n in nodes.items() if n.bucket in ("OAM", "DEUS")}
@@ -785,9 +785,9 @@ def main() -> None:
             edges_solid,
             edges_dashed,
             str(out),
-            x_oam=220.0,
-            x_deus=980.0,
-            x_dcom=1740.0,
+            x_oam=200.0,
+            x_deus=800.0,
+            x_dcom=1400.0,
             inward=95.0
         )
         print(f"Wrote {out}")
