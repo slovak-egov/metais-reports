@@ -7,21 +7,21 @@ import sys
 from metais.auth.metais_auth import (
     DEFAULT_BASE,
     DEFAULT_CLIENT_ID,
-    DEFAULT_REDIRECT_URI,
     bearer_from_user_pass_plain,
 )
 
-
 def main() -> int:
     ap = argparse.ArgumentParser(description="Interactive MetaIS login -> prints Bearer access_token.")
-    ap.add_argument("--base", default=os.environ.get("METAIS_BASE", DEFAULT_BASE))
+
+    ap.add_argument("--base", default=os.environ.get("METAIS_BASE", DEFAULT_BASE),
+                    help="Base env label (test/prod/metais/...) or full URL.")
     ap.add_argument("--client-id", default=os.environ.get("METAIS_CLIENT_ID", DEFAULT_CLIENT_ID))
-    ap.add_argument("--redirect-uri", default=os.environ.get("METAIS_REDIRECT_URI", DEFAULT_REDIRECT_URI))
+    ap.add_argument("--redirect-uri", default=os.environ.get("METAIS_REDIRECT_URI"),
+                    help="Optional. If omitted, defaults to {base}/auth-success.")
     ap.add_argument("--verbose", action="store_true")
     ap.add_argument("--debug-html", default=None, help="Optional path to save the login HTML for debugging.")
     args = ap.parse_args()
 
-    # Prompt (env first)
     username = os.environ.get("METAIS_USER") or input("MetaIS username / email: ").strip()
     password = os.environ.get("METAIS_PASS") or getpass.getpass("MetaIS password: ")
 
@@ -37,7 +37,6 @@ def main() -> int:
 
     print(tok)
     return 0
-
 
 if __name__ == "__main__":
     try:
