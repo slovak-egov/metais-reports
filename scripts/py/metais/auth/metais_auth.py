@@ -24,10 +24,30 @@ import requests
 
 from metais.common.url_utils import strip_query
 
-DEFAULT_BASE = "https://metais.slovensko.sk"
+DEFAULT_BASE = "test"
 DEFAULT_CLIENT_ID = "webPortalClient"
-DEFAULT_REDIRECT_URI = f"{DEFAULT_BASE}/auth-success"
+ENV_BASES = {
+    "metais": "https://metais.slovensko.sk",
+    "metais-prod": "https://metais.slovensko.sk",
+    "prod": "https://metais.slovensko.sk",
+    "test": "https://metais-test.slovensko.sk",
+    "metais-test": "https://metais-test.slovensko.sk",
+}
 
+def _resolve_base(base: str) -> str:
+    b = (base or "").strip()
+    if not b: # return test by default
+        return "https://metais-test.slovensko.sk"
+    b = ENV_BASES.get(b, b)
+
+    # accept hosts like "metais.slovensko.sk" too
+    if not re.match(r"^https?://", b):
+        b = "https://" + b
+
+    return b.rstrip("/")
+
+def _default_redirect_uri(base: str) -> str:
+    return f"{base}/auth-success"
 
 ###########
 # Helpers #
@@ -127,7 +147,7 @@ def _bearer_from_user_pass_core(
     verbose: bool = False,
     base: str = DEFAULT_BASE,
     client_id: str = DEFAULT_CLIENT_ID,
-    redirect_uri: str = DEFAULT_REDIRECT_URI,
+    redirect_uri: Optional[str] = None,
     timeout: float = 30.0,
     user_agent: str = "metais-bot/1.0",
     verify_tls: bool = True,
@@ -137,6 +157,10 @@ def _bearer_from_user_pass_core(
     """
     Performs the OIDC Authorization Code + PKCE flow and returns BearerResult.
     """
+    base = _resolve_base(base)
+    if redirect_uri is None:
+        redirect_uri = _default_redirect_uri(base)
+
     s = requests.Session()
     s.headers["User-Agent"] = user_agent
 
@@ -311,7 +335,7 @@ def bearer_from_user_pass_plain(
     *,
     base: str = DEFAULT_BASE,
     client_id: str = DEFAULT_CLIENT_ID,
-    redirect_uri: str = DEFAULT_REDIRECT_URI,
+    redirect_uri: Optional[str] = None,
     timeout: float = 30.0,
     user_agent: str = "metais-bot/1.0",
     verify_tls: bool = True,
@@ -360,6 +384,8 @@ def bearer_from_client_credentials_basic(
           --data-urlencode "scope=openid" \
           --max-time 60
     """
+    base = _resolve_base(base)
+
     s = requests.Session()
     s.headers["User-Agent"] = user_agent
 
@@ -428,6 +454,8 @@ def bearer_from_client_credentials_post(
           --data-urlencode "client_secret=$CLIENT_SECRET" \
           --max-time 60
     """
+    base = _resolve_base(base)
+    
     s = requests.Session()
     s.headers["User-Agent"] = user_agent
 
