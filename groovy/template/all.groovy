@@ -126,9 +126,9 @@ if ((target == "node") || (target == "nodes") || (target == "entity") || (target
 
     if (hasReltype) {
         def type_REL = type(reltype)
-        pth = pth.rel(qi_rel, RelationshipDirection.IN, type_REL)
+        pth = pth.rel(qi_rel, RelationshipDirection.OUT, type_REL)
     } else {
-        pth = pth.rel(qi_rel, RelationshipDirection.IN)
+        pth = pth.rel(qi_rel, RelationshipDirection.OUT)
     }
 
     if (hasTargetType) {
