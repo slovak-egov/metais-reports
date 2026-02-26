@@ -666,9 +666,6 @@ class MetaISCIClient:
                 self._rel_cache[idx_key] = rel_index
             existing_uuid = rel_index.by_pair.get((start_uuid, end_uuid))
 
-            self._rel_cache[idx_key] = rel_index
-            existing_uuid = rel_index.by_pair.get((start_uuid, end_uuid))
-
             if existing_uuid:
                 print(f"[rel-dupe] Relation already exists: type={reltype} start={start_uuid} end={end_uuid} uuid={existing_uuid}", file=sys.stderr)
 
@@ -733,7 +730,7 @@ class MetaISCIClient:
             return RelationResult(status="dry-run", reltype=reltype, relation_uuid=rel_uuid, payload=payload, log_path=str(log_path))
 
         # Real POST
-        self._ensure_bearer(reason=f"store relation {reltype}", force=True)
+        self._ensure_bearer(reason=f"store relation {reltype}", force=False)
         assert self._bearer is not None
 
         try:
@@ -1077,6 +1074,92 @@ class MetaISCIClient:
 
         raise SystemExit("Authentication failed; aborting.")
 
+
+    _AUTH_CODES = (401, 403)
+
+    def _raise_http_error(self, r: requests.Response) -> None:
+        ct = (r.headers.get("Content-Type") or "").lower()
+        body = r.text
+        try:
+            if "application/json" in ct:
+                body = json.dumps(r.json(), ensure_ascii=False, indent=2)
+        except Exception:
+            pass
+        raise requests.exceptions.HTTPError(
+            f"{r.status_code} {r.reason} for {r.url}\nResponse body:\n{body}",
+            response=r,
+        )
+
+    def _request_json(
+        self,
+        method: str,
+        url: str,
+        *,
+        reason: str,
+        params: Optional[Dict[str, Any]] = None,
+        json_data: Any = None,
+        headers: Optional[Dict[str, str]] = None,
+        timeout: Optional[float] = None,
+        require_auth: bool = True,
+    ) -> Any:
+        """
+        One place to handle:
+        - ensure bearer (force=False) before call
+        - attach Authorization header if bearer exists
+        - on 401/403: refresh bearer (force=True) and retry once
+        - raise rich HTTPError on >=400
+        - parse JSON response
+        """
+        timeout = float(timeout) if timeout is not None else self.timeout_store
+
+        def _make_headers() -> Dict[str, str]:
+            h: Dict[str, str] = {}
+            if headers:
+                h.update(headers)
+            h.setdefault("Accept", "application/json")
+            if json_data is not None:
+                h.setdefault("Content-Type", "application/json")
+            if self._bearer:
+                h["Authorization"] = f"Bearer {self._bearer}"
+            return h
+
+        # Ensure we *have* a bearer before the first attempt if requested
+        if require_auth:
+            self._ensure_bearer(reason=reason, force=False)
+
+        last_resp: Optional[requests.Response] = None
+
+        for attempt in range(2):  # initial + one refresh retry
+            r = self.session.request(
+                method,
+                url,
+                params=params,
+                json=json_data,
+                headers=_make_headers(),
+                timeout=timeout,
+            )
+            last_resp = r
+
+            if r.status_code in self._AUTH_CODES and attempt == 0:
+                # Token missing/expired/etc -> reauth and retry once.
+                self._ensure_bearer(reason=f"{reason} (401/403 -> reauth)", force=True)
+                continue
+
+            if r.status_code >= 400:
+                self._raise_http_error(r)
+
+            try:
+                return r.json()
+            except Exception as e:
+                snippet = (r.text or "")[:2000]
+                raise RuntimeError(
+                    f"Expected JSON from {method} {url} but failed to decode it. "
+                    f"Status={r.status_code}. Body starts:\n{snippet}"
+                ) from e
+
+        assert last_resp is not None
+        self._raise_http_error(last_resp)
+
     # ----------------------------
     # caching / filesystem layout
     # ----------------------------
@@ -1151,19 +1234,18 @@ class MetaISCIClient:
 
     def _fetch_roles(self, *, bearer: str) -> list[Dict[str, Any]]:
         url = f"{self.base}/api/iam/roles"
-        r = self.session.get(
+        j = self._request_json(
+            "GET",
             url,
-            headers={"Accept": "application/json", "Authorization": f"Bearer {bearer}"},
+            reason="fetch roles list (/api/iam/roles)",
             timeout=self.timeout_roles,
+            require_auth=True,
         )
-        r.raise_for_status()
-        j = r.json()
         if not isinstance(j, list):
             raise RuntimeError(f"Unexpected roles payload (expected list), got: {type(j)}")
         return j
 
     def _get_role_map(self, *, force_refresh: bool = False) -> Dict[str, str]:
-        # in-memory cache first
         if self._role_map is not None and not force_refresh:
             return dict(self._role_map)
 
@@ -1175,20 +1257,16 @@ class MetaISCIClient:
                 self._role_map = {str(k): str(v) for k, v in mp.items()}
                 return dict(self._role_map)
 
-        # fetch (re-auth if needed)
-        if not self._bearer:
-            self._ensure_bearer(reason="fetch roles list (/api/iam/roles)", force=True)
-
-        assert self._bearer is not None
-        try:
-            roles = self._fetch_roles(bearer=self._bearer)
-        except requests.exceptions.HTTPError as e:
-            if _is_auth_http_error(e):
-                self._ensure_bearer(reason="refresh bearer to fetch roles", force=True)
-                assert self._bearer is not None
-                roles = self._fetch_roles(bearer=self._bearer)
-            else:
-                raise
+        url = f"{self.base}/api/iam/roles"
+        roles = self._request_json(
+            "GET",
+            url,
+            reason="fetch roles list (/api/iam/roles)",
+            timeout=self.timeout_roles,
+            require_auth=True,
+        )
+        if not isinstance(roles, list):
+            raise RuntimeError(f"Unexpected roles payload (expected list), got: {type(roles)}")
 
         mp: Dict[str, str] = {}
         for r in roles:
@@ -1217,12 +1295,15 @@ class MetaISCIClient:
 
     def _fetch_citype_schema(self, *, citype: str, bearer: Optional[str]) -> Dict[str, Any]:
         url = f"{self.base}/api/types-repo/citypes/citype/{citype}"
-        headers: Dict[str, str] = {}
-        if bearer:
-            headers["Authorization"] = f"Bearer {bearer}"
-        r = self.session.get(url, headers=headers, timeout=self.timeout_schema)
-        r.raise_for_status()
-        j = r.json()
+        j = self._request_json(
+            "GET",
+            url,
+            reason=f"fetch schema for citype={citype}",
+            timeout=self.timeout_schema,
+            # require_auth=True is fine; if you *really* want "try without auth first",
+            # set require_auth=False (the wrapper still reauths on 401/403).
+            require_auth=True,
+        )
         if not isinstance(j, dict):
             raise RuntimeError(f"Unexpected schema payload (expected dict), got: {type(j)}")
         return j
@@ -1233,30 +1314,34 @@ class MetaISCIClient:
 
         p = self._schema_cache_path(citype)
         cached = self._load_cache(p)
+
+        # Fresh disk cache
         if cached and not force_refresh and self._is_fresh(cached):
             sch = cached.get("schema")
             if isinstance(sch, dict):
                 self._schema_cache[citype] = sch
                 return sch
 
-        # try fetch; if auth needed, re-auth and retry
+        # Stale schema we can fall back to if fetch fails
+        stale_schema: Dict[str, Any] | None = None
+        if cached:
+            sch = cached.get("schema")
+            if isinstance(sch, dict):
+                stale_schema = sch
+
+        # Fetch (auth+401/403 handled inside _request_json via _fetch_citype_schema)
         try:
-            sch = self._fetch_citype_schema(citype=citype, bearer=self._bearer)
-        except requests.exceptions.HTTPError as e:
-            if _is_auth_http_error(e):
-                self._ensure_bearer(reason=f"fetch schema for citype={citype}", force=True)
-                sch = self._fetch_citype_schema(citype=citype, bearer=self._bearer)
-            else:
-                # fallback to stale cache if exists
-                if cached and isinstance(cached.get("schema"), dict):
-                    sch = cached["schema"]
-                else:
-                    raise
-        except Exception:
-            if cached and isinstance(cached.get("schema"), dict):
-                sch = cached["schema"]
-            else:
-                raise
+            sch = self._fetch_citype_schema(citype=citype, bearer=self._bearer)  # ideally remove bearer arg later
+        except Exception as e:
+            if stale_schema is not None:
+                if self.verbose:
+                    print(f"[schema] warning: fetch failed for {citype}, using stale cache: {e}", file=sys.stderr)
+                self._schema_cache[citype] = stale_schema
+                return stale_schema
+            raise
+
+        if not isinstance(sch, dict):
+            raise RuntimeError(f"Schema fetch returned non-dict for citype={citype}: {type(sch)}")
 
         self._save_cache(p, {"fetched_at_unix": time.time(), "citype": citype, "schema": sch})
         self._schema_cache[citype] = sch
@@ -1380,19 +1465,16 @@ class MetaISCIClient:
             raise RuntimeError("Missing report_code (set env METAIS_REPORT_NUM_PROD/TEST or pass report_code).")
 
         url = f"{self.base}/api/report/reports/execute/{report_code}/type/typ"
-        headers: Dict[str, str] = {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "User-Agent": "metais-ci/2.0",
-        }
-        if bearer:
-            headers["Authorization"] = f"Bearer {bearer}"
-
-        payload = {"parameters": parameters}
-        r = self.session.post(url, params={"lang": self.lang}, headers=headers, json=payload, timeout=self.timeout_report)
-        r.raise_for_status()
-
-        j = r.json()
+        j = self._request_json(
+            "POST",
+            url,
+            reason=f"execute report {report_code}",
+            params={"lang": self.lang},
+            json_data={"parameters": parameters},
+            headers={"User-Agent": "metais-ci/2.0"},
+            timeout=self.timeout_report,
+            require_auth=True,
+        )
         if not isinstance(j, dict) or "result" not in j:
             raise RuntimeError("Unexpected report response shape (missing 'result').")
         return j
@@ -1454,27 +1536,28 @@ class MetaISCIClient:
     def _get_po_indexes(self, *, report_code: str, force_refresh: bool = False) -> Dict[str, Dict[str, str]]:
         p = self._cache_path("po_list")
         cached = self._load_cache(p)
-        if cached and not force_refresh and self._is_fresh(cached):
-            if isinstance(cached.get("indexes"), dict):
-                return cached["indexes"]
 
-        # report usually requires auth; try, then re-auth on 401/403
+        if cached and not force_refresh and self._is_fresh(cached):
+            idx = cached.get("indexes")
+            if isinstance(idx, dict):
+                return idx
+
+        stale_indexes: Dict[str, Dict[str, str]] | None = None
+        if cached and isinstance(cached.get("indexes"), dict):
+            stale_indexes = cached["indexes"]
+
         try:
             data = self._fetch_report_all(
                 report_code=report_code,
                 parameters={"target": "nodes", "type": "PO", "validOnly": "true"},
-                bearer=self._bearer,
+                bearer=self._bearer,  # ideally remove bearer arg later
             )
-        except requests.exceptions.HTTPError as e:
-            if _is_auth_http_error(e):
-                self._ensure_bearer(reason="fetch PO list (report execute)", force=True)
-                data = self._fetch_report_all(
-                    report_code=report_code,
-                    parameters={"target": "nodes", "type": "PO", "validOnly": "true"},
-                    bearer=self._bearer,
-                )
-            else:
-                raise
+        except Exception as e:
+            if stale_indexes is not None:
+                if self.verbose:
+                    print(f"[po] warning: fetch failed, using stale cache: {e}", file=sys.stderr)
+                return stale_indexes
+            raise
 
         result = data.get("result") or []
         if not isinstance(result, list):
@@ -1548,23 +1631,11 @@ class MetaISCIClient:
         return best[1]
 
     def _fetch_existing_ci_index(self, *, citype: str, report_code: str) -> _ExistingIndex:
-        # Always fetch fresh at the start of each store_ci call.
-        try:
-            data = self._fetch_report_all(
-                report_code=report_code,
-                parameters={"target": "nodes", "type": citype, "validOnly": "true"},
-                bearer=self._bearer,
-            )
-        except requests.exceptions.HTTPError as e:
-            if _is_auth_http_error(e):
-                self._ensure_bearer(reason=f"fetch existing CI list for duplicate check (type={citype})", force=True)
-                data = self._fetch_report_all(
-                    report_code=report_code,
-                    parameters={"target": "nodes", "type": citype, "validOnly": "true"},
-                    bearer=self._bearer,
-                )
-            else:
-                raise
+        data = self._fetch_report_all(
+            report_code=report_code,
+            parameters={"target": "nodes", "type": citype, "validOnly": "true"},
+            bearer=self._bearer,  # ideally remove bearer arg later
+        )
 
         result = data.get("result") or []
         if not isinstance(result, list):
@@ -1767,37 +1838,18 @@ class MetaISCIClient:
     # relation fetching and dup checking
     # ----------------------------------
 
-    def _fetch_existing_rel_index(
-        self, *, report_code: str, reltype: str, start_type: str, end_type: str
-    ) -> _ExistingRelIndex:
-        try:
-            data = self._fetch_report_all(
-                report_code=report_code,
-                parameters={
-                    "target": "relations",
-                    "type": reltype,
-                    "src": start_type,
-                    "tgt": end_type,
-                    "validOnly": "true",
-                },
-                bearer=self._bearer,
-            )
-        except requests.exceptions.HTTPError as e:
-            if _is_auth_http_error(e):
-                self._ensure_bearer(reason=f"fetch relations for {reltype}", force=True)
-                data = self._fetch_report_all(
-                    report_code=report_code,
-                    parameters={
-                        "target": "relations",
-                        "type": reltype,
-                        "src": start_type,
-                        "tgt": end_type,
-                        "validOnly": "true",
-                    },
-                    bearer=self._bearer,
-                )
-            else:
-                raise
+    def _fetch_existing_rel_index(self, *, report_code: str, reltype: str, start_type: str, end_type: str) -> _ExistingRelIndex:
+        data = self._fetch_report_all(
+            report_code=report_code,
+            parameters={
+                "target": "relations",
+                "type": reltype,
+                "src": start_type,
+                "tgt": end_type,
+                "validOnly": "true",
+            },
+            bearer=self._bearer,  # ideally remove bearer arg later
+        )
 
         res = data.get("result") or []
         if not isinstance(res, list):
@@ -1818,12 +1870,8 @@ class MetaISCIClient:
 
             if key not in by_pair:
                 by_pair[key] = uu_s
-            else:
-                if by_pair[key] != uu_s and self.verbose:
-                    print(
-                        f"[rel-dupe-index] multiple rels for {reltype} {key[0]}->{key[1]}: {by_pair[key]}, {uu_s}",
-                        file=sys.stderr,
-                    )
+            elif by_pair[key] != uu_s and self.verbose:
+                print(f"[rel-dupe-index] multiple rels for {reltype} {key[0]}->{key[1]}: {by_pair[key]}, {uu_s}", file=sys.stderr)
 
         return _ExistingRelIndex(fetched_at_unix=time.time(), by_pair=by_pair)
 
@@ -1838,14 +1886,16 @@ class MetaISCIClient:
 
     def _generate_metais_code(self, *, base: str, bearer: str, citype: str, lang: str) -> str:
         url = f"{base}/api/types-repo/citypes/generate/{citype}"
-        r = self.session.get(
+        j = self._request_json(
+            "GET",
             url,
+            reason=f"generate cicode for citype={citype}",
             params={"lang": lang},
-            headers={"Authorization": f"Bearer {bearer}"},
             timeout=self.timeout_schema,
+            require_auth=True,
         )
-        r.raise_for_status()
-        j = r.json()
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected generate/{citype} payload type: {type(j)}")
         cicode = j.get("cicode")
         if not cicode:
             raise RuntimeError(f"Missing cicode in response keys={list(j.keys())}")
@@ -1927,17 +1977,13 @@ class MetaISCIClient:
 
     def _read_ci(self, ci_uuid: str) -> Dict[str, Any]:
         url = f"{self.base}/api/cmdb/read/ci/{ci_uuid}"
-        r = self.session.get(url, headers={"Accept": "application/json"}, timeout=self.timeout_store)
-        if r.status_code in (401, 403):
-            self._ensure_bearer(reason=f"read CI {ci_uuid}", force=True)
-            assert self._bearer is not None
-            r = self.session.get(
-                url,
-                headers={"Accept": "application/json", "Authorization": f"Bearer {self._bearer}"},
-                timeout=self.timeout_store,
-            )
-        r.raise_for_status()
-        j = r.json()
+        j = self._request_json(
+            "GET",
+            url,
+            reason=f"read CI {ci_uuid}",
+            timeout=self.timeout_store,
+            require_auth=True,
+        )
         if not isinstance(j, dict):
             raise RuntimeError(f"Unexpected read/ci payload type: {type(j)}")
         return j
@@ -1994,38 +2040,152 @@ class MetaISCIClient:
             raise RuntimeError(f"{ci_type} is missing Gen_Profil_kod_metais (unexpected).")
         return kod_s
 
+    def _normalize_state_param(self, states: str | Iterable[str] | None) -> str:
+        """
+        MetaIS expects comma-separated states, e.g. "DRAFT,INVALIDATED".
+        Accepts either already-joined string or an iterable.
+        """
+        if states is None:
+            return ""
+        if isinstance(states, str):
+            return states.strip()
+        parts = [str(s).strip() for s in states if str(s).strip()]
+        return ",".join(parts)
+
+    def _neighbors_page_api(
+        self,
+        *,
+        ci_uuid: str,
+        page: int,
+        per_page: int,
+        states: str | Iterable[str] = ("DRAFT", "INVALIDATED"),
+        lang: str | None = None,
+    ) -> Dict[str, Any]:
+        ci_uuid = str(ci_uuid).strip()
+        if not ci_uuid:
+            raise ValueError("ci_uuid cannot be empty.")
+
+        url = f"{self.base}/api/cmdb/read/relations/neighbourswithallrels/{ci_uuid}"
+        st = self._normalize_state_param(states)
+        params: Dict[str, Any] = {
+            "page": int(page),
+            "perPage": int(per_page),
+            "lang": (lang or self.lang),
+        }
+        if st:
+            params["state"] = st
+
+        j = self._request_json(
+            "GET",
+            url,
+            reason=f"fetch neighbourswithallrels for CI {ci_uuid}",
+            params=params,
+            timeout=self.timeout_store,
+            require_auth=True,
+        )
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected neighbours payload type: {type(j)}")
+        return j
+
+    def fetch_neighbors_with_rels(
+        self,
+        ci_uuid: str,
+        *,
+        states: str | Iterable[str] = ("DRAFT", "INVALIDATED"),
+        per_page: int = 50,
+        max_pages: int | None = None,
+        lang: str | None = None,
+    ) -> list[Dict[str, Any]]:
+        """
+        Returns the concatenated `ciWithRels` list from:
+          /api/cmdb/read/relations/neighbourswithallrels/{ci_uuid}
+
+        `states` is passed to the endpoint as ?state=DRAFT,INVALIDATED (etc).
+        """
+        out: list[Dict[str, Any]] = []
+
+        page = 1
+        while True:
+            j = self._neighbors_page_api(
+                ci_uuid=ci_uuid,
+                page=page,
+                per_page=per_page,
+                states=states,
+                lang=lang,
+            )
+
+            rows = j.get("ciWithRels") or []
+            if not isinstance(rows, list):
+                raise RuntimeError("neighbourswithallrels: ciWithRels is not a list.")
+            out.extend([x for x in rows if isinstance(x, dict)])
+
+            pag = j.get("pagination") or {}
+            total_pages = pag.get("totalPages")
+            try:
+                total_pages_i = int(total_pages) if total_pages is not None else page
+            except Exception:
+                total_pages_i = page
+
+            if max_pages is not None and page >= max_pages:
+                break
+            if page >= total_pages_i:
+                break
+            page += 1
+
+        return out
+
+    def _extract_relation_uuids_from_neighbors_payload(
+        self,
+        neighbors: list[Dict[str, Any]],
+        *,
+        only_states: str | Iterable[str] | None = ("INVALIDATED",),
+    ) -> list[str]:
+        """
+        Pull relation UUIDs from neighbourswithallrels response.
+        If only_states is provided, filter by rel.metaAttributes.state.
+        """
+        want = None
+        if only_states is not None:
+            s = self._normalize_state_param(only_states)
+            want = {x.strip() for x in s.split(",") if x.strip()}
+
+        uu: set[str] = set()
+        for item in neighbors:
+            rels = item.get("rels") or []
+            if not isinstance(rels, list):
+                continue
+            for rel in rels:
+                if not isinstance(rel, dict):
+                    continue
+                ruid = rel.get("uuid")
+                if not ruid:
+                    continue
+                if want is not None:
+                    st = ((rel.get("metaAttributes") or {}).get("state") or "").strip()
+                    if want is not None:
+                        if st and st not in want:
+                            continue
+                uu.add(str(ruid).strip())
+
+        return sorted(u for u in uu if u)
+
     # ----------------------------
     # CMDB store API
     # ----------------------------
 
     def _store_ci_api(self, *, base: str, bearer: str, payload: Dict[str, Any], lang: str) -> str:
         url = f"{base}/api/cmdb/store/ci"
-        r = self.session.post(
+        j = self._request_json(
+            "POST",
             url,
+            reason="store CI",
             params={"lang": lang},
-            headers={
-                "Authorization": f"Bearer {bearer}",
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            json=payload,
+            json_data=payload,
             timeout=self.timeout_store,
+            require_auth=True,
         )
-
-        if r.status_code >= 400:
-            ct = r.headers.get("Content-Type", "")
-            body = r.text
-            try:
-                if "application/json" in ct:
-                    body = json.dumps(r.json(), ensure_ascii=False, indent=2)
-            except Exception:
-                pass
-            raise requests.exceptions.HTTPError(
-                f"{r.status_code} {r.reason} for {r.url}\nResponse body:\n{body}",
-                response=r,
-            )
-
-        j = r.json()
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected store/ci response type: {type(j)}")
         req_id = j.get("requestId")
         if not req_id:
             raise RuntimeError(f"Missing requestId in response keys={list(j.keys())}")
@@ -2033,41 +2193,25 @@ class MetaISCIClient:
 
     def _store_relation_api(self, *, payload: Dict[str, Any], lang: str) -> str:
         url = f"{self.base}/api/cmdb/store/relation"
-        assert self._bearer is not None
-        r = self.session.post(
+        j = self._request_json(
+            "POST",
             url,
+            reason="store relation",
             params={"lang": lang},
-            headers={
-                "Authorization": f"Bearer {self._bearer}",
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-            },
-            json=payload,
+            json_data=payload,
             timeout=self.timeout_store,
+            require_auth=True,
         )
-
-        if r.status_code >= 400:
-            ct = r.headers.get("Content-Type", "")
-            body = r.text
-            try:
-                if "application/json" in ct:
-                    body = json.dumps(r.json(), ensure_ascii=False, indent=2)
-            except Exception:
-                pass
-            raise requests.exceptions.HTTPError(
-                f"{r.status_code} {r.reason} for {r.url}\nResponse body:\n{body}",
-                response=r,
-            )
-
-        j = r.json()
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected store/relation response type: {type(j)}")
         req_id = j.get("requestId")
         if not req_id:
             raise RuntimeError(f"Missing requestId in response keys={list(j.keys())}")
         return str(req_id)
 
-    # ----------------------------
-    # payload + normalization
-    # ----------------------------
+    # ----------------------- #
+    # payload + normalization #
+    # ----------------------- #
 
     def _build_payload(self, *, citype: str, role_uuid: str, owner_po_uuid: str, attrs: Dict[str, Any]) -> Dict[str, Any]:
         return {
@@ -2125,9 +2269,9 @@ class MetaISCIClient:
 
         raise TypeError("attrs must be dict or list")
 
-    # ----------------------------
-    # logging (thorough, no secrets)
-    # ----------------------------
+    # ------------------------------ #
+    # logging (thorough, no secrets) #
+    # ------------------------------ #
 
     def _extract_http_debug(self, e: BaseException) -> Dict[str, Any]:
         out: Dict[str, Any] = {}
@@ -2203,6 +2347,572 @@ class MetaISCIClient:
         path = d / f"{entity_uuid}.{status}.json"
         self._atomic_write_json(path, record)
         return path
+
+    # -------------- #
+    # (re)validation #
+    # -------------- #
+
+    def _normalize_uuid_list(self, uuids: str | Iterable[str]) -> list[str]:
+        # Accept a single uuid string or any iterable of strings
+        if isinstance(uuids, str):
+            uu = [uuids]
+        else:
+            uu = list(uuids)
+
+        out: list[str] = []
+        for x in uu:
+            s = str(x).strip()
+            if s:
+                out.append(s)
+        return out
+
+    def _invalidate_ci_api(self, *, payload: Dict[str, Any], lang: str) -> Dict[str, Any]:
+        url = f"{self.base}/api/cmdb/invalidate/list"
+        j = self._request_json(
+            "POST",
+            url,
+            reason="invalidate CI list",
+            params={"lang": lang},
+            json_data=payload,
+            timeout=self.timeout_store,
+            require_auth=True,
+        )
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected invalidate/list response type: {type(j)}")
+        return j
+
+    def _recycle_cis_api(self, *, domain: str, payload: Dict[str, Any], lang: str) -> Dict[str, Any]:
+        url = f"{self.base}/api/cmdb/recycle/cis/{domain}"
+        j = self._request_json(
+            "POST",
+            url,
+            reason=f"recycle CIs domain={domain}",
+            params={"lang": lang},
+            json_data=payload,
+            timeout=self.timeout_store,
+            require_auth=True,
+        )
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected recycle/cis response type: {type(j)}")
+        return j
+
+    def _recycle_rels_api(self, *, payload: Dict[str, Any], lang: str) -> Dict[str, Any]:
+        url = f"{self.base}/api/cmdb/recycle/rels"
+        j = self._request_json(
+            "POST",
+            url,
+            reason="recycle relations",
+            params={"lang": lang},
+            json_data=payload,
+            timeout=self.timeout_store,
+            require_auth=True,
+        )
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected recycle/rels response type: {type(j)}")
+        return j
+
+    def invalidate_cis(
+        self,
+        uuids: str | Iterable[str],
+        *,
+        comment: str,
+        dry_run: bool = False,
+        audit_history: bool = False,
+        skip_if_invalidated: bool = True,
+    ) -> Dict[str, Any]:
+        uu = self._normalize_uuid_list(uuids)
+        if not uu:
+            raise ValueError("uuids cannot be empty.")
+        if not comment.strip():
+            raise ValueError("comment cannot be empty.")
+
+        configuration_items: list[Dict[str, Any]] = []
+        skipped: list[Dict[str, Any]] = []
+
+        for ci_uuid in uu:
+            try:
+                read = self._read_ci(ci_uuid)
+            except requests.exceptions.HTTPError as e:
+                resp = getattr(e, "response", None)
+                code = getattr(resp, "status_code", None)
+
+                if code == 404:
+                    print(f"[invalidate] warning: CI uuid not found: {ci_uuid}", file=sys.stderr)
+                    skipped.append({"uuid": ci_uuid, "reason": "not-found"})
+                    continue
+
+                msg = str(e).strip()
+                print(f"[invalidate] warning: failed to read CI {ci_uuid}: {msg}", file=sys.stderr)
+                skipped.append({"uuid": ci_uuid, "reason": f"http-{code}"})
+                continue
+
+            except Exception as e:
+                print(f"[invalidate] warning: failed to read CI {ci_uuid}: {e}", file=sys.stderr)
+                skipped.append({"uuid": ci_uuid, "reason": type(e).__name__})
+                continue
+
+            # Keep only the fields we know invalidate/list accepts (matches frontend)
+            citype = read.get("type")
+            attrs = read.get("attributes")
+            meta = read.get("metaAttributes")
+            state = (meta or {}).get("state")
+            if skip_if_invalidated and state == "INVALIDATED":
+                skipped.append({"uuid": ci_uuid, "reason": "already-invalidated", "state": state})
+                continue
+
+            if not citype or not isinstance(attrs, list):
+                print(f"[invalidate] warning: read/ci returned unexpected shape for {ci_uuid}", file=sys.stderr)
+                skipped.append({"uuid": ci_uuid, "reason": "bad-shape"})
+                continue
+
+            ci_obj: Dict[str, Any] = {
+                "type": citype,
+                "uuid": ci_uuid,
+                "attributes": attrs,
+            }
+            if isinstance(meta, dict):
+                ci_obj["metaAttributes"] = meta
+
+            configuration_items.append(ci_obj)
+
+        if not configuration_items:
+            return {
+                "requestId": None,
+                "noop": True,
+                "reason": "all-already-invalidated-or-skipped",
+                "skipped": skipped,
+                "history_before": history_before_if_you_collected_it,
+            }
+
+        payload = {
+            "configurationItemSet": configuration_items,
+            "invalidateReason": {"comment": comment},
+        }
+
+        # --------------------
+        # audit BEFORE (truthfully "before")
+        # --------------------
+        history_before: Dict[str, Any] | None = None
+        before_vid: Dict[str, str | None] = {}
+
+        if audit_history or self.verbose:
+            ids = [ci["uuid"] for ci in configuration_items]
+            history_before = self._audit_ci_latest_map(ids)
+            for u, summ in history_before.items():
+                if isinstance(summ, dict):
+                    before_vid[u] = summ.get("versionId")
+                else:
+                    before_vid[u] = None
+
+        if dry_run:
+            print("DRY RUN (no POST) invalidate/list", file=sys.stderr)
+            print(json.dumps(payload, ensure_ascii=False, indent=2), file=sys.stderr)
+            out: Dict[str, Any] = {"dryRun": True, "payload": payload, "skipped": skipped}
+            if history_before is not None:
+                out["history_before"] = history_before
+            return out
+
+        # --------------------
+        # Real POST
+        # --------------------
+        res = self._invalidate_ci_api(payload=payload, lang=self.lang)
+
+        # --------------------
+        # audit AFTER (poll until versionId changes, best-effort)
+        # --------------------
+        history_after: Dict[str, Any] | None = None
+        if audit_history or self.verbose:
+            history_after = {}
+            for u in [ci["uuid"] for ci in configuration_items]:
+                try:
+                    hv = self._wait_ci_history_version_change(
+                        u,
+                        prev_version_id=before_vid.get(u),
+                        timeout_s=30.0,
+                        poll_s=1.0,
+                    )
+                    history_after[u] = self.summarize_history_entry(hv) if hv else None
+                except Exception as e:
+                    history_after[u] = {"error": str(e)}
+
+        # attach audits + skipped
+        out_res = dict(res) if isinstance(res, dict) else {"result": res}
+        if history_before is not None:
+            out_res["history_before"] = history_before
+        if history_after is not None:
+            out_res["history_after"] = history_after
+        if skipped:
+            out_res["skipped"] = skipped
+        return out_res
+
+
+    def recycle_cis(
+        self,
+        ci_uuids: str | Iterable[str],
+        *,
+        domain: str = "biznis",
+        dry_run: bool = False,
+        audit_history: bool = False,
+    ) -> Dict[str, Any]:
+        uu = self._normalize_uuid_list(ci_uuids)
+        if not uu:
+            raise ValueError("ci_uuids cannot be empty.")
+
+        payload = {"ciIdList": uu}
+
+        # --------------------
+        # audit BEFORE
+        # --------------------
+        history_before: Dict[str, Any] | None = None
+        before_vid: Dict[str, str | None] = {}
+
+        if audit_history or self.verbose:
+            history_before = self._audit_ci_latest_map(uu)
+            for u, summ in history_before.items():
+                if isinstance(summ, dict):
+                    before_vid[u] = summ.get("versionId")
+                else:
+                    before_vid[u] = None
+
+        if dry_run:
+            print(f"DRY RUN (no POST) recycle/cis/{domain}", file=sys.stderr)
+            print(json.dumps(payload, ensure_ascii=False, indent=2), file=sys.stderr)
+            out: Dict[str, Any] = {"dryRun": True, "payload": payload}
+            if history_before is not None:
+                out["history_before"] = history_before
+            return out
+
+        # --------------------
+        # Real POST
+        # --------------------
+        res = self._recycle_cis_api(domain=domain, payload=payload, lang=self.lang)
+
+        # --------------------
+        # audit AFTER
+        # --------------------
+        history_after: Dict[str, Any] | None = None
+        if audit_history or self.verbose:
+            history_after = {}
+            for u in uu:
+                try:
+                    hv = self._wait_ci_history_version_change(
+                        u,
+                        prev_version_id=before_vid.get(u),
+                        timeout_s=30.0,
+                        poll_s=1.0,
+                    )
+                    history_after[u] = self.summarize_history_entry(hv) if hv else None
+                except Exception as e:
+                    history_after[u] = {"error": str(e)}
+
+        out_res = dict(res) if isinstance(res, dict) else {"result": res}
+        if history_before is not None:
+            out_res["history_before"] = history_before
+        if history_after is not None:
+            out_res["history_after"] = history_after
+        return out_res
+
+
+    def recycle_rels(
+        self,
+        rel_uuids: str | Iterable[str],
+        *,
+        dry_run: bool = False,
+        audit_history: bool = False,
+    ) -> Dict[str, Any]:
+        uu = self._normalize_uuid_list(rel_uuids)
+        if not uu:
+            raise ValueError("rel_uuids cannot be empty.")
+
+        payload = {"relIdList": uu}
+
+        # --------------------
+        # audit BEFORE
+        # --------------------
+        history_before: Dict[str, Any] | None = None
+        before_vid: Dict[str, str | None] = {}
+
+        if audit_history or self.verbose:
+            history_before = self._audit_rel_latest_map(uu)
+            for u, summ in history_before.items():
+                if isinstance(summ, dict):
+                    before_vid[u] = summ.get("versionId")
+                else:
+                    before_vid[u] = None
+
+        if dry_run:
+            print("DRY RUN (no POST) recycle/rels", file=sys.stderr)
+            print(json.dumps(payload, ensure_ascii=False, indent=2), file=sys.stderr)
+            out: Dict[str, Any] = {"dryRun": True, "payload": payload}
+            if history_before is not None:
+                out["history_before"] = history_before
+            return out
+
+        # --------------------
+        # Real POST
+        # --------------------
+        res = self._recycle_rels_api(payload=payload, lang=self.lang)
+
+        # --------------------
+        # audit AFTER
+        # --------------------
+        history_after: Dict[str, Any] | None = None
+        if audit_history or self.verbose:
+            history_after = {}
+            for u in uu:
+                try:
+                    hv = self._wait_rel_history_version_change(
+                        u,
+                        prev_version_id=before_vid.get(u),
+                        timeout_s=30.0,
+                        poll_s=1.0,
+                    )
+                    history_after[u] = self.summarize_rel_history_entry(hv) if hv else None
+                except Exception as e:
+                    history_after[u] = {"error": str(e)}
+
+        out_res = dict(res) if isinstance(res, dict) else {"result": res}
+        if history_before is not None:
+            out_res["history_before"] = history_before
+        if history_after is not None:
+            out_res["history_after"] = history_after
+        return out_res
+
+    # ---------------- #
+    # history fetching #
+    # ---------------- #
+
+    def _audit_ci_latest_map(self, uuids: list[str]) -> Dict[str, Any]:
+        out: Dict[str, Any] = {}
+        for u in uuids:
+            try:
+                hv = self.fetch_ci_history_latest(u)
+                out[u] = self.summarize_history_entry(hv) if hv else None
+            except Exception as e:
+                out[u] = {"error": str(e)}
+        return out
+
+    def _audit_rel_latest_map(self, uuids: list[str]) -> Dict[str, Any]:
+        out: Dict[str, Any] = {}
+        for u in uuids:
+            try:
+                hv = self.fetch_rel_history_latest(u)
+                out[u] = self.summarize_rel_history_entry(hv) if hv else None
+            except Exception as e:
+                out[u] = {"error": str(e)}
+        return out
+
+    def _wait_ci_history_version_change(
+        self,
+        ci_uuid: str,
+        *,
+        prev_version_id: str | None,
+        timeout_s: float = 20.0,
+        poll_s: float = 1.0,
+    ) -> Dict[str, Any] | None:
+        t0 = time.time()
+        last = None
+        while time.time() - t0 < timeout_s:
+            hv = self.fetch_ci_history_latest(ci_uuid)
+            last = hv
+            if hv is None:
+                time.sleep(poll_s)
+                continue
+            vid = hv.get("versionId")
+            if prev_version_id is None or (vid and vid != prev_version_id):
+                return hv
+            time.sleep(poll_s)
+        return last
+
+    def _wait_rel_history_version_change(
+        self,
+        rel_uuid: str,
+        *,
+        prev_version_id: str | None,
+        timeout_s: float = 20.0,
+        poll_s: float = 1.0,
+    ) -> Dict[str, Any] | None:
+        t0 = time.time()
+        last = None
+        while time.time() - t0 < timeout_s:
+            hv = self.fetch_rel_history_latest(rel_uuid)
+            last = hv
+            if hv is None:
+                time.sleep(poll_s)
+                continue
+            vid = hv.get("versionId")
+            if prev_version_id is None or (vid and vid != prev_version_id):
+                return hv
+            time.sleep(poll_s)
+        return last
+
+    def _ci_history_page_api(self, *, ci_uuid: str, page: int, per_page: int, lang: str) -> Dict[str, Any]:
+        url = f"{self.base}/api/cmdb/history/read/ci/{ci_uuid}/list"
+        j = self._request_json(
+            "GET",
+            url,
+            reason=f"read CI history {ci_uuid}",
+            params={"page": page, "perPage": per_page, "lang": lang},
+            timeout=self.timeout_store,
+            require_auth=True,
+        )
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected history payload type: {type(j)}")
+        return j
+
+
+    def fetch_ci_history(
+        self,
+        ci_uuid: str,
+        *,
+        per_page: int = 50,
+        max_pages: int | None = None,
+    ) -> list[Dict[str, Any]]:
+        """
+        Fetch CI history versions (paged). Returns list of historyVersions.
+        NOTE: backend may cap perPage (your response showed perPage=10 even when requesting 1000).
+        """
+        ci_uuid = str(ci_uuid).strip()
+        if not ci_uuid:
+            raise ValueError("ci_uuid cannot be empty.")
+
+        out: list[Dict[str, Any]] = []
+        page = 1
+        while True:
+            j = self._ci_history_page_api(ci_uuid=ci_uuid, page=page, per_page=per_page, lang=self.lang)
+            versions = j.get("historyVersions") or []
+            if not isinstance(versions, list):
+                raise RuntimeError("historyVersions is not a list.")
+            out.extend([v for v in versions if isinstance(v, dict)])
+
+            pag = j.get("pagination") or {}
+            total_pages = pag.get("totalPages")
+            try:
+                total_pages_i = int(total_pages) if total_pages is not None else page
+            except Exception:
+                total_pages_i = page
+
+            if max_pages is not None and page >= max_pages:
+                break
+            if page >= total_pages_i:
+                break
+            page += 1
+
+        return out
+
+
+    def fetch_ci_history_latest(self, ci_uuid: str) -> Dict[str, Any] | None:
+        """
+        Fetch only the newest history entry (fast path).
+        """
+        versions = self.fetch_ci_history(ci_uuid, per_page=20, max_pages=1)
+        if not versions:
+            return None
+        # API seems to return newest-first; if that changes, sort by actionTime.
+        return versions[0]
+
+
+    def summarize_history_entry(self, hv: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Compact summary for logs / printing.
+        """
+        actions = hv.get("actions") or []
+        if not isinstance(actions, list):
+            actions = [str(actions)]
+        actions_s = [str(x) for x in actions]
+
+        item = hv.get("item") or {}
+        meta = (item.get("metaAttributes") or {}) if isinstance(item, dict) else {}
+        state = meta.get("state")
+
+        return {
+            "actionTime": hv.get("actionTime"),
+            "actionBy": hv.get("actionBy"),
+            "actions": actions_s,
+            "versionId": hv.get("versionId"),
+            "state": state,
+        }
+
+    def _rel_history_page_api(self, *, rel_uuid: str, page: int, per_page: int, lang: str) -> Dict[str, Any]:
+        rel_uuid = str(rel_uuid).strip()
+        if not rel_uuid:
+            raise ValueError("rel_uuid cannot be empty.")
+
+        url = f"{self.base}/api/cmdb/history/read/rel/{rel_uuid}/list"
+        j = self._request_json(
+            "GET",
+            url,
+            reason=f"read relation history {rel_uuid}",
+            params={"page": page, "perPage": per_page, "lang": lang},
+            timeout=self.timeout_store,
+            require_auth=True,
+        )
+        if not isinstance(j, dict):
+            raise RuntimeError(f"Unexpected relation history payload type: {type(j)}")
+        return j
+
+
+    def fetch_rel_history(
+        self,
+        rel_uuid: str,
+        *,
+        per_page: int = 50,
+        max_pages: int | None = None,
+    ) -> list[Dict[str, Any]]:
+        rel_uuid = str(rel_uuid).strip()
+        if not rel_uuid:
+            raise ValueError("rel_uuid cannot be empty.")
+
+        out: list[Dict[str, Any]] = []
+        page = 1
+        while True:
+            j = self._rel_history_page_api(rel_uuid=rel_uuid, page=page, per_page=per_page, lang=self.lang)
+
+            versions = j.get("historyVersions") or []
+            if not isinstance(versions, list):
+                raise RuntimeError("historyVersions is not a list.")
+            out.extend([v for v in versions if isinstance(v, dict)])
+
+            pag = j.get("pagination") or {}
+            total_pages = pag.get("totalPages")
+            try:
+                total_pages_i = int(total_pages) if total_pages is not None else page
+            except Exception:
+                total_pages_i = page
+
+            if max_pages is not None and page >= max_pages:
+                break
+            if page >= total_pages_i:
+                break
+            page += 1
+
+        return out
+
+
+    def fetch_rel_history_latest(self, rel_uuid: str) -> Dict[str, Any] | None:
+        versions = self.fetch_rel_history(rel_uuid, per_page=20, max_pages=1)
+        if not versions:
+            return None
+        return versions[0]
+
+
+    def summarize_rel_history_entry(self, hv: Dict[str, Any]) -> Dict[str, Any]:
+        actions = hv.get("actions") or []
+        if not isinstance(actions, list):
+            actions = [str(actions)]
+        actions_s = [str(x) for x in actions]
+
+        item = hv.get("item") or {}
+        meta = (item.get("metaAttributes") or {}) if isinstance(item, dict) else {}
+        state = meta.get("state")
+
+        return {
+            "actionTime": hv.get("actionTime"),
+            "actionBy": hv.get("actionBy"),
+            "actions": actions_s,
+            "versionId": hv.get("versionId"),
+            "state": state,
+        }
 
     # ----------------------------
     # dry-run output
